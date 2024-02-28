@@ -1,93 +1,158 @@
-# OpenIG - Drupal 10 - Website
+OPenIG - Instance Drupal 10 du site web <openig.org>
+================================================================================
 
 
+Déploiement d'une instance avec Docker (développement)
+--------------------------------------------------------------------------------
 
-## Getting started
+Voir la documentation du projet de dockerisation :
+<https://git.teicee.fr/openig/openig-d10-docker>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Déploiement d'une instance hébergée (prod/preprod)
+--------------------------------------------------------------------------------
 
-## Add your files
+### Prérequis
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Accès SSH sur un serveur LAPP avec :
 
+-	PHP    `8.3` + Composer
+-	NodeJS `20`  + Yarn
+-	Solr   `9.4`
+
+Un serveur SQL (local ou distant) avec :
+
+-	PostgreSQL `15`
+-	une base de données avec identifiants
+
+
+### Installation
+
+Mettre en place le projet depuis son dépôt Git dans le dossier de l'hébergement :
+```bash
+### Soit par SSH
+git clone "git@git.teicee.fr:openig/openig-d10-website.git" .
+
+### Soit par HTTP
+git clone "https://git.teicee.fr/openig/openig-d10-website.git" .
 ```
-cd existing_repo
-git remote add origin https://git.teicee.fr/geofit/openig/openig-d10-website.git
-git branch -M main
-git push -uf origin main
+
+Définir la configuration spécifique `web/sites/default/settings.local.php`, par exemple :
+```php
+### Par exemple les accès à la base de données PosgreSQL :
+$databases['default']['default']['host']      = 'localhost';
+$databases['default']['default']['port']      = '4321';
+$databases['default']['default']['database']  = 'drupal';
+$databases['default']['default']['username']  = 'drupal';
+$databases['default']['default']['password']  = '****************';
 ```
 
-## Integrate with your tools
+Définir les variables spécifiques de déploiement dans `configs/deploy.local`, par exemple :
+```bash
+### Par exemple la définition de l'utilisateur web/php
+USR_WORKER="www-data"
+GRP_WORKER="www-data"
 
-- [ ] [Set up project integrations](https://git.teicee.fr/geofit/openig/openig-d10-website/-/settings/integrations)
+### Par exemple la définition de la configuration du mailer
+SMTP_HOST="smtp.openig.org"
+SMTP_PORT=587
+SMTP_USER="drupal"
+SMTP_PASS="********"
 
-## Collaborate with your team
+### Par exemple Définition du moteur d'indexation
+SOLR_HOST="localhost"
+SOLR_NAME="recherche_solr"
+SOLR_CORE="drupal_core"
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+### Par exemple la définition du compte administrateur
+DRUPAL_USER="admin"
+DRUPAL_PASS="********"
+DRUPAL_MAIL="webmaster@openig.org"
+```
 
-## Test and Deploy
+Puis lancer les commandes d'initialisation de l'instance avec le script fourni :
+```bash
+./scripts/deploy.sh
+```
 
-Use the built-in continuous integration in GitLab.
+### Mise à jour
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+Mettre à jour le projet depuis son dépôts Git :
+```bash
+cd ~/drupal
+git pull
+```
 
-***
+Relancer les commandes d'initialisation de l'instance avec le script fourni :
+```bash
+./scripts/deploy.sh
+```
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
+Configuration du moteur d'indexation Solr
+--------------------------------------------------------------------------------
 
-## Suggestions for a good README
+### Génération des fichiers de configuration pour Solr
 
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+**Note:** Le module Drupal permet d'exporter la configuration pour Solr.
 
-## Name
-Choose a self-explaining name for your project.
+Afficher la liste des serveurs de recherche configurés dans Drupal :
+```bash
+drush search-api:server-list
+```
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Exporter les fichiers de configuration de "recherche_solr" pour Solr 9.4 :
+```bash
+drush search-api-solr:get-server-config "recherche_solr" "solr_config.zip" 9.4
+```
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+Ranger les configurations exportées dans un sous-dossier de "configs" :
+```bash
+mv "./web/solr_config.zip" "./configs/solr_config.zip"
+rm "./configs/solr/"* || true
+unzip "configs/solr_config.zip" -d "./configs/solr/"
+```
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+### Création d'un core Solr et mise à jour de sa configuration
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+**Note:** Ces actions sont réalisées automatiquent avec la dockerisation.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+Création d'un nouveau core Solr nommé "drupal_core" avec la configuration fournie :
+```bash
+sudo -u solr /solr/bin/solr create_core -c "drupal_core" -n "drupal_core" -d "./configs/solr/"
+```
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Mise à jour de la configuration fournie pour un core Solr nommé "drupal_core" existant :
+```bash
+rm "/var/solr/data/drupal_core/conf/"*
+cp "./configs/solr/"* "/var/solr/data/drupal_core/conf/"
+```
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+Demande de rechargement au serveur Solr pour le core nommé "drupal_core" :
+```bash
+curl -k "http://localhost:8983/solr/admin/cores?action=RELOAD&core=drupal_core"
+```
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+### Commandes Drush utiles pour gérer l'indexation des contenus
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Affichage des serveurs d'indexation et des indexes de recherches configurés :
+```bash
+drush search-api:server-list
+drush search-api:list
+drush search-api:status
+```
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Réglages pour l'indexation en utilisant Solr :
+```bash
+drush search-api-solr:install-missing-fieldtypes
+drush search-api-solr:reinstall-fieldtypes
+```
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Réindexation des contenus pour un index donné :
+```bash
+drush search-api:reset-tracker "${SOLR_INDEX}"
+drush search-api:index
+drush search-api-solr:finalize-index
+drush search-api:status
+```
 
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.

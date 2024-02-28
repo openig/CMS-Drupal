@@ -1,0 +1,43 @@
+### Local config
+.env
+.env.local
+.env.*.local
+.htpasswd
+auth.json
+
+### Shell env
+.bash*
+
+### Dev files
+/_*
+*.diff
+*.bak
+*.old
+*.tmp
+*~
+.~*
+
+### Editors/IDE
+.idea*
+.project
+.vscode
+*.ntvs*
+*.njsproj
+*.sln
+*.suo
+*.swp
+*.swo
+
+### MacOS files
+.DS_Store
+._.DS_Store
+
+### Projet
+/configs/*.local
+/configs/solr_config.zip
+/vendor/
+/bin/
+/temp/*
+/files/*
+/private/*
+salt.txt
