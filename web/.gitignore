@@ -1,0 +1,34 @@
+
+### Ignore configuration files that may contain sensitive information
+/sites/*/services*.yml
+#/sites/*/settings*.php
+/sites/*/settings.local.php
+
+### Ignore paths that contain user-generated content.
+/sites/*/files
+/sites/*/public
+/sites/*/private
+
+### Ignore drupal core (if not versioning drupal sources)
+/core
+/profiles/*.txt
+/modules/*.txt
+/modules/contrib/*
+/themes/*.txt
+/themes/contrib/*
+/sites/*.txt
+/sites/*.php
+/sites/*.yml
+/libraries/*
+
+### Ignore drupal files
+/.csslint*
+/.eslint*
+/.editorconfig
+/.gitattributes
+/example.gitignore
+/web.config
+/INSTALL.txt
+/README.md
+/*.php
+
