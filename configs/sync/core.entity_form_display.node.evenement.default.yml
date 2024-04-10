@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tags
@@ -58,6 +59,16 @@ content:
     weight: 126
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_groupe_de_travail:
+    type: entity_reference_autocomplete
+    weight: 129
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_private_registration:
     type: boolean_checkbox

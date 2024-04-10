@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tags
@@ -49,6 +50,14 @@ content:
       format_type: medium
     third_party_settings: {  }
     weight: 106
+    region: content
+  field_groupe_de_travail:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
     region: content
   field_private_registration:
     type: boolean
