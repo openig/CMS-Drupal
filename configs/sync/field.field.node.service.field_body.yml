@@ -1,0 +1,25 @@
+uuid: 68a4e7ab-51e2-4bef-a80f-79702ddfaa87
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.service
+  module:
+    - entity_reference_revisions
+id: node.service.field_body
+field_name: field_body
+entity_type: node
+bundle: service
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+field_type: entity_reference_revisions
