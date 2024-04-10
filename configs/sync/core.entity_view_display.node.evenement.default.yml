@@ -1,0 +1,113 @@
+uuid: fd5caa84-53bd-4300-80be-57c787e7f100
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.evenement.field_access_restricted
+    - field.field.node.evenement.field_body
+    - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_groupe_de_travail
+    - field.field.node.evenement.field_private_registration
+    - field.field.node.evenement.field_start_date
+    - field.field.node.evenement.field_tags
+    - field.field.node.evenement.field_titre
+    - field.field.node.evenement.field_webform
+    - node.type.evenement
+  module:
+    - datetime
+    - entity_reference_revisions
+    - user
+    - webform
+id: node.evenement.default
+targetEntityType: node
+bundle: evenement
+mode: default
+content:
+  field_access_restricted:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_body:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_end_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_groupe_de_travail:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_private_registration:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_start_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  field_titre:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_webform:
+    type: webform_entity_reference_entity_view
+    label: above
+    settings:
+      source_entity: true
+      lazy: false
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

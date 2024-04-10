@@ -1,0 +1,29 @@
+uuid: a2e03778-7fed-4d93-b1a1-62fcdcfbb42a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_groupe_de_travail
+    - node.type.evenement
+    - node.type.groupe_de_travail
+id: node.evenement.field_groupe_de_travail
+field_name: field_groupe_de_travail
+entity_type: node
+bundle: evenement
+label: 'Groupe de travail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      groupe_de_travail: groupe_de_travail
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
