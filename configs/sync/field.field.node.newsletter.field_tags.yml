@@ -1,0 +1,29 @@
+uuid: 425525d5-a890-49e6-a466-8efc4b406899
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tags
+    - node.type.newsletter
+    - taxonomy.vocabulary.tags
+id: node.newsletter.field_tags
+field_name: field_tags
+entity_type: node
+bundle: newsletter
+label: Tag
+description: 'Saisir une liste en séparant les termes par une virgule. Par exemple : Amsterdam, Mexico City, "Cleveland, Ohio"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: _none
+      direction: asc
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
