@@ -1,0 +1,24 @@
+uuid: 30322fa4-ec2f-43b0-8987-83faf2a23f9a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_description
+    - node.type.ressource
+  module:
+    - text
+id: node.ressource.field_description
+field_name: field_description
+entity_type: node
+bundle: ressource
+label: Description
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

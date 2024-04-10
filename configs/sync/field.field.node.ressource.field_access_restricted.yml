@@ -1,0 +1,21 @@
+uuid: 39110f88-7858-4aa8-af01-98b8188120b4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_access_restricted
+    - node.type.ressource
+id: node.ressource.field_access_restricted
+field_name: field_access_restricted
+entity_type: node
+bundle: ressource
+label: 'Accès restreint aux utilisateurs adhérents'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean
