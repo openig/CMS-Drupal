@@ -1,0 +1,50 @@
+uuid: 29be09e5-09b2-4dd7-afc0-df31a6387bdd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.structure.field_address
+    - field.field.node.structure.field_contact
+    - field.field.node.structure.field_dpt_intervention
+    - field.field.node.structure.field_image
+    - field.field.node.structure.field_link
+    - field.field.node.structure.field_name
+    - field.field.node.structure.field_siret
+    - field.field.node.structure.field_typologie_structure
+    - image.style.medium
+    - node.type.structure
+  module:
+    - image
+    - user
+id: node.structure.teaser
+targetEntityType: node
+bundle: structure
+mode: teaser
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_address: true
+  field_contact: true
+  field_dpt_intervention: true
+  field_link: true
+  field_name: true
+  field_siret: true
+  field_typologie_structure: true
+  langcode: true
+  search_api_excerpt: true
