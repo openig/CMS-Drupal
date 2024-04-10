@@ -1,0 +1,19 @@
+uuid: 23213865-915b-4a75-817f-c7cfc880b315
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_titre
+    - node.type.article
+id: node.article.field_titre
+field_name: field_titre
+entity_type: node
+bundle: article
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
