@@ -1,0 +1,21 @@
+uuid: 8fab52a3-9b6c-4915-9ad2-ec62756fbe22
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_archive
+    - node.type.groupe_de_travail
+id: node.groupe_de_travail.field_archive
+field_name: field_archive
+entity_type: node
+bundle: groupe_de_travail
+label: Archivés
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

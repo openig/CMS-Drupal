@@ -7,3 +7,4 @@ dependencies:
   - paragraphs
   - admin_toolbar
   - webform
+  - weight

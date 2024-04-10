@@ -1,0 +1,18 @@
+uuid: 8c75c244-f421-42d5-adb2-daca177ea68c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_archive
+field_name: field_archive
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

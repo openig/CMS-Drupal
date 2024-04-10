@@ -22,6 +22,7 @@
         "drupal/paragraphs": "^1.17",
         "drupal/search_api_solr": "^4.3",
         "drupal/webform": "^6.2",
+        "drupal/weight": "^3.4",
         "drush/drush": "^12.4"
     },
     "conflict": {

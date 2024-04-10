@@ -1,0 +1,11 @@
+uuid: 171737dc-30ce-4816-b7e4-b74966bb32be
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.groupe_de_travail
+id: node.groupe_de_travail
+target_entity_type_id: node
+target_bundle: groupe_de_travail
+default_langcode: site_default
+language_alterable: false
