@@ -1,17 +1,16 @@
-uuid: 45e39ae8-8cd3-4dab-9527-081b56b6099f
+uuid: c29e7cb0-776d-48cf-bd82-dece4d6ae7a1
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_contact
-field_name: field_contact
+    - taxonomy
+id: node.field_dpt_intervention
+field_name: field_dpt_intervention
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
 cardinality: -1

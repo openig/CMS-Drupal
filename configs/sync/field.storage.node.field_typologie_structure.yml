@@ -1,20 +1,19 @@
-uuid: 45e39ae8-8cd3-4dab-9527-081b56b6099f
+uuid: 99816476-545f-42ab-82ac-d9ab430e0260
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_contact
-field_name: field_contact
+    - taxonomy
+id: node.field_typologie_structure
+field_name: field_typologie_structure
 entity_type: node
-type: string
+type: entity_reference
 settings:
-  max_length: 255
-  case_sensitive: false
-  is_ascii: false
+  target_type: taxonomy_term
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

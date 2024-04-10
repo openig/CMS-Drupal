@@ -1,0 +1,8 @@
+uuid: 311e5c5e-fe7a-468b-8d4e-ca7075fae8fc
+langcode: fr
+status: true
+dependencies: {  }
+name: "Département d'intervention"
+vid: dpt_intervention
+description: ''
+weight: 0

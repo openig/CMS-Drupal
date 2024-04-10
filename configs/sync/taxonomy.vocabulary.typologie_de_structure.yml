@@ -1,0 +1,8 @@
+uuid: f9ef5c6f-2443-4a95-bb49-46904ee9bd1d
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Typologie de structure'
+vid: typologie_de_structure
+description: ''
+weight: 0

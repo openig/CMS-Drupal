@@ -1,0 +1,29 @@
+uuid: 1394ac30-605e-48c5-9062-b9a8384d2481
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dpt_intervention
+    - node.type.structure
+    - taxonomy.vocabulary.dpt_intervention
+id: node.structure.field_dpt_intervention
+field_name: field_dpt_intervention
+entity_type: node
+bundle: structure
+label: "Départements d'intervention"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      dpt_intervention: dpt_intervention
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
