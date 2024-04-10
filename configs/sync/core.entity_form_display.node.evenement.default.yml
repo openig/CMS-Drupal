@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
-    - field.field.node.evenement.field_tags
+    - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_titre
     - field.field.node.evenement.field_webform
     - node.type.evenement
@@ -83,9 +83,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

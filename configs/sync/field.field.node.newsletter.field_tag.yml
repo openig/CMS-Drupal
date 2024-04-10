@@ -1,17 +1,17 @@
-uuid: 425525d5-a890-49e6-a466-8efc4b406899
+uuid: 4059084f-511c-489e-82ee-6bae2011615f
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_tag
     - node.type.newsletter
     - taxonomy.vocabulary.tags
-id: node.newsletter.field_tags
-field_name: field_tags
+id: node.newsletter.field_tag
+field_name: field_tag
 entity_type: node
 bundle: newsletter
 label: Tag
-description: 'Saisir une liste en séparant les termes par une virgule. Par exemple : Amsterdam, Mexico City, "Cleveland, Ohio"'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -22,8 +22,8 @@ settings:
     target_bundles:
       tags: tags
     sort:
-      field: _none
+      field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

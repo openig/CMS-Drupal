@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
     - field.field.node.service.field_requirement
-    - field.field.node.service.field_tags
+    - field.field.node.service.field_tag
     - field.field.node.service.field_titre
     - image.style.thumbnail
     - node.type.service
@@ -69,9 +69,9 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

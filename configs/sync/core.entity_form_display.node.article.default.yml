@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.article.field_body
     - field.field.node.article.field_image
     - field.field.node.article.field_news_overview
-    - field.field.node.article.field_tags
+    - field.field.node.article.field_tag
     - field.field.node.article.field_titre
     - image.style.thumbnail
     - node.type.article
@@ -72,9 +72,9 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

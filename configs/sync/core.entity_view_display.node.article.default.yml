@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.article.field_body
     - field.field.node.article.field_image
     - field.field.node.article.field_news_overview
-    - field.field.node.article.field_tags
+    - field.field.node.article.field_tag
     - field.field.node.article.field_titre
     - image.style.wide
     - node.type.article
@@ -60,13 +60,13 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_titre:
     type: string

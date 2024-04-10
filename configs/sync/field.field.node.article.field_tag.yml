@@ -1,17 +1,17 @@
-uuid: ee878221-170b-446d-a53d-e641f8c54ca9
+uuid: 92c219aa-ba49-4224-a1e0-85fc1ee3bdcf
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
-    - node.type.temoignage
+    - field.storage.node.field_tag
+    - node.type.article
     - taxonomy.vocabulary.tags
-id: node.temoignage.field_tags
-field_name: field_tags
+id: node.article.field_tag
+field_name: field_tag
 entity_type: node
-bundle: temoignage
+bundle: article
 label: Tag
-description: 'Saisir une liste en séparant les termes par une virgule. Par exemple : Amsterdam, Mexico City, "Cleveland, Ohio"'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -22,8 +22,8 @@ settings:
     target_bundles:
       tags: tags
     sort:
-      field: _none
+      field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

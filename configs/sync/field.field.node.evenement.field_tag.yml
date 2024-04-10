@@ -1,17 +1,17 @@
-uuid: dfbb0793-c105-484d-90ee-32f2d3fb968f
+uuid: 1506e66e-f560-4fa2-b5fe-2c65816e07ca
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
-    - node.type.service
+    - field.storage.node.field_tag
+    - node.type.evenement
     - taxonomy.vocabulary.tags
-id: node.service.field_tags
-field_name: field_tags
+id: node.evenement.field_tag
+field_name: field_tag
 entity_type: node
-bundle: service
+bundle: evenement
 label: Tag
-description: 'Saisir une liste en séparant les termes par une virgule. Par exemple : Amsterdam, Mexico City, "Cleveland, Ohio"'
+description: ''
 required: false
 translatable: false
 default_value: {  }
@@ -22,8 +22,8 @@ settings:
     target_bundles:
       tags: tags
     sort:
-      field: _none
+      field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

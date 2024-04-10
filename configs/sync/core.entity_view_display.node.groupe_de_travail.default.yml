@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.groupe_de_travail.field_contact
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
-    - field.field.node.groupe_de_travail.field_tags
+    - field.field.node.groupe_de_travail.field_tag
     - field.field.node.groupe_de_travail.field_theme_overview
     - field.field.node.groupe_de_travail.field_titre
     - field.field.node.groupe_de_travail.field_webform
@@ -93,13 +93,13 @@ content:
     third_party_settings: {  }
     weight: 111
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_theme_overview:
     type: text_default

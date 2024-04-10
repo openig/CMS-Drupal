@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.temoignage.field_image
     - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
-    - field.field.node.temoignage.field_tags
+    - field.field.node.temoignage.field_tag
     - image.style.wide
     - node.type.temoignage
   module:
@@ -62,13 +62,13 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   links:
     settings: {  }

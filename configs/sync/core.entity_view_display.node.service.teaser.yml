@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
     - field.field.node.service.field_requirement
-    - field.field.node.service.field_tags
+    - field.field.node.service.field_tag
     - field.field.node.service.field_titre
     - image.style.medium
     - node.type.service
@@ -31,14 +31,6 @@ content:
     third_party_settings: {  }
     weight: -1
     region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -48,6 +40,7 @@ hidden:
   field_body: true
   field_contact: true
   field_requirement: true
+  field_tag: true
   field_titre: true
   langcode: true
   search_api_excerpt: true

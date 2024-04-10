@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
     - field.field.node.service.field_requirement
-    - field.field.node.service.field_tags
+    - field.field.node.service.field_tag
     - field.field.node.service.field_titre
     - image.style.wide
     - node.type.service
@@ -56,13 +56,13 @@ content:
     third_party_settings: {  }
     weight: 115
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_titre:
     type: string

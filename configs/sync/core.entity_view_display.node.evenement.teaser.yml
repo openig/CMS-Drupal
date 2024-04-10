@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
-    - field.field.node.evenement.field_tags
+    - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_titre
     - field.field.node.evenement.field_webform
     - node.type.evenement
@@ -21,14 +21,6 @@ targetEntityType: node
 bundle: evenement
 mode: teaser
 content:
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -41,6 +33,7 @@ hidden:
   field_groupe_de_travail: true
   field_private_registration: true
   field_start_date: true
+  field_tag: true
   field_titre: true
   field_webform: true
   langcode: true

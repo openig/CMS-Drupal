@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.newsletter.field_actualites
     - field.field.node.newsletter.field_bloc
     - field.field.node.newsletter.field_events
-    - field.field.node.newsletter.field_tags
+    - field.field.node.newsletter.field_tag
     - field.field.node.newsletter.field_titre
     - node.type.newsletter
   module:
@@ -42,13 +42,13 @@ content:
     third_party_settings: {  }
     weight: 103
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_titre:
     type: string

@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.ressource.field_format
     - field.field.node.ressource.field_link
     - field.field.node.ressource.field_linked_content
-    - field.field.node.ressource.field_tags
+    - field.field.node.ressource.field_tag
     - field.field.node.ressource.field_titre
     - field.field.node.ressource.field_type
     - node.type.ressource
@@ -77,9 +77,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

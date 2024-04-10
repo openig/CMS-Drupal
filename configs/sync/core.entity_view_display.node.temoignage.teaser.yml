@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.temoignage.field_image
     - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
-    - field.field.node.temoignage.field_tags
+    - field.field.node.temoignage.field_tag
     - image.style.medium
     - node.type.temoignage
   module:
@@ -40,14 +40,6 @@ content:
     third_party_settings: {  }
     weight: -1
     region: content
-  field_tags:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 10
-    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -57,5 +49,6 @@ hidden:
   field_entreprise: true
   field_nom_prenom: true
   field_poste: true
+  field_tag: true
   langcode: true
   search_api_excerpt: true

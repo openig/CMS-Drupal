@@ -8,7 +8,7 @@ dependencies:
     - field.field.node.temoignage.field_image
     - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
-    - field.field.node.temoignage.field_tags
+    - field.field.node.temoignage.field_tag
     - image.style.thumbnail
     - node.type.temoignage
   module:
@@ -68,9 +68,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
-    - field.field.node.evenement.field_tags
+    - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_titre
     - field.field.node.evenement.field_webform
     - node.type.evenement
@@ -78,13 +78,13 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_titre:
     type: string

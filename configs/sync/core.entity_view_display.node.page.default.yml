@@ -5,7 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_access_restricted
     - field.field.node.page.field_body
-    - field.field.node.page.field_tags
+    - field.field.node.page.field_tag
     - field.field.node.page.field_titre
     - node.type.page
   module:
@@ -37,13 +37,13 @@ content:
     third_party_settings: {  }
     weight: 104
     region: content
-  field_tags:
+  field_tag:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 105
     region: content
   field_titre:
     type: string

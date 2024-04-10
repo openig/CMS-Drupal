@@ -10,7 +10,7 @@ dependencies:
     - field.field.node.groupe_de_travail.field_contact
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
-    - field.field.node.groupe_de_travail.field_tags
+    - field.field.node.groupe_de_travail.field_tag
     - field.field.node.groupe_de_travail.field_theme_overview
     - field.field.node.groupe_de_travail.field_titre
     - field.field.node.groupe_de_travail.field_webform
@@ -104,9 +104,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS

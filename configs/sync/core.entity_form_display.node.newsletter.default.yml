@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.newsletter.field_actualites
     - field.field.node.newsletter.field_bloc
     - field.field.node.newsletter.field_events
-    - field.field.node.newsletter.field_tags
+    - field.field.node.newsletter.field_tag
     - field.field.node.newsletter.field_titre
     - node.type.newsletter
   module:
@@ -61,9 +61,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete_tags
-    weight: 3
+  field_tag:
+    type: entity_reference_autocomplete
+    weight: 125
     region: content
     settings:
       match_operator: CONTAINS
