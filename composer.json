@@ -16,11 +16,11 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "drupal/admin_toolbar": "^3.4",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.2",
         "drupal/paragraphs": "^1.17",
         "drupal/search_api_solr": "^4.3",
-        "drupal/sync_uuids": "^1.1",
         "drush/drush": "^12.4"
     },
     "conflict": {
