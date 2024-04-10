@@ -1,0 +1,47 @@
+uuid: 6d857767-c4b1-4f60-ae8e-39004507e551
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.ressource.field_access_restricted
+    - field.field.node.ressource.field_description
+    - field.field.node.ressource.field_file
+    - field.field.node.ressource.field_format
+    - field.field.node.ressource.field_link
+    - field.field.node.ressource.field_linked_content
+    - field.field.node.ressource.field_tags
+    - field.field.node.ressource.field_titre
+    - field.field.node.ressource.field_type
+    - node.type.ressource
+  module:
+    - user
+id: node.ressource.teaser
+targetEntityType: node
+bundle: ressource
+mode: teaser
+content:
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 10
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_access_restricted: true
+  field_description: true
+  field_file: true
+  field_format: true
+  field_link: true
+  field_linked_content: true
+  field_titre: true
+  field_type: true
+  langcode: true
+  search_api_excerpt: true

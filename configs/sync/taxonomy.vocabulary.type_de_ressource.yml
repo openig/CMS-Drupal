@@ -1,0 +1,8 @@
+uuid: a57012de-37c2-4811-9175-e24c8b1396f5
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Type de ressource'
+vid: type_de_ressource
+description: ''
+weight: 0
