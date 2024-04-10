@@ -40,6 +40,7 @@ module:
   search_api: 0
   search_api_solr: 0
   shortcut: 0
+  sync_uuids: 0
   system: 0
   taxonomy: 0
   text: 0
