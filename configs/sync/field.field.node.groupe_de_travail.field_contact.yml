@@ -1,0 +1,19 @@
+uuid: 54f5b740-2eb8-4508-be3b-dc0ee4c89c10
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.groupe_de_travail
+id: node.groupe_de_travail.field_contact
+field_name: field_contact
+entity_type: node
+bundle: groupe_de_travail
+label: Contact
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

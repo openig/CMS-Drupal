@@ -1,0 +1,20 @@
+uuid: f9001421-ef36-4480-9393-0059c9c387be
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - user
+id: node.field_animators
+field_name: field_animators
+entity_type: node
+type: entity_reference
+settings:
+  target_type: user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
