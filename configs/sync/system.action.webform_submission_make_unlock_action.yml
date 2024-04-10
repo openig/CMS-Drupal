@@ -1,0 +1,13 @@
+uuid: 811453d6-9c1d-4ddf-9eb0-95120ea2f2c9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - webform
+_core:
+  default_config_hash: begZ0-RmTzO_zDAwEKA2lKvtGYw1vbFOzbQOJzUbZX0
+id: webform_submission_make_unlock_action
+label: 'Déverrouiller la soumission'
+type: webform_submission
+plugin: webform_submission_make_unlock_action
+configuration: {  }
