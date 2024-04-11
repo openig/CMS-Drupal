@@ -8,3 +8,4 @@ dependencies:
   - admin_toolbar
   - webform
   - weight
+  - sync_uuids
