@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
     - field.field.node.groupe_de_travail.field_contact
+    - field.field.node.groupe_de_travail.field_contenu_sidebar
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
     - field.field.node.groupe_de_travail.field_tag
@@ -73,6 +74,15 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 114
+    region: content
+  field_contenu_sidebar:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_image:
     type: image
