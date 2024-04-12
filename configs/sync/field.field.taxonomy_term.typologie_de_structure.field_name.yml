@@ -1,0 +1,19 @@
+uuid: 9113a29d-ff11-43e4-aa41-9b3fce1c6420
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_name
+    - taxonomy.vocabulary.typologie_de_structure
+id: taxonomy_term.typologie_de_structure.field_name
+field_name: field_name
+entity_type: taxonomy_term
+bundle: typologie_de_structure
+label: Nom
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
