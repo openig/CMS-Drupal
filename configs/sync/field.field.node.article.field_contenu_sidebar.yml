@@ -1,0 +1,25 @@
+uuid: d8ac9ede-518d-4664-ac97-ac1f17453fcf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contenu_sidebar
+    - node.type.article
+  module:
+    - entity_reference_revisions
+id: node.article.field_contenu_sidebar
+field_name: field_contenu_sidebar
+entity_type: node
+bundle: article
+label: 'Contenu sidebar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+field_type: entity_reference_revisions
