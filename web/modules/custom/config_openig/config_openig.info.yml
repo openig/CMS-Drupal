@@ -9,3 +9,4 @@ dependencies:
   - webform
   - weight
   - sync_uuids
+  - openig_adhesion
