@@ -1,0 +1,8 @@
+uuid: 2df1e1d6-1cba-4a33-a9ce-3ac054ad5811
+langcode: fr
+status: true
+dependencies: {  }
+name: Outil/compétence
+vid: outil_competence
+description: ''
+weight: 0
