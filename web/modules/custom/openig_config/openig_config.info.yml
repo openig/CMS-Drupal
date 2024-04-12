@@ -1,8 +1,8 @@
-name: Config OPenIG
+name: OPenIG Config
 type: module
-description: Configuration OPenIG
+description: OPenIG Configuration
 package: Custom
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10
 dependencies:
   - paragraphs
   - admin_toolbar
