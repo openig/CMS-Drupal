@@ -12,7 +12,6 @@ module:
   ckeditor5: 0
   comment: 0
   config: 0
-  config_openig: 0
   contact: 0
   contextual: 0
   datetime: 0
@@ -33,6 +32,7 @@ module:
   menu_link_content: 0
   menu_ui: 0
   node: 0
+  openig_config: 0
   options: 0
   page_cache: 0
   path: 0
