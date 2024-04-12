@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_access_restricted
     - field.field.node.page.field_body
+    - field.field.node.page.field_contenu_sidebar
     - field.field.node.page.field_tag
     - field.field.node.page.field_titre
     - node.type.page
@@ -36,6 +37,15 @@ content:
       link: ''
     third_party_settings: {  }
     weight: 104
+    region: content
+  field_contenu_sidebar:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 106
     region: content
   field_tag:
     type: entity_reference_label
