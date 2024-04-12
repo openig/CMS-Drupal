@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.service.field_body
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
+    - field.field.node.service.field_link
     - field.field.node.service.field_requirement
     - field.field.node.service.field_tag
     - field.field.node.service.field_titre
@@ -14,6 +15,7 @@ dependencies:
   module:
     - entity_reference_revisions
     - image
+    - link
     - text
     - user
 id: node.service.default
@@ -48,6 +50,18 @@ content:
         attribute: eager
     third_party_settings: {  }
     weight: -1
+    region: content
+  field_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 104
     region: content
   field_requirement:
     type: text_default
