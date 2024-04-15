@@ -1,0 +1,45 @@
+uuid: 41f00713-0e7a-4ad2-ba64-a4c0de64a189
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.picto_text.field_image
+    - field.field.paragraph.picto_text.field_text
+    - field.field.paragraph.picto_text.field_verbe_action
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.picto_text
+  module:
+    - image
+    - text
+id: paragraph.picto_text.default
+targetEntityType: paragraph
+bundle: picto_text
+mode: default
+content:
+  field_image:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_text:
+    type: text_textarea
+    weight: 0
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_verbe_action:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
