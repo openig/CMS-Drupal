@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.taxonomy_term.typologie_de_structure.field_acronyme
     - field.field.taxonomy_term.typologie_de_structure.field_name
     - taxonomy.vocabulary.typologie_de_structure
   module:
@@ -16,6 +17,14 @@ content:
   description:
     type: text_textfield
     weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_acronyme:
+    type: string_textfield
+    weight: 102
     region: content
     settings:
       size: 60
