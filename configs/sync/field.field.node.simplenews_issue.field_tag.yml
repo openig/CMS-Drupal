@@ -1,15 +1,15 @@
-uuid: 4059084f-511c-489e-82ee-6bae2011615f
+uuid: cbdfb7d3-5f7c-47c7-a75a-34d56eeece81
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_tag
-    - node.type.newsletter
+    - node.type.simplenews_issue
     - taxonomy.vocabulary.tags
-id: node.newsletter.field_tag
+id: node.simplenews_issue.field_tag
 field_name: field_tag
 entity_type: node
-bundle: newsletter
+bundle: simplenews_issue
 label: Tag
 description: ''
 required: false

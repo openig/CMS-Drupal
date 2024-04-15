@@ -1,15 +1,15 @@
-uuid: 0847e38a-ea40-43d7-a12f-9ff5e1940714
+uuid: 7c0a3155-c7d7-4e5a-ba85-3edf93ef368d
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_actualites
+    - field.storage.node.field_actualite
     - node.type.article
-    - node.type.newsletter
-id: node.newsletter.field_actualites
-field_name: field_actualites
+    - node.type.simplenews_issue
+id: node.simplenews_issue.field_actualite
+field_name: field_actualite
 entity_type: node
-bundle: newsletter
+bundle: simplenews_issue
 label: Actualités
 description: ''
 required: false
@@ -22,8 +22,8 @@ settings:
     target_bundles:
       article: article
     sort:
-      field: _none
+      field: title
       direction: ASC
     auto_create: false
-    auto_create_bundle: article
+    auto_create_bundle: ''
 field_type: entity_reference

@@ -3,11 +3,15 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.simplenews_issue.body
+    - field.field.node.simplenews_issue.field_actualite
+    - field.field.node.simplenews_issue.field_bloc
+    - field.field.node.simplenews_issue.field_evenement
+    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_titre
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
-    - text
+    - entity_reference_revisions
     - user
 _core:
   default_config_hash: 2uFXyR4335F9Qrls0Lx2QTobeBiF6FN1PeDjJEv47Yw
@@ -16,12 +20,46 @@ targetEntityType: node
 bundle: simplenews_issue
 mode: default
 content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
+  field_actualite:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
-    weight: 0
+    weight: 104
+    region: content
+  field_bloc:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_evenement:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_tag:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_titre:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
     region: content
   links:
     settings: {  }

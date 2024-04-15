@@ -4,11 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.email_html
-    - field.field.node.simplenews_issue.body
+    - field.field.node.simplenews_issue.field_actualite
+    - field.field.node.simplenews_issue.field_bloc
+    - field.field.node.simplenews_issue.field_evenement
+    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_titre
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
-    - text
     - user
 _core:
   default_config_hash: k7huXut68pdao0qGHWeETfwtQudI0SZ260TyVyGTOFg
@@ -16,15 +19,13 @@ id: node.simplenews_issue.email_html
 targetEntityType: node
 bundle: simplenews_issue
 mode: email_html
-content:
-  body:
-    type: text_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
+  field_actualite: true
+  field_bloc: true
+  field_evenement: true
+  field_tag: true
+  field_titre: true
   langcode: true
   links: true
   search_api_excerpt: true
