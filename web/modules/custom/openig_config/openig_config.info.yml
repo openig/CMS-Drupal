@@ -9,3 +9,6 @@ dependencies:
   - webform
   - weight
   - sync_uuids
+  - social_media_links
+  - social_media_links_field
+  - simplenews
