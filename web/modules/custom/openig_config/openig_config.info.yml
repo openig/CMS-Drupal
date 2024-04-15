@@ -6,6 +6,7 @@ core_version_requirement: ^10
 dependencies:
   - paragraphs
   - admin_toolbar
+  - admin_toolbar_tools
   - webform
   - weight
   - sync_uuids
