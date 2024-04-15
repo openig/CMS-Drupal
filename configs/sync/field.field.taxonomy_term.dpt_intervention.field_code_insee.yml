@@ -1,0 +1,19 @@
+uuid: 02d740df-a187-49c7-a38a-9bfe7cb0d96a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_code_insee
+    - taxonomy.vocabulary.dpt_intervention
+id: taxonomy_term.dpt_intervention.field_code_insee
+field_name: field_code_insee
+entity_type: taxonomy_term
+bundle: dpt_intervention
+label: 'Code INSEE'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
