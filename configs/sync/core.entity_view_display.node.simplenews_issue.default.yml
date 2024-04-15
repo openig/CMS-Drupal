@@ -1,23 +1,26 @@
-uuid: c238c7c0-123a-4c8c-8972-95472464e137
+uuid: 9daf8e10-f767-4ecc-8b03-482320545ce2
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.newsletter.field_actualites
-    - field.field.node.newsletter.field_bloc
-    - field.field.node.newsletter.field_events
-    - field.field.node.newsletter.field_tag
-    - field.field.node.newsletter.field_titre
-    - node.type.newsletter
+    - field.field.node.simplenews_issue.field_actualite
+    - field.field.node.simplenews_issue.field_bloc
+    - field.field.node.simplenews_issue.field_evenement
+    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_titre
+    - field.field.node.simplenews_issue.simplenews_issue
+    - node.type.simplenews_issue
   module:
     - entity_reference_revisions
     - user
-id: node.newsletter.default
+_core:
+  default_config_hash: 2uFXyR4335F9Qrls0Lx2QTobeBiF6FN1PeDjJEv47Yw
+id: node.simplenews_issue.default
 targetEntityType: node
-bundle: newsletter
+bundle: simplenews_issue
 mode: default
 content:
-  field_actualites:
+  field_actualite:
     type: entity_reference_label
     label: above
     settings:
@@ -34,7 +37,7 @@ content:
     third_party_settings: {  }
     weight: 102
     region: content
-  field_events:
+  field_evenement:
     type: entity_reference_label
     label: above
     settings:
@@ -61,8 +64,9 @@ content:
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
 hidden:
   langcode: true
   search_api_excerpt: true
+  simplenews_issue: true

@@ -4,10 +4,14 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
+    - field.field.user.user.field_groupe_de_travail
+    - field.field.user.user.field_membre_du_ca
+    - field.field.user.user.field_nom_prenom
+    - field.field.user.user.field_outil_competence
+    - field.field.user.user.field_referent
+    - field.field.user.user.field_social_network
+    - field.field.user.user.field_structure
   module:
-    - image
     - user
 _core:
   default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
@@ -15,18 +19,15 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content:
-  user_picture:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
+  field_groupe_de_travail: true
+  field_membre_du_ca: true
+  field_nom_prenom: true
+  field_outil_competence: true
+  field_referent: true
+  field_social_network: true
+  field_structure: true
   langcode: true
   member_for: true
+  search_api_excerpt: true

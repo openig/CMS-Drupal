@@ -1,20 +1,24 @@
-uuid: 7a6a220b-45f9-4763-83ea-dc76b82271d9
+uuid: f17bcc79-7e6d-4d53-aaad-c646df1973fc
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.newsletter.field_actualites
-    - field.field.node.newsletter.field_bloc
-    - field.field.node.newsletter.field_events
-    - field.field.node.newsletter.field_tag
-    - field.field.node.newsletter.field_titre
-    - node.type.newsletter
+    - field.field.node.simplenews_issue.field_actualite
+    - field.field.node.simplenews_issue.field_bloc
+    - field.field.node.simplenews_issue.field_evenement
+    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_titre
+    - field.field.node.simplenews_issue.simplenews_issue
+    - node.type.simplenews_issue
   module:
     - paragraphs
     - path
-id: node.newsletter.default
+    - simplenews
+_core:
+  default_config_hash: 95gz1Cn7UjP1ED-lgXnR9ucmWPz9TOn1YEuKUllmELo
+id: node.simplenews_issue.default
 targetEntityType: node
-bundle: newsletter
+bundle: simplenews_issue
 mode: default
 content:
   created:
@@ -23,7 +27,7 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_actualites:
+  field_actualite:
     type: entity_reference_autocomplete
     weight: 124
     region: content
@@ -51,7 +55,7 @@ content:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
     third_party_settings: {  }
-  field_events:
+  field_evenement:
     type: entity_reference_autocomplete
     weight: 123
     region: content
@@ -99,6 +103,12 @@ content:
     settings:
       display_label: true
     third_party_settings: {  }
+  simplenews_issue:
+    type: simplenews_issue
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     weight: 120
@@ -115,7 +125,7 @@ content:
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60

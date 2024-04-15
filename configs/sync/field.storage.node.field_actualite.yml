@@ -1,11 +1,11 @@
-uuid: 1e784fe7-12d6-4cf4-8ce2-4e5472500304
+uuid: 4c2e9e74-1f09-4437-bd4c-c552e71be53f
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_events
-field_name: field_events
+id: node.field_actualite
+field_name: field_actualite
 entity_type: node
 type: entity_reference
 settings:

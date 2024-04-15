@@ -1,16 +1,17 @@
-uuid: 4059084f-511c-489e-82ee-6bae2011615f
+uuid: 539d5745-29f7-4f1d-8583-fe4d64523799
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tag
-    - node.type.newsletter
-    - taxonomy.vocabulary.tags
-id: node.newsletter.field_tag
-field_name: field_tag
-entity_type: node
-bundle: newsletter
-label: Tag
+    - field.storage.user.field_outil_competence
+    - taxonomy.vocabulary.outil_competence
+  module:
+    - user
+id: user.user.field_outil_competence
+field_name: field_outil_competence
+entity_type: user
+bundle: user
+label: 'Outils / compétences'
 description: ''
 required: false
 translatable: false
@@ -20,7 +21,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      tags: tags
+      outil_competence: outil_competence
     sort:
       field: name
       direction: asc

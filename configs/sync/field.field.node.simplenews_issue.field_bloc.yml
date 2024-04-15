@@ -1,16 +1,16 @@
-uuid: 6f6d6f65-b6e4-4d99-bcc6-9a70d5db74c2
+uuid: 7418fcc1-402e-4c0e-90c9-ebf49b2c3804
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_bloc
-    - node.type.newsletter
+    - node.type.simplenews_issue
   module:
     - entity_reference_revisions
-id: node.newsletter.field_bloc
+id: node.simplenews_issue.field_bloc
 field_name: field_bloc
 entity_type: node
-bundle: newsletter
+bundle: simplenews_issue
 label: Bloc
 description: ''
 required: false
