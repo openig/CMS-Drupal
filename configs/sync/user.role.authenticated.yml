@@ -12,6 +12,7 @@ dependencies:
     - filter
     - search
     - shortcut
+    - simplenews
     - system
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
@@ -28,5 +29,6 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'use text format webform_default'
