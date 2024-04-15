@@ -16,3 +16,7 @@ dependencies:
   - openig_adhesion
   - media
   - media_library
+  - metatag
+  - token
+  - pathauto
+  - simple_sitemap

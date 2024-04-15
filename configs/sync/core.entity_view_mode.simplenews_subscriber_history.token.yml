@@ -1,0 +1,11 @@
+uuid: 34255959-a5e5-4179-8df7-a4bbe6b8f1a4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - simplenews
+id: simplenews_subscriber_history.token
+label: 'Jeton (token)'
+description: ''
+targetEntityType: simplenews_subscriber_history
+cache: true

@@ -1,0 +1,30 @@
+uuid: 44304266-a494-4726-b314-f493b2249bdc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: alias_contenu
+label: 'Alias contenu'
+type: 'canonical_entities:node'
+pattern: '[node:content-type]/[node:title]'
+selection_criteria:
+  86077d46-4cc9-41f7-836e-b367eaf54987:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 86077d46-4cc9-41f7-836e-b367eaf54987
+    context_mapping:
+      node: node
+    bundles:
+      article: article
+      evenement: evenement
+      groupe_de_travail: groupe_de_travail
+      page: page
+      ressource: ressource
+      service: service
+      simplenews_issue: simplenews_issue
+      structure: structure
+      temoignage: temoignage
+selection_logic: and
+weight: -5
+relationships: {  }
