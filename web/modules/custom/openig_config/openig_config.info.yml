@@ -14,3 +14,5 @@ dependencies:
   - social_media_links_field
   - simplenews
   - openig_adhesion
+  - media
+  - media_library
