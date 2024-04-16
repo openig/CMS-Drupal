@@ -20,3 +20,6 @@ dependencies:
   - token
   - pathauto
   - simple_sitemap
+  - migrate
+  - migrate_plus
+  - migrate_tools
