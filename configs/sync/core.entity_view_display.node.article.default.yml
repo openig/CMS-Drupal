@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_news_overview
     - field.field.node.article.field_tag
-    - field.field.node.article.field_titre
     - image.style.wide
     - node.type.article
   module:
@@ -77,14 +76,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     settings: {  }

@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.ressource.field_link
     - field.field.node.ressource.field_linked_content
     - field.field.node.ressource.field_tag
-    - field.field.node.ressource.field_titre
     - field.field.node.ressource.field_type
     - node.type.ressource
   module:
@@ -34,7 +33,6 @@ hidden:
   field_link: true
   field_linked_content: true
   field_tag: true
-  field_titre: true
   field_type: true
   langcode: true
   search_api_excerpt: true

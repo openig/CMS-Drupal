@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_body
     - field.field.node.page.field_contenu_sidebar
     - field.field.node.page.field_tag
-    - field.field.node.page.field_titre
     - node.type.page
   module:
     - paragraphs
@@ -78,14 +77,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -105,6 +96,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

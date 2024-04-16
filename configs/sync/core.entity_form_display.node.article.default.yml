@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_news_overview
     - field.field.node.article.field_tag
-    - field.field.node.article.field_titre
     - image.style.thumbnail
     - node.type.article
   module:
@@ -101,14 +100,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -128,6 +119,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
