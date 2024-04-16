@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.simplenews_issue.field_bloc
     - field.field.node.simplenews_issue.field_evenement
     - field.field.node.simplenews_issue.field_tag
-    - field.field.node.simplenews_issue.field_titre
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
@@ -75,14 +74,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 2
@@ -102,6 +93,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   simplenews_issue:
     type: simplenews_issue

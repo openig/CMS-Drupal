@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.ressource.field_link
     - field.field.node.ressource.field_linked_content
     - field.field.node.ressource.field_tag
-    - field.field.node.ressource.field_titre
     - field.field.node.ressource.field_type
     - node.type.ressource
   module:
@@ -87,14 +86,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_type:
     type: entity_reference_autocomplete
     weight: 123
@@ -124,6 +115,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

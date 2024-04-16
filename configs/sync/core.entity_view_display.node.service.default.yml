@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.service.field_link
     - field.field.node.service.field_requirement
     - field.field.node.service.field_tag
-    - field.field.node.service.field_titre
     - image.style.wide
     - node.type.service
   module:
@@ -77,14 +76,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     settings: {  }

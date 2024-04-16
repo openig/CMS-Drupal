@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.simplenews_issue.field_bloc
     - field.field.node.simplenews_issue.field_evenement
     - field.field.node.simplenews_issue.field_tag
-    - field.field.node.simplenews_issue.field_titre
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
@@ -52,14 +51,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     settings: {  }

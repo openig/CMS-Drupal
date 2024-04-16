@@ -11,7 +11,6 @@ dependencies:
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tag
-    - field.field.node.evenement.field_titre
     - field.field.node.evenement.field_webform
     - node.type.evenement
   module:
@@ -34,7 +33,6 @@ hidden:
   field_private_registration: true
   field_start_date: true
   field_tag: true
-  field_titre: true
   field_webform: true
   langcode: true
   search_api_excerpt: true

@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tag
-    - field.field.node.evenement.field_titre
     - field.field.node.evenement.field_webform
     - node.type.evenement
   module:
@@ -93,14 +92,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_webform:
     type: webform_entity_reference_select
     weight: 128
@@ -128,6 +119,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

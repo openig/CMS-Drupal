@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_members
     - field.field.node.groupe_de_travail.field_tag
     - field.field.node.groupe_de_travail.field_theme_overview
-    - field.field.node.groupe_de_travail.field_titre
     - field.field.node.groupe_de_travail.field_webform
     - field.field.node.groupe_de_travail.field_weight
     - field.field.node.groupe_de_travail.field_working_group_objective
@@ -143,14 +142,6 @@ content:
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-  field_titre:
-    type: string_textfield
-    weight: 121
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_webform:
     type: webform_entity_reference_select
     weight: 128
@@ -192,6 +183,11 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox

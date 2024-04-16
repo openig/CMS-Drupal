@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_body
     - field.field.node.page.field_contenu_sidebar
     - field.field.node.page.field_tag
-    - field.field.node.page.field_titre
     - node.type.page
   module:
     - entity_reference_revisions
@@ -54,14 +53,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
     region: content
   links:
     weight: 101
