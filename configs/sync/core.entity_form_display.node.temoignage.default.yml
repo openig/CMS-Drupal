@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.temoignage.body
     - field.field.node.temoignage.field_entreprise
     - field.field.node.temoignage.field_image
-    - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
     - field.field.node.temoignage.field_tag
     - image.style.thumbnail
@@ -51,14 +50,6 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_nom_prenom:
-    type: string_textfield
-    weight: 3
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_poste:
     type: string_textfield

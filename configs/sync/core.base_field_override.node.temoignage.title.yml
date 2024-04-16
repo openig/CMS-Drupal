@@ -1,18 +1,17 @@
-uuid: e2d45cc9-cbdc-469c-97d3-382317e6fa74
+uuid: 15d5f5f8-1517-420a-a3e2-2aace888807e
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_nom_prenom
     - node.type.temoignage
-id: node.temoignage.field_nom_prenom
-field_name: field_nom_prenom
+id: node.temoignage.title
+field_name: title
 entity_type: node
 bundle: temoignage
-label: 'Nom prénom'
+label: 'Nom / Prénom'
 description: ''
-required: false
-translatable: false
+required: true
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings: {  }
