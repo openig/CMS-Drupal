@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.temoignage.body
     - field.field.node.temoignage.field_entreprise
     - field.field.node.temoignage.field_image
-    - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
     - field.field.node.temoignage.field_tag
     - image.style.medium
@@ -47,7 +46,6 @@ content:
     region: content
 hidden:
   field_entreprise: true
-  field_nom_prenom: true
   field_poste: true
   field_tag: true
   langcode: true
