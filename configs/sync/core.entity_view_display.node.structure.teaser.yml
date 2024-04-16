@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_image
     - field.field.node.structure.field_link
-    - field.field.node.structure.field_name
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
     - image.style.medium
@@ -43,7 +42,6 @@ hidden:
   field_contact: true
   field_dpt_intervention: true
   field_link: true
-  field_name: true
   field_siret: true
   field_typologie_structure: true
   langcode: true
