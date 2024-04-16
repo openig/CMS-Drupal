@@ -1,0 +1,11 @@
+uuid: 94bb12dc-b365-421a-a204-12b892041929
+langcode: fr
+status: true
+dependencies:
+  module:
+    - simplenews
+id: simplenews_subscriber.token
+label: 'Jeton (token)'
+description: ''
+targetEntityType: simplenews_subscriber
+cache: true
