@@ -1,0 +1,10 @@
+uuid: 11082d04-5cee-44e6-8654-0f7de98a23a5
+langcode: fr
+status: true
+dependencies: {  }
+id: membre
+label: Membres
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
