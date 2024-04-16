@@ -14,3 +14,12 @@ dependencies:
   - social_media_links_field
   - simplenews
   - openig_adhesion
+  - media
+  - media_library
+  - metatag
+  - token
+  - pathauto
+  - simple_sitemap
+  - migrate
+  - migrate_plus
+  - migrate_tools
