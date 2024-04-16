@@ -12,3 +12,6 @@ dependencies:
   - social_media_links
   - social_media_links_field
   - simplenews
+  - migrate
+  - migrate_plus
+  - migrate_tools

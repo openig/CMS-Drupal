@@ -1,0 +1,45 @@
+uuid: b289e517-c753-43a0-a380-1cd4cf19d0a7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.picto_text.field_image
+    - field.field.paragraph.picto_text.field_text
+    - field.field.paragraph.picto_text.field_verbe_action
+    - paragraphs.paragraphs_type.picto_text
+  module:
+    - image
+    - text
+id: paragraph.picto_text.default
+targetEntityType: paragraph
+bundle: picto_text
+mode: default
+content:
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_text:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_verbe_action:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  search_api_excerpt: true

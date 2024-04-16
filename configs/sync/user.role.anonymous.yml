@@ -8,6 +8,7 @@ dependencies:
     - comment
     - contact
     - filter
+    - media
     - search
     - simplenews
     - system
@@ -24,3 +25,4 @@ permissions:
   - 'search content'
   - 'subscribe to newsletters'
   - 'use text format restricted_html'
+  - 'view media'
