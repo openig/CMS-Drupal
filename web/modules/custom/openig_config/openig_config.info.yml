@@ -6,12 +6,20 @@ core_version_requirement: ^10
 dependencies:
   - paragraphs
   - admin_toolbar
+  - admin_toolbar_tools
   - webform
   - weight
   - sync_uuids
   - social_media_links
   - social_media_links_field
   - simplenews
+  - openig_adhesion
+  - media
+  - media_library
+  - metatag
+  - token
+  - pathauto
+  - simple_sitemap
   - migrate
   - migrate_plus
   - migrate_tools

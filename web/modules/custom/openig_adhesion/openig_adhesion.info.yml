@@ -1,0 +1,4 @@
+name: OPenIG Adhésion
+type: module
+description: 'Simulator block'
+core_version_requirement: ^10

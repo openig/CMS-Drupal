@@ -1,0 +1,3 @@
+services:
+  openig_adhesion.adhesion_service:
+    class: Drupal\openig_adhesion\AdhesionService
