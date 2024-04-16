@@ -25,6 +25,29 @@ dependencies:
     - text
     - webform
     - weight
+    - field_group
+third_party_settings:
+  field_group:
+    group_options_de_publication:
+      children:
+        - promote
+        - sticky
+        - field_access_restricted
+        - field_weight
+        - field_archive
+      label: 'Options de publication'
+      region: content
+      parent_name: ''
+      weight: 100
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.groupe_de_travail.default
 targetEntityType: node
 bundle: groupe_de_travail

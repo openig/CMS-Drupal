@@ -16,6 +16,27 @@ dependencies:
     - paragraphs
     - path
     - text
+    - field_group
+third_party_settings:
+  field_group:
+    group_options_de_publication:
+      children:
+        - promote
+        - sticky
+        - field_access_restricted
+      label: 'Options de publication'
+      region: content
+      parent_name: ''
+      weight: 100
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 _core:
   default_config_hash: ewbd6G2uX456-bgwseM2Q-KQG3RkASoyHmTh-XR3oLU
 id: node.article.default
@@ -31,7 +52,7 @@ content:
     third_party_settings: {  }
   field_access_restricted:
     type: boolean_checkbox
-    weight: 122
+    weight: 17
     region: content
     settings:
       display_label: true
