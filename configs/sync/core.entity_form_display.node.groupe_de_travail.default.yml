@@ -78,7 +78,7 @@ content:
     third_party_settings: {  }
   field_archive:
     type: boolean_checkbox
-    weight: 19
+    weight: 26
     region: content
     settings:
       display_label: true
