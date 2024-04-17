@@ -27,7 +27,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 116
+    weight: 1
     region: content
   field_contact:
     type: string
@@ -35,7 +35,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 6
     region: content
   field_dpt_intervention:
     type: entity_reference_label
@@ -43,7 +43,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 119
+    weight: 5
     region: content
   field_image:
     type: image
@@ -54,7 +54,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: -1
+    weight: 0
     region: content
   field_link:
     type: link
@@ -66,7 +66,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_siret:
     type: string
@@ -74,7 +74,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 117
+    weight: 2
     region: content
   field_typologie_structure:
     type: entity_reference_label
@@ -82,13 +82,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 118
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

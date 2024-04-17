@@ -68,7 +68,7 @@ content:
     third_party_settings: {  }
   field_animators:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS
@@ -85,7 +85,7 @@ content:
     third_party_settings: {  }
   field_body:
     type: paragraphs
-    weight: 3
+    weight: 5
     region: content
     settings:
       title: Paragraphe
@@ -129,7 +129,7 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 7
+    weight: 2
     region: content
     settings:
       progress_indicator: throbber
@@ -137,7 +137,7 @@ content:
     third_party_settings: {  }
   field_members:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -147,7 +147,7 @@ content:
     third_party_settings: {  }
   field_tag:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
@@ -157,7 +157,7 @@ content:
     third_party_settings: {  }
   field_theme_overview:
     type: text_textarea_with_summary
-    weight: 1
+    weight: 3
     region: content
     settings:
       rows: 9
@@ -181,7 +181,7 @@ content:
     third_party_settings: {  }
   field_working_group_objective:
     type: text_textarea
-    weight: 2
+    weight: 4
     region: content
     settings:
       rows: 5
