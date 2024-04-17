@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.dpt_intervention.field_code_insee
-    - field.field.taxonomy_term.dpt_intervention.field_name
     - taxonomy.vocabulary.dpt_intervention
   module:
     - text
@@ -27,14 +26,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 2
-    region: content
-  field_name:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
     region: content
 hidden:
   langcode: true
