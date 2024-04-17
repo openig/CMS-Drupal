@@ -7,14 +7,17 @@ dependencies:
     - field.field.node.ressource.field_description
     - field.field.node.ressource.field_file
     - field.field.node.ressource.field_format
+    - field.field.node.ressource.field_image
     - field.field.node.ressource.field_link
     - field.field.node.ressource.field_linked_content
     - field.field.node.ressource.field_tag
     - field.field.node.ressource.field_type
+    - image.style.thumbnail
     - node.type.ressource
   module:
     - field_group
     - file
+    - image
     - link
     - path
     - text
@@ -78,6 +81,14 @@ content:
     weight: 5
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_link:
     type: link_default
