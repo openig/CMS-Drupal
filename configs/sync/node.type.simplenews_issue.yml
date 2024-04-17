@@ -13,7 +13,7 @@ _core:
   default_config_hash: T0xVUPLXklJ1liu4ukvaguMb-aMY1oMxO2PsCRB8-qg
 name: Newsletter
 type: simplenews_issue
-description: 'Use <em>Newsletter Issue</em> for newsletters.'
+description: 'Contenu qui sera envoyé dans la newsletter'
 help: ''
 new_revision: false
 preview_mode: 1

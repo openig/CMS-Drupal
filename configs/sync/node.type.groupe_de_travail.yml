@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: 'Groupe de travail'
 type: groupe_de_travail
-description: ''
+description: "Contenu présentant les groupes de travail, permettant d'accéder à des ressources, visualiser les membres, demander à rejoindre le groupe de travail , ..."
 help: ''
 new_revision: true
 preview_mode: 1

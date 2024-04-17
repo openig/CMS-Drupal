@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Service
 type: service
-description: ''
+description: "Contenu présentant les services qu'OPenIG met à disposition de ses adhérents"
 help: ''
 new_revision: true
 preview_mode: 1

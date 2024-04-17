@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Evènement
 type: evenement
-description: ''
+description: 'Contenu daté pouvant être des réunions des GT, les AG, des ateliers, séminaires, colloques, webinaires, ...'
 help: ''
 new_revision: true
 preview_mode: 1

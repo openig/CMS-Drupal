@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Ressource
 type: ressource
-description: ''
+description: 'Contenu de type fichier ou lien qui est appelé dans différents types de contenu'
 help: ''
 new_revision: true
 preview_mode: 1
