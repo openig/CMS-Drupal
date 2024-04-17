@@ -24,3 +24,4 @@ dependencies:
   - migrate_plus
   - migrate_tools
   - hcaptcha
+  - field_group
