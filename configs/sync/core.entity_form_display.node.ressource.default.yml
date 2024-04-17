@@ -31,7 +31,7 @@ third_party_settings:
       label: 'Options de publication'
       region: content
       parent_name: ''
-      weight: 14
+      weight: 100
       format_type: details_sidebar
       format_settings:
         classes: ''

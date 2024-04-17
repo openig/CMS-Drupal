@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.service.field_access_restricted
     - field.field.node.service.field_body
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
@@ -12,11 +13,32 @@ dependencies:
     - image.style.thumbnail
     - node.type.service
   module:
+    - field_group
     - image
     - link
     - paragraphs
     - path
     - text
+third_party_settings:
+  field_group:
+    group_options_de_publication:
+      children:
+        - promote
+        - sticky
+        - field_access_restricted
+      label: 'Options de publication'
+      region: content
+      parent_name: ''
+      weight: 100
+      format_type: details_sidebar
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        open: false
+        description: ''
+        required_fields: true
+        weight: 0
 id: node.service.default
 targetEntityType: node
 bundle: service
@@ -27,6 +49,13 @@ content:
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_access_restricted:
+    type: boolean_checkbox
+    weight: 9
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_body:
     type: paragraphs

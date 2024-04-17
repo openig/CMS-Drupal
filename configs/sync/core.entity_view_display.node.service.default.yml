@@ -3,6 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.service.field_access_restricted
     - field.field.node.service.field_body
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
@@ -22,6 +23,16 @@ targetEntityType: node
 bundle: service
 mode: default
 content:
+  field_access_restricted:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_body:
     type: entity_reference_revisions_entity_view
     label: above
