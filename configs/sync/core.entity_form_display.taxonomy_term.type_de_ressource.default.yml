@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.taxonomy_term.type_de_ressource.field_name
     - taxonomy.vocabulary.type_de_ressource
   module:
     - path
@@ -16,14 +15,6 @@ content:
   description:
     type: text_textfield
     weight: 0
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_name:
-    type: string_textfield
-    weight: 101
     region: content
     settings:
       size: 60
@@ -47,6 +38,11 @@ content:
   path:
     type: path
     weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
