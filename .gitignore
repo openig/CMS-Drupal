@@ -41,3 +41,4 @@ auth.json
 /files/*
 /private/*
 salt.txt
+/web/themes/contrib

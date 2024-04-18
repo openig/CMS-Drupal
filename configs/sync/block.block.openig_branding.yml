@@ -1,0 +1,25 @@
+uuid: 40796048-7a82-4cbb-83a1-0bb79309b8e9
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: C8Ir9dZcJ8l29ZWF1sSscCK8P5PvbW5ocg6vbBI4GVA
+id: openig_branding
+theme: openig
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

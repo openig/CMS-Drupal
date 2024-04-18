@@ -1,0 +1,20 @@
+uuid: 1b88dbbc-1374-4c3d-88e0-0a5f5b2b84f4
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openig
+_core:
+  default_config_hash: CNXmF4c1pAkCXsyEDTmZk-LJGW-0d5yB_YeYN_yDI9g
+id: openig_local_actions
+theme: openig
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

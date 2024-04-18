@@ -1,0 +1,22 @@
+uuid: 5ab70f9c-6014-46c5-89af-c6e5dd56d478
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openig
+_core:
+  default_config_hash: 1o-hNeCGvzIRAPUNlbbh7fJYZI_km0QBr33boEyS_Og
+id: openig_local_tasks
+theme: openig
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

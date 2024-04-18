@@ -1,0 +1,27 @@
+uuid: 3d1b6c34-d292-47d7-93f1-a2ac835916e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: 9KHlg8Ft-zeyspeDwG6kc_gVoj5oQRx62SkFEssY3VQ
+id: openig_footer
+theme: openig
+region: footer
+weight: -6
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
