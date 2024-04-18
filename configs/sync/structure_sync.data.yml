@@ -65,6 +65,19 @@ menus:
     uuid: cc1f90e4-b5ef-4cd0-9482-4e876ccbb523
     options: {  }
   -
+    menu_name: faq
+    title: FAQ
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: fr
+    uuid: 676720fd-9c04-441d-9ab1-f4efdf169952
+    options: {  }
+  -
     menu_name: main
     title: OPenIG
     parent: null
