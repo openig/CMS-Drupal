@@ -5,15 +5,14 @@ dependencies:
   config:
     - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
-    - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
-    - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
     - node.type.evenement
   module:
-    - datetime
+    - datetime_range
     - field_group
     - paragraphs
     - path
@@ -28,7 +27,7 @@ third_party_settings:
       label: 'Options de publication'
       region: content
       parent_name: ''
-      weight: 100
+      weight: 13
       format_type: details_sidebar
       format_settings:
         classes: ''
@@ -45,7 +44,7 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -58,7 +57,7 @@ content:
     third_party_settings: {  }
   field_body:
     type: paragraphs
-    weight: 5
+    weight: 3
     region: content
     settings:
       title: Paragraphe
@@ -76,9 +75,9 @@ content:
         convert: '0'
         duplicate: duplicate
     third_party_settings: {  }
-  field_end_date:
-    type: datetime_default
-    weight: 3
+  field_dates:
+    type: daterange_default
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -94,16 +93,10 @@ content:
     third_party_settings: {  }
   field_private_registration:
     type: boolean_checkbox
-    weight: 6
+    weight: 5
     region: content
     settings:
       display_label: true
-    third_party_settings: {  }
-  field_start_date:
-    type: datetime_default
-    weight: 2
-    region: content
-    settings: {  }
     third_party_settings: {  }
   field_tag:
     type: entity_reference_autocomplete
@@ -117,7 +110,7 @@ content:
     third_party_settings: {  }
   field_webform:
     type: webform_entity_reference_select
-    weight: 7
+    weight: 6
     region: content
     settings:
       default_data: true
@@ -125,14 +118,14 @@ content:
     third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 9
+    weight: 8
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -144,13 +137,13 @@ content:
       display_label: true
     third_party_settings: {  }
   simple_sitemap:
-    weight: 13
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 8
+    weight: 7
     region: content
     settings:
       display_label: true
@@ -172,7 +165,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS

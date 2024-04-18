@@ -5,15 +5,14 @@ dependencies:
   config:
     - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
-    - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
-    - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
     - node.type.evenement
   module:
-    - datetime
+    - datetime_range
     - entity_reference_revisions
     - user
     - webform
@@ -41,14 +40,15 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_end_date:
-    type: datetime_default
+  field_dates:
+    type: daterange_default
     label: above
     settings:
       timezone_override: ''
       format_type: medium
+      separator: '-'
     third_party_settings: {  }
-    weight: 2
+    weight: 9
     region: content
   field_groupe_de_travail:
     type: entity_reference_label
@@ -67,15 +67,6 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 7
-    region: content
-  field_start_date:
-    type: datetime_default
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
-    third_party_settings: {  }
-    weight: 1
     region: content
   field_tag:
     type: entity_reference_label

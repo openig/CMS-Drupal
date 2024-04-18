@@ -6,10 +6,9 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
-    - field.field.node.evenement.field_end_date
+    - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_private_registration
-    - field.field.node.evenement.field_start_date
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
     - node.type.evenement
@@ -28,10 +27,9 @@ content:
 hidden:
   field_access_restricted: true
   field_body: true
-  field_end_date: true
+  field_dates: true
   field_groupe_de_travail: true
   field_private_registration: true
-  field_start_date: true
   field_tag: true
   field_webform: true
   langcode: true

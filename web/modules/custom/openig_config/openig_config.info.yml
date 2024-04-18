@@ -25,3 +25,4 @@ dependencies:
   - migrate_tools
   - hcaptcha
   - field_group
+  - datetime_range
