@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.title_text.field_text
+    - field.field.paragraph.title_text.field_texte
     - field.field.paragraph.title_text.field_title
     - paragraphs.paragraphs_type.title_text
   module:
@@ -13,7 +13,7 @@ targetEntityType: paragraph
 bundle: title_text
 mode: default
 content:
-  field_text:
+  field_texte:
     type: text_default
     label: above
     settings: {  }

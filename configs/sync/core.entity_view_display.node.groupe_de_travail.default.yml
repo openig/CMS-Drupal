@@ -139,7 +139,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 15
     region: content
   links:
     settings: {  }

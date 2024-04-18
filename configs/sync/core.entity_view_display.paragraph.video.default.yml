@@ -3,29 +3,16 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.video.field_image
     - field.field.paragraph.video.field_title
     - field.field.paragraph.video.field_video
     - paragraphs.paragraphs_type.video
   module:
-    - image
     - video_embed_field
 id: paragraph.video.default
 targetEntityType: paragraph
 bundle: video
 mode: default
 content:
-  field_image:
-    type: image
-    label: above
-    settings:
-      image_link: ''
-      image_style: ''
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 3
-    region: content
   field_title:
     type: string
     label: above

@@ -1,13 +1,13 @@
-uuid: ced7f742-b70e-48fa-83e7-2d5841d53e9e
+uuid: 77a791fb-6921-4c53-8e0a-97491cd24acb
 langcode: fr
 status: true
 dependencies:
   module:
-    - node
+    - paragraphs
     - text
-id: node.field_working_group_objective
-field_name: field_working_group_objective
-entity_type: node
+id: paragraph.field_texte
+field_name: field_texte
+entity_type: paragraph
 type: text_with_summary
 settings: {  }
 module: text

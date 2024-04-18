@@ -1,14 +1,14 @@
-uuid: c775f2dc-177d-4976-bd67-befab5664ad4
+uuid: ad3f1a01-f9b4-4df7-8eb4-6ad2b688ec8d
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_text
+    - field.storage.paragraph.field_texte
     - paragraphs.paragraphs_type.text
   module:
     - text
-id: paragraph.text.field_text
-field_name: field_text
+id: paragraph.text.field_texte
+field_name: field_texte
 entity_type: paragraph
 bundle: text
 label: Texte
@@ -18,5 +18,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
+  display_summary: false
+  required_summary: false
   allowed_formats: {  }
-field_type: text_long
+field_type: text_with_summary
