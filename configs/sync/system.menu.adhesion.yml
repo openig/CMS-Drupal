@@ -1,0 +1,8 @@
+uuid: c5e8940c-bca3-45de-9626-f459d658be6a
+langcode: fr
+status: true
+dependencies: {  }
+id: adhesion
+label: Adhésion
+description: ''
+locked: false

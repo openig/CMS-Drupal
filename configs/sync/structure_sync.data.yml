@@ -78,6 +78,51 @@ menus:
     uuid: 676720fd-9c04-441d-9ab1-f4efdf169952
     options: {  }
   -
+    menu_name: adhesion
+    title: 'Pourquoi adhérer'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: fr
+    uuid: b20fa811-542b-4567-8296-e0cc9ffc0874
+    options: {  }
+  -
+    menu_name: adhesion
+    title: 'Mon compte'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: fr
+    uuid: db9dd5ac-fdad-4d99-9771-f62f88e71967
+    options:
+      attributes:
+        class:
+          - connexion
+  -
+    menu_name: adhesion
+    title: 'Nom utilisateur'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: fr
+    uuid: 1d617429-90b2-45d9-ad43-8e2ab04b0d94
+    options:
+      attributes:
+        class:
+          - compte
+  -
     menu_name: main
     title: OPenIG
     parent: null
