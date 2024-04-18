@@ -1,0 +1,20 @@
+uuid: 788cc0fe-5e72-465c-b407-dd7ded046c0a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - openig
+_core:
+  default_config_hash: yhuo64VyzJPYn4S0PgEYnetWZ7J8vZA5f3j39Ja4PJU
+id: openig_page_title
+theme: openig
+region: content
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

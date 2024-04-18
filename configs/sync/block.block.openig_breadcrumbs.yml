@@ -1,0 +1,22 @@
+uuid: 111e04db-168f-4c3f-8d62-0a8ebf11c095
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: 1q283lwlfxUJKRi4GiF9inX8QtAOz2ZIeOHZhwUw2Bg
+id: openig_breadcrumbs
+theme: openig
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
