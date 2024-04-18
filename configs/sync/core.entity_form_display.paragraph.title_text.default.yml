@@ -1,0 +1,36 @@
+uuid: 76ed79c1-3738-42d2-b66c-e955879dba6b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.title_text.field_texte
+    - field.field.paragraph.title_text.field_title
+    - paragraphs.paragraphs_type.title_text
+  module:
+    - text
+id: paragraph.title_text.default
+targetEntityType: paragraph
+bundle: title_text
+mode: default
+content:
+  field_texte:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

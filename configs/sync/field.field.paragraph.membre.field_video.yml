@@ -1,0 +1,26 @@
+uuid: 9fec586a-0759-4b70-a2a9-75fa56fd2db5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_video
+    - paragraphs.paragraphs_type.membre
+  module:
+    - video_embed_field
+id: paragraph.membre.field_video
+field_name: field_video
+entity_type: paragraph
+bundle: membre
+label: Vidéo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_providers:
+    peertube: peertube
+    youtube: '0'
+    youtube_playlist: '0'
+    vimeo: '0'
+field_type: video_embed_field

@@ -1,0 +1,65 @@
+uuid: 4b4e233d-7c35-4f5a-80a3-7676036451f6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.dpt_intervention.field_code_insee
+    - taxonomy.vocabulary.dpt_intervention
+  module:
+    - path
+    - text
+id: taxonomy_term.dpt_intervention.default
+targetEntityType: taxonomy_term
+bundle: dpt_intervention
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 2
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_code_insee:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden: {  }

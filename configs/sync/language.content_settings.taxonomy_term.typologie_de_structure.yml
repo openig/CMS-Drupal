@@ -1,0 +1,11 @@
+uuid: c52b37bf-f327-42b4-a07c-95f66e1cad9e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.typologie_de_structure
+id: taxonomy_term.typologie_de_structure
+target_entity_type_id: taxonomy_term
+target_bundle: typologie_de_structure
+default_langcode: site_default
+language_alterable: false

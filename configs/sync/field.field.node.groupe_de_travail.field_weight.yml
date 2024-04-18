@@ -1,0 +1,22 @@
+uuid: b4adff4c-a611-4f19-95a1-19db09b54195
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.groupe_de_travail
+  module:
+    - weight
+id: node.groupe_de_travail.field_weight
+field_name: field_weight
+entity_type: node
+bundle: groupe_de_travail
+label: Poids
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight

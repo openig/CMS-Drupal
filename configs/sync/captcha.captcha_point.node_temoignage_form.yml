@@ -1,0 +1,7 @@
+uuid: ce3e664c-f8be-490c-a309-82d8336f79d5
+langcode: fr
+status: false
+dependencies: {  }
+formId: node_temoignage_form
+captchaType: default
+label: node_temoignage_form

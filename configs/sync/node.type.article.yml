@@ -1,0 +1,20 @@
+uuid: ceb34064-6f11-4c44-b716-dd8cc0bb4231
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
+name: Actualité
+type: article
+description: "Contenu qui relaye l'organisation d'évènements, la mise à disposition de ressources ou de données, des annonces, des marchés ou des recrutements"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

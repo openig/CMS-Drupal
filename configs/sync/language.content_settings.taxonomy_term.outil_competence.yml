@@ -1,0 +1,11 @@
+uuid: 2d9e2b32-b91b-4f6f-89a9-bcf8dfd3b2ec
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.outil_competence
+id: taxonomy_term.outil_competence
+target_entity_type_id: taxonomy_term
+target_bundle: outil_competence
+default_langcode: site_default
+language_alterable: false

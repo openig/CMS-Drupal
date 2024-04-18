@@ -1,0 +1,19 @@
+uuid: 25776e9a-6e74-4dd6-b047-008df9b5bcbb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_entreprise
+    - paragraphs.paragraphs_type.membre
+id: paragraph.membre.field_entreprise
+field_name: field_entreprise
+entity_type: paragraph
+bundle: membre
+label: Entreprise
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

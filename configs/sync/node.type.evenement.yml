@@ -1,0 +1,18 @@
+uuid: 4ee57e60-49a0-4769-890d-d97de4fc232a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Evènement
+type: evenement
+description: 'Contenu daté pouvant être des réunions des GT, les AG, des ateliers, séminaires, colloques, webinaires, ...'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

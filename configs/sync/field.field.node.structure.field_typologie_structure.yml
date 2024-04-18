@@ -1,0 +1,29 @@
+uuid: a516aa4a-2ea2-4513-8131-08abd0242bf5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_typologie_structure
+    - node.type.structure
+    - taxonomy.vocabulary.typologie_de_structure
+id: node.structure.field_typologie_structure
+field_name: field_typologie_structure
+entity_type: node
+bundle: structure
+label: 'Typologie de structure'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      typologie_de_structure: typologie_de_structure
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+uuid: b1e798b7-980e-40ad-9f51-4525cae2e081
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: T0xVUPLXklJ1liu4ukvaguMb-aMY1oMxO2PsCRB8-qg
+name: Newsletter
+type: simplenews_issue
+description: 'Contenu qui sera envoyé dans la newsletter'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

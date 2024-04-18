@@ -1,0 +1,53 @@
+uuid: 502020bf-1633-4149-956b-4c705d7da3e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.page
+  module:
+    - entity_reference_revisions
+id: node.page.field_body
+field_name: field_body
+entity_type: node
+bundle: page
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles: null
+    negate: 0
+    target_bundles_drag_drop:
+      fichier:
+        weight: -12
+        enabled: false
+      image_title:
+        weight: -16
+        enabled: false
+      membre:
+        weight: -15
+        enabled: false
+      picto_text:
+        weight: -14
+        enabled: false
+      text:
+        weight: -18
+        enabled: false
+      title:
+        weight: -17
+        enabled: false
+      title_text:
+        weight: -19
+        enabled: false
+      type_de_contenu:
+        weight: -13
+        enabled: false
+      video:
+        weight: -11
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,13 @@
+uuid: bade4fde-49db-4747-8a63-2098cb8211ba
+langcode: fr
+status: true
+dependencies:
+  module:
+    - simplenews
+_core:
+  default_config_hash: 7EIO8InzdeUlS1NCs5hq23QRzWmqAKGjeSqd3hQP62s
+id: simplenews_subscriber.block
+label: Bloc
+description: ''
+targetEntityType: simplenews_subscriber
+cache: true

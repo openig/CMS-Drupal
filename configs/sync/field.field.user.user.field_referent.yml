@@ -1,0 +1,22 @@
+uuid: 713082ac-fc60-4907-84c1-e0a4c64b4f8f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_referent
+  module:
+    - user
+id: user.user.field_referent
+field_name: field_referent
+entity_type: user
+bundle: user
+label: Référent
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

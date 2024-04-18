@@ -1,0 +1,75 @@
+uuid: 46eb3b7a-23d6-4cb8-9714-a6265f7a67a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.membre.field_email
+    - field.field.paragraph.membre.field_entreprise
+    - field.field.paragraph.membre.field_image
+    - field.field.paragraph.membre.field_poste
+    - field.field.paragraph.membre.field_prenom_nom
+    - field.field.paragraph.membre.field_video
+    - paragraphs.paragraphs_type.membre
+  module:
+    - image
+    - video_embed_field
+id: paragraph.membre.default
+targetEntityType: paragraph
+bundle: membre
+mode: default
+content:
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_entreprise:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_poste:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_prenom_nom:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_video:
+    type: video_embed_field_video
+    label: above
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden:
+  search_api_excerpt: true

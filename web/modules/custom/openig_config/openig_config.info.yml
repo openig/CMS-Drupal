@@ -1,0 +1,30 @@
+name: OPenIG Config
+type: module
+description: OPenIG Configuration
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - paragraphs
+  - admin_toolbar
+  - admin_toolbar_tools
+  - webform
+  - weight
+  - sync_uuids
+  - social_media_links
+  - social_media_links_field
+  - simplenews
+  - openig_adhesion
+  - media
+  - media_library
+  - metatag
+  - token
+  - pathauto
+  - simple_sitemap
+  - migrate
+  - migrate_plus
+  - migrate_tools
+  - hcaptcha
+  - field_group
+  - datetime_range
+  - video_embed_field
+  - video_embed_peertube

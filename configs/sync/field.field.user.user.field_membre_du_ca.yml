@@ -1,0 +1,22 @@
+uuid: 85109f29-e61c-4b8d-80c9-bb4ed594b60b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_membre_du_ca
+  module:
+    - user
+id: user.user.field_membre_du_ca
+field_name: field_membre_du_ca
+entity_type: user
+bundle: user
+label: 'Membre du CA'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

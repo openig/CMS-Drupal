@@ -1,0 +1,29 @@
+uuid: 801b1fe3-0573-40e5-9720-a6e005c13f11
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_animators
+    - node.type.groupe_de_travail
+id: node.groupe_de_travail.field_animators
+field_name: field_animators
+entity_type: node
+bundle: groupe_de_travail
+label: Animateurs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

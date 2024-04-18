@@ -1,0 +1,29 @@
+uuid: 7c0a3155-c7d7-4e5a-ba85-3edf93ef368d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_actualite
+    - node.type.article
+    - node.type.simplenews_issue
+id: node.simplenews_issue.field_actualite
+field_name: field_actualite
+entity_type: node
+bundle: simplenews_issue
+label: Actualités
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

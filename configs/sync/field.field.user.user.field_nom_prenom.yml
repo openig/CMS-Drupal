@@ -1,0 +1,20 @@
+uuid: 2208ce38-516c-45c3-8b35-6f0be648e2c6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nom_prenom
+  module:
+    - user
+id: user.user.field_nom_prenom
+field_name: field_nom_prenom
+entity_type: user
+bundle: user
+label: 'Nom / prénom'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,27 @@
+uuid: 16811c6e-a942-4fdc-b86b-0abbdf6ed56e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file
+    - paragraphs.paragraphs_type.fichier
+  module:
+    - file
+id: paragraph.fichier.field_file
+field_name: field_file
+entity_type: paragraph
+bundle: fichier
+label: Fichier
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf jpeg png jpg doc xls csv'
+  max_filesize: ''
+  description_field: false
+field_type: file

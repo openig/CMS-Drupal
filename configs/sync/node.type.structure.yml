@@ -1,0 +1,18 @@
+uuid: c0269ee4-2b62-47f2-9989-8297bdeaff14
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Structure
+type: structure
+description: "Contenu présentant les structures adhérentes qui s'affichent dans l'annuaire"
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

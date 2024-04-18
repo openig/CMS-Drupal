@@ -1,0 +1,24 @@
+uuid: 5a48e6d2-a705-4ea3-af5e-02bd116831d1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_theme_overview
+    - node.type.groupe_de_travail
+  module:
+    - text
+id: node.groupe_de_travail.field_theme_overview
+field_name: field_theme_overview
+entity_type: node
+bundle: groupe_de_travail
+label: 'Présentation générale de la thématique'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

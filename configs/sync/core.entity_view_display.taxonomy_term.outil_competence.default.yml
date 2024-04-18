@@ -1,0 +1,23 @@
+uuid: b65d7ae0-be03-48fb-ab8b-2d01af3261de
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.outil_competence
+  module:
+    - text
+id: taxonomy_term.outil_competence.default
+targetEntityType: taxonomy_term
+bundle: outil_competence
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
