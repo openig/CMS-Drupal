@@ -37,7 +37,7 @@ content:
     third_party_settings: {  }
   field_contact:
     type: string_textfield
-    weight: 6
+    weight: 7
     region: content
     settings:
       size: 60
@@ -45,7 +45,7 @@ content:
     third_party_settings: {  }
   field_dpt_intervention:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

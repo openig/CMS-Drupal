@@ -38,7 +38,7 @@ content:
     third_party_settings: {  }
   field_bloc:
     type: paragraphs
-    weight: 1
+    weight: 2
     region: content
     settings:
       title: Paragraphe
@@ -58,7 +58,7 @@ content:
     third_party_settings: {  }
   field_evenement:
     type: entity_reference_autocomplete
-    weight: 2
+    weight: 3
     region: content
     settings:
       match_operator: CONTAINS
@@ -103,7 +103,7 @@ content:
     third_party_settings: {  }
   simplenews_issue:
     type: simplenews_issue
-    weight: 3
+    weight: 1
     region: content
     settings: {  }
     third_party_settings: {  }
