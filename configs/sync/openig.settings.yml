@@ -23,3 +23,4 @@ favicon:
 subtheme_folder: themes/custom
 subtheme_name: 'B5 subtheme'
 subtheme_machine_name: b5subtheme
+langcode: fr
