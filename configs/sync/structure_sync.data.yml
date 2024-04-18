@@ -1,5 +1,70 @@
 menus:
   -
+    menu_name: footer
+    title: 'Mentions légales'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: fr
+    uuid: 5b0408e5-146f-4c06-b848-46915d1a93f5
+    options: {  }
+  -
+    menu_name: footer
+    title: 'Plan du site'
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -49
+    langcode: fr
+    uuid: 7efb7964-3bbd-40c3-96f3-2b2f80869de3
+    options: {  }
+  -
+    menu_name: footer
+    title: RGPD
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -47
+    langcode: fr
+    uuid: bcd022eb-9a4e-4955-bb71-8ab50ed19eaa
+    options: {  }
+  -
+    menu_name: footer
+    title: CGU
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -46
+    langcode: fr
+    uuid: f9b22e23-9d6e-4b17-ac79-1ee475ad9504
+    options: {  }
+  -
+    menu_name: footer
+    title: Contact
+    parent: null
+    uri: 'route:<nolink>'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: fr
+    uuid: cc1f90e4-b5ef-4cd0-9482-4e876ccbb523
+    options: {  }
+  -
     menu_name: main
     title: OPenIG
     parent: null
