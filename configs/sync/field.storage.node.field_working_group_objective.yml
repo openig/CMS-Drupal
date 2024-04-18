@@ -8,7 +8,7 @@ dependencies:
 id: node.field_working_group_objective
 field_name: field_working_group_objective
 entity_type: node
-type: text_long
+type: text_with_summary
 settings: {  }
 module: text
 locked: false

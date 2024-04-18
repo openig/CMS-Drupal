@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Témoignage
 type: temoignage
-description: ''
+description: "Contenu s'affichant en carousel sur la page d'accueil et la page Pourquoi adhérer à OPenIG"
 help: ''
 new_revision: true
 preview_mode: 1

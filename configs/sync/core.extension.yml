@@ -10,20 +10,25 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  captcha: 0
   ckeditor5: 0
   comment: 0
   config: 0
+  config_translation: 0
   contact: 0
   contextual: 0
   datetime: 0
+  datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
+  hcaptcha: 0
   help: 0
   history: 0
   image: 0
@@ -62,6 +67,8 @@ module:
   toolbar: 0
   update: 0
   user: 0
+  video_embed_field: 0
+  video_embed_peertube: 0
   views_ui: 0
   webform: 0
   weight: 0

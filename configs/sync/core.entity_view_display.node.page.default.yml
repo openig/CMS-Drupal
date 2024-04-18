@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_body
     - field.field.node.page.field_contenu_sidebar
     - field.field.node.page.field_tag
-    - field.field.node.page.field_titre
     - node.type.page
   module:
     - entity_reference_revisions
@@ -27,7 +26,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 4
     region: content
   field_body:
     type: entity_reference_revisions_entity_view
@@ -36,7 +35,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   field_contenu_sidebar:
     type: entity_reference_revisions_entity_view
@@ -45,7 +44,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
   field_tag:
     type: entity_reference_label
@@ -53,18 +52,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
 hidden:
   langcode: true

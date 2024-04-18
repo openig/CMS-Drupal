@@ -4,13 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.service.field_access_restricted
     - field.field.node.service.field_body
     - field.field.node.service.field_contact
     - field.field.node.service.field_image
     - field.field.node.service.field_link
     - field.field.node.service.field_requirement
     - field.field.node.service.field_tag
-    - field.field.node.service.field_titre
     - image.style.medium
     - node.type.service
   module:
@@ -38,11 +38,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_access_restricted: true
   field_body: true
   field_contact: true
   field_link: true
   field_requirement: true
   field_tag: true
-  field_titre: true
   langcode: true
   search_api_excerpt: true

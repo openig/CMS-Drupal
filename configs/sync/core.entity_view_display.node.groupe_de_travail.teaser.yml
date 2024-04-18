@@ -14,7 +14,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_members
     - field.field.node.groupe_de_travail.field_tag
     - field.field.node.groupe_de_travail.field_theme_overview
-    - field.field.node.groupe_de_travail.field_titre
     - field.field.node.groupe_de_travail.field_webform
     - field.field.node.groupe_de_travail.field_weight
     - field.field.node.groupe_de_travail.field_working_group_objective
@@ -54,7 +53,6 @@ hidden:
   field_members: true
   field_tag: true
   field_theme_overview: true
-  field_titre: true
   field_webform: true
   field_weight: true
   field_working_group_objective: true

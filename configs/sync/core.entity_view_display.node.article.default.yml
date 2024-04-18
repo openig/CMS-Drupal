@@ -9,7 +9,6 @@ dependencies:
     - field.field.node.article.field_image
     - field.field.node.article.field_news_overview
     - field.field.node.article.field_tag
-    - field.field.node.article.field_titre
     - image.style.wide
     - node.type.article
   module:
@@ -32,7 +31,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 6
     region: content
   field_body:
     type: entity_reference_revisions_entity_view
@@ -41,7 +40,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 3
     region: content
   field_contenu_sidebar:
     type: entity_reference_revisions_entity_view
@@ -50,7 +49,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 5
     region: content
   field_image:
     type: image
@@ -61,14 +60,14 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: -1
+    weight: 1
     region: content
   field_news_overview:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 103
+    weight: 2
     region: content
   field_tag:
     type: entity_reference_label
@@ -76,20 +75,12 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 4
     region: content
 hidden:
   langcode: true

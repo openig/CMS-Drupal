@@ -13,7 +13,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_members
     - field.field.node.groupe_de_travail.field_tag
     - field.field.node.groupe_de_travail.field_theme_overview
-    - field.field.node.groupe_de_travail.field_titre
     - field.field.node.groupe_de_travail.field_webform
     - field.field.node.groupe_de_travail.field_weight
     - field.field.node.groupe_de_travail.field_working_group_objective
@@ -39,7 +38,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 102
+    weight: 12
     region: content
   field_animators:
     type: entity_reference_label
@@ -47,7 +46,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 112
+    weight: 7
     region: content
   field_archive:
     type: boolean
@@ -57,7 +56,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 113
+    weight: 14
     region: content
   field_body:
     type: entity_reference_revisions_entity_view
@@ -66,7 +65,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_contact:
     type: string
@@ -74,7 +73,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 114
+    weight: 10
     region: content
   field_contenu_sidebar:
     type: entity_reference_revisions_entity_view
@@ -83,7 +82,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 106
+    weight: 13
     region: content
   field_image:
     type: image
@@ -94,7 +93,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: -1
+    weight: 1
     region: content
   field_members:
     type: entity_reference_label
@@ -102,7 +101,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 111
+    weight: 8
     region: content
   field_tag:
     type: entity_reference_label
@@ -110,22 +109,14 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
+    weight: 0
     region: content
   field_theme_overview:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 109
-    region: content
-  field_titre:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_webform:
     type: webform_entity_reference_entity_view
@@ -134,26 +125,26 @@ content:
       source_entity: true
       lazy: false
     third_party_settings: {  }
-    weight: 108
+    weight: 6
     region: content
   field_weight:
     type: default_weight
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 115
+    weight: 11
     region: content
   field_working_group_objective:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 110
+    weight: 15
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 5
     region: content
 hidden:
   langcode: true

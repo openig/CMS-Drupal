@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.temoignage.body
     - field.field.node.temoignage.field_entreprise
     - field.field.node.temoignage.field_image
-    - field.field.node.temoignage.field_nom_prenom
     - field.field.node.temoignage.field_poste
     - field.field.node.temoignage.field_tag
     - image.style.wide
@@ -25,7 +24,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_entreprise:
     type: string
@@ -33,7 +32,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 103
+    weight: 3
     region: content
   field_image:
     type: image
@@ -44,15 +43,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: -1
-    region: content
-  field_nom_prenom:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   field_poste:
     type: string
@@ -60,7 +51,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 102
+    weight: 4
     region: content
   field_tag:
     type: entity_reference_label
@@ -68,13 +59,9 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   langcode: true
+  links: true
   search_api_excerpt: true

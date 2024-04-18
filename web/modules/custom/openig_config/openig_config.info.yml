@@ -23,3 +23,8 @@ dependencies:
   - migrate
   - migrate_plus
   - migrate_tools
+  - hcaptcha
+  - field_group
+  - datetime_range
+  - video_embed_field
+  - video_embed_peertube

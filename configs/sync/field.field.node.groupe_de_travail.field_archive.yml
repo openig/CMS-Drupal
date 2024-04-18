@@ -1,4 +1,4 @@
-uuid: 8fab52a3-9b6c-4915-9ad2-ec62756fbe22
+uuid: 11c4012e-9b26-4229-98ae-7513cfce99b0
 langcode: fr
 status: true
 dependencies:
@@ -9,7 +9,7 @@ id: node.groupe_de_travail.field_archive
 field_name: field_archive
 entity_type: node
 bundle: groupe_de_travail
-label: Archivés
+label: Archivé
 description: ''
 required: false
 translatable: false

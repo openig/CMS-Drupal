@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: Structure
 type: structure
-description: ''
+description: "Contenu présentant les structures adhérentes qui s'affichent dans l'annuaire"
 help: ''
 new_revision: true
 preview_mode: 1
