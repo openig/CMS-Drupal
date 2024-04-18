@@ -33,8 +33,8 @@ third_party_settings:
         - promote
         - sticky
         - field_access_restricted
-        - field_archive
         - field_weight
+        - field_archive
       label: 'Options de publication'
       region: content
       parent_name: ''
@@ -90,15 +90,17 @@ content:
     settings:
       title: Paragraphe
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
+        convert: '0'
         duplicate: duplicate
     third_party_settings: {  }
   field_contact:
@@ -116,15 +118,17 @@ content:
     settings:
       title: Paragraphe
       title_plural: Paragraphs
-      edit_mode: open
+      edit_mode: closed
       closed_mode: summary
       autocollapse: none
       closed_mode_threshold: 0
       add_mode: dropdown
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: _none
       features:
+        add_above: '0'
         collapse_edit_all: collapse_edit_all
+        convert: '0'
         duplicate: duplicate
     third_party_settings: {  }
   field_image:
@@ -163,7 +167,7 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
-      show_summary: false
+      show_summary: true
     third_party_settings: {  }
   field_webform:
     type: webform_entity_reference_select

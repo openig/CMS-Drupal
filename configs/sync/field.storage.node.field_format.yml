@@ -12,8 +12,11 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: element_test
-      label: 'Element test'
+      value: lien
+      label: Lien
+    -
+      value: fichier
+      label: Fichier
   allowed_values_function: ''
 module: options
 locked: false
