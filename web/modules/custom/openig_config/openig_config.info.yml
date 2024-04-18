@@ -28,3 +28,4 @@ dependencies:
   - datetime_range
   - video_embed_field
   - video_embed_peertube
+  - ckeditor_accordion
