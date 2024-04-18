@@ -9,6 +9,7 @@ dependencies:
     - paragraphs.paragraphs_type.video
   module:
     - image
+    - video_embed_field
 id: paragraph.video.default
 targetEntityType: paragraph
 bundle: video
@@ -34,11 +35,13 @@ content:
     weight: 1
     region: content
   field_video:
-    type: entity_reference_entity_view
+    type: video_embed_field_video
     label: above
     settings:
-      view_mode: default
-      link: false
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
     third_party_settings: {  }
     weight: 8
     region: content

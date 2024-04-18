@@ -1,11 +1,12 @@
-uuid: fca86e40-18c6-4a59-8da3-5f7413e29c6f
+uuid: 9fec586a-0759-4b70-a2a9-75fa56fd2db5
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.paragraph.field_video
-    - media.type.video
     - paragraphs.paragraphs_type.membre
+  module:
+    - video_embed_field
 id: paragraph.membre.field_video
 field_name: field_video
 entity_type: paragraph
@@ -17,13 +18,9 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:media'
-  handler_settings:
-    target_bundles:
-      video: video
-    sort:
-      field: _none
-      direction: ASC
-    auto_create: false
-    auto_create_bundle: ''
-field_type: entity_reference
+  allowed_providers:
+    peertube: peertube
+    youtube: '0'
+    youtube_playlist: '0'
+    vimeo: '0'
+field_type: video_embed_field
