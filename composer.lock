@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e195ccd4c01192c3cc7ca64e79aef154",
+    "content-hash": "4863b204b6b5abdd72abe9462934cd00",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1299,6 +1299,57 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/captcha",
                 "issues": "https://www.drupal.org/project/issues/captcha"
+            }
+        },
+        {
+            "name": "drupal/ckeditor_accordion",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/ckeditor_accordion.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/ckeditor_accordion-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "9c9bdfd789f5ce5186e56004288cefa1b1b19a26"
+            },
+            "require": {
+                "drupal/core": "^9.4 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1701411380",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Juhani Väätäjä (j-vee)",
+                    "homepage": "https://www.drupal.org/u/j-vee",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Rotem Reiss (rreiss)",
+                    "homepage": "https://www.drupal.org/u/rreiss",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Accordion plugin for CKEditor 5.",
+            "homepage": "https://www.drupal.org/project/ckeditor_accordion",
+            "support": {
+                "source": "https://git.drupalcode.org/project/ckeditor_accordion",
+                "issues": "https://www.drupal.org/project/issues/ckeditor_accordion"
             }
         },
         {
