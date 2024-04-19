@@ -10,7 +10,9 @@ ckeditor_stylesheets:
 ckeditor5-stylesheets:
   - css/ck5style.css
 regions:
-  navigation: Navigation
+  navigation_premiere_section: Navigation première section
+  navigation_deuxieme_section: Navigation deuxième section
+  navigation_troisieme_section: Navigation troisième section
   breadcrumb: Fil d'ariane
   avant_contenu: Avant le contenu
   content: Contenu
