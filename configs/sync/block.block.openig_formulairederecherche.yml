@@ -1,4 +1,4 @@
-uuid: f49d7b7c-771b-40aa-ad4d-765885d055e1
+uuid: 1acbe33f-4980-481c-bdf3-6dc509793388
 langcode: fr
 status: true
 dependencies:
@@ -6,12 +6,10 @@ dependencies:
     - search
   theme:
     - openig
-_core:
-  default_config_hash: z5yFQVJaisvJ13-MsfflQOd1gk4BvFzmqI1cdaqKWqk
-id: openig_search_form
+id: openig_formulairederecherche
 theme: openig
-region: nav_additional
-weight: 0
+region: navigation_troisieme_section
+weight: -7
 provider: null
 plugin: search_form_block
 settings:
