@@ -1,0 +1,22 @@
+uuid: bd8095d3-05d7-47d9-b458-433b61de6547
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: c2E6oRnwDvHNUOyYRQux_FuWL_fgt2dwXQF6YMr1Br4
+id: openig_messages
+theme: openig
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }

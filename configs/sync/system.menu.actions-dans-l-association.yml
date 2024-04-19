@@ -1,0 +1,8 @@
+uuid: d3ce26f3-2bd6-4a44-9851-5c7dc145883f
+langcode: fr
+status: true
+dependencies: {  }
+id: actions-dans-l-association
+label: "Actions dans l'association"
+description: ''
+locked: false

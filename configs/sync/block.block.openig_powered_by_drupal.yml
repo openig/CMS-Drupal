@@ -1,0 +1,22 @@
+uuid: b3f1b736-ccf1-4906-bebc-f169f3a44c1d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: sT5SCw_GS_i5fetn7CSNgx8GejYPI1bnM0WDdCqy-ao
+id: openig_powered_by_drupal
+theme: openig
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Propulsé par Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

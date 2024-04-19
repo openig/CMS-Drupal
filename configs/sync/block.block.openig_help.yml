@@ -1,0 +1,22 @@
+uuid: 4b2d9e86-805d-4d50-ab97-d0a3cf66d872
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - openig
+_core:
+  default_config_hash: sjlGf5Imfotgr52etPpjGEhK8ZEE3HrVfOr8eeQ8uPE
+id: openig_help
+theme: openig
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Aide
+  label_display: '0'
+  provider: help
+visibility: {  }

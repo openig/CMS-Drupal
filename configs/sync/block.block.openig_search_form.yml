@@ -1,0 +1,23 @@
+uuid: f49d7b7c-771b-40aa-ad4d-765885d055e1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - openig
+_core:
+  default_config_hash: z5yFQVJaisvJ13-MsfflQOd1gk4BvFzmqI1cdaqKWqk
+id: openig_search_form
+theme: openig
+region: nav_additional
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulaire de recherche'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

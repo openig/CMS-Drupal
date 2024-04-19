@@ -1,0 +1,27 @@
+uuid: 9e837da3-dc61-492e-9500-042726b1d057
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - openig
+_core:
+  default_config_hash: HoNBTP02sAF8HGpNBX17-nEma_72KdDUAGdD1o-WHLo
+id: openig_main_navigation
+theme: openig
+region: nav_main
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }
