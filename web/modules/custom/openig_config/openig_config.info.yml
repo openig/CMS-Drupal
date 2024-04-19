@@ -29,3 +29,6 @@ dependencies:
   - video_embed_field
   - video_embed_peertube
   - ckeditor_accordion
+  - structure_sync
+  - menu_per_role
+  - menu_item_extras
