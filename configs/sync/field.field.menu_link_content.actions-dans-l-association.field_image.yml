@@ -1,0 +1,29 @@
+uuid: aa18dea7-a98c-4116-af0f-814f592ada7b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_image
+    - media.type.image
+    - system.menu.actions-dans-l-association
+id: menu_link_content.actions-dans-l-association.field_image
+field_name: field_image
+entity_type: menu_link_content
+bundle: actions-dans-l-association
+label: image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
