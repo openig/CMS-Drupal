@@ -57,7 +57,11 @@ set footer_classes = ' ' ~
 %}
 
 <header>
-  {{ page.navigation }}
+    <div class="navigation">
+        {{ page.navigation_premiere_section }}
+        {{ page.navigation_deuxieme_section }}
+        {{ page.navigation_troisieme_section }}
+    </div>
 
 {#
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
