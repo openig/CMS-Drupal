@@ -1,0 +1,30 @@
+uuid: 4fd9ce0a-54e8-4064-98e7-a44808979106
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.menu_link_content.faq.field_icon
+    - system.menu.faq
+  module:
+    - fontawesome
+id: menu_link_content.faq.default
+targetEntityType: menu_link_content
+bundle: faq
+mode: default
+content:
+  children:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_icon:
+    type: fontawesome_icon_formatter
+    label: hidden
+    settings:
+      layers: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true
