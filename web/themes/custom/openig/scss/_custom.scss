@@ -1,0 +1,122 @@
+// Header
+
+// Gestion de la position sticky du header si la barre d'administration est présente
+body.toolbar-horizontal header{
+    top: 79px;
+}
+body.toolbar-vertical header{
+    top: 39px;
+}
+
+header{
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $OPenIG-color_white;
+    padding: 15px 0;
+    font-family:"Russo One", sans-serif;
+    font-size: 14px;
+    color: $OPenIG-color_dark-gray;
+    .navigation_droite{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navigation{
+        .region-navigation-premiere-section, .region-navigation-deuxieme-section, .region-navigation-troisieme-section{
+            display: flex;
+            align-items: center;
+            nav ul{
+                flex-direction: row;
+                li.nav-item{
+                    display: flex;
+                    align-items: center;
+                }
+                li.nav-item:not(:last-of-type)::after{
+                    content: '|';
+                }
+                li.dropdown{
+                    span.dropdown-toggle,a.dropdown-toggle{
+                        align-items: baseline;
+                    }
+                    span::after,a::after{
+                        border: none;
+                        content:'\f0d7';
+                        font-family: "Font Awesome 6 Free";
+	                    font-weight: 600;
+                        font-size: 18px;
+                        padding-left: 4px;
+                    }
+                }
+            }
+        }
+        #block-openig-branding{
+            .navbar-brand{
+                img{
+                    height: 72px;
+                }
+            }   
+        }
+        .region-navigation-deuxieme-section{
+            nav ul{
+                li.nav-item:not(:last-of-type)::after{
+                    color: $OPenIG-color_red;
+                }
+            }
+        }
+        .region-navigation-troisieme-section{
+            nav{
+                border-left: 4px solid $OPenIG-color_red;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .search-block-form{
+        #search-block-form{
+            display: none;
+        }
+        #search-block-form.open{
+            display: block;
+        }
+        #search_icon{
+            background-color: transparent;
+            border: none;
+            i{
+                font-size: 22px;
+                color: $OPenIG-color_dark-gray;
+            }
+        }
+    }
+
+    #block-openig-faq{
+        ul{
+            margin-bottom: 0;
+            li.menu-item{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                span{
+                    border-bottom: 1px solid $OPenIG-color_gray;
+                }
+                .fontawesome-icon{
+                    margin-right: 5px;
+                    i{
+                        font-size: 22px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    #block-openig-main-navigation{
+        margin-left: 10px;
+        li{
+            a,span{
+                padding-left: .75rem;
+                padding-right: .75rem;
+            }
+        }
+    }
+}
