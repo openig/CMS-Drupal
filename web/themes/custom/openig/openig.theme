@@ -6,8 +6,6 @@
  */
 
  function openig_preprocess_form_element_label(&$variables){
-    $variables['element']['#title_display'] = '';
     $variables['title_display'] = '';
     $variables['title']['#markup'] = 'Rechercher';
-    $variables['element']['#title'] = 'Rechercher';
  }
