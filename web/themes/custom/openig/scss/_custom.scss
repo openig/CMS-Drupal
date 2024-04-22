@@ -1,10 +1,10 @@
 // Header
 
 // Gestion de la position sticky du header si la barre d'administration est présente
-body.toolbar-horizontal header{
+body.toolbar-horizontal.toolbar-tray-open header{
     top: 79px;
 }
-body.toolbar-vertical header{
+body.toolbar-vertical.toolbar-tray-open header, body.toolbar-horizontal header, body.toolbar-vertical header{
     top: 39px;
 }
 
@@ -18,44 +18,94 @@ header{
     font-family:"Russo One", sans-serif;
     font-size: 14px;
     color: $OPenIG-color_dark-gray;
+    padding-bottom: 0;
     .navigation_droite{
         display: flex;
         justify-content: space-between;
+        padding-bottom: 15px;
     }
     .navigation{
         .region-navigation-premiere-section, .region-navigation-deuxieme-section, .region-navigation-troisieme-section{
             display: flex;
             align-items: center;
-            nav ul{
-                flex-direction: row;
-                li.nav-item{
+            nav {
+                ul{
+                    flex-direction: row;
+                    li.nav-item{
+                        display: flex;
+                       align-items: baseline;
+                    }
+                    li.nav-item:not(:last-of-type)::after{
+                        content: '|';
+                        //margin-top: 7px;
+                    }
+                    li.dropdown{
+                        > .dropdown-toggle{
+                            align-items: baseline;
+                            height: 70px;
+                            padding-bottom: 0;
+                            padding-top: 5px !important;
+                        }
+                        > .dropdown-toggle.show{
+                            background-color: $OPenIG-color_light-gray;
+                            color: $OPenIG-color_blue;
+                        }
+                        > span::after, > a::after{
+                            border: none;
+                            content:'\f0d7';
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 600;
+                            font-size: 18px;
+                            padding-left: 4px;
+                        }
+                    }
+                    .is-active{
+                        color: $OPenIG-color_blue;
+                        background-color: $OPenIG-color_light-gray;
+                        height: 100%;
+                    }
+                }
+                ul.dropdown-menu.show{
                     display: flex;
-                    align-items: center;
-                }
-                li.nav-item:not(:last-of-type)::after{
-                    content: '|';
-                }
-                li.dropdown{
-                    span.dropdown-toggle,a.dropdown-toggle{
+                    background-color: $OPenIG-color_light-gray;
+                    border: 0;
+                    box-shadow: 0px 2px 6px rgba(0,0,0,.16),inset 0px 1px 6px rgba(0,0,0,.16);
+                    border-radius: 0;
+                    color: $OPenIG-color_dark-gray;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 0;
+                    position: absolute;
+                    top: 72px;
+                    .nav-item{
                         align-items: baseline;
+                        .dropdown-item{
+                            color: $OPenIG-color_dark-gray;
+                            font-size: 14px;
+                        }
+                        .dropdown-item:hover{
+                            background-color: transparent;
+                        }
+                        .is-active{
+                            color: $OPenIG-color_blue;
+                            background-color: transparent;
+                        }
                     }
-                    span::after,a::after{
-                        border: none;
-                        content:'\f0d7';
-                        font-family: "Font Awesome 6 Free";
-	                    font-weight: 600;
-                        font-size: 18px;
-                        padding-left: 4px;
-                    }
+                    
                 }
             }
         }
+        .region-navigation-premiere-section{
+            align-items: end;
+        }
+        // Logo
         #block-openig-branding{
             .navbar-brand{
                 img{
-                    height: 72px;
+                    height: 78px;
                 }
             }   
+            padding-bottom: 15px;
         }
         .region-navigation-deuxieme-section{
             nav ul{
@@ -67,11 +117,12 @@ header{
         .region-navigation-troisieme-section{
             nav{
                 border-left: 4px solid $OPenIG-color_red;
-                margin-left: 10px;
+                margin-left: 15px;
             }
         }
     }
 
+    // Barre de recherche
     .search-block-form{
         #search-block-form{
             display: none;
@@ -83,15 +134,17 @@ header{
             background-color: transparent;
             border: none;
             i{
-                font-size: 22px;
+                font-size: 30px;
                 color: $OPenIG-color_dark-gray;
             }
         }
     }
 
+    // Menu FAQ
     #block-openig-faq{
         ul{
             margin-bottom: 0;
+            margin-left: 15px;
             li.menu-item{
                 display: flex;
                 flex-direction: row-reverse;
@@ -102,7 +155,7 @@ header{
                 .fontawesome-icon{
                     margin-right: 5px;
                     i{
-                        font-size: 22px;
+                        font-size: 30px;
                         font-weight: 400;
                     }
                 }
@@ -110,12 +163,16 @@ header{
         }
     }
 
+    // Menu principal
     #block-openig-main-navigation{
         margin-left: 10px;
-        li{
-            a,span{
-                padding-left: .75rem;
-                padding-right: .75rem;
+        ul{
+            li{
+                a,span{
+                    padding-left: .75rem;
+                    padding-right: .75rem;
+                    padding-top: 10px;
+                }
             }
         }
     }
