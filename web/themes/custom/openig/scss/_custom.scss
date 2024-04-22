@@ -197,4 +197,17 @@ header{
             }
         }
     }
+
+    #block-openig-adhesion{
+        .nav-item{
+            .nav-link{
+                padding-bottom: 0;
+            }
+        }
+        .logged{
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 }

@@ -32,10 +32,9 @@
   set username = user.getDisplayName()
 %}
 
+{{ menus.menu_links(items, attributes, 0, username, logged_in) }}
 
-{{ menus.menu_links(items, attributes, 0, username) }}
-
-{% macro menu_links(items, attributes, menu_leve, username) %}
+{% macro menu_links(items, attributes, menu_leve, username, logged_in) %}
 
   {% import _self as menus %}
   {% if items %}
@@ -53,6 +52,7 @@
           item.is_expanded ? 'dropdown-toggle',
           item.is_collapsed ? 'dropdown-toggle',
           item.in_active_trail ? 'active',
+          logged_in ? 'logged',
         ]
       %}
         <li{{ item.attributes.addClass('nav-item') }}>
