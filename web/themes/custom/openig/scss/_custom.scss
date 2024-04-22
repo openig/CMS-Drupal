@@ -198,6 +198,7 @@ header{
         }
     }
 
+    // Menu adhésion
     #block-openig-adhesion{
         .nav-item{
             .nav-link{
@@ -208,6 +209,46 @@ header{
             border-bottom: 1px solid $OPenIG-color_red;
             padding-left: 0;
             padding-right: 0;
+        }
+    }
+}
+
+
+// Footer
+
+footer{
+    .hautFooter{
+        background-color: $OPenIG-color_deep-white;
+        margin: auto;
+    }
+    .milieuFooter{
+        background-color: $OPenIG-color_gray;
+        margin: auto;
+    }
+    .basFooter{
+        background-color: $OPenIG-color_gray;
+        margin: auto;
+    }
+    .footer{
+        background-color: $OPenIG-color_dark-gray;
+        margin: auto;
+    }
+    #block-openig-identitedusite{
+        .navbar-brand{
+            flex-direction: column;
+            padding: 20px 0;
+            .site-logo{
+                margin-bottom: 20px;
+                img{
+                    height: 81px;
+                }
+            }
+            .site-title{
+                font-family:"Russo One", sans-serif;
+                font-size: 16px;
+                color: $OPenIG-color_black;
+                text-transform: initial;
+            }
         }
     }
 }
