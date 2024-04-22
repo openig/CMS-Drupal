@@ -1,4 +1,4 @@
-uuid: 2f9ec6c3-e8ba-43bb-9cfb-2e7c3df80ab0
+uuid: ce9bb6c1-3b90-4cd5-99fc-8a4c87fdd203
 langcode: fr
 status: true
 dependencies:
@@ -8,7 +8,7 @@ dependencies:
     - system
   theme:
     - openig
-id: openig_adhesion_2
+id: openig_adhesion_footer
 theme: openig
 region: haut_footer_droite
 weight: 0
