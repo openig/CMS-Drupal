@@ -11,6 +11,7 @@ deploy_drupal_custom() {
 	cd "${DIR_DOCROOT}"
 	
 	p_section "Drupal personnalisations..."
+	${BIN_DRUSH} pm:install openig_config
 #	${BIN_DRUSH} pm:install 
 	
 }

@@ -32,3 +32,4 @@ dependencies:
   - structure_sync
   - menu_per_role
   - menu_item_extras
+  - fontawesome

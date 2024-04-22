@@ -1,0 +1,25 @@
+uuid: ae696a0e-a79b-4d26-92c2-e63d42cb42bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.faq
+  module:
+    - system
+  theme:
+    - openig
+id: openig_faq
+theme: openig
+region: navigation_troisieme_section
+weight: -6
+provider: null
+plugin: 'system_menu_block:faq'
+settings:
+  id: 'system_menu_block:faq'
+  label: FAQ
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

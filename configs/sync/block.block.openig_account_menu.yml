@@ -1,6 +1,6 @@
 uuid: ea08d0e7-fb0b-469d-af7f-a7aa2302bf46
 langcode: fr
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,8 +12,8 @@ _core:
   default_config_hash: G7EGJKSswfqQWQpev5BNGCaf8Y8PdcoXZwzRBD_OFlk
 id: openig_account_menu
 theme: openig
-region: nav_additional
-weight: -7
+region: navigation_premiere_section
+weight: -6
 provider: null
 plugin: 'system_menu_block:account'
 settings:

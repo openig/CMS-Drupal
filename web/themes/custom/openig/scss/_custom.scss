@@ -1,0 +1,213 @@
+// Header
+
+// Gestion de la position sticky du header si la barre d'administration est présente
+body.toolbar-horizontal.toolbar-tray-open header{
+    top: 79px;
+}
+body.toolbar-vertical.toolbar-tray-open header, body.toolbar-horizontal header, body.toolbar-vertical header{
+    top: 39px;
+}
+
+header{
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $OPenIG-color_white;
+    padding: 15px 0;
+    font-family:"Russo One", sans-serif;
+    font-size: 14px;
+    color: $OPenIG-color_dark-gray;
+    padding-bottom: 0;
+    .navigation_droite{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+    }
+    .navigation{
+        .region-navigation-premiere-section, .region-navigation-deuxieme-section, .region-navigation-troisieme-section{
+            display: flex;
+            align-items: center;
+            nav {
+                ul{
+                    flex-direction: row;
+                    li.nav-item{
+                        display: flex;
+                       align-items: baseline;
+                    }
+                    li.nav-item:not(:last-of-type)::after{
+                        content: '|';
+                        //margin-top: 7px;
+                    }
+                    li.dropdown{
+                        > .dropdown-toggle{
+                            align-items: baseline;
+                            height: 70px;
+                            padding-bottom: 0;
+                            padding-top: 5px !important;
+                        }
+                        > .dropdown-toggle.show{
+                            background-color: $OPenIG-color_light-gray;
+                            color: $OPenIG-color_blue;
+                        }
+                        > span::after, > a::after{
+                            border: none;
+                            content:'\f0d7';
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 600;
+                            font-size: 18px;
+                            padding-left: 4px;
+                        }
+                    }
+                    .is-active{
+                        color: $OPenIG-color_blue;
+                        background-color: $OPenIG-color_light-gray;
+                        height: 100%;
+                    }
+                }
+                ul.dropdown-menu.show{
+                    display: flex;
+                    background-color: $OPenIG-color_light-gray;
+                    border: 0;
+                    box-shadow: 0px 2px 6px rgba(0,0,0,.16),inset 0px 2px 6px rgba(0,0,0,.16);
+                    border-radius: 0;
+                    color: $OPenIG-color_dark-gray;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 0;
+                    position: absolute;
+                    transform: translate(0px, 70px) !important;
+                    .nav-item{
+                        align-items: baseline;
+                        .dropdown-item{
+                            color: $OPenIG-color_dark-gray;
+                            font-size: 14px;
+                        }
+                        .dropdown-item:hover{
+                            background-color: transparent;
+                        }
+                        .is-active{
+                            color: $OPenIG-color_blue;
+                            background-color: transparent;
+                        }
+                    }
+                    
+                }
+            }
+        }
+        .region-navigation-premiere-section{
+            align-items: end;
+        }
+        // Logo
+        #block-openig-branding{
+            .navbar-brand{
+                img{
+                    height: 78px;
+                }
+            }   
+            padding-bottom: 15px;
+        }
+        .region-navigation-deuxieme-section{
+            nav ul{
+                li.nav-item:not(:last-of-type)::after{
+                    color: $OPenIG-color_red;
+                }
+            }
+        }
+        .region-navigation-troisieme-section{
+            nav{
+                border-left: 4px solid $OPenIG-color_red;
+                margin-left: 15px;
+            }
+        }
+    }
+
+    // Barre de recherche
+    .search-block-form{
+        #search-block-form{
+            display: none;
+        }
+        #search-block-form.open{
+            display: block;
+            background-color: white;
+            //border: 1px solid $OPenIG-color_gray;
+            filter: drop-shadow(0 1px 2px $OPenIG-color_gray);
+            border-radius: 6px;
+            position: absolute;
+            transform: translate(0px,20px);
+            width: 350px;
+            .form-type-search{
+                padding: 15px 15px;
+                width: 100%;
+                label::after{
+                    content: '';
+                }
+            }
+            input{
+                margin-top: 5px;
+                border-color: $OPenIG-color_gray;
+            }
+            .form-actions{
+                display: none;
+            }
+        }
+        #search_icon{
+            background-color: transparent;
+            border: none;
+            i{
+                font-size: 30px;
+                color: $OPenIG-color_dark-gray;
+            }
+        }
+    }
+
+    // Menu FAQ
+    #block-openig-faq{
+        ul{
+            margin-bottom: 0;
+            margin-left: 15px;
+            li.menu-item{
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                span{
+                    border-bottom: 1px solid $OPenIG-color_gray;
+                }
+                .fontawesome-icon{
+                    margin-right: 5px;
+                    i{
+                        font-size: 30px;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    }
+
+    // Menu principal
+    #block-openig-main-navigation{
+        margin-left: 10px;
+        ul{
+            li{
+                a,span{
+                    padding-left: .75rem;
+                    padding-right: .75rem;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+
+    #block-openig-adhesion{
+        .nav-item{
+            .nav-link{
+                padding-bottom: 0;
+            }
+        }
+        .logged{
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

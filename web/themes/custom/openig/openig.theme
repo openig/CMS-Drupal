@@ -4,3 +4,8 @@
  * @file
  * OPenIG theme file.
  */
+
+ function openig_preprocess_form_element_label(&$variables){
+    $variables['title_display'] = '';
+    $variables['title']['#markup'] = 'Rechercher';
+ }

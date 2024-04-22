@@ -55,9 +55,28 @@ set footer_classes = ' ' ~
   (b5_footer_schema != 'none' ? (b5_footer_schema == 'dark' ? ' text-light' : ' text-dark' ) : ' ') ~
   (b5_footer_bg_schema != 'none' ? " bg-#{b5_footer_bg_schema}" : ' ')
 %}
-
 <header>
-  {{ page.navigation }}
+  <div class="navigation container">
+      <div class="row">
+          {% if logged_in %}
+              <div class="col-9">
+                  {{ page.navigation_premiere_section }}
+              </div>
+              <div class="col-3 navigation_droite">
+                  {{ page.navigation_deuxieme_section }}
+                  {{ page.navigation_troisieme_section }}
+              </div>
+          {% else %}
+              <div class="col-8">
+                  {{ page.navigation_premiere_section }}
+              </div>
+              <div class="col-4 navigation_droite">
+                  {{ page.navigation_deuxieme_section }}
+                  {{ page.navigation_troisieme_section }}
+              </div>
+          {% endif %}
+      </div>
+  </div>
 
 {#
   {% if page.nav_branding or page.nav_main or page.nav_additional %}
@@ -134,38 +153,56 @@ set footer_classes = ' ' ~
 </main>
 
 <footer class="mt-auto {{ footer_classes }}">
-    <div class="row">
-        <div class="col-12 col-lg-4">
-            {{ page.haut_footer_gauche }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.haut_footer_centre }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.haut_footer_droite }}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-lg-4">
-            {{ page.milieu_footer_gauche }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.milieu_footer_centre }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.milieu_footer_droite }}
+    <div style="background-color:lightgray; height:50px; margin:auto">
+        <div class="container">
+            <div class="row" style="height:50px">
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.haut_footer_gauche }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.haut_footer_centre }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.haut_footer_droite }}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-lg-4">
-            {{ page.bas_footer_gauche }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.bas_footer_centre }}
-        </div>
-        <div class="col-12 col-lg-4">
-            {{ page.bas_footer_droite }}
+    <div style="background-color:gray; height:50px; margin:auto">
+        <div class="container">
+            <div class="row" style="height:50px">
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.milieu_footer_gauche }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.milieu_footer_centre }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.milieu_footer_droite }}
+                </div>
+            </div>
         </div>
     </div>
-    {{ page.footer }}
+    <div style="background-color:gray; height:50px; margin:auto">
+        <div class="container">
+            <div class="row" style="height:50px">
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.bas_footer_gauche }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.bas_footer_centre }}
+                </div>
+                <div class="col-12 col-lg-4" style="margin:auto">
+                    {{ page.bas_footer_droite }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background-color:black; height:50px; margin:auto">
+        <div class="container">
+            <div class="row">
+                {{ page.footer }}
+            </div>
+        </div>
+    </div>
 </footer>

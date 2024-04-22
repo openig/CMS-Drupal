@@ -12,8 +12,8 @@ _core:
   default_config_hash: HoNBTP02sAF8HGpNBX17-nEma_72KdDUAGdD1o-WHLo
 id: openig_main_navigation
 theme: openig
-region: nav_main
-weight: 0
+region: navigation_premiere_section
+weight: -7
 provider: null
 plugin: 'system_menu_block:main'
 settings:
