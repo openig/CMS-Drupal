@@ -1,0 +1,25 @@
+uuid: 2fed53ea-4fb8-49a0-a039-3c361e88e466
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:adresse_et_contact:062b31d8-76b5-4710-91ac-088969c978c7'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_adresseetcontact
+theme: openig
+region: milieu_footer_centre
+weight: 0
+provider: null
+plugin: 'block_content:062b31d8-76b5-4710-91ac-088969c978c7'
+settings:
+  id: 'block_content:062b31d8-76b5-4710-91ac-088969c978c7'
+  label: 'Adresse et contact'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
