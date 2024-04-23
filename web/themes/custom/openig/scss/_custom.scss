@@ -285,4 +285,32 @@ footer{
             }
         }
     }
+
+    // Bloc adresse et contact
+    #block-openig-adresseetcontact{
+        padding: 30px 0;
+        .field--name-body{
+            font-family:"Open Sans";
+            font-size: 18px;
+            color: $OPenIG-color_deep-white;
+            text-align: center;
+        }
+        .field--name-field-telephone, .field--name-field-telephone a{
+            text-align: center;
+            color: $OPenIG-color_deep-white;
+            font-family: 'Open Sans';
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .field--name-field-email{
+            text-align: center;
+            margin-top: 5px;
+            a{
+                font-family:"Exo";
+                font-size: 16px;
+                color: $OPenIG-color_deep-white;
+                font-weight: 600;
+            }
+        }
+    }
 }
