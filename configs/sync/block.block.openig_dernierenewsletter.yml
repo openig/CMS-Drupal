@@ -1,0 +1,25 @@
+uuid: e4e630f4-9f67-4e3f-ab51-8535b267e3f7
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:lien:67095522-a276-4bcb-ac5e-024b0f8e5199'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_dernierenewsletter
+theme: openig
+region: bas_footer_droite
+weight: -9
+provider: null
+plugin: 'block_content:67095522-a276-4bcb-ac5e-024b0f8e5199'
+settings:
+  id: 'block_content:67095522-a276-4bcb-ac5e-024b0f8e5199'
+  label: 'Dernière newsletter'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

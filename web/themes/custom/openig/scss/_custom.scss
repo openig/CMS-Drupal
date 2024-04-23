@@ -314,7 +314,7 @@ footer{
         }
     }
 
-    .region-bas-footer-gauche{
+    .basFooter{
         padding: 15px 0;
     }
 
@@ -346,6 +346,55 @@ footer{
     #block-openig-openstreetmap{
         iframe{
             border-radius: 2rem;
+            width: 100%;
+        }
+    }
+
+    .region-bas-footer-droite{
+        border-left: 1px solid $OPenIG-color_deep-white;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .region-bas-footer-gauche{
+        border-right: 1px solid $OPenIG-color_deep-white;
+        height: 100%;
+    }
+
+    // Bloc nous suivre
+    #block-openig-socialmedialinks{
+        position: absolute;
+        right: 0;
+        h2{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+            margin-bottom: 1rem;
+        }
+        .social-media-links--platforms{
+            display: flex;
+            justify-content: flex-end;
+            li{
+                a{
+                    color: $OPenIG-color_deep-white;
+                }
+            }
+        }
+    }
+
+    // Bloc dernière newsletter
+    #block-openig-dernierenewsletter{
+        position: absolute;
+        right: 0;
+        top: 120px;
+        a{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+            border-bottom: 1px solid $OPenIG-color_red;
+            text-decoration: none;
         }
     }
 }
