@@ -33,3 +33,6 @@ dependencies:
   - menu_per_role
   - menu_item_extras
   - fontawesome
+  - svg_image
+  - twig_blocks
+  - twig_tweak
