@@ -217,6 +217,7 @@ header{
 // Footer
 
 footer{
+    padding-bottom: 0;
     .hautFooter{
         background-color: $OPenIG-color_deep-white;
         margin: auto;
@@ -395,6 +396,28 @@ footer{
             color: $OPenIG-color_deep-white;
             border-bottom: 1px solid $OPenIG-color_red;
             text-decoration: none;
+        }
+    }
+
+    // Menu footer
+    #block-openig-footer{
+        .navbar-nav{
+            padding: 15px 0;
+            flex-direction: row;
+            justify-content: center;
+            .nav-item{
+                display: flex;
+                align-items: center;
+                .nav-link{
+                    font-family:"Russo One", sans-serif;
+                    font-size: $OPenIG-font-size-12;
+                    color: $OPenIG-color_deep-white;
+                }
+            }
+            li.nav-item:not(:last-of-type)::after{
+                content: '|';
+                color: $OPenIG-color_deep-white;
+            }
         }
     }
 }
