@@ -1,3 +1,23 @@
+blocks:
+  -
+    info: 'Adresse et contact'
+    langcode: fr
+    uuid: 062b31d8-76b5-4710-91ac-088969c978c7
+    bundle: adresse_et_contact
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_telephone:
+        -
+          value: '04 67 55 86 54'
+      body:
+        -
+          value: '<p>Maison de la télédétection<br>500, rue Jean-François Breton<br>34093 Montpellier Cedex 5</p>'
+          summary: ''
+          format: basic_html
+      field_email:
+        -
+          value: contact@openig.org
 menus:
   -
     menu_name: main
