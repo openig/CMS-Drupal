@@ -1,0 +1,8 @@
+uuid: 66770cf5-618e-41db-a943-aab52aeb6d19
+langcode: fr
+status: true
+dependencies: {  }
+id: naviguer
+label: Naviguer
+description: ''
+locked: false

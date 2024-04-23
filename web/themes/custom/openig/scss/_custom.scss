@@ -16,7 +16,7 @@ header{
     background-color: $OPenIG-color_white;
     padding: 15px 0;
     font-family:"Russo One", sans-serif;
-    font-size: 14px;
+    font-size: $OPenIG-font-size-14;
     color: $OPenIG-color_dark-gray;
     padding-bottom: 0;
     .navigation_droite{
@@ -55,7 +55,7 @@ header{
                             content:'\f0d7';
                             font-family: "Font Awesome 6 Free";
                             font-weight: 600;
-                            font-size: 18px;
+                            font-size: $OPenIG-font-size-18;
                             padding-left: 4px;
                         }
                     }
@@ -81,7 +81,7 @@ header{
                         align-items: baseline;
                         .dropdown-item{
                             color: $OPenIG-color_dark-gray;
-                            font-size: 14px;
+                            font-size: $OPenIG-font-size-14;
                         }
                         .dropdown-item:hover{
                             background-color: transparent;
@@ -155,7 +155,7 @@ header{
             background-color: transparent;
             border: none;
             i{
-                font-size: 30px;
+                font-size: $OPenIG-font-size-30;
                 color: $OPenIG-color_dark-gray;
             }
         }
@@ -176,7 +176,7 @@ header{
                 .fontawesome-icon{
                     margin-right: 5px;
                     i{
-                        font-size: 30px;
+                        font-size: $OPenIG-font-size-30;
                         font-weight: 400;
                     }
                 }
@@ -247,7 +247,7 @@ footer{
             }
             .site-title{
                 font-family:"Russo One", sans-serif;
-                font-size: 16px;
+                font-size: $OPenIG-font-size-16;
                 color: $OPenIG-color_black;
                 text-transform: initial;
             }
@@ -273,7 +273,7 @@ footer{
         ul{
             flex-direction: row;
             font-family:"Russo One", sans-serif;
-            font-size: 16px;
+            font-size: $OPenIG-font-size-16;
             color: $OPenIG-color_black;
             li.nav-item:not(:last-of-type){
                 display: flex;
@@ -291,7 +291,7 @@ footer{
         padding: 30px 0;
         .field--name-body{
             font-family:"Open Sans";
-            font-size: 18px;
+            font-size: $OPenIG-font-size-18;
             color: $OPenIG-color_deep-white;
             text-align: center;
         }
@@ -299,7 +299,7 @@ footer{
             text-align: center;
             color: $OPenIG-color_deep-white;
             font-family: 'Open Sans';
-            font-size: 18px;
+            font-size: $OPenIG-font-size-18;
             text-decoration: none;
         }
         .field--name-field-email{
@@ -307,9 +307,37 @@ footer{
             margin-top: 5px;
             a{
                 font-family:"Exo";
-                font-size: 16px;
+                font-size: $OPenIG-font-size-16;
                 color: $OPenIG-color_deep-white;
                 font-weight: 600;
+            }
+        }
+    }
+
+    .region-bas-footer-gauche{
+        padding: 15px 0;
+    }
+
+    // Menu naviguer footer
+    #block-openig-naviguer{
+        #block-openig-naviguer-menu{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+        }
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    font-family: "Open Sans";
+                    font-size: $OPenIG-font-size-16;
+                    color: $OPenIG-color_deep-white;
+                    text-decoration: underline;
+                    padding: 5px 10px;
+                }
+                .nav-link::after{
+                    border: none;
+                }
             }
         }
     }

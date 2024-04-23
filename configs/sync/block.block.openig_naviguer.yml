@@ -1,0 +1,25 @@
+uuid: db3b7a16-af0e-4abe-bf6f-67429bed434e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.naviguer
+  module:
+    - system
+  theme:
+    - openig
+id: openig_naviguer
+theme: openig
+region: bas_footer_gauche
+weight: 0
+provider: null
+plugin: 'system_menu_block:naviguer'
+settings:
+  id: 'system_menu_block:naviguer'
+  label: Naviguer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
