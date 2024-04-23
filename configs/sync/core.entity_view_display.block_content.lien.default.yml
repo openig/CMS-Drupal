@@ -1,0 +1,31 @@
+uuid: de6df373-354e-4598-af09-aef4eeaa4931
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.lien
+    - field.field.block_content.lien.body
+    - field.field.block_content.lien.field_lien
+  module:
+    - link
+id: block_content.lien.default
+targetEntityType: block_content
+bundle: lien
+mode: default
+content:
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  langcode: true
+  search_api_excerpt: true

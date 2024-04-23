@@ -23,6 +23,7 @@ $local-tasks-secondary-margin: 0 0 1rem 0 !default;
 $table-striped-bg: #f9f9f9 !default;
 
 
+// Couleurs
 $OPenIG-color_yellow: #FDB914 !default;
 $OPenIG-color_black: #0A0909 !default;
 $OPenIG-color_green: #95C11E !default;
@@ -41,4 +42,13 @@ $OPenIG-color_gray: #878786 !default;
 $OPenIG-color_light-gray: #EDEDED !default;
 
 
+// Fonts
+$OPenIG-font-size-30: 30px !default;
+$OPenIG-font-size-18: 18px !default;
+$OPenIG-font-size-16: 16px !default;
+$OPenIG-font-size-14: 14px !default;
+$OPenIG-font-size-12: 12px !default;
+
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');

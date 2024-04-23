@@ -1,0 +1,209 @@
+// Footer
+
+footer{
+    padding-bottom: 0;
+    .hautFooter{
+        background-color: $OPenIG-color_deep-white;
+        margin: auto;
+    }
+    .milieuFooter{
+        background-color: $OPenIG-color_gray;
+        margin: auto;
+    }
+    .basFooter{
+        background-color: $OPenIG-color_gray;
+        margin: auto;
+    }
+    .footer{
+        background-color: $OPenIG-color_dark-gray;
+        margin: auto;
+    }
+
+    // Bloc identité du site
+    #block-openig-identitedusite{
+        .navbar-brand{
+            flex-direction: column;
+            padding: 15px 0;
+            .site-logo{
+                margin-bottom: 15px;
+                img{
+                    height: 81px;
+                }
+            }
+            .site-title{
+                font-family:"Russo One", sans-serif;
+                font-size: $OPenIG-font-size-16;
+                color: $OPenIG-color_black;
+                text-transform: initial;
+            }
+        }
+    }
+
+    .region-haut-footer-droite{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+     // Menu adhésion
+     #block-openig-adhesion-footer{
+        position: absolute;
+        bottom: 10px;
+        right: 0;
+        .logged{
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            margin-bottom: .5rem;
+        }
+        ul{
+            flex-direction: row;
+            font-family:"Russo One", sans-serif;
+            font-size: $OPenIG-font-size-16;
+            color: $OPenIG-color_black;
+            li.nav-item:not(:last-of-type){
+                display: flex;
+                align-items: center;
+            }
+            li.nav-item:not(:last-of-type)::after{
+                content: '|';
+                color: $OPenIG-color_red;
+            }
+        }
+    }
+
+    // Bloc adresse et contact
+    #block-openig-adresseetcontact{
+        padding: 30px 0;
+        .field--name-body{
+            font-family:"Open Sans";
+            font-size: $OPenIG-font-size-18;
+            color: $OPenIG-color_deep-white;
+            text-align: center;
+        }
+        .field--name-field-telephone, .field--name-field-telephone a{
+            text-align: center;
+            color: $OPenIG-color_deep-white;
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-18;
+            text-decoration: none;
+        }
+        .field--name-field-email{
+            text-align: center;
+            margin-top: 5px;
+            a{
+                font-family:"Exo";
+                font-size: $OPenIG-font-size-16;
+                color: $OPenIG-color_deep-white;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .basFooter{
+        padding: 15px 0;
+    }
+
+    // Menu naviguer footer
+    #block-openig-naviguer{
+        #block-openig-naviguer-menu{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+        }
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    font-family: "Open Sans";
+                    font-size: $OPenIG-font-size-16;
+                    color: $OPenIG-color_deep-white;
+                    text-decoration: underline;
+                    padding: 5px 10px;
+                }
+                .nav-link::after{
+                    border: none;
+                }
+            }
+        }
+    }
+
+    // Bloc OpenStreetMap
+    #block-openig-openstreetmap{
+        iframe{
+            border-radius: 2rem;
+            width: 100%;
+        }
+    }
+
+    .region-bas-footer-droite{
+        border-left: 1px solid $OPenIG-color_deep-white;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .region-bas-footer-gauche{
+        border-right: 1px solid $OPenIG-color_deep-white;
+        height: 100%;
+    }
+
+    // Bloc nous suivre
+    #block-openig-socialmedialinks{
+        position: absolute;
+        right: 0;
+        h2{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+            margin-bottom: 1rem;
+        }
+        .social-media-links--platforms{
+            display: flex;
+            justify-content: flex-end;
+            li{
+                a{
+                    color: $OPenIG-color_deep-white;
+                }
+            }
+        }
+    }
+
+    // Bloc dernière newsletter
+    #block-openig-dernierenewsletter{
+        position: absolute;
+        right: 0;
+        top: 120px;
+        a{
+            font-family: 'Open Sans';
+            font-size: $OPenIG-font-size-16;
+            font-weight: 900;
+            color: $OPenIG-color_deep-white;
+            border-bottom: 1px solid $OPenIG-color_red;
+            text-decoration: none;
+        }
+    }
+
+    // Menu footer
+    #block-openig-footer{
+        .navbar-nav{
+            padding: 15px 0;
+            flex-direction: row;
+            justify-content: center;
+            .nav-item{
+                display: flex;
+                align-items: center;
+                .nav-link{
+                    font-family:"Russo One", sans-serif;
+                    font-size: $OPenIG-font-size-12;
+                    color: $OPenIG-color_deep-white;
+                }
+            }
+            li.nav-item:not(:last-of-type)::after{
+                content: '|';
+                color: $OPenIG-color_deep-white;
+            }
+        }
+    }
+}
