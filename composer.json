@@ -69,6 +69,9 @@
         "patches": {
             "drupal/bootstrap5": {
                 "Passing percentage units to the global abs() function is deprecated": "https://www.drupal.org/files/issues/2023-10-05/bootstrap5-3391813.patch"
+            },
+            "drupal/social_media_links":{
+                "Replace Twitter with X": "https://www.drupal.org/files/issues/2023-09-01/replace_twitter_x-3384469-3.patch"
             }
         },
         "installer-paths": {
