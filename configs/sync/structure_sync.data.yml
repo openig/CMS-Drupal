@@ -1,5 +1,18 @@
 blocks:
   -
+    info: OpenStreetMap
+    langcode: fr
+    uuid: 51336add-2e63-44f0-b9f3-e0bfabd7b279
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.874493837356568%2C43.64427623081348%2C3.8778921961784367%2C43.646040528752174&amp;layer=mapnik" width="425" height="350"></iframe></p>'
+          summary: ''
+          format: full_html
+  -
     info: 'Adresse et contact'
     langcode: fr
     uuid: 062b31d8-76b5-4710-91ac-088969c978c7
@@ -7,9 +20,6 @@ blocks:
     revision_id: null
     rev_id_current: null
     fields:
-      field_telephone:
-        -
-          value: '04 67 55 86 54'
       body:
         -
           value: '<p>Maison de la télédétection<br>500, rue Jean-François Breton<br>34093 Montpellier Cedex 5</p>'
@@ -18,6 +28,9 @@ blocks:
       field_email:
         -
           value: contact@openig.org
+      field_telephone:
+        -
+          value: '04 67 55 86 54'
 menus:
   -
     menu_name: main
