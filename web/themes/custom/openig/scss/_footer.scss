@@ -32,7 +32,7 @@ footer{
             }
             .site-title{
                 font-family:"Russo One";
-                font-size: $OPenIG-font-size-16;
+                font-size: $OPenIG-font-size-base;
                 color: $OPenIG-color_black;
                 text-transform: initial;
             }
@@ -60,7 +60,7 @@ footer{
         ul{
             flex-direction: row;
             font-family:"Russo One";
-            font-size: $OPenIG-font-size-16;
+            font-size: $OPenIG-font-size-base;
             color: $OPenIG-color_black;
             li.nav-item:not(:last-of-type){
                 display: flex;
@@ -78,7 +78,7 @@ footer{
         padding: 30px 0;
         .field--name-body{
             font-family:"OpenSans_Regular", sans-serif;
-            font-size: $OPenIG-font-size-18;
+            font-size: $OPenIG-font-size-lg;
             color: $OPenIG-color_deep-white;
             text-align: center;
         }
@@ -86,7 +86,7 @@ footer{
             text-align: center;
             color: $OPenIG-color_deep-white;
             font-family: "OpenSans_Regular", sans-serif;
-            font-size: $OPenIG-font-size-18;
+            font-size: $OPenIG-font-size-lg;
             text-decoration: none;
         }
         .field--name-field-email{
@@ -94,7 +94,7 @@ footer{
             margin-top: 5px;
             a{
                 font-family:"Exo_semiBold";
-                font-size: $OPenIG-font-size-16;
+                font-size: $OPenIG-font-size-base;
                 color: $OPenIG-color_deep-white;
                 font-weight: 600;
             }
@@ -109,7 +109,7 @@ footer{
     #block-openig-naviguer{
         #block-openig-naviguer-menu{
             font-family: "OpenSans_Bold", sans-serif;
-            font-size: $OPenIG-font-size-16;
+            font-size: $OPenIG-font-size-base;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
         }
@@ -117,7 +117,7 @@ footer{
             .nav-item{
                 .nav-link{
                     font-family: "OpenSans_Regular", sans-serif;
-                    font-size: $OPenIG-font-size-16;
+                    font-size: $OPenIG-font-size-base;
                     color: $OPenIG-color_deep-white;
                     text-decoration: underline;
                     padding: 5px 10px;
@@ -154,7 +154,7 @@ footer{
         right: 0;
         h2{
             font-family: "OpenSans_Bold", sans-serif;
-            font-size: $OPenIG-font-size-16;
+            font-size: $OPenIG-font-size-base;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
             margin-bottom: 1rem;
@@ -177,7 +177,7 @@ footer{
         top: 120px;
         a{
             font-family: "OpenSans_Bold", sans-serif;
-            font-size: $OPenIG-font-size-16;
+            font-size: $OPenIG-font-size-base;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
             border-bottom: 1px solid $OPenIG-color_red;
@@ -196,7 +196,7 @@ footer{
                 align-items: center;
                 .nav-link{
                     font-family:"Russo One", sans-serif;
-                    font-size: $OPenIG-font-size-12;
+                    font-size: $OPenIG-font-size-xs;
                     color: $OPenIG-color_deep-white;
                 }
             }
