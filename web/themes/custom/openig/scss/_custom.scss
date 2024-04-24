@@ -1,0 +1,39 @@
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+body.toolbar-horizontal.toolbar-tray-open #block-openig-imageenhautdepage{
+    top: 50px;
+}
+body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.toolbar-horizontal #block-openig-imageenhautdepage, body.toolbar-vertical #block-openig-imageenhautdepage{
+    top: 30px;
+}
+
+#block-openig-imageenhautdepage{
+    position: absolute;
+    top: -25px;
+    right: 0;
+    width: 65%;
+    z-index: -1;
+}
+
+
+
+#block-openig-imageenbasdepage{
+    position: absolute;
+    width: 75%;
+    bottom: 500px;
+    left: 0;
+    z-index: -1;
+}
+
+
+main, main > .container{
+    min-height: 1000px;
+}
+
+.path-frontpage{
+    #block-openig-imageenhautdepage{
+        position: fixed;
+    }
+}

@@ -1,5 +1,49 @@
 blocks:
   -
+    info: 'Image en bas de page'
+    langcode: fr
+    uuid: 555f7a44-f502-42f6-be3c-da8191356402
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '19'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Image en haut de page'
+    langcode: fr
+    uuid: cc9d0053-0d6f-4f30-aa51-bacb9710c2a3
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '16'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Dernière newsletter'
+    langcode: fr
+    uuid: 67095522-a276-4bcb-ac5e-024b0f8e5199
+    bundle: lien
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: 'Voir la dernière newsletter'
+          options: {  }
+  -
     info: OpenStreetMap
     langcode: fr
     uuid: 51336add-2e63-44f0-b9f3-e0bfabd7b279
@@ -9,7 +53,7 @@ blocks:
     fields:
       body:
         -
-          value: '<p><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.874493837356568%2C43.64427623081348%2C3.8778921961784367%2C43.646040528752174&amp;layer=mapnik" width="425" height="350"></iframe></p>'
+          value: '<p><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.874493837356568%2C43.64427623081348%2C3.8778921961784367%2C43.646040528752174&amp;layer=mapnik" width="415" height="250"></iframe></p>'
           summary: ''
           format: full_html
   -

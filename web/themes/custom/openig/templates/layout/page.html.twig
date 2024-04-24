@@ -117,6 +117,16 @@ set footer_classes = ' ' ~
   set content_classes = (page.sidebar_first and page.sidebar_second) ? 'col-12 col-lg-6' : ((page.sidebar_first or page.sidebar_second) ? 'col-12 col-lg-9' : 'col-12' )
    %}
 
+  {% if is_front %}
+    {{ page.premiere_section_accueil }}
+    {{ page.deuxieme_section_accueil }}
+    {{ page.troisieme_section_accueil }}
+    {{ page.quatrieme_section_accueil }}
+    {{ page.cinquieme_section_accueil }}
+    {{ page.sixieme_section_accueil }}
+    {{ page.septieme_section_accueil }}
+    {{ page.huitieme_section_accueil }}
+  {% endif %}
 
   <div class="{{ b5_top_container }}">
     {% if page.breadcrumb %}
@@ -139,16 +149,6 @@ set footer_classes = ' ' ~
       {% endif %}
     </div>
   </div>
-  {% if is_front %}
-    {{ page.premiere_section_accueil }}
-    {{ page.deuxieme_section_accueil }}
-    {{ page.troisieme_section_accueil }}
-    {{ page.quatrieme_section_accueil }}
-    {{ page.cinquieme_section_accueil }}
-    {{ page.sixieme_section_accueil }}
-    {{ page.septieme_section_accueil }}
-    {{ page.huitieme_section_accueil }}
-  {% endif %}
 
 </main>
 

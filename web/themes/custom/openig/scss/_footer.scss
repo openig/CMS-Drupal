@@ -31,7 +31,7 @@ footer{
                 }
             }
             .site-title{
-                font-family:"Russo One", sans-serif;
+                font-family:"Russo One";
                 font-size: $OPenIG-font-size-16;
                 color: $OPenIG-color_black;
                 text-transform: initial;
@@ -59,7 +59,7 @@ footer{
         }
         ul{
             flex-direction: row;
-            font-family:"Russo One", sans-serif;
+            font-family:"Russo One";
             font-size: $OPenIG-font-size-16;
             color: $OPenIG-color_black;
             li.nav-item:not(:last-of-type){
@@ -77,7 +77,7 @@ footer{
     #block-openig-adresseetcontact{
         padding: 30px 0;
         .field--name-body{
-            font-family:"Open Sans";
+            font-family:"OpenSans_Regular", sans-serif;
             font-size: $OPenIG-font-size-18;
             color: $OPenIG-color_deep-white;
             text-align: center;
@@ -85,7 +85,7 @@ footer{
         .field--name-field-telephone, .field--name-field-telephone a{
             text-align: center;
             color: $OPenIG-color_deep-white;
-            font-family: 'Open Sans';
+            font-family: "OpenSans_Regular", sans-serif;
             font-size: $OPenIG-font-size-18;
             text-decoration: none;
         }
@@ -93,7 +93,7 @@ footer{
             text-align: center;
             margin-top: 5px;
             a{
-                font-family:"Exo";
+                font-family:"Exo_semiBold";
                 font-size: $OPenIG-font-size-16;
                 color: $OPenIG-color_deep-white;
                 font-weight: 600;
@@ -108,7 +108,7 @@ footer{
     // Menu naviguer footer
     #block-openig-naviguer{
         #block-openig-naviguer-menu{
-            font-family: 'Open Sans';
+            font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-16;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
@@ -116,7 +116,7 @@ footer{
         .navbar-nav{
             .nav-item{
                 .nav-link{
-                    font-family: "Open Sans";
+                    font-family: "OpenSans_Regular", sans-serif;
                     font-size: $OPenIG-font-size-16;
                     color: $OPenIG-color_deep-white;
                     text-decoration: underline;
@@ -153,7 +153,7 @@ footer{
         position: absolute;
         right: 0;
         h2{
-            font-family: 'Open Sans';
+            font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-16;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
@@ -176,7 +176,7 @@ footer{
         right: 0;
         top: 120px;
         a{
-            font-family: 'Open Sans';
+            font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-16;
             font-weight: 900;
             color: $OPenIG-color_deep-white;
