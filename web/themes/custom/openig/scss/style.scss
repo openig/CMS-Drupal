@@ -8,6 +8,7 @@
 // Include bootstrap.
 @import '../../../../themes/contrib/bootstrap5/scss/style';
 
+// Font family
 
 $fa-font-path: "../fonts";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
@@ -15,6 +16,28 @@ $fa-font-path: "../fonts";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+@font-face {
+    font-family: 'Russo One';
+    src: url('../fonts/RussoOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Exo_regular';
+    src: url('../fonts/RussoOne-Regular.ttf');
+    font-family: 'Exo_semiBold';
+    src: url('../fonts/Exo/Exo-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans_Regular';
+    src: url('../fonts/OpenSans/static/OpenSans-Regular.ttf');
+    font-family: 'OpenSans_Bold';
+    src: url('../fonts/OpenSans/static/OpenSans-Bold.ttf');
+}
+
+
+// Files scss
 
 @import 'custom';
 @import 'header';
