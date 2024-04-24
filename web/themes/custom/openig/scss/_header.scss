@@ -16,7 +16,7 @@ header{
     background-color: $OPenIG-color_white;
     padding: 15px 0;
     font-family:"Russo One";
-    font-size: $OPenIG-font-size-14;
+    font-size: $OPenIG-font-size-sm;
     color: $OPenIG-color_dark-gray;
     padding-bottom: 0;
     .navigation_droite{
@@ -55,7 +55,7 @@ header{
                             content:'\f0d7';
                             font-family: "Font Awesome 6 Free";
                             font-weight: 600;
-                            font-size: $OPenIG-font-size-18;
+                            font-size: $OPenIG-font-size-lg;
                             padding-left: 4px;
                         }
                     }
@@ -81,7 +81,7 @@ header{
                         align-items: baseline;
                         .dropdown-item{
                             color: $OPenIG-color_dark-gray;
-                            font-size: $OPenIG-font-size-14;
+                            font-size: $OPenIG-font-size-sm;
                         }
                         .dropdown-item:hover{
                             background-color: transparent;
@@ -155,7 +155,7 @@ header{
             background-color: transparent;
             border: none;
             i{
-                font-size: $OPenIG-font-size-30;
+                font-size: 30px;
                 color: $OPenIG-color_dark-gray;
             }
         }
@@ -176,7 +176,7 @@ header{
                 .fontawesome-icon{
                     margin-right: 5px;
                     i{
-                        font-size: $OPenIG-font-size-30;
+                        font-size: 30px;
                         font-weight: 400;
                     }
                 }

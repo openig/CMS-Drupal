@@ -43,8 +43,25 @@ $OPenIG-color_light-gray: #EDEDED !default;
 
 
 // Fonts size
-$OPenIG-font-size-30: 30px !default;
+
+/*
+$OPenIG-font-size-30: 30px!default;
 $OPenIG-font-size-18: 18px !default;
 $OPenIG-font-size-16: 16px !default;
 $OPenIG-font-size-14: 14px !default;
 $OPenIG-font-size-12: 12px !default;
+*/
+
+$OPenIG-font-size-base : 16px !default;
+
+$OPenIG-font-size-xs : 12px !default;
+$OPenIG-font-size-sm : 14px !default;
+$OPenIG-font-size-md : 17px !default;
+$OPenIG-font-size-lg : 18px !default;
+$OPenIG-font-size-xl : 32px !default;
+
+$OPenIG-font-size-numbers-home : 80px !default;
+$OPenIG-font-size-header-home : 45px !default;
+
+$OPenIG-font-size-h1 : 42px !default;
+$OPenIG-font-size-h2 : 24px !default;
