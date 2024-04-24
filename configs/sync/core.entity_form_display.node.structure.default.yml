@@ -36,16 +36,18 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_contact:
-    type: string_textfield
-    weight: 7
+    type: entity_reference_autocomplete
+    weight: 5
     region: content
     settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
   field_dpt_intervention:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -79,7 +81,7 @@ content:
     third_party_settings: {  }
   field_typologie_structure:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 6
     region: content
     settings:
       match_operator: CONTAINS

@@ -1,4 +1,4 @@
-uuid: d69a6a31-419b-4959-8693-97c94f267e25
+uuid: 3545ee08-4af4-4141-b6e0-0cb254d8c05c
 langcode: fr
 status: true
 dependencies:
@@ -9,11 +9,21 @@ id: node.service.field_contact
 field_name: field_contact
 entity_type: node
 bundle: service
-label: Contact
+label: Contacts
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference
