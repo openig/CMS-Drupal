@@ -16,3 +16,24 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     width: 65%;
     z-index: -1;
 }
+
+
+
+#block-openig-imageenbasdepage{
+    position: absolute;
+    width: 75%;
+    bottom: 500px;
+    left: 0;
+    z-index: -1;
+}
+
+
+main, main > .container{
+    height: 1000px;
+}
+
+.path-frontpage{
+    #block-openig-imageenhautdepage{
+        position: fixed;
+    }
+}

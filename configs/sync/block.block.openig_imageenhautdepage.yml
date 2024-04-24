@@ -3,7 +3,7 @@ langcode: fr
 status: false
 dependencies:
   content:
-    - 'block_content:image:6b63f1d0-82d7-4455-ab08-b404d71483ca'
+    - 'block_content:image:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: openig
 region: content
 weight: -5
 provider: null
-plugin: 'block_content:6b63f1d0-82d7-4455-ab08-b404d71483ca'
+plugin: 'block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
 settings:
-  id: 'block_content:6b63f1d0-82d7-4455-ab08-b404d71483ca'
+  id: 'block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
   label: 'Image en haut de page'
   label_display: '0'
   provider: block_content

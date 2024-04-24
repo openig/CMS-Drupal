@@ -9,7 +9,7 @@ _core:
 id: openig_local_tasks
 theme: openig
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: local_tasks_block
 settings:
