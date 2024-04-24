@@ -30,12 +30,12 @@ content:
     weight: 1
     region: content
   field_contact:
-    type: string
+    type: entity_reference_label
     label: above
     settings:
-      link_to_entity: false
+      link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 16
     region: content
   field_dpt_intervention:
     type: entity_reference_label
