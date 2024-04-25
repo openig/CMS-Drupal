@@ -23,20 +23,25 @@ footer{
     #block-openig-identitedusite{
         .navbar-brand{
             flex-direction: column;
-            padding: 15px 0;
+            padding: 15px 0 0 0;
             .site-logo{
                 margin-bottom: 15px;
                 img{
                     height: 81px;
                 }
             }
-            .site-title{
-                font-family:"Russo One";
-                font-size: $OPenIG-font-size-base;
-                color: $OPenIG-color_black;
-                text-transform: initial;
-            }
         }
+    }
+
+    #block-openig-phrasedaccrochefooter{
+        .field--name-body{
+            font-family:"Russo One";
+            font-size: $OPenIG-font-size-base;
+            color: $OPenIG-color_black;
+            text-transform: initial;
+            text-align: center;
+        }
+        padding: 0 15px 0 0;
     }
 
     .region-haut-footer-droite{
