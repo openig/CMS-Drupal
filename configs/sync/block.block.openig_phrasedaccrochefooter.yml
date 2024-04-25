@@ -1,0 +1,25 @@
+uuid: 2fca3459-d03d-4e19-a940-4ff53c7763ff
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a5776ac5-a497-4338-ad15-3db8d5f724ba'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_phrasedaccrochefooter
+theme: openig
+region: haut_footer_centre
+weight: 0
+provider: null
+plugin: 'block_content:a5776ac5-a497-4338-ad15-3db8d5f724ba'
+settings:
+  id: 'block_content:a5776ac5-a497-4338-ad15-3db8d5f724ba'
+  label: "Phrase d'accroche footer"
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
