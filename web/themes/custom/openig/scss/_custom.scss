@@ -37,3 +37,114 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     left: 0;
     z-index: -1;
 }
+
+.region-premiere-section-accueil{
+    position: relative;
+}
+
+
+
+#block-openig-phrasedaccrocheheader{
+    position: relative;
+    .accroche_header{
+        position: relative;
+        z-index: -2;
+        height: 600px;
+    }
+    .contenu_accroche{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        right: 0;
+        height: fit-content;
+        z-index: 2;
+        .field--name-body{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-header-home;
+            color: $OPenIG-color_black;
+            text-align: center;
+        }
+    }
+}
+
+#block-openig-descriptionaccueil{
+    position: relative;
+    .description_header{
+        position: relative;
+        height: 400px;
+    }
+    .content_description{
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%, 0%);
+        left: 50%;
+        height: fit-content;
+        z-index: 2;
+        .field--name-body{
+            font-family: 'OpenSans_Regular', sans-serif;
+            font-size: $OPenIG-font-size-base;
+            color: $OPenIG-color_black;
+            text-align: center;
+        }
+        .field--name-field-lien{
+            text-align: center;
+            margin-top: 30px;
+            a{
+                font-family: 'Russo One';
+                font-size: $OPenIG-font-size-lg;
+                color: $OPenIG-color_dark-gray;
+                border-bottom: 1px solid $OPenIG-color_red;
+                text-decoration: none;
+            }
+        }
+    }
+    
+}
+
+#block-openig-imageaccueil{
+    position: absolute;
+    width: 75%;
+    top: 0;
+    z-index: 0;
+}
+
+#block-openig-actionsdanslassociation{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    .field--name-field-taxonomie{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: auto;
+        .taxonomy-term{
+            width: 195px;
+            height: 200px;
+            background-color: $OPenIG-color_white;
+            border-radius: 2rem;
+            .content{
+                height: 100%;
+            }
+            .lien_action{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-decoration: none;
+                color: $OPenIG-color_black;
+                height: 100%;
+            }
+            img{
+                height: 75px;
+            }
+            .verbe_action{
+                margin-top: 15px;
+                font-family: 'Russo One';
+                font-size: $OPenIG-font-size-lg;
+            }
+        }
+    }
+}
