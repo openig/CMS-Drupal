@@ -97,6 +97,8 @@ footer{
                 font-size: $OPenIG-font-size-base;
                 color: $OPenIG-color_deep-white;
                 font-weight: 600;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_deep-white;
             }
         }
     }
@@ -119,8 +121,11 @@ footer{
                     font-family: "OpenSans_Regular", sans-serif;
                     font-size: $OPenIG-font-size-base;
                     color: $OPenIG-color_deep-white;
-                    text-decoration: underline;
-                    padding: 5px 10px;
+                    text-decoration: none;
+                    margin: 5px 10px;
+                    border-bottom: 1px solid $OPenIG-color_deep-white;
+                    width: fit-content;
+                    padding: 0;
                 }
                 .nav-link::after{
                     border: none;
