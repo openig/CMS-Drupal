@@ -532,3 +532,98 @@ menus:
     langcode: fr
     uuid: 676720fd-9c04-441d-9ab1-f4efdf169952
     options: {  }
+taxonomies:
+  actions_dans_l_association:
+    -
+      vid: actions_dans_l_association
+      tid: '1'
+      langcode: fr
+      name: Découvrir
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3b2833cf-8340-4321-b87f-224c9903d513
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: ''
+          options: {  }
+      field_picto:
+        -
+          target_id: '32'
+          alt: découvrir
+          title: ''
+          width: '64'
+          height: '64'
+    -
+      vid: actions_dans_l_association
+      tid: '3'
+      langcode: fr
+      name: Participer
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3e91e4aa-4bc8-46af-9b1c-545105d2cbd3
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: ''
+          options: {  }
+      field_picto:
+        -
+          target_id: '29'
+          alt: participer
+          title: ''
+          width: '64'
+          height: '64'
+    -
+      vid: actions_dans_l_association
+      tid: '2'
+      langcode: fr
+      name: "S'informer"
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 90972cf5-6ed0-425c-86cd-cf91bdf4c765
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: ''
+          options: {  }
+      field_picto:
+        -
+          target_id: '28'
+          alt: "S'informer"
+          title: ''
+          width: '64'
+          height: '64'
+    -
+      vid: actions_dans_l_association
+      tid: '4'
+      langcode: fr
+      name: Utiliser
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 3612dd00-9baf-4377-8c33-896448300500
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: ''
+          options: {  }
+      field_picto:
+        -
+          target_id: '30'
+          alt: Utiliser
+          title: ''
+          width: '64'
+          height: '64'
+  dpt_intervention: {  }
+  outil_competence: {  }
+  tags: {  }
+  type_de_ressource: {  }
+  typologie_de_structure: {  }
