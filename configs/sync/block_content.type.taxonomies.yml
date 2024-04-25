@@ -1,0 +1,8 @@
+uuid: d424e559-17d1-470b-8e5a-d9bf461f9d90
+langcode: fr
+status: true
+dependencies: {  }
+id: taxonomies
+label: Taxonomies
+revision: 0
+description: ''

@@ -1,0 +1,20 @@
+uuid: 89ff7f73-84e7-41cf-9959-88ce277e2f6b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - block_content
+    - taxonomy
+id: block_content.field_taxonomie
+field_name: field_taxonomie
+entity_type: block_content
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 5
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

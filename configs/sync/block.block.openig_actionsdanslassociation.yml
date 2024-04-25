@@ -1,0 +1,30 @@
+uuid: ec3d08f8-d238-4122-a376-5b93b0fabd23
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:taxonomies:d1dbc935-9685-453f-b144-b6b413e092d3'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_actionsdanslassociation
+theme: openig
+region: premiere_section_accueil
+weight: -12
+provider: null
+plugin: 'block_content:d1dbc935-9685-453f-b144-b6b413e092d3'
+settings:
+  id: 'block_content:d1dbc935-9685-453f-b144-b6b413e092d3'
+  label: "Actions dans l'association"
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

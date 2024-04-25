@@ -1,0 +1,40 @@
+uuid: 90d4c2fa-15e2-415f-bb3f-68a62f17a54a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomies
+    - field.field.block_content.taxonomies.body
+    - field.field.block_content.taxonomies.field_taxonomie
+id: block_content.taxonomies.default
+targetEntityType: block_content
+bundle: taxonomies
+mode: default
+content:
+  field_taxonomie:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden:
+  body: true

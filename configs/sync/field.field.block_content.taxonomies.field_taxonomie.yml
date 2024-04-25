@@ -1,0 +1,29 @@
+uuid: 8fb8967c-ca5b-4777-90bf-da5ae22ab66d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomies
+    - field.storage.block_content.field_taxonomie
+    - taxonomy.vocabulary.actions_dans_l_association
+id: block_content.taxonomies.field_taxonomie
+field_name: field_taxonomie
+entity_type: block_content
+bundle: taxonomies
+label: Taxonomie
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      actions_dans_l_association: actions_dans_l_association
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
