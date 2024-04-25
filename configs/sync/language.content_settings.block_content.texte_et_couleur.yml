@@ -1,0 +1,11 @@
+uuid: d80c3f00-e379-4889-9268-c65514c357e7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+id: block_content.texte_et_couleur
+target_entity_type_id: block_content
+target_bundle: texte_et_couleur
+default_langcode: site_default
+language_alterable: false

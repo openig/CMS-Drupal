@@ -1,0 +1,49 @@
+uuid: 3963165f-8e81-42eb-8ae7-47ec355f36a4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+    - field.field.block_content.texte_et_couleur.body
+    - field.field.block_content.texte_et_couleur.field_couleur
+    - field.field.block_content.texte_et_couleur.field_lien
+  module:
+    - color_field
+    - link
+    - text
+id: block_content.texte_et_couleur.default
+targetEntityType: block_content
+bundle: texte_et_couleur
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_couleur:
+    type: color_field_formatter_text
+    label: hidden
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,60 @@
+uuid: 3e6fbe99-4db7-469e-9e58-b766d89b600d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+    - field.field.block_content.texte_et_couleur.body
+    - field.field.block_content.texte_et_couleur.field_couleur
+    - field.field.block_content.texte_et_couleur.field_lien
+  module:
+    - color_field
+    - link
+    - text
+id: block_content.texte_et_couleur.default
+targetEntityType: block_content
+bundle: texte_et_couleur
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_couleur:
+    type: color_field_widget_default
+    weight: 3
+    region: content
+    settings:
+      placeholder_color: ''
+      placeholder_opacity: ''
+    third_party_settings: {  }
+  field_lien:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 1
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }
