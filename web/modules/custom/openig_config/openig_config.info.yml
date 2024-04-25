@@ -36,3 +36,5 @@ dependencies:
   - svg_image
   - twig_blocks
   - twig_tweak
+  - color_field
+  - ckeditor_font
