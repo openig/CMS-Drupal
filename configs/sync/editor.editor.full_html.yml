@@ -36,6 +36,7 @@ settings:
       - horizontalLine
       - '|'
       - heading
+      - fontSize
       - showBlocks
       - '|'
       - sourceEditing
@@ -56,6 +57,38 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
+    ckeditor_font_font:
+      supportAllSizeValues: false
+      supportAllFamilyValues: false
+      font_names: {  }
+      font_sizes:
+        -
+          title: 12px
+          model: 12px
+        -
+          title: 14px
+          model: 14px
+        -
+          title: 16px
+          model: 16px
+        -
+          title: 17px
+          model: 17px
+        -
+          title: 18px
+          model: 18px
+        -
+          title: 24px
+          model: 24px
+        -
+          title: 32px
+          model: 32px
+        -
+          title: 42px
+          model: 42px
+        -
+          title: 45px
+          model: 45px
     media_media:
       allow_view_mode_override: false
 image_upload:
