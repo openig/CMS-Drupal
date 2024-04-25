@@ -1,0 +1,30 @@
+uuid: 0eefa879-1be3-494b-a4cc-242db21d09bc
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:texte_et_couleur:8c419593-e0f3-47c9-b2e9-4118e5b46a0f'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_descriptionaccueil
+theme: openig
+region: premiere_section_accueil
+weight: -11
+provider: null
+plugin: 'block_content:8c419593-e0f3-47c9-b2e9-4118e5b46a0f'
+settings:
+  id: 'block_content:8c419593-e0f3-47c9-b2e9-4118e5b46a0f'
+  label: 'Description accueil'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
