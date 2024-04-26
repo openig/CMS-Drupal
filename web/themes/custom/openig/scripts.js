@@ -2,6 +2,7 @@
     $(document).ready(function(){
         $('#search_icon').click(function() {
             $('#search-block-form').toggleClass('open');
+            $('#search_icon').toggleClass('open');
         });
 
         if($('.dropdown-item').hasClass('is-active')){

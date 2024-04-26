@@ -22,7 +22,7 @@ header{
     .navigation_droite{
         display: flex;
         justify-content: space-between;
-        padding-bottom: 15px;
+        //padding-bottom: 15px;
     }
     .navigation{
         .region-navigation-premiere-section, .region-navigation-deuxieme-section, .region-navigation-troisieme-section{
@@ -95,7 +95,7 @@ header{
                 }
             }
         }
-        .region-navigation-premiere-section{
+        .region-navigation-premiere-section, .region-navigation-troisieme-section{
             align-items: end;
         }
         // Logo
@@ -117,52 +117,102 @@ header{
         .region-navigation-troisieme-section{
             nav{
                 border-left: 4px solid $OPenIG-color_red;
-                margin-left: 15px;
+                margin-left: 10px;
             }
         }
     }
 
     // Barre de recherche
-    .search-block-form{
+    #block-openig-formulairederecherche.search-block-form{
+        height: 70px;
+        width: 70px;
         #search-block-form{
             display: none;
         }
         #search-block-form.open{
             display: block;
-            background-color: white;
+            background-color: $OPenIG-color_light-gray;
             //border: 1px solid $OPenIG-color_gray;
             filter: drop-shadow(0 1px 2px $OPenIG-color_gray);
-            border-radius: 6px;
+            border-radius: 0px;
             position: absolute;
-            transform: translate(0px,20px);
-            width: 350px;
+            transform: translate(-80%,2px);
+            width: 700px;
+            box-shadow: inset 0px 2px 6px rgba(0,0,0,.16);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 150px;
+            padding: 0 30px;
             .form-type-search{
-                padding: 15px 15px;
-                width: 100%;
+                //padding: 15px 15px;
+                width: 85%;
                 label::after{
                     content: '';
                 }
             }
-            input{
-                margin-top: 5px;
-                border-color: $OPenIG-color_gray;
+            input.form-search{
+                //margin-top: 5px;
+                //border-color: $OPenIG-color_gray;
+                border-radius: 2rem;
+                box-shadow: 0 0 0 .30rem rgba(0, 160, 154,.25);
             }
             .form-actions{
-                display: none;
+                //display: none;
+            }
+            #edit-submit{
+                background-color: transparent;
+                border: none;
+                position: relative;
+                z-index: 1;
+                padding: 0;
+                width: 40px;
+                height: 40px;
+            }
+            #edit-actions{
+                position: relative;
+                background-color: $OPenIG-color_white;
+                border-radius: 10px;
+                box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+            }
+            #edit-actions::after{
+                content: '\f002';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                z-index: 0;
             }
         }
         #search_icon{
+            text-align: end;
+            padding-right: 10px;
             background-color: transparent;
             border: none;
+            //margin-top: 5px;
+            height: 100%;
+            width: 100%;
+            padding-bottom: 30px;            
             i{
                 font-size: 30px;
                 color: $OPenIG-color_dark-gray;
+            }
+        }
+        #search_icon.open{
+            //margin-top: 0;
+            background-color: $OPenIG-color_deep-white;
+            i{
+                color: $OPenIG-color_blue;
             }
         }
     }
 
     // Menu FAQ
     #block-openig-faq{
+        margin-bottom: 32px;
         ul{
             margin-bottom: 0;
             margin-left: 15px;
@@ -200,6 +250,7 @@ header{
 
     // Menu adhésion
     #block-openig-adhesion{
+        padding-bottom: 15px;
         .nav-item{
             .nav-link{
                 padding-bottom: 0;
