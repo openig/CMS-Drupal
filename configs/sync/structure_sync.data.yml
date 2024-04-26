@@ -1,69 +1,5 @@
 blocks:
   -
-    info: 'Description accueil'
-    langcode: fr
-    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
-    bundle: texte_et_couleur
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>'
-          summary: ''
-          format: basic_html
-      field_couleur:
-        -
-          color: '#F0F0EF'
-          opacity: null
-      field_hauteur_bloc:
-        -
-          value: '400'
-      field_lien:
-        -
-          uri: 'internal:/'
-          title: 'En savoir plus'
-          options: {  }
-  -
-    info: "Phrase d'accroche header"
-    langcode: fr
-    uuid: e14ec2d8-cb66-494e-8514-885a3ede0489
-    bundle: texte_et_couleur
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<p>Occitanie Pyrénées&nbsp;<br>en&nbsp;<br>Intelligence Géomatique</p>'
-          summary: ''
-          format: basic_html
-      field_couleur:
-        -
-          color: '#F2F6E7'
-          opacity: null
-      field_hauteur_bloc:
-        -
-          value: '600'
-      field_lien: {  }
-  -
-    info: "Actions dans l'association"
-    langcode: fr
-    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
-    bundle: taxonomies
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body: {  }
-      field_taxonomie:
-        -
-          target_id: '1'
-        -
-          target_id: '2'
-        -
-          target_id: '3'
-        -
-          target_id: '4'
-  -
     info: 'Image accueil'
     langcode: fr
     uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
@@ -73,7 +9,7 @@ blocks:
     fields:
       field_image:
         -
-          target_id: '22'
+          target_id: '33'
           alt: mesh
           title: ''
           width: '64'
@@ -136,6 +72,24 @@ blocks:
           title: 'Voir la dernière newsletter'
           options: {  }
   -
+    info: "Actions dans l'association"
+    langcode: fr
+    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
+    bundle: taxonomies
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_taxonomie:
+        -
+          target_id: '5'
+        -
+          target_id: '6'
+        -
+          target_id: '7'
+        -
+          target_id: '8'
+  -
     info: OpenStreetMap
     langcode: fr
     uuid: 51336add-2e63-44f0-b9f3-e0bfabd7b279
@@ -167,6 +121,46 @@ blocks:
       field_telephone:
         -
           value: '04 67 55 86 54'
+  -
+    info: "Phrase d'accroche header"
+    langcode: fr
+    uuid: e14ec2d8-cb66-494e-8514-885a3ede0489
+    bundle: texte_et_couleur
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>Occitanie Pyrénées&nbsp;<br>en&nbsp;<br>Intelligence Géomatique</p>'
+          summary: ''
+          format: basic_html
+      field_couleur:
+        -
+          color: '#F2F6E7'
+          opacity: null
+      field_lien: {  }
+  -
+    info: 'Description accueil'
+    langcode: fr
+    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
+    bundle: texte_et_couleur
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>'
+          summary: ''
+          format: basic_html
+      field_couleur:
+        -
+          color: '#F0F0EF'
+          opacity: null
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: 'En savoir plus'
+          options: {  }
 menus:
   -
     menu_name: footer
