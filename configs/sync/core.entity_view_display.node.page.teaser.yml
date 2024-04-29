@@ -19,9 +19,12 @@ bundle: page
 mode: teaser
 content:
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
     region: content
 hidden:
+  addtoany: true
   field_access_restricted: true
   field_body: true
   field_contenu_sidebar: true

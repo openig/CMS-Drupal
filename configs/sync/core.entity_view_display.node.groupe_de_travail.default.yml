@@ -22,22 +22,11 @@ dependencies:
     - text
     - user
     - webform
-    - weight
 id: node.groupe_de_travail.default
 targetEntityType: node
 bundle: groupe_de_travail
 mode: default
 content:
-  field_access_restricted:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 9
-    region: content
   field_animators:
     type: entity_reference_label
     label: above
@@ -45,16 +34,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 6
-    region: content
-  field_archive:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 11
     region: content
   field_body:
     type: entity_reference_revisions_entity_view
@@ -71,16 +50,16 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 12
+    weight: 8
     region: content
   field_contenu_sidebar:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 10
+    weight: 9
     region: content
   field_members:
     type: entity_reference_label
@@ -114,13 +93,6 @@ content:
     third_party_settings: {  }
     weight: 5
     region: content
-  field_weight:
-    type: default_weight
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 8
-    region: content
   field_working_group_objective:
     type: text_default
     label: above
@@ -134,6 +106,9 @@ content:
     weight: 4
     region: content
 hidden:
+  field_access_restricted: true
+  field_archive: true
   field_image: true
+  field_weight: true
   langcode: true
   search_api_excerpt: true
