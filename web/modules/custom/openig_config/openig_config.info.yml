@@ -38,3 +38,4 @@ dependencies:
   - twig_tweak
   - color_field
   - ckeditor_font
+  - addtoany
