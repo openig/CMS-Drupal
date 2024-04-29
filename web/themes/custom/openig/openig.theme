@@ -15,3 +15,13 @@
         $variables['attributes']['value'] = '';
     }
  }
+
+ function openig_preprocess_field__node(&$variables){
+  if($variables['field_name'] == 'title'){
+    $tags = $variables['element']['#object']->field_tag;
+    foreach ($tags as $tag) {
+      $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
+      $variables['tags'][] = $term->name[0]->value;
+    }
+  }
+ }
