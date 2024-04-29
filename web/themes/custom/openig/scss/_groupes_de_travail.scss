@@ -5,6 +5,9 @@
     #block-openig-page-title{
         display: flex;
         align-items: center;
+        img{
+            width: 80px;
+        }
         .field--name-title{
             font-family:"Exo_semiBold", sans-serif;
             font-size: $OPenIG-font-size-h1;
@@ -15,7 +18,7 @@
             margin-bottom: .5rem;
             margin-left: 30px;
             button{
-                background-color: transparent;
+                background-color: $OPenIG-color_white;
                 border: 1px solid $OPenIG-color_blue;
                 border-radius: 2rem;
                 padding: 0 10px;
