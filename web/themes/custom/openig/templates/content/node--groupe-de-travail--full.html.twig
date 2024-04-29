@@ -75,6 +75,7 @@
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'row'
   ]
 %}
 {{ attach_library('bootstrap5/node') }}
@@ -87,8 +88,8 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-
-  <div{{ content_attributes.addClass('node__content') }}>
+  <div class="col-lg-1"></div>
+  <div{{ content_attributes.addClass('node__content col-lg-11 col-12') }}>
     {{ content|without('field_tag') }}
   </div>
 

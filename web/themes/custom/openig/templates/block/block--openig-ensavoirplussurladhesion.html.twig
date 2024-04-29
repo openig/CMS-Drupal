@@ -31,17 +31,13 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'col-5'
+    'col-6'
   ]
 %}
-<div class="col-1"></div>
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if label %}
-    <button id="button_share" {{ title_attributes }}>
-        <i class="fa-regular fa-share-nodes"></i>
-        {{ label }}
-    </button>
+    <h2{{ title_attributes }}>{{ label }}</h2>
   {% endif %}
   {{ title_suffix }}
   {% block content %}
