@@ -11,7 +11,7 @@ dependencies:
     - field.field.paragraph.membre.field_video
     - paragraphs.paragraphs_type.membre
   module:
-    - image
+    - svg_image
     - video_embed_field
 id: paragraph.membre.default
 targetEntityType: paragraph
@@ -20,14 +20,14 @@ mode: default
 content:
   field_email:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 7
     region: content
   field_entreprise:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -35,18 +35,22 @@ content:
     region: content
   field_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 3
     region: content
   field_poste:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -54,7 +58,7 @@ content:
     region: content
   field_prenom_nom:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -62,7 +66,7 @@ content:
     region: content
   field_video:
     type: video_embed_field_video
-    label: above
+    label: hidden
     settings:
       autoplay: true
       responsive: true
