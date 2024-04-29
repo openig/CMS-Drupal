@@ -39,7 +39,7 @@ content:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      view_mode: default
+      view_mode: groupe_de_travail
       link: ''
     third_party_settings: {  }
     weight: 3
@@ -106,6 +106,7 @@ content:
     weight: 4
     region: content
 hidden:
+  addtoany: true
   field_access_restricted: true
   field_archive: true
   field_image: true
