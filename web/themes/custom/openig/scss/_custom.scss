@@ -206,3 +206,19 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         }
     }
 }
+
+// Titres
+h1{
+    font-family:"Exo_semiBold";
+    font-size: $OPenIG-font-size-h1;
+    color: $OPenIG-color_black;
+    font-weight: 600;
+}
+
+h2{
+    font-family: "Exo_medium";
+    font-size: $OPenIG-font-size-h2;
+    border-bottom: 5px solid $OPenIG-color_light-blue;
+    color: $OPenIG-color_black;
+    font-weight: 500;
+}
