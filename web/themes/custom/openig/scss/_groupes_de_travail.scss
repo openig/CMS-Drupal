@@ -1,9 +1,16 @@
 // Fiche groupe de travail
 
 .page-node-type-groupe-de-travail{
+    color: $OPenIG-color_black;
     #block-openig-page-title{
         display: flex;
         align-items: center;
+        .field--name-title{
+            font-family:"Exo_semiBold", sans-serif;
+            font-size: $OPenIG-font-size-h1;
+            color: $OPenIG-color_black;
+            font-weight: 600;
+        }
         .tags{
             margin-bottom: .5rem;
             margin-left: 30px;
@@ -14,6 +21,8 @@
                 padding: 0 10px;
                 font-size: $OPenIG-font-size-xs;
                 margin-right: 10px;
+                font-family: "Exo_regular", sans-serif;
+                color: $OPenIG-color_black;
             }
         }
     }
