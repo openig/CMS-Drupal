@@ -12,5 +12,8 @@
             var child = $(parent).find('.dropdown-menu');
             $(child).addClass('show');
         }
+        $('#block-openig-addtoanysharebuttons #button_share').click(function () {
+            $('#block-openig-addtoanysharebuttons .addtoany_list').toggleClass('open');
+        })
     })
 })(jQuery);
