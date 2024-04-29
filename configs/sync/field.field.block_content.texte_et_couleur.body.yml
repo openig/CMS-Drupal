@@ -1,0 +1,24 @@
+uuid: 8e4e3277-1df6-4faa-a2aa-36f7d7b72dee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+    - field.storage.block_content.body
+  module:
+    - text
+id: block_content.texte_et_couleur.body
+field_name: body
+entity_type: block_content
+bundle: texte_et_couleur
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

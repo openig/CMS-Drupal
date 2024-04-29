@@ -1,0 +1,22 @@
+uuid: 855436cc-f74e-400e-914f-b09f400c6262
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+    - field.storage.block_content.field_couleur
+  module:
+    - color_field
+id: block_content.texte_et_couleur.field_couleur
+field_name: field_couleur
+entity_type: block_content
+bundle: texte_et_couleur
+label: Couleur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

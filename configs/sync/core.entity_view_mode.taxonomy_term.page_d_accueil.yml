@@ -1,0 +1,11 @@
+uuid: 54739458-829c-44c6-9633-db09089da8a5
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: taxonomy_term.page_d_accueil
+label: "Page d'accueil"
+description: ''
+targetEntityType: taxonomy_term
+cache: true

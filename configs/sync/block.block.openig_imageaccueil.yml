@@ -1,0 +1,30 @@
+uuid: bfc66cc5-66af-44d8-8562-5778b4300a3b
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:image:a6cc63d2-2318-4bb8-a541-90b04b51f360'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_imageaccueil
+theme: openig
+region: premiere_section_accueil
+weight: -10
+provider: null
+plugin: 'block_content:a6cc63d2-2318-4bb8-a541-90b04b51f360'
+settings:
+  id: 'block_content:a6cc63d2-2318-4bb8-a541-90b04b51f360'
+  label: 'Image accueil'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
