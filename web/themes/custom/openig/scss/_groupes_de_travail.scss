@@ -1,0 +1,20 @@
+// Fiche groupe de travail
+
+.page-node-type-groupe-de-travail{
+    #block-openig-page-title{
+        display: flex;
+        align-items: center;
+        .tags{
+            margin-bottom: .5rem;
+            margin-left: 30px;
+            button{
+                background-color: transparent;
+                border: 1px solid $OPenIG-color_blue;
+                border-radius: 2rem;
+                padding: 0 10px;
+                font-size: $OPenIG-font-size-xs;
+                margin-right: 10px;
+            }
+        }
+    }
+}
