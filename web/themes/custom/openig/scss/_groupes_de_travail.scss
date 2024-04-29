@@ -2,6 +2,8 @@
 
 .page-node-type-groupe-de-travail{
     color: $OPenIG-color_black;
+    font-family: 'OpenSans_Regular', sans-serif;
+    font-size: $OPenIG-font-size-base;
     #block-openig-page-title{
         display: flex;
         align-items: center;
@@ -27,6 +29,15 @@
                 font-family: "Exo_regular", sans-serif;
                 color: $OPenIG-color_black;
             }
+        }
+    }
+    .field--name-field-theme-overview, .field--name-field-working-group-objective{
+        margin-top: 4rem;
+        h2{
+            font-family: 'Exo_medium', sans-serif;
+            font-size: $OPenIG-font-size-h2;
+            border-bottom: 5px solid $OPenIG-color_light-blue;
+            margin-bottom: 30px;
         }
     }
 }

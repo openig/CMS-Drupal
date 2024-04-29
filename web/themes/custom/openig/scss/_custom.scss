@@ -162,7 +162,11 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 .addtoany_list.open{
     visibility: visible;
 }
-
+#block-openig-addtoanysharebuttons{
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
 #button_share{
     background-color: $OPenIG-color_blue;
     border: none;
@@ -176,5 +180,29 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
     i{
         margin-right: 5px;
+    }
+}
+
+// Bloc En savoir plus sur l'adhésion
+
+#block-openig-ensavoirplussurladhesion{
+    width: 50%;
+    float: right;
+    text-align: right;
+    background-color: $OPenIG-color_white;
+    .field--name-body{
+        font-family: 'OpenSans_Regular', sans-serif;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+    }
+    .field--name-field-lien{
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-base;
+            color: $OPenIG-color_dark-gray;
+            border-bottom: 1px solid $OPenIG-color_red;
+            text-decoration: none;
+            padding-bottom: 5px;
+        }
     }
 }
