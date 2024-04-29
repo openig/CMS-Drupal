@@ -45,7 +45,7 @@
 </h1>
 
 <div class="tags">
-    {% for tag in tags %}
-        <button> {{ tag }} </button>
+    {% for id,tag in tags %}
+        <button onclick="window.location.href='/taxonomy/term/{{id}}';"> {{ tag }} </button>
     {% endfor %}
 </div>

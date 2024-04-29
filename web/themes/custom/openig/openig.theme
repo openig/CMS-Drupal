@@ -21,7 +21,7 @@
     $tags = $variables['element']['#object']->field_tag;
     foreach ($tags as $tag) {
       $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
-      $variables['tags'][] = $term->name[0]->value;
+      $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
     }
   }
  }
