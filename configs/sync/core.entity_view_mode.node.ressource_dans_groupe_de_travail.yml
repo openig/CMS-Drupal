@@ -1,0 +1,11 @@
+uuid: 7b80e15c-c153-466f-8e14-10186115c190
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node.ressource_dans_groupe_de_travail
+label: 'Ressource dans groupe de travail'
+description: ''
+targetEntityType: node
+cache: true

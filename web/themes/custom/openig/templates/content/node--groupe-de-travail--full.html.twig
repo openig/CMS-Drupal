@@ -90,7 +90,7 @@
   {{ title_suffix }}
   <div class="col-lg-1"></div>
   <div{{ content_attributes.addClass('node__content col-lg-11 col-12') }}>
-    {{ content|without('field_tag','field_animators','field_members') }}
+    {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar') }}
 	{% if 'authenticated' not in user.getRoles() %}
         <div class="liste_accordeon">
             <div class="item_accordeon">
@@ -101,6 +101,12 @@
                 <h2 class="title_accordeon"> Membres du groupe de travail </h2>
                 <span>Réservé aux adhérents<i class="fa-solid fa-lock"></i></span>
             </div>
+            {% for key,ressource in ressources %}
+                <div class="item_accordeon">
+                    <h2 class="title_accordeon"> {{key}} </h2>
+                    <span>Réservé aux adhérents<i class="fa-solid fa-lock"></i></span>
+                </div>
+            {% endfor %}
         </div>
     {% else %}
         <div class="accordion" id="accordionGroupeTravail">
@@ -134,6 +140,25 @@
                     </div>
                 </div>
             </div>
+            {% for key,type in ressources %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{key}}">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
+                            {{key}}
+                            <span class="numberTitle">
+                                {{ type|length }}
+                            </span>
+                        </button>
+                    </h2>
+                    <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
+                        <div class="accordion-body">
+                        {% for ressource in type %}
+                            {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
     {% endif %}
 </div>

@@ -5,23 +5,78 @@
  * OPenIG theme file.
  */
 
- function openig_preprocess_form_element_label(&$variables){
-   // $variables['title_display'] = '';
-   // $variables['title']['#markup'] = 'Rechercher';
- }
+function openig_preprocess_form_element_label(&$variables){
+  // $variables['title_display'] = '';
+  // $variables['title']['#markup'] = 'Rechercher';
+}
 
- function openig_preprocess_input(&$variables){
-    if(($variables['theme_hook_original'] == 'input__submit') and ($variables['element']['#type'] == 'submit')){
-        $variables['attributes']['value'] = '';
-    }
- }
-
- function openig_preprocess_field__node(&$variables){
-  if($variables['field_name'] == 'title'){
-    $tags = $variables['element']['#object']->field_tag;
-    foreach ($tags as $tag) {
-      $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
-      $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
-    }
+function openig_preprocess_input(&$variables){
+  if(($variables['theme_hook_original'] == 'input__submit') and ($variables['element']['#type'] == 'submit')){
+      $variables['attributes']['value'] = '';
   }
- }
+}
+
+function openig_preprocess_field__node(&$variables){
+if($variables['field_name'] == 'title'){
+  $tags = $variables['element']['#object']->field_tag;
+  foreach ($tags as $tag) {
+    $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
+    $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+  }
+}
+}
+
+
+function openig_preprocess_node(&$variables, $hook){
+  $type = $variables['node']->getType();
+
+  switch($type) {
+    case "groupe_de_travail":
+      $variables['ressources'] = array();
+      $nid = $variables['node']->nid->value;
+      $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);
+
+      foreach ($ressources as $ressource) {
+        /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+        $referenceItem = $ressource;
+        /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+        $entityReference = $referenceItem->get('field_type');
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
+        $id = $entityReference[0]->target_id;
+        $term = \Drupal\taxonomy\Entity\Term::load($id);
+        if($term){
+          $name = $term->get('name')->getValue();
+          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+          if(!empty($name)){
+            $referencedEntity = $ressource;
+            $referencedEntityType = $name[0]['value'];
+            $variables['ressources'][$referencedEntityType][] = $referencedEntity;
+          }
+        }
+      }
+
+
+      //$variables['medias'] = array();
+      //foreach( $variables['node']->get('field_medias') as $media) {
+
+          /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+          //$referenceItem = $media;
+
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+         // $entityReference = $referenceItem->get('entity');
+
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
+         // $entityAdapter = $entityReference->getTarget();
+
+          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+         // if(!empty($entityAdapter)){
+         //   $referencedEntity = $entityAdapter->getValue();
+         //   $referencedEntityType = $referencedEntity->type->entity->label();
+         //   $variables['medias'][$referencedEntityType][] = $referencedEntity;
+         // }
+      break;
+      
+    default:
+      break;
+  }
+}
