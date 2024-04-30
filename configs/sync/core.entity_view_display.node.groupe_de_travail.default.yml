@@ -28,10 +28,11 @@ bundle: groupe_de_travail
 mode: default
 content:
   field_animators:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: compact
+      link: false
     third_party_settings: {  }
     weight: 6
     region: content
@@ -62,10 +63,11 @@ content:
     weight: 9
     region: content
   field_members:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: compact
+      link: false
     third_party_settings: {  }
     weight: 7
     region: content

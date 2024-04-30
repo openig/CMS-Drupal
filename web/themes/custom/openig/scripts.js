@@ -19,5 +19,23 @@
         $('#block-openig-addtoanysharebuttons #button_share').click(function () {
             $('#block-openig-addtoanysharebuttons .addtoany_list').toggleClass('open');
         })
+
+        // Accordéons fiche groupe de travail, ajout d'une class pour la bordure gauche
+        function accordionGT() {
+            $("#accordionGroupeTravail .accordion-item").each(function(){
+                var child = $(this).find('.accordion-button');
+                if(!$(child).hasClass('collapsed')){
+                    $(this).addClass('open');
+                }else{
+                    $(this).removeClass('open');
+                }
+            })
+        }
+        if($('body').hasClass('page-node-type-groupe-de-travail')){
+            accordionGT();
+            $('.accordion-button').click(function(){
+                accordionGT();
+            })
+        }
     })
 })(jQuery);

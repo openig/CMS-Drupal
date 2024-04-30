@@ -19,11 +19,18 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content: {  }
+content:
+  field_nom_prenom:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_groupe_de_travail: true
   field_membre_du_ca: true
-  field_nom_prenom: true
   field_outil_competence: true
   field_referent: true
   field_social_network: true
