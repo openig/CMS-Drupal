@@ -19,6 +19,9 @@
         $('#block-openig-addtoanysharebuttons #button_share').click(function () {
             $('#block-openig-addtoanysharebuttons .addtoany_list').toggleClass('open');
         })
+        $('#block-openig-addtoanysharebuttons-bas-page #button_share_bas_page').click(function () {
+            $('#block-openig-addtoanysharebuttons-bas-page .addtoany_list').toggleClass('open');
+        })
 
         // Accordéons fiche groupe de travail, ajout d'une class pour la bordure gauche
         function accordionGT() {

@@ -26,7 +26,7 @@
         }
     }
     .node--type-groupe-de-travail{
-        .btnRejoindre{
+        #btnRejoindre{
             position: absolute;
             top: -35px;
             right: 0;
@@ -40,6 +40,28 @@
             padding: 5px 10px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
                     
+        }
+        #btnRejoindre_bas{
+            background-color: $OPenIG-color_blue;
+            border: none;
+            border-radius: 6px;
+            color: $OPenIG-color_white;
+            font-family: 'Exo_semiBold', sans-serif;
+            font-weight: 600;
+            font-size: $OPenIG-font-size-sm;
+            padding: 5px 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+                    
+        }
+        .btnShareRejoindre{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            margin-top: 50px;
+            border-top: 1px solid $OPenIG-color_gray;
+            padding-top: 20px;
+            width: fit-content;
         }
         .field--name-field-theme-overview, .field--name-field-working-group-objective{
             margin-top: 4rem;
