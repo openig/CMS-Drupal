@@ -90,6 +90,9 @@
   {{ title_suffix }}
   <div class="col-lg-1"></div>
   <div{{ content_attributes.addClass('node__content col-lg-11 col-12') }}>
+  	{% if 'authenticated' in user.getRoles() %}
+        <button class="btnRejoindre"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+    {% endif %}
     {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar') }}
 	{% if 'authenticated' not in user.getRoles() %}
         <div class="liste_accordeon">

@@ -25,138 +25,156 @@
             }
         }
     }
-    .field--name-field-theme-overview, .field--name-field-working-group-objective{
-        margin-top: 4rem;
-        h2{
-            margin-bottom: 30px;
-        }
-    }
-    .field--name-field-working-group-objective{
-        margin-bottom: 4rem;
-    }
-
-    .paragraph--type--title-text.paragraph--view-mode--groupe-de-travail{
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border-radius: 20px;
-        border-left: 2px solid $OPenIG-color_light-blue;
-        border-right: 2px solid $OPenIG-color_light-blue;
-        margin-bottom: 4rem;
-        position: relative;
-        padding-bottom: 40px;
-        .title_collapse{
-            width: 100%;
-            text-align: left;
-            padding: 15px 20px 10px 20px;
-        }
-        h2{
-            border-bottom: 1px solid $OPenIG-color_gray;
-            padding-bottom: 15px;
-        }
-        .content_collapse{
-            .card-body{
-                border: none;
-                padding: 0 20px;
-            }
-        }
-        .icon_collapse{
+    .node--type-groupe-de-travail{
+        .btnRejoindre{
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: fit-content;
-            padding: 0;
-            bottom: -25px;
-            border: 5px solid $OPenIG-color_light-blue;
-            width: 55px;
-            height: 55px;
-            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
-            border-radius: 50%;
-            background-color: $OPenIG-color_white;
-            margin: 0;
-            i{
-                font-size: 22px;
-                color: $OPenIG-color_red;
-                transform: rotate(0deg);
-            }
-        }
-        .icon_collapse.collapsed{
-            i{
-                transform: rotate(180deg);
-            }
-        }
-    }
-
-    .accordion{
-        .accordion-item{
+            top: -35px;
+            right: 0;
+            background-color: $OPenIG-color_blue;
             border: none;
+            border-radius: 6px;
+            color: $OPenIG-color_white;
+            font-family: 'Exo_semiBold', sans-serif;
+            font-weight: 600;
+            font-size: $OPenIG-font-size-sm;
+            padding: 5px 10px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-            border-radius: 5px;
-            border: 1px solid $OPenIG-color_deep-white;
-            font-size: $OPenIG-font-size-xs;
-            .field__item{
-                margin-bottom: 5px;
+                    
+        }
+        .field--name-field-theme-overview, .field--name-field-working-group-objective{
+            margin-top: 4rem;
+            h2{
+                margin-bottom: 30px;
             }
         }
-        .accordion-item.open{
-            border-left: 4px solid $OPenIG-color_blue;
+        .field--name-field-working-group-objective{
+            margin-bottom: 4rem;
         }
-        h2.accordion-header{
-            border-bottom: none;
-            font-family: 'Exo_semiBold';
-            font-weight: 600;
-            .numberTitle{
-                font-size: $OPenIG-font-size-xs;
-                background-color: $OPenIG-color_yellow;
-                width: 20px;
-                height: 20px;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: -15px;
-                margin-left: 10px;
-            }
-        }
-        .accordion-button{
-            padding: 25px;
-        }
-        .accordion-button:not(.collapsed){
-            background-color: $OPenIG-color_light-gray;
-            border: 1px solid $OPenIG-color_deep-white;
-            color: $OPenIG-color_black;
-        }
-        .accordion-button:focus{
-            box-shadow: none;
-            border: none;
-        }
-    }
 
-    .liste_accordeon{
-        border-radius: 10px;
-        border: 1px solid $OPenIG-color_gray;
-        overflow: hidden;
-        h2{
-            font-family: 'Exo_semiBold';
-            font-weight: 600;
-            font-size: $OPenIG-font-size-base;
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-        .item_accordeon:not(:last-of-type){
-            border-bottom: 1px solid $OPenIG-color_gray;
-        }
-        .item_accordeon{            
-            font-size: $OPenIG-font-size-xs;
+        .paragraph--type--title-text.paragraph--view-mode--groupe-de-travail{
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+            border-radius: 20px;
+            border-left: 2px solid $OPenIG-color_light-blue;
+            border-right: 2px solid $OPenIG-color_light-blue;
+            margin-bottom: 4rem;
+            position: relative;
+            padding-bottom: 40px;
             background-color: $OPenIG-color_white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 25px;
-            i{
-                color: $OPenIG-color_blue;
-                margin-left: 10px;
+            .title_collapse{
+                width: 100%;
+                text-align: left;
+                padding: 15px 20px 10px 20px;
+            }
+            h2{
+                border-bottom: 1px solid $OPenIG-color_gray;
+                padding-bottom: 15px;
+            }
+            .content_collapse{
+                .card-body{
+                    border: none;
+                    padding: 0 20px;
+                }
+            }
+            .icon_collapse{
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                width: fit-content;
+                padding: 0;
+                bottom: -25px;
+                border: 5px solid $OPenIG-color_light-blue;
+                width: 55px;
+                height: 55px;
+                box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
+                border-radius: 50%;
+                background-color: $OPenIG-color_white;
+                margin: 0;
+                i{
+                    font-size: 22px;
+                    color: $OPenIG-color_red;
+                    transform: rotate(0deg);
+                }
+            }
+            .icon_collapse.collapsed{
+                i{
+                    transform: rotate(180deg);
+                }
+            }
+        }
+
+        .accordion{
+            .accordion-item{
+                border: none;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+                border-radius: 5px;
+                border: 1px solid $OPenIG-color_deep-white;
+                font-size: $OPenIG-font-size-xs;
+                .field__item{
+                    margin-bottom: 5px;
+                }
+            }
+            .accordion-item.open{
+                border-left: 4px solid $OPenIG-color_blue;
+            }
+            h2.accordion-header{
+                border-bottom: none;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                .numberTitle{
+                    font-size: $OPenIG-font-size-xs;
+                    background-color: $OPenIG-color_yellow;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: -15px;
+                    margin-left: 10px;
+                }
+            }
+            .accordion-button{
+                padding: 25px;
+            }
+            .accordion-button:not(.collapsed){
+                background-color: $OPenIG-color_light-gray;
+                border: 1px solid $OPenIG-color_deep-white;
+                color: $OPenIG-color_black;
+            }
+            .accordion-button:focus{
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        .liste_accordeon{
+            border-radius: 10px;
+            border: 1px solid $OPenIG-color_gray;
+            overflow: hidden;
+            h2{
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
                 font-size: $OPenIG-font-size-base;
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+            .item_accordeon:not(:last-of-type){
+                border-bottom: 1px solid $OPenIG-color_gray;
+            }
+            .item_accordeon{            
+                font-size: $OPenIG-font-size-xs;
+                background-color: $OPenIG-color_white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 25px;
+                i{
+                    color: $OPenIG-color_blue;
+                    margin-left: 10px;
+                    font-size: $OPenIG-font-size-base;
+                }
             }
         }
     }
-   
+    
 }
