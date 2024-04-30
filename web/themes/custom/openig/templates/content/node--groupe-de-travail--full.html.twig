@@ -89,7 +89,7 @@
   {% endif %}
   {{ title_suffix }}
   <div class="col-lg-1"></div>
-  <div{{ content_attributes.addClass('node__content col-lg-11 col-12') }}>
+  <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
   	{% if 'authenticated' in user.getRoles() %}
         <button id="btnRejoindre"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
     {% endif %}
@@ -164,12 +164,27 @@
             {% endfor %}
         </div>
     {% endif %}
+  </div>
+  <div class="col-lg-1"></div>
+  <div class="col-lg-3">
+    <div class="contacts">
+        <h2>Contacts</h2>
+        {% for contact in content.field_contact %}
+            {% if contact['#user'] %}
+                {{contact['#user'].field_nom_prenom[0].value}}
+                {{ contact['#user'].mail[0].value }}
+            {% endif %}
+        {% endfor %}
+    </div>
+    {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+    {% if 'authenticated' in user.getRoles() %}
+        {{content.field_contenu_sidebar}}
+    {% endif %}
+  </div>
     {% if 'authenticated' in user.getRoles() %}
         <div class="btnShareRejoindre">
             {{ render_block('openig_addtoanysharebuttons_bas_page') }}
             <button id="btnRejoindre_bas"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
         </div>
     {% endif %}
-</div>
-
 </article>

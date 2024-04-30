@@ -29,7 +29,7 @@
         #btnRejoindre{
             position: absolute;
             top: -35px;
-            right: 0;
+            left: 55%;
             background-color: $OPenIG-color_blue;
             border: none;
             border-radius: 6px;
@@ -196,6 +196,30 @@
                     font-size: $OPenIG-font-size-base;
                 }
             }
+        }
+        .contacts, #block-openig-views-block-agenda-gt-agenda-gt{
+            margin-top: 5rem;
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow;
+                font-family: 'Exo_semiBold';
+                font-size: $OPenIG-font-size-base;
+                padding-bottom: 10px;
+                padding-left: 10px;
+            }
+        }
+        #block-openig-views-block-agenda-gt-agenda-gt{
+            .views-row{
+                margin-left: 10px;
+                margin-top: 10px;
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+        }
+        .field--name-field-contenu-sidebar{
+            margin-top: 5rem;
         }
     }
     

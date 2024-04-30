@@ -32,6 +32,7 @@ function openig_preprocess_node(&$variables, $hook){
 
   switch($type) {
     case "groupe_de_travail":
+      // Récupération des ressources d'un groupe de travail et tri par type de ressource
       $variables['ressources'] = array();
       $nid = $variables['node']->nid->value;
       $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);
@@ -55,25 +56,6 @@ function openig_preprocess_node(&$variables, $hook){
         }
       }
 
-
-      //$variables['medias'] = array();
-      //foreach( $variables['node']->get('field_medias') as $media) {
-
-          /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
-          //$referenceItem = $media;
-
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
-         // $entityReference = $referenceItem->get('entity');
-
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
-         // $entityAdapter = $entityReference->getTarget();
-
-          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
-         // if(!empty($entityAdapter)){
-         //   $referencedEntity = $entityAdapter->getValue();
-         //   $referencedEntityType = $referencedEntity->type->entity->label();
-         //   $variables['medias'][$referencedEntityType][] = $referencedEntity;
-         // }
       break;
       
     default:

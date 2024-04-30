@@ -219,3 +219,19 @@ h2{
     color: $OPenIG-color_black;
     font-weight: 500;
 }
+
+// paragraphs
+
+.paragraph--type--title-text.paragraph--view-mode--sidebar{
+    h2{
+        font-family: 'Exo_semiBold';
+        font-size: $OPenIG-font-size-base;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $OPenIG-color_yellow;
+    }
+    .field--name-field-texte{
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+}
