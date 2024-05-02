@@ -7,13 +7,16 @@ dependencies:
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
+    - field.field.node.evenement.field_image
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
+    - image.style.wide
     - node.type.evenement
   module:
     - datetime_range
     - entity_reference_revisions
+    - svg_image
     - user
     - webform
 id: node.evenement.default
@@ -57,6 +60,21 @@ content:
       link: true
     third_party_settings: {  }
     weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
     region: content
   field_private_registration:
     type: boolean

@@ -1,16 +1,16 @@
-uuid: 5abd0f72-15e2-4a08-9113-abbe2e8c0691
+uuid: 2fe42656-79e8-4d20-bdd1-d2bd9489c4fc
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_image
-    - paragraphs.paragraphs_type.image_title
+    - field.storage.node.field_image
+    - node.type.evenement
   module:
     - image
-id: paragraph.image_title.field_image
+id: node.evenement.field_image
 field_name: field_image
-entity_type: paragraph
-bundle: image_title
+entity_type: node
+bundle: evenement
 label: Image
 description: ''
 required: false
@@ -21,7 +21,7 @@ settings:
   handler: 'default:file'
   handler_settings: {  }
   file_directory: '[date:custom:Y]-[date:custom:m]'
-  file_extensions: 'png gif jpg jpeg webp'
+  file_extensions: 'png gif jpg jpeg webp svg'
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''

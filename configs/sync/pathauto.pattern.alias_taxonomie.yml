@@ -1,0 +1,27 @@
+uuid: be2b9199-40e9-42e5-aa11-db4be61d533f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - taxonomy
+id: alias_taxonomie
+label: 'Alias taxonomie'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  9b2c3a5a-028a-4190-b39d-ab98d953238d:
+    id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 9b2c3a5a-028a-4190-b39d-ab98d953238d
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    bundles:
+      actions_dans_l_association: actions_dans_l_association
+      dpt_intervention: dpt_intervention
+      outil_competence: outil_competence
+      tags: tags
+      type_de_ressource: type_de_ressource
+      typologie_de_structure: typologie_de_structure
+selection_logic: and
+weight: -5
+relationships: {  }

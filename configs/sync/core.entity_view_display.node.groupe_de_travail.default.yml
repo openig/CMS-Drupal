@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_animators
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
-    - field.field.node.groupe_de_travail.field_contact
     - field.field.node.groupe_de_travail.field_contenu_sidebar
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
@@ -19,6 +18,7 @@ dependencies:
     - node.type.groupe_de_travail
   module:
     - entity_reference_revisions
+    - svg_image
     - text
     - user
     - webform

@@ -8,17 +8,35 @@ dependencies:
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
+    - field.field.node.evenement.field_image
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
+    - image.style.medium
     - node.type.evenement
   module:
+    - svg_image
     - user
 id: node.evenement.teaser
 targetEntityType: node
 bundle: evenement
 mode: teaser
 content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: -1
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
