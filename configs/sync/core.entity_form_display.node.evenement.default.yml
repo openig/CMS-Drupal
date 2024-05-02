@@ -7,15 +7,18 @@ dependencies:
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
+    - field.field.node.evenement.field_image
     - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
+    - image.style.thumbnail
     - node.type.evenement
   module:
     - datetime_range
     - field_group
     - paragraphs
     - path
+    - svg_image
     - webform
 third_party_settings:
   field_group:
@@ -90,6 +93,14 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_private_registration:
     type: boolean_checkbox
