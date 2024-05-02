@@ -131,6 +131,9 @@
                 border-radius: 5px;
                 border: 1px solid $OPenIG-color_deep-white;
                 font-size: $OPenIG-font-size-xs;
+                .field--name-field-animators, .field--name-field-members, .content_ressources{
+                    column-count: 3;
+                }
                 .field__item{
                     margin-bottom: 5px;
                 }

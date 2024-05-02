@@ -154,7 +154,7 @@
                         </button>
                     </h2>
                     <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
-                        <div class="accordion-body">
+                        <div class="accordion-body content_ressources">
                         {% for ressource in type %}
                             {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}
                         {% endfor %}
