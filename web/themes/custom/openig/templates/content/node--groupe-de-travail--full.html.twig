@@ -169,13 +169,15 @@
   <div class="col-lg-1"></div>
   <div class="col-lg-3">
     <div class="contacts">
-        <h2>Contacts</h2>
-        {% for contact in content.field_contact %}
-            {% if contact['#user'] %}
-                {{contact['#user'].field_nom_prenom[0].value}}
-                {{ contact['#user'].mail[0].value }}
-            {% endif %}
-        {% endfor %}
+        {% if content.field_contact[0] %}
+            <h2>Contacts</h2>
+            {% for contact in content.field_contact %}
+                {% if contact['#user'] %}
+                    {{contact['#user'].field_nom_prenom[0].value}}
+                    {{ contact['#user'].mail[0].value }}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
     </div>
     {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
     {% if 'authenticated' in user.getRoles() %}
