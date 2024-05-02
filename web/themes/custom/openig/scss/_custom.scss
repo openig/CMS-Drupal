@@ -242,12 +242,12 @@ h2{
     width: 280px;
     position: fixed;
     top: 350px;
-    right: -75px;
+    right: -85px;
     transform: rotate(-90deg);
     transform-origin: top;
     transition: all 0.5s ease-in-out 0s;
     border-radius: 15px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
     z-index: 8;
     height: 325px;
     padding: 0;
@@ -255,13 +255,28 @@ h2{
     overflow: hidden;
     button.buttonTitle{
         background-color: $OPenIG-color_white;
+        border: none;
         border-bottom: 4px solid $OPenIG-color_yellow;
         width: 280px;
         border-radius: 0;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
         h2{
             font-size: $OPenIG-font-size-base;
             transform: rotate(180deg);
             border-bottom: 0;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        i{
+            margin-right: 15px;
+            font-size: $OPenIG-font-size-md;
+            padding-bottom: 2px;
+        }
+        i.open{
+            transform: rotate(180deg);
         }
     }
     .collapse{
@@ -276,6 +291,19 @@ h2{
         border: none;
         border-radius: 0;
         background-color: $OPenIG-color_white;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+        padding: 20px;
+        a{
+            color: $OPenIG-color_black;
+            font-size: $OPenIG-font-size-base;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_black;
+        }
     }
 }
 #block-openig-communiquermutualiser.contenthidden{

@@ -44,6 +44,7 @@
         // Affichage bloc Communiquer/Mutualiser
         $('#block-openig-communiquermutualiser .buttonTitle').click(function () {
             $('#block-openig-communiquermutualiser').toggleClass('contenthidden');
+            $('#block-openig-communiquermutualiser .buttonTitle i').toggleClass('open')
         })
     })
 })(jQuery);
