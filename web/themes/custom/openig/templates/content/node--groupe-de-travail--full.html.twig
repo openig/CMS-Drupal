@@ -112,17 +112,18 @@
             {% endfor %}
         </div>
     {% else %}
+    
         <div class="accordion" id="accordionGroupeTravail">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        {{content.field_animators['#title']}}
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Animateurs
                         <span class="numberTitle">
                             {{ content.field_animators['#items']|length }}
                         </span>
                     </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionGroupeTravail">
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGroupeTravail">
                     <div class="accordion-body">
                         {{content.field_animators}}
                     </div>
@@ -131,7 +132,7 @@
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        {{content.field_members['#title']}}
+                        Membres du groupe de travail
                         <span class="numberTitle">
                             {{ content.field_members['#items']|length }}
                         </span>

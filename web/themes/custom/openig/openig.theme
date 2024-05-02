@@ -32,30 +32,35 @@ function openig_preprocess_node(&$variables, $hook){
 
   switch($type) {
     case "groupe_de_travail":
-      // Récupération des ressources d'un groupe de travail et tri par type de ressource
       $variables['ressources'] = array();
       $nid = $variables['node']->nid->value;
+      // Récupération des ressources du groupe de travail
       $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);
-
-      foreach ($ressources as $ressource) {
-        /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
-        $referenceItem = $ressource;
-        /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
-        $entityReference = $referenceItem->get('field_type');
+      // Récupération des types de ressources
+      $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
+      // Tri des ressources par type de ressources
+      foreach ($types as $type) {
+        $name = $type->name[0]->value;
+        $variables['ressources'][$name] = [];
+        foreach ($ressources as $ressource) {
+          /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+          $referenceItem = $ressource;
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+          $entityReference = $referenceItem->get('field_type');
           /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
-        $id = $entityReference[0]->target_id;
-        $term = \Drupal\taxonomy\Entity\Term::load($id);
-        if($term){
-          $name = $term->get('name')->getValue();
-          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
-          if(!empty($name)){
-            $referencedEntity = $ressource;
-            $referencedEntityType = $name[0]['value'];
-            $variables['ressources'][$referencedEntityType][] = $referencedEntity;
+          $id = $entityReference[0]->target_id;
+          $term = \Drupal\taxonomy\Entity\Term::load($id);
+          if($term){
+            $name = $term->get('name')->getValue();
+            /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+            if(!empty($name)){
+              $referencedEntity = $ressource;
+              $referencedEntityType = $name[0]['value'];
+              $variables['ressources'][$referencedEntityType][] = $referencedEntity;
+            }
           }
         }
       }
-
       break;
       
     default:
