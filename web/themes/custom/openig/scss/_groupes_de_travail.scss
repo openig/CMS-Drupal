@@ -69,16 +69,17 @@
                 margin-bottom: 30px;
             }
         }
-        .field--name-field-working-group-objective{
-            margin-bottom: 4rem;
+        .field--name-field-body{
+            margin-top: 4rem;
+            .paragraph{
+                margin-bottom: 4rem;
+            }
         }
-
         .paragraph--type--title-text.paragraph--view-mode--groupe-de-travail{
             box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
             border-radius: 20px;
             border-left: 2px solid $OPenIG-color_light-blue;
             border-right: 2px solid $OPenIG-color_light-blue;
-            margin-bottom: 4rem;
             position: relative;
             padding-bottom: 40px;
             background-color: $OPenIG-color_white;
@@ -125,6 +126,7 @@
         }
 
         .accordion{
+            margin-top: 4rem;
             .accordion-item{
                 border: none;
                 box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
@@ -176,6 +178,7 @@
             border-radius: 10px;
             border: 1px solid $OPenIG-color_gray;
             overflow: hidden;
+            margin-top: 4rem;
             h2{
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
