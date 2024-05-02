@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.contact
-    - field.field.user.user.field_groupe_de_travail
     - field.field.user.user.field_membre_du_ca
     - field.field.user.user.field_nom_prenom
     - field.field.user.user.field_outil_competence
@@ -29,7 +28,6 @@ content:
     weight: 0
     region: content
 hidden:
-  field_groupe_de_travail: true
   field_membre_du_ca: true
   field_outil_competence: true
   field_referent: true

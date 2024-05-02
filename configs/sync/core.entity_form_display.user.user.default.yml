@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_groupe_de_travail
     - field.field.user.user.field_membre_du_ca
     - field.field.user.user.field_nom_prenom
     - field.field.user.user.field_outil_competence
@@ -11,6 +10,7 @@ dependencies:
     - field.field.user.user.field_social_network
     - field.field.user.user.field_structure
   module:
+    - path
     - social_media_links_field
     - user
 _core:
@@ -29,16 +29,6 @@ content:
     weight: 8
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_groupe_de_travail:
-    type: entity_reference_autocomplete
-    weight: 6
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_membre_du_ca:
     type: boolean_checkbox

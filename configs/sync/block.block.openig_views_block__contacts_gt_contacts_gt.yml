@@ -1,0 +1,33 @@
+uuid: a59c3ef7-2f9a-41bd-86e0-8cf7db22b29e
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.contacts_gt
+  module:
+    - node
+    - views
+  theme:
+    - openig
+id: openig_views_block__contacts_gt_contacts_gt
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:contacts_gt-contacts_gt'
+settings:
+  id: 'views_block:contacts_gt-contacts_gt'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      groupe_de_travail: groupe_de_travail
