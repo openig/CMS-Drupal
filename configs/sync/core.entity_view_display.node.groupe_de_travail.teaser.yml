@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_animators
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
-    - field.field.node.groupe_de_travail.field_contact
     - field.field.node.groupe_de_travail.field_contenu_sidebar
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
@@ -20,7 +19,7 @@ dependencies:
     - image.style.medium
     - node.type.groupe_de_travail
   module:
-    - image
+    - svg_image
     - user
 id: node.groupe_de_travail.teaser
 targetEntityType: node
@@ -48,7 +47,6 @@ hidden:
   field_animators: true
   field_archive: true
   field_body: true
-  field_contact: true
   field_contenu_sidebar: true
   field_members: true
   field_tag: true

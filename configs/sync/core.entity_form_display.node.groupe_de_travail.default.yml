@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.groupe_de_travail.field_animators
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
-    - field.field.node.groupe_de_travail.field_contact
     - field.field.node.groupe_de_travail.field_contenu_sidebar
     - field.field.node.groupe_de_travail.field_image
     - field.field.node.groupe_de_travail.field_members
@@ -20,9 +19,9 @@ dependencies:
     - node.type.groupe_de_travail
   module:
     - field_group
-    - image
     - paragraphs
     - path
+    - svg_image
     - text
     - webform
     - weight
@@ -102,16 +101,6 @@ content:
         collapse_edit_all: collapse_edit_all
         convert: '0'
         duplicate: duplicate
-    third_party_settings: {  }
-  field_contact:
-    type: entity_reference_autocomplete
-    weight: 8
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   field_contenu_sidebar:
     type: paragraphs
