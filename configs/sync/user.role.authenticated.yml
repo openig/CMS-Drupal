@@ -35,3 +35,4 @@ permissions:
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'
+  - 'view user email addresses'
