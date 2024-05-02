@@ -1,29 +1,29 @@
-uuid: 7a7ae868-ddc8-4a8f-8905-702ed3529f09
+uuid: f1b37273-c960-4862-ab8b-29f09beaefd9
 langcode: fr
-status: false
+status: true
 dependencies:
+  content:
+    - 'block_content:basic:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
   module:
-    - addtoany
+    - block_content
     - node
     - user
   theme:
     - openig
-id: openig_addtoanysharebuttons_bas_page
+id: openig_communiquermutualiser
 theme: openig
 region: content
-weight: -3
+weight: -15
 provider: null
-plugin: addtoany_block
+plugin: 'block_content:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
 settings:
-  id: addtoany_block
-  label: Partager
+  id: 'block_content:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
+  label: 'Communiquer / Mutualiser'
   label_display: visible
-  provider: addtoany
-  context_mapping: {  }
-  buttons_size: null
-  addtoany_html: ''
-  link_url: ''
-  link_title: ''
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
 visibility:
   user_role:
     id: user_role

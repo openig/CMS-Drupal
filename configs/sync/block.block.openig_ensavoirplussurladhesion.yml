@@ -13,7 +13,7 @@ dependencies:
 id: openig_ensavoirplussurladhesion
 theme: openig
 region: content
-weight: -8
+weight: -9
 provider: null
 plugin: 'block_content:04cf00ae-6b51-4aeb-8b25-b764c80e94aa'
 settings:
