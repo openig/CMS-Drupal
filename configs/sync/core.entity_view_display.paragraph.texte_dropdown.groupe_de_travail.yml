@@ -1,0 +1,33 @@
+uuid: 96556f52-3c26-4e1a-aa1b-77f9270b85ea
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.groupe_de_travail
+    - field.field.paragraph.texte_dropdown.field_texte
+    - field.field.paragraph.texte_dropdown.field_title
+    - paragraphs.paragraphs_type.texte_dropdown
+  module:
+    - text
+id: paragraph.texte_dropdown.groupe_de_travail
+targetEntityType: paragraph
+bundle: texte_dropdown
+mode: groupe_de_travail
+content:
+  field_texte:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

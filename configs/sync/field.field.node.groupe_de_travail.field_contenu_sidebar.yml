@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_contenu_sidebar
     - node.type.groupe_de_travail
+    - paragraphs.paragraphs_type.texte_dropdown
     - paragraphs.paragraphs_type.title_text
     - paragraphs.paragraphs_type.type_de_contenu
   module:
@@ -25,6 +26,7 @@ settings:
     target_bundles:
       title_text: title_text
       type_de_contenu: type_de_contenu
+      texte_dropdown: texte_dropdown
     negate: 0
     target_bundles_drag_drop:
       membre:
@@ -33,6 +35,9 @@ settings:
       picto_text:
         weight: -14
         enabled: false
+      texte_dropdown:
+        weight: 8
+        enabled: true
       title_text:
         weight: -19
         enabled: true

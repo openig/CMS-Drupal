@@ -12,7 +12,7 @@
         img{
             height: 150px;
             position: absolute;
-            top: 55px;
+            top: 60px;
             left: 0;
             z-index: 0;
         }
@@ -252,6 +252,9 @@
 
         .field--name-field-contenu-sidebar{
             margin-top: 5rem;
+            > .field__item{
+                margin-top: 5rem;
+            }
         }
     }
     

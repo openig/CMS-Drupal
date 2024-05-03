@@ -1,0 +1,10 @@
+uuid: e819690c-adc4-4a78-8c24-48f4f2d009ab
+langcode: fr
+status: true
+dependencies: {  }
+id: texte_dropdown
+label: 'Texte dropdown'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
