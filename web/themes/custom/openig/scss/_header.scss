@@ -160,7 +160,7 @@ header{
             .form-actions{
                 //display: none;
             }
-            #edit-submit{
+            .form-submit{
                 background-color: transparent;
                 border: none;
                 position: relative;
@@ -169,13 +169,13 @@ header{
                 width: 40px;
                 height: 40px;
             }
-            #edit-actions{
+            .form-actions{
                 position: relative;
                 background-color: $OPenIG-color_white;
                 border-radius: 10px;
                 box-shadow: 0px 2px 6px rgba(0,0,0,.16);
             }
-            #edit-actions::after{
+            .form-actions::after{
                 content: '\f002';
                 font-family: "Font Awesome 6 Free";
                 font-weight: 400;

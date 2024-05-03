@@ -9,9 +9,3 @@
    // $variables['title_display'] = '';
    // $variables['title']['#markup'] = 'Rechercher';
  }
-
- function openig_preprocess_input(&$variables){
-    if(($variables['theme_hook_original'] == 'input__submit') and ($variables['element']['#type'] == 'submit')){
-        $variables['attributes']['value'] = '';
-    }
- }
