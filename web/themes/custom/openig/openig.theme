@@ -63,6 +63,7 @@ function openig_preprocess_node(&$variables, $hook){
           }
         }
       }
+      // Vérification si l'utilisateur est membre
       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());    
       $userID = $user->uid[0]->value;
       foreach ($variables['node']->field_members as $membre) {
