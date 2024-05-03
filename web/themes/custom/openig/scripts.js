@@ -5,6 +5,7 @@
             $('#search-block-form').toggleClass('open');
             $('#search_icon').toggleClass('open');
         });
+        $('#block-openig-formulairederecherche .form-submit').val('');
 
         // Garder le sous-menu affiché si l'un de ses liens est actifs
         if($('.dropdown-item').hasClass('is-active')){

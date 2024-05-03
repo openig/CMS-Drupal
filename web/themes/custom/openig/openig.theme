@@ -5,14 +5,6 @@
  * OPenIG theme file.
  */
 
-
-function openig_preprocess_input(&$variables){
-  // Modification de la valeur du bouton submit de la barre de recherche
-  if(($variables['theme_hook_original'] == 'input__submit') and ($variables['element']['#type'] == 'submit')){
-      $variables['attributes']['value'] = '';
-  }
-}
-
 function openig_preprocess_field__node(&$variables){
   if($variables['field_name'] == 'title'){
     // Récupération des tags au niveau du titre du contenu
