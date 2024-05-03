@@ -161,6 +161,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 .addtoany_list.open{
     visibility: visible;
+    i{
+        color: $OPenIG-color_blue;
+    }
 }
 #block-openig-addtoanysharebuttons{
     display: inline-block;
@@ -301,7 +304,7 @@ h2{
 #block-openig-communiquermutualiser{
     width: 280px;
     position: fixed;
-    top: 350px;
+    top: 425px;
     right: -85px;
     transform: rotate(-90deg);
     transform-origin: top;
@@ -369,4 +372,13 @@ h2{
 #block-openig-communiquermutualiser.contenthidden{
     right: 200px;
     
+}
+
+// Fil d'ariane
+.navigation_filAriane{
+    margin: auto;
+    margin-top: 4rem;
+    a{
+        color: $OPenIG-color_black;
+    }
 }
