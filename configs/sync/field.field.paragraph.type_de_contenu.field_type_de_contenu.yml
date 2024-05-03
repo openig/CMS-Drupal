@@ -4,15 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.paragraph.field_type_de_contenu
-    - node.type.article
-    - node.type.evenement
-    - node.type.groupe_de_travail
-    - node.type.page
     - node.type.ressource
-    - node.type.service
-    - node.type.simplenews_issue
-    - node.type.structure
-    - node.type.temoignage
     - paragraphs.paragraphs_type.type_de_contenu
 id: paragraph.type_de_contenu.field_type_de_contenu
 field_name: field_type_de_contenu
@@ -28,18 +20,10 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
-      article: article
-      evenement: evenement
-      groupe_de_travail: groupe_de_travail
-      simplenews_issue: simplenews_issue
-      page: page
       ressource: ressource
-      service: service
-      structure: structure
-      temoignage: temoignage
     sort:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: structure
+    auto_create_bundle: ressource
 field_type: entity_reference

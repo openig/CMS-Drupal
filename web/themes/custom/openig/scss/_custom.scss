@@ -271,6 +271,31 @@ h2{
     }
 }
 
+.paragraph--type--type-de-contenu.paragraph--view-mode--sidebar{
+    .node--type-ressource.node--view-mode-sidebar{
+        .node__content{
+            border: 1px solid $OPenIG-color_deep-gray;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        a{
+            display: block;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            color: $OPenIG-color_black;
+            text-decoration: none;
+            width: fit-content;
+        }
+        a.titleRessource{
+            border-bottom: 1px solid $OPenIG-color_black;
+        }
+        a.labelRessource{
+            border-bottom: 1px solid $OPenIG-color_black;
+            margin-top: 10px;
+        }
+    }
+}
+
 // Bloc communiquer/mutualiser
 
 #block-openig-communiquermutualiser{
