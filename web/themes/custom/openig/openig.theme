@@ -5,25 +5,34 @@
  * OPenIG theme file.
  */
 
-function openig_preprocess_form_element_label(&$variables){
-  // $variables['title_display'] = '';
-  // $variables['title']['#markup'] = 'Rechercher';
-}
 
 function openig_preprocess_input(&$variables){
+  // Modification de la valeur du bouton submit de la barre de recherche
   if(($variables['theme_hook_original'] == 'input__submit') and ($variables['element']['#type'] == 'submit')){
       $variables['attributes']['value'] = '';
   }
 }
 
 function openig_preprocess_field__node(&$variables){
-if($variables['field_name'] == 'title'){
-  $tags = $variables['element']['#object']->field_tag;
-  foreach ($tags as $tag) {
-    $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
-    $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+  if($variables['field_name'] == 'title'){
+    // Récupération des tags au niveau du titre du contenu
+    $tags = $variables['element']['#object']->field_tag;
+    foreach ($tags as $tag) {
+      $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
+      $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+    }
+    // Utilisation d'une taxonomie pour afficher les pictos à côté des titres
+    $type = $variables['element']['#bundle'];
+    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+    if($pictos){
+      $first_element = reset($pictos);
+      if($first_element){
+        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+      }
+    }
   }
-}
 }
 
 

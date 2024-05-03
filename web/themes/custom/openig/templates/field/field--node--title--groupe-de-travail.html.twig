@@ -36,7 +36,9 @@
     'field--label-' ~ label_display,
   ]
 %}
-<img alt="Boussole" src="/themes/custom/openig/img/pictos/compass-title.svg" />
+{% if picto_uri is defined %}
+  <img src="{{ file_url(picto_uri) }}" alt="{{picto_alt}}" />
+{% endif %}
 <span{{ attributes.addClass(classes) }}>
   {%- for item in items -%}
     {{ item.content }}
