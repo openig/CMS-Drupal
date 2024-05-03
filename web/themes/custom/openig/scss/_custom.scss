@@ -125,6 +125,19 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         justify-content: space-around;
         width: 900px;
         margin: auto;
+        .contenu_action{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 125px;
+            .image{
+                height: 90px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
         .taxonomy-term{
             width: 195px;
             height: 200px;
@@ -143,10 +156,11 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
                 height: 100%;
             }
             img{
-                height: 75px;
+                height: fit-content;
+                width: fit-content;
             }
             .verbe_action{
-                margin-top: 15px;
+                //margin-top: 15px;
                 font-family: 'Russo One';
                 font-size: $OPenIG-font-size-lg;
             }

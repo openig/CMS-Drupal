@@ -38,8 +38,12 @@
         {{ title_suffix }}
         <div class="content">
             <a href="{{ content['field_lien'][0]['#title'] }}" class="lien_action">
-                <img src="{{ content.field_picto[0]['#markup'] }}" />
-                <span class="verbe_action">{{ name[0]['#context']['value'] }}</span>
+                <span class="contenu_action">
+                    <span class="image">
+                        <img src="{{ content.field_picto[0]['#markup'] }}" />
+                    </span>
+                    <span class="verbe_action">{{ name[0]['#context']['value'] }}</span>
+                </span>
                 {#{{ content }}#}
             </a>
         </div>
