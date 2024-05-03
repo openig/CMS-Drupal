@@ -16,6 +16,7 @@ dependencies:
     - node.type.ressource
   module:
     - file
+    - link
     - user
 id: node.ressource.ressource_dans_groupe_de_travail
 targetEntityType: node
@@ -30,13 +31,24 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   addtoany: true
   field_access_restricted: true
   field_description: true
   field_format: true
   field_image: true
-  field_link: true
   field_linked_content: true
   field_tag: true
   field_type: true
