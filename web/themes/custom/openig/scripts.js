@@ -47,5 +47,17 @@
             $('#block-openig-communiquermutualiser').toggleClass('contenthidden');
             $('#block-openig-communiquermutualiser .buttonTitle i').toggleClass('open')
         })
+
+
+        // Ouverture de liens dans un nouvel onglet - dans le type de contenu Groupe de travail
+        $(".node--type-groupe-de-travail #accordionGroupeTravail .accordion-item").each(function(){
+                var link = $(this).find('.content_ressources a');
+                $(link).attr('target','_blank');
+        })
+
+        $(".node--type-groupe-de-travail #block-openig-views-block-agenda-gt-agenda-gt .views-row").each(function(){
+            var link = $(this).find('.views-field-title a');
+            $(link).attr('target','_blank');
+        })
     })
 })(jQuery);

@@ -49,7 +49,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: ''
+            target: _blank
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -65,7 +65,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: true
+          element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -257,6 +257,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
