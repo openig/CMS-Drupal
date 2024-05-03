@@ -43,6 +43,7 @@ function openig_preprocess_node(&$variables, $hook){
       foreach ($types as $type) {
         $name = $type->name[0]->value;
         $variables['ressources'][$name] = [];
+        ksort($variables['ressources']);
         foreach ($ressources as $ressource) {
           /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
           $referenceItem = $ressource;

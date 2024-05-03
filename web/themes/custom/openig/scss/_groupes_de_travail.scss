@@ -149,6 +149,14 @@
                 font-size: $OPenIG-font-size-xs;
                 .field--name-field-animators, .field--name-field-members, .content_ressources{
                     column-count: 3;
+                    .file{
+                        background-image: none;
+                    }
+                    a{
+                        color: $OPenIG-color_black;
+                        text-decoration: none;
+                        border-bottom: 1px solid $OPenIG-color_black;
+                    }
                 }
                 .field__item{
                     margin-bottom: 5px;
