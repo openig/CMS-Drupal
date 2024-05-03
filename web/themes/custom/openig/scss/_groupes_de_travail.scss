@@ -7,8 +7,14 @@
     #block-openig-page-title{
         display: flex;
         align-items: center;
+        position: relative;
+        height: 200px;
         img{
-            width: 80px;
+            height: 150px;
+            position: absolute;
+            top: 55px;
+            left: 0;
+            z-index: 0;
         }
         .tags{
             margin-bottom: .5rem;
@@ -22,6 +28,14 @@
                 margin-right: 10px;
                 font-family: "Exo_regular", sans-serif;
                 color: $OPenIG-color_black;
+            }
+        }
+        h1{
+            margin-bottom: 0;
+            .field--name-title{
+                margin-left: 75px;
+                position: relative;
+                z-index: 1;
             }
         }
     }
