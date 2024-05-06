@@ -40,3 +40,4 @@ dependencies:
   - ckeditor_font
   - addtoany
   - easy_breadcrumb
+  - views_fieldsets
