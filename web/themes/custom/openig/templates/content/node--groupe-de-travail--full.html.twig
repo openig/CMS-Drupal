@@ -179,7 +179,11 @@
     {% if 'adherent' in user.getRoles() %}
         <div class="btnShareRejoindre">
             {{ render_block('openig_addtoanysharebuttons_bas_page') }}
-            <button id="btnRejoindre_bas"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+            {% if 'adherent' in user.getRoles() %}
+                {% if membre is not defined %}
+                    <button id="btnRejoindre_bas"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+                {% endif %}
+            {% endif %}
         </div>
     {% endif %}
 </article>
