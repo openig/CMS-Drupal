@@ -1,0 +1,43 @@
+uuid: a6e2adb6-8d55-4fe2-b03d-4514e19c30a7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.picto_et_texte
+    - field.storage.block_content.field_picto_et_texte
+    - paragraphs.paragraphs_type.picto_text
+  module:
+    - entity_reference_revisions
+id: block_content.picto_et_texte.field_picto_et_texte
+field_name: field_picto_et_texte
+entity_type: block_content
+bundle: picto_et_texte
+label: 'Picto et texte'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      picto_text: picto_text
+    negate: 0
+    target_bundles_drag_drop:
+      membre:
+        weight: 6
+        enabled: false
+      picto_text:
+        weight: 7
+        enabled: true
+      texte_dropdown:
+        weight: 8
+        enabled: false
+      title_text:
+        weight: 9
+        enabled: false
+      type_de_contenu:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

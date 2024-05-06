@@ -1,0 +1,26 @@
+uuid: cd747370-51dc-4a07-afcc-d576ce9f334c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.picto_et_texte
+    - field.field.block_content.picto_et_texte.field_picto_et_texte
+  module:
+    - entity_reference_revisions
+id: block_content.picto_et_texte.default
+targetEntityType: block_content
+bundle: picto_et_texte
+mode: default
+content:
+  field_picto_et_texte:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: vue
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true
+  search_api_excerpt: true

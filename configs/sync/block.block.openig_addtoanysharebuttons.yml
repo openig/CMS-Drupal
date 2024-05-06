@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - addtoany
-    - node
+    - system
   theme:
     - openig
 id: openig_addtoanysharebuttons
@@ -24,10 +24,7 @@ settings:
   link_url: ''
   link_title: ''
 visibility:
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  request_path:
+    id: request_path
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      groupe_de_travail: groupe_de_travail
+    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*"

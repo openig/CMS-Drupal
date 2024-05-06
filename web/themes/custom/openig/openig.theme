@@ -77,3 +77,43 @@ function openig_preprocess_node(&$variables, $hook){
       break;
   }
 }
+
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ *
+ * Add views template suggestions.
+ *
+ * @inheritdoc
+ */
+function openig_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view_unformatted__' . $variables['view']->current_display;
+}
+
+function openig_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
+  $suggestions[] = 'views_view__' . $variables['view']->current_display;
+}
+
+function openig_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if($hook === 'views_view_fields') {
+    $suggestions[] = 'views_view_fields__' . $variables['view']->current_display;
+  }
+
+   if($hook === 'views_view_field') {
+    $suggestions[] = 'views_view_field__' . $variables['field']->field;
+  }
+
+
+   if($hook === 'views_view_grid') {
+    $suggestions[] = 'views_view_grid__' . $variables['view']->current_display;
+  }
+}
+
+function openig_preprocess_block(&$variables){
+  if($variables['elements']['#id'] == 'openig_ensavoirplussurladhesion'){
+    $current_path = \Drupal::service('path.current')->getPath();
+    if(substr($current_path, 0, 5) === "/node"){
+      $variables['node_content'] = 'node';
+    }
+  }
+}

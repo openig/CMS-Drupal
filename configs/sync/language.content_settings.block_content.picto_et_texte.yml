@@ -1,0 +1,11 @@
+uuid: d868e761-d9e3-482d-b1e0-9332b9ff275c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.picto_et_texte
+id: block_content.picto_et_texte
+target_entity_type_id: block_content
+target_bundle: picto_et_texte
+default_langcode: site_default
+language_alterable: false

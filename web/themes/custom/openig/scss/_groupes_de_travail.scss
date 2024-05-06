@@ -4,41 +4,6 @@
     color: $OPenIG-color_black;
     font-family: 'OpenSans_Regular', sans-serif;
     font-size: $OPenIG-font-size-base;
-    #block-openig-page-title{
-        display: flex;
-        align-items: center;
-        position: relative;
-        height: 200px;
-        img{
-            height: 150px;
-            position: absolute;
-            top: 60px;
-            left: 0;
-            z-index: 0;
-        }
-        .tags{
-            margin-bottom: .5rem;
-            margin-left: 30px;
-            button{
-                background-color: $OPenIG-color_white;
-                border: 1px solid $OPenIG-color_blue;
-                border-radius: 2rem;
-                padding: 0 10px;
-                font-size: $OPenIG-font-size-xs;
-                margin-right: 10px;
-                font-family: "Exo_regular", sans-serif;
-                color: $OPenIG-color_black;
-            }
-        }
-        h1{
-            margin-bottom: 0;
-            .field--name-title{
-                margin-left: 85px;
-                position: relative;
-                z-index: 1;
-            }
-        }
-    }
     .node--type-groupe-de-travail{
         position: relative;
         #btnRejoindre{

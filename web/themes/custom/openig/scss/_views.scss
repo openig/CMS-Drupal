@@ -1,0 +1,22 @@
+.view{
+    margin-top: 2rem;
+    .field--name-field-picto-et-texte{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+        > .field__item{
+            width: 45%;
+        }
+    }     
+}
+
+// Vue Les groupes de travail
+
+.view-les-groupes-de-travail{
+    .view-header{
+        h2{
+            margin-bottom: 2rem;
+        }
+    }
+}

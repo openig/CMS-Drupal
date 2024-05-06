@@ -199,8 +199,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 // Bloc En savoir plus sur l'adhésion
-
-#block-openig-ensavoirplussurladhesion{
+ #block-openig-ensavoirplussurladhesion{
     float: right;
     text-align: right;
     background-color: $OPenIG-color_white;
@@ -227,6 +226,42 @@ h1{
     font-size: $OPenIG-font-size-h1;
     color: $OPenIG-color_black;
     font-weight: 600;
+}
+
+#block-openig-page-title{
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 200px;
+    img{
+        height: 150px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 0;
+    }
+    .tags{
+        margin-bottom: .5rem;
+        margin-left: 30px;
+        button{
+            background-color: $OPenIG-color_white;
+            border: 1px solid $OPenIG-color_blue;
+            border-radius: 2rem;
+            padding: 0 10px;
+            font-size: $OPenIG-font-size-xs;
+            margin-right: 10px;
+            font-family: "Exo_regular", sans-serif;
+            color: $OPenIG-color_black;
+        }
+    }
+    h1{
+        margin-bottom: 0;
+        margin-left: 85px;
+        .field--name-title{
+            position: relative;
+            z-index: 1;
+        }
+    }
 }
 
 h2{
@@ -310,6 +345,26 @@ h2{
             border-bottom: 1px solid $OPenIG-color_black;
             margin-top: 10px;
         }
+    }
+}
+
+.paragraph--type--picto-text.paragraph--view-mode--vue{
+    display: flex;
+    .picto_verbe{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .field--name-field-image{
+            width: 44px;
+        }
+        .field--name-field-verbe-action{
+            font-size: $OPenIG-font-size-xs;
+            text-align: center;
+        }
+    }
+    .field--name-field-text{
+        font-size: $OPenIG-font-size-xs;
+        margin-left: 20px;
     }
 }
 

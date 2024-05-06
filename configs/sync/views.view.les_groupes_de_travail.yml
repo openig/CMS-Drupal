@@ -7,6 +7,8 @@ dependencies:
     - field.storage.node.field_tag
     - field.storage.node.field_theme_overview
     - node.type.groupe_de_travail
+  content:
+    - 'block_content:picto_et_texte:8596cb8f-b866-4cd3-9127-7cab0ef7df72'
   module:
     - node
     - svg_image
@@ -438,7 +440,16 @@ display:
             default_group_multiple: {  }
             group_items: {  }
       style:
-        type: grid_responsive
+        type: grid
+        options:
+          grouping: {  }
+          columns: 4
+          automatic_width: false
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: false
+          col_class_custom: ''
+          col_class_default: false
       row:
         type: fields
       query:
@@ -450,7 +461,33 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"col-5\">\r\n<h2>Les groupes de travail ouverts</h2>\r\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\r\n</div>"
+            format: full_html
+          tokenize: false
+        entity_block_content:
+          id: entity_block_content
+          table: views
+          field: entity_block_content
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity
+          empty: false
+          target: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
+          view_mode: default
+          tokenize: true
+          bypass_access: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
