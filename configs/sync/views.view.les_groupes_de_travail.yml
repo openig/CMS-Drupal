@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_image
     - field.storage.node.field_tag
     - field.storage.node.field_theme_overview
+    - image.style.thumbnail
     - node.type.groupe_de_travail
   content:
     - 'block_content:picto_et_texte:8596cb8f-b866-4cd3-9127-7cab0ef7df72'
@@ -237,7 +238,7 @@ display:
           type: image
           settings:
             image_link: content
-            image_style: ''
+            image_style: thumbnail
             image_loading:
               attribute: lazy
             svg_attributes:
