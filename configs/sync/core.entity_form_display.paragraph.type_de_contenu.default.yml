@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.type_de_contenu.field_title
     - field.field.paragraph.type_de_contenu.field_type_de_contenu
     - paragraphs.paragraphs_type.type_de_contenu
 id: paragraph.type_de_contenu.default
@@ -11,14 +10,6 @@ targetEntityType: paragraph
 bundle: type_de_contenu
 mode: default
 content:
-  field_title:
-    type: string_textfield
-    weight: 1
-    region: content
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
   field_type_de_contenu:
     type: entity_reference_autocomplete
     weight: 2

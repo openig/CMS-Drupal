@@ -1,0 +1,14 @@
+uuid: 24fddabd-fcfe-4c4a-bd77-d9a70f3b8d00
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.adherent
+  module:
+    - user
+id: user_remove_role_action.adherent
+label: 'Enlever le rôle Adhérent des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: adherent

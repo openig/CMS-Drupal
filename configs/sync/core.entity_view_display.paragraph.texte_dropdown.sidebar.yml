@@ -1,0 +1,33 @@
+uuid: a0be0565-6a23-40a4-bc1d-2fdc114a242d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.texte_dropdown.field_texte
+    - field.field.paragraph.texte_dropdown.field_title
+    - paragraphs.paragraphs_type.texte_dropdown
+  module:
+    - text
+id: paragraph.texte_dropdown.sidebar
+targetEntityType: paragraph
+bundle: texte_dropdown
+mode: sidebar
+content:
+  field_texte:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true

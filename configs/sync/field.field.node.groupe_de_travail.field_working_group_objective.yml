@@ -11,7 +11,7 @@ id: node.groupe_de_travail.field_working_group_objective
 field_name: field_working_group_objective
 entity_type: node
 bundle: groupe_de_travail
-label: 'Objectif du groupe de travail'
+label: 'Objectifs du groupe de travail'
 description: ''
 required: false
 translatable: false

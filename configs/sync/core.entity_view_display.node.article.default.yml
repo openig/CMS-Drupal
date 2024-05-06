@@ -13,7 +13,7 @@ dependencies:
     - node.type.article
   module:
     - entity_reference_revisions
-    - image
+    - svg_image
     - text
     - user
 _core:
@@ -59,6 +59,10 @@ content:
       image_style: wide
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -83,5 +87,6 @@ content:
     weight: 4
     region: content
 hidden:
+  addtoany: true
   langcode: true
   search_api_excerpt: true

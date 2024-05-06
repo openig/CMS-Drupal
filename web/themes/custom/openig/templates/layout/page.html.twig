@@ -126,29 +126,30 @@ set footer_classes = ' ' ~
     {{ page.sixieme_section_accueil }}
     {{ page.septieme_section_accueil }}
     {{ page.huitieme_section_accueil }}
+  {% else %}
+    <div class="{{ b5_top_container }}">
+      {% if page.breadcrumb %}
+        {{ page.breadcrumb }}
+      {% endif %}
+      <div class="row g-0">
+        {% if page.sidebar_first %}
+          <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
+            {{ page.sidebar_first }}
+          </div>
+        {% endif %}
+        <div class="order-1 order-lg-2 {{ content_classes }}">
+          {{ page.avant_contenu }}
+          {{ page.content }}
+        </div>
+        {% if page.sidebar_second %}
+          <div class="order-3 {{ sidebar_second_classes }}">
+            {{ page.sidebar_second }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
   {% endif %}
 
-  <div class="{{ b5_top_container }}">
-    {% if page.breadcrumb %}
-      {{ page.breadcrumb }}
-    {% endif %}
-    <div class="row g-0">
-      {% if page.sidebar_first %}
-        <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
-          {{ page.sidebar_first }}
-        </div>
-      {% endif %}
-      <div class="order-1 order-lg-2 {{ content_classes }}">
-        {{ page.avant_contenu }}
-        {{ page.content }}
-      </div>
-      {% if page.sidebar_second %}
-        <div class="order-3 {{ sidebar_second_classes }}">
-          {{ page.sidebar_second }}
-        </div>
-      {% endif %}
-    </div>
-  </div>
 
 </main>
 

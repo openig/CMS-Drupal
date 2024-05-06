@@ -1,0 +1,11 @@
+uuid: 600d1ac5-07fa-47dc-9319-cc00b801a9f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.pictos_titre
+id: taxonomy_term.pictos_titre
+target_entity_type_id: taxonomy_term
+target_bundle: pictos_titre
+default_langcode: site_default
+language_alterable: false

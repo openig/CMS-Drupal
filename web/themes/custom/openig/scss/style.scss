@@ -24,25 +24,43 @@ $fa-font-path: "../fonts";
 
 @font-face {
     font-family: 'Exo_regular';
-    src: url('../fonts/RussoOne-Regular.ttf');
+    src: url('../fonts/Exo/Exo-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
     font-family: 'Exo_semiBold';
     src: url('../fonts/Exo/Exo-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
     font-family: 'Exo_medium';
     src: url('../fonts/Exo/Exo-Medium.ttf');
+    font-weight: 500;
 }
 
 @font-face {
     font-family: 'OpenSans_Regular';
     src: url('../fonts/OpenSans/static/OpenSans-Regular.ttf');
-    font-family: 'OpenSans_SemiBold';
-    src: url('../fonts/OpenSans/static/OpenSans-SemiBold.ttf');
-    font-family: 'OpenSans_Bold';
-    src: url('../fonts/OpenSans/static/OpenSans-Bold.ttf');
+    font-weight: 400;
 }
 
+@font-face {
+    font-family: 'OpenSans_SemiBold';
+    src: url('../fonts/OpenSans/static/OpenSans-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'OpenSans_Bold';
+    src: url('../fonts/OpenSans/static/OpenSans-Bold.ttf');
+    font-weight: 700;
+}
 
 // Files scss
 
 @import 'custom';
 @import 'header';
 @import 'footer';
+@import 'groupes_de_travail';

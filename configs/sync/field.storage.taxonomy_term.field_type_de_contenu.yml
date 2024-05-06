@@ -1,16 +1,16 @@
-uuid: eaf5bb67-ccb9-4ee1-a31a-a9b650225adc
+uuid: 51d1e1be-dcbf-42a4-8a67-2e8351036048
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-    - user
-id: user.field_groupe_de_travail
-field_name: field_groupe_de_travail
-entity_type: user
+    - taxonomy
+id: taxonomy_term.field_type_de_contenu
+field_name: field_type_de_contenu
+entity_type: taxonomy_term
 type: entity_reference
 settings:
-  target_type: node
+  target_type: node_type
 module: core
 locked: false
 cardinality: 1

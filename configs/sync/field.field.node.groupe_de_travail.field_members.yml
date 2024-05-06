@@ -9,7 +9,7 @@ id: node.groupe_de_travail.field_members
 field_name: field_members
 entity_type: node
 bundle: groupe_de_travail
-label: Membres
+label: 'Membres du groupe de travail'
 description: ''
 required: false
 translatable: false

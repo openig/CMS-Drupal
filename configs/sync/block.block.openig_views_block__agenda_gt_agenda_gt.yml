@@ -1,0 +1,25 @@
+uuid: f51ada26-0710-4dc2-8d99-bac4e1933af9
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.agenda_gt
+  module:
+    - views
+  theme:
+    - openig
+id: openig_views_block__agenda_gt_agenda_gt
+theme: openig
+region: content
+weight: -5
+provider: null
+plugin: 'views_block:agenda_gt-agenda_gt'
+settings:
+  id: 'views_block:agenda_gt-agenda_gt'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

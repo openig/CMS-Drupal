@@ -117,7 +117,7 @@ footer{
         #block-openig-naviguer-menu{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
-            font-weight: 900;
+            font-weight: 700;
             color: $OPenIG-color_deep-white;
         }
         .navbar-nav{
@@ -165,9 +165,10 @@ footer{
         h2{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
-            font-weight: 900;
+            font-weight: 700;
             color: $OPenIG-color_deep-white;
             margin-bottom: 1rem;
+            border-bottom: none;
         }
         .social-media-links--platforms{
             display: flex;
@@ -188,7 +189,7 @@ footer{
         a{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
-            font-weight: 900;
+            font-weight: 700;
             color: $OPenIG-color_deep-white;
             border-bottom: 1px solid $OPenIG-color_red;
             text-decoration: none;

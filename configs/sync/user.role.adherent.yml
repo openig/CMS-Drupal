@@ -1,0 +1,9 @@
+uuid: 0eef62ce-46ca-46cb-aec5-22de6dfd406b
+langcode: fr
+status: true
+dependencies: {  }
+id: adherent
+label: Adhérent
+weight: 4
+is_admin: null
+permissions: {  }

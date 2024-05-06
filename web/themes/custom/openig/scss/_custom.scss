@@ -167,3 +167,237 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         }
     }
 }
+
+
+// Bouton partager
+.addtoany_list{
+    visibility: hidden;
+}
+.addtoany_list.open{
+    visibility: visible;
+    i{
+        color: $OPenIG-color_blue;
+    }
+}
+#block-openig-addtoanysharebuttons{
+    display: inline-block;
+    vertical-align: top;
+}
+#button_share, #button_share_bas_page{
+    background-color: $OPenIG-color_blue;
+    border: none;
+    border-radius: 6px;
+    color: $OPenIG-color_white;
+    font-family: 'Exo_semiBold', sans-serif;
+    font-weight: 600;
+    font-size: $OPenIG-font-size-sm;
+    padding: 5px 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    i{
+        margin-right: 5px;
+    }
+}
+
+// Bloc En savoir plus sur l'adhésion
+
+#block-openig-ensavoirplussurladhesion{
+    float: right;
+    text-align: right;
+    background-color: $OPenIG-color_white;
+    .field--name-body{
+        font-family: 'OpenSans_Regular', sans-serif;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+    }
+    .field--name-field-lien{
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-base;
+            color: $OPenIG-color_dark-gray;
+            border-bottom: 1px solid $OPenIG-color_red;
+            text-decoration: none;
+            padding-bottom: 5px;
+        }
+    }
+}
+
+// Titres
+h1{
+    font-family:"Exo_semiBold";
+    font-size: $OPenIG-font-size-h1;
+    color: $OPenIG-color_black;
+    font-weight: 600;
+}
+
+h2{
+    font-family: "Exo_medium";
+    font-size: $OPenIG-font-size-h2;
+    border-bottom: 5px solid $OPenIG-color_light-blue;
+    color: $OPenIG-color_black;
+    font-weight: 500;
+}
+
+// paragraphs
+
+.paragraph--type--title-text.paragraph--view-mode--sidebar{
+    h2{
+        font-family: 'Exo_semiBold';
+        font-size: $OPenIG-font-size-base;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $OPenIG-color_yellow;
+    }
+    .field--name-field-texte{
+        margin-top: 10px;
+        padding-left: 10px;
+    }
+}
+
+.paragraph--type--texte-dropdown.paragraph--view-mode--sidebar{
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    border-radius: 15px;
+    overflow: hidden;
+    .title_collapse{
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $OPenIG-color_yellow;
+        text-align: left;
+        border-radius: 0;
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        h2{
+            margin-bottom: 0;
+            border-bottom: 0;
+            font-size: $OPenIG-font-size-base;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+        }
+    }
+    .title_collapse::after{
+        content: '\f0d8';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 600;
+    }
+    .title_collapse.collapsed::after{
+        content: '\f0d7';
+    }
+    .card-body{
+        border-radius: 0;
+        border: none;
+    }
+}
+
+.paragraph--type--type-de-contenu.paragraph--view-mode--sidebar{
+    .node--type-ressource.node--view-mode-sidebar{
+        .node__content{
+            border: 1px solid $OPenIG-color_deep-gray;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        a{
+            display: block;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            color: $OPenIG-color_black;
+            text-decoration: none;
+            width: fit-content;
+        }
+        a.titleRessource{
+            border-bottom: 1px solid $OPenIG-color_black;
+        }
+        a.labelRessource{
+            border-bottom: 1px solid $OPenIG-color_black;
+            margin-top: 10px;
+        }
+    }
+}
+
+// Bloc communiquer/mutualiser
+
+#block-openig-communiquermutualiser{
+    width: 280px;
+    position: fixed;
+    top: 425px;
+    right: -85px;
+    transform: rotate(-90deg);
+    transform-origin: top;
+    transition: all 0.5s ease-in-out 0s;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+    z-index: 8;
+    height: 325px;
+    padding: 0;
+    background-color: $OPenIG-color_white;
+    overflow: hidden;
+    button.buttonTitle{
+        background-color: $OPenIG-color_white;
+        border: none;
+        border-bottom: 4px solid $OPenIG-color_yellow;
+        width: 280px;
+        border-radius: 0;
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        h2{
+            font-size: $OPenIG-font-size-base;
+            transform: rotate(180deg);
+            border-bottom: 0;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        i{
+            margin-right: 15px;
+            font-size: $OPenIG-font-size-md;
+            padding-bottom: 2px;
+        }
+        i.open{
+            transform: rotate(180deg);
+        }
+    }
+    .collapse{
+        width: 280px;
+        height: 280px;
+    }
+    .card-body{
+        transform: rotate(90deg);
+        transform-origin: unset;
+        width: 280px;
+        height: 280px;
+        border: none;
+        border-radius: 0;
+        background-color: $OPenIG-color_white;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+        padding: 20px;
+        a{
+            color: $OPenIG-color_black;
+            font-size: $OPenIG-font-size-base;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_black;
+        }
+    }
+}
+#block-openig-communiquermutualiser.contenthidden{
+    right: 200px;
+    
+}
+
+// Fil d'ariane
+.navigation_filAriane{
+    margin: auto;
+    margin-top: 4rem;
+    a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+        border-bottom: 1px solid $OPenIG-color_black
+    }
+    li.breadcrumb-item:not(:first-of-type)::before{
+        content: '>';
+    }
+}

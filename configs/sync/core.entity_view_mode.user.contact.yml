@@ -1,0 +1,11 @@
+uuid: a8391c5d-411e-4ce7-80d6-f961116f3e51
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.contact
+label: Contact
+description: ''
+targetEntityType: user
+cache: true

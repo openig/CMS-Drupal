@@ -1,0 +1,33 @@
+uuid: 18c8c0b2-20cd-4548-9716-782a4ab1c3d3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - addtoany
+    - node
+  theme:
+    - openig
+id: openig_addtoanysharebuttons
+theme: openig
+region: content
+weight: -10
+provider: null
+plugin: addtoany_block
+settings:
+  id: addtoany_block
+  label: Partager
+  label_display: visible
+  provider: addtoany
+  context_mapping: {  }
+  buttons_size: null
+  addtoany_html: ''
+  link_url: ''
+  link_title: ''
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      groupe_de_travail: groupe_de_travail

@@ -8,14 +8,25 @@ dependencies:
     - field.field.block_content.lien.field_lien
   module:
     - link
+    - text
 id: block_content.lien.default
 targetEntityType: block_content
 bundle: lien
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
   field_lien:
     type: link_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder_url: ''
@@ -36,5 +47,4 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
-hidden:
-  body: true
+hidden: {  }

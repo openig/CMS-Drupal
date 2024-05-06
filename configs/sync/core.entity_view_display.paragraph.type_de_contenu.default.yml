@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.type_de_contenu.field_title
     - field.field.paragraph.type_de_contenu.field_type_de_contenu
     - paragraphs.paragraphs_type.type_de_contenu
 id: paragraph.type_de_contenu.default
@@ -11,19 +10,12 @@ targetEntityType: paragraph
 bundle: type_de_contenu
 mode: default
 content:
-  field_title:
-    type: string
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 1
-    region: content
   field_type_de_contenu:
-    type: entity_reference_label
-    label: above
+    type: entity_reference_entity_view
+    label: hidden
     settings:
-      link: true
+      view_mode: sidebar
+      link: false
     third_party_settings: {  }
     weight: 2
     region: content

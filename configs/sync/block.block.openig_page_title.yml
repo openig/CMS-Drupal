@@ -9,7 +9,7 @@ _core:
 id: openig_page_title
 theme: openig
 region: content
-weight: -10
+weight: -14
 provider: null
 plugin: page_title_block
 settings:

@@ -1,0 +1,73 @@
+uuid: 38f47152-aa17-4ddf-8af4-be7a0a6284b9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.sidebar
+    - field.field.node.ressource.field_access_restricted
+    - field.field.node.ressource.field_description
+    - field.field.node.ressource.field_file
+    - field.field.node.ressource.field_format
+    - field.field.node.ressource.field_image
+    - field.field.node.ressource.field_link
+    - field.field.node.ressource.field_linked_content
+    - field.field.node.ressource.field_tag
+    - field.field.node.ressource.field_type
+    - image.style.wide
+    - node.type.ressource
+  module:
+    - file
+    - link
+    - svg_image
+    - user
+id: node.ressource.sidebar
+targetEntityType: node
+bundle: ressource
+mode: sidebar
+content:
+  field_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  addtoany: true
+  field_access_restricted: true
+  field_description: true
+  field_format: true
+  field_linked_content: true
+  field_tag: true
+  field_type: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

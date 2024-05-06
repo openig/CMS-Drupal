@@ -15,6 +15,7 @@ dependencies:
     - shortcut
     - simplenews
     - system
+    - toolbar
 _core:
   default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
 id: authenticated
@@ -26,6 +27,8 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'access user profiles'
   - 'delete own files'
   - 'post comments'
   - 'search content'
@@ -34,3 +37,4 @@ permissions:
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view media'
+  - 'view user email addresses'

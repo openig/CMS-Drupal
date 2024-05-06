@@ -5,7 +5,75 @@
  * OPenIG theme file.
  */
 
- function openig_preprocess_form_element_label(&$variables){
-   // $variables['title_display'] = '';
-   // $variables['title']['#markup'] = 'Rechercher';
- }
+function openig_preprocess_field__node(&$variables){
+  if($variables['field_name'] == 'title'){
+    // Récupération des tags au niveau du titre du contenu
+    $tags = $variables['element']['#object']->field_tag;
+    foreach ($tags as $tag) {
+      $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
+      $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+    }
+    // Utilisation d'une taxonomie pour afficher les pictos à côté des titres
+    $type = $variables['element']['#bundle'];
+    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+    if($pictos){
+      $first_element = reset($pictos);
+      if($first_element){
+        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+      }
+    }
+  }
+}
+
+
+function openig_preprocess_node(&$variables, $hook){
+  $type = $variables['node']->getType();
+
+  switch($type) {
+    case "groupe_de_travail":
+      $variables['ressources'] = array();
+      $nid = $variables['node']->nid->value;
+      // Récupération des ressources du groupe de travail
+      $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);
+      // Récupération des types de ressources
+      $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
+      // Tri des ressources par type de ressources
+      foreach ($types as $type) {
+        $name = $type->name[0]->value;
+        $variables['ressources'][$name] = [];
+        ksort($variables['ressources']);
+        foreach ($ressources as $ressource) {
+          /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+          $referenceItem = $ressource;
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+          $entityReference = $referenceItem->get('field_type');
+          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
+          $id = $entityReference[0]->target_id;
+          $term = \Drupal\taxonomy\Entity\Term::load($id);
+          if($term){
+            $name = $term->get('name')->getValue();
+            /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+            if(!empty($name)){
+              $referencedEntity = $ressource;
+              $referencedEntityType = $name[0]['value'];
+              $variables['ressources'][$referencedEntityType][] = $referencedEntity;
+            }
+          }
+        }
+      }
+      // Vérification si l'utilisateur est membre
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());    
+      $userID = $user->uid[0]->value;
+      foreach ($variables['node']->field_members as $membre) {
+        if ($membre->target_id == $userID) {
+          $variables['membre'] = 'membre';
+        }
+      }
+      break;
+      
+    default:
+      break;
+  }
+}
