@@ -10,7 +10,7 @@
         }
     }     
     .view-content{
-        margin-top: 4rem;
+        margin-top: 2rem;
         .card{
             border: none;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
@@ -18,6 +18,11 @@
             .card-body{
                 display: flex;
                 flex-direction: column;
+            }
+            .card-header{
+                background-color: transparent;
+                padding: 20px;
+                border-bottom-width: 2px;
             }
             .top-card{
                 display: flex;
@@ -113,5 +118,25 @@
     }
     .row_groupe{
         margin-bottom: 2rem;
+    }
+}
+
+#block-openig-views-block-les-groupes-de-travail-archives{
+    margin-top: 4rem;
+    .views-field-title{
+        a{
+            text-transform: none;
+        }
+    }
+    .views-field-field-tag{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .views-field-field-theme-overview{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .views-field-view-node{
+        margin-top: 0;
     }
 }
