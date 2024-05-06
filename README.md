@@ -1,4 +1,4 @@
-OPenIG - Instance Drupal 10 du site web <openig.org>
+OPenIG - Instance Drupal 10 du site web <https://www.openig.org>
 ================================================================================
 
 
