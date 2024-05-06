@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.taxonomy_term.pictos_titre.field_picto
     - field.field.taxonomy_term.pictos_titre.field_type_de_contenu
+    - field.field.taxonomy_term.pictos_titre.field_vue
     - taxonomy.vocabulary.pictos_titre
   module:
     - svg_image
@@ -31,5 +32,6 @@ content:
 hidden:
   description: true
   field_type_de_contenu: true
+  field_vue: true
   langcode: true
   search_api_excerpt: true

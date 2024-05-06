@@ -1,16 +1,16 @@
-uuid: 51d1e1be-dcbf-42a4-8a67-2e8351036048
+uuid: 9b5fef59-bb0c-402d-9540-392401519f9c
 langcode: fr
 status: true
 dependencies:
   module:
-    - node
     - taxonomy
-id: taxonomy_term.field_type_de_contenu
-field_name: field_type_de_contenu
+    - views
+id: taxonomy_term.field_vue
+field_name: field_vue
 entity_type: taxonomy_term
 type: entity_reference
 settings:
-  target_type: node_type
+  target_type: view
 module: core
 locked: false
 cardinality: -1

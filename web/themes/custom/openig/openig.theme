@@ -13,9 +13,26 @@ function openig_preprocess_field__node(&$variables){
       $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
       $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
     }
-    // Utilisation d'une taxonomie pour afficher les pictos à côté des titres
+    // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les types de contenu
     $type = $variables['element']['#bundle'];
     $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+    if($pictos){
+      $first_element = reset($pictos);
+      if($first_element){
+        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+      }
+    }
+  }
+}
+
+function openig_preprocess_page_title(&$variables) {
+  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les vues
+  $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+  if($route->getDefault('_controller') == 'Drupal\views\Routing\ViewPageController::handle'){
+    $id = $route->getDefault('view_id');
+    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_vue' => $id]);
     if($pictos){
       $first_element = reset($pictos);
       if($first_element){
