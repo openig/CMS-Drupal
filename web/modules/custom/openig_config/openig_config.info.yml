@@ -42,3 +42,4 @@ dependencies:
   - easy_breadcrumb
   - views_fieldsets
   - slick_views
+  - slick_ui
