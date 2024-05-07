@@ -39,6 +39,7 @@
         "drupal/search_api_solr": "^4.3",
         "drupal/simple_sitemap": "^4.1",
         "drupal/simplenews": "^4.0",
+        "drupal/slick_views": "^3.0",
         "drupal/social_media_links": "^2.9",
         "drupal/structure_sync": "^2.0",
         "drupal/svg_image": "^3.0",
@@ -50,6 +51,7 @@
         "drupal/webform": "^6.2",
         "drupal/weight": "^3.4",
         "drush/drush": "^12.4",
+        "kenwheeler/slick": "^1.8",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
     "conflict": {
