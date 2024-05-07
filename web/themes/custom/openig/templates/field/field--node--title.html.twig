@@ -36,7 +36,7 @@
     'field--label-' ~ label_display,
   ]
 %}
-{% if picto_uri is defined %}
+{% if (picto_uri is defined) and (element['#view_mode'] == 'full') %}
   <img src="{{ file_url(picto_uri) }}" alt="{{picto_alt}}" />
 {% endif %}
 <span{{ attributes.addClass(classes) }}>
