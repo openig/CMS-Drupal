@@ -1561,7 +1561,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"header_block container\"><div class=\"title_header\">\r\n<img src=\"/sites/default/files/2024-05/utilisateurs-lux-titre.png\" alt=\"Groupe de personnes\" />\r\n<h2>[view:title]</h2> </div>\r\n<div class=\"texte_header\">\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n</div>\r\n<div class=\"nombre_header\">\r\n<span class=\"nombre\">[view:total-rows]</span> \r\n<span class=\"type_contenu\">Groupes de travail</span>\r\n</div>\r\n</div>"
+            value: "<div class=\"title_header\">\r\n\r\n    <img src=\"/sites/default/files/2024-05/utilisateurs-lux-titre.png\" alt=\"Groupe de personnes\" />\r\n\r\n    <h2>[view:title]</h2> \r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">[view:total-rows]</span> \r\n    <span class=\"type_contenu\">Groupes de travail</span>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
