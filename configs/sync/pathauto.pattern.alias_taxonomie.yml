@@ -9,16 +9,17 @@ label: 'Alias taxonomie'
 type: 'canonical_entities:taxonomy_term'
 pattern: '[term:vocabulary]/[term:name]'
 selection_criteria:
-  9b2c3a5a-028a-4190-b39d-ab98d953238d:
+  6d3d134c-01a1-4a5f-be9a-3f4d300195ad:
     id: 'entity_bundle:taxonomy_term'
     negate: false
-    uuid: 9b2c3a5a-028a-4190-b39d-ab98d953238d
+    uuid: 6d3d134c-01a1-4a5f-be9a-3f4d300195ad
     context_mapping:
       taxonomy_term: taxonomy_term
     bundles:
       actions_dans_l_association: actions_dans_l_association
       dpt_intervention: dpt_intervention
       outil_competence: outil_competence
+      pictos_titre: pictos_titre
       tags: tags
       type_de_ressource: type_de_ressource
       typologie_de_structure: typologie_de_structure

@@ -8,6 +8,7 @@ module:
   announcements_feed: 0
   automated_cron: 0
   big_pipe: 0
+  blazy: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -65,6 +66,9 @@ module:
   shortcut: 0
   simple_sitemap: 0
   simplenews: 0
+  slick: 0
+  slick_ui: 0
+  slick_views: 0
   social_media_links: 0
   social_media_links_field: 0
   structure_sync: 0
@@ -82,6 +86,7 @@ module:
   user: 0
   video_embed_field: 0
   video_embed_peertube: 0
+  views_fieldsets: 0
   views_ui: 0
   webform: 0
   weight: 0
