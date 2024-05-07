@@ -1068,6 +1068,7 @@ display:
           tokenize: false
       display_extenders: {  }
       block_description: 'Groupes de travail archivés'
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -1565,6 +1566,7 @@ display:
             format: full_html
           tokenize: false
       display_extenders: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
