@@ -3,10 +3,8 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.menu_link_content.faq.field_icon
     - system.menu.faq
   module:
-    - fontawesome
     - link
     - menu_item_extras
 id: menu_link_content.faq.default
@@ -14,12 +12,6 @@ targetEntityType: menu_link_content
 bundle: faq
 mode: default
 content:
-  field_icon:
-    type: fontawesome_icon_widget
-    weight: 1
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 3
