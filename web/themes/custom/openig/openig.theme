@@ -116,12 +116,12 @@ function openig_theme_suggestions_alter(array &$suggestions, array $variables, $
     $suggestions[] = 'views_view_fields__' . $variables['view']->current_display;
   }
 
-   if($hook === 'views_view_field') {
+  if($hook === 'views_view_field') {
     $suggestions[] = 'views_view_field__' . $variables['field']->field;
   }
 
 
-   if($hook === 'views_view_grid') {
+  if($hook === 'views_view_grid') {
     $suggestions[] = 'views_view_grid__' . $variables['view']->current_display;
   }
 }

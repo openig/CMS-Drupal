@@ -99,6 +99,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
                 color: $OPenIG-color_dark-gray;
                 border-bottom: 1px solid $OPenIG-color_red;
                 text-decoration: none;
+                padding-bottom: 5px;
             }
         }
     }
@@ -455,4 +456,66 @@ h2{
     li.breadcrumb-item:not(:first-of-type)::before{
         content: '>';
     }
+}
+
+// Carousel
+.slick{
+    padding-bottom: 15px !important;
+    .slick-list{
+        padding-bottom: 10px !important;
+        .b-grid, .blazy.b-grid, .item-list > .b-grid{
+            width: fit-content !important;
+            margin: auto !important;
+        }
+        
+        .b-grid > .grid{
+            width: fit-content !important;
+        }
+        
+        .blazy .grid__content, .blazy .region__content{
+            width: fit-content !important;
+        }
+        
+        .slick__slide{
+            width: 306px !important;
+            height: 410px !important;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .slick img{
+            max-width: fit-content;
+        }
+    }
+    .slick__arrow{
+        position: relative !important;
+        top: unset !important;
+        bottom: 0 !important;
+        height: fit-content !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        width: 400px  !important;
+        margin: auto !important;
+        margin-top: 3rem !important;
+        button.slick-arrow{
+            position: relative !important;
+            top: unset !important;
+            transform: translateY(0) !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+    
 }
