@@ -151,3 +151,60 @@
         margin-top: 0;
     }
 }
+
+
+// Bloc groupes de travail page d'accueil
+
+#block-openig-views-block-groupes-travail-accueil{
+    .view-content{
+        margin-top: 4rem;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            img{
+                position: absolute;
+                left: 0;
+                top: 60px;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                margin-left: 85px;
+                margin-top: 60px;
+            } 
+        }
+        .texte_header{
+            margin-left: 150px;
+            width: 50%;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+}

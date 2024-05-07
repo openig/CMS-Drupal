@@ -460,6 +460,7 @@ h2{
 
 // Carousel
 .slick{
+    z-index: 9;
     padding-bottom: 15px !important;
     .slick-list{
         padding-bottom: 10px !important;
@@ -518,4 +519,16 @@ h2{
         }
     }
     
+}
+
+.region-quatrieme-section-accueil{
+    position: relative;
+    .region_quatre{
+        background-color: #f2f6e7;
+        width: 90%;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 }
