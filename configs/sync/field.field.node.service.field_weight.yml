@@ -1,0 +1,22 @@
+uuid: 297d8fbd-880b-4cb9-9790-1d22585fa960
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_weight
+    - node.type.service
+  module:
+    - weight
+id: node.service.field_weight
+field_name: field_weight
+entity_type: node
+bundle: service
+label: Poids
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  range: '20'
+field_type: weight
