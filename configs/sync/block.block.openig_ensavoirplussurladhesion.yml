@@ -7,7 +7,6 @@ dependencies:
   module:
     - block_content
     - system
-    - user
   theme:
     - openig
 id: openig_ensavoirplussurladhesion
@@ -25,13 +24,6 @@ settings:
   info: ''
   view_mode: full
 visibility:
-  user_role:
-    id: user_role
-    negate: false
-    context_mapping:
-      user: '@user.current_user_context:current_user'
-    roles:
-      anonymous: anonymous
   request_path:
     id: request_path
     negate: false
