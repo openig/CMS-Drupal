@@ -63,8 +63,9 @@
 
   {% if rows %}
     <div class="view-content">
-        <span id="annee"></span>
-      {{ rows }}
+        <p id="annee"></p>
+        {{ rows }}
+        <div id="contenu_evenement"></div>
     </div>
   {% elseif empty %}
     <div class="view-empty">

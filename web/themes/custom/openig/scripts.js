@@ -75,5 +75,11 @@
             var date = $(active).find(('.annee'));
             $('#annee').text($(date).text());
         })
+
+        $('.slick--view--l-agenda .slick-slide').click(function() {
+            var contenu = $(this).find('.contenu');
+            var clone = $(contenu).clone(true);
+            $('#contenu_evenement').html(clone);
+        })
     })
 })(jQuery);
