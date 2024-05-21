@@ -262,6 +262,13 @@ header{
                 padding-bottom: 0;
             }
         }
+        .field--name-field-picto{
+            margin-right: 10px;
+            img{
+                width: 32px;
+
+            }
+        }
         .logged{
             border-bottom: 1px solid $OPenIG-color_red;
             padding-left: 0;

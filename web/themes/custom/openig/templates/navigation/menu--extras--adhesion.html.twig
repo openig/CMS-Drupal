@@ -55,8 +55,10 @@
           logged_in ? 'logged',
         ]
       %}
+
         <li{{ item.attributes.addClass('nav-item') }}>
             {% if item.title == 'Nom utilisateur' %}
+                {{item['content']['field_picto']}}
                 {{ link(username, item.url, { 'class': classes_link }) }}
             {% else %}
                 {{ link(item.title, item.url, { 'class': classes_link }) }}
