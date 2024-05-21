@@ -35,14 +35,15 @@
     not node_content ? 'col-7'
   ]
 %}
-
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
-</div>
+{% if 'adherent' not in user.getRoles() %}
+  <div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {% if label %}
+      <h2{{ title_attributes }}>{{ label }}</h2>
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      {{ content }}
+    {% endblock %}
+  </div>
+{% endif %}
