@@ -2,6 +2,7 @@
 
 footer{
     padding-bottom: 0;
+    z-index: 1;
     .hautFooter{
         background-color: $OPenIG-color_deep-white;
         margin: auto;
@@ -55,6 +56,17 @@ footer{
         position: absolute;
         bottom: 10px;
         right: 0;
+        li{
+            display: flex;
+            align-items: center;
+        }
+        .field--name-field-picto{
+            margin-right: 10px;
+            img{
+                width: 32px;
+
+            }
+        }
         .logged{
             border-bottom: 1px solid $OPenIG-color_red;
             padding-left: 0;
