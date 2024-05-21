@@ -11,10 +11,11 @@ dependencies:
     - field.field.node.service.field_link
     - field.field.node.service.field_requirement
     - field.field.node.service.field_tag
+    - field.field.node.service.field_weight
     - image.style.medium
     - node.type.service
   module:
-    - image
+    - svg_image
     - user
 id: node.service.teaser
 targetEntityType: node
@@ -38,11 +39,13 @@ content:
     weight: 100
     region: content
 hidden:
+  addtoany: true
   field_access_restricted: true
   field_body: true
   field_contact: true
   field_link: true
   field_requirement: true
   field_tag: true
+  field_weight: true
   langcode: true
   search_api_excerpt: true

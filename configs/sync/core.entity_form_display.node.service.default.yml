@@ -10,15 +10,17 @@ dependencies:
     - field.field.node.service.field_link
     - field.field.node.service.field_requirement
     - field.field.node.service.field_tag
+    - field.field.node.service.field_weight
     - image.style.thumbnail
     - node.type.service
   module:
     - field_group
-    - image
     - link
     - paragraphs
     - path
+    - svg_image
     - text
+    - weight
 third_party_settings:
   field_group:
     group_options_de_publication:
@@ -26,6 +28,7 @@ third_party_settings:
         - field_access_restricted
         - promote
         - sticky
+        - field_weight
       label: 'Options de publication'
       region: content
       parent_name: ''
@@ -121,6 +124,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_weight:
+    type: weight_selector
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   langcode:
     type: language_select
     weight: 7
@@ -136,7 +145,7 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 11
+    weight: 10
     region: content
     settings:
       display_label: true
@@ -155,7 +164,7 @@ content:
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
