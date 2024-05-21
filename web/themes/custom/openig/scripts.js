@@ -61,25 +61,40 @@
         })
     
 
-        var active = $('.slick--view--l-agenda .slick-current');
-        var date = $(active).find(('.annee'));
-        $('#annee').text($(date).text());
-        $('.slick--view--l-agenda .slick__arrow button').click(function() {
+
+        // Vue Agenda
+
+        // Fonction pour modifier l'année et afficher le contenu d'un évènement
+        function change_evenement() {
+            // Modification de l'année en haut du carousel
             var active = $('.slick--view--l-agenda .slick-current');
             var date = $(active).find(('.annee'));
             $('#annee').text($(date).text());
 
-        })
-        $('.slick-list').mouseup(function() {
-            var active = $('.slick--view--l-agenda .slick-current');
-            var date = $(active).find(('.annee'));
-            $('#annee').text($(date).text());
-        })
-
-        $('.slick--view--l-agenda .slick-slide').click(function() {
-            var contenu = $(this).find('.contenu');
+            // Affichage du contenu sous le carousel
+            var contenu = $(active).find('.contenu');
             var clone = $(contenu).clone(true);
             $('#contenu_evenement').html(clone);
+        }
+        change_evenement();
+
+        // Utilisation de la fonction change_evenement au clic sur les boutons précédent et suivant
+        $('.slick--view--l-agenda .slick__arrow button').click(function() {
+            change_evenement();
+        })
+
+        // Utilisation de la fonction change_evenement au glissement du carousel
+        $('.slick-list').mouseup(function() {
+            change_evenement();
+        })
+
+        // Utilisation de la fonction change_evenement au clic sur un slide
+        $('.slick--view--l-agenda .slick-slide').click(function() {
+            $('.slick-slide.slick-active').removeClass('slick-active');
+            $(this).addClass('slick-active');
+            $('.slick-slide.slick-current').removeClass('slick-current');
+            $(this).addClass('slick-current');
+            change_evenement();
         })
     })
 })(jQuery);
