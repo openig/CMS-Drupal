@@ -59,5 +59,21 @@
             var link = $(this).find('.views-field-title a');
             $(link).attr('target','_blank');
         })
+    
+
+        var active = $('.slick--view--l-agenda .slick-current');
+        var date = $(active).find(('.annee'));
+        $('#annee').text($(date).text());
+        $('.slick--view--l-agenda .slick__arrow button').click(function() {
+            var active = $('.slick--view--l-agenda .slick-current');
+            var date = $(active).find(('.annee'));
+            $('#annee').text($(date).text());
+
+        })
+        $('.slick-list').mouseup(function() {
+            var active = $('.slick--view--l-agenda .slick-current');
+            var date = $(active).find(('.annee'));
+            $('#annee').text($(date).text());
+        })
     })
 })(jQuery);

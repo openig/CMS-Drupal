@@ -25,6 +25,8 @@
         "drupal/color_field": "^3.0",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/custom_view_filters": "^2.0",
+        "drupal/daterange_compact": "^2.1",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/field_group": "^3.4",
         "drupal/fontawesome": "^2.26",
@@ -85,6 +87,9 @@
             }
         },
         "patches": {
+            "drupal/core":{
+                "date": "https://www.drupal.org/files/issues/2023-08-17/2827055-93.patch"
+            },
             "drupal/bootstrap5": {
                 "Passing percentage units to the global abs() function is deprecated": "https://www.drupal.org/files/issues/2023-10-05/bootstrap5-3391813.patch"
             },

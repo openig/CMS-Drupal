@@ -22,6 +22,8 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
+  custom_view_filters: 0
+  daterange_compact: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
