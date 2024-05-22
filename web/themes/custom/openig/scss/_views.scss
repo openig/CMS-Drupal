@@ -214,6 +214,17 @@
 // Vue agenda
 
 .view-l-agenda{
+    .carousel{
+        padding-top: 10px;
+        background-color: $OPenIG-color_deep-white;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .slick__slider{
+        background-color: $OPenIG-color_white;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
     #annee{
         text-align: center;
         font-family: 'Russo One';

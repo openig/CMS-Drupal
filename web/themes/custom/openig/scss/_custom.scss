@@ -10,6 +10,10 @@ main, main > .container{
     min-height: 1000px;
 }
 
+.region-sidebar-first, .region-sidebar-second, .region-footer, .region-content{
+    padding: 0;
+}
+
 // Positionnement image en haut de page
 body.toolbar-horizontal.toolbar-tray-open #block-openig-imageenhautdepage{
     top: 50px;
