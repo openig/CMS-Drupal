@@ -237,11 +237,11 @@ h1{
     display: flex;
     align-items: center;
     position: relative;
-    height: 200px;
+    height: 150px;
     img{
         height: 150px;
         position: absolute;
-        top: 50px;
+        top: 20px;
         left: 0;
         z-index: 0;
     }
@@ -451,7 +451,7 @@ h2{
 // Fil d'ariane
 .navigation_filAriane{
     margin: auto;
-    margin-top: 4rem;
+    margin-top: 1.5rem;
     a{
         color: $OPenIG-color_black;
         text-decoration: none;
