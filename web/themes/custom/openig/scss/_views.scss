@@ -214,6 +214,9 @@
 // Vue agenda
 
 .view-l-agenda{
+    .views-field-field-dates-4{
+        display: none;
+    }
     .carousel{
         padding-top: 10px;
         background-color: $OPenIG-color_deep-white;
@@ -230,7 +233,7 @@
         font-family: 'Russo One';
         font-size: $OPenIG-font-size-h2;
     }
-    .slick .slick-list .slick__slide.slick-active{
+    .slick .slick-list .slick__slide.slick-current{
         border: 2px solid $OPenIG-color_yellow;
         box-shadow: none;
     }

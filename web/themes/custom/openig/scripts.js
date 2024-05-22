@@ -64,6 +64,20 @@
 
         // Vue Agenda
 
+        // Slide actif en fonction de la date du jour
+        $(".slick--view--l-agenda .slick-slide").each(function(){
+            var time = $(this).find('.views-field-field-dates-4 time');
+            var datetime = $(time).attr('datetime');
+
+            var dateNow = Date.now();
+            var date = new Date(dateNow).toISOString();
+            if(datetime >= date){
+                var index = $(this).attr('data-slick-index');               
+                $('.slick__slider').slick('slickGoTo',index, true);
+                return false;
+            }
+        })
+
         // Fonction pour modifier l'année et afficher le contenu d'un évènement
         function change_evenement() {
             // Modification de l'année en haut du carousel
@@ -90,10 +104,8 @@
 
         // Utilisation de la fonction change_evenement au clic sur un slide
         $('.slick--view--l-agenda .slick-slide').click(function() {
-            $('.slick-slide.slick-active').removeClass('slick-active');
-            $(this).addClass('slick-active');
-            $('.slick-slide.slick-current').removeClass('slick-current');
-            $(this).addClass('slick-current');
+            var index = $(this).attr('data-slick-index');               
+            $('.slick__slider').slick('slickGoTo',index, true);
             change_evenement();
         })
     })

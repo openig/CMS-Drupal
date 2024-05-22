@@ -1,0 +1,52 @@
+[1mdiff --git a/configs/sync/field.field.node.evenement.field_body.yml b/configs/sync/field.field.node.evenement.field_body.yml[m
+[1mindex b36ae67..4edbfcf 100644[m
+[1m--- a/configs/sync/field.field.node.evenement.field_body.yml[m
+[1m+++ b/configs/sync/field.field.node.evenement.field_body.yml[m
+[36m@@ -5,6 +5,7 @@[m [mdependencies:[m
+   config:[m
+     - field.storage.node.field_body[m
+     - node.type.evenement[m
+[32m+[m[32m    - paragraphs.paragraphs_type.title_text[m
+   module:[m
+     - entity_reference_revisions[m
+ id: node.evenement.field_body[m
+[36m@@ -20,34 +21,23 @@[m [mdefault_value_callback: ''[m
+ settings:[m
+   handler: 'default:paragraph'[m
+   handler_settings:[m
+[31m-    target_bundles: null[m
+[32m+[m[32m    target_bundles:[m
+[32m+[m[32m      title_text: title_text[m
+     negate: 0[m
+     target_bundles_drag_drop:[m
+[31m-      fichier:[m
+[31m-        weight: -12[m
+[31m-        enabled: false[m
+[31m-      image_title:[m
+[31m-        weight: -16[m
+[31m-        enabled: false[m
+       membre:[m
+         weight: -15[m
+         enabled: false[m
+       picto_text:[m
+         weight: -14[m
+         enabled: false[m
+[31m-      text:[m
+[31m-        weight: -18[m
+[31m-        enabled: false[m
+[31m-      title:[m
+[31m-        weight: -17[m
+[32m+[m[32m      texte_dropdown:[m
+[32m+[m[32m        weight: 8[m
+         enabled: false[m
+       title_text:[m
+         weight: -19[m
+[31m-        enabled: false[m
+[32m+[m[32m        enabled: true[m
+       type_de_contenu:[m
+         weight: -13[m
+         enabled: false[m
+[31m-      video:[m
+[31m-        weight: -11[m
+[31m-        enabled: false[m
+ field_type: entity_reference_revisions[m
