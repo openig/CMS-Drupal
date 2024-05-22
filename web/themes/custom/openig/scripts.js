@@ -108,5 +108,12 @@
             $('.slick__slider').slick('slickGoTo',index, true);
             change_evenement();
         })
+
+        $('.btn_filtre').on('click', function() {
+            $('.formulaire_filtre').toggleClass('show');
+        })
+        $('.btn-close-filtre').on('click', function() {
+            $('.formulaire_filtre').toggleClass('show');
+        })
     })
 })(jQuery);

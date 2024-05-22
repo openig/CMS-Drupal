@@ -65,8 +65,19 @@
     <div class="view-content">
         <div class="carousel">
             <p id="annee"></p>
+            <div class="formulaire_filtre">
+              <button type="button" class="btn-close-filtre">X</button>
+              {{ render_block('openig_formulaireexposel_agendaagenda') }}
+            </div>
             <div class="container">
-                {{ rows }}
+              <div class="row">
+                <div class="col-1 bloc_filtres">
+                  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+                </div>
+                <div class="col-10">
+                  {{ rows }}
+                </div>
+              </div>
             </div>
         </div>
         <div id="contenu_evenement" class="container"></div>
