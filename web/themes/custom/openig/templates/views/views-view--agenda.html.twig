@@ -63,9 +63,13 @@
 
   {% if rows %}
     <div class="view-content">
-        <p id="annee"></p>
-        {{ rows }}
-        <div id="contenu_evenement"></div>
+        <div class="carousel">
+            <p id="annee"></p>
+            <div class="container">
+                {{ rows }}
+            </div>
+        </div>
+        <div id="contenu_evenement" class="container"></div>
     </div>
   {% elseif empty %}
     <div class="view-empty">

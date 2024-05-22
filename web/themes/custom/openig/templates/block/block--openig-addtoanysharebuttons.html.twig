@@ -31,11 +31,12 @@
     'block',
     'block-' ~ configuration.provider|clean_class,
     'block-' ~ plugin_id|clean_class,
-    'col-3'
   ]
 %}
-<div class="col-1"></div>
 <div{{ attributes.addClass(classes) }}>
+  {% block content %}
+    {{ content }}
+  {% endblock %}
   {{ title_prefix }}
   {% if label %}
     <button id="button_share" {{ title_attributes }}>
@@ -44,7 +45,4 @@
     </button>
   {% endif %}
   {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
 </div>

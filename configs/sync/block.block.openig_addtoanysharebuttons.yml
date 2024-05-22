@@ -1,6 +1,6 @@
 uuid: 18c8c0b2-20cd-4548-9716-782a4ab1c3d3
 langcode: fr
-status: true
+status: false
 dependencies:
   module:
     - addtoany
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*"
+    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*\r\n/l-agenda"

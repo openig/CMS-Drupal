@@ -2,7 +2,7 @@ _core:
   default_config_hash: fMTQlRT4MXb9WtflmxsvPI0VnKTQNjOnlx9oCWO3vYo
 langcode: fr
 buttons_size: 32
-additional_html: "<a class=\"a2a_button_linkedin\">\r\n    <i class=\"fa-brands fa-linkedin\"></i>\r\n</a>\r\n<a class=\"a2a_button_x\">\r\n    <i class=\"fa-brands fa-square-x-twitter\"></i>\r\n</a>\r\n<a class=\"a2a_button_email\">\r\n    <i class=\"fa-solid fa-square-envelope\"></i>\r\n</a>\r\n<a class=\"a2a_button_facebook\">\r\n    <i class=\"fa-brands fa-square-facebook\"></i>\r\n</a>"
+additional_html: "<a class=\"a2a_button_linkedin\">\r\n    <i class=\"fa-brands fa-linkedin-in\"></i>\r\n</a>\r\n<a class=\"a2a_button_x\">\r\n    <i class=\"fa-brands fa-x-twitter\"></i>\r\n</a>\r\n<a class=\"a2a_button_email\">\r\n    <i class=\"fa-solid fa-envelope\"></i>\r\n</a>\r\n<a class=\"a2a_button_facebook\">\r\n    <i class=\"fa-brands fa-facebook-f\"></i>\r\n</a>"
 additional_css: ''
 additional_js: ''
 universal_button: none

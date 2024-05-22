@@ -109,5 +109,6 @@ content:
     weight: 5
     region: content
 hidden:
+  addtoany: true
   langcode: true
   search_api_excerpt: true

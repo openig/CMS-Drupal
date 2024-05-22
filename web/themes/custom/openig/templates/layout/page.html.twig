@@ -127,10 +127,12 @@ set footer_classes = ' ' ~
     {{ page.septieme_section_accueil }}
     {{ page.huitieme_section_accueil }}
   {% else %}
-    <div class="{{ b5_top_container }}">
-      {% if page.breadcrumb %}
-        {{ page.breadcrumb }}
-      {% endif %}
+    <div>
+      <div class="{{ b5_top_container }}">
+        {% if page.breadcrumb %}
+          {{ page.breadcrumb }}
+        {% endif %}
+      </div>
       <div class="row g-0">
         {% if page.sidebar_first %}
           <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
