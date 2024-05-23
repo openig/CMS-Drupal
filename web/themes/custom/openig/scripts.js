@@ -109,11 +109,19 @@
             change_evenement();
         })
 
+
+        // Affichage du panneau de filtre
         $('.btn_filtre').on('click', function() {
             $('.formulaire_filtre').toggleClass('show');
         })
         $('.btn-close-filtre').on('click', function() {
             $('.formulaire_filtre').toggleClass('show');
         })
+
+        // Modification de texte dans les filtres
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date label').text('De');
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-to-date label').text('à');
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
     })
+
 })(jQuery);
