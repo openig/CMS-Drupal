@@ -57,11 +57,11 @@
       <div class="row" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
             <div class="card h-100">
-                <div class="card-body">
-                    <a href="/l-agenda?id={{column.content['#row'].nid}}">
+                <a href="/l-agenda?id={{column.content['#row'].nid}}">
+                    <div class="card-body">
                         {{- column.content -}}
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         {% endfor %}
       </div>

@@ -44,7 +44,7 @@ options:
     respondTo: window
     rtl: false
     rows: 1
-    slidesPerRow: 5
+    slidesPerRow: 1
     slide: ''
     slidesToShow: 5
     slidesToScroll: 1
