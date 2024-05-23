@@ -37,6 +37,7 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'container'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
@@ -47,7 +48,9 @@
   {{ title_suffix }}
   {% if header %}
     <div class="view-header">
-      {{ header }}
+        <div class="header_block">
+           {{header}}
+        </div>
     </div>
   {% endif %}
   {% if exposed %}

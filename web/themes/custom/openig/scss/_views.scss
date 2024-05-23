@@ -155,10 +155,20 @@
 
 // Bloc groupes de travail page d'accueil
 
-.region-quatrieme-section-accueil{
+#block-openig-views-block-groupes-travail-accueil{
+    img{
+        top: 60px;
+    }
+    h2{
+        margin-left: 85px;
+        margin-top: 60px;
+    } 
     .view-content{
         margin-top: 4rem;
     }
+}
+
+.region-quatrieme-section-accueil{
     .view-header{
         .header_block{
             position: relative;
@@ -171,15 +181,12 @@
             img{
                 position: absolute;
                 left: 0;
-                top: 60px;
                 height: 140px;
             }
             h2{
                 width: fit-content;
                 border-bottom: 0;
                 margin-bottom: 0;
-                margin-left: 85px;
-                margin-top: 60px;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
             } 
@@ -218,6 +225,9 @@
         margin-top: 3rem;
     }
     .views-field-field-dates-4{
+        display: none;
+    }
+    .views-field-nid{
         display: none;
     }
     .carousel{
@@ -477,3 +487,134 @@
         position: relative;
     }
 }
+
+
+// Bloc agenda page d'accueil
+
+.region-troisieme-section-accueil{
+    padding-bottom: 4rem;
+    .view-content{
+        //padding-top: 4rem;
+    }
+    .view-header{
+        height: 150px;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            float: right;
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            } 
+        }
+        .texte_header{
+            width: 50%;
+            margin: auto;
+            padding-top: 50px;
+            margin-left: 250px;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+}
+
+#block-openig-views-block-l-agenda-agenda-accueil{
+    padding-top: 2rem;
+    img{
+        top: 0;
+        height: 140px;
+    }
+    h2{
+        margin-bottom: 0;
+        margin-left: -50px;
+        margin-top: 0px;
+    } 
+    .card a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+    }
+}
+.view-l-agenda{
+    .view-content {
+        .row{
+            display: flex;
+            justify-content: space-around;
+        }
+        .card{
+            width: 195px !important;
+            height: 200px !important;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+            overflow: hidden;
+            .views-field-field-dates{
+                font-size: $OPenIG-font-size-xl;
+                font-family: 'Russo One';
+                text-align: center;
+                width: 75px;
+                margin: auto;
+                border-bottom: 5px solid $OPenIG-color_yellow
+            }
+            .views-field-title{
+                text-align: center;
+                margin-top: 5px;
+                font-size: $OPenIG-font-size-md;
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                }
+            }
+            .annee{
+                display: none;
+            }
+            .views-field-fieldset{
+                .contenu{
+                    display: none;
+                }
+            }
+        }
+    }
+    .more-link{
+        text-align: center;
+        margin-top: 2rem;
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
+} 

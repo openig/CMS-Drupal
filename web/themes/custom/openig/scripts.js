@@ -78,6 +78,30 @@
             }
         })
 
+        // Slide actif au clic sur un évènement de la page d'accueil
+
+        if($('body').hasClass('path-l-agenda')){
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if(urlparam[0] == 'id'){
+                    var id = urlparam[1];
+                }
+            }
+    
+            $(".slick--view--l-agenda .slick-slide").each(function(){
+                var nid = $(this).find('.views-field-nid .field-content');
+                console.log(id);
+                console.log($.trim(nid.text()));
+                if(id == $.trim(nid.text())){
+                    var index = $(this).attr('data-slick-index');               
+                    $('.slick__slider').slick('slickGoTo',index, true);
+                    return false;
+                }
+            })
+        }
+       
+
         // Fonction pour modifier l'année et afficher le contenu d'un évènement
         function change_evenement() {
             // Modification de l'année en haut du carousel
@@ -122,6 +146,7 @@
         $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date label').text('De');
         $('#views-exposed-form-l-agenda-agenda .form-item-exposed-to-date label').text('à');
         $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
+    
     })
 
 })(jQuery);
