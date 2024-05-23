@@ -860,7 +860,20 @@ display:
       cache:
         type: tag
         options: {  }
-      empty: {  }
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Aucun résultat'
+            format: basic_html
+          tokenize: false
       sorts:
         field_dates_value:
           id: field_dates_value

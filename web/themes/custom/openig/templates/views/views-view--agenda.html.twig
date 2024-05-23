@@ -61,7 +61,6 @@
     </div>
   {% endif %}
 
-  {% if rows %}
     <div class="view-content">
         <div class="carousel">
             <p id="annee"></p>
@@ -82,8 +81,8 @@
         </div>
         <div id="contenu_evenement" class="container"></div>
     </div>
-  {% elseif empty %}
-    <div class="view-empty">
+  {% if empty %}
+    <div class="view-empty container">
       {{ empty }}
     </div>
   {% endif %}

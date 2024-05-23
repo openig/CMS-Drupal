@@ -214,6 +214,9 @@
 // Vue agenda
 
 .view-l-agenda{
+    .view-empty{
+        margin-top: 3rem;
+    }
     .views-field-field-dates-4{
         display: none;
     }
@@ -396,7 +399,7 @@
             color: $OPenIG-color_dark-gray;
             border: 1px solid $OPenIG-color_gray;
         }
-        label{
+        label, .form-date{
             font-size: $OPenIG-font-size-sm;
         }
         .form-checkbox{
@@ -455,6 +458,7 @@
 
     }
     .btn_filtre{
+        margin-bottom: 1.5rem;
         height: 30px;
         background-color: $OPenIG-color_blue;
         border: none;
