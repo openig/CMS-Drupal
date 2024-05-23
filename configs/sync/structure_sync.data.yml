@@ -1,25 +1,22 @@
 blocks:
   -
-    info: 'Vue groupe de travail'
+    info: "En savoir plus sur l'adhésion"
     langcode: fr
-    uuid: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
-    bundle: picto_et_texte
+    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
+    bundle: lien
     revision_id: null
     rev_id_current: null
     fields:
-      field_picto_et_texte:
+      body:
         -
-          target_id: '52'
-          target_revision_id: '99'
+          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
+          summary: ''
+          format: full_html
+      field_lien:
         -
-          target_id: '53'
-          target_revision_id: '100'
-        -
-          target_id: '54'
-          target_revision_id: '101'
-        -
-          target_id: '55'
-          target_revision_id: '102'
+          uri: 'internal:/'
+          title: "En savoir plus sur l'adhésion"
+          options: {  }
 menus:
   -
     menu_name: footer
