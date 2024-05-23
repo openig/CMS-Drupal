@@ -56,7 +56,7 @@
     {% for row in items %}
       <div class="row" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
-            <div class="card h-100">
+            <div class="card card_agenda h-100">
                 <a href="/l-agenda?id={{column.content['#row'].nid}}">
                     <div class="card-body">
                         {{- column.content -}}
