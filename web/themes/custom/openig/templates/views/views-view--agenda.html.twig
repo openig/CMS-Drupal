@@ -37,7 +37,6 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
-    'container'
   ]
 %}
 <div{{ attributes.addClass(classes) }}>
@@ -47,10 +46,8 @@
   {% endif %}
   {{ title_suffix }}
   {% if header %}
-    <div class="view-header row">
-    <div class="col-1"></div>
+    <div class="view-header">
       {{ header }}
-    <div class="col-1"></div>
     </div>
   {% endif %}
   {% if exposed %}
@@ -64,12 +61,28 @@
     </div>
   {% endif %}
 
-  {% if rows %}
     <div class="view-content">
-      {{ rows }}
+        <div class="carousel">
+            <p id="annee"></p>
+            <div class="formulaire_filtre">
+              <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+              {{ render_block('openig_formulaireexposel_agendaagenda') }}
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-1 bloc_filtres">
+                  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+                </div>
+                <div class="col-10">
+                  {{ rows }}
+                </div>
+              </div>
+            </div>
+        </div>
+        <div id="contenu_evenement" class="container"></div>
     </div>
-  {% elseif empty %}
-    <div class="view-empty">
+  {% if empty %}
+    <div class="view-empty container">
       {{ empty }}
     </div>
   {% endif %}

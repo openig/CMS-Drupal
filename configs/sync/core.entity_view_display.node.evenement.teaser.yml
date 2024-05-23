@@ -43,6 +43,7 @@ content:
     weight: 100
     region: content
 hidden:
+  addtoany: true
   field_access_restricted: true
   field_body: true
   field_dates: true

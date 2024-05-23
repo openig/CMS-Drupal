@@ -47,10 +47,10 @@
   {% endif %}
   {{ title_suffix }}
   {% if header %}
-    <div class="view-header row">
-    <div class="col-1"></div>
-      {{ header }}
-    <div class="col-1"></div>
+    <div class="view-header">
+        <div class="header_block">
+           {{header}}
+        </div>
     </div>
   {% endif %}
   {% if exposed %}

@@ -59,5 +59,94 @@
             var link = $(this).find('.views-field-title a');
             $(link).attr('target','_blank');
         })
+    
+
+
+        // Vue Agenda
+
+        // Slide actif en fonction de la date du jour
+        $(".slick--view--l-agenda .slick-slide").each(function(){
+            var time = $(this).find('.views-field-field-dates-4 time');
+            var datetime = $(time).attr('datetime');
+
+            var dateNow = Date.now();
+            var date = new Date(dateNow).toISOString();
+            if(datetime >= date){
+                var index = $(this).attr('data-slick-index');               
+                $('.slick__slider').slick('slickGoTo',index, true);
+                return false;
+            }
+        })
+
+        // Slide actif au clic sur un évènement de la page d'accueil
+
+        if($('body').hasClass('path-l-agenda')){
+            var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < url.length; i++) {
+                var urlparam = url[i].split('=');
+                if(urlparam[0] == 'id'){
+                    var id = urlparam[1];
+                }
+            }
+    
+            $(".slick--view--l-agenda .slick-slide").each(function(){
+                var nid = $(this).find('.views-field-nid .field-content');
+                console.log(id);
+                console.log($.trim(nid.text()));
+                if(id == $.trim(nid.text())){
+                    var index = $(this).attr('data-slick-index');               
+                    $('.slick__slider').slick('slickGoTo',index, true);
+                    return false;
+                }
+            })
+        }
+       
+
+        // Fonction pour modifier l'année et afficher le contenu d'un évènement
+        function change_evenement() {
+            // Modification de l'année en haut du carousel
+            var active = $('.slick--view--l-agenda .slick-current');
+            var date = $(active).find(('.annee'));
+            $('#annee').text($(date).text());
+
+            // Affichage du contenu sous le carousel
+            var contenu = $(active).find('.contenu');
+            var clone = $(contenu).clone(true);
+            $('#contenu_evenement').html(clone);
+        }
+        change_evenement();
+
+        // Utilisation de la fonction change_evenement au clic sur les boutons précédent et suivant
+        $('.slick--view--l-agenda .slick__arrow button').click(function() {
+            change_evenement();
+        })
+
+        // Utilisation de la fonction change_evenement au glissement du carousel
+        $('.slick-list').mouseup(function() {
+            change_evenement();
+        })
+
+        // Utilisation de la fonction change_evenement au clic sur un slide
+        $('.slick--view--l-agenda .slick-slide').click(function() {
+            var index = $(this).attr('data-slick-index');               
+            $('.slick__slider').slick('slickGoTo',index, true);
+            change_evenement();
+        })
+
+
+        // Affichage du panneau de filtre
+        $('.btn_filtre').on('click', function() {
+            $('.formulaire_filtre').toggleClass('show');
+        })
+        $('.btn-close-filtre').on('click', function() {
+            $('.formulaire_filtre').toggleClass('show');
+        })
+
+        // Modification de texte dans les filtres
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date label').text('De');
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-to-date label').text('à');
+        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
+    
     })
+
 })(jQuery);

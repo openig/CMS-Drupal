@@ -43,3 +43,6 @@ dependencies:
   - views_fieldsets
   - slick_views
   - slick_ui
+  - better_exposed_filters
+  - custom_view_filters
+  - daterange_compact
