@@ -1,0 +1,145 @@
+.node--type-article{
+    .field--name-field-news-overview{
+        margin-top: 4rem;
+        .field__label{
+            margin-bottom: 30px;
+        }
+    }    
+
+    .field--name-field-body{
+        margin-top: 4rem;
+        .paragraph{
+            margin-bottom: 4rem;
+        }
+    }
+    .paragraph--type--title-text.paragraph--view-mode--default{
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        border-radius: 20px;
+        border-left: 2px solid $OPenIG-color_light-blue;
+        border-right: 2px solid $OPenIG-color_light-blue;
+        position: relative;
+        padding-bottom: 40px;
+        background-color: $OPenIG-color_white;
+        .title_collapse{
+            width: 100%;
+            text-align: left;
+            padding: 15px 20px 10px 20px;
+        }
+        h2{
+            border-bottom: 1px solid $OPenIG-color_gray;
+            padding-bottom: 15px;
+        }
+        .content_collapse{
+            .card-body{
+                border: none;
+                padding: 0 20px;
+            }
+        }
+        .icon_collapse{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+            padding: 0;
+            bottom: -25px;
+            border: 5px solid $OPenIG-color_light-blue;
+            width: 55px;
+            height: 55px;
+            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
+            border-radius: 50%;
+            background-color: $OPenIG-color_white;
+            margin: 0;
+            i{
+                font-size: 22px;
+                color: $OPenIG-color_red;
+                transform: rotate(0deg);
+            }
+        }
+        .icon_collapse.collapsed{
+            i{
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .accordion{
+        margin-top: 4rem;
+        .accordion-item{
+            border: none;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+            border-radius: 5px;
+            border: 1px solid $OPenIG-color_deep-white;
+            font-size: $OPenIG-font-size-sm;
+            .content_ressources{
+                column-count: 3;
+                .file{
+                    background-image: none;
+                    padding-left: 0;
+                }
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+            .field__item{
+                margin-bottom: 5px;
+            }
+        }
+        .accordion-item.open{
+            border-left: 4px solid $OPenIG-color_blue;
+        }
+        h2.accordion-header{
+            border-bottom: none;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+        }
+        .accordion-button{
+            padding: 25px;
+        }
+        .accordion-button:not(.collapsed){
+            background-color: $OPenIG-color_light-gray;
+            border: 1px solid $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
+        }
+        .accordion-button:focus{
+            box-shadow: none;
+            border: none;
+        }
+    }
+    .field--name-field-contenu-sidebar{
+        margin-top: 5rem;
+        > .field__item{
+            margin-top: 5rem;
+        }
+    }
+    .liste_accordeon{
+        border-radius: 10px;
+        border: 1px solid $OPenIG-color_gray;
+        overflow: hidden;
+        margin-top: 4rem;
+        h2{
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            font-size: $OPenIG-font-size-base;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        .item_accordeon:not(:last-of-type){
+            border-bottom: 1px solid $OPenIG-color_gray;
+        }
+        .item_accordeon{            
+            font-size: $OPenIG-font-size-sm;
+            background-color: $OPenIG-color_white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            i{
+                color: $OPenIG-color_blue;
+                margin-left: 10px;
+                font-size: $OPenIG-font-size-base;
+            }
+        }
+    }
+}

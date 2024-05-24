@@ -42,6 +42,25 @@
             })
         }
 
+        // Accordéon ressources fiche actualités, ajout d'une class pour la bordure gauche
+        function accordionActualites() {
+            $("#accordionActualite .accordion-item").each(function(){
+                var child = $(this).find('.accordion-button');
+                if(!$(child).hasClass('collapsed')){
+                    $(this).addClass('open');
+                }else{
+                    $(this).removeClass('open');
+                }
+            })
+        }
+        if($('body').hasClass('page-node-type-article')){
+            accordionActualites();
+            $('.accordion-button').click(function(){
+                accordionActualites();
+            })
+        }
+
+
         // Affichage bloc Communiquer/Mutualiser
         $('#block-openig-communiquermutualiser .buttonTitle').click(function () {
             $('#block-openig-communiquermutualiser').toggleClass('contenthidden');
