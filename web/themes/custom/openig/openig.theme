@@ -90,6 +90,13 @@ function openig_preprocess_node(&$variables, $hook){
       }
       break;
       
+      case "article":
+        $variables['ressources'] = array();
+        $nid = $variables['node']->nid->value;
+        // Récupération des ressources d'une actualité
+        $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);        
+        $variables['ressources'] = $ressources;
+        break;
     default:
       break;
   }
