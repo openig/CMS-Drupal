@@ -162,9 +162,9 @@
         })
 
         // Modification de texte dans les filtres
-        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date label').text('De');
-        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-to-date label').text('à');
-        $('#views-exposed-form-l-agenda-agenda .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
+        $('.views-exposed-form .form-item-exposed-from-date label').text('De');
+        $('.views-exposed-form .form-item-exposed-to-date label').text('à');
+        $('.views-exposed-form .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
     
     })
 

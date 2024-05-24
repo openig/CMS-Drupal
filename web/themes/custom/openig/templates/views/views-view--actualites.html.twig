@@ -62,16 +62,19 @@
     </div>
   {% endif %}
 
-  {% if rows %}
     <div class="view-content">
-      {{ rows }}
+        <div class="formulaire_filtre">
+            <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+            {{ render_block('openig_formulaireexposeles_actualitesactualites') }}
+        </div>
+        <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+        {{ rows }}
     </div>
-  {% elseif empty %}
+  {% if empty %}
     <div class="view-empty">
       {{ empty }}
     </div>
   {% endif %}
-
   {% if pager %}
     {{ pager }}
   {% endif %}
