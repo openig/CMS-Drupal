@@ -501,8 +501,8 @@ display:
           total_pages: null
           id: 0
           tags:
-            next: ›
-            previous: ‹
+            next: ''
+            previous: ''
             first: ''
             last: ''
           expose:
