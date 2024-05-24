@@ -18,19 +18,9 @@ targetEntityType: node
 bundle: page
 mode: default
 content:
-  field_access_restricted:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 4
-    region: content
   field_body:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -39,16 +29,16 @@ content:
     region: content
   field_contenu_sidebar:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
-      view_mode: default
+      view_mode: sidebar
       link: ''
     third_party_settings: {  }
     weight: 3
     region: content
   field_tag:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
@@ -61,5 +51,6 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_access_restricted: true
   langcode: true
   search_api_excerpt: true
