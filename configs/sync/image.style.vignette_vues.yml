@@ -1,0 +1,15 @@
+uuid: 0ec1409b-76b7-4af2-8e44-f971a2043096
+langcode: fr
+status: true
+dependencies: {  }
+name: vignette_vues
+label: 'Vignette vues (306x140)'
+effects:
+  049e70a1-8e96-43f9-9e3b-88d083e8f105:
+    uuid: 049e70a1-8e96-43f9-9e3b-88d083e8f105
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 306
+      height: 140
+      anchor: center-center
