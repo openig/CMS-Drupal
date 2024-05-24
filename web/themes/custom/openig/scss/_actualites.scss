@@ -149,6 +149,9 @@
 .view.view-les-actualites{
     margin-top: 2rem;
     .view-content{
+        .rowActus {
+            margin-bottom: 2rem;
+        }
         .card{
             border: none;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
