@@ -556,8 +556,61 @@ h2{
     
 }
 
+// Régions page d'accueil
 .region-troisieme-section-accueil{
     position: relative;
+    padding-bottom: 4rem;
+    .view-header{
+        height: 150px;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            float: right;
+            img{
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            } 
+        }
+        .texte_header{
+            width: 50%;
+            margin: auto;
+            padding-top: 50px;
+            margin-left: 250px;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
 }
 
 .region-quatrieme-section-accueil{
@@ -569,5 +622,52 @@ h2{
         position: absolute;
         top: 0;
         left: 0;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            img{
+                position: absolute;
+                left: 0;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            } 
+        }
+        .texte_header{
+            margin-left: 150px;
+            width: 50%;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
     }
 }
