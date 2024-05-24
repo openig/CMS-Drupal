@@ -1,0 +1,8 @@
+uuid: a644f901-84d1-4657-b349-16e8a143f698
+langcode: fr
+status: true
+dependencies: {  }
+id: date_actualit
+label: 'Date actualités'
+locked: false
+pattern: 'd F Y'
