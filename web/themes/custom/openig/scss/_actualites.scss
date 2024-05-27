@@ -479,3 +479,38 @@
 .bloc_filtres{
     position: relative;
 }
+
+// Bloc page d'accueil 
+
+#block-openig-views-block-les-actualites-actualites-accueil{
+    h2{
+        margin-left: 85px;
+        margin-top: 60px;
+    } 
+    img{
+        top: 60px;
+    }
+}
+
+.view.view-les-actualites.view-display-id-actualites_accueil{
+    .view-content{
+        margin-top: 4rem;
+    }
+}
+.row_actus_accueil{
+    display: flex;
+    justify-content: space-around;
+}
+
+.more-link{
+    text-align: center;
+    margin-top: 3rem;
+    a{
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-lg;
+        color: $OPenIG-color_dark-gray;
+        text-decoration: none;
+        border-bottom: 1px solid $OPenIG-color_red;
+        padding-bottom: 5px;
+    }
+}
