@@ -1,22 +1,22 @@
-uuid: 33a63c7e-623c-43e6-9d33-7378746be596
+uuid: 2a7c1756-50be-4fad-b02f-473ede37846b
 langcode: fr
 status: true
 dependencies:
   config:
-    - views.view.les_groupes_de_travail
+    - views.view.les_actualites
   module:
     - system
     - views
   theme:
     - openig
-id: openig_views_block__groupes_travail_accueil
+id: openig_views_block__les_actualites_actualites_accueil
 theme: openig
-region: quatrieme_section_accueil
-weight: -20
+region: deuxieme_section_accueil
+weight: -19
 provider: null
-plugin: 'views_block:les_groupes_de_travail-groupes_travail_accueil'
+plugin: 'views_block:les_actualites-actualites_accueil'
 settings:
-  id: 'views_block:les_groupes_de_travail-groupes_travail_accueil'
+  id: 'views_block:les_actualites-actualites_accueil'
   label: ''
   label_display: '0'
   provider: views

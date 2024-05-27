@@ -557,6 +557,56 @@ h2{
 }
 
 // Régions page d'accueil
+.region-deuxieme-section-accueil{
+    position: relative;
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            img{
+                position: absolute;
+                left: 0;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            } 
+        }
+        .texte_header{
+            margin-left: 150px;
+            width: 50%;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+}
 .region-troisieme-section-accueil{
     position: relative;
     padding-bottom: 4rem;
@@ -564,6 +614,9 @@ h2{
         height: 150px;
         .header_block{
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
         }
         .title_header{
             position: relative;
@@ -586,14 +639,15 @@ h2{
         }
         .texte_header{
             width: 50%;
-            margin: auto;
-            padding-top: 50px;
-            margin-left: 250px;
+            //margin: auto;
+            padding-top: 75px;
+            //margin-left: 350px;
         }
         .nombre_header{
-            position: absolute;
-            top: 30px;
-            left: 0px;
+            //position: absolute;
+            padding-top: 30px;
+            //top: 30px;
+            //left: 0px;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -610,6 +664,12 @@ h2{
                 margin-top: -30px;
             }
         }
+    }
+    #block-openig-views-block-les-actualites-actualite-mise-en-avant{
+        position: relative;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 4rem;
     }
 }
 
