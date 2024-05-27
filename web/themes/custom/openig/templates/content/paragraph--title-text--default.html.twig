@@ -49,17 +49,7 @@
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
     {% block content %}
-        <div class="title_collapse">
-            {{content.field_title}}
-        </div>
-        <div class="collapse content_collapse" id="collapse{{paragraph.id.0.value}}">
-            <div class="card card-body">
-                {{content.field_texte}}
-            </div>
-        </div>
-        <button class="btn icon_collapse collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{paragraph.id.0.value}}" aria-expanded="false" aria-controls="collapse{{paragraph.id.0.value}}">
-            <i class="fa-sharp fa-regular fa-chevron-up"></i>
-        </button>
+      {{content}}
     {% endblock %}
   </div>
 {% endblock paragraph %}
