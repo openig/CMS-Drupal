@@ -198,7 +198,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 #block-openig-addtoanysharebuttons{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
@@ -229,10 +229,32 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 // Bloc En savoir plus sur l'adhésion
+.path-les-groupes-de-travail{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+        width: fit-content;
+        margin-top: 20px;
+    }
+}
+.page-node-type-groupe-de-travail{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+    }
+}
+
+.page-node-type-service{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+    }
+}
+
+
  #block-openig-ensavoirplussurladhesion{
-    float: right;
-    text-align: right;
-    background-color: $OPenIG-color_white;
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    display: none;
+    width: 50%;
     .field--name-body{
         font-family: 'OpenSans_Regular', sans-serif;
         font-size: $OPenIG-font-size-base;
@@ -262,17 +284,18 @@ h1{
 .title_share{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 75px;
+    align-items: baseline;
+    //padding-bottom: 75px;
+    margin-top: 1rem;
 }
 
 #block-openig-page-title{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    height: 200px;
+    height: fit-content;
     width: 75%;
-    max-width: 75%;
+    flex-wrap: wrap;
     img{
         height: 150px;
         position: absolute;
@@ -281,7 +304,6 @@ h1{
         bottom: -75px;
     }
     .tags{
-        margin-bottom: .5rem;
         margin-left: 30px;
         button{
             background-color: $OPenIG-color_white;

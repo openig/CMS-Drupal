@@ -43,21 +43,26 @@
             padding-top: 20px;
             width: fit-content;
         }
-        .field--name-field-theme-overview, .field--name-field-working-group-objective{
-            margin-top: 4rem;
+        .field--name-field-working-group-objective{
+            margin-bottom: 4rem;
+            h2{
+                margin-bottom: 30px;
+            }
+        }
+        .field--name-field-theme-overview{
+            margin-bottom: 4rem;
             h2{
                 margin-bottom: 30px;
             }
         }
         .field--name-field-body{
-            margin-top: 4rem;
+            margin-bottom: 4rem;
             .paragraph{
                 margin-bottom: 4rem;
             }
         }
 
         .accordion{
-            margin-top: 4rem;
             .accordion-item{
                 border: none;
                 box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
@@ -144,7 +149,7 @@
             }
         }
         #block-openig-views-block-contacts-gt-contacts-gt, #block-openig-views-block-agenda-gt-agenda-gt{
-            margin-top: 5rem;
+            margin-bottom: 5rem;
             h2{
                 border-bottom: 1px solid $OPenIG-color_yellow;
                 font-family: 'Exo_semiBold';
@@ -179,9 +184,10 @@
 }
 
 // Vue Groupes de travail
-
+.view-les-groupes-de-travail.view-display-id-groupes_de_travail{
+    margin-top: 5rem;
+}
 .view.view-les-groupes-de-travail{
-    margin-top: 2rem;
     .field--name-field-picto-et-texte{
         display: flex;
         flex-wrap: wrap;
@@ -313,7 +319,7 @@
 }
 
 #block-openig-views-block-les-groupes-de-travail-archives{
-    margin-top: 4rem;
+    margin-top: 5rem;
     .views-field-title{
         a{
             text-transform: none;

@@ -1,4 +1,7 @@
 // Vue agenda
+.view.view-l-agenda.view-display-id-agenda{
+    margin-top: 5rem;
+}
 .view-l-agenda{
     .view-empty{
         margin-top: 3rem;
@@ -12,7 +15,6 @@
     .carousel{
         padding-top: 10px;
         background-color: $OPenIG-color_deep-white;
-        margin-top: 3rem;
         margin-bottom: 3rem;
     }
     .slick__slider{
