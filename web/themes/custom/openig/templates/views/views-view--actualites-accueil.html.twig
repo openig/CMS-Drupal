@@ -49,9 +49,9 @@
   {% if header %}
     <div class="view-header">
         <div class="header_block">
-           {{header}}
+          {{header}}
+          {{ render_block('openig_views_block__les_actualites_actualite_mise_en_avant') }}
         </div>
-        {{ render_block('openig_views_block__les_actualites_actualite_mise_en_avant') }}
     </div>
   {% endif %}
   {% if exposed %}

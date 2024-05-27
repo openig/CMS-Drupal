@@ -614,6 +614,9 @@ h2{
         height: 150px;
         .header_block{
             position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row-reverse;
         }
         .title_header{
             position: relative;
@@ -636,14 +639,15 @@ h2{
         }
         .texte_header{
             width: 50%;
-            margin: auto;
-            padding-top: 50px;
-            margin-left: 250px;
+            //margin: auto;
+            padding-top: 60px;
+            //margin-left: 350px;
         }
         .nombre_header{
-            position: absolute;
-            top: 30px;
-            left: 0px;
+            //position: absolute;
+            padding-top: 30px;
+            //top: 30px;
+            //left: 0px;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -660,6 +664,12 @@ h2{
                 margin-top: -30px;
             }
         }
+    }
+    #block-openig-views-block-les-actualites-actualite-mise-en-avant{
+        position: relative;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 4rem;
     }
 }
 
