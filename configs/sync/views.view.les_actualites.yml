@@ -911,6 +911,7 @@ display:
         options:
           offset: 0
           items_per_page: 3
+      empty: {  }
       sorts:
         created:
           id: created
@@ -994,6 +995,7 @@ display:
         groups:
           1: AND
       defaults:
+        empty: false
         pager: false
         use_more: false
         use_more_always: false
