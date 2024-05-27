@@ -263,6 +263,7 @@ h1{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 75px;
 }
 
 #block-openig-page-title{
@@ -270,12 +271,14 @@ h1{
     align-items: center;
     position: relative;
     height: 200px;
+    width: 75%;
+    max-width: 75%;
     img{
         height: 150px;
         position: absolute;
-        top: 50px;
-        left: 0;
+        left: -100px;
         z-index: 0;
+        bottom: -75px;
     }
     .tags{
         margin-bottom: .5rem;
@@ -294,6 +297,8 @@ h1{
     h1{
         margin-bottom: 0;
         margin-left: 85px;
+        position: relative;
+        max-width: 75%;
         .field--name-title{
             position: relative;
             z-index: 1;
