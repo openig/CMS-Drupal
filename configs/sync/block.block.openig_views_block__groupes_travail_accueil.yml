@@ -12,7 +12,7 @@ dependencies:
 id: openig_views_block__groupes_travail_accueil
 theme: openig
 region: quatrieme_section_accueil
-weight: -18
+weight: -19
 provider: null
 plugin: 'views_block:les_groupes_de_travail-groupes_travail_accueil'
 settings:

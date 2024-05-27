@@ -12,7 +12,7 @@ dependencies:
 id: openig_views_block__l_agenda_agenda_accueil
 theme: openig
 region: troisieme_section_accueil
-weight: -18
+weight: -19
 provider: null
 plugin: 'views_block:l_agenda-agenda_accueil'
 settings:
