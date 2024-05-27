@@ -12,55 +12,6 @@
             margin-bottom: 4rem;
         }
     }
-    .paragraph--type--title-text.paragraph--view-mode--default{
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border-radius: 20px;
-        border-left: 2px solid $OPenIG-color_light-blue;
-        border-right: 2px solid $OPenIG-color_light-blue;
-        position: relative;
-        padding-bottom: 40px;
-        background-color: $OPenIG-color_white;
-        .title_collapse{
-            width: 100%;
-            text-align: left;
-            padding: 15px 20px 10px 20px;
-        }
-        h2{
-            border-bottom: 1px solid $OPenIG-color_gray;
-            padding-bottom: 15px;
-        }
-        .content_collapse{
-            .card-body{
-                border: none;
-                padding: 0 20px;
-            }
-        }
-        .icon_collapse{
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: fit-content;
-            padding: 0;
-            bottom: -25px;
-            border: 5px solid $OPenIG-color_light-blue;
-            width: 55px;
-            height: 55px;
-            box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
-            border-radius: 50%;
-            background-color: $OPenIG-color_white;
-            margin: 0;
-            i{
-                font-size: 22px;
-                color: $OPenIG-color_red;
-                transform: rotate(0deg);
-            }
-        }
-        .icon_collapse.collapsed{
-            i{
-                transform: rotate(180deg);
-            }
-        }
-    }
 
     .accordion{
         margin-top: 4rem;

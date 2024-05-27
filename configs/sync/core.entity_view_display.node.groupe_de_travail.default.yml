@@ -18,7 +18,6 @@ dependencies:
     - node.type.groupe_de_travail
   module:
     - entity_reference_revisions
-    - svg_image
     - text
     - user
     - webform
@@ -40,7 +39,7 @@ content:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
-      view_mode: groupe_de_travail
+      view_mode: default
       link: ''
     third_party_settings: {  }
     weight: 3
