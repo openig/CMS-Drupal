@@ -4,6 +4,7 @@ html{
 
 body{
     position: relative;
+    font-family: 'OpenSans_Regular';
 }
 
 main, main > .container{
@@ -347,6 +348,14 @@ h2{
     font-weight: 500;
 }
 
+h3{
+    font-family: "Exo_light";
+    font-size: $OPenIG-font-size-h3;
+    color: $OPenIG-color_black;
+    font-weight: 300;
+    margin: 2rem 0 1rem 0;
+}
+
 // paragraphs
 
 .paragraph--type--title-text.paragraph--view-mode--sidebar{
@@ -490,6 +499,14 @@ h2{
         i{
             transform: rotate(180deg);
         }
+    }
+}
+
+// Contenu de type titre et texte
+.paragraph.paragraph--type--title-text.paragraph--view-mode--default {
+    background-color: white;
+    h2 {
+      margin-bottom: 30px;
     }
 }
 
@@ -821,10 +838,3 @@ h2{
     }
 }
 
-// Contenu de type titre et texte
-.paragraph.paragraph--type--title-text.paragraph--view-mode--default {
-  background-color: white;
-}
-h2.field.field--name-field-title.field--type-string.field--label-hidden.field__item  {
-  margin-bottom: 3rem;
-}
