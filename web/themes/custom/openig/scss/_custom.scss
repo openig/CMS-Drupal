@@ -4,10 +4,15 @@ html{
 
 body{
     position: relative;
+    font-family: 'OpenSans_Regular';
 }
 
 main, main > .container{
     min-height: 1000px;
+}
+
+#block-openig-local-tasks{
+    margin-top: 75px;
 }
 
 .region-sidebar-first, .region-sidebar-second, .region-footer, .region-content{
@@ -78,7 +83,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-// Bloc description accueil 
+// Bloc description accueil
 #block-openig-descriptionaccueil{
     position: relative;
     .description_header{
@@ -111,7 +116,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
             }
         }
     }
-    
+
 }
 
 // Bloc image accueil
@@ -180,10 +185,10 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 // Bouton partager
 .addtoany_list{
-    visibility: hidden;
+    display: none;
 }
 .addtoany_list.open{
-    visibility: visible;
+    display: flex;
     a{
         display: flex;
         align-items: center;
@@ -196,15 +201,21 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-#block-openig-addtoanysharebuttons{
+#block-openig-addtoanysharebuttons-bas-page{
+    .share_liste{
+        margin-right: 2rem;
+        margin-left: 1rem;
+    }
+}
+
+#block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
         background-color: $OPenIG-color_deep-white;
         border-radius: 10px;
-        display: flex;
         align-items: center;
         padding: 0 10px;
     }
@@ -229,10 +240,33 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 // Bloc En savoir plus sur l'adhésion
+.path-les-groupes-de-travail{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+        width: fit-content;
+        margin-top: 20px;
+    }
+}
+.page-node-type-groupe-de-travail{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+    }
+}
+
+.page-node-type-service{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+
  #block-openig-ensavoirplussurladhesion{
-    float: right;
-    text-align: right;
-    background-color: $OPenIG-color_white;
+    margin-top: 50px;
+    margin-left: 25%;
+    margin-bottom: 50px;
+    display: none;
+    width: 50%;
     .field--name-body{
         font-family: 'OpenSans_Regular', sans-serif;
         font-size: $OPenIG-font-size-base;
@@ -262,23 +296,26 @@ h1{
 .title_share{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    //padding-bottom: 75px;
+    margin-top: 1rem;
 }
 
 #block-openig-page-title{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
-    height: 200px;
+    height: fit-content;
+    width: 75%;
+    flex-wrap: wrap;
     img{
         height: 150px;
         position: absolute;
-        top: 50px;
-        left: 0;
+        left: -100px;
         z-index: 0;
+        bottom: -75px;
     }
     .tags{
-        margin-bottom: .5rem;
         margin-left: 30px;
         button{
             background-color: $OPenIG-color_white;
@@ -294,6 +331,8 @@ h1{
     h1{
         margin-bottom: 0;
         margin-left: 85px;
+        position: relative;
+        max-width: 75%;
         .field--name-title{
             position: relative;
             z-index: 1;
@@ -307,6 +346,14 @@ h2{
     border-bottom: 5px solid $OPenIG-color_light-blue;
     color: $OPenIG-color_black;
     font-weight: 500;
+}
+
+h3{
+    font-family: "Exo_light";
+    font-size: $OPenIG-font-size-h3;
+    color: $OPenIG-color_black;
+    font-weight: 300;
+    margin: 2rem 0 1rem 0;
 }
 
 // paragraphs
@@ -455,6 +502,14 @@ h2{
     }
 }
 
+// Contenu de type titre et texte
+.paragraph.paragraph--type--title-text.paragraph--view-mode--default {
+    background-color: white;
+    h2 {
+      margin-bottom: 30px;
+    }
+}
+
 // Bloc communiquer/mutualiser
 
 #block-openig-communiquermutualiser{
@@ -527,13 +582,14 @@ h2{
 }
 #block-openig-communiquermutualiser.contenthidden{
     right: 200px;
-    
+
 }
 
 // Fil d'ariane
 .navigation_filAriane{
     margin: auto;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     a{
         color: $OPenIG-color_black;
         text-decoration: none;
@@ -553,15 +609,15 @@ h2{
             width: fit-content !important;
             margin: auto !important;
         }
-        
+
         .b-grid > .grid{
             width: fit-content !important;
         }
-        
+
         .blazy .grid__content, .blazy .region__content{
             width: fit-content !important;
         }
-        
+
         .slick__slide{
             width: 306px !important;
             height: 410px !important;
@@ -603,7 +659,7 @@ h2{
             content: '\f053' !important;
         }
     }
-    
+
 }
 
 // Régions page d'accueil
@@ -629,7 +685,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -685,7 +741,7 @@ h2{
                 border-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             width: 50%;
@@ -753,7 +809,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -781,3 +837,4 @@ h2{
         }
     }
 }
+

@@ -24,19 +24,9 @@ targetEntityType: node
 bundle: service
 mode: default
 content:
-  field_access_restricted:
-    type: boolean
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
   field_body:
     type: entity_reference_revisions_entity_view
-    label: above
+    label: hidden
     settings:
       view_mode: default
       link: ''
@@ -49,7 +39,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 6
+    weight: 5
     region: content
   field_image:
     type: image
@@ -68,13 +58,13 @@ content:
     region: content
   field_link:
     type: link
-    label: above
+    label: hidden
     settings:
-      trim_length: 80
-      url_only: false
+      trim_length: null
+      url_only: true
       url_plain: false
-      rel: ''
-      target: ''
+      rel: '0'
+      target: _blank
     third_party_settings: {  }
     weight: 2
     region: content
@@ -95,6 +85,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  field_access_restricted: true
   field_weight: true
   langcode: true
   links: true
