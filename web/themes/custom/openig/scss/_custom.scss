@@ -78,7 +78,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-// Bloc description accueil 
+// Bloc description accueil
 #block-openig-descriptionaccueil{
     position: relative;
     .description_header{
@@ -111,7 +111,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
             }
         }
     }
-    
+
 }
 
 // Bloc image accueil
@@ -532,7 +532,7 @@ h2{
 }
 #block-openig-communiquermutualiser.contenthidden{
     right: 200px;
-    
+
 }
 
 // Fil d'ariane
@@ -558,15 +558,15 @@ h2{
             width: fit-content !important;
             margin: auto !important;
         }
-        
+
         .b-grid > .grid{
             width: fit-content !important;
         }
-        
+
         .blazy .grid__content, .blazy .region__content{
             width: fit-content !important;
         }
-        
+
         .slick__slide{
             width: 306px !important;
             height: 410px !important;
@@ -608,7 +608,7 @@ h2{
             content: '\f053' !important;
         }
     }
-    
+
 }
 
 // Régions page d'accueil
@@ -634,7 +634,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -690,7 +690,7 @@ h2{
                 border-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             width: 50%;
@@ -758,7 +758,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -785,4 +785,16 @@ h2{
             }
         }
     }
+}
+
+// Contenu de type titre et texte
+.paragraph.paragraph--type--title-text.paragraph--view-mode--default {
+  padding-left: 20%;
+  padding-right: 37%;
+}
+h2.field.field--name-field-title.field--type-string.field--label-hidden.field__item  {
+  margin-bottom: 4%;
+}
+.clearfix.text-formatted.field.field--name-field-texte.field--type-text-with-summary.field--label-hidden.field__item {
+  margin-bottom: 4%;
 }
