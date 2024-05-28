@@ -3,7 +3,9 @@ h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field_
   font-size: 1.2rem;
   border-bottom: none;
 }
-
+.block-system-main-block {
+  background-color: white;
+}
 .card-member {
   border-radius: 20px;
   margin: 1rem;
@@ -27,7 +29,7 @@ h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field_
   right: 10px;
 }
 
-.field.field--name-field-image.field--type-image.field--label-hidden.field__item {
+.cardmembers .field.field--name-field-image.field--type-image.field--label-hidden.field__item {
   display: flex;
   justify-content: center;
   align-items: center;
