@@ -4,6 +4,7 @@ html{
 
 body{
     position: relative;
+    font-family: 'OpenSans_Regular';
 }
 
 main, main > .container{
@@ -82,7 +83,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-// Bloc description accueil 
+// Bloc description accueil
 #block-openig-descriptionaccueil{
     position: relative;
     .description_header{
@@ -115,7 +116,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
             }
         }
     }
-    
+
 }
 
 // Bloc image accueil
@@ -347,6 +348,14 @@ h2{
     font-weight: 500;
 }
 
+h3{
+    font-family: "Exo_light";
+    font-size: $OPenIG-font-size-h3;
+    color: $OPenIG-color_black;
+    font-weight: 300;
+    margin: 2rem 0 1rem 0;
+}
+
 // paragraphs
 
 .paragraph--type--title-text.paragraph--view-mode--sidebar{
@@ -493,6 +502,14 @@ h2{
     }
 }
 
+// Contenu de type titre et texte
+.paragraph.paragraph--type--title-text.paragraph--view-mode--default {
+    background-color: white;
+    h2 {
+      margin-bottom: 30px;
+    }
+}
+
 // Bloc communiquer/mutualiser
 
 #block-openig-communiquermutualiser{
@@ -565,7 +582,7 @@ h2{
 }
 #block-openig-communiquermutualiser.contenthidden{
     right: 200px;
-    
+
 }
 
 // Fil d'ariane
@@ -592,15 +609,15 @@ h2{
             width: fit-content !important;
             margin: auto !important;
         }
-        
+
         .b-grid > .grid{
             width: fit-content !important;
         }
-        
+
         .blazy .grid__content, .blazy .region__content{
             width: fit-content !important;
         }
-        
+
         .slick__slide{
             width: 306px !important;
             height: 410px !important;
@@ -642,7 +659,7 @@ h2{
             content: '\f053' !important;
         }
     }
-    
+
 }
 
 // Régions page d'accueil
@@ -668,7 +685,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -724,7 +741,7 @@ h2{
                 border-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             width: 50%;
@@ -792,7 +809,7 @@ h2{
                 margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
-            } 
+            }
         }
         .texte_header{
             margin-left: 150px;
@@ -820,3 +837,4 @@ h2{
         }
     }
 }
+
