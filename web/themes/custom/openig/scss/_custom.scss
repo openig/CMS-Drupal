@@ -10,6 +10,10 @@ main, main > .container{
     min-height: 1000px;
 }
 
+#block-openig-local-tasks{
+    margin-top: 75px;
+}
+
 .region-sidebar-first, .region-sidebar-second, .region-footer, .region-content{
     padding: 0;
 }
@@ -245,6 +249,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 .page-node-type-service{
     #block-openig-ensavoirplussurladhesion{
         display: block;
+        margin-top: 20px;
     }
 }
 

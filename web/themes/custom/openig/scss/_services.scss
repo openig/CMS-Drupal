@@ -4,4 +4,44 @@
             margin-bottom: 4rem;
         }
     }
+    .sidebar{
+        .field--name-field-image{
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+    #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement{
+        margin-bottom: 5rem;
+        h2{
+            border-bottom: 1px solid $OPenIG-color_yellow;
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-base;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        .views-row{
+            margin-left: 10px;
+            margin-top: 10px;
+            a{
+                color: $OPenIG-color_black;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_black;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+            .views-field-mail{
+                margin-top: 10px;
+            }
+        }
+        .views-row:not(:first-of-type){
+            margin-top: 20px;
+        }
+    }
+    
+    .field--name-field-requirement{
+        .field__item{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
 }
