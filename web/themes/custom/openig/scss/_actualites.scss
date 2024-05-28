@@ -1,6 +1,6 @@
 .node--type-article{
+    margin-top: 7rem;
     .field--name-field-news-overview{
-        margin-top: 4rem;
         .field__label{
             margin-bottom: 30px;
         }
@@ -59,9 +59,8 @@
         }
     }
     .field--name-field-contenu-sidebar{
-        margin-top: 5rem;
         > .field__item{
-            margin-top: 5rem;
+            margin-bottom: 5rem;
         }
     }
     .liste_accordeon{
@@ -96,7 +95,9 @@
 }
 
 // Vue Actualités
-
+.view-les-actualites.view-display-id-actualites{
+    margin-top: 5rem !important;
+}
 .view.view-les-actualites{
     position: relative;
     margin-top: 2rem;

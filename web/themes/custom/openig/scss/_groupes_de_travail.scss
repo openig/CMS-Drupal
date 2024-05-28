@@ -4,12 +4,11 @@
     color: $OPenIG-color_black;
     font-family: 'OpenSans_Regular', sans-serif;
     font-size: $OPenIG-font-size-base;
-    .node--type-groupe-de-travail{
-        position: relative;
+    .btngroupe{
+        height: 30px;
+        margin-top: 2rem;
         #btnRejoindre{
-            position: absolute;
-            top: -35px;
-            left: 55%;
+            float: right;
             background-color: $OPenIG-color_blue;
             border: none;
             border-radius: 6px;
@@ -19,8 +18,11 @@
             font-size: $OPenIG-font-size-sm;
             padding: 5px 10px;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-                    
         }
+    }
+    .node--type-groupe-de-travail{
+        margin-top: 5rem;
+        position: relative;
         #btnRejoindre_bas{
             background-color: $OPenIG-color_blue;
             border: none;
@@ -35,29 +37,35 @@
         }
         .btnShareRejoindre{
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             margin: auto;
             margin-top: 50px;
             border-top: 1px solid $OPenIG-color_gray;
             padding-top: 20px;
+            min-width: 400px;
             width: fit-content;
         }
-        .field--name-field-theme-overview, .field--name-field-working-group-objective{
-            margin-top: 4rem;
+        .field--name-field-working-group-objective{
+            margin-bottom: 4rem;
+            h2{
+                margin-bottom: 30px;
+            }
+        }
+        .field--name-field-theme-overview{
+            margin-bottom: 4rem;
             h2{
                 margin-bottom: 30px;
             }
         }
         .field--name-field-body{
-            margin-top: 4rem;
+            margin-bottom: 4rem;
             .paragraph{
                 margin-bottom: 4rem;
             }
         }
 
         .accordion{
-            margin-top: 4rem;
             .accordion-item{
                 border: none;
                 box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
@@ -144,7 +152,7 @@
             }
         }
         #block-openig-views-block-contacts-gt-contacts-gt, #block-openig-views-block-agenda-gt-agenda-gt{
-            margin-top: 5rem;
+            margin-bottom: 5rem;
             h2{
                 border-bottom: 1px solid $OPenIG-color_yellow;
                 font-family: 'Exo_semiBold';
@@ -162,9 +170,12 @@
                     font-family: 'Exo_semiBold';
                     font-weight: 600;
                 }
+                .views-field-mail{
+                    margin-top: 10px;
+                }
             }
             .views-row:not(:first-of-type){
-                margin-top: 20px;
+                margin-top: 30px;
             }
         }
 
@@ -175,13 +186,13 @@
             }
         }
     }
-    
 }
 
 // Vue Groupes de travail
-
+.view-les-groupes-de-travail.view-display-id-groupes_de_travail{
+    margin-top: 5rem;
+}
 .view.view-les-groupes-de-travail{
-    margin-top: 2rem;
     .field--name-field-picto-et-texte{
         display: flex;
         flex-wrap: wrap;
@@ -313,7 +324,7 @@
 }
 
 #block-openig-views-block-les-groupes-de-travail-archives{
-    margin-top: 4rem;
+    margin-top: 5rem;
     .views-field-title{
         a{
             text-transform: none;
