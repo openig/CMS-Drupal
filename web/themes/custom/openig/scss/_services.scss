@@ -1,0 +1,87 @@
+.notLogged{
+    margin-top: 5rem;
+}
+.node--type-service{
+    .field--name-field-body{
+        .paragraph{
+            margin-bottom: 4rem;
+        }
+    }
+    .sidebar{
+        margin-top: 3rem;
+        .field--name-field-image{
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+    #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement{
+        margin-bottom: 5rem;
+        h2{
+            border-bottom: 1px solid $OPenIG-color_yellow;
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-base;
+            padding-bottom: 10px;
+            padding-left: 10px;
+        }
+        .views-row{
+            margin-left: 10px;
+            margin-top: 10px;
+            a{
+                color: $OPenIG-color_black;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_black;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+            .views-field-mail{
+                margin-top: 10px;
+            }
+        }
+        .views-row:not(:first-of-type){
+            margin-top: 20px;
+        }
+    }
+    
+    .field--name-field-requirement{
+        .field__item{
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+    .btnShareUtiliser{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: auto;
+        margin-top: 50px;
+        border-top: 1px solid $OPenIG-color_gray;
+        padding-top: 20px;
+        min-width: 400px;
+        width: fit-content;
+        .btnUtiliser{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.btnUtiliser{
+    height: 30px;
+    margin-bottom: 2rem;
+    button{
+        float: right;
+        height: 30px;
+        background-color: $OPenIG-color_blue;
+        border: none;
+        border-radius: 6px;
+        color: $OPenIG-color_white;
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-sm;
+        padding: 5px 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        i{
+            margin-right: 10px;
+            font-size: 16px;
+        }  
+    }
+}

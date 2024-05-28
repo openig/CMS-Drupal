@@ -39,3 +39,4 @@ visibility:
       node: '@node.node_route_context:node'
     bundles:
       groupe_de_travail: groupe_de_travail
+      service: service
