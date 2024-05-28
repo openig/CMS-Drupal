@@ -823,12 +823,8 @@ h2{
 
 // Contenu de type titre et texte
 .paragraph.paragraph--type--title-text.paragraph--view-mode--default {
-  padding-left: 20%;
-  padding-right: 37%;
+  background-color: white;
 }
 h2.field.field--name-field-title.field--type-string.field--label-hidden.field__item  {
-  margin-bottom: 4%;
-}
-.clearfix.text-formatted.field.field--name-field-texte.field--type-text-with-summary.field--label-hidden.field__item {
-  margin-bottom: 4%;
+  margin-bottom: 1rem;
 }
