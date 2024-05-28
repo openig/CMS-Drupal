@@ -1,16 +1,20 @@
-h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field__item {
+.cardmembers h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field__item {
   padding: 0 10rem;
-  font-size: 1.2rem;
+  font-size: $OPenIG-font-size-lg;
   border-bottom: none;
 }
-.block-system-main-block {
-  background-color: white;
+
+.field--name-field-membre {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
+
 .card-member {
   border-radius: 20px;
   margin: 1rem;
   padding: 1rem;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
   height: 395px;
   width: 306px;
   position: relative;
@@ -33,7 +37,7 @@ h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field_
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3rem auto 2rem;
+  margin: 2rem auto 2rem;
   background: #EAF3D2;
   width: 165px;
   height: 165px;
@@ -42,20 +46,20 @@ h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field_
 
 .field.field--name-field-poste.field--type-string.field--label-hidden.field__item {
   font-weight: 600;
-  font-size: 16px;
-  font-family: 'Exo', sans-serif;
+  font-size: $OPenIG-font-size-base;
+  font-family: 'Exo_regular', sans-serif;
 }
 
 .field.field--name-field-prenom-nom.field--type-string.field--label-hidden.field__item {
-  font-family: 'Exo', sans-serif;
+  font-family: 'Exo_regular', sans-serif;
   font-weight: 600;
-  font-size: 18px;
+  font-size: $OPenIG-font-size-lg;
 }
 
 .field.field--name-field-email.field--type-email.field--label-hidden.field__item {
   font-weight: 600;
-  font-size: 16px;
-  font-family: 'Exo', sans-serif;
+  font-size: $OPenIG-font-size-base;
+  font-family: 'Exo_regular', sans-serif;
   margin-top: 2rem;
   text-align: end;
   text-decoration: underline;
@@ -63,8 +67,8 @@ h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field_
 
 .field.field--name-field-video_embed.field--type-video_embed.field--label-hidden.field__item {
   font-weight: 600;
-  font-size: 16px;
-  font-family: 'Exo', sans-serif;
+  font-size: $OPenIG-font-size-base;
+  font-family: 'Exo_regular', sans-serif;
   margin-top: 2rem;
   text-align: end;
   text-decoration: underline;
