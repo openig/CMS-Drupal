@@ -80,23 +80,45 @@
 %}
 {{ attach_library('bootstrap5/node') }}
 <div class="container">
+    {% if logged_in %}
+        <div class="row">
+            <div class="btnUtiliser col-8">
+                <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
+            </div>
+        </div>
+    {% else %}
+        <div class="notLogged">
+    {% endif %}
     <article{{ attributes.addClass(classes) }}>
         {{ title_prefix }}
         {% if label and not page %}
             <h2{{ title_attributes }}>
-            <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
             </h2>
         {% endif %}
         {{ title_suffix }}
         <div class="col-lg-1"></div>
         <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
-            {{ content|without('field_tag','field_contact','field_image','field_requirement') }}
+            {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
         </div>
          <div class="col-lg-1"></div>
         <div class="col-lg-3 sidebar">
             {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
-            {{content.field_requirement}}
+            {% if not logged_in %}
+                {{content.field_requirement}}
+            {% endif %}
             {{content.field_image}}
         </div>
+         {% if logged_in %}
+            <div class="btnShareUtiliser">
+                {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                <div class="btnUtiliser">
+                    <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
+                </div>
+            </div>
+        {% endif %}
     </article>
+    {% if not logged_in %}
+       </div>
+    {% endif %}
 </div>

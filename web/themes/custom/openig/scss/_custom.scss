@@ -184,10 +184,10 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 // Bouton partager
 .addtoany_list{
-    visibility: hidden;
+    display: none;
 }
 .addtoany_list.open{
-    visibility: visible;
+    display: flex;
     a{
         display: flex;
         align-items: center;
@@ -200,7 +200,14 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-#block-openig-addtoanysharebuttons{
+#block-openig-addtoanysharebuttons-bas-page{
+    .share_liste{
+        margin-right: 2rem;
+        margin-left: 1rem;
+    }
+}
+
+#block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
     display: flex;
     align-items: baseline;
     .share_liste{
@@ -208,7 +215,6 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         border: 1px solid $OPenIG-color_gray;
         background-color: $OPenIG-color_deep-white;
         border-radius: 10px;
-        display: flex;
         align-items: center;
         padding: 0 10px;
     }
