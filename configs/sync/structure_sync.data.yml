@@ -1,22 +1,17 @@
 blocks:
   -
-    info: "En savoir plus sur l'adhésion"
+    info: 'Communiquer / Mutualiser'
     langcode: fr
-    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
-    bundle: lien
+    uuid: 72e90d94-a3c7-4a16-95c9-98bfa0191b1f
+    bundle: basic
     revision_id: null
     rev_id_current: null
     fields:
       body:
         -
-          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
+          value: '<p><a href="/">Lien wiki</a></p><p><a href="/">Lien discourse</a></p><p><a href="/">Lien nextcloud</a></p>'
           summary: ''
-          format: full_html
-      field_lien:
-        -
-          uri: 'internal:/'
-          title: "En savoir plus sur l'adhésion"
-          options: {  }
+          format: basic_html
 menus:
   -
     menu_name: footer
