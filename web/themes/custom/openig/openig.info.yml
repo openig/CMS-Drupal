@@ -6,9 +6,9 @@ core_version_requirement: '^9.4 || ^10'
 libraries:
   - openig/global-styling
 ckeditor_stylesheets:
-  - css/style.css
+  - css/style.min.css
 ckeditor5-stylesheets:
-  - css/ck5style.css
+  - css/ck5style.min.css
 regions:
   navigation_premiere_section: Navigation première section
   navigation_deuxieme_section: Navigation deuxième section

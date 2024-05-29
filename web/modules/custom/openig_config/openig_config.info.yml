@@ -46,3 +46,4 @@ dependencies:
   - better_exposed_filters
   - custom_view_filters
   - daterange_compact
+  - editor_advanced_link
