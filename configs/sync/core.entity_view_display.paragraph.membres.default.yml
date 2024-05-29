@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.paragraph.membres.field_membre
+    - field.field.paragraph.membres.field_ligne_de_membres
     - field.field.paragraph.membres.field_title
     - paragraphs.paragraphs_type.membres
   module:
@@ -13,7 +13,7 @@ targetEntityType: paragraph
 bundle: membres
 mode: default
 content:
-  field_membre:
+  field_ligne_de_membres:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
