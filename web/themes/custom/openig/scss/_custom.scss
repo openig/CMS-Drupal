@@ -842,6 +842,7 @@ h3{
   padding: 0 10rem;
   font-size: $OPenIG-font-size-lg;
   border-bottom: none;
+  background-color: white;
 }
 
 .field--name-field-membre {
@@ -887,11 +888,11 @@ h3{
 .field.field--name-field-poste.field--type-string.field--label-hidden.field__item {
   font-weight: 600;
   font-size: $OPenIG-font-size-base;
-  font-family: 'Exo_regular', sans-serif;
+  font-family: 'Exo_semiBold', sans-serif;
 }
 
 .field.field--name-field-prenom-nom.field--type-string.field--label-hidden.field__item {
-  font-family: 'Exo_regular', sans-serif;
+  font-family: 'Exo_semiBold', sans-serif;
   font-weight: 600;
   font-size: $OPenIG-font-size-lg;
 }
@@ -899,7 +900,7 @@ h3{
 .field.field--name-field-email.field--type-email.field--label-hidden.field__item {
   font-weight: 600;
   font-size: $OPenIG-font-size-base;
-  font-family: 'Exo_regular', sans-serif;
+  font-family: 'Exo_semiBold', sans-serif;
   margin-top: 2rem;
   text-align: end;
   text-decoration: underline;
@@ -908,7 +909,7 @@ h3{
 .field.field--name-field-video_embed.field--type-video_embed.field--label-hidden.field__item {
   font-weight: 600;
   font-size: $OPenIG-font-size-base;
-  font-family: 'Exo_regular', sans-serif;
+  font-family: 'Exo_semiBold', sans-serif;
   margin-top: 2rem;
   text-align: end;
   text-decoration: underline;
