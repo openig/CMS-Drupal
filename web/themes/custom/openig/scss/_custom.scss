@@ -861,14 +861,14 @@ h3{
   position: relative;
 }
 
-.card-member img {
+.card-member .field--name-field-image img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   border: 1px solid #000;
 }
 
-.img-compass-card {
+.field--name-field-picto {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -896,21 +896,34 @@ h3{
   font-weight: 600;
   font-size: $OPenIG-font-size-lg;
 }
+.field.field--name-field-entreprise.field--type-string.field--label-hidden.field__item {
+  font-family: 'Exo_regular', sans-serif;
+  font-size: $OPenIG-font-size-sm;
+}
 
 .field.field--name-field-email.field--type-email.field--label-hidden.field__item {
   font-weight: 600;
   font-size: $OPenIG-font-size-base;
   font-family: 'Exo_semiBold', sans-serif;
-  margin-top: 2rem;
+  margin-top: 3rem;
   text-align: end;
   text-decoration: underline;
 }
 
-.field.field--name-field-video_embed.field--type-video_embed.field--label-hidden.field__item {
+.field.field--name-field-email.field--type-email.field--label-hidden.field__item a {
+  color: black;
+}
+
+button.videomembre {
+  background: none;
   font-weight: 600;
   font-size: $OPenIG-font-size-base;
   font-family: 'Exo_semiBold', sans-serif;
-  margin-top: 2rem;
-  text-align: end;
   text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  position: absolute;
+  bottom: 40px;
+  right: 15px;
 }
