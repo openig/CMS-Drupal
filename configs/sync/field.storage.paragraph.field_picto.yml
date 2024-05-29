@@ -1,0 +1,30 @@
+uuid: d3582fe2-c338-46ae-8517-6cbad80f56ac
+langcode: fr
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - paragraphs
+id: paragraph.field_picto
+field_name: field_picto
+entity_type: paragraph
+type: image
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: Boussole
+    title: ''
+    width: 50
+    height: 49
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
