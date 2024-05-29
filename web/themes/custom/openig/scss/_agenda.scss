@@ -348,4 +348,22 @@
             padding-bottom: 5px;
         }
     }
+    .webform-button--submit, .webform-button--submit:active{
+        background-color: $OPenIG-color_blue;
+        border: none;
+    }
 } 
+
+// Fiche évènement
+
+.node--type-evenement{
+    .node__content{
+        > .field{
+            margin-bottom: 1rem;
+        }
+        .webform-button--submit, .webform-button--submit:active{
+            background-color: $OPenIG-color_blue;
+            border: none;
+        }
+    }
+}

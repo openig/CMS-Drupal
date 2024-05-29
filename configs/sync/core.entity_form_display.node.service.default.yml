@@ -25,7 +25,6 @@ third_party_settings:
   field_group:
     group_options_de_publication:
       children:
-        - field_access_restricted
         - promote
         - sticky
         - field_weight
@@ -52,13 +51,6 @@ content:
     weight: 9
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_access_restricted:
-    type: boolean_checkbox
-    weight: 9
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_body:
     type: paragraphs
@@ -187,4 +179,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_access_restricted: true

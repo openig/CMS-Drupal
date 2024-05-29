@@ -17,9 +17,9 @@ dependencies:
   module:
     - field_group
     - file
-    - image
     - link
     - path
+    - svg_image
     - text
 third_party_settings:
   field_group:
@@ -27,7 +27,6 @@ third_party_settings:
       children:
         - promote
         - sticky
-        - field_access_restricted
       label: 'Options de publication'
       region: content
       parent_name: ''
@@ -51,13 +50,6 @@ content:
     weight: 10
     region: content
     settings: {  }
-    third_party_settings: {  }
-  field_access_restricted:
-    type: boolean_checkbox
-    weight: 17
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_description:
     type: text_textarea_with_summary
@@ -185,4 +177,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_access_restricted: true
