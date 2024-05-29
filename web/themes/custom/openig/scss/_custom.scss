@@ -848,7 +848,6 @@ h3{
 .field--name-field-membre {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 
 .card-member {
@@ -859,6 +858,7 @@ h3{
   height: 395px;
   width: 306px;
   position: relative;
+  background-color: white; // Sinon le background se voir a travers la carte
 }
 
 .card-member .field--name-field-image img {
@@ -927,3 +927,36 @@ button.videomembre {
   bottom: 40px;
   right: 15px;
 }
+.field--name-field-ligne-de-membres > .field__item {
+  position: relative;
+}
+
+.background-membres {
+  background-color: #eaf3d2;
+  z-index: -1;
+  position: absolute;
+  width: 57rem;
+  height: 23rem;
+}
+
+// Alternate the background position for the cards
+.field--name-field-ligne-de-membres > .field__item:nth-child(odd) .background-membres {
+  left: 0;
+  right: auto;
+}
+.field--name-field-ligne-de-membres > .field__item:nth-child(even) .background-membres {
+  right: 0;
+  left: auto;
+}
+
+// Alternate the cards position like the background
+.field--name-field-ligne-de-membres > .field__item:nth-child(odd) .paragraph--type--ligne-de-membres {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.field--name-field-ligne-de-membres > .field__item:nth-child(even) .paragraph--type--ligne-de-membres {
+  display: flex;
+  justify-content: flex-end;
+}
+
