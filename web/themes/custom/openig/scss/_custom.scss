@@ -380,12 +380,13 @@ h3{
         padding-left: 10px;
     }
 }
-
+  
 .paragraph--type--texte-dropdown.paragraph--view-mode--sidebar{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
     border-radius: 15px;
     overflow: hidden;
     .title_collapse{
+        background: $OPenIG-color_white;
         width: 100%;
         border: none;
         border-bottom: 1px solid $OPenIG-color_yellow;

@@ -1,16 +1,15 @@
-.field.field--name-field-contenu-sidebar.field--type-entity-reference-revisions.field--label-hidden.field__items {
-  margin-right: 1rem;
-  & > div {
-    margin-bottom: 5rem;
-  }
+.node--type-page{
+  margin-top: 5rem;
+  .field--name-field-contenu-sidebar{
+    > .field__item:not(:first-of-type){
+        margin-top: 5rem;
+    }
 }
-
-.field.field--name-field-body.field--type-entity-reference-revisions.field--label-hidden.field__items {
-  & > div {
-    margin-bottom: 5rem;
+  
+  .field--name-field-body {
+   > .field__item {
+      margin-bottom: 4rem;
+    }
   }
-}
-
-.paragraph--type--texte-dropdown.paragraph--view-mode--sidebar .title_collapse {
-  background: white;
+  
 }
