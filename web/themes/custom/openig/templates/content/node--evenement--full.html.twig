@@ -80,49 +80,17 @@
 %}
 {{ attach_library('bootstrap5/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <div class="row">
-    {{ title_prefix }}
-    {% if label and not page %}
-        <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-        </h2>
-    {% endif %}
-    {{ title_suffix }}
-    <div class="col-lg-1"></div>
-    <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
-        {{ content|without('field_tag', 'field_contenu_sidebar') }}
-        {% if ressources %}
-            {% if not logged_in %}
-                <div class="liste_accordeon">
-                    <div class="item_accordeon">
-                        <h2 class="title_accordeon"> Ressources </h2>
-                        <span>Réservé aux adhérents<i class="fa-solid fa-lock"></i></span>
-                    </div>
-                </div>
-            {% else %}
-                <div class="accordion" id="accordionActualite">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingRessources">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRessources" aria-expanded="false" aria-controls="collapseRessources">
-                                Ressources
-                            </button>
-                        </h2>
-                        <div id="collapseRessources" class="accordion-collapse collapse" aria-labelledby="headingRessources" data-bs-parent="#accordionActualite">
-                            <div class="accordion-body content_ressources">
-                                {% for ressource in ressources %}
-                                    {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            {% endif %}
-        {% endif %}
-    </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-3">
-        {% if logged_in %}
-            {{content.field_contenu_sidebar}}
-        {% endif %}
-    </div>
+
+  {{ title_prefix }}
+  {% if label and not page %}
+    <h2{{ title_attributes }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div{{ content_attributes.addClass('node__content') }}>
+    {{ content }}
+  </div>
+
 </article>

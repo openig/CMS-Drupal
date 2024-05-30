@@ -1,6 +1,6 @@
 // Vue agenda
 .view.view-l-agenda.view-display-id-agenda{
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
 .view-l-agenda{
     .view-empty{
@@ -274,7 +274,6 @@
     }
 }
 
-
 // Bloc agenda page d'accueil
 
 #block-openig-views-block-l-agenda-agenda-accueil{
@@ -349,4 +348,22 @@
             padding-bottom: 5px;
         }
     }
+    .webform-button--submit, .webform-button--submit:active{
+        background-color: $OPenIG-color_blue;
+        border: none;
+    }
 } 
+
+// Fiche évènement
+
+.node--type-evenement{
+    .node__content{
+        > .field{
+            margin-bottom: 1rem;
+        }
+        .webform-button--submit, .webform-button--submit:active{
+            background-color: $OPenIG-color_blue;
+            border: none;
+        }
+    }
+}
