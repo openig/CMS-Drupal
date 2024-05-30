@@ -988,15 +988,10 @@ h3{
 
 .clearfix .ckeditor-accordion-container dl.styled dt a .ckeditor-accordion-toggle {
     position: absolute;
-    right: 25px; /* Adjust this value to align properly */
+    right: 25px;
     left: auto;
     color: $OPenIG-color_black;
     font-size: $OPenIG-font-size-base;
-    transition: transform 0.3s ease; /* Smooth transition for rotation */
-}
-
-.clearfix .ckeditor-accordion-container dl.styled dt.active a .ckeditor-accordion-toggle {
-    transform: rotate(180deg); /* Rotate the arrow when active */
 }
 
 .clearfix .ckeditor-accordion-container dl.styled dd {
