@@ -45,13 +45,17 @@
       <div class="col-md-1"></div>
       <div class="col-md-7">
         {% for item in content %}
+          {% if item['#field_name'] == 'field_body' %}
             {{ item }}
+          {% endif %}
         {% endfor %}
       </div>
       <div class="col-md-1"></div>
       <div class="col-md-3">
         {% for item in content %}
+          {% if item['#field_name'] == 'field_contenu_sidebar' %}
             {{ item }}
+          {% endif %}
         {% endfor %}
       </div>
   {% endblock %}
