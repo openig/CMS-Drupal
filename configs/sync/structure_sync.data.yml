@@ -1,22 +1,25 @@
 blocks:
   -
-    info: "En savoir plus sur l'adhésion"
+    info: 'Vue service'
     langcode: fr
-    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
-    bundle: lien
+    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
+    bundle: picto_et_texte
     revision_id: null
     rev_id_current: null
     fields:
-      body:
+      field_picto_et_texte:
         -
-          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
-          summary: ''
-          format: full_html
-      field_lien:
+          target_id: '190'
+          target_revision_id: '419'
         -
-          uri: 'internal:/'
-          title: "En savoir plus sur l'adhésion"
-          options: {  }
+          target_id: '191'
+          target_revision_id: '420'
+        -
+          target_id: '192'
+          target_revision_id: '421'
+        -
+          target_id: '193'
+          target_revision_id: '422'
 menus:
   -
     menu_name: footer

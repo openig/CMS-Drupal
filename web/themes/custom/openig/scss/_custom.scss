@@ -260,6 +260,15 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
+.path-les-services{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+        width: fit-content;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+}
+
 
  #block-openig-ensavoirplussurladhesion{
     margin-top: 50px;
@@ -658,6 +667,12 @@ h3{
         button.slick-prev::before{
             content: '\f053' !important;
         }
+    }
+    .views-field.views-field-title{
+        text-align: start !important;
+    }
+    .views-field.views-field-field-theme-overview{
+        text-align: start !important;
     }
 
 }

@@ -194,6 +194,7 @@
 }
 .view.view-les-groupes-de-travail{
     .field--name-field-picto-et-texte{
+        background-color: $OPenIG-color_white;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -256,6 +257,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    background-color: $OPenIG-color_white;
                     img{
                         height: 100px;
                         max-width: fit-content;
