@@ -25,7 +25,23 @@ class Structures extends SqlBase {
     $query->distinct();
     $query->leftJoin('idgo_admin_organisationtype','ot', 'ot.code = o.organisation_type_id');
 
-    $query->fields('o');
+    $query->fields('o', [
+        'id',
+        'legal_name',
+        'slug',
+        'email',
+        'website',
+        'description',
+        'address',
+        'postcode',
+        'city',
+        'phone',
+        'organisation_type_id',
+        'logo',
+        'siren',
+        'is_active',
+        'is_crige_partner'
+    ]);
     $query->addField('ot', 'name', 'organisation_type_name');
     
     // Do something with each $record
@@ -37,6 +53,25 @@ class Structures extends SqlBase {
    * {@inheritdoc}
    */
   public function fields() {
+/*
+    return [
+        'id',
+        'legal_name',
+        'slug',
+        'email',
+        'website',
+        'description',
+        'address',
+        'postcode',
+        'city',
+        'phone',
+        'organisation_type_id',
+        'organisation_type_name',
+        'siren',
+        'is_active',
+        'is_crige_partner'
+    ];
+*/
   }
 
   /**
@@ -55,14 +90,35 @@ class Structures extends SqlBase {
    * {@inheritdoc}
    */
   public function prepareRow(Row $row) {
-    // This example shows how source properties can be added in
-    // prepareRow(). The source dates are stored as 2017-12-17
-    // and times as 16:00. Drupal 8 saves date and time fields
-    // in ISO8601 format 2017-01-15T16:00:00 on UTC.
-    // We concatenate source date and time and add the seconds.
-    // The same result could also be achieved using the 'concat'
-    // and 'format_date' process plugins in the migration
-    // definition.
+
+    // Pour le logo, on génère l'URL
+    $logo = $row->getSourceProperty('logo');
+    if($logo) {
+        $row->setSourceProperty('logo', "https://idgo.openig.org/media/".$logo);
+    }
+    // TODO: upload image
+    //
+
+    /*
+     Type de structure
+    */
+    dump( $row->getSourceProperty('organisation_type_name') );
+   
+    if($row->getSourceProperty('organisation_type_name') !== null) { 
+        //récupération de la taxonomie
+        $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $row->getSourceProperty('organisation_type_name'), 'vid' => 'typologie_de_structure']);
+        // Si terme non trouvé, on le créé
+        if(empty($terms)) {
+            $term = \Drupal\taxonomy\Entity\Term::create(array(  'name' => $row->getSourceProperty('organisation_type_name'),  'vid' => 'typologie_de_structure'));
+            $term->save();
+        } else {
+            $term = $terms[1];
+        }
+        if($term) {
+            // Mise à dispo du champ
+            $row->setSourceProperty('organisation_type_id', $term->get('tid')->getValue()[0]['value']);
+        }
+    }
 
     return parent::prepareRow($row);
   }

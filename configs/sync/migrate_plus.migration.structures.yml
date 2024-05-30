@@ -1,4 +1,5 @@
-langcode: fr
+uuid: ebc7c5eb-e3e1-4339-a52c-16eac62c850d
+langcode: en
 status: true
 dependencies: {  }
 id: structures
@@ -12,58 +13,20 @@ source:
   plugin: structures
   key: migrate
 process:
-  title: title
-  type: type
-  uid: user
-  created: created
-  changed: changed
-  status: status
-  field_acronyme/value: field_acronyme_value
-  field_adresse/value: field_adresse_value
-  field_courriel/value: field_courriel_value
-  field_type_d_organisme/value: field_type_d_organisme_value
-  my_nature_array:
-    plugin: natureActiviteProcess
-    source: field_nature_de_l_activit__value
-  field_nature_de_l_activite:
-    plugin: sub_process
-    source: '@my_nature_array'
-    process:
-      value: value
-  field_telephone/value: field_t_l_phone_value
-  field_site_internet/uri: field_site_internet_value
-  field_reseaux_sociaux:
-    plugin: sub_process
-    source: gipbe_field_data_field_r_seaux_sociaux
-    process:
-      title: field_r_seaux_sociaux_first
-      uri: field_r_seaux_sociaux_second
-  field_date_de_publication/value: field_date_de_cr_ation_value
-  field_date_de_modification/value: field_date_de_modification_value
-  field_ville/target_id: field_ville_target_id
-  my_associative_array:
-    plugin: tagGemetProcess
-    source: field_tag_th_matique_gemet_target_id
-  field_tag_gemet:
-    plugin: sub_process
-    source: '@my_associative_array'
-    process:
-      target_id: value
-  field_image/target_id: field_photo_fid
-  field_image/alt: field_photo_alt
-  field_image/title: field_photo_title
-  field_image/width: field_photo_width
-  field_image/height: field_photo_height
-  field_affichage_dans_l_annuaire/value:
-    plugin: default_value
-    default_value: 1
-  path/alias: alias
-  path/pathauto:
-    plugin: default_value
-    default_value: false
+  title: legal_name
+  body: description
+  status: is_active
+  field_email: email
+  field_website: website
+  field_address: address
+  field_postcode: postcode
+  field_city: city
+  field_phone: phone
+  field_image: logo
+  field_siret: siren
+  field_crige_partner: is_crige_partner
+  field_typologie_structure/target_id: organisation_type_id
 destination:
   plugin: 'entity:node'
   default_bundle: structure
 migration_dependencies: null
-
-
