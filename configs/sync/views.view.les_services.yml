@@ -13,6 +13,7 @@ dependencies:
   module:
     - node
     - paragraphs
+    - slick_views
     - svg_image
     - user
     - views_fieldsets
@@ -457,6 +458,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
@@ -561,6 +575,101 @@ display:
     display_options:
       display_extenders: {  }
       path: les-services
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_body'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_tag'
+  services_accueil:
+    id: services_accueil
+    display_title: 'Les services accueil'
+    display_plugin: block
+    position: 2
+    display_options:
+      style:
+        type: slick
+        options:
+          caption:
+            field_body: '0'
+            field_image: '0'
+            view_node: '0'
+            field_tag: '0'
+            title: '0'
+            fieldset: '0'
+            nothing: '0'
+          optionset: blocs
+          class: ''
+          image: ''
+          link: ''
+          overlay: ''
+          title: ''
+          vanilla: true
+          layout: ''
+          cache: 0
+          admin_uri: '/admin/structure/views/ajax/display/les_services/block_1/style_options?_wrapper_format=drupal_ajax'
+          grid: ''
+          grid_medium: ''
+          grid_small: ''
+          style: flexbox
+          skin: classic
+          overridables:
+            arrows: arrows
+            draggable: draggable
+            infinite: infinite
+            mouseWheel: mouseWheel
+            variableWidth: variableWidth
+            autoplay: '0'
+            dots: '0'
+            randomize: '0'
+          thumbnail: ''
+          optionset_thumbnail: ''
+          skin_thumbnail: ''
+          thumbnail_caption: ''
+          thumbnail_effect: ''
+          thumbnail_position: ''
+          override: true
+          preserve_keys: false
+          visible_items: null
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        style: false
+        row: false
+        header: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Tous les services'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <img src=\"/themes/custom/openig/pictos/accueil-titre/tools-titre.png\" alt=\"Outils\" />\r\n\r\n        <h2>[view:title]</h2> \r\n\r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">[view:total-rows]</span> \r\n    <span class=\"type_contenu\">Services</span>\r\n</div>"
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      block_hide_empty: true
     cache_metadata:
       max-age: -1
       contexts:
