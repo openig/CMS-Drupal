@@ -601,9 +601,6 @@ h3{
 }
 
 // Carousel
-.slick--less .slick-track{
-    text-align: start !important;
-}
 .slick{
     padding-bottom: 15px !important;
     .slick-list{
@@ -661,6 +658,12 @@ h3{
         button.slick-prev::before{
             content: '\f053' !important;
         }
+    }
+    .views-field.views-field-title{
+        text-align: start !important;
+    }
+    .views-field.views-field-field-theme-overview{
+        text-align: start !important;
     }
 
 }
