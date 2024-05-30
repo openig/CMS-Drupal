@@ -950,3 +950,100 @@ h3{
     }
 }
 
+.clearfix {
+    margin-top: 4rem;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled {
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    overflow: hidden;
+    margin-top: 4rem;
+    border: none;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dt {
+    font-family: 'Exo_semiBold';
+    font-weight: 600;
+    font-size: $OPenIG-font-size-base;
+    margin-bottom: 0;
+    background-color: $OPenIG-color_white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    position: relative;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dt + dt {
+    margin-top: 10px;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dt a {
+    color: $OPenIG-color_black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dt a .ckeditor-accordion-toggle {
+    position: absolute;
+    right: 25px; /* Adjust this value to align properly */
+    left: auto;
+    color: $OPenIG-color_black;
+    font-size: $OPenIG-font-size-base;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dt.active a .ckeditor-accordion-toggle {
+    transform: rotate(180deg); /* Rotate the arrow when active */
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dd {
+    font-size: $OPenIG-font-size-sm;
+    padding: 25px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    margin-top: 10px;
+    display: none;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dd.active {
+    display: block;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dd p {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: $OPenIG-color_black;
+    font-size: $OPenIG-font-size-sm;
+    text-align: justify;
+}
+
+.clearfix .ckeditor-accordion-container dl.styled dd p span {
+    background-color: rgb(255, 255, 255);
+}
+
+.ckeditor-accordion-container > dl dt > a,
+.ckeditor-accordion-container > dl dt > a:not(.button) {
+    background-color: white;
+    border-bottom: none;
+}
+
+.ckeditor-accordion-container > dl dt.active > a {
+    background-color: white;
+}
+
+.ckeditor-accordion-container > dl dt > a:hover,
+.ckeditor-accordion-container > dl dt > a:not(.button):hover {
+    background-color: white;
+}
+
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle:before {
+    background-color: black;
+}
+
+.ckeditor-accordion-container > dl dt.active > a > .ckeditor-accordion-toggle::after {
+    background-color: black;
+}
