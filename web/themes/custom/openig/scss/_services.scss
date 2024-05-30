@@ -94,10 +94,10 @@
 }
 .view.view-les-services{
     .field--name-field-picto-et-texte{
+        background-color: $OPenIG-color_white;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-top: 3rem;
         > .field__item{
             width: 45%;
         }
