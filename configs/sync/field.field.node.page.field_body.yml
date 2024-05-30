@@ -5,6 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_body
     - node.type.page
+    - paragraphs.paragraphs_type.membres
+    - paragraphs.paragraphs_type.texte_dropdown
+    - paragraphs.paragraphs_type.title_text
   module:
     - entity_reference_revisions
 id: node.page.field_body
@@ -20,34 +23,28 @@ default_value_callback: ''
 settings:
   handler: 'default:paragraph'
   handler_settings:
-    target_bundles: null
+    target_bundles:
+      title_text: title_text
+      texte_dropdown: texte_dropdown
+      membres: membres
     negate: 0
     target_bundles_drag_drop:
-      fichier:
-        weight: -12
-        enabled: false
-      image_title:
-        weight: -16
-        enabled: false
       membre:
-        weight: -15
+        weight: -10
         enabled: false
-      picto_text:
-        weight: -14
-        enabled: false
-      text:
-        weight: -18
-        enabled: false
-      title:
-        weight: -17
-        enabled: false
-      title_text:
-        weight: -19
-        enabled: false
-      type_de_contenu:
-        weight: -13
-        enabled: false
-      video:
+      membres:
         weight: -11
+        enabled: true
+      picto_text:
+        weight: -9
+        enabled: false
+      texte_dropdown:
+        weight: -12
+        enabled: true
+      title_text:
+        weight: -13
+        enabled: true
+      type_de_contenu:
+        weight: -8
         enabled: false
 field_type: entity_reference_revisions
