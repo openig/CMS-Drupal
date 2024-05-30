@@ -91,6 +91,9 @@
 // Vue Services
 .view-les-services.view-display-id-services{
     margin-top: 5rem;
+    .view-content{
+        margin-top: 2rem;
+    }
 }
 .view.view-les-services{
     .field--name-field-picto-et-texte{
@@ -103,7 +106,6 @@
         }
     }     
     .view-content{
-        margin-top: 2rem;
         .card{
             border: none;
             box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
@@ -229,7 +231,14 @@
 
 
 #block-openig-views-block-les-services-services-accueil{
-    h2{
-        margin-right: 100px;
+    .picto_titre h2{
+        //margin-right: 100px;
+        margin-top: -20px;
     } 
+
+    .picto_titre img{
+        left: 115px;
+        height: fit-content;
+    }
+
 }

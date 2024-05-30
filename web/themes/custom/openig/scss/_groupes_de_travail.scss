@@ -349,12 +349,14 @@
 // Bloc groupes de travail page d'accueil
 
 #block-openig-views-block-groupes-travail-accueil{
-    img{
-        top: 60px;
+    .picto_titre img{
+        //top: 60px;
+        //left: 0;
+        right: 175px;
+        height: fit-content;
     }
-    h2{
-        margin-left: 85px;
-        margin-top: 60px;
+    .picto_titre h2{
+        margin-top: -50px;
     } 
     .view-content{
         margin-top: 4rem;
