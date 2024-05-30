@@ -30,7 +30,7 @@ settings:
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 7e058adb-a8da-4ae4-a343-a6d1cfd2f351
+    uuid: ''
     alt: Boussole
     title: ''
     width: 50
