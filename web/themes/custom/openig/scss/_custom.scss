@@ -853,3 +853,71 @@ h3{
     }
 }
 
+.region-cinquieme-section-accueil{
+    position: relative;
+    margin-top: 5rem;
+    .view{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .region_cinq{
+        background-color: $OPenIG-color_deep-white;
+        width: 90%;
+        height: 650px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+            padding-bottom: 3rem;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            img{
+                position: absolute;
+                right: 0;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            margin-right: 125px;
+            width: 50%;
+            float: right;
+            margin-top: -20px;
+        }
+        .nombre_header{
+            //position: absolute;
+            //left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            //bottom: 0;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+}
+

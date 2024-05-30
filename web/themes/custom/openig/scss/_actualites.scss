@@ -460,24 +460,25 @@
     .view-content{
         margin-top: 1rem;
     }
+    .more-link{
+        text-align: center;
+        margin-top: 3rem;
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
 }
 .row_actus_accueil{
     display: flex;
     justify-content: space-between;
 }
 
-.more-link{
-    text-align: center;
-    margin-top: 3rem;
-    a{
-        font-family: 'Russo One';
-        font-size: $OPenIG-font-size-lg;
-        color: $OPenIG-color_dark-gray;
-        text-decoration: none;
-        border-bottom: 1px solid $OPenIG-color_red;
-        padding-bottom: 5px;
-    }
-}
+
 
 #block-openig-views-block-les-actualites-actualite-mise-en-avant{
     position: absolute;
