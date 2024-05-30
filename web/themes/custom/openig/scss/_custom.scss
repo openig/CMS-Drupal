@@ -601,11 +601,11 @@ h3{
 }
 
 // Carousel
+.slick--less .slick-track{
+    text-align: start !important;
+}
 .slick{
     padding-bottom: 15px !important;
-    .slick--less .slick-track{
-        text-align: start !important;
-    }
     .slick-list{
         padding-bottom: 10px !important;
         .b-grid, .blazy.b-grid, .item-list > .b-grid{
