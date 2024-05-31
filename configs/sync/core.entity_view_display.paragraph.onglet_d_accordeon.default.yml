@@ -1,0 +1,32 @@
+uuid: 0132c8f6-a754-488b-8ae3-6450bf19d8f5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.onglet_d_accordeon.field_contenu_de_l_accordeon
+    - field.field.paragraph.onglet_d_accordeon.field_titre_de_l_accordeon
+    - paragraphs.paragraphs_type.onglet_d_accordeon
+  module:
+    - text
+id: paragraph.onglet_d_accordeon.default
+targetEntityType: paragraph
+bundle: onglet_d_accordeon
+mode: default
+content:
+  field_contenu_de_l_accordeon:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_titre_de_l_accordeon:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  search_api_excerpt: true
