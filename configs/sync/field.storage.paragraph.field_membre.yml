@@ -1,0 +1,20 @@
+uuid: 2af685b6-8cb3-4f99-a438-c765d13f5f23
+langcode: fr
+status: true
+dependencies:
+  module:
+    - entity_reference_revisions
+    - paragraphs
+id: paragraph.field_membre
+field_name: field_membre
+entity_type: paragraph
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: 3
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
