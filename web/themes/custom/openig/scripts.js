@@ -165,6 +165,16 @@
         $('.views-exposed-form .form-item-exposed-from-date label').text('De');
         $('.views-exposed-form .form-item-exposed-to-date label').text('à');
         $('.views-exposed-form .form-item-exposed-from-date').before('<p class="labelDates">Dates</p>');
+
+
+        // Ajout d'un margin top sur le fil d'ariane lorsque le sous-menu OPenIG est déplié
+        if($('#block-openig-main-navigation .dropdown-menu').hasClass('show')){
+            $('#block-openig-breadcrumbs .navigation_filAriane').addClass('menuOpen');
+        }
+
+        $('#block-openig-main-navigation .dropdown-toggle').on('click', function() {
+            $('#block-openig-breadcrumbs .navigation_filAriane').toggleClass('menuOpen');
+        })
     
     })
 
