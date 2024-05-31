@@ -619,17 +619,17 @@ h3{
         background-color: #eaf3d2;
         z-index: -1;
         position: absolute;
-        width: 57rem;
+        width: 130%;
         height: 23rem;
       }
       
       // Alternate the background position for the cards
       .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .background-membres {
-        left: -15px;
+        left: -150px;
         right: auto;
       }
       .field--name-field-ligne-de-membres > .field__item:nth-child(even) .background-membres {
-        right: -75px;
+        right: -145px;
         left: auto;
       }
       
@@ -637,11 +637,13 @@ h3{
       .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .paragraph--type--ligne-de-membres {
         display: flex;
         justify-content: flex-start;
+        margin-left: -150px;
       }
       
       .field--name-field-ligne-de-membres > .field__item:nth-child(even) .paragraph--type--ligne-de-membres {
         display: flex;
         justify-content: flex-end;
+        margin-left: -150px;
       }
 
       .field--name-field-ligne-de-membres > .field__item:not(:first-of-type){
