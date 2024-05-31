@@ -1097,172 +1097,90 @@ h3{
     }
 }
 
-// Accordions - CKEditor
-.ckeditor-accordion-container dl.styled {
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-    border-top: 1px solid $OPenIG-color_light-gray;
+// Accordions
+.accordion {
     .accordion-item {
-        border: none;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border-radius: 5px;
-        font-size: $OPenIG-font-size-sm;
-
-        .field--name-field-animators,
-        .field--name-field-members,
-        .content_ressources {
-            column-count: 3;
-
-            .file {
-                background-image: none;
-                padding-left: 0;
-            }
-
-            a {
-                color: $OPenIG-color_black;
-                text-decoration: none;
-                border-bottom: 1px solid $OPenIG-color_black;
-            }
+      border: none;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+      border-radius: 5px;
+      border: 1px solid $OPenIG-color_deep-white;
+      font-size: $OPenIG-font-size-sm;
+      .field--name-field-animators, .field--name-field-members, .content_ressources {
+        column-count: 3;
+        .file {
+          background-image: none;
+          padding-left: 0;
         }
-
-        .field__item {
-            margin-bottom: 5px;
+        a {
+          color: $OPenIG-color_black;
+          text-decoration: none;
+          border-bottom: 1px solid $OPenIG-color_black;
         }
+      }
+      .field__item {
+        margin-bottom: 5px;
+      }
     }
-
-    .accordion-item.open {
+    .accordion-item.open{
         border-left: 4px solid $OPenIG-color_blue;
     }
-
     h2.accordion-header {
-        border-bottom: none;
-        font-family: 'Exo_semiBold';
-        font-weight: 600;
-
-        .numberTitle {
-            font-size: $OPenIG-font-size-xs;
-            background-color: $OPenIG-color_yellow;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: -15px;
-            margin-left: 10px;
-        }
+      border-bottom: none;
+      font-family: 'Exo_semiBold';
+      font-weight: 600;
+      .numberTitle {
+        font-size: $OPenIG-font-size-xs;
+        background-color: $OPenIG-color_yellow;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -15px;
+        margin-left: 10px;
+      }
     }
-
     .accordion-button {
-        padding: 25px;
+      padding: 25px;
     }
-
     .accordion-button:not(.collapsed) {
-        background-color: $OPenIG-color_light-gray;
-        box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
-        color: $OPenIG-color_black;
+      background-color: $OPenIG-color_light-gray;
+      border: 1px solid $OPenIG-color_deep-white;
+      color: $OPenIG-color_black;
     }
-
     .accordion-button:focus {
-        box-shadow: none;
-        border: none;
+      box-shadow: none;
+      border: none;
     }
-}
-
-.ckeditor-accordion-container dl.styled {
+  }
+  
+  .liste_accordeon {
     border-radius: 10px;
+    border: 1px solid $OPenIG-color_gray;
     overflow: hidden;
     margin-top: 4rem;
-
-    dt {
-        font-family: 'Exo_semiBold';
-        font-weight: 600;
+    h2 {
+      font-family: 'Exo_semiBold';
+      font-weight: 600;
+      font-size: $OPenIG-font-size-base;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+    .item_accordeon:not(:last-of-type) {
+      border-bottom: 1px solid $OPenIG-color_gray;
+    }
+    .item_accordeon {
+      font-size: $OPenIG-font-size-sm;
+      background-color: $OPenIG-color_white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px;
+      i {
+        color: $OPenIG-color_blue;
+        margin-left: 10px;
         font-size: $OPenIG-font-size-base;
-        margin-bottom: 0;
-        background-color: $OPenIG-color_white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 25px;
-        cursor: pointer;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        position: relative;
-
-        a {
-            color: $OPenIG-color_black;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            padding-left: 0;
-
-            .ckeditor-accordion-toggle {
-                position: absolute;
-                right: 25px;
-                left: auto;
-                color: $OPenIG-color_black;
-                font-size: $OPenIG-font-size-base;
-            }
-        }
+      }
     }
-
-    dd {
-        font-size: $OPenIG-font-size-sm;
-        padding: 25px;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        margin-top: 10px;
-        display: none;
-
-        &.active {
-            display: block;
-            border-left: 4px solid $OPenIG-color_blue;
-        }
-
-        p {
-            font-family: 'Open Sans', Arial, sans-serif;
-            color: $OPenIG-color_black;
-            font-size: $OPenIG-font-size-sm;
-            text-align: justify;
-        }
-
-        span {
-            background-color: rgb(255, 255, 255);
-        }
-    }
-}
-
-.ckeditor-accordion-container dl.styled dt.active a {
-    background-color: white;
-}
-
-.ckeditor-accordion-container dl.styled dt a:hover,
-.ckeditor-accordion-container dl.styled dt a:not(.button):hover {
-    background-color: white;
-    color: black;
-}
-
-.ckeditor-accordion-container dl.styled dt.active a .ckeditor-accordion-toggle:before {
-    background-color: black;
-}
-
-.ckeditor-accordion-container dl.styled dt.active a .ckeditor-accordion-toggle::after {
-    background-color: black;
-}
-
-.ckeditor-accordion-container dl.styled dt a .ckeditor-accordion-toggle:before {
-    background-color: $OPenIG-color_black;
-}
-
-.ckeditor-accordion-container dl.styled dt a .ckeditor-accordion-toggle::after {
-    background-color: $OPenIG-color_black;
-}
-
-.ckeditor-accordion-container>dl dt>a,
-.ckeditor-accordion-container>dl dt>a:not(.button) {
-    background-color: white;
-    border-bottom: none;
-}
-
-.ckeditor-accordion-container > dl {
-    border: none;
-}
-
+  }
