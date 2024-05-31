@@ -1,9 +1,9 @@
-uuid: 11082d04-5cee-44e6-8654-0f7de98a23a5
+uuid: be093c93-4dd1-4c04-962c-cbcdcae04577
 langcode: fr
 status: true
 dependencies: {  }
-id: membre
-label: Membre
+id: ligne_de_membres
+label: 'Ligne de membres'
 icon_uuid: null
 icon_default: null
 description: ''
