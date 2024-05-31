@@ -953,6 +953,7 @@ h3{
 // Accordions - CKEditor
 .ckeditor-accordion-container dl.styled {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    border-top: 1px solid $OPenIG-color_light-gray;
     .accordion-item {
         border: none;
         box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
