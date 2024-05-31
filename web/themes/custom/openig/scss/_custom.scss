@@ -210,14 +210,15 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 #block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
     display: flex;
-    align-items: baseline;
+    //align-items: baseline;
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
         background-color: $OPenIG-color_deep-white;
         border-radius: 10px;
-        align-items: center;
+        //align-items: center;
         padding: 0 10px;
+        margin-top: -30px;
     }
 }
 
@@ -305,9 +306,10 @@ h1{
 .title_share{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    //align-items: baseline;
     //padding-bottom: 75px;
     margin-top: 1rem;
+    min-height: 100px;
 }
 
 #block-openig-page-title{
@@ -380,12 +382,13 @@ h3{
         padding-left: 10px;
     }
 }
-
+  
 .paragraph--type--texte-dropdown.paragraph--view-mode--sidebar{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
     border-radius: 15px;
     overflow: hidden;
     .title_collapse{
+        background: $OPenIG-color_white;
         width: 100%;
         border: none;
         border-bottom: 1px solid $OPenIG-color_yellow;
