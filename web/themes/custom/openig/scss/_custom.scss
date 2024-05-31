@@ -536,7 +536,8 @@ h3{
         margin: 1rem;
         //padding: 1rem;
         box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
-        height: 395px;
+        min-height: 395px;
+        height: fit-content;
         width: 306px;
         position: relative;
         background-color: white; // Sinon le background se voir a travers la carte
@@ -652,6 +653,15 @@ h3{
       
       
 }
+
+@media (max-width: 1400px) {
+    .paragraph--type--membres{
+        .card-member {
+            width: 250px;
+        }    
+    }
+}
+
 
 // Bloc communiquer/mutualiser
 
