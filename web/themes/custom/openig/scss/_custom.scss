@@ -1161,3 +1161,19 @@ form{
         color: $OPenIG-color_black;
     }
 }
+
+
+.node--type-temoignage .field--name-field-image {
+    max-width: 70rem;
+    max-height: 50rem;
+}
+
+.node--type-temoignage .field--name-field-poste, .node--type-temoignage .field--name-field-entreprise {
+    font-weight: 700;
+}
+
+.node--type-temoignage {
+    background-color: white;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
