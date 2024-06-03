@@ -1171,7 +1171,11 @@ form{
     color: $OPenIG-color_blue;
 }
 
-.node--type-ressource{
+.field__items a, .field__item a {
+    color: $OPenIG-color_blue;
+}
+
+.node--type-ressource, .node--type-temoignage{
     .node__content{
         background-color: $OPenIG-color_white;
         margin-top: 4rem;

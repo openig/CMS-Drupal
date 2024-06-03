@@ -3,9 +3,11 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.user.user.field_membre_du_ca
-    - field.field.user.user.field_nom_prenom
-    - field.field.user.user.field_outil_competence
+    - field.field.user.user.field_ca_member
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_lastname
+    - field.field.user.user.field_outils_competences
+    - field.field.user.user.field_phone
     - field.field.user.user.field_referent
     - field.field.user.user.field_social_network
     - field.field.user.user.field_structure
@@ -19,7 +21,7 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
-  field_membre_du_ca:
+  field_ca_member:
     type: boolean
     label: above
     settings:
@@ -27,23 +29,38 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 11
+    weight: 16
     region: content
-  field_nom_prenom:
+  field_firstname:
     type: string
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 6
+    weight: 15
     region: content
-  field_outil_competence:
+  field_lastname:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 14
+    region: content
+  field_outils_competences:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 10
+    weight: 17
+    region: content
+  field_phone:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 18
     region: content
   field_referent:
     type: boolean
