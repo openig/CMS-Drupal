@@ -1,0 +1,19 @@
+uuid: b3770f6a-5413-46c8-8a24-37ae18014071
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_titre_de_l_accordeon
+    - paragraphs.paragraphs_type.onglet_d_accordeon
+id: paragraph.onglet_d_accordeon.field_titre_de_l_accordeon
+field_name: field_titre_de_l_accordeon
+entity_type: paragraph
+bundle: onglet_d_accordeon
+label: "Titre de l'accordéon"
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

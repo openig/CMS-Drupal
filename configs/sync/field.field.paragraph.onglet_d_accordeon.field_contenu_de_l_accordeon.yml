@@ -1,0 +1,22 @@
+uuid: 531b6f59-b0d8-4d26-aef9-049678cf10c4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenu_de_l_accordeon
+    - paragraphs.paragraphs_type.onglet_d_accordeon
+  module:
+    - text
+id: paragraph.onglet_d_accordeon.field_contenu_de_l_accordeon
+field_name: field_contenu_de_l_accordeon
+entity_type: paragraph
+bundle: onglet_d_accordeon
+label: "Contenu de l'accordéon"
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

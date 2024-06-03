@@ -24,9 +24,10 @@
             $('#block-openig-addtoanysharebuttons-bas-page .addtoany_list').toggleClass('open');
         })
 
-        // Accordéons fiche groupe de travail, ajout d'une class pour la bordure gauche
-        function accordionGT() {
-            $("#accordionGroupeTravail .accordion-item").each(function(){
+    
+        // Accordéons, ajout d'une class pour la bordure de gauche
+        function bordureAccordeons() {
+            $(".accordion .accordion-item").each(function(){
                 var child = $(this).find('.accordion-button');
                 if(!$(child).hasClass('collapsed')){
                     $(this).addClass('open');
@@ -35,31 +36,13 @@
                 }
             })
         }
-        if($('body').hasClass('page-node-type-groupe-de-travail')){
-            accordionGT();
-            $('.accordion-button').click(function(){
-                accordionGT();
-            })
-        }
 
-        // Accordéon ressources fiche actualités, ajout d'une class pour la bordure gauche
-        function accordionActualites() {
-            $("#accordionActualite .accordion-item").each(function(){
-                var child = $(this).find('.accordion-button');
-                if(!$(child).hasClass('collapsed')){
-                    $(this).addClass('open');
-                }else{
-                    $(this).removeClass('open');
-                }
-            })
-        }
-        if($('body').hasClass('page-node-type-article')){
-            accordionActualites();
+        if(($('body').hasClass('page-node-type-article') || ($('body').hasClass('page-node-type-groupe-de-travail')) || ($('.paragraph').hasClass('paragraph--type--accordeon')))){
+            bordureAccordeons();
             $('.accordion-button').click(function(){
-                accordionActualites();
+                bordureAccordeons();
             })
         }
-
 
         // Affichage bloc Communiquer/Mutualiser
         $('#block-openig-communiquermutualiser .buttonTitle').click(function () {

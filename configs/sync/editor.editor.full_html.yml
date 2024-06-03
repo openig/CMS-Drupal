@@ -31,7 +31,6 @@ settings:
       - blockQuote
       - drupalInsertImage
       - drupalMedia
-      - Accordion
       - insertTable
       - horizontalLine
       - '|'
