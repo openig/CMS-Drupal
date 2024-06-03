@@ -1131,3 +1131,22 @@ h3{
       border: none;
     }
 }
+
+.node--type-ressource .field--name-field-image {
+    max-width: 70rem;
+    max-height: 50rem;
+}
+
+.node--type-ressource .field--name-field-description {
+    font-weight: 700;
+}
+
+.node--type-ressource .field--name-field-format {
+    font-style: italic;
+}
+
+.node--type-ressource {
+    background-color: white;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
