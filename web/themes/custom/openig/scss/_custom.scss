@@ -1132,6 +1132,36 @@ h3{
     }
 }
 
+form{
+    .js-form-submit, .js-form-submit:hover, .js-form-submit:focus, .js-form-submit:active{
+        background-color: $OPenIG-color_blue !important;
+        color: $OPenIG-color_white !important;
+        border: none;
+        font-weight: 600;
+        font-family: 'Exo_semiBold';
+    }
+    .js-form-submit[data-drupal-selector='edit-reset'], .js-form-submit[data-drupal-selector='edit-reset']:hover, .js-form-submit[data-drupal-selector='edit-reset']:focus, .js-form-submit[data-drupal-selector='edit-reset']:active{
+        background-color: transparent !important;
+        color: $OPenIG-color_dark-gray !important;
+        border: 1px solid $OPenIG-color_gray;
+    }
+}
+
+.path-user{
+    .local-task-container{
+        padding: 0;
+    }
+}
+
+#block-openig-local-tasks{
+    .nav-link{
+        color: $OPenIG-color_blue;
+    }
+    .nav-link.active{
+        color: $OPenIG-color_black;
+    }
+}
+
 .node--type-ressource .field--name-field-image {
     max-width: 70rem;
     max-height: 50rem;
