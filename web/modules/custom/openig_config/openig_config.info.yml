@@ -45,4 +45,5 @@ dependencies:
   - better_exposed_filters
   - custom_view_filters
   - daterange_compact
+  - openig_sql_migrate
   - editor_advanced_link

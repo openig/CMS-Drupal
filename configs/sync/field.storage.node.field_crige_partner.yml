@@ -1,12 +1,12 @@
-uuid: 1b0ee1c5-a431-4259-a741-6cb1500a82d4
+uuid: b0a0c6c5-f37a-4d54-b42f-8fb0ae7ddc50
 langcode: fr
 status: true
 dependencies:
   module:
-    - user
-id: user.field_membre_du_ca
-field_name: field_membre_du_ca
-entity_type: user
+    - node
+id: node.field_crige_partner
+field_name: field_crige_partner
+entity_type: node
 type: boolean
 settings: {  }
 module: core

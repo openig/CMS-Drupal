@@ -3,57 +3,117 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.node.structure.body
     - field.field.node.structure.field_address
-    - field.field.node.structure.field_contact
+    - field.field.node.structure.field_city
+    - field.field.node.structure.field_contacts
+    - field.field.node.structure.field_crige_partner
     - field.field.node.structure.field_dpt_intervention
+    - field.field.node.structure.field_email
     - field.field.node.structure.field_image
-    - field.field.node.structure.field_link
+    - field.field.node.structure.field_phone
+    - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
+    - field.field.node.structure.field_website
     - image.style.thumbnail
     - node.type.structure
   module:
-    - image
+    - field_group
     - link
     - path
+    - svg_image
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_postal_address:
+      children:
+        - field_address
+        - field_postcode
+        - field_city
+      label: 'Adresse postal'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
 id: node.structure.default
 targetEntityType: node
 bundle: structure
 mode: default
 content:
+  body:
+    type: text_textarea_with_summary
+    weight: 10
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 9
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   field_address:
+    type: string_textarea
+    weight: 18
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_city:
     type: string_textfield
-    weight: 2
+    weight: 20
     region: content
     settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_contact:
+  field_contacts:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_crige_partner:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_dpt_intervention:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 8
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
     third_party_settings: {  }
   field_image:
     type: image_image
@@ -63,17 +123,24 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_link:
-    type: link_default
-    weight: 4
+  field_phone:
+    type: telephone_default
+    weight: 26
     region: content
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      placeholder: ''
+    third_party_settings: {  }
+  field_postcode:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_siret:
     type: string_textfield
-    weight: 3
+    weight: 6
     region: content
     settings:
       size: 60
@@ -81,7 +148,7 @@ content:
     third_party_settings: {  }
   field_typologie_structure:
     type: entity_reference_autocomplete
-    weight: 6
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -89,41 +156,49 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
   langcode:
     type: language_select
-    weight: 13
+    weight: 17
     region: content
     settings:
       include_locked: true
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 18
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
-    type: boolean_checkbox
-    weight: 11
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  simple_sitemap:
-    weight: 10
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  status:
     type: boolean_checkbox
     weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
+  simple_sitemap:
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 12
+    weight: 16
     region: content
     settings:
       display_label: true
@@ -133,12 +208,12 @@ content:
     weight: 0
     region: content
     settings:
-      size: 60
+      size: 120
       placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 12
     region: content
     settings:
       match_operator: CONTAINS

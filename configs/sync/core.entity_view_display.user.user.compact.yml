@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_membre_du_ca
-    - field.field.user.user.field_nom_prenom
-    - field.field.user.user.field_outil_competence
+    - field.field.user.user.field_ca_member
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_lastname
+    - field.field.user.user.field_outils_competences
+    - field.field.user.user.field_phone
     - field.field.user.user.field_referent
     - field.field.user.user.field_social_network
     - field.field.user.user.field_structure
@@ -18,18 +20,13 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content:
-  field_nom_prenom:
-    type: string
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
-  field_membre_du_ca: true
-  field_outil_competence: true
+  field_ca_member: true
+  field_firstname: true
+  field_lastname: true
+  field_outils_competences: true
+  field_phone: true
   field_referent: true
   field_social_network: true
   field_structure: true

@@ -1,16 +1,16 @@
-uuid: 2208ce38-516c-45c3-8b35-6f0be648e2c6
+uuid: de31a3ea-c99d-4b38-beef-1ba20284961c
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.user.field_nom_prenom
+    - field.storage.user.field_lastname
   module:
     - user
-id: user.user.field_nom_prenom
-field_name: field_nom_prenom
+id: user.user.field_lastname
+field_name: field_lastname
 entity_type: user
 bundle: user
-label: 'Nom / prénom'
+label: Nom
 description: ''
 required: false
 translatable: false

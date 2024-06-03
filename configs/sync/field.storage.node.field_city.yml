@@ -1,12 +1,12 @@
-uuid: 68d3836e-ba03-4e14-93ac-a695a9f16f95
+uuid: 5ff49aed-d3ec-41c9-8ca8-2ba83bdd267f
 langcode: fr
 status: true
 dependencies:
   module:
-    - user
-id: user.field_nom_prenom
-field_name: field_nom_prenom
-entity_type: user
+    - node
+id: node.field_city
+field_name: field_city
+entity_type: node
 type: string
 settings:
   max_length: 255
