@@ -11,7 +11,7 @@ dependencies:
     - image.style.wide
     - node.type.temoignage
   module:
-    - image
+    - svg_image
     - text
     - user
 id: node.temoignage.default
@@ -28,7 +28,7 @@ content:
     region: content
   field_entreprise:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -42,12 +42,16 @@ content:
       image_style: wide
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content
   field_poste:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -55,13 +59,14 @@ content:
     region: content
   field_tag:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     weight: 0
     region: content
 hidden:
+  addtoany: true
   langcode: true
   links: true
   search_api_excerpt: true
