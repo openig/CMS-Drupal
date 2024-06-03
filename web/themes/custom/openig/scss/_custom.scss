@@ -1170,3 +1170,19 @@ form{
 .field__items a{
     color: $OPenIG-color_blue;
 }
+
+.node--type-ressource{
+    .node__content{
+        background-color: $OPenIG-color_white;
+        margin-top: 4rem;
+        > .field__item{
+            margin-bottom: 2rem;
+        }
+        > .field__items{
+            margin-bottom: 2rem;
+        }
+    }
+    .field--name-field-image {
+        max-width: 400px;
+    }
+}
