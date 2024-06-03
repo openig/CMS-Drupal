@@ -39,7 +39,7 @@
 %}
 
 {% if label_hidden %}
-  <div class="accordion" id="accordion{{ field_name }}">
+  <div class="accordion" id="accordion{{ element['#object'].id[0].value }}">
     {% for item in items %}
       {% set paragraph = item.content['#paragraph'] %}
       {% set title = paragraph.field_titre_de_l_accordeon.value %}
@@ -47,12 +47,12 @@
       
       {# Utiliser loop.index pour garantir des identifiants uniques #}
       <div class="accordion-item">
-        <h2 class="accordion-header" id="heading{{ field_name }}{{ loop.index }}">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ field_name }}{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ field_name }}{{ loop.index }}" onclick="toggleAccordion(this)">
+        <h2 class="accordion-header" id="heading{{ element['#object'].id[0].value }}{{ loop.index }}">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ element['#object'].id[0].value }}{{ loop.index }}" aria-expanded="false" aria-controls="collapse{{ element['#object'].id[0].value }}{{ loop.index }}">
             {{ title }}
           </button>
         </h2>
-        <div id="collapse{{ field_name }}{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ field_name }}{{ loop.index }}" data-bs-parent="#accordion{{ field_name }}">
+        <div id="collapse{{ element['#object'].id[0].value }}{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ element['#object'].id[0].value }}{{ loop.index }}" data-bs-parent="#accordion{{ element['#object'].id[0].value }}">
           <div class="accordion-body">
             {{ content|raw }}
           </div>
@@ -74,19 +74,3 @@
     {% endif %}
   </div>
 {% endif %}
-
-<script>
-  function toggleAccordion(button) {
-    let accordionItem = button.closest('.accordion-item');
-    if (accordionItem.classList.contains('open')) {
-      accordionItem.classList.remove('open');
-    } else {
-      let allAccordionItems = document.querySelectorAll('.accordion-item');
-      allAccordionItems.forEach(function(item) {
-        item.classList.remove('open');
-      });
-      accordionItem.classList.add('open');
-    }
-  }
-</script>
-
