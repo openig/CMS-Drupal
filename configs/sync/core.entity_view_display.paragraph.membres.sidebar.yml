@@ -1,0 +1,25 @@
+uuid: a61f9360-84c6-48b2-b873-5c19503f943d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.membres.field_ligne_de_membres
+    - field.field.paragraph.membres.field_title
+    - paragraphs.paragraphs_type.membres
+id: paragraph.membres.sidebar
+targetEntityType: paragraph
+bundle: membres
+mode: sidebar
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_ligne_de_membres: true
+  search_api_excerpt: true

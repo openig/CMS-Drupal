@@ -100,7 +100,6 @@
 }
 .view.view-les-actualites{
     position: relative;
-    margin-top: 2rem;
     .view-content{
         .rowActus {
             margin-bottom: 2rem;
@@ -447,12 +446,12 @@
     .view-header{
         min-height: 350px;
     }
-    h2{
-        margin-left: 85px;
-        margin-top: 60px;
+    .picto_titre h2{
+        margin-top: -30px;
     } 
-    img{
-        top: 60px;
+    .picto_titre img{
+        height: fit-content;
+        right: 100px;
     }
 }
 
@@ -460,24 +459,25 @@
     .view-content{
         margin-top: 1rem;
     }
+    .more-link{
+        text-align: center;
+        margin-top: 3rem;
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
 }
 .row_actus_accueil{
     display: flex;
     justify-content: space-between;
 }
 
-.more-link{
-    text-align: center;
-    margin-top: 3rem;
-    a{
-        font-family: 'Russo One';
-        font-size: $OPenIG-font-size-lg;
-        color: $OPenIG-color_dark-gray;
-        text-decoration: none;
-        border-bottom: 1px solid $OPenIG-color_red;
-        padding-bottom: 5px;
-    }
-}
+
 
 #block-openig-views-block-les-actualites-actualite-mise-en-avant{
     position: absolute;

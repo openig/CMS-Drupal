@@ -210,14 +210,15 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 #block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
     display: flex;
-    align-items: baseline;
+    //align-items: baseline;
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
         background-color: $OPenIG-color_deep-white;
         border-radius: 10px;
-        align-items: center;
+        //align-items: center;
         padding: 0 10px;
+        margin-top: -30px;
     }
 }
 
@@ -260,6 +261,15 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
+.path-les-services{
+    #block-openig-ensavoirplussurladhesion{
+        display: block;
+        width: fit-content;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+}
+
 
  #block-openig-ensavoirplussurladhesion{
     margin-top: 50px;
@@ -296,9 +306,10 @@ h1{
 .title_share{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    //align-items: baseline;
     //padding-bottom: 75px;
     margin-top: 1rem;
+    min-height: 100px;
 }
 
 #block-openig-page-title{
@@ -371,12 +382,13 @@ h3{
         padding-left: 10px;
     }
 }
-
+  
 .paragraph--type--texte-dropdown.paragraph--view-mode--sidebar{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
     border-radius: 15px;
     overflow: hidden;
     .title_collapse{
+        background: $OPenIG-color_white;
         width: 100%;
         border: none;
         border-bottom: 1px solid $OPenIG-color_yellow;
@@ -502,13 +514,192 @@ h3{
     }
 }
 
-// Contenu de type titre et texte
 .paragraph.paragraph--type--title-text.paragraph--view-mode--default {
     background-color: white;
     h2 {
       margin-bottom: 30px;
     }
 }
+
+.paragraph--type--membres{
+    .cardmembers h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field__item {
+        padding: 0 10rem;
+        font-size: $OPenIG-font-size-lg;
+        border-bottom: none;
+        background-color: white;
+      }
+      
+      .field--name-field-membre {
+        display: flex;
+        flex-direction: row;
+      }
+
+      h2.field--name-field-title{
+        margin-bottom: 30px;
+      }
+      
+      .card-member {
+        border-radius: 20px;
+        margin: 1rem;
+        //padding: 1rem;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+        min-height: 395px;
+        height: fit-content;
+        width: 306px;
+        position: relative;
+        background-color: white; // Sinon le background se voir a travers la carte
+        border: none;
+        z-index: 1;
+      }
+      
+      .card-member .field--name-field-image img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 1px solid #000;
+      }
+      
+      .field--name-field-picto {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+      }
+      
+      .cardmembers .field.field--name-field-image.field--type-image.field--label-hidden.field__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem auto 0.5rem auto;
+        background: #EAF3D2;
+        width: 165px;
+        height: 165px;
+        border-radius: 50%;
+      }
+      
+      .field.field--name-field-poste.field--type-string.field--label-hidden.field__item {
+        font-weight: 600;
+        font-size: $OPenIG-font-size-base;
+        font-family: 'Exo_semiBold', sans-serif;
+      }
+      
+      .field.field--name-field-prenom-nom.field--type-string.field--label-hidden.field__item {
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-lg;
+      }
+      .field.field--name-field-entreprise.field--type-string.field--label-hidden.field__item {
+        font-family: 'Exo_regular', sans-serif;
+        font-size: $OPenIG-font-size-sm;
+      }
+      
+      .field.field--name-field-email.field--type-email.field--label-hidden.field__item {
+        font-weight: 600;
+        font-size: $OPenIG-font-size-base;
+        font-family: 'Exo_semiBold', sans-serif;
+        margin-top: 1rem;
+        text-align: end;
+        text-decoration: underline;
+      }
+      
+      .field.field--name-field-email.field--type-email.field--label-hidden.field__item a {
+        color: $OPenIG-color_black
+      }
+      .divVideo{
+        height: 25px;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      button.videomembre {
+        background: none;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-base;
+        font-family: 'Exo_semiBold', sans-serif;
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        float: right;
+      }
+      .field--name-field-ligne-de-membres > .field__item {
+        position: relative;
+      }
+      
+      .background-membres {
+        background-color: #f2f6e7;
+        z-index: 0;
+        position: absolute;
+        width: 130%;
+        height: 23rem;
+      }
+      
+      // Alternate the background position for the cards
+      .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .background-membres {
+        left: -150px;
+        right: auto;
+      }
+      .field--name-field-ligne-de-membres > .field__item:nth-child(even) .background-membres {
+        right: -145px;
+        left: auto;
+      }
+      
+      // Alternate the cards position like the background
+      .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .paragraph--type--ligne-de-membres {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: -150px;
+      }
+      
+      .field--name-field-ligne-de-membres > .field__item:nth-child(even) .paragraph--type--ligne-de-membres {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: -150px;
+      }
+
+      .field--name-field-ligne-de-membres > .field__item:not(:first-of-type){
+        margin-top: 1rem;
+      }
+      
+      
+}
+
+@media (max-width: 1400px) {
+    .paragraph--type--membres{
+        .card-member {
+            width: 250px;
+        }    
+    }
+}
+
+
+.paragraph--type--accordeon .accordion {
+    .accordion-item {
+      border: none;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+      border-radius: 5px;
+      border: 1px solid $OPenIG-color_deep-white;
+    }
+    .accordion-item.open{
+        border-left: 4px solid $OPenIG-color_blue;
+    }
+    h2.accordion-header {
+      border-bottom: none;
+      font-family: 'Exo_semiBold';
+      font-weight: 600;
+    }
+    .accordion-button {
+      padding: 25px;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: $OPenIG-color_light-gray;
+      border: 1px solid $OPenIG-color_deep-white;
+      color: $OPenIG-color_black;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+      border: none;
+    }
+}
+
 
 // Bloc communiquer/mutualiser
 
@@ -599,6 +790,10 @@ h3{
         content: '>';
     }
 }
+.block-system-breadcrumb-block .menuOpen{
+    margin-top: 4rem;
+}
+
 
 // Carousel
 .slick{
@@ -659,12 +854,19 @@ h3{
             content: '\f053' !important;
         }
     }
+    .views-field.views-field-title{
+        text-align: start !important;
+    }
+    .views-field.views-field-field-theme-overview{
+        text-align: start !important;
+    }
 
 }
 
 // Régions page d'accueil
 .region-deuxieme-section-accueil{
     position: relative;
+    margin-top: 5rem;
     .view-header{
         .header_block{
             position: relative;
@@ -672,12 +874,18 @@ h3{
         .title_header{
             position: relative;
             height: 150px;
-            display: flex;
-            align-items: center;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
             img{
                 position: absolute;
-                left: 0;
-                height: 140px;
+                max-height: 140px;
             }
             h2{
                 width: fit-content;
@@ -688,8 +896,9 @@ h3{
             }
         }
         .texte_header{
-            margin-left: 150px;
+            //margin-left: 150px;
             width: 50%;
+            padding-bottom: 3rem;
         }
         .nombre_header{
             position: absolute;
@@ -715,49 +924,52 @@ h3{
 }
 .region-troisieme-section-accueil{
     position: relative;
-    padding-bottom: 4rem;
+    margin-top: 7rem;
     .view-header{
-        height: 150px;
+        //height: 150px;
         .header_block{
             position: relative;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: row-reverse;
         }
         .title_header{
             position: relative;
             height: 150px;
-            display: flex;
-            align-items: center;
-            float: right;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+            }
             img{
                 position: absolute;
-                left: 0;
-                top: 0;
-                height: 140px;
+                //right: 0;
+                max-height: 140px;
             }
             h2{
                 width: fit-content;
                 border-bottom: 0;
+                margin-bottom: 0;
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
             }
         }
         .texte_header{
+            //margin-right: 125px;
             width: 50%;
-            //margin: auto;
-            padding-top: 75px;
-            //margin-left: 350px;
+            float: right;
+            //margin-top: -20px;
+            padding-bottom: 3rem;
         }
         .nombre_header{
             //position: absolute;
-            padding-top: 30px;
-            //top: 30px;
             //left: 0px;
             display: flex;
             flex-direction: column;
             text-align: center;
             width: 100px;
+            //bottom: 0;
             .nombre{
                 font-size: $OPenIG-font-size-numbers-home;
                 font-family: 'Russo One';
@@ -772,7 +984,7 @@ h3{
         }
     }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
-        position: relative;
+        left: 0;
     }
     #block-openig-views-block-les-actualites-actualites-accueil{
         margin-top: 4rem;
@@ -781,6 +993,8 @@ h3{
 
 .region-quatrieme-section-accueil{
     position: relative;
+    padding-top: 50px;
+    margin-top: 7rem;
     .region_quatre{
         background-color: #f2f6e7;
         width: 90%;
@@ -796,11 +1010,17 @@ h3{
         .title_header{
             position: relative;
             height: 150px;
-            display: flex;
-            align-items: center;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
             img{
                 position: absolute;
-                left: 0;
                 height: 140px;
             }
             h2{
@@ -812,8 +1032,9 @@ h3{
             }
         }
         .texte_header{
-            margin-left: 150px;
+            //margin-left: 150px;
             width: 50%;
+            padding-bottom: 3rem;
         }
         .nombre_header{
             position: absolute;
@@ -838,3 +1059,126 @@ h3{
     }
 }
 
+.region-cinquieme-section-accueil{
+    position: relative;
+    margin-top: 10rem;
+    .view{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .region_cinq{
+        background-color: $OPenIG-color_deep-white;
+        width: 90%;
+        height: 650px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+            padding-bottom: 3rem;
+        }
+        .title_header{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                //right: 0;
+                max-height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            //margin-right: 125px;
+            width: 50%;
+            float: right;
+            //margin-top: -20px;
+        }
+        .nombre_header{
+            //position: absolute;
+            //left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            //bottom: 0;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    #block-openig-views-block-les-actualites-actualite-mise-en-avant{
+        left: 0;
+    }
+}
+
+// Formulaires
+form{
+    .js-form-submit, .js-form-submit:hover, .js-form-submit:focus, .js-form-submit:active{
+        background-color: $OPenIG-color_blue !important;
+        color: $OPenIG-color_white !important;
+        border: none;
+        font-weight: 600;
+        font-family: 'Exo_semiBold';
+    }
+    .js-form-submit[data-drupal-selector='edit-reset'], .js-form-submit[data-drupal-selector='edit-reset']:hover, .js-form-submit[data-drupal-selector='edit-reset']:focus, .js-form-submit[data-drupal-selector='edit-reset']:active{
+        background-color: transparent !important;
+        color: $OPenIG-color_dark-gray !important;
+        border: 1px solid $OPenIG-color_gray;
+    }
+}
+
+.path-user{
+    .local-task-container{
+        padding: 0;
+    }
+}
+
+#block-openig-local-tasks{
+    .nav-link{
+        color: $OPenIG-color_blue;
+    }
+    .nav-link.active{
+        color: $OPenIG-color_black;
+    }
+}
+
+.node--type-ressource, .node--type-temoignage{
+    .node__content{
+        background-color: $OPenIG-color_white;
+        margin-top: 4rem;
+        > .field__item{
+            margin-bottom: 2rem;
+        }
+        > .field__items{
+            margin-bottom: 2rem;
+        }
+    }
+    .field--name-field-image {
+        max-width: 400px;
+    }
+}

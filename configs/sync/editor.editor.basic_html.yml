@@ -47,9 +47,6 @@ settings:
     ckeditor5_sourceEditing:
       allowed_tags:
         - '<cite>'
-        - '<dl>'
-        - '<dt>'
-        - '<dd>'
         - '<a hreflang>'
         - '<blockquote cite>'
         - '<ul type>'
@@ -59,6 +56,9 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    editor_advanced_link_link:
+      enabled_attributes:
+        - target
     media_media:
       allow_view_mode_override: false
 image_upload:

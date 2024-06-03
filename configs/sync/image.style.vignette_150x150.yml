@@ -1,0 +1,15 @@
+uuid: 7d1497e9-e4b0-4cf4-96cc-c53fa535710c
+langcode: fr
+status: true
+dependencies: {  }
+name: vignette_150x150
+label: 'Vignette (150x150)'
+effects:
+  3ebdacc4-9087-42c2-a4dc-92a1d947497f:
+    uuid: 3ebdacc4-9087-42c2-a4dc-92a1d947497f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 150
+      height: 150
+      anchor: center-center

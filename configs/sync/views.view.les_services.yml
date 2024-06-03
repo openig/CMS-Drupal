@@ -3,11 +3,20 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - field.storage.node.field_body
+    - field.storage.node.field_image
+    - field.storage.node.field_tag
+    - image.style.thumbnail
     - node.type.service
+  content:
+    - 'block_content:picto_et_texte:82388b6f-60e8-4c04-acd8-414f10a49a61'
   module:
     - node
+    - paragraphs
+    - slick_views
+    - svg_image
     - user
+    - views_fieldsets
 id: les_services
 label: 'Les services'
 module: views
@@ -24,6 +33,63 @@ display:
     display_options:
       title: 'Les services'
       fields:
+        fieldset:
+          id: fieldset
+          table: views
+          field: fieldset
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: fieldset
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          fields:
+            - title
+            - nothing
+          wrapper: div
+          legend: ''
+          classes: top_card
+          collapsible: false
+          collapsed: false
         title:
           id: title
           table: node_field_data
@@ -71,6 +137,303 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: ''
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-services.png" alt="Outils" />'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: content
+            image_style: thumbnail
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_tag:
+          id: field_tag
+          table: node__field_tag
+          field: field_tag
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ''
+          field_api_classes: false
+        field_body:
+          id: field_body
+          table: node__field_body
+          field: field_body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: paragraph_summary
+          settings: {  }
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 1
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ''
+          field_api_classes: false
+        view_node:
+          id: view_node
+          table: node
+          field: view_node
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_link
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          text: 'En savoir plus'
+          output_url_as_text: false
+          absolute: false
       pager:
         type: none
         options:
@@ -95,6 +458,19 @@ display:
         options: {  }
       empty: {  }
       sorts:
+        field_weight_value:
+          id: field_weight_value
+          table: node__field_weight
+          field: field_weight_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
         created:
           id: created
           table: node_field_data
@@ -136,9 +512,12 @@ display:
       style:
         type: grid
       row:
-        type: 'entity:node'
+        type: fields
         options:
-          view_mode: teaser
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
       query:
         type: views_query
         options:
@@ -148,7 +527,33 @@ display:
           replica: false
           query_tags: {  }
       relationships: {  }
-      header: {  }
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"col-5\">\r\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\r\n</div>"
+            format: full_html
+          tokenize: false
+        entity_block_content:
+          id: entity_block_content
+          table: views
+          field: entity_block_content
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: entity
+          empty: false
+          target: 82388b6f-60e8-4c04-acd8-414f10a49a61
+          view_mode: default
+          tokenize: true
+          bypass_access: false
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -158,9 +563,12 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
-  page_1:
-    id: page_1
+      tags:
+        - 'config:field.storage.node.field_body'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_tag'
+  services:
+    id: services
     display_title: Page
     display_plugin: page
     position: 1
@@ -174,4 +582,102 @@ display:
         - 'languages:language_interface'
         - 'user.node_grants:view'
         - user.permissions
-      tags: {  }
+      tags:
+        - 'config:field.storage.node.field_body'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_tag'
+  services_accueil:
+    id: services_accueil
+    display_title: 'Les services accueil'
+    display_plugin: block
+    position: 2
+    display_options:
+      style:
+        type: slick
+        options:
+          caption:
+            field_body: '0'
+            field_image: '0'
+            view_node: '0'
+            field_tag: '0'
+            title: '0'
+            fieldset: '0'
+            nothing: '0'
+          optionset: blocs
+          class: ''
+          image: ''
+          link: ''
+          overlay: ''
+          title: ''
+          vanilla: true
+          layout: ''
+          cache: 0
+          admin_uri: '/admin/structure/views/ajax/display/les_services/block_1/style_options?_wrapper_format=drupal_ajax'
+          grid: ''
+          grid_medium: ''
+          grid_small: ''
+          style: flexbox
+          skin: classic
+          overridables:
+            arrows: arrows
+            draggable: draggable
+            infinite: infinite
+            mouseWheel: mouseWheel
+            variableWidth: variableWidth
+            autoplay: '0'
+            dots: '0'
+            randomize: '0'
+          thumbnail: ''
+          optionset_thumbnail: ''
+          skin_thumbnail: ''
+          thumbnail_caption: ''
+          thumbnail_effect: ''
+          thumbnail_position: ''
+          override: true
+          preserve_keys: false
+          visible_items: null
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        style: false
+        row: false
+        header: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: 'Tous les services'
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <img src=\"/themes/custom/openig/pictos/accueil-titre/tools-titre.png\" alt=\"Outils\" />\r\n\r\n        <h2>[view:title]</h2> \r\n\r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">[view:total-rows]</span> \r\n    <span class=\"type_contenu\">Services</span>\r\n</div>"
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      block_hide_empty: true
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_body'
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_tag'

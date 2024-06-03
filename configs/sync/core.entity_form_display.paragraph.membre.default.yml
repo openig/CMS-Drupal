@@ -6,13 +6,14 @@ dependencies:
     - field.field.paragraph.membre.field_email
     - field.field.paragraph.membre.field_entreprise
     - field.field.paragraph.membre.field_image
+    - field.field.paragraph.membre.field_picto
     - field.field.paragraph.membre.field_poste
     - field.field.paragraph.membre.field_prenom_nom
     - field.field.paragraph.membre.field_video
     - image.style.thumbnail
     - paragraphs.paragraphs_type.membre
   module:
-    - image
+    - svg_image
     - video_embed_field
 id: paragraph.membre.default
 targetEntityType: paragraph
@@ -38,6 +39,14 @@ content:
   field_image:
     type: image_image
     weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_picto:
+    type: image_image
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber

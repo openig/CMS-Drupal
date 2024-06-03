@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies: {  }
 id: membre
-label: Membres
+label: Membre
 icon_uuid: null
 icon_default: null
 description: ''

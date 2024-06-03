@@ -277,15 +277,14 @@
 // Bloc agenda page d'accueil
 
 #block-openig-views-block-l-agenda-agenda-accueil{
-    padding-top: 2rem;
-    img{
+    //padding-top: 2rem;
+    .picto_titre img{
         top: 0;
-        height: 140px;
+        height: fit-content;
+        left: 75px;
     }
-    h2{
-        margin-bottom: 0;
-        margin-left: -50px;
-        margin-top: 0px;
+    .picto_titre h2{
+        margin-top: -65px;
     } 
     .card_agenda a{
         color: $OPenIG-color_black;
@@ -348,4 +347,22 @@
             padding-bottom: 5px;
         }
     }
+    .webform-button--submit, .webform-button--submit:active{
+        background-color: $OPenIG-color_blue;
+        border: none;
+    }
 } 
+
+// Fiche évènement
+
+.node--type-evenement{
+    .node__content{
+        > .field{
+            margin-bottom: 1rem;
+        }
+        .webform-button--submit, .webform-button--submit:active{
+            background-color: $OPenIG-color_blue;
+            border: none;
+        }
+    }
+}

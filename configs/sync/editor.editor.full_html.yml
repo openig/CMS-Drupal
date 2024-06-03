@@ -31,7 +31,6 @@ settings:
       - blockQuote
       - drupalInsertImage
       - drupalMedia
-      - Accordion
       - insertTable
       - horizontalLine
       - '|'
@@ -86,6 +85,9 @@ settings:
         -
           title: 2.5rem
           model: 2.5rem
+    editor_advanced_link_link:
+      enabled_attributes:
+        - target
     media_media:
       allow_view_mode_override: false
 image_upload:

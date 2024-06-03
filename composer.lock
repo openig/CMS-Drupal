@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b89a414200fa3e868921929a9f25ccc6",
+    "content-hash": "02c283ecf19c3795e77d2280e484ca78",
     "packages": [
         {
             "name": "algolia/places",
@@ -1684,57 +1684,6 @@
             }
         },
         {
-            "name": "drupal/ckeditor_accordion",
-            "version": "2.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ckeditor_accordion.git",
-                "reference": "2.1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ckeditor_accordion-2.1.0.zip",
-                "reference": "2.1.0",
-                "shasum": "9c9bdfd789f5ce5186e56004288cefa1b1b19a26"
-            },
-            "require": {
-                "drupal/core": "^9.4 || ^10"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "2.1.0",
-                    "datestamp": "1701411380",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Juhani Väätäjä (j-vee)",
-                    "homepage": "https://www.drupal.org/u/j-vee",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Rotem Reiss (rreiss)",
-                    "homepage": "https://www.drupal.org/u/rreiss",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "Accordion plugin for CKEditor 5.",
-            "homepage": "https://www.drupal.org/project/ckeditor_accordion",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ckeditor_accordion",
-                "issues": "https://www.drupal.org/project/issues/ckeditor_accordion"
-            }
-        },
-        {
             "name": "drupal/ckeditor_font",
             "version": "2.0.0-beta4",
             "source": {
@@ -2435,6 +2384,54 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/easy_breadcrumb",
                 "issues": "https://www.drupal.org/project/issues/easy_breadcrumb"
+            }
+        },
+        {
+            "name": "drupal/editor_advanced_link",
+            "version": "2.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/editor_advanced_link.git",
+                "reference": "2.2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/editor_advanced_link-2.2.4.zip",
+                "reference": "2.2.4",
+                "shasum": "cd0db397827f2e21ec8a68211e8a153463a6c89b"
+            },
+            "require": {
+                "drupal/core": "^9.2 || ^10"
+            },
+            "require-dev": {
+                "drupal/ckeditor": "*",
+                "phpro/grumphp": "^2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.4",
+                    "datestamp": "1688040059",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "DuaelFr",
+                    "homepage": "https://www.drupal.org/user/931394"
+                }
+            ],
+            "description": "Editor Advanced link",
+            "homepage": "https://www.drupal.org/project/editor_advanced_link",
+            "support": {
+                "source": "https://git.drupalcode.org/project/editor_advanced_link"
             }
         },
         {

@@ -26,7 +26,6 @@ third_party_settings:
       children:
         - promote
         - sticky
-        - field_access_restricted
       label: 'Options de publication'
       region: content
       parent_name: ''
@@ -51,16 +50,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_access_restricted:
-    type: boolean_checkbox
-    weight: 122
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
   field_body:
     type: paragraphs
-    weight: 3
+    weight: 4
     region: content
     settings:
       title: Paragraphe
@@ -86,7 +78,7 @@ content:
     third_party_settings: {  }
   field_groupe_de_travail:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 5
     region: content
     settings:
       match_operator: CONTAINS
@@ -96,18 +88,11 @@ content:
     third_party_settings: {  }
   field_image:
     type: image_image
-    weight: 2
+    weight: 3
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
-    third_party_settings: {  }
-  field_private_registration:
-    type: boolean_checkbox
-    weight: 5
-    region: content
-    settings:
-      display_label: true
     third_party_settings: {  }
   field_tag:
     type: entity_reference_autocomplete
@@ -184,4 +169,6 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_access_restricted: true
+  field_private_registration: true

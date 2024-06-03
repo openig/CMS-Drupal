@@ -1,0 +1,10 @@
+uuid: 13c0c132-daaf-48db-8580-80a0c1e605f9
+langcode: fr
+status: true
+dependencies: {  }
+id: membres
+label: Membres
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

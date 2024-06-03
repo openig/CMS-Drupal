@@ -101,7 +101,7 @@
     <div class="col-lg-1"></div>
     <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
         {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar') }}
-        {% if 'adherent' not in user.getRoles() %}
+        {% if not logged_in %}
             <div class="liste_accordeon">
                 <div class="item_accordeon">
                     <h2 class="title_accordeon"> Animateurs </h2>
@@ -119,7 +119,6 @@
                 {% endfor %}
             </div>
         {% else %}
-        
             <div class="accordion" id="accordionGroupeTravail">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingOne">
@@ -177,11 +176,11 @@
     <div class="col-lg-3">
         {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
         {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
-        {% if 'adherent' in user.getRoles() %}
+        {% if logged_in %}
             {{content.field_contenu_sidebar}}
         {% endif %}
     </div>
-        {% if 'adherent' in user.getRoles() %}
+        {% if logged_in %}
             <div class="btnShareRejoindre">
                 {{ render_block('openig_addtoanysharebuttons_bas_page') }}
                 {% if membre is not defined %}
