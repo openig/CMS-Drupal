@@ -1098,28 +1098,13 @@ h3{
 }
 
 // Accordions
-.accordion {
+.paragraph--type--accordeon .accordion {
     .accordion-item {
       border: none;
       box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
       border-radius: 5px;
       border: 1px solid $OPenIG-color_deep-white;
       font-size: $OPenIG-font-size-sm;
-      .field--name-field-animators, .field--name-field-members, .content_ressources {
-        column-count: 3;
-        .file {
-          background-image: none;
-          padding-left: 0;
-        }
-        a {
-          color: $OPenIG-color_black;
-          text-decoration: none;
-          border-bottom: 1px solid $OPenIG-color_black;
-        }
-      }
-      .field__item {
-        margin-bottom: 5px;
-      }
     }
     .accordion-item.open{
         border-left: 4px solid $OPenIG-color_blue;
@@ -1128,18 +1113,6 @@ h3{
       border-bottom: none;
       font-family: 'Exo_semiBold';
       font-weight: 600;
-      .numberTitle {
-        font-size: $OPenIG-font-size-xs;
-        background-color: $OPenIG-color_yellow;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: -15px;
-        margin-left: 10px;
-      }
     }
     .accordion-button {
       padding: 25px;
@@ -1153,34 +1126,4 @@ h3{
       box-shadow: none;
       border: none;
     }
-  }
-  
-  .liste_accordeon {
-    border-radius: 10px;
-    border: 1px solid $OPenIG-color_gray;
-    overflow: hidden;
-    margin-top: 4rem;
-    h2 {
-      font-family: 'Exo_semiBold';
-      font-weight: 600;
-      font-size: $OPenIG-font-size-base;
-      margin-bottom: 0;
-      border-bottom: none;
-    }
-    .item_accordeon:not(:last-of-type) {
-      border-bottom: 1px solid $OPenIG-color_gray;
-    }
-    .item_accordeon {
-      font-size: $OPenIG-font-size-sm;
-      background-color: $OPenIG-color_white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 25px;
-      i {
-        color: $OPenIG-color_blue;
-        margin-left: 10px;
-        font-size: $OPenIG-font-size-base;
-      }
-    }
-  }
+}
