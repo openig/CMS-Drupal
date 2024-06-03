@@ -533,6 +533,10 @@ h3{
         display: flex;
         flex-direction: row;
       }
+
+      h2.field--name-field-title{
+        margin-bottom: 30px;
+      }
       
       .card-member {
         border-radius: 20px;
@@ -545,6 +549,7 @@ h3{
         position: relative;
         background-color: white; // Sinon le background se voir a travers la carte
         border: none;
+        z-index: 1;
       }
       
       .card-member .field--name-field-image img {
@@ -620,8 +625,8 @@ h3{
       }
       
       .background-membres {
-        background-color: #eaf3d2;
-        z-index: -1;
+        background-color: #f2f6e7;
+        z-index: 0;
         position: absolute;
         width: 130%;
         height: 23rem;
@@ -662,6 +667,36 @@ h3{
         .card-member {
             width: 250px;
         }    
+    }
+}
+
+
+.paragraph--type--accordeon .accordion {
+    .accordion-item {
+      border: none;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+      border-radius: 5px;
+      border: 1px solid $OPenIG-color_deep-white;
+    }
+    .accordion-item.open{
+        border-left: 4px solid $OPenIG-color_blue;
+    }
+    h2.accordion-header {
+      border-bottom: none;
+      font-family: 'Exo_semiBold';
+      font-weight: 600;
+    }
+    .accordion-button {
+      padding: 25px;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: $OPenIG-color_light-gray;
+      border: 1px solid $OPenIG-color_deep-white;
+      color: $OPenIG-color_black;
+    }
+    .accordion-button:focus {
+      box-shadow: none;
+      border: none;
     }
 }
 
@@ -1101,37 +1136,7 @@ h3{
     }
 }
 
-// Accordions
-.paragraph--type--accordeon .accordion {
-    .accordion-item {
-      border: none;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-      border-radius: 5px;
-      border: 1px solid $OPenIG-color_deep-white;
-      font-size: $OPenIG-font-size-sm;
-    }
-    .accordion-item.open{
-        border-left: 4px solid $OPenIG-color_blue;
-    }
-    h2.accordion-header {
-      border-bottom: none;
-      font-family: 'Exo_semiBold';
-      font-weight: 600;
-    }
-    .accordion-button {
-      padding: 25px;
-    }
-    .accordion-button:not(.collapsed) {
-      background-color: $OPenIG-color_light-gray;
-      border: 1px solid $OPenIG-color_deep-white;
-      color: $OPenIG-color_black;
-    }
-    .accordion-button:focus {
-      box-shadow: none;
-      border: none;
-    }
-}
-
+// Formulaires
 form{
     .js-form-submit, .js-form-submit:hover, .js-form-submit:focus, .js-form-submit:active{
         background-color: $OPenIG-color_blue !important;
