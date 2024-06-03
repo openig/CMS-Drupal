@@ -1,23 +1,23 @@
-uuid: 5c23ffd6-da47-41ac-83da-048e689ce6ff
+uuid: a2fd0b8b-5382-43ea-9683-fb2dc06f1b1f
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_link
+    - field.storage.node.field_website
     - node.type.structure
   module:
     - link
-id: node.structure.field_link
-field_name: field_link
+id: node.structure.field_website
+field_name: field_website
 entity_type: node
 bundle: structure
-label: 'Site internet'
+label: 'Site web'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  title: 1
-  link_type: 17
+  title: 0
+  link_type: 16
 field_type: link
