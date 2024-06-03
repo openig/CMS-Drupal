@@ -1,16 +1,16 @@
-uuid: 056e6829-3858-469b-bdd9-aa3dab48f769
+uuid: 42cc1b02-c6eb-4d2e-8576-c653d4b50830
 langcode: fr
 status: true
 dependencies:
   module:
-    - taxonomy
+    - node
     - user
-id: user.field_outil_competence
-field_name: field_outil_competence
-entity_type: user
+id: node.field_contacts
+field_name: field_contacts
+entity_type: node
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: user
 module: core
 locked: false
 cardinality: -1

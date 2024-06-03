@@ -1,0 +1,8 @@
+uuid: a578634a-e556-4371-87e4-29ad3d550a9d
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Outils et compétences'
+vid: outils_competences
+description: ''
+weight: 0
