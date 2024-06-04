@@ -1,15 +1,14 @@
-uuid: 747bd263-875c-4c79-8bf6-ae65ba10112f
+uuid: 19e43ec2-30a1-460d-90a5-3ad0925c748d
 langcode: fr
 status: true
 dependencies:
   module:
     - node
-id: node.field_address
-field_name: field_address
+id: node.field_email
+field_name: field_email
 entity_type: node
-type: string_long
-settings:
-  case_sensitive: false
+type: email
+settings: {  }
 module: core
 locked: false
 cardinality: 1

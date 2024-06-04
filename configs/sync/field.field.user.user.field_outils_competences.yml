@@ -1,17 +1,17 @@
-uuid: 539d5745-29f7-4f1d-8583-fe4d64523799
+uuid: 86933407-03c8-4cf1-a9e5-c13fb1ef7a19
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.user.field_outil_competence
-    - taxonomy.vocabulary.outil_competence
+    - field.storage.user.field_outils_competences
+    - taxonomy.vocabulary.outils_competences
   module:
     - user
-id: user.user.field_outil_competence
-field_name: field_outil_competence
+id: user.user.field_outils_competences
+field_name: field_outils_competences
 entity_type: user
 bundle: user
-label: 'Outils / compétences'
+label: 'Outils et compétences'
 description: ''
 required: false
 translatable: false
@@ -21,7 +21,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      outil_competence: outil_competence
+      outils_competences: outils_competences
     sort:
       field: name
       direction: asc
