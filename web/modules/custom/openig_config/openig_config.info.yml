@@ -46,3 +46,4 @@ dependencies:
   - daterange_compact
   - openig_sql_migrate
   - editor_advanced_link
+  - custom_breadcrumbs
