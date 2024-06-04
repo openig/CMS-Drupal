@@ -38,7 +38,6 @@ dependencies:
   - color_field
   - ckeditor_font
   - addtoany
-  - easy_breadcrumb
   - views_fieldsets
   - slick_views
   - slick_ui
