@@ -1175,7 +1175,9 @@ form{
 .node--type-groupe-de-travail .field--type-text-with-summary a,
 .node--type-ressource .field--name-field-type a,
 .node--type-ressource .field--name-field-linked-content a,
-.node--type-ressource .field--name-field-file a {
+.node--type-ressource .field--name-field-file a,
+.node--type-service .field--name-field-requirement a,
+.node--type-temoignage .field--name-body a {
     color: $OPenIG-color_blue;
 }
 
