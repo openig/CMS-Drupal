@@ -20,11 +20,26 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content: {  }
+content:
+  field_firstname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_lastname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
+  breadcrumbs: true
   field_ca_member: true
-  field_firstname: true
-  field_lastname: true
   field_outils_competences: true
   field_phone: true
   field_referent: true

@@ -83,6 +83,12 @@
                         text-decoration: none;
                         border-bottom: 1px solid $OPenIG-color_black;
                     }
+                    .profile{
+                        display: flex;
+                        .field--name-field-firstname{
+                            margin-right: 5px;
+                        }
+                    }
                 }
                 .field__item{
                     margin-bottom: 5px;
