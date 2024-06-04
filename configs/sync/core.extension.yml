@@ -62,6 +62,7 @@ module:
   node: 0
   openig_adhesion: 0
   openig_config: 0
+  openig_sql_migrate: 0
   options: 0
   page_cache: 0
   path: 0

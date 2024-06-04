@@ -1,12 +1,12 @@
-uuid: e1f3603b-cf15-4840-8be8-3809d4a2131a
+uuid: df9d9f17-367e-498b-8b26-fdd9d9d618dd
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_contact
+    - field.storage.node.field_contacts
     - node.type.structure
-id: node.structure.field_contact
-field_name: field_contact
+id: node.structure.field_contacts
+field_name: field_contacts
 entity_type: node
 bundle: structure
 label: Contacts

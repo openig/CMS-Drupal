@@ -1,0 +1,21 @@
+uuid: 44caa112-80ea-43fa-a4d9-55328140cee5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_crige_partner
+    - node.type.structure
+id: node.structure.field_crige_partner
+field_name: field_crige_partner
+entity_type: node
+bundle: structure
+label: 'Partenaire CRIGE'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: Oui
+  off_label: Non
+field_type: boolean
