@@ -177,6 +177,12 @@
             .views-row:not(:first-of-type){
                 margin-top: 30px;
             }
+            .nom-prenom{
+                display: flex;
+                .views-field-field-firstname{
+                    margin-right: 5px;
+                }
+            }
         }
 
         .field--name-field-contenu-sidebar{
