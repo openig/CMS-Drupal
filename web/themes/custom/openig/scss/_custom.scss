@@ -1167,7 +1167,15 @@ form{
     }
 }
 
-.paragraph--type--title-text a, .paragraph--type--texte-dropdown a, .paragraph--type--accordeon a {
+.paragraph--type--title-text a,
+.paragraph--type--accordeon a,
+.field--type--picto-text a,
+.paragraph--type--texte-dropdown a,
+.node--type-article .field--type-text-with-summary a,
+.node--type-groupe-de-travail .field--type-text-with-summary a,
+.node--type-ressource .field--name-field-type a,
+.node--type-ressource .field--name-field-linked-content a,
+.node--type-ressource .field--name-field-file a {
     color: $OPenIG-color_blue;
 }
 
