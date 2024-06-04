@@ -38,7 +38,8 @@
     {{ content }}
   {% endblock %}
   {{ title_prefix }}
-  {% if label %}
+  {% set url = url('<current>') %}
+  {% if label and 'user/' not in url|render|render %}
     <button id="button_share" {{ title_attributes }}>
         <i class="fa-regular fa-share-nodes"></i>
         {{ label }}

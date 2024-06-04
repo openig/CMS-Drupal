@@ -42,6 +42,12 @@
         .views-row:not(:first-of-type){
             margin-top: 20px;
         }
+        .nom-prenom{
+            display: flex;
+            .views-field-field-firstname{
+                margin-right: 5px;
+            }
+        }
     }
     
     .field--name-field-requirement{
@@ -97,7 +103,7 @@
 }
 .view.view-les-services{
     .field--name-field-picto-et-texte{
-        background-color: $OPenIG-color_white;
+        background-color: rgb(255, 255, 255, 0.6);
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
