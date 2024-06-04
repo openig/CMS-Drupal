@@ -1,0 +1,15 @@
+uuid: f2b4cbec-d342-4964-bf3c-95182d409399
+langcode: fr
+status: true
+dependencies: {  }
+id: type_de_contenu_actualite
+label: 'Type de contenu Actualité'
+description: ''
+entityType: node
+entityBundle: article
+language: und
+breadcrumbPaths: /les-actualites/
+breadcrumbTitles: 'Les actualités'
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''
