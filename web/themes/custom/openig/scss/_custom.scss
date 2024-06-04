@@ -11,6 +11,10 @@ main, main > .container{
     min-height: 1000px;
 }
 
+a{
+    color: $OPenIG-color_blue;
+}
+
 #block-openig-local-tasks{
     margin-top: 75px;
 }
@@ -1167,19 +1171,6 @@ form{
     }
 }
 
-.paragraph--type--title-text a,
-.paragraph--type--accordeon a,
-.field--type--picto-text a,
-.paragraph--type--texte-dropdown a,
-.node--type-article .field--type-text-with-summary a,
-.node--type-groupe-de-travail .field--type-text-with-summary a,
-.node--type-ressource .field--name-field-type a,
-.node--type-ressource .field--name-field-linked-content a,
-.node--type-ressource .field--name-field-file a,
-.node--type-service .field--name-field-requirement a,
-.node--type-temoignage .field--name-body a {
-    color: $OPenIG-color_blue;
-}
 
 .node--type-ressource, .node--type-temoignage{
     .node__content{
