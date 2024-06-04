@@ -1,0 +1,15 @@
+uuid: 2a2a0952-b862-4acd-a0fb-7a345b54d5f0
+langcode: fr
+status: true
+dependencies: {  }
+id: type_de_contenu_service
+label: 'Type de contenu Service'
+description: ''
+entityType: node
+entityBundle: service
+language: und
+breadcrumbPaths: /les-services
+breadcrumbTitles: 'Les services'
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''
