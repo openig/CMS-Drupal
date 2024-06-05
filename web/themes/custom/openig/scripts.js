@@ -124,7 +124,7 @@
         })
 
         // Utilisation de la fonction change_evenement au glissement du carousel
-        $('.slick-list').mouseup(function() {
+        $('.slick--view--l-agenda .slick-list').mouseup(function() {
             change_evenement();
         })
 

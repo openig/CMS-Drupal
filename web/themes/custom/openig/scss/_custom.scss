@@ -800,7 +800,7 @@ h3{
 
 
 // Carousel
-.slick{
+.slick.slick--optionset--blocs, .slick.slick--optionset--agenda{
     padding-bottom: 15px !important;
     .slick-list{
         padding-bottom: 10px !important;
@@ -865,6 +865,97 @@ h3{
         text-align: start !important;
     }
 
+}
+
+.slick.slick--optionset--bloc-temoignage{
+    .slick-track{
+        padding: 1rem 0;
+    }
+    .card{
+        background-color: transparent;
+        border: none;
+        .card-body{
+            width: 75%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            .views-field-field-image{
+                img{
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-right: 2rem;
+                    min-width: 150px;
+                    height: 150px;
+                }
+            }
+            .views-field-body{
+                margin-bottom: 2rem;
+            }
+            .nom-poste{
+                display: flex;
+                font-family: 'Exo_semiBold';
+                .views-field-title{
+                    margin-right: 0.5rem;
+                }
+                .views-field-field-poste{
+                    display: flex;
+                }
+                .views-field-field-poste::before{
+                    content: '-';
+                    margin-right: 0.5rem;
+                }
+            }
+            .views-field-field-entreprise{
+                font-family: 'Exo_semiBold';
+            }
+            .views-field-nothing{
+                margin-top: -30px;
+                margin-left: 5px;
+                img{
+                    width: 40px;
+                    min-width: 40px;
+                    height: 29px;
+                }
+            }
+        }
+    }
+    .slick__arrow{
+        button.slick-arrow{
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+    .slick-dots{
+        button{
+            background-color: $OPenIG-color_white;
+            border: 1px solid $OPenIG-color_deep-gray;
+            border-radius: 100%;
+            overflow: hidden;
+            width: 15px;
+            height: 15px;
+        }
+        button::before{
+            color: transparent;
+        }
+        .slick-active{
+            button{
+                background-color: $OPenIG-color_blue;
+            }
+        }
+    }
 }
 
 // Régions page d'accueil
@@ -1137,6 +1228,79 @@ h3{
     }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
+    }
+}
+
+.region-septieme-section-accueil{
+    margin-top: 7rem;
+    background-color: $OPenIG-color_deep-white;
+    padding: 3rem 0;
+    position: relative;
+
+
+    .view-header{
+        //height: 150px;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                //right: 0;
+                max-height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            //margin-right: 125px;
+            width: 50%;
+            float: right;
+            //margin-top: -20px;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            //position: absolute;
+            //left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            //bottom: 0;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    #block-openig-views-block-les-actualites-actualite-mise-en-avant{
+        left: 0;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 4rem;
     }
 }
 
