@@ -1078,6 +1078,9 @@ h3{
             }
         }
     }
+    .view-les-groupes-de-travail .view-header, .view-les-services .view-header{
+        margin-bottom: 2rem;
+    }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
     }
@@ -1157,6 +1160,7 @@ h3{
 .region-cinquieme-section-accueil{
     position: relative;
     margin-top: 10rem;
+    min-height: 650px;
     .view{
         display: flex;
         flex-direction: column-reverse;
@@ -1225,6 +1229,9 @@ h3{
                 margin-top: -30px;
             }
         }
+    }
+    #block-openig-views-block-bloc-temoignage-block-temoignage, #block-openig-views-block-l-agenda-agenda-accueil{
+        padding-top: 3rem;
     }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
@@ -1295,6 +1302,9 @@ h3{
                 margin-top: -30px;
             }
         }
+    }
+    .view-les-groupes-de-travail .view-header, .view-les-services .view-header{
+        margin-bottom: 2rem;
     }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
