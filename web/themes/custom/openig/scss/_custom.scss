@@ -541,6 +541,10 @@ h3{
       h2.field--name-field-title{
         margin-bottom: 30px;
       }
+
+      .modal-dialog {
+        max-width: 60rem;
+      }
       
       .card-member {
         border-radius: 20px;
@@ -553,7 +557,7 @@ h3{
         position: relative;
         background-color: white;
         border: none;
-        z-index: 1;
+        // z-index: 1; Commenté car conflit avec modal de la vidéo
       }
       
       .card-member .field--name-field-image img {
