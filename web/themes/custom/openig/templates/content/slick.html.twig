@@ -63,6 +63,7 @@
   {% block slick_content %}
     {{- items -}}
   {% endblock %}
+  {%- if not settings.unslick -%}
 
     </div>
     {% block slick_arrow %}
@@ -78,4 +79,5 @@
         <button type="button" data-role="none" class="slick-next" aria-label="{{ settings.nextArrow|t|striptags }}" tabindex="0">{{ settings.nextArrow|t }}</button>
       </nav>
     {% endblock %}
+  {%- endif -%}
 </div>
