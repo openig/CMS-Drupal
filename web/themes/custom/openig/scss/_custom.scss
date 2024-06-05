@@ -890,15 +890,18 @@ h3{
             }
             .views-field-body{
                 margin-bottom: 2rem;
+                text-align: start;
             }
             .nom-poste{
                 display: flex;
                 font-family: 'Exo_semiBold';
                 .views-field-title{
                     margin-right: 0.5rem;
+                    text-align: start;
                 }
                 .views-field-field-poste{
                     display: flex;
+                    text-align: start;
                 }
                 .views-field-field-poste::before{
                     content: '-';
@@ -907,6 +910,7 @@ h3{
             }
             .views-field-field-entreprise{
                 font-family: 'Exo_semiBold';
+                text-align: start;
             }
             .views-field-nothing{
                 margin-top: -30px;
