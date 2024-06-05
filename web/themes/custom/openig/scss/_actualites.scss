@@ -1,6 +1,8 @@
 .node--type-article{
     margin-top: 7rem;
     .field--name-field-news-overview{
+        background-color: rgb(255, 255, 255, 0.6);
+        z-index: -1;
         .field__label{
             margin-bottom: 30px;
         }
