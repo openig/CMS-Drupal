@@ -44,9 +44,9 @@ options:
     respondTo: window
     rtl: false
     rows: 1
-    slidesPerRow: 1
+    slidesPerRow: 5
     slide: ''
-    slidesToShow: 5
+    slidesToShow: 3
     slidesToScroll: 1
     speed: 500
     swipe: true
