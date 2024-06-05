@@ -1237,12 +1237,6 @@ form{
                 border: none;
                 opacity: 1;
             }
-            .views-field-created{
-                padding: 1rem 0 0.5rem 1rem;
-                font-size: $OPenIG-font-size-sm;
-                font-family: 'OpenSans_SemiBold';
-                font-weight: 600;
-            }
             .views-field-field-image{
                 height: 140px;
                 overflow: hidden;
@@ -1268,7 +1262,7 @@ form{
                 }
             }
             .views-field-view-node{
-                padding: 0 1rem 2rem 0;
+                padding: 1rem 1rem 2rem 0;
                 text-align: right;
                 a{
                     font-family: 'Exo_semiBold';
