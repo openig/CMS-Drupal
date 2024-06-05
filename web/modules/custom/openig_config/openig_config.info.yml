@@ -47,3 +47,4 @@ dependencies:
   - openig_sql_migrate
   - editor_advanced_link
   - custom_breadcrumbs
+  - drupal/back_to_top
