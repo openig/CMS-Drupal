@@ -1,0 +1,72 @@
+uuid: 0f7bd6cb-d1a8-4449-a28b-8fd7620ba878
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.bloc_newsletter
+    - field.field.block_content.bloc_newsletter.body
+    - field.field.block_content.bloc_newsletter.field_image
+    - field.field.block_content.bloc_newsletter.field_lien
+    - field.field.block_content.bloc_newsletter.field_picto
+  module:
+    - link
+    - svg_image
+    - text
+id: block_content.bloc_newsletter.default
+targetEntityType: block_content
+bundle: bloc_newsletter
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

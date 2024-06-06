@@ -1,0 +1,32 @@
+uuid: 64b16439-7079-4a40-b4b2-b3f6f661cee1
+langcode: fr
+status: false
+dependencies:
+  module:
+    - simplenews
+    - system
+  theme:
+    - openig
+id: openig_simplenewssubscription
+theme: openig
+region: huitieme_section_accueil
+weight: 0
+provider: null
+plugin: simplenews_subscription_block
+settings:
+  id: simplenews_subscription_block
+  label: 'Simplenews subscription'
+  label_display: '0'
+  provider: simplenews
+  newsletters:
+    default: default
+  default_newsletters:
+    default: default
+  message: 'Stay informed - subscribe to our newsletter.'
+  show_manage: false
+  unique_id: cb7e8b33-8304-4b94-ab02-4d08bbaa448d
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
