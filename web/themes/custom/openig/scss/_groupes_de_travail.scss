@@ -324,6 +324,8 @@
         }
     }
     .more-link{
+        position: relative;
+        z-index: 1;
         text-align: center;
         a{
             font-family: 'Russo One';
