@@ -22,7 +22,7 @@ settings:
     default: default
   default_newsletters:
     default: default
-  message: 'Stay informed - subscribe to our newsletter.'
+  message: ''
   show_manage: false
   unique_id: cb7e8b33-8304-4b94-ab02-4d08bbaa448d
 visibility:
