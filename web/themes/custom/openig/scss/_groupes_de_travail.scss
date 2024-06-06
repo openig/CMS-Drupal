@@ -38,14 +38,13 @@
         .btnShareRejoindre{
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            align-items: baseline;
             margin: auto;
             margin-top: 50px;
             border-top: 1px solid $OPenIG-color_gray;
-            padding-top: 20px;
+            padding-top: 35px;
             min-width: 400px;
             width: fit-content;
-            margin-bottom: 50px;
         }
         .field--name-field-working-group-objective{
             margin-bottom: 4rem;
