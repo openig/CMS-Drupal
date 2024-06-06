@@ -15,8 +15,9 @@ header{
     z-index: 9;
     background-color: $OPenIG-color_white;
     padding: 15px 0;
-    font-family:"Russo One";
+    font-family:"OpenSans_Bold";
     font-size: $OPenIG-font-size-sm;
+    font-weight: bold;
     color: $OPenIG-color_dark-gray;
     padding-bottom: 0;
     .navigation_droite{
@@ -57,6 +58,9 @@ header{
                             font-size: $OPenIG-font-size-lg;
                             padding-left: 4px;
                         }
+                        .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:active{
+                            background-color: transparent;
+                        }
                     }
                     .is-active{
                         color: $OPenIG-color_blue;
@@ -81,6 +85,7 @@ header{
                         .dropdown-item{
                             color: $OPenIG-color_dark-gray;
                             font-size: $OPenIG-font-size-sm;
+                            font-weight: bold;
                         }
                         .dropdown-item:hover{
                             background-color: transparent;
@@ -277,6 +282,7 @@ header{
         span, a{
             color: $OPenIG-color_dark-gray;
             text-decoration: none;
+            padding-top: 9px;
         }
         span.is-active ,a.is-active{
             color: $OPenIG-color_blue;

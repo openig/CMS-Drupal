@@ -322,7 +322,7 @@ h1{
     position: relative;
     height: fit-content;
     width: 75%;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     img{
         height: 150px;
         position: absolute;
@@ -1002,6 +1002,7 @@ h3{
             //margin-left: 150px;
             width: 50%;
             padding-bottom: 3rem;
+            background-color: rgb(255, 255, 255, 0.6);
         }
         .nombre_header{
             position: absolute;
@@ -1354,7 +1355,8 @@ form{
 }
 
 
-.node--type-ressource, .node--type-temoignage{
+.node--type-ressource.node--view-mode-full, .node--type-temoignage.node--view-mode-full{
+    background-color: rgb(255, 255, 255, 0.6);
     .node__content{
         background-color: $OPenIG-color_white;
         margin-top: 4rem;
