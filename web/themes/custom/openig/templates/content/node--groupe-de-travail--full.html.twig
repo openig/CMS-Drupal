@@ -98,14 +98,8 @@
             </h2>
         {% endif %}
         {{ title_suffix }}
-        {% if content.field_contenu_sidebar[0] %}
-            <div class="col-lg-1"></div>
-        {% endif %}
-        {% if content.field_contenu_sidebar[0] %}
-            <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
-        {% else %}
-            <div{{ content_attributes.addClass('node__content col-lg-7 col-12 no_sidebar') }}>
-        {% endif %}
+        <div class="col-lg-1"></div>
+        <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
             {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar') }}
             {% if not logged_in %}
                 <div class="liste_accordeon">
@@ -178,29 +172,21 @@
                 </div>
             {% endif %}
         </div>
-        {% if content.field_contenu_sidebar[0] %}
-            <div class="col-lg-1"></div>
-            <div class="col-lg-3">
-                {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
-                {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
-                {% if logged_in %}
-                    {{content.field_contenu_sidebar}}
-                {% endif %}
-            </div>
-        {% endif %}
-        {% if logged_in %}
-            {% if content.field_contenu_sidebar[0] == null %}
-                <div class="col-12">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
+            {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+            {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+            {% if logged_in %}
+                {{content.field_contenu_sidebar}}
             {% endif %}
+        </div>
+        {% if logged_in %}
             <div class="btnShareRejoindre">
                 {{ render_block('openig_addtoanysharebuttons_bas_page') }}
                 {% if membre is not defined %}
                     <button id="btnRejoindre_bas"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                 {% endif %}
             </div>
-            {% if content.field_contenu_sidebar[0] == null %}
-                </div>
-            {% endif %}
         {% endif %}
     </article>
 </div>
