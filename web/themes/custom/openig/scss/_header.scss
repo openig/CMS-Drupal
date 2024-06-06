@@ -57,6 +57,9 @@ header{
                             font-size: $OPenIG-font-size-lg;
                             padding-left: 4px;
                         }
+                        .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:active{
+                            background-color: transparent;
+                        }
                     }
                     .is-active{
                         color: $OPenIG-color_blue;
