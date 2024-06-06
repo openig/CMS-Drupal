@@ -80,15 +80,11 @@
 %}
 {{ attach_library('bootstrap5/node') }}
 <div class="container">
-    {% if logged_in %}
-        <div class="row">
-            <div class="btnUtiliser col-8">
-                <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
-            </div>
+    <div class="row">
+        <div class="btnUtiliser col-8">
+            <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
         </div>
-    {% else %}
-        <div class="notLogged">
-    {% endif %}
+    </div>
     <article{{ attributes.addClass(classes) }}>
         {{ title_prefix }}
         {% if label and not page %}
@@ -97,28 +93,27 @@
             </h2>
         {% endif %}
         {{ title_suffix }}
-        <div class="col-lg-1"></div>
-        <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
-            {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
-        </div>
-         <div class="col-lg-1"></div>
-        <div class="col-lg-3 sidebar">
-            {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
-            {% if not logged_in %}
+        {% if (content.field_contenu_sidebar[0] != null) or (content.field_contact[0] != null) or (content.field_image[0] != null) or (content.field_requirement[0] != null) %}
+            <div class="col-lg-1"></div>
+            <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
+                {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-3 sidebar">
+                {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
                 {{content.field_requirement}}
-            {% endif %}
-            {{content.field_image}}
-        </div>
-         {% if logged_in %}
+                {{content.field_image}}
+            </div>
             <div class="btnShareUtiliser">
                 {{ render_block('openig_addtoanysharebuttons_bas_page') }}
                 <div class="btnUtiliser">
                     <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 </div>
             </div>
+        {% else %}
+            <div{{ content_attributes.addClass('node__content col-lg-7 col-12 no_sidebar') }}>
+                {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
+            </div>
         {% endif %}
     </article>
-    {% if not logged_in %}
-       </div>
-    {% endif %}
 </div>
