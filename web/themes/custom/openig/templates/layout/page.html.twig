@@ -59,7 +59,7 @@ set footer_classes = ' ' ~
   <div class="navigation container">
       <div class="row">
           {% if logged_in %}
-              <div class="col-9">
+              <div class="col-9 navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
               <div class="col-3 navigation_droite">
@@ -67,7 +67,7 @@ set footer_classes = ' ' ~
                   {{ page.navigation_troisieme_section }}
               </div>
           {% else %}
-              <div class="col-8">
+              <div class="col-8 navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
               <div class="col-4 navigation_droite">
@@ -165,7 +165,7 @@ set footer_classes = ' ' ~
                 <div class="col-12 col-lg-6">
                     {{ page.haut_footer_centre }}
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-3 haut_footer_droite">
                     {{ page.haut_footer_droite }}
                 </div>
             </div>

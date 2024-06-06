@@ -322,7 +322,7 @@ h1{
     position: relative;
     height: fit-content;
     width: 75%;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     img{
         height: 150px;
         position: absolute;
@@ -541,6 +541,10 @@ h3{
       h2.field--name-field-title{
         margin-bottom: 30px;
       }
+
+      .modal-dialog {
+        max-width: 60rem;
+      }
       
       .card-member {
         border-radius: 20px;
@@ -553,7 +557,7 @@ h3{
         position: relative;
         background-color: white;
         border: none;
-        z-index: 1;
+        // z-index: 1; Commenté car conflit avec modal de la vidéo
       }
       
       .card-member .field--name-field-image img {
@@ -800,7 +804,7 @@ h3{
 
 
 // Carousel
-.slick{
+.slick.slick--optionset--blocs, .slick.slick--optionset--agenda{
     padding-bottom: 15px !important;
     .slick-list{
         padding-bottom: 10px !important;
@@ -867,6 +871,101 @@ h3{
 
 }
 
+.slick.slick--optionset--bloc-temoignage{
+    .slick-track{
+        padding: 1rem 0;
+    }
+    .card{
+        background-color: transparent;
+        border: none;
+        .card-body{
+            width: 75%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            .views-field-field-image{
+                img{
+                    border-radius: 100%;
+                    overflow: hidden;
+                    margin-right: 2rem;
+                    min-width: 150px;
+                    height: 150px;
+                }
+            }
+            .views-field-body{
+                margin-bottom: 2rem;
+                text-align: start;
+            }
+            .nom-poste{
+                display: flex;
+                font-family: 'Exo_semiBold';
+                .views-field-title{
+                    margin-right: 0.5rem;
+                    text-align: start;
+                }
+                .views-field-field-poste{
+                    display: flex;
+                    text-align: start;
+                }
+                .views-field-field-poste::before{
+                    content: '-';
+                    margin-right: 0.5rem;
+                }
+            }
+            .views-field-field-entreprise{
+                font-family: 'Exo_semiBold';
+                text-align: start;
+            }
+            .views-field-nothing{
+                margin-top: -30px;
+                margin-left: 5px;
+                img{
+                    width: 40px;
+                    min-width: 40px;
+                    height: 29px;
+                }
+            }
+        }
+    }
+    .slick__arrow{
+        button.slick-arrow{
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+    .slick-dots{
+        button{
+            background-color: $OPenIG-color_white;
+            border: 1px solid $OPenIG-color_deep-gray;
+            border-radius: 100%;
+            overflow: hidden;
+            width: 15px;
+            height: 15px;
+        }
+        button::before{
+            color: transparent;
+        }
+        .slick-active{
+            button{
+                background-color: $OPenIG-color_blue;
+            }
+        }
+    }
+}
+
 // Régions page d'accueil
 .region-deuxieme-section-accueil{
     position: relative;
@@ -903,6 +1002,7 @@ h3{
             //margin-left: 150px;
             width: 50%;
             padding-bottom: 3rem;
+            background-color: rgb(255, 255, 255, 0.6);
         }
         .nombre_header{
             position: absolute;
@@ -987,6 +1087,9 @@ h3{
             }
         }
     }
+    .view-les-groupes-de-travail .view-header, .view-les-services .view-header{
+        margin-bottom: 2rem;
+    }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
     }
@@ -1066,6 +1169,7 @@ h3{
 .region-cinquieme-section-accueil{
     position: relative;
     margin-top: 10rem;
+    min-height: 650px;
     .view{
         display: flex;
         flex-direction: column-reverse;
@@ -1135,8 +1239,87 @@ h3{
             }
         }
     }
+    #block-openig-views-block-bloc-temoignage-block-temoignage, #block-openig-views-block-l-agenda-agenda-accueil{
+        padding-top: 3rem;
+    }
     #block-openig-views-block-les-actualites-actualite-mise-en-avant{
         left: 0;
+    }
+}
+
+.region-septieme-section-accueil{
+    margin-top: 7rem;
+    background-color: $OPenIG-color_deep-white;
+    padding: 3rem 0;
+    position: relative;
+
+
+    .view-header{
+        //height: 150px;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                //right: 0;
+                max-height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            //margin-right: 125px;
+            width: 50%;
+            float: right;
+            //margin-top: -20px;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            //position: absolute;
+            //left: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            //bottom: 0;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    .view-les-groupes-de-travail .view-header, .view-les-services .view-header{
+        margin-bottom: 2rem;
+    }
+    #block-openig-views-block-les-actualites-actualite-mise-en-avant{
+        left: 0;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 4rem;
     }
 }
 
@@ -1172,7 +1355,8 @@ form{
 }
 
 
-.node--type-ressource, .node--type-temoignage{
+.node--type-ressource.node--view-mode-full, .node--type-temoignage.node--view-mode-full{
+    background-color: rgb(255, 255, 255, 0.6);
     .node__content{
         background-color: $OPenIG-color_white;
         margin-top: 4rem;
@@ -1186,6 +1370,22 @@ form{
     .field--name-field-image {
         max-width: 400px;
     }
+}
+
+// Bouton back to top
+#backtotop::before{
+    content: '\f077';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+}
+#backtotop{
+    border: none;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    padding: 0 10px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
 }
 
 // Vue Terme de taxonomie

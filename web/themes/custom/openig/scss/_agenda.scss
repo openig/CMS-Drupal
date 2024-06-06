@@ -17,7 +17,7 @@
         background-color: $OPenIG-color_deep-white;
         margin-bottom: 3rem;
     }
-    .slick__slider{
+    .slick--optionset--agenda .slick__slider{
         background-color: $OPenIG-color_white;
         padding-top: 20px;
         padding-bottom: 10px;
@@ -27,11 +27,11 @@
         font-family: 'Russo One';
         font-size: $OPenIG-font-size-h2;
     }
-    .slick .slick__slide.slick-current{
+    .slick.slick--optionset--agenda .slick__slide.slick-current{
         border: 2px solid $OPenIG-color_yellow;
         box-shadow: none;
     }
-    .slick .slick__slide{
+    .slick.slick--optionset--agenda .slick__slide{
         width: 195px !important;
         height: 200px !important;
         border: none;
@@ -66,7 +66,7 @@
     }
     
     #contenu_evenement{
-        background-color: $OPenIG-color_white;
+        background-color: rgb(255, 255, 255, 0.6);
         .views-field-field-dates-2{
             width: fit-content;
             border-bottom: 5px solid $OPenIG-color_yellow;
@@ -283,9 +283,13 @@
         top: 0;
         height: fit-content;
         left: 75px;
+        background-color: rgb(255, 255, 255, 0.6);
+        z-index: -1;
     }
     .picto_titre h2{
         margin-top: -65px;
+        background-color: rgb(255, 255, 255, 0.6);
+        z-index: -1;
     } 
     .card_agenda a{
         color: $OPenIG-color_black;
