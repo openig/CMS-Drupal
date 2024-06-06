@@ -1387,3 +1387,189 @@ form{
     height: 50px;
     border-radius: 5px;
 }
+
+// Vue Terme de taxonomie
+.view-taxonomy-term.view-display-id-taxonomy-term{
+    margin-top: 5rem !important;
+}
+.view.view-taxonomy-term{
+    position: relative;
+    .view-content{
+        .row {
+            margin-bottom: 2rem;
+        }
+        .card{
+            border: none;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+            border-radius: 20px;
+            overflow: hidden;
+            .card-body{
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+            }
+            .views-field-fieldset{
+                .titlepicto{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    .views-field-title{
+                        width: 75%;
+                        a{
+                            color: $OPenIG-color_black;
+                            font-family: 'Exo_semiBold';
+                            font-size: $OPenIG-font-size-base;
+                            font-weight: 600;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                        }
+                    }
+                    .views-field-nothing{
+                       width: 40px;
+                    }
+                }
+            }
+            hr{
+                width: 85px;
+                height: 5px;
+                background-color: $OPenIG-color_blue;
+                margin: auto;
+                border: none;
+                opacity: 1;
+            }
+            .views-field-field-image{
+                height: 140px;
+                overflow: hidden;
+            }
+            .views-field-field-tag{
+                position: absolute;
+                top: 30px;
+                left: 20px;
+                width: 100%;
+                .field-content{
+                    width: 100%;
+                }
+                a{
+                    border: 1px solid $OPenIG-color_blue;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+                    font-size: $OPenIG-font-size-xs;
+                    text-decoration: none;
+                    color: $OPenIG-color_black;
+                    margin-right: 10px;
+                    font-family: 'Exo_regular';
+                    background-color: $OPenIG-color_white;
+                }
+            }
+            .views-field-view-node{
+                padding: 2rem 1rem 2rem 0;
+                text-align: right;
+                a{
+                    font-family: 'Exo_semiBold';
+                    font-size: $OPenIG-font-size-sm;
+                    font-weight: 600;
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+        }
+    }
+    .pager__item--last, .pager__item--first{
+        display: none;
+    }
+    .pager__item--previous, .pager__item--next{
+        background-color: $OPenIG-color_white;
+        border-radius: 0;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        border: none;
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        .page-link{
+            border: none;
+            height: 100%;
+            width: 100%;
+            padding: 0 !important;
+            span{
+                display: none;
+            }
+        }
+        .page-link::before{
+            font-family: "Font Awesome 6 Free";
+            color: $OPenIG-color_deep-gray;
+            font-size: 28px;
+        }
+    }
+    .pager__item--next{
+        margin-left: 5rem !important;
+        .page-link::before{
+            content: '\f054';
+        }
+    }
+    .pager__item--previous{
+        margin-right: 5rem !important;
+        .page-link::before{
+            content: '\f053';
+        }
+    }
+    .page-item{
+        background-color: $OPenIG-color_white;
+        border-radius: 0;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        border: none;
+        width: 42px;
+        height: 42px;
+        text-align: center;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        .page-link{
+            border: none;
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+            color: $OPenIG-color_black;
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+        }
+    }
+    .page-item.is-active.active{
+        box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
+        .page-link{
+            color: $OPenIG-color_red;
+            background-color: transparent;
+            border-radius: 0;
+            border: none;
+        }
+    }
+    .page-item:focus, .page-link:focus{
+        border: none !important;
+    }
+    .page-link:focus{
+        box-shadow: none;
+    }
+
+
+    .slick__arrow{
+        button.slick-arrow{
+            position: relative !important;
+            top: unset !important;
+            transform: translateY(0) !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+}
