@@ -49,13 +49,13 @@
         .field--name-field-working-group-objective{
             margin-bottom: 4rem;
             background-color: rgb(255, 255, 255, 0.6);
-            z-index: -1;
             h2{
                 margin-bottom: 30px;
             }
         }
         .field--name-field-theme-overview{
             margin-bottom: 4rem;
+            background-color: rgb(255, 255, 255, 0.6);
             h2{
                 margin-bottom: 30px;
             }
@@ -169,7 +169,6 @@
         #block-openig-views-block-contacts-gt-contacts-gt, #block-openig-views-block-agenda-gt-agenda-gt{
             margin-bottom: 5rem;
             background-color: rgb(255, 255, 255, 0.6);
-            z-index: -1;
             h2{
                 border-bottom: 1px solid $OPenIG-color_yellow;
                 font-family: 'Exo_semiBold';
@@ -309,8 +308,6 @@
             .views-field-field-theme-overview{
                 font-size: $OPenIG-font-size-sm;
                 margin-top: 1rem;
-                background-color: rgb(255, 255, 255, 0.6);
-                z-index: -1;
             }
             .views-field-view-node{
                 margin-top: 1rem;
