@@ -17,7 +17,7 @@
         background-color: $OPenIG-color_deep-white;
         margin-bottom: 3rem;
     }
-    .slick__slider{
+    .slick--optionset--agenda .slick__slider{
         background-color: $OPenIG-color_white;
         padding-top: 20px;
         padding-bottom: 10px;
@@ -27,11 +27,11 @@
         font-family: 'Russo One';
         font-size: $OPenIG-font-size-h2;
     }
-    .slick .slick__slide.slick-current{
+    .slick.slick--optionset--agenda .slick__slide.slick-current{
         border: 2px solid $OPenIG-color_yellow;
         box-shadow: none;
     }
-    .slick .slick__slide{
+    .slick.slick--optionset--agenda .slick__slide{
         width: 195px !important;
         height: 200px !important;
         border: none;
@@ -47,7 +47,7 @@
             border-bottom: 5px solid $OPenIG-color_yellow
         }
         .views-field-title{
-            text-align: center;
+            text-align: center !important;
             margin-top: 5px;
             font-size: $OPenIG-font-size-md;
             a{
@@ -133,7 +133,7 @@
     // Filtres
     .formulaire_filtre{
         position: absolute;
-        left: -400px;
+        left: -100rem;
         transition: 1.5s;
         background-color: $OPenIG-color_white;
         z-index: 1;
@@ -249,7 +249,8 @@
         }
     }
     .formulaire_filtre.show{
-        left: 250px;
+        left: 0;
+        top: 0;
         transition: 1.5s;
 
     }

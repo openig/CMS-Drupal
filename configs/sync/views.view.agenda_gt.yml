@@ -180,15 +180,15 @@ display:
           plugin_id: bundle
           value:
             evenement: evenement
-        field_dates_value:
-          id: field_dates_value
+        field_dates_end_value:
+          id: field_dates_end_value
           table: node__field_dates
-          field: field_dates_value
+          field: field_dates_end_value
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: datetime
-          operator: '>'
+          operator: '>='
           value:
             min: ''
             max: ''

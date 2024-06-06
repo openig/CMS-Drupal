@@ -57,6 +57,9 @@ header{
                             font-size: $OPenIG-font-size-lg;
                             padding-left: 4px;
                         }
+                        .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:active{
+                            background-color: transparent;
+                        }
                     }
                     .is-active{
                         color: $OPenIG-color_blue;
@@ -156,7 +159,7 @@ header{
                 box-shadow: 0 0 0 .30rem rgba(0, 160, 154,.25);
             }
             .form-submit{
-                background-color: transparent;
+                background-color: transparent !important;
                 border: none;
                 position: relative;
                 z-index: 1;
