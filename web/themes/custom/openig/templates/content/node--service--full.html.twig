@@ -114,6 +114,15 @@
             <div{{ content_attributes.addClass('node__content col-lg-7 col-12 no_sidebar') }}>
                 {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
             </div>
+            <div class="col-12">
+                <div class="btnShareUtiliser">
+                    {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                    <div class="btnUtiliser">
+                        <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
+                    </div>
+                </div>
+            </div>
         {% endif %}
+        
     </article>
 </div>
