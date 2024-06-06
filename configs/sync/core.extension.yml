@@ -7,6 +7,7 @@ module:
   admin_toolbar_tools: 0
   announcements_feed: 0
   automated_cron: 0
+  back_to_top: 0
   better_exposed_filters: 0
   big_pipe: 0
   blazy: 0
@@ -22,13 +23,13 @@ module:
   config_translation: 0
   contact: 0
   contextual: 0
+  custom_breadcrumbs: 0
   custom_view_filters: 0
   daterange_compact: 0
   datetime: 0
   datetime_range: 0
   dblog: 0
   dynamic_page_cache: 0
-  easy_breadcrumb: 0
   editor: 0
   editor_advanced_link: 0
   entity_reference_revisions: 0

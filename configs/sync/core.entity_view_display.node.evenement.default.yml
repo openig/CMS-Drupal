@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
     - field.field.node.evenement.field_image
-    - field.field.node.evenement.field_private_registration
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
     - image.style.wide
@@ -88,7 +87,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_access_restricted: true
-  field_private_registration: true
   langcode: true
   search_api_excerpt: true

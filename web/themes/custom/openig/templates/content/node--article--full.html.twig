@@ -88,8 +88,12 @@
         </h2>
     {% endif %}
     {{ title_suffix }}
-    <div class="col-lg-1"></div>
-    <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
+    {% if content.field_contenu_sidebar[0] %}
+        <div class="col-lg-1"></div>
+        <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
+    {% else %}
+        <div{{ content_attributes.addClass('node__content col-lg-7 col-12 no_sidebar') }}>
+    {% endif %}
         {{ content|without('field_tag', 'field_contenu_sidebar') }}
         {% if ressources %}
             {% if not logged_in %}
@@ -119,10 +123,10 @@
             {% endif %}
         {% endif %}
     </div>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-3">
-        {% if logged_in %}
+    {% if content.field_contenu_sidebar[0] %}
+        <div class="col-lg-1"></div>
+        <div class="col-lg-3">
             {{content.field_contenu_sidebar}}
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
 </article>

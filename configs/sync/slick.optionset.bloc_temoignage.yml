@@ -1,11 +1,11 @@
-uuid: ceb15b9a-a28c-4069-9824-37239726ea9d
+uuid: 86afbac6-4f82-457d-a5bd-63c41cc4bf7d
 langcode: fr
 status: true
 dependencies: {  }
-id: agenda
-name: agenda
+id: bloc_temoignage
+name: bloc_temoignage
 weight: 0
-label: Agenda
+label: 'Bloc témoignage'
 group: ''
 skin: default
 breakpoints: 0
@@ -28,31 +28,31 @@ options:
     downArrow: false
     downArrowTarget: ''
     downArrowOffset: 0
-    centerMode: true
+    centerMode: false
     centerPadding: 50px
-    dots: false
+    dots: true
     dotsClass: slick-dots
     appendDots: $(element)
-    draggable: true
+    draggable: false
     fade: false
-    focusOnSelect: true
-    infinite: false
+    focusOnSelect: false
+    infinite: true
     initialSlide: 0
-    lazyLoad: ondemand
+    lazyLoad: progressive
     mouseWheel: false
     randomize: false
     respondTo: window
     rtl: false
     rows: 1
-    slidesPerRow: 5
+    slidesPerRow: 1
     slide: ''
-    slidesToShow: 3
+    slidesToShow: 1
     slidesToScroll: 1
     speed: 500
-    swipe: true
-    swipeToSlide: true
+    swipe: false
+    swipeToSlide: false
     edgeFriction: 0.35
-    touchMove: true
+    touchMove: false
     touchThreshold: 5
     useCSS: true
     cssEase: ease

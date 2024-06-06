@@ -1,22 +1,22 @@
-uuid: c403a690-5a52-4b7d-b3dd-ca8097831335
+uuid: 332c0e3a-f6d1-4dfb-9897-ba58d4a0e89d
 langcode: fr
 status: true
 dependencies:
   config:
-    - views.view.l_agenda
+    - views.view.bloc_temoignage
   module:
     - system
     - views
   theme:
     - openig
-id: openig_views_block__l_agenda_agenda_accueil
+id: openig_views_block__bloc_temoignage_block_temoignage
 theme: openig
-region: troisieme_section_accueil
-weight: -22
+region: septieme_section_accueil
+weight: -21
 provider: null
-plugin: 'views_block:l_agenda-agenda_accueil'
+plugin: 'views_block:bloc_temoignage-block_temoignage'
 settings:
-  id: 'views_block:l_agenda-agenda_accueil'
+  id: 'views_block:bloc_temoignage-block_temoignage'
   label: ''
   label_display: '0'
   provider: views

@@ -38,22 +38,24 @@
         .btnShareRejoindre{
             display: flex;
             justify-content: space-around;
-            align-items: center;
+            align-items: baseline;
             margin: auto;
             margin-top: 50px;
             border-top: 1px solid $OPenIG-color_gray;
-            padding-top: 20px;
+            padding-top: 35px;
             min-width: 400px;
             width: fit-content;
         }
         .field--name-field-working-group-objective{
             margin-bottom: 4rem;
+            background-color: rgb(255, 255, 255, 0.6);
             h2{
                 margin-bottom: 30px;
             }
         }
         .field--name-field-theme-overview{
             margin-bottom: 4rem;
+            background-color: rgb(255, 255, 255, 0.6);
             h2{
                 margin-bottom: 30px;
             }
@@ -82,6 +84,19 @@
                         color: $OPenIG-color_black;
                         text-decoration: none;
                         border-bottom: 1px solid $OPenIG-color_black;
+                    }
+                    .profile{
+                        display: flex;
+                        .field--name-field-firstname{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .content_ressources{
+                    .node--type-ressource{
+                        .node__content{
+                            margin-top: 0;
+                        }
                     }
                 }
                 .field__item{
@@ -153,6 +168,7 @@
         }
         #block-openig-views-block-contacts-gt-contacts-gt, #block-openig-views-block-agenda-gt-agenda-gt{
             margin-bottom: 5rem;
+            background-color: rgb(255, 255, 255, 0.6);
             h2{
                 border-bottom: 1px solid $OPenIG-color_yellow;
                 font-family: 'Exo_semiBold';
@@ -176,6 +192,12 @@
             }
             .views-row:not(:first-of-type){
                 margin-top: 30px;
+            }
+            .nom-prenom{
+                display: flex;
+                .views-field-field-firstname{
+                    margin-right: 5px;
+                }
             }
         }
 
