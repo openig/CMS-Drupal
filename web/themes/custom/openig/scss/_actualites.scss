@@ -1,5 +1,8 @@
 .node--type-article{
     margin-top: 7rem;
+    .no_sidebar{
+        margin: auto;
+    }
     .field--name-field-news-overview{
         background-color: rgb(255, 255, 255, 0.6);
         z-index: -1;

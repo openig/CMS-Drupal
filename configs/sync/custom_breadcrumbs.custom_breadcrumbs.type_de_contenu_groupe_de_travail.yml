@@ -1,0 +1,15 @@
+uuid: 5cbab379-2f57-4d3f-82f7-c18d68b8c357
+langcode: fr
+status: true
+dependencies: {  }
+id: type_de_contenu_groupe_de_travail
+label: 'Type de contenu Groupe de travail'
+description: ''
+entityType: node
+entityBundle: groupe_de_travail
+language: und
+breadcrumbPaths: /les-groupes-de-travail
+breadcrumbTitles: 'Les groupes de travail'
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''

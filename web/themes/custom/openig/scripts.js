@@ -93,8 +93,6 @@
     
             $(".slick--view--l-agenda .slick-slide").each(function(){
                 var nid = $(this).find('.views-field-nid .field-content');
-                console.log(id);
-                console.log($.trim(nid.text()));
                 if(id == $.trim(nid.text())){
                     var index = $(this).attr('data-slick-index');               
                     $('.slick__slider').slick('slickGoTo',index, true);
@@ -124,7 +122,7 @@
         })
 
         // Utilisation de la fonction change_evenement au glissement du carousel
-        $('.slick-list').mouseup(function() {
+        $('.slick--view--l-agenda .slick-list').mouseup(function() {
             change_evenement();
         })
 

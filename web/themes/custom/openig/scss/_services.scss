@@ -4,6 +4,9 @@
     margin-top: 5rem;
 }
 .node--type-service{
+    .no_sidebar{
+        margin: auto;
+    }
     .field--name-field-body{
         .paragraph{
             margin-bottom: 4rem;
@@ -44,6 +47,12 @@
         .views-row:not(:first-of-type){
             margin-top: 20px;
         }
+        .nom-prenom{
+            display: flex;
+            .views-field-field-firstname{
+                margin-right: 5px;
+            }
+        }
     }
     
     .field--name-field-requirement{
@@ -57,17 +66,35 @@
     .btnShareUtiliser{
         display: flex;
         justify-content: space-around;
-        align-items: center;
+        align-items: baseline;
         margin: auto;
         margin-top: 50px;
         border-top: 1px solid $OPenIG-color_gray;
-        padding-top: 20px;
+        padding-top: 35px;
         min-width: 400px;
         width: fit-content;
         .btnUtiliser{
             margin-bottom: 0;
         }
     }
+}
+
+.buttonUse{
+    float: right;
+    height: 30px;
+    background-color: $OPenIG-color_blue;
+    border: none;
+    border-radius: 6px;
+    color: $OPenIG-color_white;
+    font-family: 'Exo_semiBold', sans-serif;
+    font-weight: 600;
+    font-size: $OPenIG-font-size-sm;
+    padding: 5px 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    i{
+        margin-right: 10px;
+        font-size: 16px;
+    }  
 }
 
 .btnUtiliser{
