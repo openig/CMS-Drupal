@@ -1,25 +1,36 @@
 blocks:
   -
-    info: 'Vue service'
+    info: 'La newsletter'
     langcode: fr
-    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
-    bundle: picto_et_texte
+    uuid: 71468847-678d-426c-83da-d1243eb1a749
+    bundle: bloc_newsletter
     revision_id: null
     rev_id_current: null
     fields:
-      field_picto_et_texte:
+      body:
         -
-          target_id: '190'
-          target_revision_id: '419'
+          value: '<p>eu. quis ante nisi Nullam ipsum Lorem vitae vestibulum sollicitudin vestibulum ut vel vestibulum dignissim laoreet scelerisque. non elit. eu. tortor vel at bibendum nisi nisi tortor a tristique. ut vel Donec adipiscing mauris fringilla. nisi sit tristique. Morbi eu. fermentum non at lacinia Maecenas ligula Sed consectetur fringilla.</p>'
+          summary: ''
+          format: basic_html
+      field_image:
         -
-          target_id: '191'
-          target_revision_id: '420'
+          target_id: '104'
+          alt: 'Groupe de personnes'
+          title: ''
+          width: '2034'
+          height: '1016'
+      field_lien:
         -
-          target_id: '192'
-          target_revision_id: '421'
+          uri: 'internal:/'
+          title: 'Voir la dernière newsletter'
+          options: {  }
+      field_picto:
         -
-          target_id: '193'
-          target_revision_id: '422'
+          target_id: '103'
+          alt: Journal
+          title: ''
+          width: '115'
+          height: '103'
 menus:
   -
     menu_name: footer
