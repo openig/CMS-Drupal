@@ -1,0 +1,29 @@
+uuid: 0e8836c9-a1bb-4e0f-a838-fb9e7f50a059
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.annuaire
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__annuaire_block_nos_adherents
+theme: openig
+region: sixieme_section_accueil
+weight: 0
+provider: null
+plugin: 'views_block:annuaire-block_nos_adherents'
+settings:
+  id: 'views_block:annuaire-block_nos_adherents'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

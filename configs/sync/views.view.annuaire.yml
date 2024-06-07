@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_email
+    - field.storage.node.field_image
     - field.storage.node.field_website
     - node.type.structure
   module:
     - link
     - node
+    - svg_image
     - user
 id: annuaire
 label: Annuaire
@@ -302,6 +304,169 @@ display:
       tags:
         - 'config:field.storage.node.field_email'
         - 'config:field.storage.node.field_website'
+  block_nos_adherents:
+    id: block_nos_adherents
+    display_title: 'Nos adhérents'
+    display_plugin: block
+    position: 2
+    display_options:
+      title: 'Nos adhérents'
+      fields:
+        field_image:
+          id: field_image
+          table: node__field_image
+          field: field_image
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: image
+          settings:
+            image_link: ''
+            image_style: ''
+            image_loading:
+              attribute: lazy
+            svg_attributes:
+              width: null
+              height: null
+            svg_render_as_image: true
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+      pager:
+        type: some
+        options:
+          offset: 0
+          items_per_page: 4
+      cache:
+        type: none
+        options: {  }
+      sorts:
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: random
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+      style:
+        type: grid
+        options:
+          grouping: {  }
+          columns: 2
+          automatic_width: false
+          alignment: horizontal
+          row_class_custom: ''
+          row_class_default: false
+          col_class_custom: ''
+          col_class_default: false
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        cache: false
+        title: false
+        pager: false
+        use_more: false
+        use_more_always: false
+        use_more_text: false
+        link_display: false
+        link_url: false
+        style: false
+        row: false
+        fields: false
+        sorts: false
+        header: false
+      display_description: ''
+      use_more: true
+      use_more_always: true
+      use_more_text: "En savoir plus sur l'adhésion"
+      link_display: custom_url
+      link_url: /
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n         <img src=\"/themes/custom/openig/pictos/accueil-titre/boussole-titre.png\" alt=\"Boussole\" />\r\n\r\n         <h2>[view:title]</h2> \r\n     </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">200</span> \r\n    <span class=\"type_contenu\">Adhérents</span>\r\n</div>"
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      block_hide_empty: true
+    cache_metadata:
+      max-age: 0
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_image'
   page_1:
     id: page_1
     display_title: Page
