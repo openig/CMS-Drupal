@@ -232,6 +232,8 @@
     }
     .more-link{
         text-align: center;
+        position: relative;
+        z-index: 1;
         a{
             font-family: 'Russo One';
             font-size: $OPenIG-font-size-lg;
@@ -262,10 +264,12 @@
     .picto_titre h2{
         //margin-right: 100px;
         margin-top: -20px;
+        margin-right: 90px;
     } 
 
     .picto_titre img{
-        left: 115px;
+        right: 0;
+        //left: 115px;
         height: fit-content;
     }
 

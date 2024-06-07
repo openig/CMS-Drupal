@@ -324,6 +324,8 @@
         }
     }
     .more-link{
+        position: relative;
+        z-index: 1;
         text-align: center;
         a{
             font-family: 'Russo One';
@@ -373,12 +375,13 @@
 #block-openig-views-block-groupes-travail-accueil{
     .picto_titre img{
         //top: 60px;
-        //left: 0;
-        right: 175px;
+        left: 0;
+        //right: 175px;
         height: fit-content;
     }
     .picto_titre h2{
         margin-top: -50px;
+        margin-left: 90px;
     } 
     .view-content{
         margin-top: 0rem;
