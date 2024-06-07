@@ -1105,13 +1105,16 @@ h3{
     position: relative;
     padding-top: 50px;
     margin-top: 7rem;
+    height: fit-content;
+    padding-bottom: 2rem;
     .region_quatre{
         background-color: #f2f6e7;
         width: 90%;
-        height: 500px;
+        max-height: 500px;
         position: absolute;
         top: 0;
         left: 0;
+        height: 100%;
     }
     .view-header{
         .header_block{
@@ -1175,7 +1178,8 @@ h3{
 .region-cinquieme-section-accueil{
     position: relative;
     margin-top: 10rem;
-    min-height: 650px;
+    height: fit-content;
+    padding-bottom: 2rem;
     .view{
         display: flex;
         flex-direction: column-reverse;
@@ -1183,7 +1187,8 @@ h3{
     .region_cinq{
         background-color: $OPenIG-color_deep-white;
         width: 90%;
-        height: 650px;
+        height: 100%;
+        max-height: 650px;
         position: absolute;
         bottom: 0;
         right: 0;

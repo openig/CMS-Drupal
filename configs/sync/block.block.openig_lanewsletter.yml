@@ -3,7 +3,7 @@ langcode: fr
 status: true
 dependencies:
   content:
-    - 'block_content:bloc_newsletter:6071caf9-8af6-4f11-8024-ad894ed692bf'
+    - 'block_content:bloc_newsletter:71468847-678d-426c-83da-d1243eb1a749'
   module:
     - block_content
     - system
@@ -14,9 +14,9 @@ theme: openig
 region: huitieme_section_accueil
 weight: 0
 provider: null
-plugin: 'block_content:6071caf9-8af6-4f11-8024-ad894ed692bf'
+plugin: 'block_content:71468847-678d-426c-83da-d1243eb1a749'
 settings:
-  id: 'block_content:6071caf9-8af6-4f11-8024-ad894ed692bf'
+  id: 'block_content:71468847-678d-426c-83da-d1243eb1a749'
   label: 'La newsletter'
   label_display: visible
   provider: block_content
