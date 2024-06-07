@@ -282,10 +282,12 @@
     .picto_titre img{
         top: 0;
         height: fit-content;
-        left: 75px;
+        //left: 75px;
+        right: 0;
     }
     .picto_titre h2{
         margin-top: -65px;
+        margin-right: 90px;
     } 
     .card_agenda a{
         color: $OPenIG-color_black;

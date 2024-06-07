@@ -1429,15 +1429,17 @@ h3{
     position: relative;
     z-index: 1;
     .contenuFlex{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        //display: flex;
+        //align-items: center;
+        //justify-content: space-between;
         .field--name-field-image{
             min-width: 50%;
             width: 50%;
+            float: left; // 
         }
         .contenuTexte{
-            width: 45%;
+            //width: 45%;
+            width: 100%; //
         }
         h2{
             width: fit-content;
@@ -1452,19 +1454,28 @@ h3{
             img{
                 top: 0;
                 height: fit-content;
-                right: 10px;
+                right: 0;
             }
         }
     }
     .field--name-body{
         padding: 0 2rem;
+        width: 50%; //
+        float: right; //
     }
     #block-openig-simplenewssubscription{
         padding: 0 2rem;
+        margin-top: 2rem;
+        width: 50%; //
+        float: right; //
     }
     .field--name-field-lien{
         text-align: center;
         margin-top: 2rem;
+        padding-top: 2rem; //
+        display: flex; //
+        justify-content: center; //
+        width: 100%; //
         a{
             font-family: 'Russo One';
             font-size: $OPenIG-font-size-lg;

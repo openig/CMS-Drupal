@@ -452,10 +452,12 @@
     }
     .picto_titre h2{
         margin-top: -30px;
+        margin-left: 90px;
     } 
     .picto_titre img{
         height: fit-content;
-        right: 100px;
+        //right: 100px;
+        left: 0;
     }
 }
 
