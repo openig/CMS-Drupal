@@ -1261,8 +1261,94 @@ h3{
     }
 }
 
+
+.region-sixieme-section-accueil{
+    position: relative;
+    padding-top: 50px;
+    margin-top: 10rem;
+    height: fit-content;
+    padding-bottom: 2rem;
+    .region_six{
+        background-color: #f2f6e7;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    .region_six_white{
+        background-color: $OPenIG-color_white;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+    }
+    .view-header{
+        width: 50%;
+        position: relative;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                height: 140px;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            //margin-left: 150px;
+            width: 90%;
+            padding-bottom: 3rem;
+            margin-top: 1rem;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 0;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: fit-content;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    #block-openig-lanewsletter .contenuFlex{
+        flex-direction: row-reverse;
+    }
+}
+
+
 .region-septieme-section-accueil{
-    margin-top: 7rem;
+    margin-top: 12rem;
     background-color: $OPenIG-color_deep-white;
     padding: 3rem 0;
     position: relative;

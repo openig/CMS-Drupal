@@ -1,0 +1,46 @@
+#block-openig-views-block-annuaire-block-nos-adherents{
+    .picto_titre img{
+        left: 0;
+        height: fit-content;
+    }
+    .picto_titre h2{
+        margin-top: -40px;
+        margin-left: 90px;
+    } 
+    .view-annuaire{
+        display: flex;
+        align-items: center;
+        .view-header{
+            width: 50%;
+        }
+        .view-content{
+            width: 50%;
+            background-color: $OPenIG-color_white;
+            height: 100%;
+            .views-field-field-image{
+                margin-bottom: 2.5rem;
+                margin-top: 2.5rem;
+                .field-content{
+                    text-align: center;
+                    img{
+                        width: 174px;
+                    }
+                }
+            }
+        }
+    }
+    .more-link{
+        position: absolute;
+        bottom: -7rem;
+        left: 50%;
+        transform: translateX(-50%);
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
+}
