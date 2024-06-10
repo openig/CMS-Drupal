@@ -1,0 +1,5 @@
+name: OPenIG Webform handler
+type: module
+description: Custom webform handlers.
+package: Custom
+core_version_requirement: ^10

@@ -84,7 +84,21 @@
         {% if membre is not defined %}
             <div class="row">
                 <div class="btngroupe col-8">
-                    <button id="btnRejoindre"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+                    <button id="btnRejoindre" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="rejoindreGroupe" tabindex="-1" aria-labelledby="rejoindreGroupeLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="rejoindreGroupeLabel">Rejoindre le groupe</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    {{ content.field_webform }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         {% endif %}
@@ -100,7 +114,7 @@
         {{ title_suffix }}
         <div class="col-lg-1"></div>
         <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
-            {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar') }}
+            {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar', 'field_webform') }}
             {% if not logged_in %}
                 <div class="liste_accordeon">
                     <div class="item_accordeon">

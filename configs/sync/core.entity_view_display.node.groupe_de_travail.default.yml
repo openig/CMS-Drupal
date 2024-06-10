@@ -88,7 +88,7 @@ content:
     region: content
   field_webform:
     type: webform_entity_reference_entity_view
-    label: above
+    label: hidden
     settings:
       source_entity: true
       lazy: false
@@ -109,6 +109,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_access_restricted: true
   field_archive: true
   field_image: true
