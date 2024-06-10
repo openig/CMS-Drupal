@@ -110,7 +110,11 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-3 sidebar">
                 {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
-                {{content.field_requirement}}
+                    {% if elements['#node'].field_access_restricted.value == 1 %}
+                        {% if 'adherent' not in user.getRoles() %}
+                            {{content.field_requirement}}
+                        {% endif %}
+                    {% endif %}
                 {{content.field_image}}
             </div>
             <div class="btnShareUtiliser">
