@@ -24,7 +24,7 @@ blocks:
     fields:
       body:
         -
-          value: '<p>Vous devez être adhérent pour accéder à cet outil</p>'
+          value: '<p>Vous devez être adhérent pour accéder à ce service</p>'
           summary: ''
           format: basic_html
   -
