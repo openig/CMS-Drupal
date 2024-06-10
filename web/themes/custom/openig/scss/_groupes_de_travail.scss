@@ -75,7 +75,7 @@
                 border: 1px solid $OPenIG-color_deep-white;
                 font-size: $OPenIG-font-size-sm;
                 .field--name-field-animators, .field--name-field-members, .content_ressources{
-                    column-count: 3;
+                    //column-count: 3;
                     .file{
                         background-image: none;
                         padding-left: 0;
@@ -93,6 +93,14 @@
                     }
                 }
                 .content_ressources{
+                    .locked{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        i{
+                            margin-left: 1rem;
+                        }
+                    }
                     .node--type-ressource{
                         .node__content{
                             margin-top: 0;

@@ -115,6 +115,7 @@
         <div class="col-lg-1"></div>
         <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
             {{ content|without('field_tag','field_animators','field_members','field_contact','field_contenu_sidebar', 'field_webform') }}
+            {#
             {% if not logged_in %}
                 <div class="liste_accordeon">
                     <div class="item_accordeon">
@@ -133,36 +134,59 @@
                     {% endfor %}
                 </div>
             {% else %}
+            #}
                 <div class="accordion" id="accordionGroupeTravail">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Animateurs
-                                <span class="numberTitle">
-                                    {{ content.field_animators['#items']|length }}
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGroupeTravail">
-                            <div class="accordion-body">
-                                {{content.field_animators}}
+                        {% if 'adherent' in user.getRoles() %}
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Animateurs
+                                    <span class="numberTitle">
+                                        {{ content.field_animators['#items']|length }}
+                                    </span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionGroupeTravail">
+                                <div class="accordion-body">
+                                    {{content.field_animators}}
+                                </div>
                             </div>
-                        </div>
+                        {% else %}
+                            <h2 class="accordion-header" id="headingOne">
+                                <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Animateurs
+                                    <span class="numberTitle">
+                                        {{ content.field_animators['#items']|length }}
+                                    </span>
+                                </button>
+                            </h2>
+                        {% endif %}
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Membres du groupe de travail
-                                <span class="numberTitle">
-                                    {{ content.field_members['#items']|length }}
-                                </span>
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionGroupeTravail">
-                            <div class="accordion-body">
-                                {{content.field_members}}
+                        {% if 'adherent' in user.getRoles() %}
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Membres du groupe de travail
+                                    <span class="numberTitle">
+                                        {{ content.field_members['#items']|length }}
+                                    </span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionGroupeTravail">
+                                <div class="accordion-body">
+                                    {{content.field_members}}
+                                </div>
                             </div>
-                        </div>
+                        {% else %}
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Membres du groupe de travail
+                                    <span class="numberTitle">
+                                        {{ content.field_members['#items']|length }}
+                                    </span>
+                                </button>
+                            </h2>
+                        {% endif %}
                     </div>
                     {% for key,type in ressources %}
                         <div class="accordion-item">
@@ -177,14 +201,24 @@
                             <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
                                 <div class="accordion-body content_ressources">
                                 {% for ressource in type %}
-                                    {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}
+                                    {% if ressource['check'] == 'true' %}
+                                        {{ drupal_entity('node', ressource[0].nid.value, 'ressource_dans_groupe_de_travail') }}
+                                    {% else %}
+                                        <div class="locked">
+                                            <p>{{ressource[0].title.value}}</p>
+                                            <p>Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+                                        </div>
+                                    {% endif %}
+
+                                   {# {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}#}
                                 {% endfor %}
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
-            {% endif %}
+                {#
+            {% endif %}#}
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-3">
