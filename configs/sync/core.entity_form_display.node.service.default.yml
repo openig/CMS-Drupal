@@ -27,6 +27,7 @@ third_party_settings:
       children:
         - promote
         - sticky
+        - field_access_restricted
         - field_weight
       label: 'Options de publication'
       region: content
@@ -51,6 +52,13 @@ content:
     weight: 9
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_access_restricted:
+    type: boolean_checkbox
+    weight: 12
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_body:
     type: paragraphs
@@ -118,7 +126,7 @@ content:
     third_party_settings: {  }
   field_weight:
     type: weight_selector
-    weight: 12
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -179,5 +187,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_access_restricted: true
+hidden: {  }

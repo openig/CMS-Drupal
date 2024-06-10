@@ -1,0 +1,33 @@
+uuid: 0d3e1542-be71-4b33-814d-d63b4f1eb5b2
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:80673789-61a5-4014-a53e-6a10209477d9'
+  module:
+    - block_content
+    - node
+  theme:
+    - openig
+id: openig_messageblocutiliserinaccessible
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:80673789-61a5-4014-a53e-6a10209477d9'
+settings:
+  id: 'block_content:80673789-61a5-4014-a53e-6a10209477d9'
+  label: 'Message bloc Utiliser inaccessible'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      service: service

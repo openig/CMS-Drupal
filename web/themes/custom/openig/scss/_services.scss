@@ -97,6 +97,8 @@
 .btnUtiliser{
     height: 30px;
     margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-end;
     button{
         float: right;
         height: 30px;
@@ -113,6 +115,9 @@
             margin-right: 10px;
             font-size: 16px;
         }  
+    }
+    #block-openig-messageblocutiliserinaccessible{
+        margin-right: 10px;
     }
 }
 
