@@ -3,8 +3,8 @@ _core:
 langcode: fr
 allowed_grant_operations:
   grant_view: true
-  grant_update: true
-  grant_delete: true
+  grant_update: false
+  grant_delete: false
 bundles_roles_grants:
   article:
     anonymous:
@@ -19,16 +19,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   evenement:
@@ -44,16 +44,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   groupe_de_travail:
@@ -69,16 +69,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   page:
@@ -94,16 +94,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   ressource:
@@ -119,16 +119,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   service:
@@ -144,16 +144,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   simplenews_issue:
@@ -169,16 +169,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   structure:
@@ -194,16 +194,16 @@ bundles_roles_grants:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
+    administrator:
+      grant_view: 1
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
       grant_delete: 0
     author:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
-    administrator:
-      grant_view: 0
       grant_update: 0
       grant_delete: 0
   temoignage:
@@ -232,14 +232,14 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
 grants_tab_availability:
-  article: true
-  evenement: true
-  groupe_de_travail: true
-  page: true
+  article: false
+  evenement: false
+  groupe_de_travail: false
+  page: false
   ressource: true
-  service: true
-  simplenews_issue: true
-  structure: true
+  service: false
+  simplenews_issue: false
+  structure: false
   temoignage: false
 map_rid_gid:
   anonymous: 0
