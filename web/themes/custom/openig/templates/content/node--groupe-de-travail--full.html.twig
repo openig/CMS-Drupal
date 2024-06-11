@@ -211,7 +211,8 @@
                                             </div>
                                         {% else %}
                                             <div class="locked">
-                                                <p>{{ressource[0].title.value}}</p>
+                                                <p>{{ressource[0].field_file[0].description}}</p>
+                                                <p>{{ressource[0].field_link[0].title}}</p>
                                                 <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                                             </div>
                                         {% endif %}
