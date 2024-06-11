@@ -5,7 +5,6 @@ dependencies:
   config:
     - field.storage.node.field_linked_content
     - node.type.article
-    - node.type.evenement
     - node.type.groupe_de_travail
     - node.type.page
     - node.type.ressource
@@ -24,7 +23,6 @@ settings:
   handler_settings:
     target_bundles:
       article: article
-      evenement: evenement
       groupe_de_travail: groupe_de_travail
       page: page
     sort:
