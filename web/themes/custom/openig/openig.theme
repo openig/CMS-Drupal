@@ -66,10 +66,7 @@ function openig_preprocess_node(&$variables, $hook){
         $variables['ressources'][$name] = [];
         ksort($variables['ressources']);
       }
-
       foreach ($result as $ressource) {
-        // Début compteur des ressources inaccessibles
-        $countCheckFalse = 0;
         $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
         $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
         // Check si la ressource est insaccessible
@@ -94,13 +91,18 @@ function openig_preprocess_node(&$variables, $hook){
             $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value][] = $referencedEntity;
             if ($check == false) {  
               $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'false';
-              // Incrémentation du compteur de ressources inaccessibles pour le type
-              $countCheckFalse++ ;
-              $variables['ressources'][$referencedEntityType]['count'] = $countCheckFalse;
             }
             else{
               $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'true';
             }
+          }
+        }
+      }
+      // Vérification si toutes les ressources ne sont pas inaccessibles
+      foreach ($variables['ressources'] as $key => $value) {
+        foreach ($value['Entity'] as $entity) {
+          if ($entity['check'] == 'true') {
+            $variables['ressources'][$key]['allCheckFalse'] = 'false';
           }
         }
       }

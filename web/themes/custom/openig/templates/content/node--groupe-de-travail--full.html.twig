@@ -186,7 +186,7 @@
                     </div>
                     {% for key,type in ressources %}
                         <div class="accordion-item">
-                            {% if (type['Entity']|length == type['count']) and (type['Entity']|length != 0) %}
+                            {% if (type['allCheckFalse'] != 'false') and (type['Entity']|length != 0) %}
                                 <h2 class="accordion-header accordion-disabled" id="heading{{key}}">
                                     <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
                                         {{key}}
