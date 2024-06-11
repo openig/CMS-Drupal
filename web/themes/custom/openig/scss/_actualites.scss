@@ -17,7 +17,7 @@
         }
     }
 
-    .accordion{
+    #accordionActualite{
         margin-top: 4rem;
         .accordion-item{
             border: none;
@@ -26,7 +26,29 @@
             border: 1px solid $OPenIG-color_deep-white;
             font-size: $OPenIG-font-size-sm;
             .content_ressources{
-                column-count: 3;
+                //column-count: 3;
+                .locked{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    p.itemPrivate{
+                        display: flex;
+                        align-items: center;
+                        font-size: $OPenIG-font-size-xs;
+                    }
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 16px;
+                    }
+                }
+                > div:not(:last-of-type){
+                    margin-bottom: 1.5rem;
+                }
                 .file{
                     background-image: none;
                     padding-left: 0;
@@ -35,6 +57,27 @@
                     color: $OPenIG-color_black;
                     text-decoration: none;
                     border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+            .accordion-disabled{
+                .itemPrivate{
+                    position: absolute;
+                    right: 2rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: $OPenIG-font-size-sm;
+                    font-family: 'OpenSans_Regular';
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 18px;
+                    }
+                }
+                button::after{
+                    background-image: none;
                 }
             }
             .field__item{
