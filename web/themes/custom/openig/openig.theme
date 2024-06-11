@@ -148,8 +148,39 @@ function openig_preprocess_node(&$variables, $hook){
           }
 
         }
-        //$ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);        
-        //$variables['ressources'] = $ressources;
+        break;
+
+      case "page":
+        $variables['ressources'] = array();
+        $nid = $variables['node']->nid->value;
+        // Récupération des ressources d'une actualité
+        $database = \Drupal::database();
+        $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
+        $result = $query->fetchAll();
+        $ressourcesCheck = [];
+        
+        // Début compteur des ressources inaccessibles
+        $countCheckFalse = 0;
+        foreach ($result as $ressource) {
+          $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
+          $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+          // Check si la ressource est insaccessible
+          $check = $node_check->access('view', $user);
+
+          $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
+
+          if ($check == false) {  
+            $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
+            // Incrémentation du compteur de ressources inaccessibles
+            $countCheckFalse++ ;
+            $variables['ressources']['count'] = $countCheckFalse;
+          }
+          else{
+            $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'true';
+          }
+
+        }
         break;
     default:
       break;
