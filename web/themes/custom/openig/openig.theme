@@ -59,17 +59,20 @@ function openig_preprocess_node(&$variables, $hook){
       $ressourcesCheck = [];
       // Récupération des types de ressources
       $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
-      // Tri des ressources par type de ressources
-
+     
+      // Création d'un tableau avec les types de ressources
       foreach ($types as $type) {
         $name = $type->name[0]->value;
         $variables['ressources'][$name] = [];
         ksort($variables['ressources']);
       }
+
       foreach ($result as $ressource) {
+        // Début compteur des ressources inaccessibles
         $countCheckFalse = 0;
         $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
         $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        // Check si la ressource est insaccessible
         $check = $node_check->access('view', $user);
 
         /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
@@ -87,10 +90,11 @@ function openig_preprocess_node(&$variables, $hook){
           if(!empty($name)){
             $referencedEntity = $node_check;
             $referencedEntityType = $name[0]['value'];
-            // Vérification si l'utilisateur a accès à la ressource
+            // Ajout de la ressource dans le tableau de son type
             $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value][] = $referencedEntity;
             if ($check == false) {  
               $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'false';
+              // Incrémentation du compteur de ressources inaccessibles pour le type
               $countCheckFalse++ ;
               $variables['ressources'][$referencedEntityType]['count'] = $countCheckFalse;
             }
@@ -115,8 +119,35 @@ function openig_preprocess_node(&$variables, $hook){
         $variables['ressources'] = array();
         $nid = $variables['node']->nid->value;
         // Récupération des ressources d'une actualité
-        $ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);        
-        $variables['ressources'] = $ressources;
+        $database = \Drupal::database();
+        $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
+        $result = $query->fetchAll();
+        $ressourcesCheck = [];
+        
+        // Début compteur des ressources inaccessibles
+        $countCheckFalse = 0;
+        foreach ($result as $ressource) {
+          $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
+          $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+
+          // Check si la ressource est insaccessible
+          $check = $node_check->access('view', $user);
+
+          $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
+
+          if ($check == false) {  
+            $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
+            // Incrémentation du compteur de ressources inaccessibles
+            $countCheckFalse++ ;
+            $variables['ressources']['count'] = $countCheckFalse;
+          }
+          else{
+            $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'true';
+          }
+
+        }
+        //$ressources = \Drupal::entityTypeManager()->getStorage('node')->loadByProperties(['type' => 'ressource', 'field_linked_content' => $nid]);        
+        //$variables['ressources'] = $ressources;
         break;
     default:
       break;
