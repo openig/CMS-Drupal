@@ -152,12 +152,10 @@
                                 </div>
                             </div>
                         {% else %}
-                            <h2 class="accordion-header" id="headingOne">
+                            <h2 class="accordion-header accordion-disabled" id="headingOne">
                                 <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     Animateurs
-                                    <span class="numberTitle">
-                                        {{ content.field_animators['#items']|length }}
-                                    </span>
+                                    <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                                 </button>
                             </h2>
                         {% endif %}
@@ -178,43 +176,52 @@
                                 </div>
                             </div>
                         {% else %}
-                            <h2 class="accordion-header" id="headingTwo">
+                            <h2 class="accordion-header accordion-disabled" id="headingTwo">
                                 <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     Membres du groupe de travail
-                                    <span class="numberTitle">
-                                        {{ content.field_members['#items']|length }}
-                                    </span>
+                                    <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                                 </button>
                             </h2>
                         {% endif %}
                     </div>
                     {% for key,type in ressources %}
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="heading{{key}}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
-                                    {{key}}
-                                    <span class="numberTitle">
-                                        {{ type|length }}
-                                    </span>
-                                </button>
-                            </h2>
-                            <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
-                                <div class="accordion-body content_ressources">
-                                {% for ressource in type %}
-                                    {% if ressource['check'] == 'true' %}
-                                        {{ drupal_entity('node', ressource[0].nid.value, 'ressource_dans_groupe_de_travail') }}
-                                    {% else %}
-                                        <div class="locked">
-                                            <p>{{ressource[0].title.value}}</p>
-                                            <p>Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
-                                        </div>
-                                    {% endif %}
+                            {% if (type['Entity']|length == type['count']) and (type['Entity']|length != 0) %}
+                                <h2 class="accordion-header accordion-disabled" id="heading{{key}}">
+                                    <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
+                                        {{key}}
+                                        <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+                                    </button>
+                                </h2>
+                            {% else %}
+                                <h2 class="accordion-header" id="heading{{key}}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
+                                        {{key}}
+                                        <span class="numberTitle">
+                                            {{ type['Entity']|length }}
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
+                                    <div class="accordion-body content_ressources">
+                                    {% for ressource in type['Entity'] %}
+                                        {% if ressource['check'] == 'true' %}
+                                            <div class="no_locked">
+                                                {{ drupal_entity('node', ressource[0].nid.value, 'ressource_dans_groupe_de_travail') }}
+                                            </div>
+                                        {% else %}
+                                            <div class="locked">
+                                                <p>{{ressource[0].title.value}}</p>
+                                                <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+                                            </div>
+                                        {% endif %}
 
-                                   {# {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}#}
-                                {% endfor %}
+                                    {# {{ drupal_entity('node', ressource.nid.value, 'ressource_dans_groupe_de_travail') }}#}
+                                    {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            {% endif %}         
+                        </div>                       
                     {% endfor %}
                 </div>
                 {#

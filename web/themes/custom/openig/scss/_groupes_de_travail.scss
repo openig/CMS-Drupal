@@ -74,6 +74,9 @@
                 border-radius: 5px;
                 border: 1px solid $OPenIG-color_deep-white;
                 font-size: $OPenIG-font-size-sm;
+                .field--name-field-animators, .field--name-field-members{
+                    column-count: 3;
+                }
                 .field--name-field-animators, .field--name-field-members, .content_ressources{
                     //column-count: 3;
                     .file{
@@ -97,8 +100,19 @@
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        position: relative;
+                        p{
+                            margin-bottom: 0;
+                        }
+                        p.itemPrivate{
+                            display: flex;
+                            align-items: center;
+                            font-size: $OPenIG-font-size-xs;
+                        }
                         i{
                             margin-left: 1rem;
+                            color: $OPenIG-color_blue;
+                            font-size: 16px;
                         }
                     }
                     .node--type-ressource{
@@ -106,9 +120,34 @@
                             margin-top: 0;
                         }
                     }
+                    > div:not(:last-of-type){
+                        margin-bottom: 1.5rem;
+                    }
                 }
                 .field__item{
                     margin-bottom: 5px;
+                }
+                
+                .accordion-disabled{
+                    .itemPrivate{
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: $OPenIG-font-size-sm;
+                        font-family: 'OpenSans_Regular';
+                        font-weight: 400;
+                        display: flex;
+                        align-items: center;
+                        i{
+                            margin-left: 1rem;
+                            color: $OPenIG-color_blue;
+                            font-size: 18px;
+                        }
+                    }
+                    button::after{
+                        background-image: none;
+                    }
                 }
             }
             .accordion-item.open{

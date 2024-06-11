@@ -57,7 +57,6 @@ function openig_preprocess_node(&$variables, $hook){
       $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
       $result = $query->fetchAll();
       $ressourcesCheck = [];
-      $countCheckFalse = 0;
       // Récupération des types de ressources
       $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
       // Tri des ressources par type de ressources
@@ -66,39 +65,41 @@ function openig_preprocess_node(&$variables, $hook){
         $name = $type->name[0]->value;
         $variables['ressources'][$name] = [];
         ksort($variables['ressources']);
-        foreach ($result as $ressource) {
-          $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
-          $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-          $check = $node_check->access('view', $user);
+      }
+      foreach ($result as $ressource) {
+        $countCheckFalse = 0;
+        $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
+        $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+        $check = $node_check->access('view', $user);
 
-          /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
-            $referenceItem = $node_check;
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
-          $entityReference = $referenceItem->get('field_type');
-          /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
-          $id = $entityReference[0]->target_id;
-          $term = \Drupal\taxonomy\Entity\Term::load($id);
-          if($term){
-            $name = $term->get('name')->getValue();
-            /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
-            if(!empty($name)){
-              $referencedEntity = $node_check;
-              $referencedEntityType = $name[0]['value'];
-              // Vérification si l'utilisateur a accès à la ressource
-                $variables['ressources'][$referencedEntityType][$referencedEntity->nid->value][] = $referencedEntity;
-                if ($check == false) {  
-                  $variables['ressources'][$referencedEntityType][$referencedEntity->nid->value]['check'] = 'false';
-                 // $countCheckFalse++ ;
-                 // $variables['ressources'][$referencedEntityType]['count'] = $countCheckFalse;
-                }
-                else{
-                  $variables['ressources'][$referencedEntityType][$referencedEntity->nid->value]['check'] = 'true';
-                }
+        /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
+        $referenceItem = $node_check;
+        /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
+        $entityReference = $referenceItem->get('field_type');
+        /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
+        $id = $entityReference[0]->target_id;
+
+        $term = \Drupal\taxonomy\Entity\Term::load($id);
+
+        if($term){
+          $name = $term->get('name')->getValue();
+          /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
+          if(!empty($name)){
+            $referencedEntity = $node_check;
+            $referencedEntityType = $name[0]['value'];
+            // Vérification si l'utilisateur a accès à la ressource
+            $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value][] = $referencedEntity;
+            if ($check == false) {  
+              $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'false';
+              $countCheckFalse++ ;
+              $variables['ressources'][$referencedEntityType]['count'] = $countCheckFalse;
+            }
+            else{
+              $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'true';
             }
           }
         }
       }
-     // dump($variables);
 
       // Vérification si l'utilisateur est membre
       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());    
