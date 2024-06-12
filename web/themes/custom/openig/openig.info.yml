@@ -35,5 +35,7 @@ regions:
   bas_footer_centre: Bas du footer centre
   bas_footer_droite: Bas du footer droite
   footer: Pied de page
+  mobile_premiere_section: Mobile première section
+  mobile_seconde_section: Mobile seconde section
 libraries-override:
   bootstrap5/global-styling: false

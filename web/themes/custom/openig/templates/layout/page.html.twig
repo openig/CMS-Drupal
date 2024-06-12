@@ -59,23 +59,34 @@ set footer_classes = ' ' ~
   <div class="navigation container">
       <div class="row">
           {% if logged_in %}
-              <div class="col-9 navigation_gauche">
+              <div class="col-xl-9 d-none d-xl-block navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-3 navigation_droite">
+              <div class="col-xl-3 d-none d-xl-block navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
           {% else %}
-              <div class="col-8 navigation_gauche">
+              <div class="col-xl-8 d-none d-xl-block navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-4 navigation_droite">
+              <div class="col-xl-4 d-none d-xl-block navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
           {% endif %}
       </div>
+  </div>
+
+  <div class="navigation_mobile d-xl-none d-block container">
+    <div class="row premiere_section">
+      {{page.mobile_premiere_section}}
+      <button type="button" class="btn btn_icon">
+        <i class="fa-regular fa-bars"></i>
+        <i class="fa-regular fa-xmark"></i>
+      </button>
+    </div>
+    {{page.mobile_seconde_section}}
   </div>
 
 {#
