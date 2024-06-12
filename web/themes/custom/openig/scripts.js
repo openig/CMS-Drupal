@@ -1,11 +1,19 @@
 (function($){
     $(document).ready(function(){
+
+        // Afficher/masquer le menu en mobile
+        $('.navigation_mobile .premiere_section i').click(function() {
+            $('.region-mobile-seconde-section').toggleClass('open');
+            $('.premiere_section').toggleClass('open');
+        });
+
         // Afficher/masquer barre de recherche
         $('#search_icon').click(function() {
             $('#search-block-form').toggleClass('open');
             $('#search_icon').toggleClass('open');
         });
         $('#block-openig-formulairederecherche .form-submit').val('');
+        $('#block-openig-formulairederecherche-mobile .form-submit').val('');
 
         // Garder le sous-menu affiché si l'un de ses liens est actifs
         if($('.dropdown-item').hasClass('is-active')){
@@ -16,6 +24,11 @@
             $(child).addClass('show');
         }
 
+        $('#block-openig-navigationprincipale .dropdown-toggle').click(function() {
+            var parent = $('#block-openig-navigationprincipale .dropdown-toggle').closest('.nav-item.dropdown');
+            $(parent).toggleClass('showChild');
+        })
+        
         // Afficher/masquer icônes bouton partager
         $('#block-openig-addtoanysharebuttons #button_share').click(function () {
             $('#block-openig-addtoanysharebuttons .addtoany_list').toggleClass('open');
