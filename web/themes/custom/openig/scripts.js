@@ -5,6 +5,7 @@
         $('.navigation_mobile .premiere_section i').click(function() {
             $('.region-mobile-seconde-section').toggleClass('open');
             $('.premiere_section').toggleClass('open');
+            $('.section_background').toggleClass('open');
         });
 
         // Afficher/masquer barre de recherche
@@ -28,7 +29,7 @@
             var parent = $('#block-openig-navigationprincipale .dropdown-toggle').closest('.nav-item.dropdown');
             $(parent).toggleClass('showChild');
         })
-        
+
         // Afficher/masquer icônes bouton partager
         $('#block-openig-addtoanysharebuttons #button_share').click(function () {
             $('#block-openig-addtoanysharebuttons .addtoany_list').toggleClass('open');

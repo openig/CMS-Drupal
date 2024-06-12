@@ -59,18 +59,18 @@ set footer_classes = ' ' ~
   <div class="navigation container">
       <div class="row">
           {% if logged_in %}
-              <div class="col-xl-9 d-none d-xl-block navigation_gauche">
+              <div class="col-xl-9 d-none d-xl-flex navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-xl-3 d-none d-xl-block navigation_droite">
+              <div class="col-xl-3 d-none d-xl-flex navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
           {% else %}
-              <div class="col-xl-8 d-none d-xl-block navigation_gauche">
+              <div class="col-xl-8 d-none d-xl-flex navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-xl-4 d-none d-xl-block navigation_droite">
+              <div class="col-xl-4 d-none d-xl-flex navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
@@ -78,13 +78,15 @@ set footer_classes = ' ' ~
       </div>
   </div>
 
-  <div class="navigation_mobile d-xl-none d-block container">
-    <div class="row premiere_section">
-      {{page.mobile_premiere_section}}
-      <button type="button" class="btn btn_icon">
-        <i class="fa-regular fa-bars"></i>
-        <i class="fa-regular fa-xmark"></i>
-      </button>
+  <div class="navigation_mobile d-xl-none d-block">
+    <div class="section_background">
+      <div class="container premiere_section">
+          {{page.mobile_premiere_section}}
+          <button type="button" class="btn btn_icon">
+            <i class="fa-regular fa-bars"></i>
+            <i class="fa-regular fa-xmark"></i>
+          </button>
+        </div>
     </div>
     {{page.mobile_seconde_section}}
   </div>
