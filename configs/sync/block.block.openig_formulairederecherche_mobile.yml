@@ -1,0 +1,21 @@
+uuid: ebf41be9-e20c-4388-abf7-41d1a24fdebe
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - openig
+id: openig_formulairederecherche_mobile
+theme: openig
+region: mobile_seconde_section
+weight: -23
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Formulaire de recherche'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

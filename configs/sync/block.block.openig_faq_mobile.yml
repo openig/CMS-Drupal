@@ -1,0 +1,25 @@
+uuid: 354078f6-4cb2-47f7-b226-4f72399bafaa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.faq
+  module:
+    - system
+  theme:
+    - openig
+id: openig_faq_mobile
+theme: openig
+region: mobile_seconde_section
+weight: -25
+provider: null
+plugin: 'system_menu_block:faq'
+settings:
+  id: 'system_menu_block:faq'
+  label: FAQ
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
