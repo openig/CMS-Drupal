@@ -276,4 +276,159 @@
             }
         }
     }
+
+    #block-openig-imageaccueil{
+        display: none;
+    }
+    #block-openig-imageenhautdepage{
+        width: 200% !important;
+        top: -10rem !important;
+    }
+    .path-frontpage #block-openig-imageenhautdepage{
+        position: absolute !important;
+    }
+    #block-openig-actionsdanslassociation .field--name-field-taxonomie{
+        width: auto;
+        flex-wrap: wrap;
+    }
+    #block-openig-descriptionaccueil{
+        .content_description{
+            transform: none !important;
+            left: unset !important;
+            .field--name-body{
+                max-height: 150px;
+                overflow: hidden;
+                padding: 0 1rem;
+            }
+        }
+    } 
+}
+
+@media (max-width: 992px){
+    #block-openig-imageenhautdepage{
+        width: 300% !important;
+        top: -25rem !important;
+    }
+    #block-openig-actionsdanslassociation{
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 170px !important;
+                height: 175px !important;
+            }
+        }
+    }
+   
+}
+
+@media (max-width: 768px){
+    #block-openig-imageenhautdepage{
+        width: 300% !important;
+        top: -15rem !important;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .contenu_accroche{
+            top: 15% !important;
+            transform: none !important;
+        }
+        .accroche_header{
+            height: 400px;
+        }
+        .field--name-body{
+            font-size: $OPenIG-font-size-xl !important;
+        }
+    }
+    #block-openig-actionsdanslassociation{
+        top: 35% !important;
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 140px !important;
+                height: 145px !important;
+                border-radius: 1rem !important;
+                .contenu_action{
+                    height: 65% !important;
+                    .image{
+                        height: 55px;
+                    }
+                    .verbe_action{
+                        font-size: $OPenIG-font-size-base;
+                    }
+                }
+                img{
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+        }
+    } 
+    #block-openig-descriptionaccueil{
+        .content_description{
+            top: 10% !important;
+            .field--name-body{
+                font-size: $OPenIG-font-size-sm;
+                max-height: 100px;
+                overflow: hidden;
+                text-align: start !important;
+            }
+            .field--name-field-lien{
+                a{
+                    font-size: $OPenIG-font-size-sm;
+                }
+            }
+        }
+        .description_header{
+            height: 200px;
+        }
+    } 
+}
+
+@media (max-width: 576px){
+    #block-openig-imageenhautdepage{
+        width: 400% !important;
+        top: -15rem !important;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .field--name-body{
+            font-size: $OPenIG-font-size-base !important;
+        }
+        .accroche_header{
+            height: 250px;
+        }
+    }
+    #block-openig-actionsdanslassociation{
+        top: 25% !important;
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 89px !important;
+                height: 93px !important;
+                border-radius: 1rem !important;
+                .contenu_action{
+                    height: 60% !important;
+                    .image{
+                        height: 35px;
+                    }
+                    .verbe_action{
+                        font-size: 7px;
+                    }
+                }
+            }
+        }
+    } 
+}
+
+@media (max-width: 400px){
+    #block-openig-imageenhautdepage{
+        width: 500% !important;
+        top: -15rem !important;
+    }
+}
+
+@media (max-width: 355px){
+    #block-openig-actionsdanslassociation .field--name-field-taxonomie .field__item{
+        margin-top: 1rem;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .accroche_header{
+            height: 400px;
+        }
+    }
 }
