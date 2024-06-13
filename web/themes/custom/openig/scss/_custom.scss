@@ -889,6 +889,7 @@ h3{
             margin: auto;
             display: flex;
             justify-content: center;
+            position: relative;
             .views-field-field-image{
                 img{
                     border-radius: 100%;
@@ -923,8 +924,9 @@ h3{
                 text-align: start;
             }
             .views-field-nothing{
+                position: absolute;
+                right: -1rem;
                 margin-top: -30px;
-                margin-left: 5px;
                 img{
                     width: 40px;
                     min-width: 40px;

@@ -548,10 +548,10 @@
         right: 0 !important;
     }
     .region-sixieme-section-accueil{
-        padding-top: 10ox !important;
+        padding-top: 10px !important;
         .region_six{
             width: 100% !important;
-            height: 50% !important;
+            height: 45% !important;
         }
         .region_six_white{
             width: 100% !important;
@@ -580,6 +580,36 @@
     
     .region-septieme-section-accueil{
         margin-top: 7rem !important;
+    }
+
+    .slick.slick--optionset--bloc-temoignage{
+        .card{
+            .card-body{
+                flex-direction: column !important;
+                width: 80% !important;
+                font-size: $OPenIG-font-size-sm !important;
+                .views-field-field-image{
+                    img{
+                        margin-right: 0 !important;
+                        margin: auto !important;
+                    }
+                }
+                .views-field-body{
+                    margin-top: 1rem !important;
+                    margin-bottom: 1rem !important;
+                }
+                .nom-poste{
+                    flex-wrap: wrap !important;
+                }
+                .views-field-nothing{
+                    position: relative !important;
+                    margin-top: 0 !important;
+                    .field-content{
+                        float: right !important;
+                    }
+                }
+            }
+        }
     }
 
 }
