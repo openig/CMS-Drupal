@@ -367,11 +367,26 @@
         }
     }
 
+    #block-openig-imageenhautdepage{
+        display: none;
+    }
+
+    #block-openig-imageenhautdepagemobile{
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        img{
+            height: 800px;
+            width: 100%;
+        }
+    }
     
 }
 
 @media (max-width: 992px){
-    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
+    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil{
         .picto_titre{
             h2{
                 font-size: $OPenIG-font-size-lg !important;
@@ -395,6 +410,9 @@
         .region_quatre{
             width: 100% !important;
         }
+    }
+    .region-cinquieme-section-accueil{
+        flex-direction: column;
     }
     .region-deuxieme-section-accueil{
         margin-top: 3rem !important;

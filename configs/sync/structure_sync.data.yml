@@ -15,6 +15,21 @@ blocks:
           width: '64'
           height: '64'
   -
+    info: 'Image en haut de page mobile'
+    langcode: fr
+    uuid: 4bd052d3-79d0-4cc0-ab26-65dc18594529
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '111'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
     info: 'Message bloc Utiliser inaccessible'
     langcode: fr
     uuid: 80673789-61a5-4014-a53e-6a10209477d9
