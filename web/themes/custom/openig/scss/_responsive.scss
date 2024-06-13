@@ -1,3 +1,21 @@
+@media (max-width: 1650px) {
+    .region-quatrieme-section-accueil{
+        .region_quatre{
+            width: 95%;
+        }
+    }
+    .region-cinquieme-section-accueil{
+        .region_cinq{
+            width: 95%;
+        }
+    }
+
+    .region-huitieme-section-accueil{
+        .region_huit{
+            width: 95%;
+        }
+    }
+}
 @media (max-width: 1400px) {
     .navbar-brand{
         img{
@@ -45,24 +63,6 @@
             }
         }
     } 
-
-    .region-quatrieme-section-accueil{
-        .region_quatre{
-            width: 95%;
-        }
-    }
-    .region-cinquieme-section-accueil{
-        .region_cinq{
-            width: 95%;
-        }
-    }
-
-    .region-huitieme-section-accueil{
-        .region_huit{
-            width: 95%;
-        }
-    }
-
 
     #block-openig-page-title{
         width: 70%;
