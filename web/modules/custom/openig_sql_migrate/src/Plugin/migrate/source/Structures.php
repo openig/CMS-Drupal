@@ -43,6 +43,8 @@ class Structures extends SqlBase {
         'is_crige_partner'
     ]);
     $query->addField('ot', 'name', 'organisation_type_name');
+
+    // $query->range(0, 1); // limit to 1, debug only
     
     // Do something with each $record
 
@@ -104,26 +106,22 @@ class Structures extends SqlBase {
 
 
     /*
-     Type de structure
-    */
-    dump( $row->getSourceProperty('organisation_type_name') );
-/* 
-    if($row->getSourceProperty('organisation_type_name') !== null) { 
-        //récupération de la taxonomie
-        $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $row->getSourceProperty('organisation_type_name'), 'vid' => 'typologie_de_structure']);
-        // Si terme non trouvé, on le créé
-        if(empty($terms)) {
-            $term = \Drupal\taxonomy\Entity\Term::create(array(  'name' => $row->getSourceProperty('organisation_type_name'),  'vid' => 'typologie_de_structure'));
-            $term->save();
-        } else {
-            $term = $terms[1];
-        }
-        if($term) {
-            // Mise à dispo du champ
-            $row->setSourceProperty('organisation_type_id', $term->get('tid')->getValue()[0]['value']);
-        }
+     * Type de structure
+     */
+    // Si non défini en fait en sorte de créer une taxo "indéfini"
+    if($row->getSourceProperty('organisation_type_name') === null) $row->setSourceProperty('organisation_type_name', 'Indéfini');
+    //récupération de la taxonomie
+    $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $row->getSourceProperty('organisation_type_name'), 'vid' => 'typologie_de_structure']);
+    // Si terme non trouvé, on le créé
+    if(empty($terms)) {
+        $term = \Drupal\taxonomy\Entity\Term::create(array('name' => $row->getSourceProperty('organisation_type_name'),  'vid' => 'typologie_de_structure'));
+        $term->save();
+    } else {
+        $term = reset($terms); //first element
     }
-*/
+    // Mise à dispo du champ
+    $row->setSourceProperty('organisation_type_id', $term->get('tid')->getValue()[0]['value']);
+
 
     return parent::prepareRow($row);
   }
