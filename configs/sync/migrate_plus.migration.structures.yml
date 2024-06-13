@@ -22,7 +22,7 @@ process:
   field_postcode: postcode
   field_city: city
   field_phone: phone
-  field_image: logo
+  field_image/target_id: logo
   field_siret: siren
   field_crige_partner: is_crige_partner
   field_typologie_structure/target_id: organisation_type_id

@@ -91,19 +91,23 @@ class Structures extends SqlBase {
    */
   public function prepareRow(Row $row) {
 
-    // Pour le logo, on génère l'URL
-    $logo = $row->getSourceProperty('logo');
-    if($logo) {
-        $row->setSourceProperty('logo', "https://idgo.openig.org/media/".$logo);
+    // Link du logo vers les fichiers déjà importés
+    $database = \Drupal::database();
+    $query = $database->query("SELECT sourceid1, destid1 FROM {migrate_map_logos_structures} WHERE sourceid1 = '".intval($row->getSourceProperty('id'))."'");
+    $results = $query->fetchAllKeyed();
+
+    foreach ($results as $key => $value) {
+      if ($key == $row->getSourceProperty('id')) {
+        $row->setSourceProperty('logo', $value);
+      }
     }
-    // TODO: upload image
-    //
+
 
     /*
      Type de structure
     */
     dump( $row->getSourceProperty('organisation_type_name') );
-   
+/* 
     if($row->getSourceProperty('organisation_type_name') !== null) { 
         //récupération de la taxonomie
         $terms = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['name' => $row->getSourceProperty('organisation_type_name'), 'vid' => 'typologie_de_structure']);
@@ -119,6 +123,7 @@ class Structures extends SqlBase {
             $row->setSourceProperty('organisation_type_id', $term->get('tid')->getValue()[0]['value']);
         }
     }
+*/
 
     return parent::prepareRow($row);
   }

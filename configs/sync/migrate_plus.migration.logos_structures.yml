@@ -38,7 +38,7 @@ process:
       plugin: concat
       source:
         - constants/source_base_path
-        - filepath
+        - logo
     -
       plugin: urlencode
   uri:
