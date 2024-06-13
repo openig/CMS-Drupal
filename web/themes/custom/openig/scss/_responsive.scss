@@ -314,7 +314,6 @@
         .slick-arrow{
             top: unset !important;
             bottom: -5rem !important;
-            height: fit-content !important;
             margin-top: 3rem !important;
             background-color: $OPenIG-color_white !important;
             border-radius: 0 !important;
@@ -337,9 +336,84 @@
     #block-openig-views-block-l-agenda-agenda-accueil .more-link{
         margin-top: 5rem !important;
     }
+    
 }
 
 @media (max-width: 992px){
+    .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
+        .picto_titre{
+            h2{
+                font-size: $OPenIG-font-size-lg !important;
+            }
+        }
+        .nombre_header{
+            top: 0 !important;
+            .nombre{
+                font-size: 4rem !important;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-xs !important;
+                margin-top: -20px !important
+            }
+        }
+        .texte_header{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-sm !important;
+            margin-top: 1rem !important;
+        }
+        .region_quatre{
+            width: 100% !important;
+        }
+    }
+
+    #block-openig-views-block-l-agenda-agenda-accueil{
+        .card{
+            width: 140px !important;
+            height: 150px !important;
+            .views-field-field-dates{
+                font-family: 'Exo_semiBold' !important;
+                font-weight: 600 !important;
+                font-size: $OPenIG-font-size-h2 !important;
+            }
+            .views-field-title{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+    .slick-arrow{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .slick.slick--optionset--blocs .slick-list .slick__slide, .slick.slick--optionset--agenda .slick-list .slick__slide{
+        width: 250px !important;
+        height: 290px !important;
+    }
+    #block-openig-views-block-groupes-travail-accueil{
+        .view-content{
+            .views-field-nothing{
+                min-width: 30px;
+            }
+            .views-field-title, .views-field-view-node{
+                a{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+            }
+            .views-field-field-theme-overview{
+                display: none;
+            }
+            .views-field-field-tag{
+                a{
+                    font-size: 9px !important;
+                }
+            }
+        }
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
     #block-openig-imageenhautdepage{
         width: 300% !important;
         top: -25rem !important;
@@ -352,7 +426,6 @@
             }
         }
     }
-   
 }
 
 @media (max-width: 768px){
@@ -445,7 +518,6 @@
             content: '\f053' !important;
         }
     }
-   
 }
 
 @media (max-width: 576px){
@@ -480,6 +552,12 @@
             }
         }
     } 
+    .slick-arrow.slick-prev{
+        margin-left: 10px !important;
+    }
+    .slick-arrow.slick-next{
+        margin-right: 10px !important;
+    }
 }
 
 @media (max-width: 400px){
@@ -491,11 +569,21 @@
 
 @media (max-width: 355px){
     #block-openig-actionsdanslassociation .field--name-field-taxonomie .field__item{
-        margin-top: 1rem;
+        margin-top: 1rem !important;
     }
     #block-openig-phrasedaccrocheheader{
         .accroche_header{
-            height: 400px;
+            height: 400px !important;
+        }
+    }
+
+    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow{
+        width: auto !important;
+    }
+
+    .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
+        .nombre_header{
+            top: 50px !important;
         }
     }
 }
