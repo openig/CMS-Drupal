@@ -410,9 +410,26 @@
         .region_quatre{
             width: 100% !important;
         }
+        .region_cinq{
+            width: 100% !important;
+            top: 0 !important;
+            bottom: unset !important;
+            max-height: 500px;
+        }
     }
-    .region-cinquieme-section-accueil{
-        flex-direction: column;
+    .region-cinquieme-section-accueil {
+        .view{
+            flex-direction: column !important;
+        }
+        .nombre_header{
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
+        .texte_header{
+            margin-top: 0 !important;
+            margin-bottom: 1rem !important;
+        }
     }
     .region-deuxieme-section-accueil{
         margin-top: 3rem !important;
@@ -470,7 +487,7 @@
         width: 250px !important;
         height: 290px !important;
     }
-    #block-openig-views-block-groupes-travail-accueil{
+    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil{
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
@@ -480,7 +497,7 @@
                     font-size: $OPenIG-font-size-xs !important;
                 }
             }
-            .views-field-field-theme-overview{
+            .views-field-field-theme-overview, .views-field-field-body{
                 display: none;
             }
             .views-field-field-tag{
