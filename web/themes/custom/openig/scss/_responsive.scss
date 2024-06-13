@@ -121,6 +121,17 @@
             font-size: 20px;
         }
     }
+    .view-les-actualites.view-display-id-actualite_mise_en_avant{
+        display: none;
+    }
+    .view-les-actualites.view-display-id-actualites_accueil{
+        .row_actus_accueil{
+            display: none;
+        }
+    }
+    .view-les-actualites.view-display-id-actualites_accueil_mobile{
+        display: block;
+    }
     .region-mobile-seconde-section{
         display: none;
     }
@@ -303,18 +314,16 @@
         }
     } 
 
-    .slick_agenda{
-        .slick-slide{
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-        .card_agenda{
-            margin-bottom: 1rem;
+    .view-l-agenda.view-display-id-agenda_accueil{
+        .slick__arrows{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 3rem;
         }
         .slick-arrow{
+            position: relative;
             top: unset !important;
-            bottom: -5rem !important;
-            margin-top: 3rem !important;
             background-color: $OPenIG-color_white !important;
             border-radius: 0 !important;
             box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
@@ -333,14 +342,36 @@
         }
     }
 
-    #block-openig-views-block-l-agenda-agenda-accueil .more-link{
-        margin-top: 5rem !important;
+    .slick_agenda{
+        .slick-slide{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .card_agenda{
+            margin-bottom: 1rem;
+        }
     }
+
+    #block-openig-views-block-l-agenda-agenda-accueil .more-link{
+        margin-top: 0rem !important;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        .view-header{
+            min-height: fit-content !important;
+        }
+        .texte_header{
+            width: 100% !important;
+        }
+        .more-link{
+            margin-top: 0rem !important;
+        }
+    }
+
     
 }
 
 @media (max-width: 992px){
-    .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
+    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
         .picto_titre{
             h2{
                 font-size: $OPenIG-font-size-lg !important;
@@ -363,6 +394,36 @@
         }
         .region_quatre{
             width: 100% !important;
+        }
+    }
+    .region-deuxieme-section-accueil{
+        margin-top: 3rem !important;
+        .texte_header{
+            padding-bottom: 2rem !important;
+        }
+    } 
+    #block-openig-views-block-les-actualites-actualites-accueil-mobile{
+        .titlepicto{
+            padding: 0.5rem 1rem !important;
+        }
+        .views-field-nothing-1{
+            hr{
+                height: 3px !important;
+            }
+        }
+        .views-field-created{
+            padding: 0.5rem 0 .5rem 1rem !important;
+        }
+        .views-field-nothing{
+            width: 23px !important;
+        }
+        .views-field-created, .views-field-view-node a{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
         }
     }
 
@@ -496,27 +557,6 @@
         .card_agenda{
             margin-bottom: 1rem;
         }
-        .slick-arrow{
-            top: unset !important;
-            bottom: -5rem !important;
-            height: fit-content !important;
-            margin-top: 3rem !important;
-            background-color: $OPenIG-color_white !important;
-            border-radius: 0 !important;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
-            border: none;
-        }
-        button.slick-arrow::before{
-            color: $OPenIG-color_deep-gray!important;
-            font-family: "Font Awesome 6 Free" !important;
-            opacity: 1 !important;
-        }
-        button.slick-next::before{
-            content: '\f054' !important;
-        }
-        button.slick-prev::before{
-            content: '\f053' !important;
-        }
     }
 }
 
@@ -565,6 +605,10 @@
         width: 500% !important;
         top: -15rem !important;
     }
+    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows{
+        width: auto !important;
+    }
+
 }
 
 @media (max-width: 355px){
@@ -575,10 +619,6 @@
         .accroche_header{
             height: 400px !important;
         }
-    }
-
-    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow{
-        width: auto !important;
     }
 
     .region-troisieme-section-accueil, .region-quatrieme-section-accueil{

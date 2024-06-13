@@ -1,0 +1,29 @@
+uuid: a7000870-5b66-45a4-a59c-cb28a9f3be57
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.les_actualites
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__les_actualites_actualites_accueil_mobile
+theme: openig
+region: deuxieme_section_accueil
+weight: 0
+provider: null
+plugin: 'views_block:les_actualites-actualites_accueil_mobile'
+settings:
+  id: 'views_block:les_actualites-actualites_accueil_mobile'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
