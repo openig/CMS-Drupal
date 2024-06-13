@@ -401,7 +401,7 @@
 }
 
 @media (max-width: 992px){
-    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil{
+    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil{
         .picto_titre{
             h2{
                 font-size: $OPenIG-font-size-lg !important;
@@ -537,6 +537,51 @@
             }
         }
     }
+
+    #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire{
+        flex-direction: column !important;
+    }
+    .region-sixieme-section-accueil .view-annuaire .view-header{
+        width: 100% !important;
+    }
+    .region-sixieme-section-accueil .view-annuaire .view-header .nombre_header{
+        right: 0 !important;
+    }
+    .region-sixieme-section-accueil{
+        padding-top: 10ox !important;
+        .region_six{
+            width: 100% !important;
+            height: 50% !important;
+        }
+        .region_six_white{
+            width: 100% !important;
+            height: 50% !important;
+            bottom: 0 !important;
+            top: unset !important;
+        }
+    }
+    #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire .view-content{
+        width: 100% !important;
+        padding-top: 3rem !important;
+    }
+    #block-openig-views-block-annuaire-block-nos-adherents{
+        .more-link{
+            position: relative !important;
+            bottom: unset !important;
+            left: unset !important;
+            transform: none !important;
+            text-align: center !important;
+            margin-top: 3rem !important;
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+    }
+    
+    .region-septieme-section-accueil{
+        margin-top: 7rem !important;
+    }
+
 }
 
 @media (max-width: 768px){
@@ -671,7 +716,7 @@
         }
     }
 
-    .region-troisieme-section-accueil, .region-quatrieme-section-accueil{
+    .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-sixieme-section-accueil, .region-cinquieme-section-accueil, .region-deuxieme-section-accueil{
         .nombre_header{
             top: 50px !important;
         }
