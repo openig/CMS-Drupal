@@ -30,6 +30,7 @@
         "drupal/custom_breadcrumbs": "^1.1",
         "drupal/custom_view_filters": "^2.0",
         "drupal/daterange_compact": "^2.1",
+        "drupal/easy_breadcrumb": "^2.0",
         "drupal/editor_advanced_link": "^2.2",
         "drupal/field_group": "^3.4",
         "drupal/fontawesome": "^2.26",
