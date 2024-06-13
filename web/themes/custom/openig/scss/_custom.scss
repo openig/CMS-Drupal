@@ -50,6 +50,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 
 // Positionnement image en bas de page
+#block-openig-imageenbasdepagemobile{
+    display: none;
+}
 #block-openig-imageenbasdepage{
     position: absolute;
     width: 75%;

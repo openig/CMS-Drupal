@@ -367,6 +367,21 @@
         }
     }
 
+    #block-openig-imageenbasdepagemobile{
+        display: block;
+        position: absolute;
+        bottom: 600px;
+        z-index: -1;
+        width: 100%;
+        img{
+            height: 800px;
+            width: 100%;
+        }
+    }
+    #block-openig-imageenbasdepage{
+        display: none;
+    }
+
     #block-openig-imageenhautdepage{
         display: none;
     }

@@ -11,7 +11,7 @@ dependencies:
 id: openig_views_block__contacts_gt_contacts_service
 theme: openig
 region: content
-weight: -11
+weight: -10
 provider: null
 plugin: 'views_block:contacts_gt-contacts_service'
 settings:
