@@ -401,7 +401,7 @@
 }
 
 @media (max-width: 992px){
-    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil{
+    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
         .picto_titre{
             h2{
                 font-size: $OPenIG-font-size-lg !important;
@@ -430,6 +430,9 @@
             top: 0 !important;
             bottom: unset !important;
             max-height: 500px;
+        }
+        .region_huit{
+            width: 100% !important;
         }
     }
     .region-cinquieme-section-accueil {
@@ -609,6 +612,25 @@
                     }
                 }
             }
+        }
+    }
+
+    #block-openig-lanewsletter{
+        .contenuFlex{
+            .field--name-field-image{
+                display: none !important;
+            }
+        }
+        .field--name-body, #block-openig-simplenewssubscription{
+            width: 100% !important;
+            padding: 0 !important;
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        #block-openig-simplenewssubscription{
+            margin-top: 1rem !important;
+        }
+        .field--name-field-lien a, #block-openig-simplenewssubscription input.form-submit{
+            font-size: $OPenIG-font-size-sm !important;
         }
     }
 
