@@ -170,7 +170,32 @@
         $('#block-openig-main-navigation .dropdown-toggle').on('click', function() {
             $('#block-openig-breadcrumbs .navigation_filAriane').toggleClass('menuOpen');
         })
-    
+
+
+        var media768 = window.matchMedia("(max-width: 768px)");
+        var media1200 = window.matchMedia("(max-width: 1200px)")
+        if (media768.matches) {
+            $('#block-openig-views-block-les-actualites-actualites-accueil .row_actus_accueil').addClass('slick_actus');
+            $('.slick_actus').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                centerMode: true
+            });
+        }
+
+        if(media1200.matches){
+            $('#block-openig-views-block-l-agenda-agenda-accueil .view-l-agenda .row').addClass('slick_agenda');
+            $('.slick_agenda').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                variableWidth: true,
+                centerMode: true,
+                swipeToSlide: true,
+                slidesPerRow: 5
+            });
+        }
     })
 
 })(jQuery);

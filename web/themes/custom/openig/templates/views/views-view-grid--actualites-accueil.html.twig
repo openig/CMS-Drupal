@@ -56,13 +56,13 @@
     {% for row in items %}
       <div class="row row_actus_accueil" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
-            <div class="col-3">
-              <div class="card card_agenda h-100">
-                <div class="card-body">
-                    {{- column.content -}}
-                </div>
+          <div class="col-xl-3">
+            <div class="card card_agenda h-100">
+              <div class="card-body">
+                  {{- column.content -}}
               </div>
             </div>
+          </div>
         {% endfor %}
       </div>
     {% endfor %}

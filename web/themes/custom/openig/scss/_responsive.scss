@@ -302,6 +302,41 @@
             }
         }
     } 
+
+    .slick_agenda{
+        .slick-slide{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .card_agenda{
+            margin-bottom: 1rem;
+        }
+        .slick-arrow{
+            top: unset !important;
+            bottom: -5rem !important;
+            height: fit-content !important;
+            margin-top: 3rem !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+
+    #block-openig-views-block-l-agenda-agenda-accueil .more-link{
+        margin-top: 5rem !important;
+    }
 }
 
 @media (max-width: 992px){
@@ -379,6 +414,38 @@
             height: 200px;
         }
     } 
+
+    .slick_actus{
+        .slick-slide{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .card_agenda{
+            margin-bottom: 1rem;
+        }
+        .slick-arrow{
+            top: unset !important;
+            bottom: -5rem !important;
+            height: fit-content !important;
+            margin-top: 3rem !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+   
 }
 
 @media (max-width: 576px){
