@@ -1358,6 +1358,7 @@ h3{
         top: 0;
         left: 0;
         height: 100%;
+        z-index: -1;
     }
     .region_six_white{
         background-color: $OPenIG-color_white;
@@ -1366,6 +1367,7 @@ h3{
         top: 0;
         right: 0;
         height: 100%;
+        z-index: -1;
     }
     .view-header{
         .header_block{
