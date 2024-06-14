@@ -49,3 +49,4 @@ dependencies:
   - custom_breadcrumbs
   - back_to_top
   - openig_webform
+  - responsive_image
