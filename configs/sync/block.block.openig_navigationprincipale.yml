@@ -1,0 +1,25 @@
+uuid: 4d523a5b-9827-4dc9-aeb8-7ec502266bc1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - openig
+id: openig_navigationprincipale
+theme: openig
+region: mobile_seconde_section
+weight: -22
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Navigation principale'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: true
+visibility: {  }

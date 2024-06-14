@@ -33,7 +33,7 @@ options:
     dots: true
     dotsClass: slick-dots
     appendDots: $(element)
-    draggable: false
+    draggable: true
     fade: false
     focusOnSelect: false
     infinite: true
@@ -49,8 +49,8 @@ options:
     slidesToShow: 1
     slidesToScroll: 1
     speed: 500
-    swipe: false
-    swipeToSlide: false
+    swipe: true
+    swipeToSlide: true
     edgeFriction: 0.35
     touchMove: false
     touchThreshold: 5

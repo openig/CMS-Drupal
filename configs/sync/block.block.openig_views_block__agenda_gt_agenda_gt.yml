@@ -11,7 +11,7 @@ dependencies:
 id: openig_views_block__agenda_gt_agenda_gt
 theme: openig
 region: content
-weight: -5
+weight: -13
 provider: null
 plugin: 'views_block:agenda_gt-agenda_gt'
 settings:

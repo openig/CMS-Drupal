@@ -31,6 +31,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     top: 30px;
 }
 
+#block-openig-imageenhautdepagemobile{
+    display: none;
+}
 #block-openig-imageenhautdepage{
     position: absolute;
     top: -25px;
@@ -47,6 +50,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 
 // Positionnement image en bas de page
+#block-openig-imageenbasdepagemobile{
+    display: none;
+}
 #block-openig-imageenbasdepage{
     position: absolute;
     width: 75%;
@@ -883,6 +889,7 @@ h3{
             margin: auto;
             display: flex;
             justify-content: center;
+            position: relative;
             .views-field-field-image{
                 img{
                     border-radius: 100%;
@@ -917,8 +924,9 @@ h3{
                 text-align: start;
             }
             .views-field-nothing{
+                position: absolute;
+                right: -1rem;
                 margin-top: -30px;
-                margin-left: 5px;
                 img{
                     width: 40px;
                     min-width: 40px;
@@ -1350,6 +1358,7 @@ h3{
         top: 0;
         left: 0;
         height: 100%;
+        z-index: -1;
     }
     .region_six_white{
         background-color: $OPenIG-color_white;
@@ -1358,6 +1367,7 @@ h3{
         top: 0;
         right: 0;
         height: 100%;
+        z-index: -1;
     }
     .view-header{
         .header_block{

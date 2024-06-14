@@ -11,7 +11,7 @@ dependencies:
 id: openig_addtoanysharebuttons_bas_page
 theme: openig
 region: content
-weight: -3
+weight: -11
 provider: null
 plugin: addtoany_block
 settings:

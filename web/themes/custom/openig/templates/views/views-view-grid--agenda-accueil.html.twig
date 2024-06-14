@@ -66,6 +66,7 @@
         {% endfor %}
       </div>
     {% endfor %}
+  <div class="slick__arrows container"></div>
   {% else %}
     {% for column in items %}
       <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>

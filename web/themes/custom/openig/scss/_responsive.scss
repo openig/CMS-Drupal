@@ -1,3 +1,21 @@
+@media (max-width: 1650px) {
+    .region-quatrieme-section-accueil{
+        .region_quatre{
+            width: 95%;
+        }
+    }
+    .region-cinquieme-section-accueil{
+        .region_cinq{
+            width: 95%;
+        }
+    }
+
+    .region-huitieme-section-accueil{
+        .region_huit{
+            width: 95%;
+        }
+    }
+}
 @media (max-width: 1400px) {
     .navbar-brand{
         img{
@@ -46,24 +64,6 @@
         }
     } 
 
-    .region-quatrieme-section-accueil{
-        .region_quatre{
-            width: 95%;
-        }
-    }
-    .region-cinquieme-section-accueil{
-        .region_cinq{
-            width: 95%;
-        }
-    }
-
-    .region-huitieme-section-accueil{
-        .region_huit{
-            width: 95%;
-        }
-    }
-
-
     #block-openig-page-title{
         width: 70%;
         h1{
@@ -74,6 +74,733 @@
     footer {
         .haut_footer_droite{
             padding: 0;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+    header{
+        top: 0 !important;
+        padding: 0;
+    }
+    .premiere_section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+        position: relative;
+        margin: auto;
+        .region-mobile-premiere-section{
+            width: fit-content;
+            .navbar-brand img{
+                height: 53px;
+            }
+        }
+        .btn_icon{
+            width: fit-content;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+            border: none;
+        }
+        .btn_icon:active{
+            border: none;
+        }
+        .btn_icon:hover{
+            color: $OPenIG-color_black;
+        }
+        i.fa-bars{
+            width: fit-content;
+            display: block;
+            font-size: 20px;
+        }
+        i.fa-xmark{
+            width: fit-content;
+            display: none;
+            font-size: 20px;
+        }
+    }
+    .view-les-actualites.view-display-id-actualite_mise_en_avant{
+        display: none;
+    }
+    .view-les-actualites.view-display-id-actualites_accueil{
+        .row_actus_accueil{
+            display: none;
+        }
+    }
+    .view-les-actualites.view-display-id-actualites_accueil_mobile{
+        display: block;
+    }
+    .region-mobile-seconde-section{
+        display: none;
+    }
+    .region-mobile-seconde-section.open{
+        display: block;
+        width: 100%;
+        background-color: $OPenIG-color_white;
+        height: calc(100vh - 60px);
+    }
+    .section_background.open{
+        background-color: $OPenIG-color_light-gray;
+    }
+    .premiere_section.open{
+        i.fa-xmark{
+            display: block;
+        }
+        i.fa-bars{
+            display: none;
+        }
+    }
+    .first_line{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 1rem;
+        #block-openig-adhesion-mobile{
+            .nav-item{
+                display: flex;
+                align-items: center;
+            }
+            .navbar-nav{
+                flex-direction: row;
+            }
+        }
+        #block-openig-faq-mobile{
+            border-left: 4px solid $OPenIG-color_red;
+            padding-left: 1rem;
+            margin-left: 1rem;
+            .nav-item{
+                padding: 0.5rem;
+                a{
+                    padding: 0;
+                    border-bottom: 1px solid $OPenIG-color_deep-gray;
+                }
+            }
+        }
+    }
+    #block-openig-formulairederecherche-mobile.search-block-form{
+        height: 70px;
+        width: 100%;
+        margin-top: 3rem;
+        #search-block-form--2{
+            display: flex;
+            align-items: center;
+            .form-type-search{
+                width: 85%;
+                label::after{
+                    content: '';
+                }
+            }
+            input.form-search{
+                border-radius: 2rem;
+                box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+                height: 30px;
+                width: 95%;
+                border: none;
+            }
+            .form-item.js-form-type-search.form-type-search{
+                background-color: rgba(0, 160, 154,.2);
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+            }
+            .form-submit{
+                background-color: transparent !important;
+                border: none;
+                position: relative;
+                z-index: 1;
+                padding: 0;
+                width: 35px;
+                height: 35px;
+            }
+            .form-actions{
+                position: relative;
+                background-color: $OPenIG-color_white;
+                border-radius: 10px;
+                box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+                margin-left: 2rem;
+            }
+            .form-actions::after{
+                content: '\f002';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 20px;
+                z-index: 0;
+            }
+        }
+    }
+    #block-openig-navigationprincipale{
+        margin-top: 2rem;
+        .navbar-nav{
+            align-content: center;
+            .nav-item{
+                width: fit-content;
+                background-color: transparent;
+                .nav-link{
+                    border-left: 2px solid $OPenIG-color_deep-gray;
+                    border-right: 2px solid $OPenIG-color_deep-gray;
+                    margin-bottom: 2rem;
+                    width: fit-content;
+                    padding: 0 0.5rem;
+                    font-size: $OPenIG-font-size-base;
+                }
+                .nav-link.show{
+                    margin-bottom: 0 !important;
+                    border-left: none;
+                    border-right: none;
+                }
+                .nav-link.dropdown-toggle::after{
+                    font-size: 20px;
+                }
+            }
+            .nav-item.showChild{
+                background-color: $OPenIG-color_light-gray;
+                margin-bottom: 2rem;
+                padding: 0.5rem;
+            }
+            .dropdown-menu.show{
+                position: relative !important;
+                transform: none !important;
+                background-color: transparent;
+                border: none;
+                padding: 1.5rem;
+                padding-bottom: 0;
+                .dropdown-item{
+                    border-left: 2px solid $OPenIG-color_deep-gray;
+                    border-right: 2px solid $OPenIG-color_deep-gray;
+                    padding: 0 0.5rem;
+                    margin-bottom: 1rem;
+                    font-size: $OPenIG-font-size-sm;
+                    font-weight: 700;
+                    color: $OPenIG-color_dark-gray;
+                }
+                .dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus{
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
+    #block-openig-imageaccueil{
+        display: none;
+    }
+    #block-openig-imageenhautdepage{
+        width: 200% !important;
+        top: -10rem !important;
+    }
+    .path-frontpage #block-openig-imageenhautdepage{
+        position: absolute !important;
+    }
+    #block-openig-actionsdanslassociation .field--name-field-taxonomie{
+        width: auto;
+        flex-wrap: wrap;
+    }
+    #block-openig-descriptionaccueil{
+        .content_description{
+            transform: none !important;
+            left: unset !important;
+            .field--name-body{
+                max-height: 150px;
+                overflow: hidden;
+                padding: 0 1rem;
+            }
+        }
+    } 
+
+    .view-l-agenda.view-display-id-agenda_accueil{
+        .slick__arrows{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 3rem;
+        }
+        .slick-arrow{
+            position: relative;
+            top: unset !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+    }
+
+    .slick_agenda{
+        .slick-slide{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .card_agenda{
+            margin-bottom: 1rem;
+        }
+    }
+
+    #block-openig-views-block-l-agenda-agenda-accueil .more-link{
+        margin-top: 0rem !important;
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        .view-header{
+            min-height: fit-content !important;
+        }
+        .texte_header{
+            width: 100% !important;
+        }
+        .more-link{
+            margin-top: 0rem !important;
+        }
+    }
+
+    #block-openig-imageenbasdepagemobile{
+        display: block;
+        position: absolute;
+        bottom: 600px;
+        z-index: -1;
+        width: 100%;
+        img{
+            height: 800px;
+            width: 100%;
+        }
+    }
+    #block-openig-imageenbasdepage{
+        display: none;
+    }
+
+    #block-openig-imageenhautdepage{
+        display: none;
+    }
+
+    #block-openig-imageenhautdepagemobile{
+        display: block;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        img{
+            height: 800px;
+            width: 100%;
+        }
+    }
+    
+}
+
+@media (max-width: 992px){
+    .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
+        .view-annuaire .view-header{
+            width: 100% !important;
+        }
+        .picto_titre{
+            h2{
+                font-size: $OPenIG-font-size-lg !important;
+            }
+        }
+        .nombre_header{
+            top: 0 !important;
+            .nombre{
+                font-size: 4rem !important;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-xs !important;
+                margin-top: -20px !important
+            }
+        }
+        .texte_header{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-sm !important;
+            margin-top: 1rem !important;
+        }
+        .region_quatre{
+            width: 100% !important;
+        }
+        .region_cinq{
+            width: 100% !important;
+            top: 0 !important;
+            bottom: unset !important;
+            max-height: 500px;
+        }
+        .region_huit{
+            width: 100% !important;
+        }
+    }
+    .region-quatrieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
+        padding-left: 0 !important;
+    }
+    .region-sixieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
+        padding-left: 0 !important;
+    }
+    .region-troisieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    }
+    .region-septieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    }
+    .region-septieme-section-accueil .view-annuaire{
+        padding-top: 0 !important;
+    }
+    .region-cinquieme-section-accueil #block-openig-views-block-bloc-temoignage-block-temoignage{
+        padding-top: 0 !important;
+    }
+    .region-cinquieme-section-accueil #block-openig-views-block-l-agenda-agenda-accueil{
+        padding-top: 1rem !important;
+    }   
+    .region-huitieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    } 
+    .region-cinquieme-section-accueil {
+        .view{
+            flex-direction: column !important;
+        }
+        .nombre_header{
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+        }
+        .texte_header{
+            margin-top: 0 !important;
+            margin-bottom: 1rem !important;
+        }
+    }
+    .region-deuxieme-section-accueil{
+        margin-top: 3rem !important;
+        .texte_header{
+            padding-bottom: 2rem !important;
+        }
+        #block-openig-lanewsletter .contenuFlex h2{
+            padding-left: 0 !important;
+        }
+    } 
+    #block-openig-views-block-les-actualites-actualites-accueil-mobile{
+        .titlepicto{
+            padding: 0.5rem 1rem !important;
+        }
+        .views-field-nothing-1{
+            hr{
+                height: 3px !important;
+            }
+        }
+        .views-field-created{
+            padding: 0.5rem 0 .5rem 1rem !important;
+        }
+        .views-field-nothing{
+            width: 23px !important;
+        }
+        .views-field-created, .views-field-view-node a{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+    }
+    #block-openig-views-block-les-actualites-actualites-accueil{
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+
+    #block-openig-views-block-l-agenda-agenda-accueil{
+        .card{
+            width: 140px !important;
+            height: 150px !important;
+            .views-field-field-dates{
+                font-family: 'Exo_semiBold' !important;
+                font-weight: 600 !important;
+                font-size: $OPenIG-font-size-h2 !important;
+            }
+            .views-field-title{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+    .slick-arrow{
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .slick.slick--optionset--blocs .slick-list .slick__slide, .slick.slick--optionset--agenda .slick-list .slick__slide{
+        width: 250px !important;
+        height: 290px !important;
+    }
+    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil{
+        .view-content{
+            .views-field-nothing{
+                min-width: 30px;
+            }
+            .views-field-title, .views-field-view-node{
+                a{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+            }
+            .views-field-field-theme-overview, .views-field-field-body{
+                display: none;
+            }
+            .views-field-field-tag{
+                a{
+                    font-size: 9px !important;
+                }
+            }
+        }
+        .more-link a{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+    #block-openig-imageenhautdepage{
+        width: 300% !important;
+        top: -25rem !important;
+    }
+    #block-openig-actionsdanslassociation{
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 170px !important;
+                height: 175px !important;
+            }
+        }
+    }
+
+    #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire{
+        flex-direction: column !important;
+    }
+    .region-sixieme-section-accueil .view-annuaire .view-header .nombre_header{
+        right: 0 !important;
+    }
+    .region-sixieme-section-accueil{
+        padding-top: 10px !important;
+        .region_six{
+            width: 100% !important;
+            height: 45% !important;
+        }
+        .region_six_white{
+            width: 100% !important;
+            height: 50% !important;
+            bottom: 0 !important;
+            top: unset !important;
+        }
+    }
+    #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire .view-content{
+        width: 100% !important;
+        padding-top: 3rem !important;
+    }
+    #block-openig-views-block-annuaire-block-nos-adherents{
+        .more-link{
+            position: relative !important;
+            bottom: unset !important;
+            left: unset !important;
+            transform: none !important;
+            text-align: center !important;
+            margin-top: 3rem !important;
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+    }
+    
+    .region-septieme-section-accueil{
+        margin-top: 7rem !important;
+    }
+
+    .slick.slick--optionset--bloc-temoignage{
+        .card{
+            .card-body{
+                flex-direction: column !important;
+                width: 80% !important;
+                font-size: $OPenIG-font-size-sm !important;
+                .views-field-field-image{
+                    img{
+                        margin-right: 0 !important;
+                        margin: auto !important;
+                    }
+                }
+                .views-field-body{
+                    margin-top: 1rem !important;
+                    margin-bottom: 1rem !important;
+                }
+                .nom-poste{
+                    flex-wrap: wrap !important;
+                }
+                .views-field-nothing{
+                    position: relative !important;
+                    margin-top: 0 !important;
+                    .field-content{
+                        float: right !important;
+                    }
+                }
+            }
+        }
+    }
+
+    #block-openig-lanewsletter{
+        .contenuFlex{
+            .field--name-field-image{
+                display: none !important;
+            }
+        }
+        .field--name-body, #block-openig-simplenewssubscription{
+            width: 100% !important;
+            padding: 0 !important;
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        #block-openig-simplenewssubscription{
+            margin-top: 1rem !important;
+        }
+        .field--name-field-lien a, #block-openig-simplenewssubscription input.form-submit{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+    .region-huitieme-section-accueil #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 0 !important;
+    }
+
+}
+
+@media (max-width: 768px){
+    #block-openig-imageenhautdepage{
+        width: 300% !important;
+        top: -15rem !important;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .contenu_accroche{
+            top: 15% !important;
+            transform: none !important;
+        }
+        .accroche_header{
+            height: 400px;
+        }
+        .field--name-body{
+            font-size: $OPenIG-font-size-xl !important;
+        }
+    }
+    #block-openig-actionsdanslassociation{
+        top: 35% !important;
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 140px !important;
+                height: 145px !important;
+                border-radius: 1rem !important;
+                .contenu_action{
+                    height: 65% !important;
+                    .image{
+                        height: 55px;
+                    }
+                    .verbe_action{
+                        font-size: $OPenIG-font-size-base;
+                    }
+                }
+                img{
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+        }
+    } 
+    #block-openig-descriptionaccueil{
+        .content_description{
+            top: 10% !important;
+            .field--name-body{
+                font-size: $OPenIG-font-size-sm;
+                max-height: 100px;
+                overflow: hidden;
+                text-align: start !important;
+            }
+            .field--name-field-lien{
+                a{
+                    font-size: $OPenIG-font-size-sm;
+                }
+            }
+        }
+        .description_header{
+            height: 200px;
+        }
+    } 
+
+    .slick_actus{
+        .slick-slide{
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .card_agenda{
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: 576px){
+    #block-openig-imageenhautdepage{
+        width: 400% !important;
+        top: -15rem !important;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .field--name-body{
+            font-size: $OPenIG-font-size-base !important;
+        }
+        .accroche_header{
+            height: 250px;
+        }
+    }
+    #block-openig-actionsdanslassociation{
+        top: 25% !important;
+        .field--name-field-taxonomie{
+            .taxonomy-term{
+                width: 89px !important;
+                height: 93px !important;
+                border-radius: 1rem !important;
+                .contenu_action{
+                    height: 60% !important;
+                    .image{
+                        height: 35px;
+                    }
+                    .verbe_action{
+                        font-size: 7px;
+                    }
+                }
+            }
+        }
+    } 
+    .slick-arrow.slick-prev{
+        margin-left: 10px !important;
+    }
+    .slick-arrow.slick-next{
+        margin-right: 10px !important;
+    }
+}
+
+@media (max-width: 400px){
+    #block-openig-imageenhautdepage{
+        width: 500% !important;
+        top: -15rem !important;
+    }
+    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows{
+        width: auto !important;
+    }
+
+}
+
+@media (max-width: 355px){
+    #block-openig-actionsdanslassociation .field--name-field-taxonomie .field__item{
+        margin-top: 1rem !important;
+    }
+    #block-openig-phrasedaccrocheheader{
+        .accroche_header{
+            height: 400px !important;
+        }
+    }
+
+    .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-sixieme-section-accueil, .region-cinquieme-section-accueil, .region-deuxieme-section-accueil{
+        .nombre_header{
+            top: 50px !important;
         }
     }
 }

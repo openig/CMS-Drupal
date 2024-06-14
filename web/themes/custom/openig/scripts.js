@@ -1,11 +1,20 @@
 (function($){
     $(document).ready(function(){
+
+        // Afficher/masquer le menu en mobile
+        $('.navigation_mobile .premiere_section i').click(function() {
+            $('.region-mobile-seconde-section').toggleClass('open');
+            $('.premiere_section').toggleClass('open');
+            $('.section_background').toggleClass('open');
+        });
+
         // Afficher/masquer barre de recherche
         $('#search_icon').click(function() {
             $('#search-block-form').toggleClass('open');
             $('#search_icon').toggleClass('open');
         });
         $('#block-openig-formulairederecherche .form-submit').val('');
+        $('#block-openig-formulairederecherche-mobile .form-submit').val('');
 
         // Garder le sous-menu affiché si l'un de ses liens est actifs
         if($('.dropdown-item').hasClass('is-active')){
@@ -15,6 +24,11 @@
             var child = $(parent).find('.dropdown-menu');
             $(child).addClass('show');
         }
+
+        $('#block-openig-navigationprincipale .dropdown-toggle').click(function() {
+            var parent = $('#block-openig-navigationprincipale .dropdown-toggle').closest('.nav-item.dropdown');
+            $(parent).toggleClass('showChild');
+        })
 
         // Afficher/masquer icônes bouton partager
         $('#block-openig-addtoanysharebuttons #button_share').click(function () {
@@ -156,7 +170,23 @@
         $('#block-openig-main-navigation .dropdown-toggle').on('click', function() {
             $('#block-openig-breadcrumbs .navigation_filAriane').toggleClass('menuOpen');
         })
-    
+
+
+        var media1200 = window.matchMedia("(max-width: 1200px)")
+        
+        if(media1200.matches){
+            $('#block-openig-views-block-l-agenda-agenda-accueil .view-l-agenda .row').addClass('slick_agenda');
+            $('.slick_agenda').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+                variableWidth: true,
+                centerMode: true,
+                swipeToSlide: true,
+                slidesPerRow: 5,
+                appendArrows: $('.slick__arrows')
+            });
+        }
     })
 
 })(jQuery);
