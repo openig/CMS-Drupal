@@ -171,19 +171,20 @@ set footer_classes = ' ' ~
 <footer class="mt-auto {{ footer_classes }}">
     <div class="hautFooter">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-3">
+            <div class="row row_haut_footer">
+                <div class="col-12 col-xl-3">
                     {{ page.haut_footer_gauche }}
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     {{ page.haut_footer_centre }}
                 </div>
-                <div class="col-12 col-lg-3 haut_footer_droite">
+                <div class="col-12 col-xl-3 haut_footer_droite">
                     {{ page.haut_footer_droite }}
                 </div>
             </div>
         </div>
     </div>
+    {#
     <div class="milieuFooter">
         <div class="container">
             <div class="row">
@@ -199,21 +200,34 @@ set footer_classes = ' ' ~
             </div>
         </div>
     </div>
+    #}
     <div class="basFooter">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-12 col-lg-3">
+            <div class="row row_bas_footer d-none d-xl-flex">
+                <div class="col-xl-1"></div>
+                <div class="col-6 col-xl-3">
                     {{ page.bas_footer_gauche }}
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-xl-4">
                     {{ page.bas_footer_centre }}
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-6 col-xl-3">
                     {{ page.bas_footer_droite }}
                 </div>
-                <div class="col-lg-1"></div>
+                <div class="col-xl-1"></div>
             </div>
+            <div class="row row_bas_footer d-flex d-xl-none">
+              <div class="col-12 col-xl-4">
+                {{ page.bas_footer_centre }}
+              </div>
+              <div class="col-6 col-xl-3">
+                  {{ page.bas_footer_gauche }}
+              </div>
+              
+              <div class="col-6 col-xl-3">
+                  {{ page.bas_footer_droite }}
+              </div>
+          </div>
         </div>
     </div>
     <div class="footer">

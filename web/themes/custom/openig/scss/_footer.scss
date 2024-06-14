@@ -87,7 +87,7 @@ footer{
     }
 
     // Bloc adresse et contact
-    #block-openig-adresseetcontact{
+    #block-openig-adresseetcontact, #block-openig-adresseetcontact--2{
         //padding: 30px 0;
         .field--name-body{
             font-family:"OpenSans_Regular", sans-serif;
@@ -133,8 +133,8 @@ footer{
     }
 
     // Menu naviguer footer
-    #block-openig-naviguer{
-        #block-openig-naviguer-menu{
+    #block-openig-naviguer, #block-openig-naviguer--2{
+        #block-openig-naviguer-menu, #block-openig-naviguer--2-menu{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
             font-weight: 700;
@@ -179,7 +179,7 @@ footer{
     }
 
     // Bloc nous suivre
-    #block-openig-socialmedialinks{
+    #block-openig-socialmedialinks, #block-openig-socialmedialinks--2{
         position: absolute;
         right: 0;
         h2{
@@ -202,7 +202,7 @@ footer{
     }
 
     // Bloc dernière newsletter
-    #block-openig-dernierenewsletter{
+    #block-openig-dernierenewsletter, #block-openig-dernierenewsletter--2{
         position: absolute;
         right: 0;
         top: 120px;

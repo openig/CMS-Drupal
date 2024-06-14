@@ -401,6 +401,34 @@
 }
 
 @media (max-width: 992px){
+    footer .basFooter{
+        padding: 1rem 0 !important;
+    }
+    footer #block-openig-socialmedialinks--2{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: end !important;
+        position: relative !important;
+    }
+    footer .region-bas-footer-droite, footer .region-bas-footer-gauche{
+        padding: 0 2rem;
+    }
+    #block-openig-dernierenewsletter--2{
+        top: -5rem !important;
+        right: 50% !important;
+        transform: translateX(-50%) !important;
+        width: max-content !important;
+    }
+    .row_haut_footer{
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+    .row_bas_footer .col-6{
+        margin-top: 7rem;
+    }
+    #block-openig-phrasedaccrochefooter{
+        padding: 0 !important;
+    }
     .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
         .view-annuaire .view-header{
             width: 100% !important;
