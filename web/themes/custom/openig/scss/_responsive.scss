@@ -402,6 +402,9 @@
 
 @media (max-width: 992px){
     .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
+        .view-annuaire .view-header{
+            width: 100% !important;
+        }
         .picto_titre{
             h2{
                 font-size: $OPenIG-font-size-lg !important;
@@ -435,6 +438,30 @@
             width: 100% !important;
         }
     }
+    .region-quatrieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
+        padding-left: 0 !important;
+    }
+    .region-sixieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
+        padding-left: 0 !important;
+    }
+    .region-troisieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    }
+    .region-septieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    }
+    .region-septieme-section-accueil .view-annuaire{
+        padding-top: 0 !important;
+    }
+    .region-cinquieme-section-accueil #block-openig-views-block-bloc-temoignage-block-temoignage{
+        padding-top: 0 !important;
+    }
+    .region-cinquieme-section-accueil #block-openig-views-block-l-agenda-agenda-accueil{
+        padding-top: 1rem !important;
+    }   
+    .region-huitieme-section-accueil .view-annuaire .view-header .nombre_header{
+        left: 0 !important;
+    } 
     .region-cinquieme-section-accueil {
         .view{
             flex-direction: column !important;
@@ -453,6 +480,9 @@
         margin-top: 3rem !important;
         .texte_header{
             padding-bottom: 2rem !important;
+        }
+        #block-openig-lanewsletter .contenuFlex h2{
+            padding-left: 0 !important;
         }
     } 
     #block-openig-views-block-les-actualites-actualites-accueil-mobile{
@@ -544,9 +574,6 @@
     #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire{
         flex-direction: column !important;
     }
-    .region-sixieme-section-accueil .view-annuaire .view-header{
-        width: 100% !important;
-    }
     .region-sixieme-section-accueil .view-annuaire .view-header .nombre_header{
         right: 0 !important;
     }
@@ -632,6 +659,9 @@
         .field--name-field-lien a, #block-openig-simplenewssubscription input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
         }
+    }
+    .region-huitieme-section-accueil #block-openig-views-block-les-actualites-actualites-accueil{
+        margin-top: 0 !important;
     }
 
 }
