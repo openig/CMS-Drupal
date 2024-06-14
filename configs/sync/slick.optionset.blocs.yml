@@ -8,7 +8,7 @@ weight: 0
 label: Blocs
 group: ''
 skin: default
-breakpoints: 0
+breakpoints: 2
 optimized: false
 options:
   options__active_tab: edit-options-settings
@@ -44,9 +44,9 @@ options:
     respondTo: window
     rtl: false
     rows: 1
-    slidesPerRow: 5
+    slidesPerRow: 1
     slide: ''
-    slidesToShow: 5
+    slidesToShow: 3
     slidesToScroll: 1
     speed: 500
     swipe: true
@@ -64,3 +64,79 @@ options:
     vertical: false
     verticalSwiping: false
     waitForAnimate: true
+  responsives:
+    responsive:
+      -
+        breakpoint: 1200
+        unslick: false
+        settings:
+          adaptiveHeight: false
+          autoplay: false
+          pauseOnHover: false
+          pauseOnDotsHover: false
+          pauseOnFocus: false
+          autoplaySpeed: 3000
+          arrows: true
+          centerMode: false
+          centerPadding: 50px
+          dots: false
+          draggable: true
+          fade: false
+          focusOnSelect: false
+          infinite: true
+          initialSlide: 0
+          respondTo: window
+          rows: 1
+          slidesPerRow: 1
+          slidesToShow: 2
+          slidesToScroll: 1
+          speed: 500
+          swipe: true
+          swipeToSlide: true
+          edgeFriction: 0.35
+          touchMove: true
+          touchThreshold: 5
+          cssEase: ease
+          cssEaseBezier: ''
+          cssEaseOverride: ''
+          variableWidth: false
+          vertical: false
+          verticalSwiping: false
+          waitForAnimate: true
+      -
+        breakpoint: 576
+        unslick: false
+        settings:
+          adaptiveHeight: false
+          autoplay: false
+          pauseOnHover: false
+          pauseOnDotsHover: false
+          pauseOnFocus: false
+          autoplaySpeed: 3000
+          arrows: true
+          centerMode: true
+          centerPadding: 50px
+          dots: false
+          draggable: true
+          fade: false
+          focusOnSelect: false
+          infinite: true
+          initialSlide: 0
+          respondTo: window
+          rows: 1
+          slidesPerRow: 1
+          slidesToShow: 1
+          slidesToScroll: 1
+          speed: 500
+          swipe: true
+          swipeToSlide: true
+          edgeFriction: 0.35
+          touchMove: true
+          touchThreshold: 5
+          cssEase: ease
+          cssEaseBezier: ''
+          cssEaseOverride: ''
+          variableWidth: false
+          vertical: false
+          verticalSwiping: false
+          waitForAnimate: true
