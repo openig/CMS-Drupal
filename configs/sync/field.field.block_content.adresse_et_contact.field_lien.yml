@@ -1,0 +1,23 @@
+uuid: 59196b12-3ad3-4173-a83d-13970585faa5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.adresse_et_contact
+    - field.storage.block_content.field_lien
+  module:
+    - link
+id: block_content.adresse_et_contact.field_lien
+field_name: field_lien
+entity_type: block_content
+bundle: adresse_et_contact
+label: Lien
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

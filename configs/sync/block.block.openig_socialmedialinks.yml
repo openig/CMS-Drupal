@@ -9,7 +9,7 @@ dependencies:
 id: openig_socialmedialinks
 theme: openig
 region: bas_footer_droite
-weight: -10
+weight: -27
 provider: null
 plugin: social_media_links_block
 settings:

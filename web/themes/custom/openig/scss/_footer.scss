@@ -7,12 +7,8 @@ footer{
         background-color: $OPenIG-color_deep-white;
         margin: auto;
     }
-    .milieuFooter{
-        background-color: $OPenIG-color_gray;
-        margin: auto;
-    }
     .basFooter{
-        background-color: $OPenIG-color_gray;
+        background-color: $OPenIG-color_blue;
         margin: auto;
     }
     .footer{
@@ -92,36 +88,48 @@ footer{
 
     // Bloc adresse et contact
     #block-openig-adresseetcontact{
-        padding: 30px 0;
+        //padding: 30px 0;
         .field--name-body{
             font-family:"OpenSans_Regular", sans-serif;
             font-size: $OPenIG-font-size-lg;
-            color: $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
             text-align: center;
         }
         .field--name-field-telephone, .field--name-field-telephone a{
             text-align: center;
-            color: $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
             font-family: "OpenSans_Regular", sans-serif;
             font-size: $OPenIG-font-size-lg;
             text-decoration: none;
         }
         .field--name-field-email{
             text-align: center;
-            margin-top: 5px;
+            margin-top: 1rem;
             a{
                 font-family:"Exo_semiBold";
                 font-size: $OPenIG-font-size-base;
-                color: $OPenIG-color_deep-white;
+                color: $OPenIG-color_black;
                 font-weight: 600;
                 text-decoration: none;
-                border-bottom: 1px solid $OPenIG-color_deep-white;
+                border-bottom: 1px solid $OPenIG-color_black;
+            }
+        }
+        .field--name-field-lien{
+            text-align: center;
+            margin-top: 1rem;
+            a{
+                font-family:"Exo_semiBold";
+                font-size: $OPenIG-font-size-base;
+                color: $OPenIG-color_black;
+                font-weight: 600;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_black;
             }
         }
     }
 
     .basFooter{
-        padding: 15px 0;
+        padding: 3rem 0;
     }
 
     // Menu naviguer footer
@@ -130,17 +138,17 @@ footer{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
             font-weight: 700;
-            color: $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
         }
         .navbar-nav{
             .nav-item{
                 .nav-link{
                     font-family: "OpenSans_Regular", sans-serif;
                     font-size: $OPenIG-font-size-base;
-                    color: $OPenIG-color_deep-white;
+                    color: $OPenIG-color_black;
                     text-decoration: none;
                     margin: 5px 10px;
-                    border-bottom: 1px solid $OPenIG-color_deep-white;
+                    border-bottom: 1px solid $OPenIG-color_black;
                     width: fit-content;
                     padding: 0;
                 }
@@ -160,13 +168,13 @@ footer{
     }
 
     .region-bas-footer-droite{
-        border-left: 1px solid $OPenIG-color_deep-white;
+        //border-left: 1px solid $OPenIG-color_deep-white;
         position: relative;
         width: 100%;
         height: 100%;
     }
     .region-bas-footer-gauche{
-        border-right: 1px solid $OPenIG-color_deep-white;
+        //border-right: 1px solid $OPenIG-color_deep-white;
         height: 100%;
     }
 
@@ -178,7 +186,7 @@ footer{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
             font-weight: 700;
-            color: $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
             margin-bottom: 1rem;
             border-bottom: none;
         }
@@ -187,7 +195,7 @@ footer{
             justify-content: flex-end;
             li{
                 a{
-                    color: $OPenIG-color_deep-white;
+                    color: $OPenIG-color_black;
                 }
             }
         }
@@ -202,7 +210,7 @@ footer{
             font-family: "OpenSans_Bold", sans-serif;
             font-size: $OPenIG-font-size-base;
             font-weight: 700;
-            color: $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
             border-bottom: 1px solid $OPenIG-color_red;
             text-decoration: none;
         }

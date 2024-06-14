@@ -11,7 +11,7 @@ dependencies:
 id: openig_dernierenewsletter
 theme: openig
 region: bas_footer_droite
-weight: -9
+weight: -26
 provider: null
 plugin: 'block_content:67095522-a276-4bcb-ac5e-024b0f8e5199'
 settings:
