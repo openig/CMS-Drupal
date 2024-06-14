@@ -177,14 +177,27 @@
         if(media1200.matches){
             $('#block-openig-views-block-l-agenda-agenda-accueil .view-l-agenda .row').addClass('slick_agenda');
             $('.slick_agenda').slick({
-                slidesToShow: 1,
+                slidesToShow: 4,
                 slidesToScroll: 1,
                 infinite: true,
                 variableWidth: true,
-                centerMode: true,
                 swipeToSlide: true,
-                slidesPerRow: 5,
-                appendArrows: $('.slick__arrows')
+                slidesPerRow: 1,
+                appendArrows: $('.slick__arrows'),
+                responsive: [
+                    {
+                      breakpoint: 700,
+                      settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        variableWidth: true,
+                        swipeToSlide: true,
+                        slidesPerRow: 1,
+                        appendArrows: $('.slick__arrows'),
+                      }
+                    }
+                ]
             });
         }
     })
