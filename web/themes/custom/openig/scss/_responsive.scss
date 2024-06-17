@@ -370,7 +370,7 @@
     #block-openig-imageenbasdepagemobile{
         display: block;
         position: absolute;
-        bottom: 300px !important;
+        bottom: 250px !important;
         z-index: -1;
         width: 100%;
         img{
@@ -406,7 +406,7 @@
     #block-openig-dernierenewsletter--2{
         position: relative !important;
         top: unset !important;
-        margin-top: 4rem;
+        margin-top: 3rem;
         .field--name-field-lien{
             text-align: center;
         }
@@ -415,6 +415,9 @@
 }
 
 @media (max-width: 992px){
+    #block-openig-imageenbasdepagemobile{
+        bottom: 150px !important;
+    }
     footer{
         .basFooter{
             padding: 1rem 0 !important;
@@ -483,7 +486,7 @@
         flex-direction: column-reverse !important;
     }
     .row_bas_footer .col-6{
-        margin-top: 4rem;
+        margin-top: 3rem;
     }
     #block-openig-phrasedaccrochefooter{
         padding: 0 !important;
@@ -827,7 +830,7 @@
 
 @media (max-width: 576px){
     #block-openig-imageenbasdepagemobile{
-        bottom: 400px !important;
+        bottom: 250px !important;
     }
     #block-openig-imageenhautdepage{
         width: 400% !important;
@@ -877,7 +880,7 @@
         width: auto !important;
     }
     #block-openig-imageenbasdepagemobile{
-        bottom: 500px !important;
+        bottom: 350px !important;
     }
 
 }
