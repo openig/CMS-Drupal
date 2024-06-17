@@ -10,8 +10,8 @@ dependencies:
     - openig
 id: openig_adresseetcontact
 theme: openig
-region: milieu_footer_centre
-weight: 0
+region: bas_footer_centre
+weight: -27
 provider: null
 plugin: 'block_content:062b31d8-76b5-4710-91ac-088969c978c7'
 settings:

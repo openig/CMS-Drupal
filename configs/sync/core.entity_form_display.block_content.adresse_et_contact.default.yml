@@ -6,8 +6,10 @@ dependencies:
     - block_content.type.adresse_et_contact
     - field.field.block_content.adresse_et_contact.body
     - field.field.block_content.adresse_et_contact.field_email
+    - field.field.block_content.adresse_et_contact.field_lien
     - field.field.block_content.adresse_et_contact.field_telephone
   module:
+    - link
     - telephone
     - text
 id: block_content.adresse_et_contact.default
@@ -32,6 +34,14 @@ content:
     settings:
       placeholder: ''
       size: 60
+    third_party_settings: {  }
+  field_lien:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   field_telephone:
     type: telephone_default
