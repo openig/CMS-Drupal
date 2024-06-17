@@ -184,53 +184,21 @@ set footer_classes = ' ' ~
             </div>
         </div>
     </div>
-    {#
-    <div class="milieuFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_gauche }}
-                </div>
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_centre }}
-                </div>
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_droite }}
-                </div>
-            </div>
-        </div>
-    </div>
-    #}
     <div class="basFooter">
         <div class="container">
-            <div class="row row_bas_footer d-none d-xl-flex">
+            <div class="row row_bas_footer ">
                 <div class="col-xl-1"></div>
-                <div class="col-6 col-xl-3">
+                <div class="col-6 footerGauche col-xl-3">
                     {{ page.bas_footer_gauche }}
                 </div>
-                <div class="col-12 col-xl-4">
+                <div class="col-12 footerCentre col-xl-4">
                     {{ page.bas_footer_centre }}
                 </div>
-                <div class="col-6 col-xl-3">
+                <div class="col-6 footerDroite col-xl-3">
                     {{ page.bas_footer_droite }}
                 </div>
                 <div class="col-xl-1"></div>
             </div>
-            <div class="row row_bas_footer d-flex d-xl-none">
-              <div class="col-12 col-xl-4">
-                {{ page.bas_footer_centre }}
-              </div>
-              <div>
-                {{render_block('openig_dernierenewsletter')}}
-              </div>
-              <div class="col-6 col-xl-3">
-                  {{ page.bas_footer_gauche }}
-              </div>
-              
-              <div class="col-6 col-xl-3">
-                  {{ page.bas_footer_droite }}
-              </div>
-          </div>
         </div>
     </div>
     <div class="footer">
