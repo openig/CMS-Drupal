@@ -71,8 +71,9 @@ footer{
             margin-bottom: .5rem;
         }
         ul{
+            font-family: "OpenSans_Bold", sans-serif;
+            font-weight: 700;
             flex-direction: row;
-            font-family:"Russo One";
             font-size: $OPenIG-font-size-base;
             color: $OPenIG-color_black;
             li.nav-item:not(:last-of-type){
@@ -207,9 +208,8 @@ footer{
         right: 0;
         top: 120px;
         a{
-            font-family: "OpenSans_Bold", sans-serif;
+            font-family: 'Russo One';
             font-size: $OPenIG-font-size-base;
-            font-weight: 700;
             color: $OPenIG-color_black;
             border-bottom: 1px solid $OPenIG-color_red;
             text-decoration: none;
