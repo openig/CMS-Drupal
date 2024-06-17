@@ -83,6 +83,9 @@
         top: 0 !important;
         padding: 0;
     }
+    body.toolbar-vertical.toolbar-fixed header{
+        top: 39px !important;
+    }
     .premiere_section{
         display: flex;
         justify-content: center;
