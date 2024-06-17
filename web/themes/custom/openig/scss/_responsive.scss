@@ -370,7 +370,7 @@
     #block-openig-imageenbasdepagemobile{
         display: block;
         position: absolute;
-        bottom: 600px;
+        bottom: 300px !important;
         z-index: -1;
         width: 100%;
         img{
@@ -403,6 +403,10 @@
 @media (max-width: 992px){
     footer .basFooter{
         padding: 1rem 0 !important;
+    }
+    footer #block-openig-adhesion-footer .logged{
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
     }
     footer #block-openig-socialmedialinks--2{
         display: flex !important;
@@ -769,6 +773,9 @@
 }
 
 @media (max-width: 576px){
+    #block-openig-imageenbasdepagemobile{
+        bottom: 400px !important;
+    }
     #block-openig-imageenhautdepage{
         width: 400% !important;
         top: -15rem !important;
@@ -816,6 +823,9 @@
     .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows{
         width: auto !important;
     }
+    #block-openig-imageenbasdepagemobile{
+        bottom: 500px !important;
+    }
 
 }
 
@@ -833,5 +843,8 @@
         .nombre_header{
             top: 50px !important;
         }
+    }
+    footer .region-bas-footer-droite, footer .region-bas-footer-gauche{
+        padding: 0 !important;
     }
 }
