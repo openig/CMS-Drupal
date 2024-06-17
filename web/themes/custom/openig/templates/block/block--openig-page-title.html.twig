@@ -26,7 +26,6 @@
  * @see template_preprocess_block()
  */
 #}
-
 <div class="container title_share">
   <div{{ attributes }}>
     {{ title_prefix }}
@@ -38,6 +37,10 @@
       {{ content }}
     {% endblock %}
   </div>
-  {{ render_block('openig_addtoanysharebuttons') }}
 </div>
-  {{ render_block('openig_ensavoirplussurladhesion') }}
+<div class="share_adhesion">
+  <div class="container" style="position:relative">
+    {{ render_block('openig_addtoanysharebuttons') }}
+  </div>
+    {{ render_block('openig_ensavoirplussurladhesion') }}
+</div>

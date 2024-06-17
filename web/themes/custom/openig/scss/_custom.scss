@@ -218,6 +218,12 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
+#block-openig-addtoanysharebuttons{
+    position: absolute;
+    top: -6.5rem;
+    right: 0;
+}
+
 #block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
     display: flex;
     //align-items: baseline;
@@ -802,6 +808,10 @@ h3{
     }
     li.breadcrumb-item:not(:first-of-type)::before{
         content: '>';
+    }
+    li.breadcrumb-item:last-of-type{
+        font-family: 'OpenSans_SemiBold';
+        font-weight: 600;
     }
 }
 .block-system-breadcrumb-block .menuOpen{
