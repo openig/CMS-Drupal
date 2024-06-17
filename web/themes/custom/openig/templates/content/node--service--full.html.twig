@@ -81,7 +81,7 @@
 {{ attach_library('bootstrap5/node') }}
 <div class="container">
     <div class="row">
-        <div class="btnUtiliser col-8">
+        <div class="btnUtiliser col-xl-8 col-12">
             {% if elements['#node'].field_access_restricted.value == 1 %}
                 {% if 'adherent' in user.getRoles() %}
                     <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>

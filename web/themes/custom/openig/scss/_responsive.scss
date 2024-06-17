@@ -526,10 +526,15 @@
     h1{
         font-size: $OPenIG-font-size-md !important;
     }
+    h2{
+        font-size: $OPenIG-font-size-base !important;
+        border-bottom: 4px solid $OPenIG-color_light-blue !important;
+    }
     .title_share{
         flex-direction: column !important;
     }
     #block-openig-page-title{
+        width: 100% !important;
         h1{
             padding-left: 50px !important;
             margin-left: 0 !important;
@@ -554,9 +559,54 @@
         position: relative !important;
         top: unset !important;
         #button_share{
+            height: 25px !important;
+            padding: 0 10px !important;
             font-size: $OPenIG-font-size-xs !important;
+            i{
+                font-size: $OPenIG-font-size-base !important;
+            }
         }
     }
+    .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
+        border-bottom: 1px solid $OPenIG-color_gray !important;
+        padding-bottom: 5px !important;
+    }
+    .field--name-field-body{
+        font-size: $OPenIG-font-size-sm;
+    }
+    .page-node-type-service{
+        .sidebar{
+            background-color: $OPenIG-color_deep-white;
+            padding-top: 2rem;
+            margin-top: 0 !important;
+        }
+        #block-openig-views-block-contacts-gt-contacts-service{
+            padding: 1rem 0;
+            background-color: $OPenIG-color_white;
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow !important;
+            }
+            .field-content{
+                font-size: $OPenIG-font-size-xs;
+            }
+        }
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0 !important;
+        }
+        .btnUtiliser{
+            height: fit-content !important;
+            margin-top: 2rem;
+            flex-direction: column;
+            font-size: $OPenIG-font-size-sm !important;
+            height: fit-content !important;
+            button{
+                width: fit-content;
+                font-size: $OPenIG-font-size-xs !important;
+                height: 25px !important;
+                padding: 0 10px !important;
+            }
+        }
+    } 
     .view-les-services.view-display-id-services{
         margin-top: 3rem !important;
         .slick__arrows{
