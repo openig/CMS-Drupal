@@ -414,17 +414,19 @@
         padding: 0 2rem;
     }
     #block-openig-dernierenewsletter--2{
-        top: -5rem !important;
-        right: 50% !important;
-        transform: translateX(-50%) !important;
-        width: max-content !important;
+        position: relative !important;
+        top: unset !important;
+        margin-top: 4rem;
+        .field--name-field-lien{
+            text-align: center;
+        }
     }
     .row_haut_footer{
         display: flex !important;
         flex-direction: column-reverse !important;
     }
     .row_bas_footer .col-6{
-        margin-top: 7rem;
+        margin-top: 4rem;
     }
     #block-openig-phrasedaccrochefooter{
         padding: 0 !important;
