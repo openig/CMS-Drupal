@@ -397,6 +397,20 @@
             width: 100%;
         }
     }
+
+    #block-openig-naviguer--2{
+        a{
+            margin-right: 0 !important;
+        }
+    }
+    #block-openig-dernierenewsletter--2{
+        position: relative !important;
+        top: unset !important;
+        margin-top: 4rem;
+        .field--name-field-lien{
+            text-align: center;
+        }
+    }
     
 }
 
@@ -416,14 +430,6 @@
     }
     footer .region-bas-footer-droite, footer .region-bas-footer-gauche{
         padding: 0 2rem;
-    }
-    #block-openig-dernierenewsletter--2{
-        position: relative !important;
-        top: unset !important;
-        margin-top: 4rem;
-        .field--name-field-lien{
-            text-align: center;
-        }
     }
     .row_haut_footer{
         display: flex !important;
