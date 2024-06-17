@@ -83,6 +83,9 @@
         top: 0 !important;
         padding: 0;
     }
+    body.toolbar-vertical.toolbar-fixed header{
+        top: 39px !important;
+    }
     .premiere_section{
         display: flex;
         justify-content: center;
@@ -398,45 +401,99 @@
         }
     }
 
-    #block-openig-naviguer--2{
+    #block-openig-naviguer{
         a{
             margin-right: 0 !important;
         }
     }
-    #block-openig-dernierenewsletter--2{
-        position: relative !important;
-        top: unset !important;
-        margin-top: 3rem;
-        .field--name-field-lien{
-            text-align: center;
+
+    footer{
+        .basFooter{
+            position: relative !important;
+            padding: 1rem 0 !important;
         }
-    }
+        .footerGauche, .footerDroite{
+            margin-top: 350px !important;
+        }
+        .footerCentre{
+            position: absolute !important;
+            top: 20px;
+            left: 0;
+        }
+        .region-bas-footer-droite{
+            position: unset !important;
+        }
+        #block-openig-dernierenewsletter{
+            top: 275px !important;
+            right: 0 !important;
+            left: 0 !important;
+            .field--name-field-lien{
+                text-align: center;
+            }
+        }
+        #block-openig-socialmedialinks{
+            position: relative !important;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+        
+        #block-openig-adresseetcontact{
+            .field--name-field-lien, .field--name-field-email{
+                margin-top: 1.5rem !important;
+            } 
+        } 
+        #block-openig-adhesion-footer{
+            .logged{
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+            }
+            ul{
+                font-family: "OpenSans_Bold", sans-serif !important;
+                font-weight: 700 !important;
+            }
+            .field--name-field-picto{
+                margin-right: 0 !important;
+            }
+        }
+        #block-openig-socialmedialinks{
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: end !important;
+            position: relative !important;
+        }
+        .region-bas-footer-droite, .region-bas-footer-gauche{
+            padding: 0 2rem;
+        }
+    } 
     
 }
 
 @media (max-width: 992px){
     #block-openig-imageenbasdepagemobile{
-        bottom: 150px !important;
+        bottom: 200px !important;
     }
     footer{
-        .basFooter{
-            padding: 1rem 0 !important;
-        }
-        #block-openig-naviguer--2{
+        #block-openig-naviguer{
             .navbar-nav .nav-item .nav-link{
                 font-size: $OPenIG-font-size-xs !important;
             }
-            #block-openig-naviguer--2-menu{
+            #block-openig-naviguer-menu{
                 font-size: $OPenIG-font-size-sm !important;
             }
         } 
-        #block-openig-dernierenewsletter--2 a{
+        #block-openig-dernierenewsletter a{
             font-size: $OPenIG-font-size-sm !important;
         }
-        #block-openig-adresseetcontact--2{
-            .field--name-field-lien a, .field--name-field-email a, .field--name-body{
-                font-size: $OPenIG-font-size-xs !important;
+        #block-openig-adresseetcontact{
+            .field--name-body{
+                font-size: $OPenIG-font-size-sm !important;
             }
+            .field--name-field-lien, .field--name-field-email{
+                a{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+            } 
             .field--name-field-telephone, .field--name-field-telephone a{
                 font-size: $OPenIG-font-size-base !important;
             }
@@ -452,33 +509,17 @@
             }
         }
         #block-openig-adhesion-footer{
-            .logged{
-                margin-left: 0.5rem;
-                margin-right: 0.5rem;
-            }
             .field--name-field-picto img{
                 width: 26px !important;
             }
             ul{
                 font-size: $OPenIG-font-size-xs !important;
-                font-family: "OpenSans_Bold", sans-serif !important;
-                font-weight: 700 !important;
-            }
-            .field--name-field-picto{
-                margin-right: 0 !important;
             }
         }
-        #block-openig-socialmedialinks--2{
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: end !important;
-            position: relative !important;
+        #block-openig-socialmedialinks{
             h2{
                 font-size: $OPenIG-font-size-sm !important;
             }
-        }
-        .region-bas-footer-droite, .region-bas-footer-gauche{
-            padding: 0 2rem;
         }
     } 
     .row_haut_footer{
@@ -880,7 +921,7 @@
         width: auto !important;
     }
     #block-openig-imageenbasdepagemobile{
-        bottom: 350px !important;
+        bottom: 400px !important;
     }
 
 }
