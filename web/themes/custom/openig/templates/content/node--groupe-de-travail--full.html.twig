@@ -235,20 +235,20 @@
         {% endif %}
         {% if logged_in %}
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
-                <div class="btnShareRejoindre">
-                    {{ render_block('openig_addtoanysharebuttons_bas_page') }}
-                    {% if membre is not defined %}
-                        <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
-                    {% endif %}
-                </div>
-            {% else %}
-                <div class="col-12">
+                {% if membre is not defined %}
                     <div class="btnShareRejoindre">
                         {{ render_block('openig_addtoanysharebuttons_bas_page') }}
-                        {% if membre is not defined %}
-                            <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
-                        {% endif %}
+                        <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                     </div>
+                {% endif %}
+            {% else %}
+                <div class="col-12">
+                    {% if membre is not defined %}
+                        <div class="btnShareRejoindre">
+                            {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                            <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+                        </div>
+                    {% endif %}
                 </div>
             {% endif %}
         {% endif %}
