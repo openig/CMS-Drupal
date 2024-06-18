@@ -46,10 +46,12 @@
   {% endif %}
   {{ title_suffix }}
   {% if header %}
-    <div class="view-header row">
-    <div class="col-1"></div>
-      {{ header }}
-    <div class="col-1"></div>
+    <div class="view-header container">
+      <div class="row">
+        <div class="col-xl-1 d-none d-xl-block"></div>
+        {{ header }}
+        <div class="col-xl-1 d-none d-xl-block"></div>
+      </div>
     </div>
   {% endif %}
   {% if exposed %}
@@ -64,7 +66,7 @@
   {% endif %}
 
   {% if rows %}
-    <div class="view-content">
+    <div class="view-content container-xl">
       {{ rows }}
     </div>
   {% elseif empty %}
