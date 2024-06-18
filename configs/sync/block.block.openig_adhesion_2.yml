@@ -1,4 +1,4 @@
-uuid: 4619faed-a20e-4d89-9e15-cd633e22912f
+uuid: 5a4e134c-5fb8-4cb7-90d7-d0cd5b8ba5be
 langcode: fr
 status: true
 dependencies:
@@ -9,10 +9,10 @@ dependencies:
     - user
   theme:
     - openig
-id: openig_adhesion_mobile
+id: openig_adhesion_2
 theme: openig
-region: mobile_seconde_section
-weight: -26
+region: mobile_premiere_section
+weight: 0
 provider: null
 plugin: 'system_menu_block:adhesion'
 settings:
@@ -30,4 +30,4 @@ visibility:
     context_mapping:
       user: '@user.current_user_context:current_user'
     roles:
-      anonymous: anonymous
+      authenticated: authenticated

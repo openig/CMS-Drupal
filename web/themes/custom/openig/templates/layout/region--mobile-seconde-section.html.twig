@@ -21,6 +21,14 @@
 %}
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
-    {{ content }}
+    <div class="first_line">
+      {% if not logged_in %}
+        {{render_block('openig_adhesion_mobile')}}
+      {% endif %}
+      {{render_block('openig_faq_mobile')}}
+    </div>
+    {{render_block('openig_formulairederecherche_mobile')}}
+    {{render_block('openig_navigationprincipale')}}
+    {#{{ content }}#}
   </div>
 {% endif %}
