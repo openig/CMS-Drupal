@@ -573,6 +573,9 @@
         font-size: $OPenIG-font-size-base !important;
         border-bottom: 4px solid $OPenIG-color_light-blue !important;
     }
+    h3{
+        font-size: $OPenIG-font-size-lg !important
+    }
     .title_share{
         flex-direction: column !important;
     }
@@ -614,10 +617,18 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective{
         font-size: $OPenIG-font-size-sm !important;
     }
+    .accordion h2{
+        border: 0 !important;
+    }
     .page-node-type-service{
+        .sidebar{
+            margin-top: 0 !important;
+        }
+    }
+    .page-node-type-service, .page-node-type-groupe-de-travail{
         .btnShareUtiliser{
             min-width: 100% !important;
             flex-direction: column !important;
@@ -647,9 +658,17 @@
         .sidebar{
             background-color: $OPenIG-color_deep-white !important;
             padding-top: 2rem;
-            margin-top: 0 !important;
         }
-        #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement{
+        .field--name-field-contenu-sidebar .paragraph--type--texte-dropdown{
+            #collapseParagraph .field__item{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+            h2{
+                border-bottom: 0 !important;
+            }
+        }
+        
+        #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement, #block-openig-views-block-contacts-gt-contacts-gt{
             padding: 1rem 0 !important;
             background-color: $OPenIG-color_white !important;
             margin-bottom: 3rem !important;
@@ -663,12 +682,11 @@
         #block-openig-ensavoirplussurladhesion{
             margin-top: 0.5rem !important;
         }
-        .btnUtiliser{
+        .btnUtiliser, .btngroupe{
             height: fit-content !important;
             margin-top: 2rem;
             flex-direction: column;
             font-size: $OPenIG-font-size-sm !important;
-            height: fit-content !important;
             button{
                 width: fit-content;
                 font-size: $OPenIG-font-size-xs !important;
@@ -677,7 +695,115 @@
             }
         }
     } 
-
+    .page-node-type-groupe-de-travail{
+        .btnShareRejoindre{
+            min-width: 100% !important;
+            align-items: flex-start !important;
+            justify-content: space-between !important;
+            #button_share_bas_page, #btnRejoindre_bas{
+                height: 25px !important;
+                padding: 0 10px !important;
+                font-size: $OPenIG-font-size-xs !important;
+                width: fit-content;
+                i{
+                    font-size: $OPenIG-font-size-base !important;
+                }
+            }
+            #block-openig-addtoanysharebuttons-bas-page{
+                flex-direction: column;
+                .share_liste{
+                    margin-top: 1rem !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
+            }
+        }
+        .btngroupe{
+            margin-top: 1rem !important;
+            #btnRejoindre{
+                float: unset !important;
+            }
+        }
+        .node--type-groupe-de-travail{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        .field--name-field-contenu-sidebar .paragraph--type--title-text{
+            padding: 1rem 0 !important;
+            background-color: $OPenIG-color_white !important;
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow !important;
+            }
+            .field--name-field-texte{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .field--name-field-contenu-sidebar .paragraph--type--type-de-contenu{
+            .node--type-ressource{
+                .node__content{
+                    display: flex;
+                    justify-content: center;
+                    background-color: $OPenIG-color_white
+                }
+                a{
+                    font-size: $OPenIG-font-size-sm !important;
+                }
+            }
+        }
+        .sidebar{
+            margin-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .itemPrivate{
+            font-size: $OPenIG-font-size-xs !important;
+            position: relative !important;
+            right: unset !important;
+            top: unset !important;
+            transform: unset !important;
+            margin-bottom: 0 !important;
+            margin-top: 5px !important;
+            i{
+                margin-left: 0.5rem !important;
+            }
+        }
+        .accordion-disabled .accordion-button{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            span{
+                margin-top: 5px;
+            }
+            p{
+                margin-bottom: 0 !important;
+            }
+        }
+        .accordion-button{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        #accordionGroupeTravail{
+            .accordion-item{
+                font-size: $OPenIG-font-size-xs !important;
+                .field__item{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+                .field--name-field-members, .field--name-field-animators{
+                    columns: 2 !important;
+                }
+                .content_ressources{
+                    a{
+                        font-size: $OPenIG-font-size-xs !important;
+                    }
+                    .locked{
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }  
+        .accordion-disabled .accordion-button::after{
+            display: none;
+        }
+    }
     #block-openig-communiquermutualiser.contenthidden{
         right: 150px !important;
     }

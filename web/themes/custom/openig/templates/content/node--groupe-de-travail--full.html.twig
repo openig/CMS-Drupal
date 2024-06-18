@@ -83,7 +83,7 @@
     {% if 'adherent' in user.getRoles() %}
         {% if membre is not defined %}
             <div class="row">
-                <div class="btngroupe col-8">
+                <div class="btngroupe col-lg-8 col-12">
                     <button id="btnRejoindre" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                     <!-- Modal -->
                     <div class="modal fade" id="rejoindreGroupe" tabindex="-1" aria-labelledby="rejoindreGroupeLabel" aria-hidden="true">
@@ -134,7 +134,7 @@
                     {% else %}
                         <h2 class="accordion-header accordion-disabled" id="headingOne">
                             <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Animateurs
+                                <span>Animateurs</span>
                                 <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                             </button>
                         </h2>
@@ -158,7 +158,7 @@
                     {% else %}
                         <h2 class="accordion-header accordion-disabled" id="headingTwo">
                             <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Membres du groupe de travail
+                                <span>Membres du groupe de travail</span>
                                 <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                             </button>
                         </h2>
@@ -205,18 +205,31 @@
             </div>
         </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-3">
-            {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
-            {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
-            {% if logged_in %}
-                {{content.field_contenu_sidebar}}
+        {% if logged %}
+            {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
+                <div class="col-lg-3 sidebar">
+                    {% if content.field_animators[0] %}
+                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                    {% endif %}
+                    {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                    {{content.field_contenu_sidebar}}
+                </div>
             {% endif %}
-        </div>
+        {% else %}
+            {% if (content.field_animators[0]) or (evenements == 'oui') %}
+                <div class="col-lg-3 sidebar">
+                    {% if content.field_animators[0] %}
+                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                    {% endif %}
+                    {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                </div>
+            {% endif %}
+        {% endif %}
         {% if logged_in %}
             <div class="btnShareRejoindre">
                 {{ render_block('openig_addtoanysharebuttons_bas_page') }}
                 {% if membre is not defined %}
-                    <button id="btnRejoindre_bas"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
+                    <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                 {% endif %}
             </div>
         {% endif %}
