@@ -147,6 +147,26 @@
     .section_background.open{
         background-color: $OPenIG-color_light-gray;
     }
+    .region-mobile-premiere-section{
+        .block-menu.navigation.menu--adhesion{
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            .navbar-nav, .nav-item{
+                display: flex;
+                align-items: center;
+                .logged{
+                    border-bottom: 1px solid $OPenIG-color_red;
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin-left: 0.5rem;
+                    padding-bottom: 0;
+                    padding-top: 0;
+                }
+            }
+        }
+    }
     .premiere_section.open{
         i.fa-xmark{
             display: block;
@@ -160,7 +180,7 @@
         justify-content: flex-end;
         align-items: center;
         margin-top: 1rem;
-        #block-openig-adhesion-mobile{
+        .block-system-menu-blockadhesion{
             .nav-item{
                 display: flex;
                 align-items: center;
@@ -168,11 +188,11 @@
             .navbar-nav{
                 flex-direction: row;
             }
+            border-right: 4px solid $OPenIG-color_red;
+            padding-right: 1rem;
+            margin-right: 1rem;
         }
-        #block-openig-faq-mobile{
-            border-left: 4px solid $OPenIG-color_red;
-            padding-left: 1rem;
-            margin-left: 1rem;
+        .block-system-menu-blockfaq{
             .nav-item{
                 padding: 0.5rem;
                 a{
@@ -297,6 +317,9 @@
     #block-openig-imageenhautdepage{
         width: 200% !important;
         top: -10rem !important;
+    }
+    .path-frontpage h2{
+        border-bottom: 0 !important;
     }
     .path-frontpage #block-openig-imageenhautdepage{
         position: absolute !important;
@@ -523,8 +546,14 @@
 }
 
 @media (max-width: 992px){
+    .block-menu.navigation.menu--adhesion{
+        img{
+            width: 25px;
+        }
+    }
     h1{
         font-size: $OPenIG-font-size-lg !important;
+        
     }
     h2{
         font-size: $OPenIG-font-size-base !important;
@@ -618,7 +647,7 @@
             }
         }
         #block-openig-ensavoirplussurladhesion{
-            margin-top: 0 !important;
+            margin-top: 0.5rem !important;
         }
         .btnUtiliser{
             height: fit-content !important;
