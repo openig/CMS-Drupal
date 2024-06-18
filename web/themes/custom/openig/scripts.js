@@ -15,6 +15,7 @@
         });
         $('#block-openig-formulairederecherche .form-submit').val('');
         $('#block-openig-formulairederecherche-mobile .form-submit').val('');
+        $('#block-openig-formulairederecherche-mobile--2 .form-submit').val('');
 
         // Garder le sous-menu affiché si l'un de ses liens est actifs
         if($('.dropdown-item').hasClass('is-active')){
@@ -203,29 +204,84 @@
             }
             
             $('.view-les-services.view-display-id-services .view-grid-services .group_columns').addClass('slick_services');
-            $('.slick_services').slick({
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                infinite: true,
-                variableWidth: true,
-                swipeToSlide: true,
-                slidesPerRow: 1,
-                appendArrows: $('.slick__arrows'),
-                responsive: [
-                    {
-                      breakpoint: 700,
-                      settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: true,
-                        variableWidth: true,
-                        swipeToSlide: true,
-                        slidesPerRow: 1,
-                        appendArrows: $('.slick__arrows'),
-                      }
-                    }
-                ]
-            });
+            if($('body').hasClass('path-les-services')){
+                $('.slick_services').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    variableWidth: true,
+                    swipeToSlide: true,
+                    slidesPerRow: 1,
+                    appendArrows: $('.slick__arrows'),
+                    responsive: [
+                        {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            variableWidth: true,
+                            swipeToSlide: true,
+                            slidesPerRow: 1,
+                            appendArrows: $('.slick__arrows'),
+                        }
+                        }
+                    ]
+                });
+            }
+
+            $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail .view-grid-groupe .group_columns').addClass('slick_groupes');
+            $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives .view-grid-groupe-archive .group_columns').addClass('slick_groupes_archives');
+
+            if($('body').hasClass('path-les-groupes-de-travail')){
+                $('.slick_groupes').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    variableWidth: true,
+                    swipeToSlide: true,
+                    slidesPerRow: 1,
+                    appendArrows: $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail .slick__arrows'),
+                    responsive: [
+                        {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            variableWidth: true,
+                            swipeToSlide: true,
+                            slidesPerRow: 1,
+                            appendArrows: $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail .slick__arrows'),
+                        }
+                        }
+                    ]
+                });
+
+                $('.slick_groupes_archives').slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    variableWidth: true,
+                    swipeToSlide: true,
+                    slidesPerRow: 1,
+                    appendArrows: $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives .slick__arrows'),
+                    responsive: [
+                        {
+                        breakpoint: 700,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            variableWidth: true,
+                            swipeToSlide: true,
+                            slidesPerRow: 1,
+                            appendArrows: $('.view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives .slick__arrows'),
+                        }
+                        }
+                    ]
+                });
+            }
         }
     })
 

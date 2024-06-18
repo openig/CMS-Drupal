@@ -30,6 +30,7 @@
     options.alignment,
     'cols-' ~ options.columns,
     'clearfix',
+    'view-grid-groupe-archive'
   ]
 %}
 {% if options.row_class_default %}
@@ -53,17 +54,30 @@
 {% endif %}
 <div{{ attributes.addClass(classes) }}>
   {% if options.alignment == 'horizontal' %}
-    {% for row in items %}
-      <div class="row row_groupe" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+    <div class="d-xl-block d-none">
+      {% for row in items %}
+        <div class="row row_groupe" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+          {% for column in row.content %}
+            <div class="col-xl-3">
+              <div class="card h-100">
+                  {{- column.content -}}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="group_columns d-xl-none d-block row_groupe">
+      {% for row in items %}
         {% for column in row.content %}
-          <div class="col-lg-3 col-12" {{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+          <div class="d-flex">
             <div class="card h-100">
-                {{- column.content -}}
+              {{- column.content -}}
             </div>
           </div>
-        {% endfor %}
-      </div>
+      {% endfor %}
     {% endfor %}
+    </div>
   {% else %}
     {% for column in items %}
       <div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
@@ -75,4 +89,5 @@
       </div>
     {% endfor %}
   {% endif %}
+    <div class="d-flex d-xl-none slick__arrows container"></div>
 </div>

@@ -115,6 +115,14 @@ function openig_preprocess_node(&$variables, $hook){
           $variables['membre'] = 'membre';
         }
       }
+
+      // Récupération des évènements du groupe de travail
+      $database = \Drupal::database();
+      $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_groupe_de_travail} f ON f.field_groupe_de_travail_target_id = n.nid WHERE f.field_groupe_de_travail_target_id = '".$nid."'");
+      $result = $query->fetchAll();
+      if($result){
+        $variables['evenements'] = 'oui';
+      }
       break;
       
       case "article":

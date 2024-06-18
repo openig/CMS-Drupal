@@ -202,7 +202,7 @@
             }
         }
     }
-    #block-openig-formulairederecherche-mobile.search-block-form{
+    #block-openig-formulairederecherche-mobile.search-block-form, #block-openig-formulairederecherche-mobile--2.search-block-form{
         height: 70px;
         width: 100%;
         margin-top: 3rem;
@@ -238,6 +238,7 @@
                 padding: 0;
                 width: 35px;
                 height: 35px;
+                color: transparent !important;
             }
             .form-actions{
                 position: relative;
@@ -259,7 +260,7 @@
             }
         }
     }
-    #block-openig-navigationprincipale{
+    #block-openig-navigationprincipale, #block-openig-navigationprincipale--2{
         margin-top: 2rem;
         .navbar-nav{
             align-content: center;
@@ -498,7 +499,7 @@
         }
     } 
 
-    .view-les-services.view-display-id-services{
+    .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         .slick__arrows{
             display: flex;
             justify-content: space-between;
@@ -528,7 +529,7 @@
         button.slick-prev::before{
             content: '\f053' !important;
         }
-        .slick_services{
+        .slick_services, .slick_groupes{
             cursor: grab;
             .slick-slide{
                 margin-left: 20px;
@@ -537,6 +538,19 @@
             .card{
                 width: 306px !important;
                 height: 410px !important;
+                margin-bottom: 1rem;
+                overflow: hidden;
+            }
+        }
+        .slick_groupes_archives{
+            cursor: grab;
+            .slick-slide{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .card{
+                width: 306px !important;
+                height: 300px !important;
                 margin-bottom: 1rem;
                 overflow: hidden;
             }
@@ -559,13 +573,16 @@
         font-size: $OPenIG-font-size-base !important;
         border-bottom: 4px solid $OPenIG-color_light-blue !important;
     }
+    h3{
+        font-size: $OPenIG-font-size-lg !important
+    }
     .title_share{
         flex-direction: column !important;
     }
     #block-openig-page-title{
         width: 100% !important;
         h1{
-            padding-left: 50px !important;
+            padding-left: 65px !important;
             margin-left: 0 !important;
         }
         img{
@@ -600,42 +617,57 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective{
         font-size: $OPenIG-font-size-sm !important;
     }
+    .accordion h2{
+        border: 0 !important;
+    }
     .page-node-type-service{
-        .btnShareUtiliser{
+        .sidebar{
+            margin-top: 0 !important;
+        }
+        .node--type-service{
+            margin-bottom: 3rem;
+        }
+    }
+    .page-node-type-service, .page-node-type-groupe-de-travail{
+        .btnShareRejoindre, .btnShareUtiliser{
             min-width: 100% !important;
-            flex-direction: column !important;
-            padding: 2.5rem 0.5rem !important;
-            #block-openig-addtoanysharebuttons-bas-page{
-                margin-bottom: 2rem !important;
-                #button_share_bas_page{
-                    height: 25px !important;
-                    padding: 0 10px !important;
-                    font-size: $OPenIG-font-size-xs !important;
-                    margin-left: 0 !important;
-                    i{
-                        font-size: $OPenIG-font-size-base !important;
-                    }
-                }
-                .share_liste{
-                    padding: 0 10px !important;
-                    margin-right: 1rem !important;
-                }
-            }
-            .buttonUse{
-                font-size: $OPenIG-font-size-xs !important;
+            align-items: flex-start !important;
+            justify-content: space-between !important;
+            #button_share_bas_page, #btnRejoindre_bas, .buttonUse, #button_share_bas_page{
                 height: 25px !important;
                 padding: 0 10px !important;
+                font-size: $OPenIG-font-size-xs !important;
+                width: fit-content;
+                i{
+                    font-size: $OPenIG-font-size-base !important;
+                }
+            }
+            #block-openig-addtoanysharebuttons-bas-page{
+                flex-direction: column;
+                .share_liste{
+                    margin-top: 1rem !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
             }
         }
         .sidebar{
             background-color: $OPenIG-color_deep-white !important;
             padding-top: 2rem;
-            margin-top: 0 !important;
         }
-        #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement{
+        .field--name-field-contenu-sidebar .paragraph--type--texte-dropdown{
+            #collapseParagraph .field__item{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+            h2{
+                border-bottom: 0 !important;
+            }
+        }
+        
+        #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement, #block-openig-views-block-contacts-gt-contacts-gt{
             padding: 1rem 0 !important;
             background-color: $OPenIG-color_white !important;
             margin-bottom: 3rem !important;
@@ -649,12 +681,11 @@
         #block-openig-ensavoirplussurladhesion{
             margin-top: 0.5rem !important;
         }
-        .btnUtiliser{
+        .btnUtiliser, .btngroupe{
             height: fit-content !important;
             margin-top: 2rem;
             flex-direction: column;
             font-size: $OPenIG-font-size-sm !important;
-            height: fit-content !important;
             button{
                 width: fit-content;
                 font-size: $OPenIG-font-size-xs !important;
@@ -663,7 +694,93 @@
             }
         }
     } 
-
+    .page-node-type-groupe-de-travail{
+        .btngroupe{
+            margin-top: 1rem !important;
+            #btnRejoindre{
+                float: unset !important;
+            }
+        }
+        .node--type-groupe-de-travail{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        .field--name-field-contenu-sidebar .paragraph--type--title-text{
+            padding: 1rem 0 !important;
+            background-color: $OPenIG-color_white !important;
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow !important;
+            }
+            .field--name-field-texte{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .field--name-field-contenu-sidebar .paragraph--type--type-de-contenu{
+            .node--type-ressource{
+                .node__content{
+                    display: flex;
+                    justify-content: center;
+                    background-color: $OPenIG-color_white
+                }
+                a{
+                    font-size: $OPenIG-font-size-sm !important;
+                }
+            }
+        }
+        .sidebar{
+            margin-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .itemPrivate{
+            font-size: $OPenIG-font-size-xs !important;
+            position: relative !important;
+            right: unset !important;
+            top: unset !important;
+            transform: unset !important;
+            margin-bottom: 0 !important;
+            margin-top: 5px !important;
+            i{
+                margin-left: 0.5rem !important;
+            }
+        }
+        .accordion-disabled .accordion-button{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            span{
+                margin-top: 5px;
+            }
+            p{
+                margin-bottom: 0 !important;
+            }
+        }
+        .accordion-button{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        #accordionGroupeTravail{
+            .accordion-item{
+                font-size: $OPenIG-font-size-xs !important;
+                .field__item{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+                .field--name-field-members, .field--name-field-animators{
+                    columns: 2 !important;
+                }
+                .content_ressources{
+                    a{
+                        font-size: $OPenIG-font-size-xs !important;
+                    }
+                    .locked{
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+        }  
+        .accordion-disabled .accordion-button::after{
+            display: none;
+        }
+    }
     #block-openig-communiquermutualiser.contenthidden{
         right: 150px !important;
     }
@@ -690,7 +807,7 @@
             font-size: $OPenIG-font-size-sm !important;
         }
     }
-    .view-les-services.view-display-id-services{
+    .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         margin-top: 3rem !important;
         .slick__arrows{
             display: flex;
@@ -718,7 +835,7 @@
         button.slick-prev::before{
             content: '\f053' !important;
         }
-        .slick_services{
+        .slick_services, .slick_groupes{
             .slick-slide{
                 margin-left: 20px;
                 margin-right: 20px;
@@ -726,6 +843,18 @@
             .card{
                 width: 250px !important;
                 height: 290px !important;
+                margin-bottom: 1rem;
+                overflow: hidden;
+            }
+        }
+        .slick_groupes_archives{
+            .slick-slide{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .card{
+                width: 250px !important;
+                height: 175px !important;
                 margin-bottom: 1rem;
                 overflow: hidden;
             }
@@ -741,6 +870,9 @@
             margin-top: 1rem;
         }
     }
+    .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
+        margin-top: 2rem !important;
+    }
     .paragraph--type--picto-text.paragraph--view-mode--vue{
         flex-direction: column !important;
         .picto_verbe .field--name-field-verbe-action{
@@ -751,7 +883,7 @@
             margin-top: 0.5rem;
         }
     }
-    .path-les-services #block-openig-ensavoirplussurladhesion{
+    .path-les-services #block-openig-ensavoirplussurladhesion, .path-les-groupes-de-travail #block-openig-ensavoirplussurladhesion{
         width: 60% !important;
         margin-top: -3rem !important;
         margin-bottom: 3rem;
@@ -963,7 +1095,7 @@
         width: 250px !important;
         height: 290px !important;
     }
-    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, .view-les-services.view-display-id-services{
+    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
@@ -1213,7 +1345,7 @@
         width: 500% !important;
         top: -15rem !important;
     }
-    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows, .view-les-services.view-display-id-services .slick__arrows{
+    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows, .view-les-services.view-display-id-services .slick__arrows, .view-les-groupes-de-travail.view-display-id-groupes_de_travail .slick__arrows, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives .slick__arrows{
         width: auto !important;
     }
     #block-openig-imageenbasdepagemobile{
