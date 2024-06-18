@@ -389,14 +389,22 @@
         display: none;
     }
 
+    .path-frontpage #block-openig-imageenhautdepagemobile{
+        opacity: 1 !important;
+        img{
+            height: 800px !important;
+        }
+    }
+
     #block-openig-imageenhautdepagemobile{
         display: block;
         position: absolute;
         top: 0;
         z-index: -1;
         width: 100%;
+        opacity: 0.3;
         img{
-            height: 800px;
+            height: 600px;
             width: 100%;
         }
     }
@@ -466,10 +474,269 @@
             padding: 0 2rem;
         }
     } 
+
+    .view-les-services.view-display-id-services{
+        .slick__arrows{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+        .slick-arrow{
+            position: relative;
+            top: unset !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+            width: 35px;
+            height: 35px;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+            font-size: 2.25rem !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+        .slick_services{
+            cursor: grab;
+            .slick-slide{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .card{
+                width: 306px !important;
+                height: 410px !important;
+                margin-bottom: 1rem;
+                overflow: hidden;
+            }
+        }
+    }
     
 }
 
 @media (max-width: 992px){
+    h1{
+        font-size: $OPenIG-font-size-lg !important;
+    }
+    h2{
+        font-size: $OPenIG-font-size-base !important;
+        border-bottom: 4px solid $OPenIG-color_light-blue !important;
+    }
+    .title_share{
+        flex-direction: column !important;
+    }
+    #block-openig-page-title{
+        width: 100% !important;
+        h1{
+            padding-left: 50px !important;
+            margin-left: 0 !important;
+        }
+        img{
+            left: 0 !important;
+            height: 100px !important;
+            bottom: -60px !important;
+        }
+    } 
+    .navigation_filAriane{
+        li, a{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+    }
+    .share_adhesion{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #block-openig-addtoanysharebuttons{
+        justify-content: end;
+        position: relative !important;
+        top: unset !important;
+        #button_share{
+            height: 25px !important;
+            padding: 0 10px !important;
+            font-size: $OPenIG-font-size-xs !important;
+            i{
+                font-size: $OPenIG-font-size-base !important;
+            }
+        }
+    }
+    .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
+        border-bottom: 1px solid $OPenIG-color_gray !important;
+        padding-bottom: 5px !important;
+    }
+    .field--name-field-body{
+        font-size: $OPenIG-font-size-sm !important;
+    }
+    .page-node-type-service{
+        .btnShareUtiliser{
+            min-width: 100% !important;
+            flex-direction: column !important;
+            padding: 2.5rem 0.5rem !important;
+            #block-openig-addtoanysharebuttons-bas-page{
+                margin-bottom: 2rem !important;
+                #button_share_bas_page{
+                    height: 25px !important;
+                    padding: 0 10px !important;
+                    font-size: $OPenIG-font-size-xs !important;
+                    margin-left: 0 !important;
+                    i{
+                        font-size: $OPenIG-font-size-base !important;
+                    }
+                }
+                .share_liste{
+                    padding: 0 10px !important;
+                    margin-right: 1rem !important;
+                }
+            }
+            .buttonUse{
+                font-size: $OPenIG-font-size-xs !important;
+                height: 25px !important;
+                padding: 0 10px !important;
+            }
+        }
+        .sidebar{
+            background-color: $OPenIG-color_deep-white !important;
+            padding-top: 2rem;
+            margin-top: 0 !important;
+        }
+        #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement{
+            padding: 1rem 0 !important;
+            background-color: $OPenIG-color_white !important;
+            margin-bottom: 3rem !important;
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow !important;
+            }
+            .field-content, .field__item{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0 !important;
+        }
+        .btnUtiliser{
+            height: fit-content !important;
+            margin-top: 2rem;
+            flex-direction: column;
+            font-size: $OPenIG-font-size-sm !important;
+            height: fit-content !important;
+            button{
+                width: fit-content;
+                font-size: $OPenIG-font-size-xs !important;
+                height: 25px !important;
+                padding: 0 10px !important;
+            }
+        }
+    } 
+
+    #block-openig-communiquermutualiser.contenthidden{
+        right: 150px !important;
+    }
+    #block-openig-communiquermutualiser{
+        right: -75px !important;
+        width: 225px !important;
+        .collapse{
+            width: 225px !important;
+            height: 225px !important;
+        }
+        .card-body{
+            width: 225px !important;
+            height: 225px !important;
+            font-size: $OPenIG-font-size-xs !important;
+            a{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        button.buttonTitle{
+            width: 225px !important;
+            padding-top: 5px !important;
+        }
+        h2{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+    }
+    .view-les-services.view-display-id-services{
+        margin-top: 3rem !important;
+        .slick__arrows{
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+            margin-top: 3rem;
+            margin-bottom: 5rem;
+        }
+        .slick-arrow{
+            position: relative;
+            top: unset !important;
+            background-color: $OPenIG-color_white !important;
+            border-radius: 0 !important;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
+            border: none;
+        }
+        button.slick-arrow::before{
+            color: $OPenIG-color_deep-gray!important;
+            font-family: "Font Awesome 6 Free" !important;
+            opacity: 1 !important;
+        }
+        button.slick-next::before{
+            content: '\f054' !important;
+        }
+        button.slick-prev::before{
+            content: '\f053' !important;
+        }
+        .slick_services{
+            .slick-slide{
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .card{
+                width: 250px !important;
+                height: 290px !important;
+                margin-bottom: 1rem;
+                overflow: hidden;
+            }
+        }
+        .view-header{
+            font-size: $OPenIG-font-size-sm;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        .field--name-field-picto-et-texte > .field__item{
+            width: 25% !important;
+        }
+        .field--name-field-picto-et-texte{
+            margin-top: 1rem;
+        }
+    }
+    .paragraph--type--picto-text.paragraph--view-mode--vue{
+        flex-direction: column !important;
+        .picto_verbe .field--name-field-verbe-action{
+            margin-top: 0.5rem;
+        }
+        .field--name-field-text{
+            margin-left: 1rem !important;
+            margin-top: 0.5rem;
+        }
+    }
+    .path-les-services #block-openig-ensavoirplussurladhesion{
+        width: 60% !important;
+        margin-top: -3rem !important;
+        margin-bottom: 3rem;
+        margin-left: 30% !important;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    #block-openig-ensavoirplussurladhesion{
+        .field--name-body, .field--name-field-lien a{
+            font-size: $OPenIG-font-size-sm;
+            p{
+                margin-bottom: 0;
+            }
+        } 
+    }
     #block-openig-imageenbasdepagemobile{
         bottom: 200px !important;
     }
@@ -667,7 +934,7 @@
         width: 250px !important;
         height: 290px !important;
     }
-    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil{
+    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, .view-les-services.view-display-id-services{
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
@@ -917,7 +1184,7 @@
         width: 500% !important;
         top: -15rem !important;
     }
-    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows{
+    .slick.slick--optionset--blocs .slick__arrow, .slick.slick--optionset--agenda .slick__arrow, .view-l-agenda.view-display-id-agenda_accueil .slick__arrows, .view-les-services.view-display-id-services .slick__arrows{
         width: auto !important;
     }
     #block-openig-imageenbasdepagemobile{

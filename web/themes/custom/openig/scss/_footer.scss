@@ -189,7 +189,7 @@ footer{
             font-weight: 700;
             color: $OPenIG-color_black;
             margin-bottom: 1rem;
-            border-bottom: none;
+            border-bottom: none !important;
         }
         .social-media-links--platforms{
             display: flex;

@@ -2,7 +2,10 @@ global-styling:
   css:
     theme:
       css/style.min.css: {}
+      /libraries/slick/slick/slick.css: {}
+      /libraries/slick/slick/slick-theme.css: {}
   js:
     scripts.js: {}
+    /libraries/slick/slick/slick.min.js: {}
   dependencies:
       - core/jquery

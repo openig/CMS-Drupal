@@ -54,8 +54,8 @@
 %}
 {% if label_hidden %}
   {% if multiple %}
-  <div class="col-1"></div>
-    <div{{ attributes.addClass(classes, 'field__items col-4') }}>
+  <div class="col-xl-1 d-none d-xl-block"></div>
+    <div{{ attributes.addClass(classes, 'field__items col-xl-4 col-lg-6 col-12') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
       {% endfor %}
