@@ -64,12 +64,12 @@
         }
     } 
 
-    #block-openig-page-title{
+    /*#block-openig-page-title{
         width: 70%;
         h1{
             max-width: 65%;
         }
-    }
+    }*/
 
     footer {
         .haut_footer_droite{
@@ -632,6 +632,16 @@
         }
     }
     .page-node-type-service, .page-node-type-groupe-de-travail{
+        .tags{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-left: 0.5rem !important;
+            button{
+                font-size: 9px !important;
+                padding: 0 0.5rem !important;
+            }
+        }
         .btnShareRejoindre, .btnShareUtiliser{
             min-width: 100% !important;
             align-items: flex-start !important;
