@@ -627,32 +627,31 @@
         .sidebar{
             margin-top: 0 !important;
         }
+        .node--type-service{
+            margin-bottom: 3rem;
+        }
     }
     .page-node-type-service, .page-node-type-groupe-de-travail{
-        .btnShareUtiliser{
+        .btnShareRejoindre, .btnShareUtiliser{
             min-width: 100% !important;
-            flex-direction: column !important;
-            padding: 2.5rem 0.5rem !important;
-            #block-openig-addtoanysharebuttons-bas-page{
-                margin-bottom: 2rem !important;
-                #button_share_bas_page{
-                    height: 25px !important;
-                    padding: 0 10px !important;
-                    font-size: $OPenIG-font-size-xs !important;
-                    margin-left: 0 !important;
-                    i{
-                        font-size: $OPenIG-font-size-base !important;
-                    }
-                }
-                .share_liste{
-                    padding: 0 10px !important;
-                    margin-right: 1rem !important;
-                }
-            }
-            .buttonUse{
-                font-size: $OPenIG-font-size-xs !important;
+            align-items: flex-start !important;
+            justify-content: space-between !important;
+            #button_share_bas_page, #btnRejoindre_bas, .buttonUse, #button_share_bas_page{
                 height: 25px !important;
                 padding: 0 10px !important;
+                font-size: $OPenIG-font-size-xs !important;
+                width: fit-content;
+                i{
+                    font-size: $OPenIG-font-size-base !important;
+                }
+            }
+            #block-openig-addtoanysharebuttons-bas-page{
+                flex-direction: column;
+                .share_liste{
+                    margin-top: 1rem !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                }
             }
         }
         .sidebar{
@@ -696,28 +695,6 @@
         }
     } 
     .page-node-type-groupe-de-travail{
-        .btnShareRejoindre{
-            min-width: 100% !important;
-            align-items: flex-start !important;
-            justify-content: space-between !important;
-            #button_share_bas_page, #btnRejoindre_bas{
-                height: 25px !important;
-                padding: 0 10px !important;
-                font-size: $OPenIG-font-size-xs !important;
-                width: fit-content;
-                i{
-                    font-size: $OPenIG-font-size-base !important;
-                }
-            }
-            #block-openig-addtoanysharebuttons-bas-page{
-                flex-direction: column;
-                .share_liste{
-                    margin-top: 1rem !important;
-                    margin-left: 0 !important;
-                    margin-right: 0 !important;
-                }
-            }
-        }
         .btngroupe{
             margin-top: 1rem !important;
             #btnRejoindre{
