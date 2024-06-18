@@ -750,7 +750,7 @@ h3{
         h2{
             font-size: $OPenIG-font-size-base;
             transform: rotate(180deg);
-            border-bottom: 0;
+            border-bottom: 0 !important;
             font-family: 'Exo_semiBold';
             font-weight: 600;
             margin-bottom: 0;
