@@ -83,8 +83,11 @@
         top: 0 !important;
         padding: 0;
     }
-    body.toolbar-vertical.toolbar-fixed header{
+    body.toolbar-vertical.toolbar-fixed header, body.toolbar-horizontal.toolbar-fixed header{
         top: 39px !important;
+    }
+    body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open header{
+        top: 79px !important;
     }
     .premiere_section{
         display: flex;
@@ -556,77 +559,17 @@
             }
         }
     }
-    
-}
 
-@media (max-width: 992px){
-    .block-menu.navigation.menu--adhesion{
-        img{
-            width: 25px;
-        }
-    }
-    h1{
-        font-size: $OPenIG-font-size-lg !important;
-        
-    }
-    h2{
-        font-size: $OPenIG-font-size-base !important;
-        border-bottom: 4px solid $OPenIG-color_light-blue !important;
-    }
-    h3{
-        font-size: $OPenIG-font-size-lg !important
-    }
-    .title_share{
-        flex-direction: column !important;
-    }
-    #block-openig-page-title{
-        width: 100% !important;
-        h1{
-            padding-left: 65px !important;
-            margin-left: 0 !important;
-        }
-        img{
-            left: 0 !important;
-            height: 100px !important;
-            bottom: -60px !important;
-        }
-    } 
-    .navigation_filAriane{
-        li, a{
-            font-size: $OPenIG-font-size-xs !important;
-        }
-    }
-    .share_adhesion{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    #block-openig-addtoanysharebuttons{
-        justify-content: end;
-        position: relative !important;
-        top: unset !important;
-        #button_share{
-            height: 25px !important;
-            padding: 0 10px !important;
-            font-size: $OPenIG-font-size-xs !important;
-            i{
-                font-size: $OPenIG-font-size-base !important;
-            }
-        }
-    }
-   
     body.toolbar-vertical .formulaire_filtre{
         top: 120px;
     }
-    // Filtres
-    .btn_filtre{
-        height: 25px !important;
-        padding: 0 10px !important;
-        font-size: $OPenIG-font-size-xs !important;
-        margin-top: 0 !important;
-        i{
-            font-size: $OPenIG-font-size-base !important;
-        }
+    body.toolbar-horizontal .formulaire_filtre{
+        top: 120px;
     }
+    body.toolbar-horizontal.toolbar-tray-open .formulaire_filtre{
+        top: 160px;
+    }
+    // Filtres
     .formulaire_filtre.show{
         left: 0;
         transition: 1.5s;
@@ -685,29 +628,19 @@
             margin-top: 5px;
             label{
                 margin-right: 5px;
-                font-size: $OPenIG-font-size-xs;
             }
         }
         .js-form-submit{
             background-color: $OPenIG-color_blue;
             color: $OPenIG-color_white;
             border: none;
-            height: 25px;
-            font-size: $OPenIG-font-size-xs;
             font-weight: 600;
             font-family: 'Exo_semiBold';
-            padding: 4px 10px !important;
         }
         .js-form-submit[data-drupal-selector='edit-reset']{
             background-color: transparent;
             color: $OPenIG-color_dark-gray;
             border: 1px solid $OPenIG-color_gray;
-        }
-        label{
-            font-size: $OPenIG-font-size-xs;
-        }
-        .form-date{
-            font-size: $OPenIG-font-size-xs;
         }
         .form-checkbox{
             border: 1px solid $OPenIG-color_gray;
@@ -761,6 +694,93 @@
             }
         }
     }
+    
+}
+
+@media (max-width: 992px){
+    .block-menu.navigation.menu--adhesion{
+        img{
+            width: 25px;
+        }
+    }
+    h1{
+        font-size: $OPenIG-font-size-lg !important;
+        
+    }
+    h2{
+        font-size: $OPenIG-font-size-base !important;
+        border-bottom: 4px solid $OPenIG-color_light-blue !important;
+    }
+    h3{
+        font-size: $OPenIG-font-size-lg !important
+    }
+    .title_share{
+        flex-direction: column !important;
+    }
+    #block-openig-page-title{
+        width: 100% !important;
+        h1{
+            padding-left: 65px !important;
+            margin-left: 0 !important;
+        }
+        img{
+            left: 0 !important;
+            height: 100px !important;
+            bottom: -60px !important;
+        }
+    } 
+    .navigation_filAriane{
+        li, a{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+    }
+    .share_adhesion{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #block-openig-addtoanysharebuttons{
+        justify-content: end;
+        position: relative !important;
+        top: unset !important;
+        #button_share{
+            height: 25px !important;
+            padding: 0 10px !important;
+            font-size: $OPenIG-font-size-xs !important;
+            i{
+                font-size: $OPenIG-font-size-base !important;
+            }
+        }
+    }
+
+    .btn_filtre{
+        height: 25px !important;
+        padding: 0 10px !important;
+        font-size: $OPenIG-font-size-xs !important;
+        i{
+            font-size: $OPenIG-font-size-base !important;
+        }
+     }
+
+    .formulaire_filtre{
+        .form-item-exposed-from-date, .form-item-exposed-to-date{
+            label{
+                font-size: $OPenIG-font-size-xs;
+            }
+        }
+        .js-form-submit{
+            height: 25px;
+            font-size: $OPenIG-font-size-xs;
+            padding: 4px 10px !important;
+        }
+        label{
+            font-size: $OPenIG-font-size-xs;
+        }
+        .form-date{
+            font-size: $OPenIG-font-size-xs;
+        }
+    }
+   
+    
 
     .path-les-actualites{
         .share_adhesion{
