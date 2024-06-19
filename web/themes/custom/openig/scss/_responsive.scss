@@ -780,7 +780,7 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -797,7 +797,7 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail{
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article{
         .tags{
             display: flex;
             flex-wrap: wrap;
@@ -867,21 +867,6 @@
                 padding: 0 10px !important;
             }
         }
-    } 
-    .page-node-type-groupe-de-travail{
-        #block-openig-ensavoirplussurladhesion{
-            margin-top: 0 !important;
-        }
-        .btngroupe{
-            margin-top: 1rem !important;
-            #btnRejoindre{
-                float: unset !important;
-            }
-        }
-        .node--type-groupe-de-travail{
-            margin-bottom: 3rem;
-            margin-top: 3rem !important;
-        }
         .field--name-field-contenu-sidebar .paragraph--type--title-text{
             padding: 1rem 0 !important;
             background-color: $OPenIG-color_white !important;
@@ -900,13 +885,9 @@
                     background-color: $OPenIG-color_white
                 }
                 a{
-                    font-size: $OPenIG-font-size-sm !important;
+                    font-size: $OPenIG-font-size-xs !important;
                 }
             }
-        }
-        .sidebar{
-            margin-top: 3rem;
-            padding-bottom: 3rem;
         }
         .itemPrivate{
             font-size: $OPenIG-font-size-xs !important;
@@ -935,7 +916,7 @@
         .accordion-button{
             font-size: $OPenIG-font-size-sm !important;
         }
-        #accordionGroupeTravail{
+        #accordionGroupeTravail, #accordionActualite{
             .accordion-item{
                 font-size: $OPenIG-font-size-xs !important;
                 .field__item{
@@ -956,6 +937,34 @@
         }  
         .accordion-disabled .accordion-button::after{
             display: none;
+        }
+    } 
+    .page-node-type-article{
+        .node--type-article{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        #accordionActualite{
+            margin-bottom: 3rem;
+        }
+    }
+    .page-node-type-groupe-de-travail{
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0 !important;
+        }
+        .btngroupe{
+            margin-top: 1rem !important;
+            #btnRejoindre{
+                float: unset !important;
+            }
+        }
+        .node--type-groupe-de-travail{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        .sidebar{
+            margin-top: 3rem;
+            padding-bottom: 3rem;
         }
     }
     #block-openig-communiquermutualiser.contenthidden{
