@@ -624,6 +624,9 @@
         border: 0 !important;
     }
     .page-node-type-service{
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0.5rem !important;
+        }
         .sidebar{
             margin-top: 0 !important;
         }
@@ -689,9 +692,6 @@
                 font-size: $OPenIG-font-size-xs !important;
             }
         }
-        #block-openig-ensavoirplussurladhesion{
-            margin-top: 0.5rem !important;
-        }
         .btnUtiliser, .btngroupe{
             height: fit-content !important;
             margin-top: 2rem;
@@ -706,6 +706,9 @@
         }
     } 
     .page-node-type-groupe-de-travail{
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0 !important;
+        }
         .btngroupe{
             margin-top: 1rem !important;
             #btnRejoindre{
