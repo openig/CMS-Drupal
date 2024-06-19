@@ -62,7 +62,9 @@
   {% endif %}
 
   {% if rows %}
-	<button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+	<div class="container">
+		<button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+	</div>
 	{{ rows }}
   {% elseif empty %}
     <div class="view-empty">
