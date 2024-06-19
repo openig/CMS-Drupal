@@ -613,11 +613,174 @@
             }
         }
     }
+   
+    body.toolbar-vertical .formulaire_filtre{
+        top: 120px;
+    }
+    // Filtres
+    .btn_filtre{
+        height: 25px !important;
+        padding: 0 10px !important;
+        font-size: $OPenIG-font-size-xs !important;
+        margin-top: 0 !important;
+        i{
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
+    .formulaire_filtre.show{
+        left: 0;
+        transition: 1.5s;
+    }
+    .formulaire_filtre{
+        position: absolute;
+        left: -100%;
+        transition: 1.5s;
+        background-color: $OPenIG-color_white;
+        z-index: 3;
+        //border: 1px solid $OPenIG-color_gray;
+        //border-radius: 10px;
+        padding: 10px;
+        width: 100vw;
+        height: 100%;
+        top: 80px;
+        .btn-close-filtre{
+            background-color: transparent;
+            border: none;
+            float: right;
+            i{
+                color: $OPenIG-color_dark-gray;
+                font-size: 24px;
+            }
+        }
+        h2{
+            width: 100%;
+            border-bottom: 0 !important;
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2::before{
+            content: '\f0b0';
+            font-family: "Font Awesome 6 Free";
+            color: $OPenIG-color_yellow;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        form{
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            .form--inline{
+                max-width: 350px;
+            }
+        }
+        .form-item-exposed-from-date, .form-item-exposed-to-date{
+            width: 150px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            label{
+                margin-right: 5px;
+                font-size: $OPenIG-font-size-xs;
+            }
+        }
+        .js-form-submit{
+            background-color: $OPenIG-color_blue;
+            color: $OPenIG-color_white;
+            border: none;
+            height: 25px;
+            font-size: $OPenIG-font-size-xs;
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+            padding: 4px 10px !important;
+        }
+        .js-form-submit[data-drupal-selector='edit-reset']{
+            background-color: transparent;
+            color: $OPenIG-color_dark-gray;
+            border: 1px solid $OPenIG-color_gray;
+        }
+        label{
+            font-size: $OPenIG-font-size-xs;
+        }
+        .form-date{
+            font-size: $OPenIG-font-size-xs;
+        }
+        .form-checkbox{
+            border: 1px solid $OPenIG-color_gray;
+        }
+        .form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding-top: 2rem;
+            input{
+                margin: 0;
+            }
+        }
+        .details-wrapper{
+            padding: 0;
+            margin-top: 15px;
+        }
+        .labelDates{
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: $OPenIG-font-size-sm;
+            font-family: 'OpenSans_SemiBold';
+        }
+        details.form-wrapper{
+            width: 100%;
+            border: 0 !important;
+            background-color: transparent;
+            margin-top: 1rem;
+            box-shadow: none !important;
+            overflow: visible !important;
+            summary{
+                border-bottom: 1px solid $OPenIG-color_gray;
+                background-color: transparent !important;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 0;
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm;
+                font-family: 'OpenSans_SemiBold';
+            }
+            summary::marker {   
+                content: '';
+            }
+            summary[aria-expanded="true"]::after{
+                content: '\f0d8';
+            }
+            summary::after{
+                content: '\f0d7';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+            }
+        }
+    }
+
+    .path-les-actualites{
+        .share_adhesion{
+            width: fit-content;
+            float: right;
+            z-index: 1;
+            position: relative;
+        }
+    }
+    .slick--view--les-actualites--actualites-mobile{
+        margin-top: 3rem;
+    }
+    .view-les-actualites.view-display-id-actualites{
+        margin-top: 0 !important;
+    }
     .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -634,7 +797,7 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail{
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article{
         .tags{
             display: flex;
             flex-wrap: wrap;
@@ -704,21 +867,6 @@
                 padding: 0 10px !important;
             }
         }
-    } 
-    .page-node-type-groupe-de-travail{
-        #block-openig-ensavoirplussurladhesion{
-            margin-top: 0 !important;
-        }
-        .btngroupe{
-            margin-top: 1rem !important;
-            #btnRejoindre{
-                float: unset !important;
-            }
-        }
-        .node--type-groupe-de-travail{
-            margin-bottom: 3rem;
-            margin-top: 3rem !important;
-        }
         .field--name-field-contenu-sidebar .paragraph--type--title-text{
             padding: 1rem 0 !important;
             background-color: $OPenIG-color_white !important;
@@ -737,13 +885,9 @@
                     background-color: $OPenIG-color_white
                 }
                 a{
-                    font-size: $OPenIG-font-size-sm !important;
+                    font-size: $OPenIG-font-size-xs !important;
                 }
             }
-        }
-        .sidebar{
-            margin-top: 3rem;
-            padding-bottom: 3rem;
         }
         .itemPrivate{
             font-size: $OPenIG-font-size-xs !important;
@@ -772,7 +916,7 @@
         .accordion-button{
             font-size: $OPenIG-font-size-sm !important;
         }
-        #accordionGroupeTravail{
+        #accordionGroupeTravail, #accordionActualite{
             .accordion-item{
                 font-size: $OPenIG-font-size-xs !important;
                 .field__item{
@@ -793,6 +937,34 @@
         }  
         .accordion-disabled .accordion-button::after{
             display: none;
+        }
+    } 
+    .page-node-type-article{
+        .node--type-article{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        #accordionActualite{
+            margin-bottom: 3rem;
+        }
+    }
+    .page-node-type-groupe-de-travail{
+        #block-openig-ensavoirplussurladhesion{
+            margin-top: 0 !important;
+        }
+        .btngroupe{
+            margin-top: 1rem !important;
+            #btnRejoindre{
+                float: unset !important;
+            }
+        }
+        .node--type-groupe-de-travail{
+            margin-bottom: 3rem;
+            margin-top: 3rem !important;
+        }
+        .sidebar{
+            margin-top: 3rem;
+            padding-bottom: 3rem;
         }
     }
     #block-openig-communiquermutualiser.contenthidden{
@@ -1058,9 +1230,17 @@
             padding-left: 0 !important;
         }
     } 
-    #block-openig-views-block-les-actualites-actualites-accueil-mobile{
+    #block-openig-views-block-les-actualites-actualites-accueil-mobile, .view-les-actualites.view-display-id-actualites_mobile{
         .titlepicto{
             padding: 0.5rem 1rem !important;
+        }
+        .views-field-title{
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+        .views-field-field-image{
+            height: 120px !important;
         }
         .views-field-nothing-1{
             hr{
@@ -1075,6 +1255,11 @@
         }
         .views-field-created, .views-field-view-node a{
             font-size: $OPenIG-font-size-xs !important;
+        }
+        .views-field-field-tag{
+            a{
+                font-size: 9px !important;
+            }
         }
     }
     #block-openig-views-block-les-actualites-actualites-accueil{

@@ -1185,3 +1185,83 @@ display:
       tags:
         - 'config:field.storage.node.field_image'
         - 'config:field.storage.node.field_tag'
+  actualites_mobile:
+    id: actualites_mobile
+    display_title: 'Les actualités mobile'
+    display_plugin: block
+    position: 5
+    display_options:
+      pager:
+        type: none
+        options:
+          offset: 0
+      style:
+        type: slick
+        options:
+          caption:
+            field_image: '0'
+            view_node: '0'
+            field_tag: '0'
+            title: '0'
+            created: '0'
+            fieldset: '0'
+            nothing: '0'
+            nothing_1: '0'
+          optionset: blocs
+          class: ''
+          image: ''
+          link: ''
+          overlay: ''
+          title: ''
+          vanilla: true
+          layout: ''
+          cache: 0
+          admin_uri: '/admin/structure/views/ajax/display/les_actualites/block_1/style_options?_wrapper_format=drupal_ajax'
+          grid: ''
+          grid_medium: ''
+          grid_small: ''
+          style: flexbox
+          skin: classic
+          overridables:
+            arrows: '0'
+            autoplay: '0'
+            dots: '0'
+            draggable: '0'
+            infinite: '0'
+            mouseWheel: '0'
+            randomize: '0'
+            variableWidth: '0'
+          thumbnail: ''
+          optionset_thumbnail: ''
+          skin_thumbnail: ''
+          thumbnail_caption: ''
+          thumbnail_effect: ''
+          thumbnail_position: ''
+          override: false
+          preserve_keys: false
+          visible_items: null
+      row:
+        type: fields
+        options:
+          default_field_elements: true
+          inline: {  }
+          separator: ''
+          hide_empty: false
+      defaults:
+        pager: false
+        style: false
+        row: false
+      display_description: ''
+      exposed_block: true
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_image'
+        - 'config:field.storage.node.field_tag'
