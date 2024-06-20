@@ -494,17 +494,46 @@
 // Bloc page d'accueil 
 
 #block-openig-views-block-les-actualites-actualites-accueil{
+    position: relative;
+    margin-top: 5rem;
     .view-header{
         min-height: 350px;
-    }
-    .picto_titre h2{
-        margin-top: -30px;
-        margin-left: 90px;
-    } 
-    .picto_titre img{
-        height: fit-content;
-        //right: 100px;
-        left: 0;
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                max-height: 140px;
+                height: fit-content;
+                left: 0;
+            }
+            h2{
+                margin-top: -30px;
+                margin-left: 90px;
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+            }
+        }
+        .texte_header{
+            width: 50%;
+            padding-bottom: 3rem;
+            background-color: rgb(255, 255, 255, 0.6);
+        }
     }
 }
 

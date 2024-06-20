@@ -1,16 +1,16 @@
 @media (max-width: 1650px) {
-    .region-quatrieme-section-accueil{
+    #block-openig-views-block-groupes-travail-accueil{
         .region_quatre{
             width: 95%;
         }
     }
-    .region-cinquieme-section-accueil{
+    #block-openig-views-block-les-services-services-accueil{
         .region_cinq{
             width: 95%;
         }
     }
 
-    .region-huitieme-section-accueil{
+    #block-openig-lanewsletter{
         .region_huit{
             width: 95%;
         }
@@ -63,13 +63,6 @@
             }
         }
     } 
-
-    /*#block-openig-page-title{
-        width: 70%;
-        h1{
-            max-width: 65%;
-        }
-    }*/
 
     footer {
         .haut_footer_droite{
@@ -583,8 +576,6 @@
         transition: 1.5s;
         background-color: $OPenIG-color_white;
         z-index: 3;
-        //border: 1px solid $OPenIG-color_gray;
-        //border-radius: 10px;
         padding: 10px;
         width: 100vw;
         height: calc(100% - 80px);
@@ -1173,6 +1164,10 @@
     #block-openig-phrasedaccrochefooter{
         padding: 0 !important;
     }
+    #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, #block-openig-views-block-annuaire-block-nos-adherents{
+        padding-top: 1.5rem !important;
+        margin-top: 7rem !important;
+    }
     .region-deuxieme-section-accueil, .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-cinquieme-section-accueil, .region-sixieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
         .view-annuaire .view-header{
             width: 100% !important;
@@ -1204,37 +1199,14 @@
             width: 100% !important;
             top: 0 !important;
             bottom: unset !important;
-            max-height: 500px;
+            max-height: 500px !important;
         }
         .region_huit{
             width: 100% !important;
         }
     }
-    .region-quatrieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
-        padding-left: 0 !important;
-    }
-    .region-sixieme-section-accueil #block-openig-lanewsletter .contenuFlex h2{
-        padding-left: 0 !important;
-    }
-    .region-troisieme-section-accueil .view-annuaire .view-header .nombre_header{
-        left: 0 !important;
-    }
-    .region-septieme-section-accueil .view-annuaire .view-header .nombre_header{
-        left: 0 !important;
-    }
-    .region-septieme-section-accueil .view-annuaire{
-        padding-top: 0 !important;
-    }
-    .region-cinquieme-section-accueil #block-openig-views-block-bloc-temoignage-block-temoignage{
-        padding-top: 0 !important;
-    }
-    .region-cinquieme-section-accueil #block-openig-views-block-l-agenda-agenda-accueil{
-        padding-top: 1rem !important;
-    }   
-    .region-huitieme-section-accueil .view-annuaire .view-header .nombre_header{
-        left: 0 !important;
-    } 
-    .region-cinquieme-section-accueil {
+   
+    #block-openig-views-block-les-services-services-accueil{
         .view{
             flex-direction: column !important;
         }
@@ -1248,13 +1220,10 @@
             margin-bottom: 1rem !important;
         }
     }
-    .region-deuxieme-section-accueil{
+    #block-openig-views-block-les-actualites-actualites-accueil{
         margin-top: 3rem !important;
         .texte_header{
             padding-bottom: 2rem !important;
-        }
-        #block-openig-lanewsletter .contenuFlex h2{
-            padding-left: 0 !important;
         }
     } 
     #block-openig-views-block-les-actualites-actualites-accueil-mobile, .view-les-actualites.view-display-id-actualites_mobile{
@@ -1360,10 +1329,10 @@
     #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire{
         flex-direction: column !important;
     }
-    .region-sixieme-section-accueil .view-annuaire .view-header .nombre_header{
+    #block-openig-views-block-annuaire-block-nos-adherents .view-annuaire .view-header .nombre_header{
         right: 0 !important;
     }
-    .region-sixieme-section-accueil{
+    #block-openig-views-block-annuaire-block-nos-adherents{
         padding-top: 10px !important;
         .region_six{
             width: 100% !important;
@@ -1394,7 +1363,7 @@
         }
     }
     
-    .region-septieme-section-accueil{
+    #block-openig-views-block-bloc-temoignage-block-temoignage{
         margin-top: 7rem !important;
     }
 
@@ -1446,9 +1415,7 @@
             font-size: $OPenIG-font-size-sm !important;
         }
     }
-    .region-huitieme-section-accueil #block-openig-views-block-les-actualites-actualites-accueil{
-        margin-top: 0 !important;
-    }
+   
 
 }
 
@@ -1600,7 +1567,7 @@
         }
     }
 
-    .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-sixieme-section-accueil, .region-cinquieme-section-accueil, .region-deuxieme-section-accueil{
+    .region-troisieme-section-accueil, .region-quatrieme-section-accueil, .region-sixieme-section-accueil, .region-cinquieme-section-accueil, .region-deuxieme-section-accueil, .region-septieme-section-accueil, .region-huitieme-section-accueil{
         .nombre_header{
             top: 50px !important;
         }

@@ -423,16 +423,77 @@
 // Bloc groupes de travail page d'accueil
 
 #block-openig-views-block-groupes-travail-accueil{
-    .picto_titre img{
-        //top: 60px;
+    position: relative;
+    padding-top: 50px;
+    margin-top: 7rem;
+    height: fit-content;
+    padding-bottom: 2rem;
+    .region_quatre{
+        background-color: #f2f6e7;
+        width: 90%;
+        max-height: 500px;
+        position: absolute;
+        top: 0;
         left: 0;
-        //right: 175px;
-        height: fit-content;
+        height: 100%;
     }
-    .picto_titre h2{
-        margin-top: -50px;
-        margin-left: 90px;
-    } 
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                height: 140px;
+                left: 0;
+                height: fit-content;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                margin-top: -50px;
+                margin-left: 90px;
+            }
+        }
+        .texte_header{
+            width: 50%;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
     .view-content{
         margin-top: 0rem;
     }
