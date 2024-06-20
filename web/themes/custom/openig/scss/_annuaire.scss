@@ -1,21 +1,102 @@
 #block-openig-views-block-annuaire-block-nos-adherents{
-    .picto_titre img{
+    position: relative;
+    padding-top: 50px;
+    margin-top: 10rem;
+    height: fit-content;
+    padding-bottom: 2rem;
+    .region_six{
+        background-color: #f2f6e7;
+        width: 50%;
+        position: absolute;
+        top: 0;
         left: 0;
-        height: fit-content;
+        height: 100%;
+        z-index: -1;
     }
-    .picto_titre h2{
-        margin-top: -40px;
-        margin-left: 90px;
-    } 
+    .region_six_white{
+        background-color: $OPenIG-color_white;
+        width: 50%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: -1;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                height: 140px;
+                left: 0;
+                height: fit-content;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                margin-top: -40px;
+                margin-left: 90px;
+            }
+        }
+        .texte_header{
+            width: 50%;            
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;            
+            right: 0px;            
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
     .view-annuaire{
         display: flex;
         align-items: center;
         .view-header{
             width: 50%;
+            position: relative;
+            .texte_header{
+                width: 90%;
+                margin-top: 1rem;
+            }
+            .nombre_header{
+                top: 0;
+                right: 20px;
+                width: fit-content;
+            }
         }
         .view-content{
             width: 50%;
-            //background-color: $OPenIG-color_white;
             height: 100%;
             .views-field-field-image{
                 margin-bottom: 2.5rem;
@@ -31,7 +112,7 @@
     }
     .more-link{
         position: absolute;
-        bottom: -7rem;
+        bottom: -5rem;
         left: 50%;
         transform: translateX(-50%);
         a{

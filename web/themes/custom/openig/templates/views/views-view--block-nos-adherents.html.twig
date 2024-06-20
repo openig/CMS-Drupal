@@ -37,8 +37,11 @@
     'view-id-' ~ id,
     'view-display-id-' ~ display_id,
     dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'container'
   ]
 %}
+<div class="region_six"></div>
+<div class="region_six_white"></div>
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -47,7 +50,9 @@
   {{ title_suffix }}
   {% if header %}
     <div class="view-header">
-      {{ header }}
+      <div class="container">
+        {{ header }}
+      </div>
     </div>
   {% endif %}
   {% if exposed %}
@@ -63,7 +68,9 @@
 
   {% if rows %}
     <div class="view-content">
-      {{ rows }}
+      <div class="container">
+        {{ rows }}
+      </div>
     </div>
   {% elseif empty %}
     <div class="view-empty">

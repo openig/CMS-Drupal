@@ -278,17 +278,64 @@
 // Bloc agenda page d'accueil
 
 #block-openig-views-block-l-agenda-agenda-accueil{
-    //padding-top: 2rem;
-    .picto_titre img{
-        top: 0;
-        height: fit-content;
-        //left: 75px;
-        right: 0;
+    position: relative;
+    margin-top: 7rem;
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+            }
+            img{
+                position: absolute;
+                max-height: 140px;
+                top: 0;
+                height: fit-content;
+                right: 0;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                margin-top: -65px;
+                margin-right: 90px;
+            }
+        }
+        .texte_header{
+            width: 50%;
+            float: right;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
     }
-    .picto_titre h2{
-        margin-top: -65px;
-        margin-right: 90px;
-    } 
     .card_agenda a{
         color: $OPenIG-color_black;
         text-decoration: none;
