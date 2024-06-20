@@ -35,7 +35,7 @@
     not node_content ? 'col-7'
   ]
 %}
-{% if 'adherent' not in user.getRoles() %}
+{% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
   <div{{ attributes.addClass(classes) }}>
     {{ title_prefix }}
     {% if label %}
