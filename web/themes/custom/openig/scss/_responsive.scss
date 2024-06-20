@@ -756,6 +756,7 @@
     }
 
     .btn_filtre{
+        margin-top: 0 !important;
         height: 25px !important;
         padding: 0 10px !important;
         font-size: $OPenIG-font-size-xs !important;
@@ -808,6 +809,9 @@
     }
     .accordion h2{
         border: 0 !important;
+    }
+    #block-openig-ensavoirplussurladhesion{
+        width: 60% !important;
     }
     .page-node-type-service{
         #block-openig-ensavoirplussurladhesion{
@@ -1449,6 +1453,16 @@
 }
 
 @media (max-width: 768px){
+    #block-openig-addtoanysharebuttons{
+        flex-direction: column-reverse;
+        align-items: end;
+        button{
+            width: fit-content;
+        }
+        .share_liste{
+            margin-top: 1rem !important;
+        }
+    }
     #block-openig-imageenhautdepage{
         width: 300% !important;
         top: -15rem !important;
