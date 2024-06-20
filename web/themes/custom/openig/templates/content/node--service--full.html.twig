@@ -82,8 +82,8 @@
 <div class="container">
     <div class="row">
         <div class="btnUtiliser col-xl-8 col-12">
-            {% if elements['#node'].field_access_restricted.value == 1 %}
-                {% if 'adherent' in user.getRoles() %}
+            {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 {% else %}
                     {{ render_block('openig_messageblocutiliserinaccessible') }}
@@ -110,8 +110,8 @@
             <div class="col-lg-1"></div>
             <div class="col-lg-3 sidebar">
                 {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
-                    {% if elements['#node'].field_access_restricted.value == 1 %}
-                        {% if 'adherent' not in user.getRoles() %}
+                    {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                        {% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                             {{content.field_requirement}}
                         {% endif %}
                     {% endif %}
@@ -119,15 +119,16 @@
             </div>
             <div class="btnShareUtiliser">
                 {{ render_block('openig_addtoanysharebuttons_bas_page') }}
-                {% if elements['#node'].field_access_restricted.value == 1 %}
-                    {% if 'adherent' in user.getRoles() %}
+                {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                    {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                     {% else %}
                         <button class="buttonUse" disabled="disabled"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                     {% endif %}
                 {% else %}
                     <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
-                {% endif %}            </div>
+                {% endif %}            
+            </div>
         {% else %}
             <div{{ content_attributes.addClass('node__content col-lg-7 col-12 no_sidebar') }}>
                 {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
@@ -135,8 +136,8 @@
             <div class="col-12">
                 <div class="btnShareUtiliser">
                     {{ render_block('openig_addtoanysharebuttons_bas_page') }}
-                     {% if elements['#node'].field_access_restricted.value == 1 %}
-                        {% if 'adherent' in user.getRoles() %}
+                     {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                        {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                             <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                         {% else %}
                             <button class="buttonUse" disabled="disabled"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
