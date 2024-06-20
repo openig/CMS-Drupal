@@ -562,12 +562,15 @@
 
     body.toolbar-vertical .formulaire_filtre{
         top: 120px;
+        height: calc(100% - 120px);
     }
     body.toolbar-horizontal .formulaire_filtre{
         top: 120px;
+        height: calc(100% - 120px);
     }
     body.toolbar-horizontal.toolbar-tray-open .formulaire_filtre{
         top: 160px;
+        height: calc(100% - 160px);
     }
     // Filtres
     .formulaire_filtre.show{
@@ -584,7 +587,7 @@
         //border-radius: 10px;
         padding: 10px;
         width: 100vw;
-        height: 100%;
+        height: calc(100% - 80px);
         top: 80px;
         .btn-close-filtre{
             background-color: transparent;
