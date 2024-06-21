@@ -777,8 +777,41 @@
         }
     }
    
-    
-
+    .view.view-l-agenda.view-display-id-agenda{
+        margin-top: 3rem !important;
+        margin-bottom: 3rem !important;
+        .views-field-field-webform input.form-submit{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        .views-field-field-dates{
+            font-family: 'Exo_semiBold' !important;
+            font-weight: 600 !important;
+            font-size: $OPenIG-font-size-h2 !important;
+            width: 50px !important;
+        }
+        .views-field-title{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+        .views-field-title-1{
+            font-size: 1.25rem !important;
+            width: 100% !important;
+        }
+        .views-field-field-tag{
+            a{
+                font-size: 9px !important;
+            }
+        }
+        .views-field-field-image-1{
+            margin-top: 3rem;
+            img{
+                border-radius: 15px;
+            }
+        }
+        .views-field-field-dates-3{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
     .path-les-actualites, .path-l-agenda{
         .share_adhesion{
             width: fit-content;
@@ -800,7 +833,7 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -1291,9 +1324,13 @@
         width: 35px !important;
         height: 35px !important;
     }
-    .slick.slick--optionset--blocs .slick-list .slick__slide, .slick.slick--optionset--agenda .slick-list .slick__slide{
+    .slick.slick--optionset--blocs .slick-list .slick__slide{
         width: 250px !important;
         height: 290px !important;
+    }
+    .slick.slick--optionset--agenda .slick-list .slick__slide{
+        width: 140px !important;
+        height: 150px !important;
     }
     #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         .view-content{
