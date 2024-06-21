@@ -82,6 +82,9 @@
     body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open header{
         top: 79px !important;
     }
+    .dropdown-item.active{
+        background-color: transparent !important;
+    }
     .premiere_section{
         display: flex;
         justify-content: center;
