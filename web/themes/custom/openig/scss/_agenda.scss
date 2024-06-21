@@ -17,6 +17,9 @@
         background-color: $OPenIG-color_deep-white;
         margin-bottom: 3rem;
     }
+    .slick--optionset--agenda{
+        margin-left: 2rem;
+    }
     .slick--optionset--agenda .slick__slider{
         background-color: $OPenIG-color_white;
         padding-top: 20px;
@@ -350,7 +353,7 @@
     .view-content {
         .row{
             display: flex;
-            justify-content: space-around;
+            //justify-content: space-around;
         }
         .card_agenda{
             width: 195px !important;
