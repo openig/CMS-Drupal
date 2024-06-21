@@ -815,7 +815,7 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article{
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page{
         .tags{
             display: flex;
             flex-wrap: wrap;
@@ -957,6 +957,11 @@
             display: none;
         }
     } 
+    .page-node-type-page{
+        .node--type-page{
+            margin-bottom: 3rem;
+        }
+    }
     .page-node-type-article{
         .node--type-article{
             margin-bottom: 3rem;
