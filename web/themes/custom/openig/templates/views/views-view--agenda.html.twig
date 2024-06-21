@@ -39,6 +39,9 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+<div class="col-2 bloc_filtres d-lg-none d-block">
+  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+</div>
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -66,7 +69,7 @@
       <p id="annee"></p>
       <div class="container">
         <div class="row">
-          <div class="col-xxl-1 col-2 bloc_filtres">
+          <div class="col-xxl-1 col-2 bloc_filtres d-lg-block d-none">
             <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
             <div class="formulaire_filtre">
               <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>

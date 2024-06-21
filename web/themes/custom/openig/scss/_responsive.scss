@@ -554,16 +554,16 @@
     }
 
     body.toolbar-vertical .formulaire_filtre{
-        top: 120px;
-        height: calc(100% - 120px);
+        top: 120px !important;
+        height: calc(100% - 120px) !important;
     }
     body.toolbar-horizontal .formulaire_filtre{
-        top: 120px;
-        height: calc(100% - 120px);
+        top: 120px !important;
+        height: calc(100% - 120px) !important;
     }
     body.toolbar-horizontal.toolbar-tray-open .formulaire_filtre{
-        top: 160px;
-        height: calc(100% - 160px);
+        top: 160px !important;
+        height: calc(100% - 160px) !important;
     }
     // Filtres
     .formulaire_filtre.show{
@@ -575,11 +575,13 @@
         left: -100%;
         transition: 1.5s;
         background-color: $OPenIG-color_white;
-        z-index: 3;
+        z-index: 3 !important;
         padding: 10px;
-        width: 100vw;
-        height: calc(100% - 80px);
-        top: 80px;
+        width: 100vw !important;
+        height: calc(100% - 80px) !important;
+        top: 80px !important;
+        border: none !important;
+        border-radius: 0 !important;
         .btn-close-filtre{
             background-color: transparent;
             border: none;
@@ -616,7 +618,7 @@
             }
         }
         .form-item-exposed-from-date, .form-item-exposed-to-date{
-            width: 150px;
+            width: 150px !important;
             display: flex;
             align-items: center;
             margin-top: 5px;
@@ -759,30 +761,33 @@
     .formulaire_filtre{
         .form-item-exposed-from-date, .form-item-exposed-to-date{
             label{
-                font-size: $OPenIG-font-size-xs;
+                font-size: $OPenIG-font-size-xs !important;
             }
         }
         .js-form-submit{
-            height: 25px;
-            font-size: $OPenIG-font-size-xs;
+            height: 25px !important;
+            font-size: $OPenIG-font-size-xs !important;
             padding: 4px 10px !important;
         }
         label{
-            font-size: $OPenIG-font-size-xs;
+            font-size: $OPenIG-font-size-xs !important;
         }
         .form-date{
-            font-size: $OPenIG-font-size-xs;
+            font-size: $OPenIG-font-size-xs !important;
         }
     }
    
     
 
-    .path-les-actualites{
+    .path-les-actualites, .path-l-agenda{
         .share_adhesion{
             width: fit-content;
             float: right;
             z-index: 1;
             position: relative;
+        }
+        .bloc_filtres{
+            margin-left: 1rem;
         }
     }
     .slick--view--les-actualites--actualites-mobile{
