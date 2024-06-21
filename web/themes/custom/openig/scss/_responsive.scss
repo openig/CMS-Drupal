@@ -778,8 +778,11 @@
     }
    
     .view.view-l-agenda.view-display-id-agenda{
-        margin-top: 3rem !important;
+        margin-top: 0rem !important;
         margin-bottom: 3rem !important;
+        .view-content{
+            margin-top: 3rem;
+        }
         .views-field-field-webform input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
         }
@@ -820,7 +823,7 @@
             position: relative;
         }
         .bloc_filtres{
-            margin-left: 1rem;
+            //margin-left: 1rem;
         }
     }
     .slick--view--les-actualites--actualites-mobile{

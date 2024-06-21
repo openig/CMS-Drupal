@@ -39,10 +39,11 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
-<div class="col-2 bloc_filtres d-lg-none d-block">
-  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-</div>
+
 <div{{ attributes.addClass(classes) }}>
+  <div class="bloc_filtres d-lg-none d-block container">
+    <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+  </div>
   {{ title_prefix }}
   {% if title %}
     {{ title }}
