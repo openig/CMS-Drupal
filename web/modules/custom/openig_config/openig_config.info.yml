@@ -50,3 +50,4 @@ dependencies:
   - back_to_top
   - openig_webform
   - responsive_image
+  - nodeaccess
