@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.ressource.field_access_restricted
     - field.field.node.ressource.field_description
     - field.field.node.ressource.field_file
     - field.field.node.ressource.field_format
@@ -16,7 +15,7 @@ dependencies:
     - image.style.medium
     - node.type.ressource
   module:
-    - image
+    - svg_image
     - user
 id: node.ressource.teaser
 targetEntityType: node
@@ -40,7 +39,8 @@ content:
     weight: 100
     region: content
 hidden:
-  field_access_restricted: true
+  addtoany: true
+  breadcrumbs: true
   field_description: true
   field_file: true
   field_format: true

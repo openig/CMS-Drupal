@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.evenement.field_access_restricted
     - field.field.node.evenement.field_body
     - field.field.node.evenement.field_dates
     - field.field.node.evenement.field_groupe_de_travail
@@ -44,7 +43,6 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  field_access_restricted: true
   field_body: true
   field_dates: true
   field_groupe_de_travail: true

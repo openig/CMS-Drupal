@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.groupe_de_travail.field_access_restricted
     - field.field.node.groupe_de_travail.field_animators
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
@@ -233,5 +232,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_access_restricted: true
+hidden: {  }
