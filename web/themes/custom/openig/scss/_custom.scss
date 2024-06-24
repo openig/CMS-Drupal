@@ -1352,3 +1352,16 @@ form{
         }
     }
 }
+
+// Page 404
+.page-404{
+    .title_share{
+        padding: 0 !important;
+        h1{
+            margin-left: 0 !important;
+        }
+    }
+    #block-openig-addtoanysharebuttons{
+        display: none !important;
+    }
+}
