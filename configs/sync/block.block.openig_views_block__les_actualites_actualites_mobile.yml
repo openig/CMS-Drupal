@@ -11,7 +11,7 @@ dependencies:
 id: openig_views_block__les_actualites_actualites_mobile
 theme: openig
 region: content
-weight: 0
+weight: -5
 provider: null
 plugin: 'views_block:les_actualites-actualites_mobile'
 settings:

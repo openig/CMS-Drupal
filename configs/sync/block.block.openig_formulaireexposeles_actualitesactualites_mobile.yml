@@ -11,7 +11,7 @@ dependencies:
 id: openig_formulaireexposeles_actualitesactualites_mobile
 theme: openig
 region: content
-weight: 0
+weight: -6
 provider: null
 plugin: 'views_exposed_filter_block:les_actualites-actualites_mobile'
 settings:

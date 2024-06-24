@@ -1366,3 +1366,26 @@ form{
         display: none !important;
     }
 }
+
+// Bloc obtenir une simulation
+#block-openig-obtenirunesimulation{
+    margin-top: 50px;
+    padding-left: 100px;
+    margin-bottom: 50px;
+
+    .field--name-body{
+        font-family: 'OpenSans_Regular', sans-serif;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+    }
+    .field--name-field-lien{
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-base;
+            color: $OPenIG-color_dark-gray;
+            border-bottom: 1px solid $OPenIG-color_red;
+            text-decoration: none;
+            padding-bottom: 5px;
+        }
+    }
+}
