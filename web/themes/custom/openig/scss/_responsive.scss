@@ -1153,14 +1153,14 @@
             margin-top: 0.5rem;
         }
     }
-    #block-openig-ensavoirplussurladhesion{
+    #block-openig-ensavoirplussurladhesion, #block-openig-obtenirunesimulation{
         width: 100% !important;
         margin-top: 0px !important;
         margin-bottom: 2rem;
         margin-left: 0% !important;
         background-color: rgba(255, 255, 255, 0.6);
     }
-    #block-openig-ensavoirplussurladhesion{
+    #block-openig-ensavoirplussurladhesion, #block-openig-obtenirunesimulation{
         .field--name-body, .field--name-field-lien a{
             font-size: $OPenIG-font-size-sm;
             p{
@@ -1669,7 +1669,7 @@
 }
 
 @media (max-width: 576px){
-    #block-openig-ensavoirplussurladhesion{
+    #block-openig-ensavoirplussurladhesion, #block-openig-obtenirunesimulation{
         width: 100% !important;
         padding-left: 100px !important;
     }
