@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.storage.node.field_body
     - node.type.groupe_de_travail
-    - paragraphs.paragraphs_type.membre
+    - paragraphs.paragraphs_type.accordeon
+    - paragraphs.paragraphs_type.membres
+    - paragraphs.paragraphs_type.picto_text
     - paragraphs.paragraphs_type.texte_dropdown
     - paragraphs.paragraphs_type.title_text
   module:
@@ -26,22 +28,36 @@ settings:
     target_bundles:
       texte_dropdown: texte_dropdown
       title_text: title_text
-      membre: membre
+      accordeon: accordeon
+      membres: membres
+      picto_text: picto_text
     negate: 0
     target_bundles_drag_drop:
-      membre:
-        weight: -9
+      accordeon:
+        weight: -17
         enabled: true
-      picto_text:
-        weight: -8
+      ligne_de_membres:
+        weight: -12
         enabled: false
-      texte_dropdown:
+      membre:
+        weight: -14
+        enabled: false
+      membres:
+        weight: -16
+        enabled: true
+      onglet_d_accordeon:
         weight: -11
+        enabled: false
+      picto_text:
+        weight: -15
+        enabled: true
+      texte_dropdown:
+        weight: -19
         enabled: true
       title_text:
-        weight: -10
+        weight: -18
         enabled: true
       type_de_contenu:
-        weight: -7
+        weight: -13
         enabled: false
 field_type: entity_reference_revisions

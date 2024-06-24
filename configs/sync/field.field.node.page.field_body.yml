@@ -7,6 +7,7 @@ dependencies:
     - node.type.page
     - paragraphs.paragraphs_type.accordeon
     - paragraphs.paragraphs_type.membres
+    - paragraphs.paragraphs_type.picto_text
     - paragraphs.paragraphs_type.texte_dropdown
     - paragraphs.paragraphs_type.title_text
   module:
@@ -29,6 +30,7 @@ settings:
       texte_dropdown: texte_dropdown
       accordeon: accordeon
       membres: membres
+      picto_text: picto_text
     negate: 0
     target_bundles_drag_drop:
       accordeon:
@@ -38,7 +40,7 @@ settings:
         weight: -12
         enabled: false
       membre:
-        weight: -15
+        weight: -14
         enabled: false
       membres:
         weight: -16
@@ -47,8 +49,8 @@ settings:
         weight: -11
         enabled: false
       picto_text:
-        weight: -14
-        enabled: false
+        weight: -15
+        enabled: true
       texte_dropdown:
         weight: -18
         enabled: true
