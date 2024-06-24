@@ -12,7 +12,7 @@ dependencies:
 id: openig_messageblocutiliserinaccessible
 theme: openig
 region: content
-weight: -7
+weight: -8
 provider: null
 plugin: 'block_content:80673789-61a5-4014-a53e-6a10209477d9'
 settings:

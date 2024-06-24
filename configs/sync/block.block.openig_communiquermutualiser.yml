@@ -13,7 +13,7 @@ dependencies:
 id: openig_communiquermutualiser
 theme: openig
 region: content
-weight: -28
+weight: -29
 provider: null
 plugin: 'block_content:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
 settings:

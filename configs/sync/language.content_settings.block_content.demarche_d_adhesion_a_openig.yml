@@ -1,0 +1,11 @@
+uuid: b510cc82-5a4a-46a6-a7e1-d4b94c3ba7b7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.demarche_d_adhesion_a_openig
+id: block_content.demarche_d_adhesion_a_openig
+target_entity_type_id: block_content
+target_bundle: demarche_d_adhesion_a_openig
+default_langcode: site_default
+language_alterable: false

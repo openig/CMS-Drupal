@@ -36,11 +36,27 @@
 %}
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
   {{ title_suffix }}
   {% block content %}
-    {{ content }}
+    {{ content.body }}
+    <button type="button" class="btn btn-primary lienSimulation" data-bs-toggle="modal" data-bs-target="#simulation">
+      {{content.field_lien[0]['#title']}}
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="simulation" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">{{label}}</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {{content.field_etapes}}
+            {{render_block('openig_simulatoradhesionblock')}}
+          </div>
+        </div>
+      </div>
+    </div>
   {% endblock %}
 </div>

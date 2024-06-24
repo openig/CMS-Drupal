@@ -11,7 +11,7 @@ dependencies:
 id: openig_imageenbasdepagemobile
 theme: openig
 region: content
-weight: -14
+weight: -15
 provider: null
 plugin: 'block_content:4255c696-6130-4b29-83a6-a1aeb6341d14'
 settings:

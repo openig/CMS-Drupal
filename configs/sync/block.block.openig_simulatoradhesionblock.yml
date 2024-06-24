@@ -1,0 +1,39 @@
+uuid: f91a9d5a-39ed-449a-90cc-8f79c73359e6
+langcode: fr
+status: false
+dependencies:
+  module:
+    - openig_adhesion
+  theme:
+    - openig
+id: openig_simulatoradhesionblock
+theme: openig
+region: content
+weight: -5
+provider: null
+plugin: openig_adhesion_block
+settings:
+  id: openig_adhesion_block
+  label: 'Simulator adhesion block'
+  label_display: '0'
+  provider: openig_adhesion
+  notification_emails: ''
+  notification_email_content: ''
+  type_1_email_title: ''
+  type_1_email_content: ''
+  type_2_email_title: ''
+  type_2_email_content: ''
+  type_3_email_title: ''
+  type_3_email_content: ''
+  type_4_email_title: ''
+  type_4_email_content: ''
+  openig_adhesion_simulator_formula_population: '0.07'
+  openig_adhesion_simulator_formula_budget: '0.05'
+  openig_adhesion_simulator_formula_salaries_1: '500'
+  openig_adhesion_simulator_formula_salaries_2: '1000'
+  openig_adhesion_simulator_formula_salaries_3: '1500'
+  openig_adhesion_simulator_formula_salaries_4: '2500'
+  openig_adhesion_simulator_formula_salaries_5: '5000'
+  openig_adhesion_simulator_formula_salaries_6: '10000'
+  openig_adhesion_simulator_formula_salaries_7: '15000'
+visibility: {  }

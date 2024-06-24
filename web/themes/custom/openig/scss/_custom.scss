@@ -297,7 +297,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 */
 
- #block-openig-ensavoirplussurladhesion, #block-openig-obtenirunesimulation{
+ #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
     padding-left: 150px;
     margin-top: 50px;
     //margin-left: 25%;
@@ -318,6 +318,25 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
             text-decoration: none;
             padding-bottom: 5px;
         }
+    }
+    button.lienSimulation{
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_dark-gray;
+        text-decoration: none;
+        padding-bottom: 5px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid $OPenIG-color_red;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+    }
+    button.lienSimulation:focus, button.lienSimulation:active{
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid $OPenIG-color_red;
+        border-radius: 0;
     }
 }
 

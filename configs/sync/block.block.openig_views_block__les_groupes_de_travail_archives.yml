@@ -12,7 +12,7 @@ dependencies:
 id: openig_views_block__les_groupes_de_travail_archives
 theme: openig
 region: content
-weight: -19
+weight: -20
 provider: null
 plugin: 'views_block:les_groupes_de_travail-groupes_de_travail_archives'
 settings:
