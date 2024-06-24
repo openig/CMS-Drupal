@@ -374,6 +374,9 @@
             margin-bottom: 1rem;
         }
     }
+    .slick--optionset--agenda{
+        margin-left: 0rem !important;
+    }
 
     #block-openig-views-block-l-agenda-agenda-accueil .more-link{
         margin-top: 0rem !important;
@@ -554,16 +557,16 @@
     }
 
     body.toolbar-vertical .formulaire_filtre{
-        top: 120px;
-        height: calc(100% - 120px);
+        top: 120px !important;
+        height: calc(100% - 120px) !important;
     }
     body.toolbar-horizontal .formulaire_filtre{
-        top: 120px;
-        height: calc(100% - 120px);
+        top: 120px !important;
+        height: calc(100% - 120px) !important;
     }
     body.toolbar-horizontal.toolbar-tray-open .formulaire_filtre{
-        top: 160px;
-        height: calc(100% - 160px);
+        top: 160px !important;
+        height: calc(100% - 160px) !important;
     }
     // Filtres
     .formulaire_filtre.show{
@@ -575,11 +578,13 @@
         left: -100%;
         transition: 1.5s;
         background-color: $OPenIG-color_white;
-        z-index: 3;
+        z-index: 3 !important;
         padding: 10px;
-        width: 100vw;
-        height: calc(100% - 80px);
-        top: 80px;
+        width: 100vw !important;
+        height: calc(100% - 80px) !important;
+        top: 80px !important;
+        border: none !important;
+        border-radius: 0 !important;
         .btn-close-filtre{
             background-color: transparent;
             border: none;
@@ -616,7 +621,7 @@
             }
         }
         .form-item-exposed-from-date, .form-item-exposed-to-date{
-            width: 150px;
+            width: 150px !important;
             display: flex;
             align-items: center;
             margin-top: 5px;
@@ -759,30 +764,69 @@
     .formulaire_filtre{
         .form-item-exposed-from-date, .form-item-exposed-to-date{
             label{
-                font-size: $OPenIG-font-size-xs;
+                font-size: $OPenIG-font-size-xs !important;
             }
         }
         .js-form-submit{
-            height: 25px;
-            font-size: $OPenIG-font-size-xs;
+            height: 25px !important;
+            font-size: $OPenIG-font-size-xs !important;
             padding: 4px 10px !important;
         }
         label{
-            font-size: $OPenIG-font-size-xs;
+            font-size: $OPenIG-font-size-xs !important;
         }
         .form-date{
-            font-size: $OPenIG-font-size-xs;
+            font-size: $OPenIG-font-size-xs !important;
         }
     }
    
-    
-
-    .path-les-actualites{
+    .view.view-l-agenda.view-display-id-agenda{
+        margin-top: 0rem !important;
+        margin-bottom: 3rem !important;
+        .view-content{
+            margin-top: 3rem;
+        }
+        .views-field-field-webform input.form-submit{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        .views-field-field-dates{
+            font-family: 'Exo_semiBold' !important;
+            font-weight: 600 !important;
+            font-size: $OPenIG-font-size-h2 !important;
+            width: 50px !important;
+        }
+        .views-field-title{
+            font-size: $OPenIG-font-size-xs !important;
+        }
+        .views-field-title-1{
+            font-size: 1.25rem !important;
+            width: 100% !important;
+        }
+        .views-field-field-tag{
+            a{
+                font-size: 9px !important;
+            }
+        }
+        .views-field-field-image-1{
+            margin-top: 3rem;
+            img{
+                border-radius: 15px;
+            }
+        }
+        .views-field-field-dates-3{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
+    .path-les-actualites, .path-l-agenda{
         .share_adhesion{
             width: fit-content;
             float: right;
             z-index: 1;
             position: relative;
+        }
+        .bloc_filtres{
+            //margin-left: 1rem;
         }
     }
     .slick--view--les-actualites--actualites-mobile{
@@ -795,7 +839,7 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview{
+    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -1286,9 +1330,13 @@
         width: 35px !important;
         height: 35px !important;
     }
-    .slick.slick--optionset--blocs .slick-list .slick__slide, .slick.slick--optionset--agenda .slick-list .slick__slide{
+    .slick.slick--optionset--blocs .slick-list .slick__slide{
         width: 250px !important;
         height: 290px !important;
+    }
+    .slick.slick--optionset--agenda .slick-list .slick__slide{
+        width: 140px !important;
+        height: 150px !important;
     }
     #block-openig-views-block-groupes-travail-accueil, #block-openig-views-block-les-services-services-accueil, .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         .view-content{

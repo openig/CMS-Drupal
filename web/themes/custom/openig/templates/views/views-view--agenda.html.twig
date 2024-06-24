@@ -39,7 +39,11 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
+  <div class="bloc_filtres d-lg-none d-block container">
+    <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+  </div>
   {{ title_prefix }}
   {% if title %}
     {{ title }}
@@ -66,14 +70,14 @@
       <p id="annee"></p>
       <div class="container">
         <div class="row">
-          <div class="col-xxl-1 col-2 bloc_filtres">
+          <div class="col-xxl-1 col-2 bloc_filtres d-lg-block d-none">
             <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
             <div class="formulaire_filtre">
               <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
               {{ render_block('openig_formulaireexposel_agendaagenda') }}
             </div>
           </div>
-          <div class="col-10">
+          <div class="col-lg-10 col-12">
             {{ rows }}
           </div>
         </div>
