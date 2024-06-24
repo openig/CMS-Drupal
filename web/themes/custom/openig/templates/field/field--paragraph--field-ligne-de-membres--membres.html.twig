@@ -58,7 +58,7 @@
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
         <div{{ item.attributes.addClass('field__item') }}>
-          <div class="background-membres"></div>
+          <div class="background-membres d-lg-block d-none"></div>
           {{ item.content }}
         </div>
       {% endfor %}
@@ -66,7 +66,7 @@
   {% else %}
     {% for item in items %}
       <div{{ attributes.addClass(classes, 'field__item') }}>
-        <div class="background-membres"></div>
+        <div class="background-membres d-lg-block d-none"></div>
         {{ item.content }}
       </div>
     {% endfor %}
@@ -79,7 +79,7 @@
       {% endif %}
       {% for item in items %}
         <div{{ item.attributes.addClass('field__item') }}>
-          <div class="background-membres"></div>
+          <div class="background-membres d-lg-block d-none"></div>
           {{ item.content }}
         </div>
       {% endfor %}

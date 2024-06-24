@@ -82,6 +82,9 @@
     body.toolbar-horizontal.toolbar-fixed.toolbar-tray-open header{
         top: 79px !important;
     }
+    .dropdown-item.active{
+        background-color: transparent !important;
+    }
     .premiere_section{
         display: flex;
         justify-content: center;
@@ -859,7 +862,7 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article{
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page{
         .tags{
             display: flex;
             flex-wrap: wrap;
@@ -1001,6 +1004,11 @@
             display: none;
         }
     } 
+    .page-node-type-page{
+        .node--type-page{
+            margin-bottom: 3rem;
+        }
+    }
     .page-node-type-article{
         .node--type-article{
             margin-bottom: 3rem;
@@ -1463,8 +1471,93 @@
             font-size: $OPenIG-font-size-sm !important;
         }
     }
-   
 
+    .field--name-field-ligne-de-membres > .field__item:nth-child(odd){
+        .field--name-field-membre{
+            > .field__item:nth-child(odd){
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+            > .field__item:nth-child(even){
+                justify-content: flex-end;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .field--name-field-ligne-de-membres > .field__item:nth-child(even){
+        .field--name-field-membre{
+            > .field__item:nth-child(odd){
+                justify-content: flex-end;
+                align-items: flex-end;
+            }
+            > .field__item:nth-child(even){
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    .paragraph--type--ligne-de-membres{
+        margin-left: 0 !important;
+        .background-membres{
+            left: 0 !important;
+            right: unset !important;
+            width: 100% !important;
+            height: 250px !important;
+        }
+        .field--name-field-membre{
+            display: block !important;
+            > .field__item{
+                width: 100%;
+                display: flex;
+                margin-bottom: 5rem;
+                background-color: #f2f6e7;
+                height: 215px;
+            }
+            .card-member{
+                width: 350px !important;
+                min-height: unset !important;
+                margin: 0 !important;
+                .content_membre{
+                    display: flex;
+                }
+                .texte_membre{
+                    width: 100%;
+                }
+                .field--name-field-image{
+                    margin: 0 !important;
+                    width: 115px !important;
+                    height: 115px !important;
+                    img{
+                        width: 100px !important;
+                        height: 100px !important;
+                    }
+                }
+                .field--name-field-picto{
+                    position: relative !important;
+                    top: unset !important;
+                    right: unset !important;
+                    display: flex;
+                    justify-content: end;
+                    width: 100%;
+                    img{
+                        width: 35px;
+                    }
+                }
+                .field--name-field-poste, .field--name-field-prenom-nom, button.videomembre, .field--name-field-email{
+                    font-size: $OPenIG-font-size-sm !important;
+                }
+                .field--name-field-poste, .field--name-field-prenom-nom, .field--name-field-entreprise{
+                    margin-left: 0.5rem;
+                }
+                .field--name-field-entreprise{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+                
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -1606,6 +1699,12 @@
 }
 
 @media (max-width: 355px){
+    .paragraph--type--membre{
+        width: 95%;
+    }
+    .paragraph--type--ligne-de-membres .field--name-field-membre .card-member{
+        width: 100% !important;
+    }
     #block-openig-actionsdanslassociation .field--name-field-taxonomie .field__item{
         margin-top: 1rem !important;
     }

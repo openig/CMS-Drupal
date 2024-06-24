@@ -51,7 +51,20 @@
     <div class="card-member cardmembers card" style="position: relative;">
       {% block content %}
         <div class="card-member-body card-body">
-          {{ content }}
+          {#{{ content }}#}
+          {{content.field_picto}}
+          <div class="content_membre">
+            <div class="image_membre">
+              {{content.field_image}}
+            </div>
+            <div class="texte_membre">
+              {{content.field_poste}}
+              {{content.field_entreprise}}
+              {{content.field_prenom_nom}}
+              {{content.field_video}}
+              {{content.field_email}}
+            </div>
+          </div>
         </div>
       {% endblock %}
     </div>
