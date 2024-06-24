@@ -136,6 +136,7 @@
 .path-l-agenda{
     // Filtres
     .formulaire_filtre{
+        top: 0;
         position: absolute;
         left: -100rem;
         transition: 1.5s;
@@ -348,12 +349,15 @@
         width: 100%;
         height: 100%;
     }
+    .row{
+        justify-content: space-around;
+    }
 }
 .view-l-agenda{
     .view-content {
         .row{
             display: flex;
-            justify-content: space-around;
+            //justify-content: space-around;
         }
         .card_agenda{
             width: 195px !important;

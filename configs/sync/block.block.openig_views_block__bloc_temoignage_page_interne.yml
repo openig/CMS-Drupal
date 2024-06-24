@@ -12,7 +12,7 @@ dependencies:
 id: openig_views_block__bloc_temoignage_page_interne
 theme: openig
 region: content
-weight: -20
+weight: -18
 provider: null
 plugin: 'views_block:bloc_temoignage-block_temoignage'
 settings:

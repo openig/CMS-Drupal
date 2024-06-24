@@ -221,8 +221,16 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 #block-openig-addtoanysharebuttons{
     position: absolute;
-    top: -6.5rem;
-    right: 0;
+    //top: -6.5rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    //right: 0;
+    justify-content: end;
+}
+
+.region-content{
+    position: relative;
 }
 
 #block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
@@ -258,6 +266,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 // Bloc En savoir plus sur l'adhésion
+/*
 .path-les-groupes-de-travail{
     #block-openig-ensavoirplussurladhesion{
         display: block;
@@ -286,14 +295,15 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         margin-bottom: 0;
     }
 }
-
+*/
 
  #block-openig-ensavoirplussurladhesion{
+    padding-left: 150px;
     margin-top: 50px;
-    margin-left: 25%;
+    //margin-left: 25%;
     margin-bottom: 50px;
-    display: none;
-    width: 50%;
+    //display: none;
+    //width: 50%;
     .field--name-body{
         font-family: 'OpenSans_Regular', sans-serif;
         font-size: $OPenIG-font-size-base;

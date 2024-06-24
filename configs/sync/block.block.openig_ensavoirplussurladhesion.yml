@@ -1,6 +1,6 @@
 uuid: 89c7c071-96e8-4620-891d-12070cc44c1b
 langcode: fr
-status: false
+status: true
 dependencies:
   content:
     - 'block_content:lien:04cf00ae-6b51-4aeb-8b25-b764c80e94aa'
@@ -12,7 +12,7 @@ dependencies:
 id: openig_ensavoirplussurladhesion
 theme: openig
 region: content
-weight: -18
+weight: -26
 provider: null
 plugin: 'block_content:04cf00ae-6b51-4aeb-8b25-b764c80e94aa'
 settings:
@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: /les-groupes-de-travail
+    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*\r\n/les-services\r\n/service/*"
