@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.groupe_de_travail.field_access_restricted
     - field.field.node.groupe_de_travail.field_animators
     - field.field.node.groupe_de_travail.field_archive
     - field.field.node.groupe_de_travail.field_body
@@ -43,7 +42,8 @@ content:
     weight: 100
     region: content
 hidden:
-  field_access_restricted: true
+  addtoany: true
+  breadcrumbs: true
   field_animators: true
   field_archive: true
   field_body: true

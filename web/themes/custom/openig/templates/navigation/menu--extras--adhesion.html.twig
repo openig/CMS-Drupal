@@ -27,14 +27,18 @@
   @see https://twig.symfony.com/doc/3.x/tags/macro.html
 #}
 
-
+{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) %}
+  {% 
+    set adherent = 'adherent'
+  %}
+{% endif %}
 {%
   set username = user.getDisplayName()
 %}
 
-{{ menus.menu_links(items, attributes, 0, username, logged_in) }}
+{{ menus.menu_links(items, attributes, 0, username, logged_in, adherent) }}
 
-{% macro menu_links(items, attributes, menu_leve, username, logged_in) %}
+{% macro menu_links(items, attributes, menu_leve, username, logged_in, adherent) %}
 
   {% import _self as menus %}
   {% if items %}
@@ -58,8 +62,10 @@
 
         <li{{ item.attributes.addClass('nav-item') }}>
             {% if item.title == 'Nom utilisateur' %}
+              {% if adherent %}
                 {{item['content']['field_picto']}}
-                {{ link(username, item.url, { 'class': classes_link }) }}
+              {% endif %}
+              {{ link(username, item.url, { 'class': classes_link }) }}
             {% else %}
                 {{ link(item.title, item.url, { 'class': classes_link }) }}
             {% endif %}

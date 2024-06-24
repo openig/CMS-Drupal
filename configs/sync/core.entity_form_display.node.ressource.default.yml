@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.ressource.field_access_restricted
     - field.field.node.ressource.field_description
     - field.field.node.ressource.field_file
     - field.field.node.ressource.field_format
@@ -177,5 +176,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden:
-  field_access_restricted: true
+hidden: {  }

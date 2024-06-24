@@ -379,6 +379,9 @@
     }
     .slick--optionset--agenda{
         margin-left: 0rem !important;
+        .views-field-title{
+            margin-top: 0 !important;
+        }
     }
 
     #block-openig-views-block-l-agenda-agenda-accueil .more-link{
@@ -833,7 +836,7 @@
         }
     }
     .slick--view--les-actualites--actualites-mobile{
-        margin-top: 3rem;
+        margin-top: 4.5rem;
     }
     .view-les-actualites.view-display-id-actualites{
         margin-top: 0 !important;

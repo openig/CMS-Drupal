@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.ressource_dans_groupe_de_travail
-    - field.field.node.ressource.field_access_restricted
     - field.field.node.ressource.field_description
     - field.field.node.ressource.field_file
     - field.field.node.ressource.field_format
@@ -45,7 +44,7 @@ content:
     region: content
 hidden:
   addtoany: true
-  field_access_restricted: true
+  breadcrumbs: true
   field_description: true
   field_format: true
   field_image: true

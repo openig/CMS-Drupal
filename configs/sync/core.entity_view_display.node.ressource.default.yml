@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.ressource.field_access_restricted
     - field.field.node.ressource.field_description
     - field.field.node.ressource.field_file
     - field.field.node.ressource.field_format
@@ -101,7 +100,7 @@ content:
     region: content
 hidden:
   addtoany: true
-  field_access_restricted: true
+  breadcrumbs: true
   langcode: true
   links: true
   search_api_excerpt: true

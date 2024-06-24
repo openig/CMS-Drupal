@@ -14,7 +14,6 @@ regions:
   navigation_deuxieme_section: Navigation deuxième section
   navigation_troisieme_section: Navigation troisième section
   breadcrumb: Fil d'ariane
-  avant_contenu: Avant le contenu
   content: Contenu
   premiere_section_accueil: Première section accueil
   deuxieme_section_accueil: Deuxième section accueil
@@ -24,13 +23,8 @@ regions:
   sixieme_section_accueil: Sixième section accueil
   septieme_section_accueil: Septième section accueil
   huitieme_section_accueil: Huitième section accueil
-  sidebar_second: Sidebar droite
-  haut_footer_gauche: Haut du footer gauche
   haut_footer_centre: Haut du footer centre
   haut_footer_droite: Haut du footer droite
-  milieu_footer_gauche: Milieu du footer gauche
-  milieu_footer_centre: Milieu du footer centre
-  milieu_footer_droite: Milieu du footer droite
   bas_footer_gauche: Bas du footer gauche
   bas_footer_centre: Bas du footer centre
   bas_footer_droite: Bas du footer droite

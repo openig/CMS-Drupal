@@ -3,7 +3,6 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.page.field_access_restricted
     - field.field.node.page.field_body
     - field.field.node.page.field_contenu_sidebar
     - field.field.node.page.field_tag
@@ -51,6 +50,6 @@ content:
     region: content
 hidden:
   addtoany: true
-  field_access_restricted: true
+  breadcrumbs: true
   langcode: true
   search_api_excerpt: true

@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.rss
-    - field.field.node.article.field_access_restricted
     - field.field.node.article.field_body
     - field.field.node.article.field_contenu_sidebar
     - field.field.node.article.field_image
@@ -24,7 +23,8 @@ content:
     weight: 100
     region: content
 hidden:
-  field_access_restricted: true
+  addtoany: true
+  breadcrumbs: true
   field_body: true
   field_contenu_sidebar: true
   field_image: true

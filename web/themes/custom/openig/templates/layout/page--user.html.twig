@@ -59,18 +59,18 @@ set footer_classes = ' ' ~
   <div class="navigation container">
       <div class="row">
           {% if logged_in %}
-              <div class="col-9">
+              <div class="col-xl-9 d-none d-xl-flex navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-3 navigation_droite">
+              <div class="col-xl-3 d-none d-xl-flex navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
           {% else %}
-              <div class="col-8">
+              <div class="col-xl-8 d-none d-xl-flex navigation_gauche">
                   {{ page.navigation_premiere_section }}
               </div>
-              <div class="col-4 navigation_droite">
+              <div class="col-xl-4 d-none d-xl-flex navigation_droite">
                   {{ page.navigation_deuxieme_section }}
                   {{ page.navigation_troisieme_section }}
               </div>
@@ -78,28 +78,18 @@ set footer_classes = ' ' ~
       </div>
   </div>
 
-{#
-  {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="{{ b5_top_container }} d-flex">
-      {{ page.nav_branding }}
-
-      {% if page.nav_main or page.nav_additional %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-          {{ page.nav_main }}
-          {{ page.nav_additional }}
+  <div class="navigation_mobile d-xl-none d-block">
+    <div class="section_background">
+      <div class="container premiere_section">
+          {{page.mobile_premiere_section}}
+          <button type="button" class="btn btn_icon">
+            <i class="fa-regular fa-bars"></i>
+            <i class="fa-regular fa-xmark"></i>
+          </button>
         </div>
-      {% endif %}
     </div>
-  </nav>
-  {% endif %}
-#}
+    {{page.mobile_seconde_section}}
+  </div>
 </header>
 
 <main role="main">
@@ -123,71 +113,42 @@ set footer_classes = ' ' ~
             {{ page.breadcrumb }}
         {% endif %}
         <div class="row g-0">
-        {% if page.sidebar_first %}
-            <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
-            {{ page.sidebar_first }}
+            <div class="order-1 order-lg-2 {{ content_classes }}">
+                {{ page.content }}
             </div>
-        {% endif %}
-        <div class="order-1 order-lg-2 {{ content_classes }}">
-            {{ page.avant_contenu }}
-            {{ page.content }}
-        </div>
-        {% if page.sidebar_second %}
-            <div class="order-3 {{ sidebar_second_classes }}">
-            {{ page.sidebar_second }}
-            </div>
-        {% endif %}
         </div>
     </div>
-
-
 </main>
 
 <footer class="mt-auto {{ footer_classes }}">
     <div class="hautFooter">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-3">
-                    {{ page.haut_footer_gauche }}
+            <div class="row row_haut_footer">
+                <div class="col-12 col-xl-3">
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-xl-6">
                     {{ page.haut_footer_centre }}
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-xl-3 haut_footer_droite">
                     {{ page.haut_footer_droite }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="milieuFooter">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_gauche }}
-                </div>
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_centre }}
-                </div>
-                <div class="col-12 col-lg-4">
-                    {{ page.milieu_footer_droite }}
                 </div>
             </div>
         </div>
     </div>
     <div class="basFooter">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-12 col-lg-3">
+            <div class="row row_bas_footer ">
+                <div class="col-xl-1"></div>
+                <div class="col-6 footerGauche col-xl-3">
                     {{ page.bas_footer_gauche }}
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 footerCentre col-xl-4">
                     {{ page.bas_footer_centre }}
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-6 footerDroite col-xl-3">
                     {{ page.bas_footer_droite }}
                 </div>
-                <div class="col-lg-1"></div>
+                <div class="col-xl-1"></div>
             </div>
         </div>
     </div>

@@ -90,29 +90,6 @@ set footer_classes = ' ' ~
     </div>
     {{page.mobile_seconde_section}}
   </div>
-
-{#
-  {% if page.nav_branding or page.nav_main or page.nav_additional %}
-  <nav class="{{ nav_classes }}">
-    <div class="{{ b5_top_container }} d-flex">
-      {{ page.nav_branding }}
-
-      {% if page.nav_main or page.nav_additional %}
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-end" id="navbarSupportedContent">
-          {{ page.nav_main }}
-          {{ page.nav_additional }}
-        </div>
-      {% endif %}
-    </div>
-  </nav>
-  {% endif %}
-#}
 </header>
 
 <main role="main">
@@ -147,25 +124,12 @@ set footer_classes = ' ' ~
         {% endif %}
       </div>
       <div class="row g-0">
-        {% if page.sidebar_first %}
-          <div class="order-2 order-lg-1 {{ sidebar_first_classes }}">
-            {{ page.sidebar_first }}
-          </div>
-        {% endif %}
         <div class="order-1 order-lg-2 {{ content_classes }}">
-          {{ page.avant_contenu }}
           {{ page.content }}
         </div>
-        {% if page.sidebar_second %}
-          <div class="order-3 {{ sidebar_second_classes }}">
-            {{ page.sidebar_second }}
-          </div>
-        {% endif %}
       </div>
     </div>
   {% endif %}
-
-
 </main>
 
 <footer class="mt-auto {{ footer_classes }}">
@@ -173,7 +137,6 @@ set footer_classes = ' ' ~
         <div class="container">
             <div class="row row_haut_footer">
                 <div class="col-12 col-xl-3">
-                    {{ page.haut_footer_gauche }}
                 </div>
                 <div class="col-12 col-xl-6">
                     {{ page.haut_footer_centre }}
