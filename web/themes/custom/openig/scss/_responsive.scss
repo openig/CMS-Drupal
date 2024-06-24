@@ -1561,6 +1561,19 @@
             }
         }
     }
+
+    .page-404{
+        #block-openig-content{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        .title_share #block-openig-page-title{
+            h1{
+                margin-left: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    }
+    
 }
 
 @media (max-width: 768px){
