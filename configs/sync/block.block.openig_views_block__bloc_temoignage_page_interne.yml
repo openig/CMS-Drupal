@@ -1,0 +1,29 @@
+uuid: 0631113f-6c62-4457-a860-317bb3ad668f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.bloc_temoignage
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__bloc_temoignage_page_interne
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:bloc_temoignage-block_temoignage'
+settings:
+  id: 'views_block:bloc_temoignage-block_temoignage'
+  label: 'Les témoignages de nos adhérents'
+  label_display: visible
+  provider: views
+  views_label: 'Les témoignages de nos adhérents'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /pourquoi-adherer-openig
