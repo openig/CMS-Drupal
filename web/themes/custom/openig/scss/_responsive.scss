@@ -1601,8 +1601,25 @@
         }
     }
 
-    .view-taxonomy-term{
+    .view.view-taxonomy-term{
         margin-bottom: 3rem;
+        .pager__item--previous{
+            margin-right: 1rem !important;
+        }
+        .pager__item--next{
+            margin-left: 1rem !important;
+        }
+        .page-item{
+            width: 30px;
+            height: 30px;
+            .page-link{
+                font-size: $OPenIG-font-size-base;
+                padding: 0.375rem 0.75rem;
+            }
+        }
+        .pager__item--previous .page-link::before, .pager__item--next .page-link::before {
+            font-size: 20px;
+        }
         .row{
             margin-bottom: 0 !important;
             .col-lg-3.col-12{
