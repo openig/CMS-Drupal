@@ -51,3 +51,4 @@ dependencies:
   - openig_webform
   - responsive_image
   - nodeaccess
+  - eu_cookie_compliance
