@@ -221,8 +221,16 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 
 #block-openig-addtoanysharebuttons{
     position: absolute;
-    top: -6.5rem;
-    right: 0;
+    //top: -6.5rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    //right: 0;
+    justify-content: end;
+}
+
+.region-content{
+    position: relative;
 }
 
 #block-openig-addtoanysharebuttons, #block-openig-addtoanysharebuttons-bas-page{
@@ -257,43 +265,42 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
-// Bloc En savoir plus sur l'adhésion
-.path-les-groupes-de-travail{
-    #block-openig-ensavoirplussurladhesion{
-        display: block;
-        width: fit-content;
-        margin-top: 20px;
-    }
-}
-.page-node-type-groupe-de-travail{
-    #block-openig-ensavoirplussurladhesion{
-        display: block;
+#block-openig-demarchedadhesionaopenig{
+    .modal{
+        .modal-dialog{ 
+            max-width: unset;
+            width: 75%;
+            .modal-header,.modal-body{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        h2{
+            border-bottom: 0;
+            font-family: "Exo_light";
+            font-size: $OPenIG-font-size-h3;
+            font-weight: 300;
+        }
+        h3{
+            font-size: $OPenIG-font-size-md;
+            font-family: "OpenSans_SemiBold";
+            font-weight: 600;
+        }
+        .openig-adhesion-simulator-form{
+            .form-actions{
+                float: right;
+            }
+            .js-form-item, .js-form-wrapper, .captcha, .form-actions{
+                margin-top: 2rem;
+            }
+        }
     }
 }
 
-.page-node-type-service{
-    #block-openig-ensavoirplussurladhesion{
-        display: block;
-        margin-top: 20px;
-    }
-}
-
-.path-les-services{
-    #block-openig-ensavoirplussurladhesion{
-        display: block;
-        width: fit-content;
-        margin-top: 20px;
-        margin-bottom: 0;
-    }
-}
-
-
- #block-openig-ensavoirplussurladhesion{
+ #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
+    padding-left: 150px;
     margin-top: 50px;
-    margin-left: 25%;
     margin-bottom: 50px;
-    display: none;
-    width: 50%;
     .field--name-body{
         font-family: 'OpenSans_Regular', sans-serif;
         font-size: $OPenIG-font-size-base;
@@ -309,6 +316,25 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
             padding-bottom: 5px;
         }
     }
+    button.lienSimulation{
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_dark-gray;
+        text-decoration: none;
+        padding-bottom: 5px;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid $OPenIG-color_red;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
+    }
+    button.lienSimulation:focus, button.lienSimulation:active{
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid $OPenIG-color_red;
+        border-radius: 0;
+    }
 }
 
 // Titres
@@ -323,8 +349,6 @@ h1{
 .title_share{
     display: flex;
     justify-content: space-between;
-    //align-items: baseline;
-    //padding-bottom: 75px;
     margin-top: 1rem;
     min-height: 100px;
 }
@@ -335,7 +359,6 @@ h1{
     position: relative;
     height: fit-content;
     width: 75%;
-    //flex-wrap: wrap;
     img{
         height: 150px;
         position: absolute;
