@@ -113,12 +113,16 @@
             color: $OPenIG-color_black;
         }
         i.fa-bars{
-            width: fit-content;
-            display: block;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 20px;
         }
         i.fa-xmark{
-            width: fit-content;
+            width: 50px;
+            height: 50px;
             display: none;
             font-size: 20px;
         }
@@ -168,7 +172,9 @@
     }
     .premiere_section.open{
         i.fa-xmark{
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         i.fa-bars{
             display: none;
@@ -850,7 +856,7 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
+    .field--name-field-body, .field--name-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -864,7 +870,32 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page{
+    .page-node-type-evenement{
+        .node--type-evenement.node--view-mode-full{
+            margin-bottom: 3rem;
+            .field--name-field-dates, .field--name-field-groupe-de-travail, .field--name-field-webform input, .field--name-field-webform label{
+                font-size: $OPenIG-font-size-sm;
+            }
+    
+        }
+    }
+    .page-node-type-temoignage{
+        .node--type-temoignage{
+            margin-bottom: 3rem;
+        }
+        .field--name-field-entreprise, .field--name-field-poste{
+            font-size: $OPenIG-font-size-sm;
+        }
+    }
+    .page-node-type-ressource{
+        .node--type-ressource{
+            margin-bottom: 3rem;
+            .field--name-field-type, .field--name-field-linked-content, .field--name-field-file{
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page, .page-node-type-evenement, .page-node-type-temoignage, .page-node-type-ressource{
         .tags{
             display: flex;
             flex-wrap: wrap;
@@ -1591,6 +1622,47 @@
             }
             .openig-adhesion-simulator-form, .field--name-field-etapes, select, option, input, legend{
                 font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+
+    .view.view-taxonomy-term{
+        margin-bottom: 3rem;
+        .pager__item--previous{
+            margin-right: 1rem !important;
+        }
+        .pager__item--next{
+            margin-left: 1rem !important;
+        }
+        .page-item{
+            width: 30px;
+            height: 30px;
+            .page-link{
+                font-size: $OPenIG-font-size-base;
+                padding: 0.375rem 0.75rem;
+            }
+        }
+        .pager__item--previous .page-link::before, .pager__item--next .page-link::before {
+            font-size: 20px;
+        }
+        .row{
+            margin-bottom: 0 !important;
+            .col-lg-3.col-12{
+                margin-bottom: 2rem;
+                img{
+                    width: 100%;
+                }
+                .card{
+                    .views-field-field-tag a{
+                        font-size: 9px !important;
+                    }
+                    .views-field-view-node a{
+                        font-size: $OPenIG-font-size-xs !important;
+                    }
+                    .views-field-fieldset .titlepicto a{
+                        font-size: $OPenIG-font-size-lg !important;
+                    }
+                }
             }
         }
     }
