@@ -1674,6 +1674,10 @@
         .popup-content{
             h2{
                 font-size: $OPenIG-font-size-sm !important;
+                border: 0 !important;
+            }
+            .module--translations-translatedtext.js-module--translations-translatedtext{
+                font-size: $OPenIG-font-size-xs !important;
             }
             .eu-cookie-compliance-message{
                 margin-bottom: 10px !important;
