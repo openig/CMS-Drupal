@@ -270,6 +270,10 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         .modal-dialog{ 
             max-width: unset;
             width: 75%;
+            .modal-header,.modal-body{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
         }
         h2{
             border-bottom: 0;
