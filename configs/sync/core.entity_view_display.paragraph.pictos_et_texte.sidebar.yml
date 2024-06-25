@@ -1,0 +1,26 @@
+uuid: 783dd9cc-a30b-4dd3-9770-b7a1c7726a15
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.pictos_et_texte.field_picto_et_texte
+    - field.field.paragraph.pictos_et_texte.field_title
+    - paragraphs.paragraphs_type.pictos_et_texte
+id: paragraph.pictos_et_texte.sidebar
+targetEntityType: paragraph
+bundle: pictos_et_texte
+mode: sidebar
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto_et_texte: true
+  search_api_excerpt: true
