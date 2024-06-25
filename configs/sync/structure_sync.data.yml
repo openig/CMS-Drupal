@@ -1,5 +1,27 @@
 blocks:
   -
+    info: "Démarche d'adhésion à OPenIG"
+    langcode: fr
+    uuid: 52b752d8-78e8-4e1a-987d-c111d74c2817
+    bundle: demarche_d_adhesion_a_openig
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>Pour connaître le montant de votre adhésion</p>'
+          summary: ''
+          format: basic_html
+      field_etapes:
+        -
+          value: "<ol><li>Pour connaître le montant de votre adhésion, remplir le formulaire de simulation ci-dessous</li><li>Recevoir votre simulation par mail</li><li>Une personne d'OPenIG se permettra de reprendre contact avec vous pour finaliser si vous le souhaitez votre adhésion</li></ol>"
+          format: basic_html
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: 'Obtenir une simulation'
+          options: {  }
+  -
     info: 'Image accueil'
     langcode: fr
     uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
@@ -10,6 +32,59 @@ blocks:
       field_image:
         -
           target_id: '33'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: "En savoir plus sur l'adhésion"
+    langcode: fr
+    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
+    bundle: lien
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
+          summary: ''
+          format: full_html
+      field_lien:
+        -
+          uri: 'entity:node/36'
+          title: "En savoir plus sur l'adhésion"
+          options: {  }
+  -
+    info: 'Adresse et contact'
+    langcode: fr
+    uuid: 062b31d8-76b5-4710-91ac-088969c978c7
+    bundle: adresse_et_contact
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p>Maison de la télédétection<br>500, rue Jean-François Breton<br>34093 Montpellier Cedex 5</p>'
+          summary: ''
+          format: basic_html
+      field_email:
+        -
+          value: contact@openig.org
+      field_lien: {  }
+      field_telephone:
+        -
+          value: '04 67 55 86 54'
+  -
+    info: 'Image en bas de page mobile'
+    langcode: fr
+    uuid: 4255c696-6130-4b29-83a6-a1aeb6341d14
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '112'
           alt: mesh
           title: ''
           width: '64'
@@ -191,24 +266,6 @@ blocks:
           summary: ''
           format: basic_html
   -
-    info: "En savoir plus sur l'adhésion"
-    langcode: fr
-    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
-    bundle: lien
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
-          summary: ''
-          format: full_html
-      field_lien:
-        -
-          uri: 'internal:/'
-          title: "En savoir plus sur l'adhésion"
-          options: {  }
-  -
     info: 'Dernière newsletter'
     langcode: fr
     uuid: 67095522-a276-4bcb-ac5e-024b0f8e5199
@@ -253,25 +310,6 @@ blocks:
           value: '<p><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=3.874493837356568%2C43.64427623081348%2C3.8778921961784367%2C43.646040528752174&amp;layer=mapnik" width="415" height="250"></iframe></p>'
           summary: ''
           format: full_html
-  -
-    info: 'Adresse et contact'
-    langcode: fr
-    uuid: 062b31d8-76b5-4710-91ac-088969c978c7
-    bundle: adresse_et_contact
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<p>Maison de la télédétection<br>500, rue Jean-François Breton<br>34093 Montpellier Cedex 5</p>'
-          summary: ''
-          format: basic_html
-      field_email:
-        -
-          value: contact@openig.org
-      field_telephone:
-        -
-          value: '04 67 55 86 54'
   -
     info: 'Description accueil'
     langcode: fr
