@@ -8,6 +8,7 @@ dependencies:
   module:
     - comment
     - contact
+    - eu_cookie_compliance
     - file
     - filter
     - media
@@ -30,6 +31,7 @@ permissions:
   - 'access toolbar'
   - 'access user profiles'
   - 'delete own files'
+  - 'display eu cookie compliance popup'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
