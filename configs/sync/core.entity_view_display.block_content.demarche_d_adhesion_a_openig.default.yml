@@ -1,0 +1,47 @@
+uuid: 8b261155-0b42-46c5-8b18-e1c7db5f9fc5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.demarche_d_adhesion_a_openig
+    - field.field.block_content.demarche_d_adhesion_a_openig.body
+    - field.field.block_content.demarche_d_adhesion_a_openig.field_etapes
+    - field.field.block_content.demarche_d_adhesion_a_openig.field_lien
+  module:
+    - link
+    - text
+id: block_content.demarche_d_adhesion_a_openig.default
+targetEntityType: block_content
+bundle: demarche_d_adhesion_a_openig
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_etapes:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 4
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

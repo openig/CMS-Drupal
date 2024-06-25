@@ -1,6 +1,6 @@
 uuid: 18c8c0b2-20cd-4548-9716-782a4ab1c3d3
 langcode: fr
-status: false
+status: true
 dependencies:
   module:
     - addtoany
@@ -10,7 +10,7 @@ dependencies:
 id: openig_addtoanysharebuttons
 theme: openig
 region: content
-weight: -19
+weight: -25
 provider: null
 plugin: addtoany_block
 settings:
@@ -26,5 +26,5 @@ settings:
 visibility:
   request_path:
     id: request_path
-    negate: false
-    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*\r\n/l-agenda"
+    negate: true
+    pages: "<front>\r\n/user/*"

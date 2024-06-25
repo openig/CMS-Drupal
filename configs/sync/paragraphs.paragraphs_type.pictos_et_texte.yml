@@ -1,0 +1,10 @@
+uuid: 4630d4e8-da66-4ff8-9097-432f52720e4d
+langcode: fr
+status: true
+dependencies: {  }
+id: pictos_et_texte
+label: 'Pictos et texte'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

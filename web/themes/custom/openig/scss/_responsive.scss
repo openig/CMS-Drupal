@@ -743,9 +743,12 @@
         display: flex;
         flex-direction: column-reverse;
     }
+    
     #block-openig-addtoanysharebuttons{
+        margin: unset !important;
         justify-content: end;
         position: relative !important;
+        z-index: 1;
         top: unset !important;
         #button_share{
             height: 25px !important;
@@ -757,7 +760,15 @@
         }
     }
 
+    .path-l-agenda, .path-les-actualites{
+        #block-openig-addtoanysharebuttons{
+            position: absolute !important;
+        }
+    }
+
     .btn_filtre{
+        z-index: 1;
+        position: relative;
         margin-top: 0 !important;
         height: 25px !important;
         padding: 0 10px !important;
@@ -789,9 +800,6 @@
     .view.view-l-agenda.view-display-id-agenda{
         margin-top: 0rem !important;
         margin-bottom: 3rem !important;
-        .view-content{
-            margin-top: 3rem;
-        }
         .views-field-field-webform input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
         }
@@ -831,12 +839,9 @@
             z-index: 1;
             position: relative;
         }
-        .bloc_filtres{
-            //margin-left: 1rem;
-        }
     }
     .slick--view--les-actualites--actualites-mobile{
-        margin-top: 4.5rem;
+        margin-top: 0rem;
     }
     .view-les-actualites.view-display-id-actualites{
         margin-top: 0 !important;
@@ -851,13 +856,7 @@
     .accordion h2{
         border: 0 !important;
     }
-    #block-openig-ensavoirplussurladhesion{
-        width: 60% !important;
-    }
     .page-node-type-service{
-        #block-openig-ensavoirplussurladhesion{
-            margin-top: 0.5rem !important;
-        }
         .sidebar{
             margin-top: 0 !important;
         }
@@ -1022,9 +1021,6 @@
         }
     }
     .page-node-type-groupe-de-travail{
-        #block-openig-ensavoirplussurladhesion{
-            margin-top: 0 !important;
-        }
         .btngroupe{
             margin-top: 1rem !important;
             #btnRejoindre{
@@ -1142,20 +1138,23 @@
             margin-top: 0.5rem;
         }
     }
-    .path-les-services #block-openig-ensavoirplussurladhesion, .path-les-groupes-de-travail #block-openig-ensavoirplussurladhesion{
-        width: 60% !important;
-        margin-top: -3rem !important;
-        margin-bottom: 3rem;
-        margin-left: 30% !important;
+    #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
+        width: 100% !important;
+        margin-top: 0px !important;
+        margin-bottom: 2rem;
+        margin-left: 0% !important;
         background-color: rgba(255, 255, 255, 0.6);
     }
-    #block-openig-ensavoirplussurladhesion{
+    #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
         .field--name-body, .field--name-field-lien a{
             font-size: $OPenIG-font-size-sm;
             p{
                 margin-bottom: 0;
             }
         } 
+        button.lienSimulation{
+            font-size: $OPenIG-font-size-sm;
+        }
     }
     #block-openig-imageenbasdepagemobile{
         bottom: 200px !important;
@@ -1501,6 +1500,13 @@
         }
     }
 
+    .paragraph--type--pictos-et-texte{
+        .field--name-field-picto-et-texte{
+            >.field__item{
+                padding: 0 !important;
+            }
+        }
+    }
     .paragraph--type--ligne-de-membres{
         margin-left: 0 !important;
         .background-membres{
@@ -1558,6 +1564,33 @@
                     font-size: $OPenIG-font-size-xs !important;
                 }
                 
+            }
+        }
+    }
+
+    .page-404{
+        #block-openig-content{
+            font-size: $OPenIG-font-size-sm !important;
+        }
+        .title_share #block-openig-page-title{
+            h1{
+                margin-left: 0 !important;
+                padding: 0 !important;
+            }
+        }
+    }
+    
+    #block-openig-demarchedadhesionaopenig{
+        .modal{
+            h2{
+                border-bottom: 0 !important;
+                font-size: $OPenIG-font-size-lg !important;
+            }
+            h3{
+                font-size: $OPenIG-font-size-base !important;
+            }
+            .openig-adhesion-simulator-form, .field--name-field-etapes, select, option, input, legend{
+                font-size: $OPenIG-font-size-sm;
             }
         }
     }
@@ -1645,6 +1678,10 @@
 }
 
 @media (max-width: 576px){
+    #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
+        width: 100% !important;
+        padding-left: 100px !important;
+    }
     #block-openig-imageenbasdepagemobile{
         bottom: 250px !important;
     }
@@ -1685,6 +1722,15 @@
     .slick-arrow.slick-next{
         margin-right: 10px !important;
     }
+
+    #block-openig-demarchedadhesionaopenig{
+        .modal{
+            .modal-dialog{
+                margin: auto;
+                width: 100%;
+            }
+        }
+    }
 }
 
 @media (max-width: 400px){
@@ -1697,6 +1743,12 @@
     }
     #block-openig-imageenbasdepagemobile{
         bottom: 400px !important;
+    }
+
+    .paragraph--type--pictos-et-texte{
+        .field--name-field-picto-et-texte{
+            columns: 1;
+        }
     }
 
 }

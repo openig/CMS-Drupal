@@ -1,108 +1,136 @@
 .node--type-page{
   margin-top: 5rem;
-  .field--name-field-contenu-sidebar{
-    > .field__item:not(:first-of-type){
-        margin-top: 5rem;
+    .field--name-field-contenu-sidebar{
+        > .field__item:not(:first-of-type){
+            margin-top: 5rem;
+        }
     }
-  }
   
-  .field--name-field-body {
-   > .field__item {
-      margin-bottom: 4rem;
+    .field--name-field-body {
+        > .field__item {
+            margin-bottom: 4rem;
+        }
     }
-  }
 
-  .no_sidebar{
-    margin: auto;
-  }
+    .no_sidebar{
+        margin: auto;
+    }
 
-  #accordionPage{
-    margin-top: 4rem;
-    .accordion-item{
-        border: none;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border-radius: 5px;
-        border: 1px solid $OPenIG-color_deep-white;
-        font-size: $OPenIG-font-size-sm;
-        .content_ressources{
-            //column-count: 3;
-            .locked{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                position: relative;
-                p{
-                    margin-bottom: 0;
+    #accordionPage{
+        margin-top: 4rem;
+        .accordion-item{
+            border: none;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+            border-radius: 5px;
+            border: 1px solid $OPenIG-color_deep-white;
+            font-size: $OPenIG-font-size-sm;
+            .content_ressources{
+                //column-count: 3;
+                .locked{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    p.itemPrivate{
+                        display: flex;
+                        align-items: center;
+                        font-size: $OPenIG-font-size-xs;
+                    }
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 16px;
+                    }
                 }
-                p.itemPrivate{
+                > div:not(:last-of-type){
+                    margin-bottom: 1.5rem;
+                }
+                .file{
+                    background-image: none;
+                    padding-left: 0;
+                }
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+            .accordion-disabled{
+                .itemPrivate{
+                    position: absolute;
+                    right: 2rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: $OPenIG-font-size-sm;
+                    font-family: 'OpenSans_Regular';
+                    font-weight: 400;
                     display: flex;
                     align-items: center;
-                    font-size: $OPenIG-font-size-xs;
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 18px;
+                    }
                 }
-                i{
-                    margin-left: 1rem;
-                    color: $OPenIG-color_blue;
-                    font-size: 16px;
-                }
-            }
-            > div:not(:last-of-type){
-                margin-bottom: 1.5rem;
-            }
-            .file{
-                background-image: none;
-                padding-left: 0;
-            }
-            a{
-                color: $OPenIG-color_black;
-                text-decoration: none;
-                border-bottom: 1px solid $OPenIG-color_black;
-            }
-        }
-        .accordion-disabled{
-            .itemPrivate{
-                position: absolute;
-                right: 2rem;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: $OPenIG-font-size-sm;
-                font-family: 'OpenSans_Regular';
-                font-weight: 400;
-                display: flex;
-                align-items: center;
-                i{
-                    margin-left: 1rem;
-                    color: $OPenIG-color_blue;
-                    font-size: 18px;
+                button::after{
+                    background-image: none;
                 }
             }
-            button::after{
-                background-image: none;
+            .field__item{
+                margin-bottom: 5px;
             }
         }
-        .field__item{
-            margin-bottom: 5px;
+        .accordion-item.open{
+            border-left: 4px solid $OPenIG-color_blue;
         }
-    }
-    .accordion-item.open{
-        border-left: 4px solid $OPenIG-color_blue;
-    }
-    h2.accordion-header{
-        border-bottom: none;
-        font-family: 'Exo_semiBold';
-        font-weight: 600;
-    }
-    .accordion-button{
-        padding: 25px;
-    }
-    .accordion-button:not(.collapsed){
-        background-color: $OPenIG-color_light-gray;
-        border: 1px solid $OPenIG-color_deep-white;
-        color: $OPenIG-color_black;
-    }
-    .accordion-button:focus{
-        box-shadow: none;
-        border: none;
+        h2.accordion-header{
+            border-bottom: none;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+        }
+        .accordion-button{
+            padding: 25px;
+        }
+        .accordion-button:not(.collapsed){
+            background-color: $OPenIG-color_light-gray;
+            border: 1px solid $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
+        }
+        .accordion-button:focus{
+            box-shadow: none;
+            border: none;
+        }
     }
 }
-  
+
+.page-node-type-page{
+    #block-openig-views-block-bloc-temoignage-page-interne{
+        background-color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 3rem;
+        .bloc_temoignage{
+            margin: auto;
+        }
+        .view-bloc-temoignage{
+            margin-top: 30px;
+        }
+        .slick--view--bloc-temoignage{
+            position: relative;
+            .card-body{
+                width: 95%;
+                .views-field-nothing{
+                    right: 0;
+                }
+            }
+        }
+        .slick.slick--optionset--bloc-temoignage .slick__arrow button.slick-arrow{
+            width: 42px;
+            height: 42px;
+        }
+        .slick-arrow::before {
+            font-size: 2.25rem;
+        }
+    }    
 }
