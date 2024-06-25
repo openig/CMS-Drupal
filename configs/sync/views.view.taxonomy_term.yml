@@ -683,7 +683,7 @@ display:
             items_per_page_options_all_label: '- Tout -'
             offset: false
             offset_label: Décalage
-          quantity: 5
+          quantity: 3
       filters:
         langcode:
           id: langcode
