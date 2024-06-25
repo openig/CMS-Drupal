@@ -856,7 +856,7 @@
         border-bottom: 1px solid $OPenIG-color_gray !important;
         padding-bottom: 5px !important;
     }
-    .field--name-field-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
+    .field--name-field-body, .field--name-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
         font-size: $OPenIG-font-size-sm !important;
     }
     .accordion h2{
@@ -870,7 +870,32 @@
             margin-bottom: 3rem;
         }
     }
-    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page{
+    .page-node-type-evenement{
+        .node--type-evenement.node--view-mode-full{
+            margin-bottom: 3rem;
+            .field--name-field-dates, .field--name-field-groupe-de-travail, .field--name-field-webform input, .field--name-field-webform label{
+                font-size: $OPenIG-font-size-sm;
+            }
+    
+        }
+    }
+    .page-node-type-temoignage{
+        .node--type-temoignage{
+            margin-bottom: 3rem;
+        }
+        .field--name-field-entreprise, .field--name-field-poste{
+            font-size: $OPenIG-font-size-sm;
+        }
+    }
+    .page-node-type-ressource{
+        .node--type-ressource{
+            margin-bottom: 3rem;
+            .field--name-field-type, .field--name-field-linked-content, .field--name-field-file{
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+    .page-node-type-service, .page-node-type-groupe-de-travail, .page-node-type-article, .page-node-type-page, .page-node-type-evenement, .page-node-type-temoignage, .page-node-type-ressource{
         .tags{
             display: flex;
             flex-wrap: wrap;
