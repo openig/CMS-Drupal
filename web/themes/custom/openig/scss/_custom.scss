@@ -1196,6 +1196,7 @@ form{
     font-weight: 400;
 }
 #backtotop{
+    bottom: 10px;
     border: none;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
     padding: 0 10px;
@@ -1413,8 +1414,9 @@ form{
     padding: 1rem;
 }
 .eu-cookie-withdraw-tab{
-    left: unset;
-    right: 5%;
+    transform: translate(-50%, -120%);
+    left: 50px;
+    //right: 5%;
     border-color: $OPenIG-color_gray !important;
     border-width: 1px !important;
     border-bottom: 1px solid $OPenIG-color_gray !important;
@@ -1425,6 +1427,7 @@ form{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         h2{
             border: none;
             font-size: $OPenIG-font-size-base;

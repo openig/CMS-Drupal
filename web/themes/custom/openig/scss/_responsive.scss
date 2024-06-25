@@ -1666,6 +1666,31 @@
             }
         }
     }
+
+    .eu-cookie-withdraw-tab{
+        font-size: $OPenIG-font-size-xs;
+    }
+    .eu-cookie-compliance-banner, .eu-cookie-withdraw-banner{
+        .popup-content{
+            h2{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+            .eu-cookie-compliance-message{
+                margin-bottom: 10px !important;
+                p{
+                    font-size: $OPenIG-font-size-xs !important;
+                }
+            } 
+            .eu-cookie-compliance-more-button{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+            .eu-cookie-compliance-buttons{
+                button{
+                    font-size: $OPenIG-font-size-xs
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
