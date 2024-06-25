@@ -45,7 +45,7 @@
 
     <!-- Modal -->
     <div class="modal fade" id="simulation" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
             <h2 class="modal-title" id="exampleModalLabel">{{label}}</h2>
@@ -53,7 +53,8 @@
           </div>
           <div class="modal-body">
             {{content.field_etapes}}
-            {{render_block('openig_simulatoradhesionblock')}}
+            <hr>
+            {{render_block('simulatoradhesionblock')}}
           </div>
         </div>
       </div>

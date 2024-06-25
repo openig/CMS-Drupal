@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - addtoany
+    - system
   theme:
     - openig
 id: openig_addtoanysharebuttons
@@ -22,4 +23,8 @@ settings:
   addtoany_html: ''
   link_url: ''
   link_title: ''
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: "<front>\r\n/user/*"

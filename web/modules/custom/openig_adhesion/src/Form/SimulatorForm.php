@@ -250,7 +250,7 @@ class SimulatorForm extends FormBase {
 
         }
 
-        $form_state->setRedirect('entity.node.canonical', [ 'node' => 239 ]);
+        //$form_state->setRedirect('entity.node.canonical', [ 'node' => 239 ]);
     }
 
     private function sendMail($subject, $message, $email) {
