@@ -147,6 +147,7 @@ class SimulatorForm extends FormBase {
             '#attributes' => [
                 'class' => ['site-search__desktop'],
             ],
+            '#suffix' => '</div>',
         ];
 
         $form['#cache']['contexts'][] = 'session';
