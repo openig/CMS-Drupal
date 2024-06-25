@@ -1,9 +1,12 @@
 uuid: 0eef62ce-46ca-46cb-aec5-22de6dfd406b
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - eu_cookie_compliance
 id: adherent
 label: Adhérent
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'display eu cookie compliance popup'
