@@ -113,12 +113,16 @@
             color: $OPenIG-color_black;
         }
         i.fa-bars{
-            width: fit-content;
-            display: block;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             font-size: 20px;
         }
         i.fa-xmark{
-            width: fit-content;
+            width: 50px;
+            height: 50px;
             display: none;
             font-size: 20px;
         }
@@ -168,7 +172,9 @@
     }
     .premiere_section.open{
         i.fa-xmark{
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         i.fa-bars{
             display: none;
@@ -1594,6 +1600,30 @@
             }
         }
     }
+
+    .view-taxonomy-term{
+        margin-bottom: 3rem;
+        .row{
+            margin-bottom: 0 !important;
+            .col-lg-3.col-12{
+                margin-bottom: 2rem;
+                img{
+                    width: 100%;
+                }
+                .card{
+                    .views-field-field-tag a{
+                        font-size: 9px !important;
+                    }
+                    .views-field-view-node a{
+                        font-size: $OPenIG-font-size-xs !important;
+                    }
+                    .views-field-fieldset .titlepicto a{
+                        font-size: $OPenIG-font-size-lg !important;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -1776,40 +1806,5 @@
     }
     footer .region-bas-footer-droite, footer .region-bas-footer-gauche{
         padding: 0 !important;
-    }
-}
-
-.view-taxonomy-term{
-    .row{
-        .col-lg-3.col-12{
-            img{
-                width: 100%;
-            }
-            @media (max-width: 992px){
-                margin-bottom: 1rem;
-            }
-        }
-    }
-}
-
-// Bouton du menu burger
-.navigation_mobile .section_background .premiere_section button {
-    font-size: 2rem;
-}
-.navigation_mobile .section_background .premiere_section button i {
-    font-size: 2rem;
-}
-
-@media (max-width: 992px) {
-    // Menu burger
-    #block-openig-navigationprincipale .navbar-nav .dropdown-menu.show .dropdown-item, #block-openig-navigationprincipale--2 .navbar-nav .dropdown-menu.show .dropdown-item {
-        font-size: $OPenIG-font-size-xs;
-    }
-    // Carte taxonomie
-    .view.view-taxonomy-term .view-content .card .views-field-view-node a, .view.view-taxonomy-term .view-content .view-media-library .media-library-views-form .media-library-item--grid .views-field-rendered-entity .views-field-view-node a, .view-media-library .media-library-views-form .media-library-item--grid .view.view-taxonomy-term .view-content .views-field-rendered-entity .views-field-view-node a, .view.view-taxonomy-term .view-content .media-library-selection .media-library-item.media-library-item--grid .views-field-view-node a, .media-library-selection .view.view-taxonomy-term .view-content .media-library-item.media-library-item--grid .views-field-view-node a {
-        font-size: $OPenIG-font-size-xs;
-    }
-    .view.view-taxonomy-term .view-content .card .views-field-fieldset .titlepicto .views-field-title a, .view.view-taxonomy-term .view-content .view-media-library .media-library-views-form .media-library-item--grid .views-field-rendered-entity .views-field-fieldset .titlepicto .views-field-title a, .view-media-library .media-library-views-form .media-library-item--grid .view.view-taxonomy-term .view-content .views-field-rendered-entity .views-field-fieldset .titlepicto .views-field-title a, .view.view-taxonomy-term .view-content .media-library-selection .media-library-item.media-library-item--grid .views-field-fieldset .titlepicto .views-field-title a, .media-library-selection .view.view-taxonomy-term .view-content .media-library-item.media-library-item--grid .views-field-fieldset .titlepicto .views-field-title a {
-        font-size: $OPenIG-font-size-lg;
     }
 }
