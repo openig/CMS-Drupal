@@ -484,7 +484,20 @@ h3{
     }
 }
 
-.paragraph--type--picto-text.paragraph--view-mode--vue{
+.paragraph--type--pictos-et-texte{
+    h2{
+        margin-bottom: 30px;
+    }
+    .field--name-field-picto-et-texte{
+        columns: 2;
+        >.field__item{
+            margin-bottom: 1rem;
+            padding: 0 3rem;
+        }
+    }
+}
+
+.paragraph--type--picto-text.paragraph--view-mode--vue, .paragraph--type--picto-text.paragraph--view-mode--default{
     display: flex;
     .picto_verbe{
         display: flex;
@@ -496,6 +509,7 @@ h3{
         .field--name-field-verbe-action{
             font-size: $OPenIG-font-size-xs;
             text-align: center;
+            margin-top: 0.5rem;
         }
     }
     .field--name-field-text{

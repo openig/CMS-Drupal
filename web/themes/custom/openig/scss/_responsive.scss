@@ -1500,6 +1500,13 @@
         }
     }
 
+    .paragraph--type--pictos-et-texte{
+        .field--name-field-picto-et-texte{
+            >.field__item{
+                padding: 0 !important;
+            }
+        }
+    }
     .paragraph--type--ligne-de-membres{
         margin-left: 0 !important;
         .background-membres{
@@ -1736,6 +1743,12 @@
     }
     #block-openig-imageenbasdepagemobile{
         bottom: 400px !important;
+    }
+
+    .paragraph--type--pictos-et-texte{
+        .field--name-field-picto-et-texte{
+            columns: 1;
+        }
     }
 
 }
