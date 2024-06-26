@@ -1,0 +1,15 @@
+uuid: cdcfd537-c245-489a-aa6b-de70c478e14d
+langcode: fr
+status: true
+dependencies: {  }
+name: vignette_annuaire
+label: 'Vignette annuaire'
+effects:
+  3ca896bc-0690-4ff6-8f4c-1c528836855b:
+    uuid: 3ca896bc-0690-4ff6-8f4c-1c528836855b
+    id: image_scale
+    weight: 1
+    data:
+      width: 306
+      height: 222
+      upscale: false
