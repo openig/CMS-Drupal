@@ -29,91 +29,124 @@
  * @see template_preprocess_views_view_fields()
  */
 #}
-<div class="d-lg-none d-block">
-	{% for field in fields -%}
-		{% if field.class == 'fieldset' %}
-			{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-				<h2 class="accordion-header" id="heading{{row.nid}}">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
-						{{field.content}}
-					</button>
-				</h2>
+{% if view.current_display == 'annuaire' %}
+	<div class="d-lg-none d-block">
+		{% for field in fields -%}
+			{% if field.class == 'fieldset' %}
+				{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+					<h2 class="accordion-header" id="heading{{row.nid}}">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
+							{{field.content}}
+						</button>
+					</h2>
+				{% else %}
+					<h2 class="accordion-header accordion-disabled" id="heading{{row.nid}}">
+						<button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
+							{{field.content}}
+							<p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+						</button>
+					</h2>
+				{% endif %}
 			{% else %}
-				<h2 class="accordion-header accordion-disabled" id="heading{{row.nid}}">
-					<button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
-						{{field.content}}
-						<p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
-					</button>
-				</h2>
-			{% endif %}
-		{% else %}
-			<div id="collapse{{row.nid}}" class="accordion-collapse collapse" aria-labelledby="heading{{row.nid}}" data-bs-parent="#accordionAnnuaire">
-				<div class="accordion-body">
-					{{ field.separator }}
-					{%- if field.wrapper_element -%}
-						<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
-					{%- endif %}
-					{%- if field.label -%}
-						{%- if field.label_element -%}
-							<{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
-						{%- else -%}
-							{{ field.label }}{{ field.label_suffix }}
+				<div id="collapse{{row.nid}}" class="accordion-collapse collapse" aria-labelledby="heading{{row.nid}}" data-bs-parent="#accordionAnnuaire">
+					<div class="accordion-body">
+						{{ field.separator }}
+						{%- if field.wrapper_element -%}
+							<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
 						{%- endif %}
-					{%- endif %}
-					{%- if field.element_type -%}
-						<{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-					{%- else -%}
-						{{ field.content }}
-					{%- endif %}
-					{%- if field.wrapper_element -%}
-						</{{ field.wrapper_element }}>
-					{%- endif %}
+						{%- if field.label -%}
+							{%- if field.label_element -%}
+								<{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
+							{%- else -%}
+								{{ field.label }}{{ field.label_suffix }}
+							{%- endif %}
+						{%- endif %}
+						{%- if field.element_type -%}
+							<{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+						{%- else -%}
+							{{ field.content }}
+						{%- endif %}
+						{%- if field.wrapper_element -%}
+							</{{ field.wrapper_element }}>
+						{%- endif %}
+					</div>
 				</div>
-			</div>
-		{% endif %}
-	{%- endfor %}
-	{{render_block('openig_views_block__contacts_gt_block_contacts_annuaire')}}
-</div>
-
-<div class="d-lg-block d-none">
-	{% for field in fields -%}
-		{% if field.class == 'fieldset' %}
-			{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-				{{field.content}}
-			{% else %}
-				{{field.content}}
-				<p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
 			{% endif %}
-		{% else %}
-			{{ field.separator }}
-			{%- if field.wrapper_element -%}
-				<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
-			{%- endif %}
-			{%- if field.label -%}
-				{%- if field.label_element -%}
-					<{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
-				{%- else -%}
-					{{ field.label }}{{ field.label_suffix }}
-				{%- endif %}
-			{%- endif %}
-			{%- if field.element_type -%}
-				<{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+		{%- endfor %}
+	</div>
+
+	<div class="d-lg-block d-none">
+		<div class="row">
+			<div class="col-10">
+				{% for field in fields -%}
+					{% if field.class == 'fieldset' %}
+						{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+							{{field.content}}
+						{% else %}
+							{{field.content}}
+							<p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+						{% endif %}
+					{% else %}
+						{{ field.separator }}
+						{%- if field.wrapper_element -%}
+							<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
+						{%- endif %}
+						{%- if field.label -%}
+							{%- if field.label_element -%}
+								<{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
+							{%- else -%}
+								{{ field.label }}{{ field.label_suffix }}
+							{%- endif %}
+						{%- endif %}
+						{%- if field.element_type -%}
+							<{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+						{%- else -%}
+							{{ field.content }}
+						{%- endif %}
+						{%- if field.wrapper_element -%}
+							</{{ field.wrapper_element }}>
+						{%- endif %}
+					{% endif %}
+				{%- endfor %}
+				{% for groupe in groupes %}
+					<div class="groupe">{{groupe}}</div>
+				{% endfor %}
+				{% for contact in contacts %}
+					<div>{{contact['prenom']}}</div>
+					<div>{{contact['nom']}}</div>
+					<div>{{contact['mail']}}</div>
+				{% endfor %}
+			</div>
+			<div class="col-2">
+				{% if membresCA == 'oui' %}
+					<div>membresCA</div>
+				{% endif %}
+				{% if referents == 'oui' %}
+					<div>referents</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+{% else %}
+	{% for field in fields -%}			
+		{{ field.separator }}
+		{%- if field.wrapper_element -%}
+			<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
+		{%- endif %}
+		{%- if field.label -%}
+			{%- if field.label_element -%}
+				<{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
 			{%- else -%}
-				{{ field.content }}
+				{{ field.label }}{{ field.label_suffix }}
 			{%- endif %}
-			{%- if field.wrapper_element -%}
-				</{{ field.wrapper_element }}>
-			{%- endif %}
-		{% endif %}
+		{%- endif %}
+		{%- if field.element_type -%}
+			<{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+		{%- else -%}
+			{{ field.content }}
+		{%- endif %}
+		{%- if field.wrapper_element -%}
+			</{{ field.wrapper_element }}>
+		{%- endif %}
 	{%- endfor %}
-	{% if membresCA == 'oui' %}
-		<div>membresCA</div>
-	{% endif %}
-	{% if referents == 'oui' %}
-		<div>referents</div>
-	{% endif %}
-	{% for groupe in groupes %}
-		<div>{{groupe}}</div>
-	{% endfor %}
-	{{render_block('openig_views_block__contacts_gt_block_contacts_annuaire')}}
-</div>
+{% endif %}

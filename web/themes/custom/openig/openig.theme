@@ -266,5 +266,14 @@ function openig_preprocess_views_view_fields(&$variables){
     if (in_array(1, $referents)) {
       $variables['referents'] = 'oui';
     }
+
+    // Récupération des contacts
+    $variables['contacts'] = [];
+    foreach ($variables['row']->_entity->get('field_contacts') as $key => $value) {
+      $user = \Drupal\user\Entity\User::load($value->target_id);
+      $variables['contacts'][$value->target_id]['prenom'] = $user->get('field_firstname')->value;
+      $variables['contacts'][$value->target_id]['nom'] = $user->get('field_lastname')->value;
+      $variables['contacts'][$value->target_id]['mail'] = $user->get('mail')->value;
+    }
   }
 }
