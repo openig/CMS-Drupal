@@ -136,6 +136,7 @@
         background-color: $OPenIG-color_white;
     }
     .views-row{
+        padding: 1.5rem 2rem;
         .entete{
             display: flex;
             align-items: center;
@@ -152,9 +153,29 @@
                 }
             }
         }
+        .divPrivate{
+            display: flex;
+            align-items: center;
+            p.itemPrivate{
+                font-family: 'OpenSans_Regular';
+                font-size: $OPenIG-font-size-xs;
+                margin: 0;
+                text-align: right;
+            }
+            i{
+                margin-left: 1.5rem;
+                color: $OPenIG-color_blue;
+                font-size: 20px;
+            }
+        }
+        .views-field-title{
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-lg;
+            font-weight: 600;
+        }
         .views-field-field-address, .views-field-field-postcode, .views-field-field-city, .views-field-field-website,
         .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
-        .groupe{
+        .groupe, .contact{
             margin-left: 306px;
         }
     }
