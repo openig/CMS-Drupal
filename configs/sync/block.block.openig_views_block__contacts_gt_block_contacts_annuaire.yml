@@ -1,0 +1,24 @@
+uuid: 624dde9b-3e9f-4d3d-b7b7-6003799bc460
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.contacts_gt
+  module:
+    - views
+  theme:
+    - openig
+id: openig_views_block__contacts_gt_block_contacts_annuaire
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:contacts_gt-block_contacts_annuaire'
+settings:
+  id: 'views_block:contacts_gt-block_contacts_annuaire'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility: {  }

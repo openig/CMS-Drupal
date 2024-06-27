@@ -234,3 +234,37 @@ function openig_preprocess_block(&$variables){
     }
   }
 }
+
+function openig_preprocess_views_view_fields(&$variables){
+  if($variables['view']->current_display == 'annuaire'){
+    $node = \Drupal\node\Entity\Node::load($variables['row']->nid);
+    $membresCA = [];
+    $referents = [];
+    $variables['groupes'] = [];
+    // Récupération des utilisateurs
+    $database = \Drupal::database();
+    $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {user__field_structure} f ON f.field_structure_target_id = n.nid WHERE f.field_structure_target_id = '".$variables['row']->nid."'");
+    $result = $query->fetchAll();
+    foreach ($result as $key => $value) {
+      // Vérification si un membre du CA
+      $query = $database->query("SELECT f.field_ca_member_value FROM {user__field_ca_member} f  WHERE f.entity_id = '".$value->entity_id."'");
+      $membresCA[] = $query->fetch()->field_ca_member_value;
+
+      // Vérification si référent
+      $query = $database->query("SELECT f.field_referent_value FROM {user__field_referent} f  WHERE f.entity_id = '".$value->entity_id."'");
+      $referents[] = $query->fetch()->field_referent_value;
+
+      // Récupération des groupes de travail
+      $query = $database->query("SELECT n.title FROM {node__field_members} f JOIN {node_field_data} n ON f.entity_id = n.nid  WHERE f.field_members_target_id = '".$value->entity_id."'");
+      if($query->fetch()->title != null){
+        $variables['groupes'][] = $query->fetch()->title;
+      }
+    }
+    if (in_array(1, $membresCA)) {
+      $variables['membresCA'] = 'oui';
+    }
+    if (in_array(1, $referents)) {
+      $variables['referents'] = 'oui';
+    }
+  }
+}
