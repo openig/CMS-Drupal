@@ -18,7 +18,19 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div class="accordion" id="accordionAnnuaire">
+<div class="d-none d-lg-block">
+	{% for row in rows %}
+	{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+	<div{{ row.attributes.addClass(row_classes) }}>
+		{{- row.content -}}
+	</div>
+	{% endfor %}
+</div>
+<div class="accordion d-block d-lg-none" id="accordionAnnuaire">
 	{% for row in rows %}
 	{%
 		set row_classes = [
