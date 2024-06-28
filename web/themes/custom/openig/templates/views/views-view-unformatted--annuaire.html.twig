@@ -21,13 +21,12 @@
 <div class="row">
 	{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
 		<div class="flex_content">
-			<div class="formulaire_filtre">
+			<div class="formulaire_filtre d-xl-block d-none">
 				<button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
 				<div class="">
 				{{ render_block('openig_formulaireexposeannuaireannuaire') }}
 				</div>
 			</div>
-			
 			<div class="col-xl-1 col-lg-2 col-3">
 				<button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
 			</div>
