@@ -31,25 +31,34 @@
 #}
 {% if view.current_display == 'annuaire' %}
 	<div class="d-lg-none d-block">
-		{% for field in fields -%}
-			{% if field.class == 'fieldset' %}
-				{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+		{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+			{% for field in fields -%}
+				{% if field.class == 'fieldset' %}
 					<h2 class="accordion-header" id="heading{{row.nid}}">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
 							{{field.content}}
 						</button>
 					</h2>
-				{% else %}
-					<h2 class="accordion-header accordion-disabled" id="heading{{row.nid}}">
-						<button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{row.nid}}" aria-expanded="false" aria-controls="collapse{{row.nid}}">
-							{{field.content}}
-							<p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
-						</button>
-					</h2>
 				{% endif %}
-			{% else %}
-				<div id="collapse{{row.nid}}" class="accordion-collapse collapse" aria-labelledby="heading{{row.nid}}" data-bs-parent="#accordionAnnuaire">
-					<div class="accordion-body">
+			{%- endfor %}
+		{% else %}
+			<div class="row">
+				{% for field in fields -%}
+					{% if field.class == 'fieldset' %}
+						<div class="col-10">
+							{{field.content}}
+						</div>
+						<div class="col-2 divPrivate">
+							<p class="itemPrivate">Totalité du contenu réservé aux adhérents</p><i class="fa-solid fa-lock"></i>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
+		<div id="collapse{{row.nid}}" class="accordion-collapse collapse" aria-labelledby="heading{{row.nid}}" data-bs-parent="#accordionAnnuaire">
+			<div class="accordion-body">
+				{% for field in fields -%}
+					{% if (field.class != 'fieldset') and (field.class != 'nothing') and (field.class != 'nothing-1') %}
 						{{ field.separator }}
 						{%- if field.wrapper_element -%}
 							<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
@@ -69,10 +78,47 @@
 						{%- if field.wrapper_element -%}
 							</{{ field.wrapper_element }}>
 						{%- endif %}
+					{% endif %}
+				{%- endfor %}
+				{% if groupes|length > 0 %}
+					<div class="groupes">
+						{% for groupe in groupes %}
+							<div class="groupe">
+								<a href="node/{{groupe.nid}}" target="_blank">{{groupe.title}}</a>
+							</div>
+						{% endfor %}
 					</div>
+				{% endif %}
+				{% if contacts|length > 0 %}
+					<div class="contacts">
+						{% for contact in contacts %}
+							<div class="contact">
+								<div class="nom_prenom">
+									<i class="fa-regular fa-user"></i>
+									<span>{{contact['prenom']}}</span>
+									<span>{{contact['nom']}}</span>
+								</div>
+								<a href="mailto:{{contact['mail']}}">{{contact['mail']}}</a>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+				<div class="badges">
+					{% if referents == 'oui' %}
+						<div class="referent">
+							{{fields['nothing'].content}}
+							<span>{{fields['nothing'].label}}</span>
+						</div>
+					{% endif %}
+					{% if membresCA == 'oui' %}
+						<div class="membreCA">
+							{{fields['nothing_1'].content}}
+							<span>{{fields['nothing_1'].label}}</span>
+						</div>
+					{% endif %}
 				</div>
-			{% endif %}
-		{%- endfor %}
+			</div>
+		</div>
 	</div>
 
 	<div class="d-lg-block d-none">
