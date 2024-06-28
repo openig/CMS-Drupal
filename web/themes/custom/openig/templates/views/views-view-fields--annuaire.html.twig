@@ -81,8 +81,8 @@
 				<div class="col-10">
 					{% for field in fields -%}
 						{% if field.class == 'fieldset' %}
-							{{field.content}}
-						{% else %}
+							{{field.content}}		
+						{% elseif (field.class != 'nothing') and (field.class != 'nothing-1') %}
 							{{ field.separator }}
 							{%- if field.wrapper_element -%}
 								<{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
@@ -127,11 +127,13 @@
 					</div>
 				</div>
 				<div class="col-2">
-					{% if membresCA == 'oui' %}
-						<div>membresCA</div>
-					{% endif %}
 					{% if referents == 'oui' %}
-						<div>referents</div>
+						{{fields['nothing'].content}}
+						{{fields['nothing'].label}}
+					{% endif %}
+					{% if membresCA == 'oui' %}
+						{{fields['nothing_1'].content}}
+						{{fields['nothing_1'].label}}
 					{% endif %}
 				</div>
 			{% else %}
