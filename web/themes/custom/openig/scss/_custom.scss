@@ -1381,6 +1381,9 @@ form{
         font-size: $OPenIG-font-size-lg;
     }
 }
+.page-item.disabled{
+    display: none;
+}
 .page-item.is-active.active{
     box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
     .page-link{
