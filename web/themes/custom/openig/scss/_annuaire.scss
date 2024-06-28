@@ -176,20 +176,17 @@
         .adresse-complete{
             display: flex;
             flex-wrap: wrap;
-            .views-field-field-address{
-                width: 100%;
-            }
             .views-field-field-postcode{
                 margin-right: 10px;
+            }
+            .cp-ville{
+                display: flex;
             }
         }
         .views-field-fieldset-1{
             margin-top: 1rem;
         }
-        .views-field-fieldset-1 > .field-content{
-            display: flex;
-        }
-        .views-field-fieldset-1 > .field-content::before{
+        .adresse-complete::before{
             content: '\f3c5';
             font-family: "Font Awesome 6 Free";
             font-size: 24px;

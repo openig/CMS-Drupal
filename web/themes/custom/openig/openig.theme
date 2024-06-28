@@ -256,8 +256,10 @@ function openig_preprocess_views_view_fields(&$variables){
     }
     // Récupération des groupes de travail
     $query = $database->query("SELECT DISTINCT n.nid, n.title FROM {user__field_structure} s LEFT JOIN {node__field_members} m ON m.field_members_target_id = s.entity_id LEFT JOIN {node_field_data} n ON n.nid = m.entity_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
-    $variables['groupes'] = $query->fetchAll();
-    
+    $result = $query->fetchAll();
+    if ($result->nid != null) {
+      $variables['groupes'] = $result;
+    }
     if (in_array(1, $membresCA)) {
       $variables['membresCA'] = 'oui';
     }

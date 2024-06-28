@@ -104,7 +104,7 @@
 							{%- endif %}
 						{% endif %}
 					{%- endfor %}
-					{% if groupes != null %}
+					{% if groupes|length > 0 %}
 						<div class="groupes">
 							{% for groupe in groupes %}
 								<div class="groupe">
@@ -113,18 +113,20 @@
 							{% endfor %}
 						</div>
 					{% endif %}
-					<div class="contacts">
-						{% for contact in contacts %}
-							<div class="contact">
-								<div class="nom_prenom">
-									<i class="fa-regular fa-user"></i>
-									<span>{{contact['prenom']}}</span>
-									<span>{{contact['nom']}}</span>
+					{% if contacts|length > 0 %}
+						<div class="contacts">
+							{% for contact in contacts %}
+								<div class="contact">
+									<div class="nom_prenom">
+										<i class="fa-regular fa-user"></i>
+										<span>{{contact['prenom']}}</span>
+										<span>{{contact['nom']}}</span>
+									</div>
+									<a href="mailto:{{contact['mail']}}">{{contact['mail']}}</a>
 								</div>
-								<a href="mailto:{{contact['mail']}}">{{contact['mail']}}</a>
-							</div>
-						{% endfor %}
-					</div>
+							{% endfor %}
+						</div>
+					{% endif %}
 				</div>
 				<div class="col-2 badges">
 					{% if referents == 'oui' %}
