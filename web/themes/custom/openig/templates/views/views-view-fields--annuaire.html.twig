@@ -113,13 +113,18 @@
 							{% endfor %}
 						</div>
 					{% endif %}
-					{% for contact in contacts %}
-						<div class="contact">
-							<div>{{contact['prenom']}}</div>
-							<div>{{contact['nom']}}</div>
-							<div>{{contact['mail']}}</div>
-						</div>
-					{% endfor %}
+					<div class="contacts">
+						{% for contact in contacts %}
+							<div class="contact">
+								<div class="nom_prenom">
+									<i class="fa-regular fa-user"></i>
+									<span>{{contact['prenom']}}</span>
+									<span>{{contact['nom']}}</span>
+								</div>
+								<a href="mailto:{{contact['mail']}}">{{contact['mail']}}</a>
+							</div>
+						{% endfor %}
+					</div>
 				</div>
 				<div class="col-2">
 					{% if membresCA == 'oui' %}
