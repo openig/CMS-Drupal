@@ -251,8 +251,10 @@
             display: flex;
             flex-wrap: wrap;
             margin-top: 2rem;
+            .contact:not(:last-of-type){
+                margin-right: 3rem;
+            }
             .contact{
-                margin-right: 2rem;
                 .nom_prenom{
                     display: flex;
                     align-items: center;
