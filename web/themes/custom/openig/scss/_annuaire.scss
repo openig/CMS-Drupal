@@ -137,6 +137,7 @@
     }
     .views-row{
         padding: 1.5rem 2rem;
+        border: 1px solid $OPenIG-color_light-gray;
         .entete{
             display: flex;
             align-items: center;
@@ -168,13 +169,67 @@
                 font-size: 20px;
             }
         }
+        .adresse-complete{
+            display: flex;
+            flex-wrap: wrap;
+            .views-field-field-address{
+                width: 100%;
+            }
+            .views-field-field-postcode{
+                margin-right: 10px;
+            }
+        }
+        .views-field-fieldset-1 > .field-content{
+            display: flex;
+        }
+        .views-field-fieldset-1 > .field-content::before{
+            content: '\f3c5';
+            font-family: "Font Awesome 6 Free";
+            font-size: 24px;
+            color: $OPenIG-color_gray;
+            margin-right: 10px;
+        }
+        .views-field-field-website{
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            a{
+                color: unset;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_dark-gray;
+            }
+        }
+        .taxonomies{
+            display: flex;
+            margin-top: 2rem;
+        }
+        .views-field-field-dpt-intervention, .views-field-field-typologie-structure{
+            width: fit-content;
+            border: 1px solid $OPenIG-color_blue;
+            border-radius: 2rem;
+            padding: 0 10px;
+            font-size: $OPenIG-font-size-xs;
+            margin-right: 10px;
+            a{
+                font-family: "Exo_regular", sans-serif;
+                color: $OPenIG-color_black;
+                text-decoration: none;
+            }
+        }
+        .views-field-field-website::before{
+            content: '\f0ac';
+            font-family: "Font Awesome 6 Free";
+            font-size: 20px;
+            color: $OPenIG-color_gray;
+            margin-right: 10px;
+        }
         .views-field-title{
             font-family: 'Exo_semiBold';
             font-size: $OPenIG-font-size-lg;
             font-weight: 600;
         }
-        .views-field-field-address, .views-field-field-postcode, .views-field-field-city, .views-field-field-website,
-        .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
+        .views-field-fieldset-1, .views-field-field-website,
+        .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
         .groupe, .contact{
             margin-left: 306px;
         }
