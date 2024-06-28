@@ -11,6 +11,7 @@ dependencies:
     - field.storage.node.field_postcode
     - field.storage.node.field_typologie_structure
     - field.storage.node.field_website
+    - image.style.vignette_annuaire
     - node.type.structure
   module:
     - link
@@ -427,7 +428,7 @@ display:
           type: image
           settings:
             image_link: ''
-            image_style: ''
+            image_style: vignette_annuaire
             image_loading:
               attribute: lazy
             svg_attributes:

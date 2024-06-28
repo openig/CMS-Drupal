@@ -104,9 +104,15 @@
 							{%- endif %}
 						{% endif %}
 					{%- endfor %}
-					{% for groupe in groupes %}
-						<div class="groupe">{{groupe}}</div>
-					{% endfor %}
+					{% if groupes != null %}
+						<div class="groupes">
+							{% for groupe in groupes %}
+								<div class="groupe">
+									<a href="node/{{groupe.nid}}" target="_blank">{{groupe.title}}</a>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
 					{% for contact in contacts %}
 						<div class="contact">
 							<div>{{contact['prenom']}}</div>

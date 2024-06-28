@@ -142,8 +142,8 @@
             display: flex;
             align-items: center;
             .views-field-field-image{
-                width: 306px;
-                height: 222px;
+                width: fit-content;
+                height: fit-content;
                 border: 1px solid $OPenIG-color_light-gray;
                 .field-content{
                     width: 100%;
@@ -151,6 +151,10 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    img{
+                        width: 175px;
+                        min-width: 175px;
+                    }
                 }
             }
         }
@@ -179,6 +183,9 @@
                 margin-right: 10px;
             }
         }
+        .views-field-fieldset-1{
+            margin-top: 1rem;
+        }
         .views-field-fieldset-1 > .field-content{
             display: flex;
         }
@@ -199,11 +206,11 @@
                 border-bottom: 1px solid $OPenIG-color_dark-gray;
             }
         }
-        .taxonomies{
+        .taxonomies, .groupes{
             display: flex;
             margin-top: 2rem;
         }
-        .views-field-field-dpt-intervention, .views-field-field-typologie-structure{
+        .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe{
             width: fit-content;
             border: 1px solid $OPenIG-color_blue;
             border-radius: 2rem;
@@ -227,11 +234,12 @@
             font-family: 'Exo_semiBold';
             font-size: $OPenIG-font-size-lg;
             font-weight: 600;
+            margin-left: 20px;
         }
         .views-field-fieldset-1, .views-field-field-website,
         .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
         .groupe, .contact{
-            margin-left: 306px;
+            margin-left: 200px;
         }
     }
 }
