@@ -129,10 +129,10 @@
 
 // Page annuaire
 .view.view-annuaire.view-display-id-annuaire{
-    .views-row:nth-child(odd){
+    .views-row:nth-child(even){
         background-color: $OPenIG-color_medium-white;
     }
-    .views-row:nth-child(even){
+    .views-row:nth-child(odd){
         background-color: $OPenIG-color_white;
     }
     .views-row{
@@ -273,6 +273,26 @@
                     color: unset;
                     margin-left: 30px;
                 }
+            }
+        }
+        .badges{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            .referent, .membreCA{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                span{
+                    font-size: $OPenIG-font-size-xs;
+                    margin-top: 0.5rem;
+                }
+                img{
+                    width: 75px;
+                }
+            }
+            > div:not(:last-of-type){
+                margin-bottom: 2rem;
             }
         }
     }

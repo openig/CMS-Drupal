@@ -126,14 +126,18 @@
 						{% endfor %}
 					</div>
 				</div>
-				<div class="col-2">
+				<div class="col-2 badges">
 					{% if referents == 'oui' %}
-						{{fields['nothing'].content}}
-						{{fields['nothing'].label}}
+						<div class="referent">
+							{{fields['nothing'].content}}
+							<span>{{fields['nothing'].label}}</span>
+						</div>
 					{% endif %}
 					{% if membresCA == 'oui' %}
-						{{fields['nothing_1'].content}}
-						{{fields['nothing_1'].label}}
+						<div class="membreCA">
+							{{fields['nothing_1'].content}}
+							<span>{{fields['nothing_1'].label}}</span>
+						</div>
 					{% endif %}
 				</div>
 			{% else %}
