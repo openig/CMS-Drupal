@@ -253,13 +253,11 @@ function openig_preprocess_views_view_fields(&$variables){
       // Vérification si référent
       $query = $database->query("SELECT f.field_referent_value FROM {user__field_referent} f  WHERE f.entity_id = '".$value->entity_id."'");
       $referents[] = $query->fetch()->field_referent_value;
-
-      // Récupération des groupes de travail
-      $query = $database->query("SELECT n.title, n.nid FROM {node__field_members} f JOIN {node_field_data} n ON f.entity_id = n.nid  WHERE f.field_members_target_id = '".$value->entity_id."'");
-      if($query->fetch()->title != null){
-        $variables['groupes'][] = $query->fetch();
-      }
     }
+    // Récupération des groupes de travail
+    $query = $database->query("SELECT DISTINCT n.nid, n.title FROM {user__field_structure} s LEFT JOIN {node__field_members} m ON m.field_members_target_id = s.entity_id LEFT JOIN {node_field_data} n ON n.nid = m.entity_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
+    $variables['groupes'] = $query->fetchAll();
+    
     if (in_array(1, $membresCA)) {
       $variables['membresCA'] = 'oui';
     }

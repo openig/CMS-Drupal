@@ -208,7 +208,13 @@
         }
         .taxonomies, .groupes{
             display: flex;
+            flex-wrap: wrap;
+        }
+        .taxonomies{
             margin-top: 2rem;
+        }
+        .groupe{
+            margin-top: 0.5rem;
         }
         .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe{
             width: fit-content;
@@ -238,7 +244,7 @@
         }
         .views-field-fieldset-1, .views-field-field-website,
         .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
-        .groupe, .contact{
+        .groupes, .contact{
             margin-left: 200px;
         }
     }
