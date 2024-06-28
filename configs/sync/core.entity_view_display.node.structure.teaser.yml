@@ -54,6 +54,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_address: true
   field_city: true
   field_contacts: true
