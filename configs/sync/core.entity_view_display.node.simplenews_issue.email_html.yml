@@ -20,6 +20,8 @@ bundle: simplenews_issue
 mode: email_html
 content: {  }
 hidden:
+  addtoany: true
+  breadcrumbs: true
   field_actualite: true
   field_bloc: true
   field_evenement: true

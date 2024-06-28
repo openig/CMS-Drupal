@@ -32,6 +32,7 @@ content:
     weight: 0
     region: content
 hidden:
+  breadcrumbs: true
   field_type_de_contenu: true
   field_vue: true
   langcode: true
