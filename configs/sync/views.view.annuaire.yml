@@ -13,10 +13,14 @@ dependencies:
     - field.storage.node.field_website
     - image.style.vignette_annuaire
     - node.type.structure
+    - taxonomy.vocabulary.dpt_intervention
+    - taxonomy.vocabulary.type_de_ressource
   module:
+    - better_exposed_filters
     - link
     - node
     - svg_image
+    - taxonomy
     - user
     - views_fieldsets
 id: annuaire
@@ -1237,6 +1241,58 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 5
+      exposed_form:
+        type: bef
+        options:
+          submit_button: Appliquer
+          reset_button: true
+          reset_button_label: Réinitialiser
+          exposed_sorts_label: 'Trier par'
+          expose_sort_order: true
+          sort_asc_label: Asc
+          sort_desc_label: Desc
+          text_input_required: "Sélectionnez n'importe quel filtre et cliquez sur Appliquer pour voir les résultats"
+          text_input_required_format: basic_html
+          bef:
+            general:
+              autosubmit: false
+              autosubmit_exclude_textfield: false
+              autosubmit_textfield_delay: 500
+              autosubmit_hide: false
+              input_required: false
+              allow_secondary: false
+              secondary_label: 'Options avancées'
+              secondary_open: false
+              reset_button_always_show: true
+            filter:
+              title:
+                plugin_id: default
+                advanced:
+                  placeholder_text: ''
+                  collapsible: false
+                  is_secondary: false
+              field_dpt_intervention_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: true
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
+              field_typologie_structure_target_id:
+                plugin_id: bef
+                advanced:
+                  sort_options: false
+                  rewrite:
+                    filter_rewrite_values: ''
+                  collapsible: true
+                  is_secondary: false
+                select_all_none: false
+                select_all_none_nested: false
+                display_inline: false
       sorts:
         title:
           id: title
@@ -1253,6 +1309,175 @@ display:
             label: ''
             field_identifier: ''
           exposed: false
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+          expose:
+            operator: ''
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            structure: structure
+          group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: '='
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Nom
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              adherent: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        field_dpt_intervention_target_id:
+          id: field_dpt_intervention_target_id
+          table: node__field_dpt_intervention
+          field: field_dpt_intervention_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_dpt_intervention_target_id_op
+            label: "Départements d'intervention"
+            description: ''
+            use_operator: false
+            operator: field_dpt_intervention_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_dpt_intervention_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              adherent: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: dpt_intervention
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+        field_typologie_structure_target_id:
+          id: field_typologie_structure_target_id
+          table: node__field_typologie_structure
+          field: field_typologie_structure_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_typologie_structure_target_id_op
+            label: 'Typologie de structure'
+            description: ''
+            use_operator: false
+            operator: field_typologie_structure_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_typologie_structure_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+              adherent: '0'
+            reduce: true
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: true
+          vid: type_de_ressource
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
       style:
         type: default
         options:
@@ -1277,12 +1502,16 @@ display:
       defaults:
         query: false
         pager: false
+        exposed_form: false
         style: false
         row: false
         relationships: false
         fields: false
         sorts: false
+        filters: false
+        filter_groups: false
       relationships: {  }
+      exposed_block: true
       display_extenders: {  }
       path: annuaire
     cache_metadata:
@@ -1290,6 +1519,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url
         - url.query_args
         - 'user.node_grants:view'
         - user.permissions

@@ -1680,7 +1680,6 @@
     }
 
     .view.view-annuaire.view-display-id-annuaire{
-        margin-top: 3rem;
         margin-bottom: 3rem;
         padding: 0 !important;
         .views-row{
@@ -1709,6 +1708,7 @@
             }
         }
         .accordion{
+            margin-top: 3rem;
             .accordion-header{
                 .accordion-button{
                     background-color: transparent;
