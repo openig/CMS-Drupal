@@ -208,19 +208,20 @@
             flex-wrap: wrap;
         }
         .taxonomies{
-            margin-top: 2rem;
-        }
-        .groupe{
-            margin-top: 0.5rem;
+            margin-top: 1.5rem;
         }
         .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe{
+            height: fit-content;
             width: fit-content;
             border: 1px solid $OPenIG-color_blue;
             border-radius: 2rem;
-            padding: 0 10px;
             font-size: $OPenIG-font-size-xs;
             margin-right: 10px;
+            margin-top: 0.5rem;
             a{
+                padding: 0 10px;
+                display: block;
+                width: 100%;
                 font-family: "Exo_regular", sans-serif;
                 color: $OPenIG-color_black;
                 text-decoration: none;
@@ -247,11 +248,11 @@
         .contacts{
             display: flex;
             flex-wrap: wrap;
-            margin-top: 2rem;
             .contact:not(:last-of-type){
                 margin-right: 3rem;
             }
             .contact{
+                margin-top: 2rem;
                 .nom_prenom{
                     display: flex;
                     align-items: center;
