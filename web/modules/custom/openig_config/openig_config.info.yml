@@ -52,3 +52,4 @@ dependencies:
   - responsive_image
   - nodeaccess
   - eu_cookie_compliance
+  - openig_filter_annuaire

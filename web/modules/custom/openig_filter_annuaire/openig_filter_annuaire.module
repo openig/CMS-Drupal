@@ -224,8 +224,8 @@ function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPlu
 		$filtre_groupes = \Drupal::request()->get('field_groupes_de_travail_target_id');
 
 		if($filtre_groupes){
+
 			// Ajout des jointures
-				
 			$configuration_structure = [
 				'type'       => 'LEFT',
 				'table'      => 'user__field_structure',
@@ -247,8 +247,6 @@ function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPlu
 			];
 			$join_groupe = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_groupe);
 			$rel_groupe = $query->addRelationship('node__field_members', $join_groupe, 'node__field_members');
-
-
 
 
 			// Ajout de la table node__field_members
