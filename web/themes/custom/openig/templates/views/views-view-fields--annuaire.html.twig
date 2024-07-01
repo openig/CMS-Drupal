@@ -89,6 +89,15 @@
 						{% endfor %}
 					</div>
 				{% endif %}
+				{% if outils_competences|length > 0 %}
+					<div class="outils_competences">
+						{% for outil_competence in outils_competences %}
+							<div class="outil_competence">
+								<a href="taxonomy/term/{{outil_competence.tid}}" target="_blank">{{outil_competence.name}}</a>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
 				{% if contacts|length > 0 %}
 					<div class="contacts">
 						{% for contact in contacts %}
@@ -155,6 +164,15 @@
 							{% for groupe in groupes %}
 								<div class="groupe">
 									<a href="node/{{groupe.nid}}" target="_blank">{{groupe.title}}</a>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+					{% if outils_competences|length > 0 %}
+						<div class="outils_competences">
+							{% for outil_competence in outils_competences %}
+								<div class="outil_competence">
+									<a href="taxonomy/term/{{outil_competence.tid}}" target="_blank">{{outil_competence.name}}</a>
 								</div>
 							{% endfor %}
 						</div>

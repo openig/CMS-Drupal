@@ -241,6 +241,7 @@ function openig_preprocess_views_view_fields(&$variables){
     $membresCA = [];
     $referents = [];
     $variables['groupes'] = [];
+    $variables['outils_competences'] = [];
     // Récupération des utilisateurs
     $database = \Drupal::database();
     $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {user__field_structure} f ON f.field_structure_target_id = n.nid WHERE f.field_structure_target_id = '".$variables['row']->nid."'");
@@ -260,6 +261,15 @@ function openig_preprocess_views_view_fields(&$variables){
     foreach ($results as $result) {
       if ($result->nid != null) {
         $variables['groupes'][] = $result;
+      }
+    }
+
+    // Récupération des outils et compétences
+    $query = $database->query("SELECT DISTINCT t.tid, t.name FROM {user__field_structure} s LEFT JOIN {user__field_outils_competences} c ON c.entity_id = s.entity_id LEFT JOIN {taxonomy_term_field_data} t ON t.tid = c.field_outils_competences_target_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
+    $results = $query->fetchAll();
+    foreach ($results as $result) {
+      if ($result->tid != null) {
+        $variables['outils_competences'][] = $result;
       }
     }
     if (in_array(1, $membresCA)) {

@@ -206,14 +206,14 @@
                 border-bottom: 1px solid $OPenIG-color_dark-gray;
             }
         }
-        .taxonomies, .groupes{
+        .taxonomies, .groupes, .outils_competences{
             display: flex;
             flex-wrap: wrap;
         }
         .taxonomies{
             margin-top: 1.5rem;
         }
-        .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe{
+        .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe, .outil_competence{
             height: fit-content;
             width: fit-content;
             border: 1px solid $OPenIG-color_blue;
@@ -245,7 +245,7 @@
         }
         .views-field-fieldset-1, .views-field-field-website,
         .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
-        .groupes, .contacts{
+        .groupes, .contacts, .outils_competences{
             margin-left: 200px;
         }
         .contacts{
