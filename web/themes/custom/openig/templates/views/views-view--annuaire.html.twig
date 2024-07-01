@@ -63,13 +63,15 @@
   {% endif %}
 
   <div class="view-content">
-    <div class="d-xl-none d-block">
-      <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-    </div>
+    {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+      <div class="d-xl-none d-block">
+        <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+      </div>
+    {% endif %}
     {{ rows }}
   </div>
   {% if empty %}
-    <div class="view-empty">
+    <div class="view-empty container">
       {{ empty }}
     </div>
   {% endif %}
