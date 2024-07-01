@@ -307,6 +307,8 @@
 
     // Filtres
     .formulaire_filtre{
+        max-height: calc(100% + 4rem);
+        overflow: scroll;
         position: absolute;
         left: -700px;
         transition: 1.5s;
@@ -455,3 +457,9 @@
         margin-top: 3rem;
     }
 }
+
+/*.path-annuaire{
+    main{
+        min-height: 3000px;
+    }
+}*/
