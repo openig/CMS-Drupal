@@ -36,5 +36,45 @@ function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_stat
 				),
 			),
 		);	
+
+		// Ajout liste case à cocher Outils et compétences
+		$form['field_outils_competences_target_id'] = array(
+			'#type' => 'checkboxes',
+			'#multiple' => true,
+			'#options' => array(
+				1 => 'test',
+			),
+			'#size' => 0,
+			'#group' => 'field_outils_competences_target_id_collapsible',
+			'#context' => array(),
+			'#bef_display_inline' => false,
+			'#theme' => 'bef_checkboxes',
+			'#bef_select_all_none' => false,
+			'#bef_select_all_none_nested' => false,
+			'#process' => array(
+				array(
+					'Drupal\Core\Render\Element\Checkboxes',
+					'processCheckboxes',
+				),
+				'webform_process_options',
+				array(
+					'\Drupal\Core\Render\Element\RenderElement',
+					'processGroup',
+				),
+			),
+			'#pre_render' => array(
+				array(
+					'Drupal\Core\Render\Element\Checkboxes',
+					'preRenderCompositeFormElement',
+				),
+				array(
+					'\Drupal\Core\Render\Element\RenderElement',
+					'preRenderGroup',
+				),
+			),
+		);	
+
+		dump($form);
+
 	}
   }
