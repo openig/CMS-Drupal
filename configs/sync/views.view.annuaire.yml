@@ -14,7 +14,7 @@ dependencies:
     - image.style.vignette_annuaire
     - node.type.structure
     - taxonomy.vocabulary.dpt_intervention
-    - taxonomy.vocabulary.type_de_ressource
+    - taxonomy.vocabulary.typologie_de_structure
   module:
     - better_exposed_filters
     - link
@@ -1469,7 +1469,7 @@ display:
               content_editor: '0'
               administrator: '0'
               adherent: '0'
-            reduce: true
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -1483,7 +1483,7 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: true
-          vid: type_de_ressource
+          vid: typologie_de_structure
           type: select
           hierarchy: false
           limit: true
