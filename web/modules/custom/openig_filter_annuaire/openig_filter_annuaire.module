@@ -175,6 +175,9 @@ function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_stat
 
 function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
 	if (($view->id() == 'annuaire') && $view->current_display == 'annuaire') {
+
+		// Ajout du filtre Outils / Compétences
+
 		// Ajout des jointures
 		$configuration_user = [
 			'type'       => 'LEFT',
@@ -183,30 +186,74 @@ function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPlu
 			'left_table' => 'node_field_data',
 			'left_field' => 'nid',
 			'operator'   => '=',
-		  ];
-		  $join_user = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_user);
-		  $rel_user = $query->addRelationship('user__field_structure', $join_user, 'user__field_structure');
+			];
+			$join_user = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_user);
+			$rel_user = $query->addRelationship('user__field_structure', $join_user, 'user__field_structure');
 
-		  $configuration_outils_competences = [
+			$configuration_outils_competences = [
 			'type'       => 'LEFT',
 			'table'      => 'user__field_outils_competences',
 			'field'      => 'entity_id',
 			'left_table' => 'user__field_structure',
 			'left_field' => 'entity_id',
 			'operator'   => '=',
-		  ];
-		  $join_outils_competences = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_outils_competences);
-		  $rel_outils_competences = $query->addRelationship('user__field_outils_competences', $join_outils_competences, 'user__field_outils_competences');
+			];
+			$join_outils_competences = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_outils_competences);
+			$rel_outils_competences = $query->addRelationship('user__field_outils_competences', $join_outils_competences, 'user__field_outils_competences');
 
-		  // Ajout de la table user__field_outils_competences
-		  $query->addTable('user__field_outils_competences', $rel_outils_competences, $join_outils_competences, 'user__field_outils_competences');
+			// Ajout de la table user__field_outils_competences
+			$query->addTable('user__field_outils_competences', $rel_outils_competences, $join_outils_competences, 'user__field_outils_competences');
 
-		  // Récupération des valeurs du filtre
-		  $filtre_outils_competences = \Drupal::request()->get('field_outils_competences_target_id');
-		 
-		  // Ajout d'une condition
-		  $query->setGroupOperator('OR');
-		  $query->setWhereGroup('AND', 1);
-		  $query->addWhere(1, "user__field_outils_competences.field_outils_competences_target_id", $filtre_outils_competences, "in");
+			// Récupération des valeurs du filtre
+			$filtre_outils_competences = \Drupal::request()->get('field_outils_competences_target_id');
+			
+			// Ajout d'une condition
+			$query->setGroupOperator('OR');
+			$query->setWhereGroup('AND', 1);
+			$query->addWhere(1, "user__field_outils_competences.field_outils_competences_target_id", $filtre_outils_competences, "in");
+	
+	
+		
+			// Ajout du filtre Groupes de travail
+
+			// Ajout des jointures
+		
+			$configuration_structure = [
+				'type'       => 'LEFT',
+				'table'      => 'user__field_structure',
+				'field'      => 'field_structure_target_id',
+				'left_table' => 'node_field_data',
+				'left_field' => 'nid',
+				'operator'   => '=',
+			];
+			$join_structure = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_structure);
+			$rel_structure = $query->addRelationship('user__field_structure', $join_structure, 'user__field_structure');
+
+			$configuration_groupe = [
+				'type'       => 'LEFT',
+				'table'      => 'node__field_members',
+				'field'      => 'field_members_target_id',
+				'left_table' => 'user__field_structure',
+				'left_field' => 'entity_id',
+				'operator'   => '=',
+			];
+			$join_groupe = \Drupal\views\Views::pluginManager('join')->createInstance('standard', $configuration_groupe);
+			$rel_groupe = $query->addRelationship('node__field_members', $join_groupe, 'node__field_members');
+
+
+	
+
+			// Ajout de la table node__field_members
+			$query->addTable('node__field_members', $rel_groupe, $join_groupe, 'node__field_members');
+
+			// Récupération des valeurs du filtre
+			$filtre_groupes = \Drupal::request()->get('field_groupes_de_travail_target_id');
+			
+			// Ajout d'une condition
+			$query->setGroupOperator('OR');
+			$query->setWhereGroup('AND', 1);
+			$query->addWhere(1, "node__field_members.entity_id", $filtre_groupes, "in");
+
+	
 	}
 }
