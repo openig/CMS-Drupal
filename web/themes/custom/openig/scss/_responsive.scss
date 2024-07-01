@@ -705,6 +705,12 @@
             }
         }
     }
+
+    .path-annuaire{
+        .btn_filtre{
+            margin-bottom: 3rem !important;
+        }
+    }
     
 }
 
@@ -766,7 +772,7 @@
         }
     }
 
-    .path-l-agenda, .path-les-actualites{
+    .path-l-agenda, .path-les-actualites, .path-annuaire{
         #block-openig-addtoanysharebuttons{
             position: absolute !important;
         }
@@ -1679,6 +1685,11 @@
         }
     }
 
+    .path-annuaire{
+        .btn_filtre{
+            margin-bottom: 0 !important;
+        }
+    }
     .view.view-annuaire.view-display-id-annuaire{
         margin-bottom: 3rem;
         padding: 0 !important;
@@ -1721,13 +1732,13 @@
             }
             .views-field-fieldset-1, .views-field-field-website,
             .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
-            .groupes, .contacts{
+            .groupes, .contacts, .outils_competences{
                 margin-left: 0 !important;
             }
             .adresse-picto, .views-field-field-website, .contacts .contact span, .contacts .contact a{
                 font-size: $OPenIG-font-size-xs;
             }
-            .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe{
+            .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe, .outil_competence{
                 font-size: 9px;
                 max-width: 150px;
             }
