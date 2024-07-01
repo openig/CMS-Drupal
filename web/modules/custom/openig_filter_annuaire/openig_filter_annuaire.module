@@ -37,13 +37,15 @@ function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_stat
 			),
 		);	
 
+		// Connexion BDD
+		$database = \Drupal::database();
+		$outils_competences = [];
+
 		// Ajout liste case à cocher Outils et compétences
 		$form['field_outils_competences_target_id'] = array(
 			'#type' => 'checkboxes',
 			'#multiple' => true,
-			'#options' => array(
-				1 => 'test',
-			),
+			'#options' => array(),
 			'#size' => 0,
 			'#group' => 'field_outils_competences_target_id_collapsible',
 			'#context' => array(),
@@ -74,7 +76,14 @@ function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_stat
 			),
 		);	
 
-		dump($form);
 
+		// Récupération des outils et compétences
+		$query = $database->query("SELECT DISTINCT t.name FROM {user__field_structure} s LEFT JOIN {user__field_outils_competences} c ON c.entity_id = s.entity_id LEFT JOIN {taxonomy_term_field_data} t ON t.tid = c.field_outils_competences_target_id");
+		$results = $query->fetchAll();
+		foreach ($results as $result) {
+			if ($result->name != null) {
+				$form['field_outils_competences_target_id']['#options'][] = $result->name;
+			}
+		}
 	}
   }
