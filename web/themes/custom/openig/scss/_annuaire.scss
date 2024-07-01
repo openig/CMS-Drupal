@@ -131,6 +131,10 @@
 .view.view-annuaire.view-display-id-annuaire{
     .flex_content{
         display: flex;
+        flex-wrap: wrap;
+    }
+    .view-content{
+        margin-bottom: 3rem;
     }
     .views-row:nth-child(even){
         background-color: $OPenIG-color_medium-white;

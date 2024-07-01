@@ -18,48 +18,13 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div class="row">
-	{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-		<div class="flex_content">
-			<div class="formulaire_filtre d-xl-block d-none">
-				<button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-				<div class="">
-				{{ render_block('openig_formulaireexposeannuaireannuaire') }}
-				</div>
-			</div>
-			<div class="col-xl-1 col-lg-2 col-3 d-xl-block d-none">
-				<button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-			</div>
-	{% endif %}
-	{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-		<div class="d-none d-lg-block col-xl-11 col-lg-10 col-12">
-	{% else %}
-		<div class="d-none d-lg-block col-12">
-	{% endif %}
-		{% for row in rows %}
-		{%
-			set row_classes = [
-			default_row_class ? 'views-row',
-			]
-		%}
-		<div{{ row.attributes.addClass(row_classes) }}>
-			{{- row.content -}}
-		</div>
-		{% endfor %}
+{% for row in rows %}
+	{%
+		set row_classes = [
+		default_row_class ? 'views-row',
+		]
+	%}
+	<div{{ row.attributes.addClass(row_classes) }}>
+		{{- row.content -}}
 	</div>
-	<div class="accordion d-block d-lg-none col-12" id="accordionAnnuaire">
-		{% for row in rows %}
-		{%
-			set row_classes = [
-			default_row_class ? 'views-row',
-			]
-		%}
-		<div{{ row.attributes.addClass(row_classes) }}>
-			{{- row.content -}}
-		</div>
-		{% endfor %}
-	</div>
-	{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-		</div>
-	{% endif %}
-</div>
+{% endfor %}

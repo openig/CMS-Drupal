@@ -62,13 +62,30 @@
     </div>
   {% endif %}
 
-  <div class="view-content">
+  <div class="view-content row">
     {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-      <div class="d-xl-none d-block">
-        <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+      <div class="flex_content">
+        <div class="formulaire_filtre d-xl-block d-none">
+          <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+          <div class="">
+            {{ render_block('openig_formulaireexposeannuaireannuaire') }}
+          </div>
+        </div>
+        <div class="col-xl-1 col-lg-2 col-3">
+          <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+        </div>
+        <div class="accordion d-block d-lg-none col-12" id="accordionAnnuaire">
+          {{ rows }}
+        </div>
+        <div class="col-xl-11 col-lg-10 col-12 d-none d-lg-block">
+          {{ rows }}
+        </div>
+      </div>
+    {% else %}
+      <div class="non_connecte">
+        {{ rows }}      
       </div>
     {% endif %}
-    {{ rows }}
   </div>
   {% if empty %}
     <div class="view-empty container">

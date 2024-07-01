@@ -1696,11 +1696,14 @@
     .view.view-annuaire.view-display-id-annuaire{
         margin-bottom: 3rem;
         padding: 0 !important;
+        .non_connecte{
+            margin-top: 5rem;
+        }
         .view-empty{
             font-size: $OPenIG-font-size-sm;
         }
         .views-row{
-            padding: 1rem !important;
+            padding: 1.5rem !important;
         }
         .entete{
             display: block !important;
