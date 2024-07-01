@@ -1696,6 +1696,9 @@
     .view.view-annuaire.view-display-id-annuaire{
         margin-bottom: 3rem;
         padding: 0 !important;
+        .view-empty{
+            font-size: $OPenIG-font-size-sm;
+        }
         .views-row{
             padding: 1rem !important;
         }
