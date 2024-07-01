@@ -18,9 +18,6 @@
 {% if title %}
   <h3>{{ title }}</h3>
 {% endif %}
-<div class="d-xl-none d-block">
-	<button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-</div>
 <div class="row">
 	{% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
 		<div class="flex_content">

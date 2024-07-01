@@ -653,6 +653,9 @@
             color: $OPenIG-color_dark-gray;
             border: 1px solid $OPenIG-color_gray;
         }
+        .js-form-type-textfield input{
+            font-size: $OPenIG-font-size-sm;
+        }
         .form-checkbox{
             border: 1px solid $OPenIG-color_gray;
         }
