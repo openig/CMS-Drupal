@@ -348,6 +348,15 @@
         form{
             margin-top: 2rem;
         }
+        .form-type-textfield{
+            width: 100%;
+            label{
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm;
+                font-family: 'OpenSans_SemiBold';
+                margin-bottom: 0.5rem;
+            }
+        }
         .form-item-exposed-from-date, .form-item-exposed-to-date{
             width: 175px;
             display: flex;
