@@ -1,1 +1,19 @@
 <?php
+
+use \Drupal\Core\Form\FormStateInterface;
+
+function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_state, $form_id) {
+	$view_ids = ['annuaire'];
+	if ($form_id == 'views_exposed_form' && in_array($form_state->get('view')->id(), $view_ids)) {
+		$form['field_outils_competences_target_id_collapsible'] = array(
+			'#type' => 'details',
+			'#title' => 'Outils / Compétences',
+			'#attributes' => array(
+				'class' => array( 
+					'form-item',
+				),
+			),
+			'#access' => true,
+		);	
+	}
+  }
