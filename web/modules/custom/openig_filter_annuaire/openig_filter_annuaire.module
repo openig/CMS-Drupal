@@ -79,14 +79,95 @@ function openig_filter_annuaire_form_views_exposed_form_alter(&$form, $form_stat
 		);	
 
 
+		
+		// Ajout du filtre Groupes de travail
+
+		// Ajout du collapse
+		$form['field_groupes_de_travail_target_id_collapsible'] = array(
+			'#type' => 'details',
+			'#title' => 'Groupes de travail',
+			'#attributes' => array(
+				'class' => array( 
+					'form-item',
+				),
+			),
+			'#access' => true,
+			'#process' => array(
+				array(
+					'Drupal\Core\Render\Element\Details',
+					'processGroup',
+				),
+				array(
+					'Drupal\Core\Render\Element\Details',
+					'processAjaxForm',
+				),
+			),
+			'#pre_render' => array(
+				array(
+					'Drupal\Core\Render\Element\Details',
+					'preRenderDetails',
+				),
+				array(
+					'Drupal\Core\Render\Element\Details',
+					'preRenderGroup',
+				),
+			),
+		);	
+
+		// Ajout liste case à cocher
+		$form['field_groupes_de_travail_target_id'] = array(
+			'#type' => 'checkboxes',
+			'#multiple' => true,
+			'#options' => array(),
+			'#size' => 0,
+			'#group' => 'field_groupes_de_travail_target_id_collapsible',
+			'#context' => array(),
+			'#bef_display_inline' => false,
+			'#theme' => 'bef_checkboxes',
+			'#bef_select_all_none' => false,
+			'#bef_select_all_none_nested' => false,
+			'#process' => array(
+				array(
+					'Drupal\Core\Render\Element\Checkboxes',
+					'processCheckboxes',
+				),
+				'webform_process_options',
+				array(
+					'\Drupal\Core\Render\Element\RenderElement',
+					'processGroup',
+				),
+			),
+			'#pre_render' => array(
+				array(
+					'Drupal\Core\Render\Element\Checkboxes',
+					'preRenderCompositeFormElement',
+				),
+				array(
+					'\Drupal\Core\Render\Element\RenderElement',
+					'preRenderGroup',
+				),
+			),
+		);	
+
+
+
 		// Connexion BDD
 		$database = \Drupal::database();
 		// Récupération des outils et compétences
-		$query = $database->query("SELECT DISTINCT t.tid, t.name FROM {user__field_structure} s LEFT JOIN {user__field_outils_competences} c ON c.entity_id = s.entity_id LEFT JOIN {taxonomy_term_field_data} t ON t.tid = c.field_outils_competences_target_id");
-		$results = $query->fetchAll();
-		foreach ($results as $result) {
-			if ($result->tid != null) {
-				$form['field_outils_competences_target_id']['#options'][$result->tid] = $result->name;
+		$query_outils = $database->query("SELECT DISTINCT t.tid, t.name FROM {user__field_structure} s LEFT JOIN {user__field_outils_competences} c ON c.entity_id = s.entity_id LEFT JOIN {taxonomy_term_field_data} t ON t.tid = c.field_outils_competences_target_id");
+		$results_outils = $query_outils->fetchAll();
+		foreach ($results_outils as $result_outil) {
+			if ($result_outil->tid != null) {
+				$form['field_outils_competences_target_id']['#options'][$result_outil->tid] = $result_outil->name;
+			}
+		}
+
+		// Récupération des groupes de travail
+		$query_groupes = $database->query("SELECT DISTINCT n.nid, n.title FROM {user__field_structure} s LEFT JOIN {node__field_members} m ON m.field_members_target_id = s.entity_id LEFT JOIN {node_field_data} n ON n.nid = m.entity_id");
+		$results_groupes = $query_groupes->fetchAll();
+		foreach ($results_groupes as $result_groupe) {
+			if ($result_groupe->nid != null) {
+				$form['field_groupes_de_travail_target_id']['#options'][$result_groupe->nid] = $result_groupe->title;
 			}
 		}
 	}
