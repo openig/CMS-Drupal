@@ -210,8 +210,6 @@ function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPlu
 			$query->addTable('user__field_outils_competences', $rel_outils_competences, $join_outils_competences, 'user__field_outils_competences');
 		
 			// Ajout d'une condition
-			$query->setGroupOperator('OR');
-			$query->setWhereGroup('AND', 1);
 			$query->addWhere(1, "user__field_outils_competences.field_outils_competences_target_id", $filtre_outils_competences, "in");
 	
 		}
@@ -253,8 +251,6 @@ function openig_filter_annuaire_views_query_alter(ViewExecutable $view, QueryPlu
 			$query->addTable('node__field_members', $rel_groupe, $join_groupe, 'node__field_members');				
 			
 			// Ajout d'une condition
-			$query->setGroupOperator('OR');
-			$query->setWhereGroup('AND', 1);
 			$query->addWhere(1, "node__field_members.entity_id", $filtre_groupes, "in");
 
 		}
