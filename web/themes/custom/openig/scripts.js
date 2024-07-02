@@ -290,17 +290,22 @@
             }
         }
 
-          $("a.ckan").click(function(event){
+        // Modal au clic sur le lien CKAN
+        $("a.ckan").click(function(event){
+            // Stop de l'event
             event.preventDefault();
+
+            // Affichage de la modal
             $('#modalckan').modal('show');
+
+            // Récupération du lien
+            var link = $(this).attr("href");
+
+            // Après un délai masquer la modal et ouverture du lien
             setTimeout(function() {
                 $('#modalckan').modal('hide');
-            }, 2000);
-            var link = $(this).attr("href");
-            setTimeout(function() {
                 window.open(link, '_blank');
             }, 2000);
-            
         });
     })
 
