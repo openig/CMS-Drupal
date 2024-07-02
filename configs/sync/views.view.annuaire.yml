@@ -1600,14 +1600,14 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
           type: image
           settings:
             image_link: ''
-            image_style: ''
+            image_style: vignette_annuaire
             image_loading:
               attribute: lazy
             svg_attributes:
