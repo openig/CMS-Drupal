@@ -53,3 +53,4 @@ dependencies:
   - nodeaccess
   - eu_cookie_compliance
   - openig_filter_annuaire
+  - menu_link_attributes
