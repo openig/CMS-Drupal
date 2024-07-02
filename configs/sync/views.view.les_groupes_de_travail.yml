@@ -1034,20 +1034,7 @@ display:
           text: 'En savoir plus'
           output_url_as_text: false
           absolute: false
-      empty:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: text
-          empty: true
-          content:
-            value: 'Aucun résultat'
-            format: basic_html
-          tokenize: false
+      empty: {  }
       filters:
         status:
           id: status
