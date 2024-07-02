@@ -1442,3 +1442,17 @@ form{
 .page-item:not(:first-child) .page-link{
     margin-left: 0;
 }
+
+// Modal CKAN
+#modalckan{
+    .modal-dialog{
+        max-width: 75%;
+        width: 75%;
+        .modal-body{
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}

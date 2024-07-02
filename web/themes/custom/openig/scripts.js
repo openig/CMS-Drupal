@@ -289,6 +289,19 @@
                 });
             }
         }
+
+          $("a.ckan").click(function(event){
+            event.preventDefault();
+            $('#modalckan').modal('show');
+            setTimeout(function() {
+                $('#modalckan').modal('hide');
+            }, 2000);
+            var link = $(this).attr("href");
+            setTimeout(function() {
+                window.open(link, '_blank');
+            }, 2000);
+            
+        });
     })
 
 })(jQuery);
