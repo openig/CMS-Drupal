@@ -80,7 +80,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
@@ -150,7 +150,7 @@ display:
           element_wrapper_class: ''
           element_default_classes: true
           empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
@@ -684,6 +684,20 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 5
+      empty:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: true
+          content:
+            value: 'Aucun résultat'
+            format: basic_html
+          tokenize: false
       filters:
         langcode:
           id: langcode
@@ -836,6 +850,7 @@ display:
         type: views_query
         options: {  }
       defaults:
+        empty: false
         pager: false
         style: false
         row: false
