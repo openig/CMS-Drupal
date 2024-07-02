@@ -856,6 +856,11 @@
             font-size: $OPenIG-font-size-base !important;
         }
     }
+    .path-les-actualites{
+        .slick--less .slick-track{
+            text-align: left;
+        }
+    }
     .path-les-actualites, .path-l-agenda{
         .share_adhesion{
             width: fit-content;
