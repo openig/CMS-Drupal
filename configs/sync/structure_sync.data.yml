@@ -1,5 +1,18 @@
 blocks:
   -
+    info: 'Message de redirection vers le CKAN'
+    langcode: fr
+    uuid: 1db3ab99-b399-4306-945c-8967eb3e0d2a
+    bundle: basic
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: '<p><em>Vous allez être redirigé vers le CKAN pour consulter les données ouvertes</em></p>'
+          summary: ''
+          format: basic_html
+  -
     info: "Démarche d'adhésion à OPenIG"
     langcode: fr
     uuid: 52b752d8-78e8-4e1a-987d-c111d74c2817

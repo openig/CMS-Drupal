@@ -1791,6 +1791,15 @@
     .pager__item--previous .page-link::before, .pager__item--next .page-link::before {
         font-size: 20px;
     }
+
+    // Modal CKAN
+    #modalckan{
+        .modal-dialog{
+            max-width: 95% !important;
+            width: 95% !important;
+            margin: auto !important;
+        }
+    }
 }
 
 @media (max-width: 768px){
