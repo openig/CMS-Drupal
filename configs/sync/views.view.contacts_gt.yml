@@ -7,6 +7,7 @@ dependencies:
     - field.storage.user.field_lastname
     - node.type.groupe_de_travail
     - node.type.service
+    - node.type.structure
   module:
     - node
     - user

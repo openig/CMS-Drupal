@@ -590,7 +590,7 @@
         left: -100%;
         transition: 1.5s;
         background-color: $OPenIG-color_white;
-        z-index: 3 !important;
+        z-index: 4 !important;
         padding: 10px;
         width: 100vw !important;
         height: calc(100% - 80px) !important;
@@ -632,6 +632,15 @@
                 max-width: 350px;
             }
         }
+        .form-type-textfield{
+            width: 100%;
+            label{
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm !important;
+                font-family: 'OpenSans_SemiBold';
+                margin-bottom: 0.5rem;
+            }
+        }
         .form-item-exposed-from-date, .form-item-exposed-to-date{
             width: 150px !important;
             display: flex;
@@ -652,6 +661,9 @@
             background-color: transparent;
             color: $OPenIG-color_dark-gray;
             border: 1px solid $OPenIG-color_gray;
+        }
+        .js-form-type-textfield input{
+            font-size: $OPenIG-font-size-sm;
         }
         .form-checkbox{
             border: 1px solid $OPenIG-color_gray;
@@ -703,6 +715,12 @@
                 font-family: "Font Awesome 6 Free";
                 font-weight: 600;
             }
+        }
+    }
+
+    .path-annuaire{
+        .btn_filtre{
+            margin-bottom: 3rem !important;
         }
     }
     
@@ -766,7 +784,7 @@
         }
     }
 
-    .path-l-agenda, .path-les-actualites{
+    .path-l-agenda, .path-les-actualites, .path-annuaire{
         #block-openig-addtoanysharebuttons{
             position: absolute !important;
         }
@@ -1628,23 +1646,6 @@
 
     .view.view-taxonomy-term{
         margin-bottom: 3rem;
-        .pager__item--previous{
-            margin-right: 1rem !important;
-        }
-        .pager__item--next{
-            margin-left: 1rem !important;
-        }
-        .page-item{
-            width: 30px;
-            height: 30px;
-            .page-link{
-                font-size: $OPenIG-font-size-base;
-                padding: 0.375rem 0.75rem;
-            }
-        }
-        .pager__item--previous .page-link::before, .pager__item--next .page-link::before {
-            font-size: 20px;
-        }
         .row{
             margin-bottom: 0 !important;
             .col-lg-3.col-12{
@@ -1694,6 +1695,101 @@
                 }
             }
         }
+    }
+
+    .path-annuaire{
+        .btn_filtre{
+            margin-bottom: 0 !important;
+        }
+    }
+    .view.view-annuaire.view-display-id-annuaire{
+        margin-bottom: 3rem;
+        padding: 0 !important;
+        .non_connecte{
+            margin-top: 5rem;
+        }
+        .view-empty{
+            font-size: $OPenIG-font-size-sm;
+        }
+        .views-row{
+            padding: 1.5rem !important;
+        }
+        .entete{
+            display: block !important;
+            .views-field-field-image{
+                margin-bottom: 1rem;
+            }
+            .views-field-title{
+                margin-left: 0 !important;
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .itemPrivate{
+            font-size: 10px !important;
+        }
+        .divPrivate{
+            height: fit-content;
+            padding-left: 0;
+            justify-content: end;
+            i{
+                margin-left: 0.5rem !important;
+                font-size: $OPenIG-font-size-base !important;
+            }
+        }
+        .accordion{
+            margin-top: 3rem;
+            .accordion-header{
+                .accordion-button{
+                    background-color: transparent;
+                }
+                .accordion-button:focus, .accordion-button:active, .accordion-button:not(.collapsed){
+                    border: none;
+                    box-shadow: none;
+                    color: unset;
+                }
+            }
+            .views-field-fieldset-1, .views-field-field-website,
+            .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
+            .groupes, .contacts, .outils_competences{
+                margin-left: 0 !important;
+            }
+            .adresse-picto, .views-field-field-website, .contacts .contact span, .contacts .contact a{
+                font-size: $OPenIG-font-size-xs;
+            }
+            .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe, .outil_competence{
+                font-size: 9px;
+                max-width: 150px;
+            }
+            .badges{
+                margin-top: 2rem;
+                flex-direction: row;
+                justify-content: flex-start;
+                > div:not(:last-of-type){
+                    margin-bottom: 0 !important;
+                    margin-right: 2rem;
+                }
+            }
+        }
+    }
+
+    .pager__item--previous{
+        margin-right: 0.5rem !important;
+    }
+    .pager__item--next{
+        margin-left: 0.5rem !important;
+    }
+    .page-item{
+        width: 30px;
+        height: 30px;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+        .page-link{
+            font-size: $OPenIG-font-size-base;
+            padding: 0.375rem 0.75rem;
+        }
+    }
+    .pager__item--previous .page-link::before, .pager__item--next .page-link::before {
+        font-size: 20px;
     }
 }
 

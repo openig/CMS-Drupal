@@ -70,6 +70,15 @@
           {{ render_block('openig_formulaireexposel_agendaagenda') }}
         </div>
       </div>
+    {% elseif root_path == 'annuaire' %}
+      {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+        <div class="d-xl-none d-block">
+          <div class="formulaire_filtre">
+            <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+            {{ render_block('openig_formulaireexposeannuaireannuaire') }}
+          </div>
+        </div>
+      {% endif %}
     {% endif %}
     {{ page }}
     {{ render_block('openig_imageenbasdepage') }}

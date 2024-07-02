@@ -1195,6 +1195,7 @@ display:
         type: none
         options:
           offset: 0
+      empty: {  }
       style:
         type: slick
         options:
@@ -1248,6 +1249,7 @@ display:
           separator: ''
           hide_empty: false
       defaults:
+        empty: false
         pager: false
         style: false
         row: false

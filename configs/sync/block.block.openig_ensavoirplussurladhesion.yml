@@ -27,4 +27,4 @@ visibility:
   request_path:
     id: request_path
     negate: false
-    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*\r\n/les-services\r\n/service/*"
+    pages: "/les-groupes-de-travail\r\n/groupe-de-travail/*\r\n/les-services\r\n/service/*\r\n/annuaire"
