@@ -102,7 +102,6 @@
         })
 
         // Slide actif au clic sur un évènement de la page d'accueil
-
         if($('body').hasClass('path-l-agenda')){
             var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
             for (var i = 0; i < url.length; i++) {
@@ -111,6 +110,7 @@
                     var id = urlparam[1];
                 }
             }
+
 
             $(".slick--view--l-agenda .slick-slide").each(function(){
                 var nid = $(this).find('.views-field-nid .field-content');
@@ -121,6 +121,7 @@
                 }
             })
         }
+
 
 
         // Fonction pour modifier l'année et afficher le contenu d'un évènement
@@ -152,6 +153,21 @@
             var index = $(this).attr('data-slick-index');
             $('.slick__slider').slick('slickGoTo',index, true);
             change_evenement();
+        })
+
+
+        // Page Recherche affichage spécifique pour les événements
+
+      $('.view-resultats-de-recherche .views-view-responsive-grid__item').click(function() {
+          if($(this).find('.contenu').hasClass('d-block')){
+            $(this).find('.contenu').removeClass('d-block');
+            $(this).find('.contenu').addClass('d-none');
+          }
+          else{
+            $(this).find('.contenu').removeClass('d-none');
+            $(this).find('.contenu').addClass('d-block');
+          }
+
         })
 
 

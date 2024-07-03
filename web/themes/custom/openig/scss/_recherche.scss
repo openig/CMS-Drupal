@@ -284,4 +284,10 @@
   .page-link:focus{
     box-shadow: none;
   }
+
+  .views-field-fieldset{
+    .contenu{
+      display: none;
+    }
+  }
 }
