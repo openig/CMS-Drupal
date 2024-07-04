@@ -156,14 +156,6 @@
         })
 
 
-        // Todo Page Recherche affichage spécifique pour les événements
-        $('.view-resultats-de-recherche .views-view-responsive-grid__item').click(function(){
-            // Affichage du contenu sous l'événement
-            var contenu = $(this).find('.contenu');
-            var clone = $(contenu).clone(true);
-            $('.view-resultats-de-recherche #contenu_evenement').html(clone);
-        })
-
 
         // Badge nombre de résultat - onglet contenu éditorial
         let onglet = $('#block-openig-local-tasks #nbContenuEditorial');
