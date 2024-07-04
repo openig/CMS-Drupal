@@ -8,9 +8,12 @@ dependencies:
     - field.storage.node.field_tag
     - image.style.vignette_vues
     - node.type.article
+    - node.type.evenement
     - node.type.groupe_de_travail
     - node.type.page
+    - node.type.ressource
     - node.type.service
+    - node.type.structure
   module:
     - node
     - svg_image
@@ -588,20 +591,7 @@ display:
       relationships: {  }
       link_display: page_1
       link_url: ''
-      header:
-        entity_taxonomy_term:
-          id: entity_taxonomy_term
-          table: views
-          field: entity_taxonomy_term
-          relationship: none
-          group_type: group
-          admin_label: ''
-          plugin_id: entity
-          empty: true
-          target: '{{ raw_arguments.tid }}'
-          view_mode: full
-          tokenize: true
-          bypass_access: false
+      header: {  }
       footer: {  }
       display_extenders: {  }
     cache_metadata:
@@ -792,9 +782,12 @@ display:
           operator: in
           value:
             article: article
+            evenement: evenement
             groupe_de_travail: groupe_de_travail
             page: page
+            ressource: ressource
             service: service
+            structure: structure
           group: 1
           exposed: false
           expose:
