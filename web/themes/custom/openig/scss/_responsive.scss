@@ -158,6 +158,7 @@
             transform: translateY(-50%);
             .navbar-nav, .nav-item{
                 display: flex;
+                flex-direction: row;
                 align-items: center;
                 .logged{
                     border-bottom: 1px solid $OPenIG-color_red;
@@ -166,6 +167,15 @@
                     margin-left: 0.5rem;
                     padding-bottom: 0;
                     padding-top: 0;
+                }
+                .deconnexion{
+                    border-bottom: none;
+                    margin-left: .5rem;
+                    padding-left: .5rem;
+                    border-left: 1px solid $OPenIG-color_red;
+                    i{
+                        font-size: 20px;
+                    }
                 }
             }
         }
