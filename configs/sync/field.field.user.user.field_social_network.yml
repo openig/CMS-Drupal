@@ -21,9 +21,9 @@ settings:
   iconset: 'fontawesome:2x'
   platforms:
     instagram:
+      enabled: '1'
       description: ''
       weight: '-10'
-      enabled: 0
     website:
       description: ''
       weight: '-9'
@@ -141,9 +141,9 @@ settings:
       weight: '19'
       enabled: 0
     github:
+      enabled: '1'
       description: ''
       weight: '20'
-      enabled: 0
     patreon:
       description: ''
       weight: '21'
