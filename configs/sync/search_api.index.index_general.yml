@@ -3,6 +3,9 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.storage.node.field_body
+    - field.storage.node.field_news_overview
+    - field.storage.node.field_theme_overview
     - field.storage.node.field_tag
     - search_api.server.recherche_solr
   module:
@@ -61,20 +64,44 @@ name: 'Index général'
 description: ''
 read_only: false
 field_settings:
+  field_body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: field_body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+  field_news_overview:
+    label: "Présentation générale de l'actualité"
+    datasource_id: 'entity:node'
+    property_path: field_news_overview
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_news_overview
   field_tag:
     label: Tag
     datasource_id: 'entity:node'
     property_path: field_tag
-    type: integer
+    type: text
     dependencies:
       config:
         - field.storage.node.field_tag
+  field_theme_overview:
+    label: 'Présentation générale de la thématique'
+    datasource_id: 'entity:node'
+    property_path: field_theme_overview
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_theme_overview
   title:
     label: Titre
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: 5.0
+    boost: 21.0
     dependencies:
       module:
         - node
@@ -82,7 +109,7 @@ field_settings:
     label: 'Type de contenu'
     datasource_id: 'entity:node'
     property_path: type
-    type: string
+    type: text
     dependencies:
       module:
         - node

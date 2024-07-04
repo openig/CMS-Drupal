@@ -321,7 +321,20 @@ display:
             value: 'Aucun résultat'
             format: basic_html
           tokenize: false
-      sorts: {  }
+      sorts:
+        search_api_relevance:
+          id: search_api_relevance
+          table: search_api_index_index_general
+          field: search_api_relevance
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: search_api
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
       arguments: {  }
       filters:
         type_1:
@@ -1024,12 +1037,11 @@ display:
                 view_mode: default
         field_body:
           id: field_body
-          table: search_api_datasource_index_general_entity_node
+          table: search_api_index_index_general
           field: field_body
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -1082,7 +1094,7 @@ display:
           delta_offset: 0
           delta_reversed: false
           delta_first_last: false
-          multi_type: separator
+          multi_type: ol
           separator: ', '
           field_api_classes: false
           field_rendering: true
@@ -1167,12 +1179,11 @@ display:
                 display_method: label
         field_news_overview:
           id: field_news_overview
-          table: search_api_datasource_index_general_entity_node
+          table: search_api_index_index_general
           field: field_news_overview
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -1215,10 +1226,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
-          type: text_summary_or_trimmed
+          click_sort_column: summary
+          type: text_trimmed
           settings:
-            trim_length: 300
+            trim_length: 600
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -1238,12 +1249,11 @@ display:
             multi_separator: ', '
         field_theme_overview:
           id: field_theme_overview
-          table: search_api_datasource_index_general_entity_node
+          table: search_api_index_index_general
           field: field_theme_overview
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
           plugin_id: search_api_field
           label: ''
           exclude: false
@@ -1286,10 +1296,10 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: value
+          click_sort_column: summary
           type: text_summary_or_trimmed
           settings:
-            trim_length: 300
+            trim_length: 600
           group_column: value
           group_columns: {  }
           group_rows: true
