@@ -166,8 +166,8 @@
 
 
         // Badge nombre de résultat - onglet contenu éditorial
-        // récupération de l'élément dans le header et affichage dans l'onglet
-        let nbrElement = $('.view-resultats-de-recherche .view-header.container')[0].innerText;
+        let onglet = $('#block-openig-local-tasks #nbContenuEditorial');
+        let nbrElement = onglet.data('id');
         let badge = $('#block-openig-local-tasks #nbContenuEditorial a');
         badge.append("<span class='badge rounded-pill bg-warning text-black'>"+nbrElement+"</span>");
 

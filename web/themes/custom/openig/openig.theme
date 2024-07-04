@@ -235,26 +235,17 @@ function openig_preprocess_block(&$variables){
   }
 }
 
+function openig_preprocess_menu_local_task(&$variables){
+    // Récupération des types de contenu
+    $query = \Drupal::entityQuery('node');
+    $condition_and = $query->andConditionGroup();
+    $condition_and->condition('type', ['article', 'evenement', 'groupe_de_travail', 'page', 'service'], 'IN');
+    $query->condition($condition_and);
+    $query->condition('status', 1);
+    $query->accessCheck(TRUE);
+    $nb_resultats = $query->count()->execute();
 
-function openig_preprocess_menu_local_tasks(&$variables){
-  if (!empty($variables['primary'])) {
-      $variables['primary']['views_view:view.resultats_de_recherche.recherche_contenu_editorial']['#link']['id'] = 'nbContenuEditorial';
-  }
-  //dump($variables['primary']);
+    $variables['nbContenu'] = $nb_resultats;
 }
 
-/*function openig_preprocess_views_view_fields(&$variables){
-  //dump($variables);exit;
-  if($variables['current_display'] === 'recherche_contenu_editorial'){
-
-  }
-}*/
-
-/*function openig_preprocess_views_view__recherche_contenu_editorial(&$variables){
-  //dump($variables);
-}*/
-
-/*function oeb_preprocess_views_view_field(&$variables){
-  dump($variables);exit;
-}*/
 
