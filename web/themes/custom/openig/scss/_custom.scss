@@ -1457,3 +1457,68 @@ form{
         }
     }
 }
+
+// Formulaires d'inscription et de connexion 
+form.user-register-form, form.user-login-form, form.user-pass{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+form.user-register-form{
+    .form-type-email, .form-type-textfield, .form-type-tel, .form-type-entity-autocomplete, .form-actions{
+        margin-top: 2rem;
+    }
+    a.btn:hover{
+        background-color: $OPenIG-color_blue;
+    }
+    .form-type-entity-autocomplete{
+        label{
+            width: 100%;
+        }
+    }
+}
+
+.ui-widget.ui-widget-content{
+    .ui-dialog-buttonpane.ui-widget-content{
+        .ui-dialog-buttonset.form-actions{
+            button{
+                background-color: $OPenIG-color_blue;
+                border: none;
+            }
+            button:focus{
+                color: $OPenIG-color_white;
+            }
+        }
+    }
+    .field-add-more-submit.button.js-form-submit.form-submit{
+        font-size: $OPenIG-font-size-sm;
+    }
+    td .button.js-form-submit.form-submit{
+        font-size: $OPenIG-font-size-sm
+    }
+    form{
+        font-family: 'OpenSans_Regular';
+        > div, > fieldset{
+            margin-top: 2rem;
+        }
+        h4{
+            font-weight: 400;
+        }
+        th.field-label{
+            padding: 0;
+        }
+    }
+    .form-actions{
+        button{
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+        }
+    }
+
+    .tabledrag-toggle-weight-wrapper{
+        button{
+            font-size: $OPenIG-font-size-sm;
+            color: $OPenIG-color_blue;
+        }
+    }
+}
+

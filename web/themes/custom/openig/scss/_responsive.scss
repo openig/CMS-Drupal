@@ -718,6 +718,13 @@
         }
     }
 
+    .path-user{
+        h1{
+            padding-left: 0 !important;
+            margin-left: 0 !important;
+        }
+    }
+
     .path-annuaire{
         .btn_filtre{
             margin-bottom: 3rem !important;
@@ -1699,6 +1706,61 @@
                     font-size: $OPenIG-font-size-xs
                 }
             }
+        }
+    }
+
+    .ui-widget.ui-widget-content{
+        form{
+            font-size: $OPenIG-font-size-sm;
+        }
+        .field-add-more-submit.button.js-form-submit.form-submit{
+            font-size: $OPenIG-font-size-xs;
+        }
+        td .button.js-form-submit.form-submit{
+            font-size: $OPenIG-font-size-xs
+        }
+        .form-actions{
+            button{
+                font-weight: 600;
+                font-family: 'Exo_semiBold';
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+        .tabledrag-toggle-weight-wrapper{
+            button{
+                font-size: $OPenIG-font-size-xs;
+            }
+        }
+    }
+
+    form.user-register-form, form.user-login-form, form.user-pass{
+        font-size: $OPenIG-font-size-sm;
+        margin-bottom: 3rem;
+        .form-actions{
+            .form-submit{
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+    form.openid-connect-login-form{
+        .form-submit{
+            font-size: $OPenIG-font-size-sm;
+        }
+    }
+    #block-openig-local-tasks{
+        nav{
+            a{
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+    .path-user{
+        .title_share{
+            min-height: unset !important;
+        }
+        #block-openig-page-title h1{
+            padding-left: 0 !important;
+            margin-left: 0 !important;
         }
     }
 
