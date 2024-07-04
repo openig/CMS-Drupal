@@ -5,9 +5,11 @@ dependencies:
   config:
     - filter.format.restricted_html
     - node.type.structure
+    - workflows.workflow.structure
   module:
     - comment
     - contact
+    - content_moderation
     - eu_cookie_compliance
     - filter
     - media
@@ -30,6 +32,7 @@ permissions:
   - 'display eu cookie compliance popup'
   - 'search content'
   - 'subscribe to newsletters'
+  - 'use structure transition create_new_draft'
   - 'use text format restricted_html'
   - 'view media'
   - 'view user email addresses'
