@@ -266,6 +266,31 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 #block-openig-demarchedadhesionaopenig{
+    padding-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .field--name-body{
+        font-family: 'OpenSans_Regular', sans-serif;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+    }
+    button.lienSimulation{
+        height: 30px;
+        background-color: $OPenIG-color_yellow;
+        border: none;
+        border-radius: 6px;
+        color: $OPenIG-color_black;
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-sm;
+        padding: 5px 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        margin: 0;
+        i{
+            margin-right: 5px;
+            font-size: 18px;
+        }
+    }
     .modal{
         .modal-dialog{ 
             max-width: unset;
@@ -297,7 +322,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
- #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
+ #block-openig-ensavoirplussurladhesion{
     padding-left: 150px;
     margin-top: 50px;
     margin-bottom: 50px;

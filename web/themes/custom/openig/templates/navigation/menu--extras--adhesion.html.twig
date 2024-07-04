@@ -66,6 +66,8 @@
                 {{item['content']['field_picto']}}
               {% endif %}
               {{ link(username, item.url, { 'class': classes_link }) }}
+            {% elseif item.title == 'Se déconnecter' %}
+              {{ link(item['content']['field_picto_fontawesome'], item.url, { 'class': classes_link }) }}
             {% else %}
                 {{ link(item.title, item.url, { 'class': classes_link }) }}
             {% endif %}
