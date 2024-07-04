@@ -1645,6 +1645,15 @@
     }
     
     #block-openig-demarchedadhesionaopenig{
+        button.lienSimulation{
+            height: 25px !important;
+            padding: 0 10px !important;
+            font-size: $OPenIG-font-size-xs !important;
+            margin-top: 0.5rem;
+            i{
+                font-size: $OPenIG-font-size-base !important;
+            }
+        }
         .modal{
             h2{
                 border-bottom: 0 !important;
