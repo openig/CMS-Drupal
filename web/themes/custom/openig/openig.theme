@@ -252,7 +252,7 @@ function openig_preprocess_menu_local_task(&$variables){
 function openig_preprocess_views_view_fields__recherche_contenu_editorial(&$variables){
     if($variables['row']->_entity->type[0]->target_id === "evenement"){
         $nid = $variables['row']->_entity->nid[0]->value;
-        $variables['urlCustom'] = '/l-agenda&id='.$nid;
+        $variables['urlCustom'] = '/l-agenda?id='.$nid;
     }
     else{
       $nid = $variables['row']->_entity->nid[0]->value;
