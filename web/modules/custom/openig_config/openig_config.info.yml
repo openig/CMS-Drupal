@@ -56,3 +56,4 @@ dependencies:
   - menu_link_attributes
   - field_permissions
   - entity_reference_modal
+  - content_moderation
