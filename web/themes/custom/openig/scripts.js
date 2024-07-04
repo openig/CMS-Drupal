@@ -156,19 +156,20 @@
         })
 
 
-        // Page Recherche affichage spécifique pour les événements
-
-      $('.view-resultats-de-recherche .views-view-responsive-grid__item').click(function() {
-          if($(this).find('.contenu').hasClass('d-block')){
-            $(this).find('.contenu').removeClass('d-block');
-            $(this).find('.contenu').addClass('d-none');
-          }
-          else{
-            $(this).find('.contenu').removeClass('d-none');
-            $(this).find('.contenu').addClass('d-block');
-          }
-
+        // Todo Page Recherche affichage spécifique pour les événements
+        $('.view-resultats-de-recherche .views-view-responsive-grid__item').click(function(){
+            // Affichage du contenu sous l'événement
+            var contenu = $(this).find('.contenu');
+            var clone = $(contenu).clone(true);
+            $('.view-resultats-de-recherche #contenu_evenement').html(clone);
         })
+
+
+        // Badge nombre de résultat - onglet contenu éditorial
+        // récupération de l'élément dans le header et affichage dans l'onglet
+        let nbrElement = $('.view-resultats-de-recherche .view-header.container')[0].innerText;
+        let badge = $('#block-openig-local-tasks #nbContenuEditorial a');
+        badge.append("<span class='badge rounded-pill bg-warning text-black'>"+nbrElement+"</span>");
 
 
         // Affichage du panneau de filtre

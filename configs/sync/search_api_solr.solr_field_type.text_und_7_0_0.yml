@@ -1,5 +1,5 @@
 uuid: 19fa543b-04f6-40cd-8b2d-6c77d0714ab1
-langcode: en
+langcode: fr
 status: true
 dependencies: {  }
 _core:
@@ -60,9 +60,9 @@ field_type:
       filters:
         -
           class: solr.SynonymGraphFilterFactory
+          ignoreCase: true
           synonyms: synonyms_und.txt
           expand: true
-          ignoreCase: true
         -
           class: solr.StopFilterFactory
           ignoreCase: true
@@ -195,8 +195,6 @@ solr_configs:
 text_files:
   stopwords: |
 
-  synonyms: |
-    drupal, durpal
   protwords: |
 
   accents: |
@@ -348,3 +346,5 @@ text_files:
     "\uFB05" => "st"
     # ﬆ => st
     "\uFB06" => "st"
+  synonyms: |
+    drupal, durpal
