@@ -1,0 +1,19 @@
+uuid: 5ffe5669-bffa-45f1-be7d-52f624d4fde9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - fontawesome
+    - menu_link_content
+id: menu_link_content.field_picto_fontawesome
+field_name: field_picto_fontawesome
+entity_type: menu_link_content
+type: fontawesome_icon
+settings: {  }
+module: fontawesome
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
