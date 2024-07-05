@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.user.compact
     - field.field.user.user.field_ca_member
+    - field.field.user.user.field_desired_structure
     - field.field.user.user.field_firstname
     - field.field.user.user.field_lastname
     - field.field.user.user.field_outils_competences
@@ -40,6 +41,7 @@ content:
 hidden:
   breadcrumbs: true
   field_ca_member: true
+  field_desired_structure: true
   field_outils_competences: true
   field_phone: true
   field_referent: true

@@ -5,13 +5,16 @@ dependencies:
   config:
     - filter.format.basic_html
     - filter.format.webform_default
+    - node.type.structure
   module:
     - comment
     - contact
     - eu_cookie_compliance
+    - field_permissions
     - file
     - filter
     - media
+    - node
     - search
     - shortcut
     - simplenews
@@ -30,13 +33,18 @@ permissions:
   - 'access site-wide contact form'
   - 'access toolbar'
   - 'access user profiles'
+  - 'create structure content'
   - 'delete own files'
   - 'display eu cookie compliance popup'
+  - 'edit own structure content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
   - 'subscribe to newsletters'
   - 'use text format basic_html'
   - 'use text format webform_default'
+  - 'view field_ca_member'
+  - 'view field_referent'
+  - 'view field_structure'
   - 'view media'
   - 'view user email addresses'

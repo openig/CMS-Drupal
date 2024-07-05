@@ -1,0 +1,69 @@
+uuid: 0925570f-4d35-42d5-bab6-06da93f89ae5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.structure
+  module:
+    - content_moderation
+id: structure
+label: Structure
+type: content_moderation
+type_settings:
+  states:
+    archived:
+      label: Archivé
+      weight: 3
+      published: false
+      default_revision: false
+    draft:
+      label: 'En attente de validation'
+      weight: 0
+      published: false
+      default_revision: false
+    published:
+      label: Validé
+      weight: 1
+      published: true
+      default_revision: true
+    refused:
+      label: Refusé
+      weight: 2
+      published: false
+      default_revision: false
+  transitions:
+    archiver:
+      label: Archiver
+      from:
+        - published
+      to: archived
+      weight: 3
+    create_new_draft:
+      label: 'Create New Draft'
+      from:
+        - draft
+        - published
+      to: draft
+      weight: 0
+    desarchiver:
+      label: Désarchiver
+      from:
+        - archived
+      to: published
+      weight: 4
+    publish:
+      label: Validation
+      from:
+        - draft
+      to: published
+      weight: 1
+    refus:
+      label: Refus
+      from:
+        - draft
+      to: refused
+      weight: 2
+  entity_types:
+    node:
+      - structure
+  default_moderation_state: draft

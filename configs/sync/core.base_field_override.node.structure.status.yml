@@ -1,0 +1,22 @@
+uuid: 8dac792c-bc1a-4c03-8825-7318a3d1ea47
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.structure
+id: node.structure.status
+field_name: status
+entity_type: node
+bundle: structure
+label: Publié
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

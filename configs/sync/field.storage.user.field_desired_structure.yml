@@ -1,4 +1,4 @@
-uuid: 42cc1b02-c6eb-4d2e-8576-c653d4b50830
+uuid: 27ada683-bfd5-436d-88aa-404d9917b38c
 langcode: fr
 status: true
 dependencies:
@@ -8,16 +8,16 @@ dependencies:
     - user
 third_party_settings:
   field_permissions:
-    permission_type: custom
-id: node.field_contacts
-field_name: field_contacts
-entity_type: node
+    permission_type: private
+id: user.field_desired_structure
+field_name: field_desired_structure
+entity_type: user
 type: entity_reference
 settings:
-  target_type: user
+  target_type: node
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

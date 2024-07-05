@@ -1,0 +1,30 @@
+uuid: 4de3a88e-bf40-41d0-ab8f-be5636d7c10d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_desired_structure
+    - node.type.structure
+  module:
+    - user
+id: user.user.field_desired_structure
+field_name: field_desired_structure
+entity_type: user
+bundle: user
+label: 'Structure souhaitée'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      structure: structure
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
