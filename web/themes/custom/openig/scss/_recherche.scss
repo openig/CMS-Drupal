@@ -216,6 +216,13 @@
       }
     }
 
+    .paragraphs-description .paragraphs-content-wrapper, .paragraphs-description .paragraphs-plugin-wrapper{
+      height: fit-content;
+    }
+    .paragraphs-description .summary-content{
+      color: $OPenIG-color_black;
+    }
+
     .views-field.views-field-type{
       display: none;
     }
