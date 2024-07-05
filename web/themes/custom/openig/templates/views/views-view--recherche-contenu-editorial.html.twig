@@ -39,6 +39,7 @@
   dom_id ? 'js-view-dom-id-' ~ dom_id
 ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -46,7 +47,7 @@
   {% endif %}
   {{ title_suffix }}
   {% if header %}
-    <div class="view-header container">
+    <div class="view-header container" id="nbrContenu" data-id="{{ nbContenu }}">
       {{ header }}
     </div>
   {% endif %}

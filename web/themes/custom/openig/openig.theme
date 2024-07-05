@@ -248,6 +248,36 @@ function openig_preprocess_menu_local_task(&$variables){
     $variables['nbContenu'] = $nb_resultats;
 }
 
+function openig_preprocess_views_view__recherche_contenu_editorial(&$variables){
+   // Traitement du nombre de contenu avec ou sans filtre (type de contenu et/ou tag - dans l'onglet contenu éditorial)
+   $query = \Drupal::entityQuery('node');
+   $condition_or = $query->orConditionGroup();
+   foreach($variables['view']->filter['type_1']->value as $contentType){
+      $condition_or->condition('type', $contentType);
+   }
+   $query->condition($condition_or);
+   $query->condition('status', 1);
+   $query->accessCheck(TRUE);
+   $nb_resultats = $query->count()->execute();
+   //$nodes = \Drupal\node\Entity\Node::loadMultiple($query->execute());
+   //dump($nodes);
+   //dump($nodes[1]);
+   //dump($nodes[1]->get('vid')->getValue());
+
+   // Todo Traitement de filtre sur les tag si il y en a
+   //dump($variables['view']->filter);
+   //dump($variables['view']->filter['field_tag']->value);
+   $tags = $variables['view']->filter['field_tag']->value;
+
+   /*$queryTaxo = \Drupal::entityQuery('taxonomy_term');
+   $queryTaxo->condition('vid', 'tags');
+   //$queryTaxo->condition('name', '%' . db_like($keyword) . '%', 'like');
+   $queryTaxo->accessCheck(TRUE);
+   $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($queryTaxo->execute());
+   dump($terms);*/
+
+   $variables['nbContenu'] = $nb_resultats;
+}
 
 function openig_preprocess_views_view_fields__recherche_contenu_editorial(&$variables){
     if($variables['row']->_entity->type[0]->target_id === "evenement"){
