@@ -235,6 +235,15 @@ function openig_preprocess_block(&$variables){
   }
 }
 
+function openig_preprocess_views_view(&$variables){
+  if($variables['id'] == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view_array']['#arguments'][0]);
+    if ($term->vid[0]->target_id == 'outils_competences') {
+      $variables['vid'] = 'outils_competences';
+    }
+  }
+}
+
 function openig_preprocess_views_view_fields(&$variables){
   if($variables['view']->current_display == 'annuaire'){
     $node = \Drupal\node\Entity\Node::load($variables['row']->nid);

@@ -307,6 +307,12 @@
                 window.open(link, '_blank');
             }, 2000);
         });
-    })
 
+        if ($('body').hasClass('path-groupe')) {
+            var title = $('#block-openig-page-title h1').text();
+            $('.breadcrumb .breadcrumb-item:last').text(title);
+            console.log($('.breadcrumb .breadcrumb-item:last'));
+
+        }
+    })
 })(jQuery);

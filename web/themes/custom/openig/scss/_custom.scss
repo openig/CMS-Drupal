@@ -1547,8 +1547,25 @@ form.user-register-form{
     }
 }
 
-
-
 .view-terme-de-taxonomie-utilisateur{
     margin-top: 3rem;
+    .card-body{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .nom-prenom{
+            display: flex;
+            flex-wrap: wrap;
+            color: $OPenIG-color_black;
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-base;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            .views-field-field-firstname{
+                margin-right: 0.5rem;
+            }
+        }
+    }
 }

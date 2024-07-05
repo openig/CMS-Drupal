@@ -163,7 +163,7 @@
 						<div class="groupes">
 							{% for groupe in groupes %}
 								<div class="groupe">
-									<a href="groupes-de-travail/{{groupe.nid}}" target="_blank">{{groupe.title}}</a>
+									<a href="groupe/{{groupe.nid}}" target="_blank">{{groupe.title}}</a>
 								</div>
 							{% endfor %}
 						</div>
@@ -172,7 +172,7 @@
 						<div class="outils_competences">
 							{% for outil_competence in outils_competences %}
 								<div class="outil_competence">
-									<a href="outils-competences/{{outil_competence.tid}}" target="_blank">{{outil_competence.name}}</a>
+									<a href="taxonomy/term/{{outil_competence.tid}}" target="_blank">{{outil_competence.name}}</a>
 								</div>
 							{% endfor %}
 						</div>

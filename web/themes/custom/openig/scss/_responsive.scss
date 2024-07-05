@@ -1886,6 +1886,14 @@
             margin: auto !important;
         }
     }
+
+    .view-terme-de-taxonomie-utilisateur{
+        .card-body{
+            .nom-prenom{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
