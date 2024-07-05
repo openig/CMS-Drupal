@@ -311,8 +311,32 @@
         if ($('body').hasClass('path-groupe')) {
             var title = $('#block-openig-page-title h1').text();
             $('.breadcrumb .breadcrumb-item:last').text(title);
-            console.log($('.breadcrumb .breadcrumb-item:last'));
+        }
 
+        if($('.view').hasClass('view-taxonomy-term')){
+            $(".view-content .col-lg-3").each(function(){
+                var type = $(this).find('.views-field-type .field-content');
+                if($(type).text().replace(/\s+/g, '') == 'Evènement'){
+                    var nid = $(this).find('.views-field-nid .field-content');
+                    var title = $(this).find('.views-field-title .field-content a');
+                    var more = $(this).find('.views-field-view-node .field-content a');
+                    $(title).attr("href", "/l-agenda?id=" + $(nid).text().replace(/\s+/g, ''));
+                    $(more).attr("href", "/l-agenda?id=" + $(nid).text().replace(/\s+/g, ''));
+                }
+                if($(type).text().replace(/\s+/g, '') == 'Ressource'){
+                    var lien = $(this).find('.views-field-field-link .field-content');
+                    var title = $(this).find('.views-field-title .field-content a');
+                    var more = $(this).find('.views-field-view-node .field-content a');
+                    var fichier = $(this).find('.views-field-field-file .field-content');
+                    if(!$(lien).is(':empty')){
+                        $(title).attr("href", $(lien).text().replace(/\s+/g, '')).attr('target', '_blank');
+                        $(more).attr("href", $(lien).text().replace(/\s+/g, '')).attr('target', '_blank');
+                    }else if(!$(fichier).is(':empty')){
+                        $(title).attr("href", $(fichier).text().replace(/\s+/g, '')).attr('target', '_blank');
+                        $(more).attr("href", $(fichier).text().replace(/\s+/g, '')).attr('target', '_blank');
+                    }
+                }
+            })
         }
     })
 })(jQuery);

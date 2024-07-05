@@ -1253,6 +1253,9 @@ form{
                 flex-direction: column;
                 padding: 0;
             }
+            .views-field-type, .views-field-nid, .views-field-field-file, .views-field-field-link{
+                display: none;
+            }
             .views-field-fieldset{
                 .titlepicto{
                     display: flex;
