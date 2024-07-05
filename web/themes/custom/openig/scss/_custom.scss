@@ -1236,7 +1236,7 @@ form{
 .view-taxonomy-term.view-display-id-taxonomy-term{
     margin-top: 5rem !important;
 }
-.view.view-taxonomy-term{
+.view.view-taxonomy-term, .view-terme-de-taxonomie-utilisateur{
     margin-top: 5rem;
     position: relative;
     .view-content{
@@ -1260,6 +1260,12 @@ form{
                     padding: 1rem;
                     .views-field-title{
                         width: 100%;
+                        color: $OPenIG-color_black;
+                        font-family: 'Exo_semiBold';
+                        font-size: $OPenIG-font-size-base;
+                        font-weight: 600;
+                        text-decoration: none;
+                        text-transform: uppercase;
                         a{
                             color: $OPenIG-color_black;
                             font-family: 'Exo_semiBold';
@@ -1568,4 +1574,8 @@ form.user-register-form{
             }
         }
     }
+}
+
+.view-display-id-termes_gt{
+    margin-top: 5rem;
 }

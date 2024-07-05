@@ -297,4 +297,16 @@ function openig_preprocess_views_view_fields(&$variables){
       $variables['contacts'][$value->target_id]['mail'] = $user->get('mail')->value;
     }
   }
+
+  if($variables['view']->current_display == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view']->args[0]);
+    if ($term->vid[0]->target_id == 'typologie_de_structure') {
+      $variables['vid'] = 'typologie_de_structure';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+    }
+    elseif ($term->vid[0]->target_id == 'dpt_intervention') {
+      $variables['vid'] = 'dpt_intervention';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+    }
+  }
 }

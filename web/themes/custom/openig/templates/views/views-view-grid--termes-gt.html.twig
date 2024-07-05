@@ -1,97 +1,81 @@
 {#
 /**
  * @file
- * Theme override for a main view template.
+ * Theme override for views to display rows in a grid.
  *
  * Available variables:
- * - attributes: Remaining HTML attributes for the element.
- * - css_name: A CSS-safe version of the view name.
- * - css_class: The user-specified classes names, if any.
- * - header: The optional header.
- * - footer: The optional footer.
- * - rows: The results of the view query, if any.
- * - empty: The content to display if there are no rows.
- * - pager: The optional pager next/prev links to display.
- * - exposed: Exposed widget form/info to display.
- * - feed_icons: Optional feed icons to display.
- * - more: An optional link to the next page of results.
- * - title: Title of the view, only used when displaying in the admin preview.
- * - title_prefix: Additional output populated by modules, intended to be
- *   displayed in front of the view title.
- * - title_suffix: Additional output populated by modules, intended to be
- *   displayed after the view title.
- * - attachment_before: An optional attachment view to be displayed before the
- *   view content.
- * - attachment_after: An optional attachment view to be displayed after the
- *   view content.
- * - dom_id: Unique id for every view being printed to give unique class for
- *   JavaScript.
+ * - attributes: HTML attributes for the wrapping element.
+ * - title: The title of this group of rows.
+ * - view: The view object.
+ * - rows: The rendered view results.
+ * - options: The view plugin style options.
+ *   - row_class_default: A flag indicating whether default classes should be
+ *     used on rows.
+ *   - col_class_default: A flag indicating whether default classes should be
+ *     used on columns.
+ * - items: A list of grid items. Each item contains a list of rows or columns.
+ *   The order in what comes first (row or column) depends on which alignment
+ *   type is chosen (horizontal or vertical).
+ *   - attributes: HTML attributes for each row or column.
+ *   - content: A list of columns or rows. Each row or column contains:
+ *     - attributes: HTML attributes for each row or column.
+ *     - content: The row or column contents.
  *
- * @see template_preprocess_views_view()
+ * @see template_preprocess_views_view_grid()
  */
 #}
 {%
 	set classes = [
-	  'view',
-	  'view-' ~ id|clean_class,
-	  'view-id-' ~ id,
-	  'view-display-id-' ~ display_id,
-	  dom_id ? 'js-view-dom-id-' ~ dom_id,
-	  'container'
+	  'views-view-grid',
+	  options.alignment,
+	  'cols-' ~ options.columns,
+	  'clearfix',
 	]
   %}
+  {% if options.row_class_default %}
+	{%
+	  set row_classes = [
+		'views-row',
+		options.alignment == 'horizontal' ? 'clearfix',
+	  ]
+	%}
+  {% endif %}
+  {% if options.col_class_default %}
+	{%
+	  set col_classes = [
+		'views-col',
+		options.alignment == 'vertical' ? 'clearfix',
+	  ]
+	%}
+  {% endif %}
+  {% if title %}
+	<h3>{{ title }}</h3>
+  {% endif %}
   <div{{ attributes.addClass(classes) }}>
-	{{ title_prefix }}
-	{% if title %}
-	  {{ title }}
-	{% endif %}
-	{{ title_suffix }}
-	{% if header %}
-	  <div class="view-header">
-		{{ header }}
-	  </div>
-	{% endif %}
-	{% if exposed %}
-	  <div class="view-filters">
-		{{ exposed }}
-	  </div>
-	{% endif %}
-	{% if attachment_before %}
-	  <div class="attachment attachment-before">
-		{{ attachment_before }}
-	  </div>
-	{% endif %}
-  
-	{% if rows %}
-	  <div class="view-content">
-		{{ rows }}
-	  </div>
-	{% elseif empty %}
-	  <div class="view-empty container">
-		{{ empty }}
-	  </div>
-	{% endif %}
-  
-	{% if pager %}
-	  {{ pager }}
-	{% endif %}
-	{% if attachment_after %}
-	  <div class="attachment attachment-after">
-		{{ attachment_after }}
-	  </div>
-	{% endif %}
-	{% if more %}
-	  {{ more }}
-	{% endif %}
-	{% if footer %}
-	  <div class="view-footer">
-		{{ footer }}
-	  </div>
-	{% endif %}
-	{% if feed_icons %}
-	  <div class="feed-icons">
-		{{ feed_icons }}
-	  </div>
+	{% if options.alignment == 'horizontal' %}
+	  {% for row in items %}
+		<div class="row" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+		  {% for column in row.content %}
+			<div class="col-lg-3 col-12 col-md-6" {{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+			  <div class="card h-100">
+				  <div class="card-body">
+					  {{- column.content -}}
+				  </div>
+			  </div>
+			</div>
+		  {% endfor %}
+		</div>
+	  {% endfor %}
+	{% else %}
+	  {% for column in items %}
+		<div{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+		  {% for row in column.content %}
+			<div{{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
+			  {{- row.content -}}
+			</div>
+		  {% endfor %}
+		</div>
+	  {% endfor %}
 	{% endif %}
   </div>
   
