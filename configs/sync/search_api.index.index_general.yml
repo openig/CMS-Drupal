@@ -96,6 +96,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_theme_overview
+  status:
+    label: Publié
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
+      module:
+        - node
   title:
     label: Titre
     datasource_id: 'entity:node'
