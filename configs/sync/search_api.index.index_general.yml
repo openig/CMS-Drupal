@@ -109,7 +109,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: 21.0
     dependencies:
       module:
         - node
