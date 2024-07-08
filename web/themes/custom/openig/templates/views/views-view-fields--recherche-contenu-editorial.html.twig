@@ -66,8 +66,10 @@
 
 {%- endfor %}
 
-<div class="more-link">
-  <a href="{{ urlCustom }}">En savoir plus</a>
-</div>
+{% if urlCustom is not null %}
+  <div class="more-link">
+    <a href="{{ urlCustom }}">En savoir plus</a>
+  </div>
+{% endif %}
 
 

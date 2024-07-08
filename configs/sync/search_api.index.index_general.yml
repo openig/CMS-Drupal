@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_body
+    - field.storage.node.field_description
     - field.storage.node.field_news_overview
     - field.storage.node.field_theme_overview
     - field.storage.node.field_tag
@@ -72,6 +73,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_body
+  field_description:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: field_description
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_description
   field_news_overview:
     label: "Présentation générale de l'actualité"
     datasource_id: 'entity:node'
@@ -116,7 +125,7 @@ field_settings:
     label: 'Type de contenu'
     datasource_id: 'entity:node'
     property_path: type
-    type: text
+    type: string
     dependencies:
       module:
         - node
@@ -129,6 +138,7 @@ datasource_settings:
         - evenement
         - groupe_de_travail
         - page
+        - ressource
         - service
     languages:
       default: true
