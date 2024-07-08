@@ -125,7 +125,7 @@ field_settings:
     label: 'Type de contenu'
     datasource_id: 'entity:node'
     property_path: type
-    type: string
+    type: text
     dependencies:
       module:
         - node
@@ -158,7 +158,7 @@ processor_settings:
     excerpt_always: false
     excerpt_length: 256
     exclude_fields: {  }
-    highlight: always
+    highlight: never
     highlight_partial: false
   language_with_fallback: {  }
   rendered_item: {  }

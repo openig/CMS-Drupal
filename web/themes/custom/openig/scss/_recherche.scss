@@ -62,16 +62,8 @@
         margin-top: 2rem;
       }
 
-      .form-item-exposed-from-date, .form-item-exposed-to-date {
-        width: 175px;
-        display: flex;
-        align-items: center;
-        margin-top: 5px;
-
-        label {
-          margin-right: 5px;
-          font-size: $OPenIG-font-size-sm;
-        }
+      .js-form-item-search-api-fulltext{
+        display: none;
       }
 
       .js-form-submit {
@@ -90,7 +82,7 @@
         border: 1px solid $OPenIG-color_gray;
       }
 
-      label, .form-date {
+      label {
         font-size: $OPenIG-font-size-sm;
       }
 

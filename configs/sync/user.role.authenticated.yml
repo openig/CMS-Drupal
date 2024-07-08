@@ -12,7 +12,6 @@ dependencies:
     - file
     - filter
     - media
-    - search
     - shortcut
     - simplenews
     - system
@@ -33,7 +32,6 @@ permissions:
   - 'delete own files'
   - 'display eu cookie compliance popup'
   - 'post comments'
-  - 'search content'
   - 'skip comment approval'
   - 'subscribe to newsletters'
   - 'use text format basic_html'
