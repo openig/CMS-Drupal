@@ -235,6 +235,15 @@ function openig_preprocess_block(&$variables){
   }
 }
 
+function openig_preprocess_views_view(&$variables){
+  if($variables['id'] == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view_array']['#arguments'][0]);
+    if ($term->vid[0]->target_id == 'outils_competences') {
+      $variables['vid'] = 'outils_competences';
+    }
+  }
+}
+
 function openig_preprocess_views_view_fields(&$variables){
   if($variables['view']->current_display == 'annuaire'){
     $node = \Drupal\node\Entity\Node::load($variables['row']->nid);
@@ -286,6 +295,18 @@ function openig_preprocess_views_view_fields(&$variables){
       $variables['contacts'][$value->target_id]['prenom'] = $user->get('field_firstname')->value;
       $variables['contacts'][$value->target_id]['nom'] = $user->get('field_lastname')->value;
       $variables['contacts'][$value->target_id]['mail'] = $user->get('mail')->value;
+    }
+  }
+
+  if($variables['view']->current_display == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view']->args[0]);
+    if ($term->vid[0]->target_id == 'typologie_de_structure') {
+      $variables['vid'] = 'typologie_de_structure';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+    }
+    elseif ($term->vid[0]->target_id == 'dpt_intervention') {
+      $variables['vid'] = 'dpt_intervention';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
     }
   }
 }
