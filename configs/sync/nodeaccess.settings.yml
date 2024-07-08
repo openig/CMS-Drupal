@@ -221,8 +221,8 @@ bundles_roles_grants:
       grant_delete: 0
     administrator:
       grant_view: 1
-      grant_update: 0
-      grant_delete: 0
+      grant_update: 1
+      grant_delete: 1
     adherent:
       grant_view: 1
       grant_update: 0
@@ -232,15 +232,15 @@ bundles_roles_grants:
       grant_update: 0
       grant_delete: 0
 grants_tab_availability:
-  article: false
-  evenement: false
-  groupe_de_travail: false
-  page: false
+  article: true
+  evenement: true
+  groupe_de_travail: true
+  page: true
   ressource: true
-  service: false
-  simplenews_issue: false
-  structure: false
-  temoignage: false
+  service: true
+  simplenews_issue: true
+  structure: true
+  temoignage: true
 map_rid_gid:
   anonymous: 0
   authenticated: 1
