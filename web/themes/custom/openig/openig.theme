@@ -59,7 +59,7 @@ function openig_preprocess_node(&$variables, $hook){
       $ressourcesCheck = [];
       // Récupération des types de ressources
       $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
-     
+
       // Création d'un tableau avec les types de ressources
       foreach ($types as $type) {
         $name = $type->name[0]->value;
@@ -89,7 +89,7 @@ function openig_preprocess_node(&$variables, $hook){
             $referencedEntityType = $name[0]['value'];
             // Ajout de la ressource dans le tableau de son type
             $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value][] = $referencedEntity;
-            if ($check == false) {  
+            if ($check == false) {
               $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'false';
             }
             else{
@@ -108,7 +108,7 @@ function openig_preprocess_node(&$variables, $hook){
       }
 
       // Vérification si l'utilisateur est membre
-      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());    
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
       $userID = $user->uid[0]->value;
       foreach ($variables['node']->field_members as $membre) {
         if ($membre->target_id == $userID) {
@@ -124,7 +124,7 @@ function openig_preprocess_node(&$variables, $hook){
         $variables['evenements'] = 'oui';
       }
       break;
-      
+
       case "article":
         $variables['ressources'] = array();
         $nid = $variables['node']->nid->value;
@@ -133,7 +133,7 @@ function openig_preprocess_node(&$variables, $hook){
         $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
         $result = $query->fetchAll();
         $ressourcesCheck = [];
-        
+
         // Début compteur des ressources inaccessibles
         $countCheckFalse = 0;
         foreach ($result as $ressource) {
@@ -145,7 +145,7 @@ function openig_preprocess_node(&$variables, $hook){
 
           $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
 
-          if ($check == false) {  
+          if ($check == false) {
             $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
             // Incrémentation du compteur de ressources inaccessibles
             $countCheckFalse++ ;
@@ -166,7 +166,7 @@ function openig_preprocess_node(&$variables, $hook){
         $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
         $result = $query->fetchAll();
         $ressourcesCheck = [];
-        
+
         // Début compteur des ressources inaccessibles
         $countCheckFalse = 0;
         foreach ($result as $ressource) {
@@ -178,7 +178,7 @@ function openig_preprocess_node(&$variables, $hook){
 
           $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
 
-          if ($check == false) {  
+          if ($check == false) {
             $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
             // Incrémentation du compteur de ressources inaccessibles
             $countCheckFalse++ ;
@@ -310,3 +310,56 @@ function openig_preprocess_views_view_fields(&$variables){
     }
   }
 }
+
+
+function openig_preprocess_menu_local_task(&$variables){
+    // Récupération des types de contenu
+    $query = \Drupal::entityQuery('node');
+    $condition_and = $query->andConditionGroup();
+    $condition_and->condition('type', ['article', 'evenement', 'groupe_de_travail', 'page', 'service', 'ressource'], 'IN');
+    $query->condition($condition_and);
+    $query->condition('status', 1);
+    $query->accessCheck(TRUE);
+    $nb_resultats = $query->count()->execute();
+
+    $variables['nbContenu'] = $nb_resultats;
+}
+
+function openig_preprocess_views_view__recherche_contenu_editorial(&$variables){
+   $variables['nbContenu'] = $variables['view']->total_rows;
+}
+
+function openig_preprocess_views_view_fields__recherche_contenu_editorial(&$variables){
+    if($variables['row']->_entity->type[0]->target_id === "evenement"){
+        $nid = $variables['row']->_entity->nid[0]->value;
+        $variables['urlCustom'] = '/l-agenda?id='.$nid;
+    }
+    elseif($variables['row']->_entity->type[0]->target_id === "ressource"){
+      // Si champ lien alors affichage
+      if(!empty($variables['row']->_entity->field_link->getValue())){
+        $variables['urlCustom'] = $variables['row']->_entity->field_link->getValue()[0]['uri'];
+      }
+      // Si champ fichier alors affichage
+      elseif(!empty($variables['row']->_entity->field_file->getValue())){
+        // Récupération du fichier
+        $file = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_entity->field_file->getValue()[0]['target_id']);
+        $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file->uri->getValue()[0]['value']);
+      }
+      // Si champ image alors affichage
+      elseif(!empty($variables['row']->_entity->field_image->getValue())){
+        // Récupération de l'image
+        $file_img = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_entity->field_image->getValue()[0]['target_id']);
+        $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file_img->uri->getValue()[0]['value']);
+      }
+      else{
+        $variables['urlCustom'] = null;
+      }
+    }
+    else{
+      $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+      $nid = $variables['row']->_entity->nid[0]->value;
+      $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$nid, ($langcode));
+      $variables['urlCustom'] = $alias;
+    }
+}
+

@@ -11,7 +11,7 @@ dependencies:
 id: openig_faq
 theme: openig
 region: navigation_troisieme_section
-weight: -6
+weight: -29
 provider: null
 plugin: 'system_menu_block:faq'
 settings:

@@ -10,12 +10,12 @@
 
         // Afficher/masquer barre de recherche
         $('#search_icon').click(function() {
-            $('#search-block-form').toggleClass('open');
+            $('#views-exposed-form-resultats-de-recherche-block-1').toggleClass('open');
             $('#search_icon').toggleClass('open');
         });
-        $('#block-openig-formulairederecherche .form-submit').val('');
-        $('#block-openig-formulairederecherche-mobile .form-submit').val('');
-        $('#block-openig-formulairederecherche-mobile--2 .form-submit').val('');
+
+        $('#views-exposed-form-resultats-de-recherche-block-1 .form-submit').val('');
+        $('#block-openig-formulaireexposeresultats-de-rechercheblock-1-mobile .form-submit').val('');
         var media1200 = window.matchMedia("(min-width: 1200px)")
         if(media1200.matches){
             // Garder le sous-menu affiché si l'un de ses liens est actifs
@@ -45,7 +45,7 @@
             $('#block-openig-addtoanysharebuttons-bas-page .addtoany_list').toggleClass('open');
         })
 
-    
+
         // Accordéons, ajout d'une class pour la bordure de gauche
         function bordureAccordeons() {
             $(".accordion .accordion-item").each(function(){
@@ -82,7 +82,7 @@
             var link = $(this).find('.views-field-title a');
             $(link).attr('target','_blank');
         })
-    
+
 
 
         // Vue Agenda
@@ -95,14 +95,13 @@
             var dateNow = Date.now();
             var date = new Date(dateNow).toISOString();
             if(datetime >= date){
-                var index = $(this).attr('data-slick-index');               
+                var index = $(this).attr('data-slick-index');
                 $('.slick__slider').slick('slickGoTo',index, true);
                 return false;
             }
         })
 
         // Slide actif au clic sur un évènement de la page d'accueil
-
         if($('body').hasClass('path-l-agenda')){
             var url = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
             for (var i = 0; i < url.length; i++) {
@@ -111,17 +110,19 @@
                     var id = urlparam[1];
                 }
             }
-    
+
+
             $(".slick--view--l-agenda .slick-slide").each(function(){
                 var nid = $(this).find('.views-field-nid .field-content');
                 if(id == $.trim(nid.text())){
-                    var index = $(this).attr('data-slick-index');               
+                    var index = $(this).attr('data-slick-index');
                     $('.slick__slider').slick('slickGoTo',index, true);
                     return false;
                 }
             })
         }
-       
+
+
 
         // Fonction pour modifier l'année et afficher le contenu d'un évènement
         function change_evenement() {
@@ -149,10 +150,31 @@
 
         // Utilisation de la fonction change_evenement au clic sur un slide
         $('.slick--view--l-agenda .slick-slide').click(function() {
-            var index = $(this).attr('data-slick-index');               
+            var index = $(this).attr('data-slick-index');
             $('.slick__slider').slick('slickGoTo',index, true);
             change_evenement();
         })
+
+
+
+        // Badge nombre de résultat - onglet contenu éditorial
+        let onglet = $('#block-openig-local-tasks #nbContenuEditorial');
+        let nbrElementNoFilter = onglet.data('id');
+
+        let badge = $('#block-openig-local-tasks #nbContenuEditorial a');
+
+        let headerSearch = $('.view-resultats-de-recherche #nbrContenu');
+        let nbrElementFilter = headerSearch.data('id');
+
+        var nbrElement = "";
+        if(nbrElementFilter == undefined)
+          nbrElement = nbrElementNoFilter;
+        else
+          nbrElement = nbrElementFilter;
+
+        badge.append("<span class='badge rounded-pill bg-warning text-black'>"+nbrElement+"</span>");
+
+
 
 
         // Affichage du panneau de filtre
@@ -180,7 +202,7 @@
 
 
         var media1200 = window.matchMedia("(max-width: 1200px)")
-        
+
         if(media1200.matches){
             $('#block-openig-views-block-l-agenda-agenda-accueil .view-l-agenda .row').addClass('slick_agenda');
             if($('body').hasClass('path-frontpage')){
@@ -208,7 +230,7 @@
                     ]
                 });
             }
-            
+
             $('.view-les-services.view-display-id-services .view-grid-services .group_columns').addClass('slick_services');
             if($('body').hasClass('path-les-services')){
                 $('.slick_services').slick({

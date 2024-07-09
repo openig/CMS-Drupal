@@ -37,7 +37,7 @@
             width: fit-content;
             padding-left: 0;
             padding-right: 0;
-        
+
             #search_icon{
                 padding-left: 5px;
                 padding-right: 5px;
@@ -62,7 +62,7 @@
                 }
             }
         }
-    } 
+    }
 
     footer {
         .haut_footer_droite{
@@ -221,23 +221,23 @@
         height: 70px;
         width: 100%;
         margin-top: 3rem;
-        form{
+        form, .form--inline.clearfix{
             display: flex;
             align-items: center;
-            .form-type-search{
+            .form-item-search-api-fulltext{
                 width: 85%;
                 label::after{
                     content: '';
                 }
             }
-            input.form-search{
+            input.form-text{
                 border-radius: 2rem;
                 box-shadow: 0px 2px 6px rgba(0,0,0,.16);
                 height: 30px;
                 width: 95%;
                 border: none;
             }
-            .form-item.js-form-type-search.form-type-search{
+            .js-form-item.form-item.js-form-type-textfield{
                 background-color: rgba(0, 160, 154,.2);
                 height: 45px;
                 display: flex;
@@ -354,7 +354,7 @@
                 padding: 0 1rem;
             }
         }
-    } 
+    }
 
     .view-l-agenda.view-display-id-agenda_accueil{
         .slick__arrows{
@@ -490,12 +490,12 @@
             flex-direction: column;
             align-items: end;
         }
-        
+
         #block-openig-adresseetcontact{
             .field--name-field-lien, .field--name-field-email{
                 margin-top: 1.5rem !important;
-            } 
-        } 
+            }
+        }
         #block-openig-adhesion-footer{
             .logged{
                 margin-left: 0.5rem;
@@ -518,7 +518,7 @@
         .region-bas-footer-droite, .region-bas-footer-gauche{
             padding: 0 2rem;
         }
-    } 
+    }
 
     .view-les-services.view-display-id-services, .view-les-groupes-de-travail.view-display-id-groupes_de_travail, .view-les-groupes-de-travail.view-display-id-groupes_de_travail_archives{
         .slick__arrows{
@@ -714,7 +714,7 @@
                 font-size: $OPenIG-font-size-sm;
                 font-family: 'OpenSans_SemiBold';
             }
-            summary::marker {   
+            summary::marker {
                 content: '';
             }
             summary[aria-expanded="true"]::after{
@@ -740,7 +740,7 @@
             margin-bottom: 3rem !important;
         }
     }
-    
+
 }
 
 @media (max-width: 992px){
@@ -751,7 +751,7 @@
     }
     h1{
         font-size: $OPenIG-font-size-lg !important;
-        
+
     }
     h2{
         font-size: $OPenIG-font-size-base !important;
@@ -774,7 +774,7 @@
             height: 100px !important;
             bottom: -60px !important;
         }
-    } 
+    }
     .navigation_filAriane{
         li, a{
             font-size: $OPenIG-font-size-xs !important;
@@ -784,7 +784,7 @@
         display: flex;
         flex-direction: column-reverse;
     }
-    
+
     #block-openig-addtoanysharebuttons{
         margin: unset !important;
         justify-content: end;
@@ -837,7 +837,7 @@
             font-size: $OPenIG-font-size-xs !important;
         }
     }
-   
+
     .view.view-l-agenda.view-display-id-agenda{
         margin-top: 0rem !important;
         margin-bottom: 3rem !important;
@@ -916,7 +916,7 @@
             .field--name-field-dates, .field--name-field-groupe-de-travail, .field--name-field-webform input, .field--name-field-webform label{
                 font-size: $OPenIG-font-size-sm;
             }
-    
+
         }
     }
     .page-node-type-temoignage{
@@ -981,7 +981,7 @@
                 border-bottom: 0 !important;
             }
         }
-        
+
         #block-openig-views-block-contacts-gt-contacts-service, .field--name-field-requirement, #block-openig-views-block-contacts-gt-contacts-gt{
             padding: 1rem 0 !important;
             background-color: $OPenIG-color_white !important;
@@ -1072,11 +1072,11 @@
                     }
                 }
             }
-        }  
+        }
         .accordion-disabled .accordion-button::after{
             display: none;
         }
-    } 
+    }
     .page-node-type-page{
         .node--type-page{
             margin-bottom: 3rem;
@@ -1222,7 +1222,7 @@
             p{
                 margin-bottom: 0;
             }
-        } 
+        }
         button.lienSimulation{
             font-size: $OPenIG-font-size-sm;
         }
@@ -1238,7 +1238,7 @@
             #block-openig-naviguer-menu{
                 font-size: $OPenIG-font-size-sm !important;
             }
-        } 
+        }
         #block-openig-dernierenewsletter a{
             font-size: $OPenIG-font-size-sm !important;
         }
@@ -1250,11 +1250,11 @@
                 a{
                     font-size: $OPenIG-font-size-xs !important;
                 }
-            } 
+            }
             .field--name-field-telephone, .field--name-field-telephone a{
                 font-size: $OPenIG-font-size-base !important;
             }
-        } 
+        }
         #block-openig-identitedusite{
             .navbar-brand .site-logo img{
                 height: 72px !important;
@@ -1278,7 +1278,7 @@
                 font-size: $OPenIG-font-size-sm !important;
             }
         }
-    } 
+    }
     .row_haut_footer{
         display: flex !important;
         flex-direction: column-reverse !important;
@@ -1330,7 +1330,7 @@
             width: 100% !important;
         }
     }
-   
+
     #block-openig-views-block-les-services-services-accueil{
         .view{
             flex-direction: column !important;
@@ -1350,7 +1350,7 @@
         .texte_header{
             padding-bottom: 2rem !important;
         }
-    } 
+    }
     #block-openig-views-block-les-actualites-actualites-accueil-mobile, .view-les-actualites.view-display-id-actualites_mobile{
         .titlepicto{
             padding: 0.5rem 1rem !important;
@@ -1492,7 +1492,7 @@
             }
         }
     }
-    
+
     #block-openig-views-block-bloc-temoignage-block-temoignage{
         margin-top: 7rem !important;
     }
@@ -1635,7 +1635,7 @@
                 .field--name-field-entreprise{
                     font-size: $OPenIG-font-size-xs !important;
                 }
-                
+
             }
         }
     }
@@ -1651,7 +1651,7 @@
             }
         }
     }
-    
+
     #block-openig-demarchedadhesionaopenig{
         button.lienSimulation{
             height: 25px !important;
@@ -1717,7 +1717,7 @@
                 p{
                     font-size: $OPenIG-font-size-xs !important;
                 }
-            } 
+            }
             .eu-cookie-compliance-more-button{
                 font-size: $OPenIG-font-size-xs !important;
             }
@@ -1946,7 +1946,7 @@
                 }
             }
         }
-    } 
+    }
     #block-openig-descriptionaccueil{
         .content_description{
             top: 10% !important;
@@ -1965,7 +1965,7 @@
         .description_header{
             height: 200px;
         }
-    } 
+    }
 
     .slick_actus{
         .slick-slide{
@@ -2016,7 +2016,7 @@
                 }
             }
         }
-    } 
+    }
     .slick-arrow.slick-prev{
         margin-left: 10px !important;
     }

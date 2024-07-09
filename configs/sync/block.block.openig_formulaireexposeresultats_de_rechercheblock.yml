@@ -1,0 +1,23 @@
+uuid: 76080743-7fe6-4f5d-8107-0d69e5778199
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.resultats_de_recherche
+  module:
+    - views
+  theme:
+    - openig
+id: openig_formulaireexposeresultats_de_rechercheblock
+theme: openig
+region: navigation_troisieme_section
+weight: -31
+provider: null
+plugin: 'views_exposed_filter_block:resultats_de_recherche-block_1'
+settings:
+  id: 'views_exposed_filter_block:resultats_de_recherche-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+visibility: {  }

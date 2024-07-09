@@ -3,10 +3,10 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_actualite
+    - field.storage.node.field_body
+    - field.storage.node.field_description
     - field.storage.node.field_news_overview
     - field.storage.node.field_theme_overview
-    - field.storage.node.body
     - field.storage.node.field_tag
     - search_api.server.recherche_solr
   module:
@@ -65,42 +65,52 @@ name: 'Index général'
 description: ''
 read_only: false
 field_settings:
-  body:
+  field_body:
+    label: Body
+    datasource_id: 'entity:node'
+    property_path: field_body
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_body
+  field_description:
     label: Description
     datasource_id: 'entity:node'
-    property_path: body
+    property_path: field_description
     type: text
     dependencies:
       config:
-        - field.storage.node.body
+        - field.storage.node.field_description
   field_news_overview:
-    label: "Actualités » Contenu » Présentation générale de l'actualité"
+    label: "Présentation générale de l'actualité"
     datasource_id: 'entity:node'
-    property_path: 'field_actualite:entity:field_news_overview'
+    property_path: field_news_overview
     type: text
     dependencies:
       config:
-        - field.storage.node.field_actualite
         - field.storage.node.field_news_overview
-      module:
-        - node
   field_tag:
     label: Tag
     datasource_id: 'entity:node'
     property_path: field_tag
-    type: integer
+    type: text
     dependencies:
       config:
         - field.storage.node.field_tag
   field_theme_overview:
-    label: 'Actualités » Contenu » Présentation générale de la thématique'
+    label: 'Présentation générale de la thématique'
     datasource_id: 'entity:node'
-    property_path: 'field_actualite:entity:field_theme_overview'
+    property_path: field_theme_overview
     type: text
     dependencies:
       config:
-        - field.storage.node.field_actualite
         - field.storage.node.field_theme_overview
+  status:
+    label: Publié
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    dependencies:
       module:
         - node
   title:
@@ -108,7 +118,6 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
-    boost: 5.0
     dependencies:
       module:
         - node
@@ -116,19 +125,20 @@ field_settings:
     label: 'Type de contenu'
     datasource_id: 'entity:node'
     property_path: type
-    type: string
+    type: text
     dependencies:
       module:
         - node
 datasource_settings:
   'entity:node':
     bundles:
-      default: true
+      default: false
       selected:
         - article
         - evenement
         - groupe_de_travail
         - page
+        - ressource
         - service
     languages:
       default: true
@@ -139,9 +149,23 @@ processor_settings:
   auto_aggregated_fulltext_field: {  }
   custom_value: {  }
   entity_type: {  }
+  highlight:
+    weights:
+      postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_always: false
+    excerpt_length: 256
+    exclude_fields: {  }
+    highlight: always
+    highlight_partial: false
   language_with_fallback: {  }
   rendered_item: {  }
-  solr_date_range: {  }
+  reverse_entity_references: {  }
+  solr_date_range:
+    weights:
+      preprocess_index: 0
 tracker_settings:
   default:
     indexing_order: fifo

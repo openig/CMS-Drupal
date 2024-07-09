@@ -1,0 +1,19 @@
+uuid: fb0c4250-24e4-4747-9b36-10970dec0eea
+langcode: fr
+status: false
+dependencies:
+  theme:
+    - openig
+id: openig_formulaireexposeresultats_de_recherche
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:resultats_de_recherche-resultats_recherche'
+settings:
+  id: 'views_exposed_filter_block:resultats_de_recherche-resultats_recherche'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Filtrer la recherche'
+visibility: {  }
