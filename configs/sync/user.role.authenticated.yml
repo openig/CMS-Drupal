@@ -6,9 +6,12 @@ dependencies:
     - filter.format.basic_html
     - filter.format.webform_default
     - node.type.structure
+    - workflows.workflow.editorial
+    - workflows.workflow.structure
   module:
     - comment
     - contact
+    - content_moderation
     - eu_cookie_compliance
     - field_permissions
     - file
@@ -41,6 +44,8 @@ permissions:
   - 'search content'
   - 'skip comment approval'
   - 'subscribe to newsletters'
+  - 'use editorial transition create_new_draft'
+  - 'use structure transition create_new_draft'
   - 'use text format basic_html'
   - 'use text format webform_default'
   - 'view field_ca_member'

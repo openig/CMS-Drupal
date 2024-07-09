@@ -1356,6 +1356,7 @@
             padding: 0.5rem 1rem !important;
         }
         .views-field-title{
+            font-size: $OPenIG-font-size-sm !important;
             a{
                 font-size: $OPenIG-font-size-sm !important;
             }
@@ -1675,7 +1676,7 @@
         }
     }
 
-    .view.view-taxonomy-term{
+    .view.view-taxonomy-term, .view-terme-de-taxonomie-utilisateur{
         margin-bottom: 3rem;
         .row{
             margin-bottom: 0 !important;
@@ -1884,6 +1885,14 @@
             max-width: 95% !important;
             width: 95% !important;
             margin: auto !important;
+        }
+    }
+
+    .view-terme-de-taxonomie-utilisateur{
+        .card-body{
+            .nom-prenom{
+                font-size: $OPenIG-font-size-sm !important;
+            }
         }
     }
 }
