@@ -1921,7 +1921,7 @@
     }
     form.user-register-form, form.user-login-form, form.user-pass{
         width: 100% !important;
-        > div{
+        > div, > p{
             width: 90% !important;
         }
     }

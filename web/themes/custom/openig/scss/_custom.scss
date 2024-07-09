@@ -1501,7 +1501,7 @@ form{
         ul{
             border: none;
             li.nav-item{
-                width: 33%;
+                width: 33.3%;
                 text-align: center;
             }
         }
@@ -1519,6 +1519,7 @@ form{
         padding: 0.5rem 1rem 1rem 1rem;
     }
     a:not(.active){
+        border: none;
         background-color: $OPenIG-color_white;
         color: $OPenIG-color_black !important;
         font-size: $OPenIG-font-size-lg;
@@ -1553,12 +1554,12 @@ form.user-register-form, form.user-login-form, form.user-pass{
     > div:first-of-type{
         margin-top: 0;
     }
-    > div:not(:first-of-type){
-        margin-top: 3rem;
-    }
-    > div{
+    > div, > p{
         width: 50%;
         margin: auto;
+    }
+    > div:not(:first-of-type), > p{
+        margin-top: 3rem;
     }
     div.form-actions{
         display: flex;
