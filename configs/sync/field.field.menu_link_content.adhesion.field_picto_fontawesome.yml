@@ -1,0 +1,21 @@
+uuid: 8713fb49-1f08-4251-a6ab-4bb8baef50cb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.menu_link_content.field_picto_fontawesome
+    - system.menu.adhesion
+  module:
+    - fontawesome
+id: menu_link_content.adhesion.field_picto_fontawesome
+field_name: field_picto_fontawesome
+entity_type: menu_link_content
+bundle: adhesion
+label: 'Picto Fontawesome'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: fontawesome_icon

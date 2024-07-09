@@ -266,6 +266,31 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
 }
 
 #block-openig-demarchedadhesionaopenig{
+    padding-left: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .field--name-body{
+        font-family: 'OpenSans_Regular', sans-serif;
+        font-size: $OPenIG-font-size-base;
+        color: $OPenIG-color_black;
+    }
+    button.lienSimulation{
+        height: 30px;
+        background-color: $OPenIG-color_yellow;
+        border: none;
+        border-radius: 6px;
+        color: $OPenIG-color_black;
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-sm;
+        padding: 5px 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        margin: 0;
+        i{
+            margin-right: 5px;
+            font-size: 18px;
+        }
+    }
     .modal{
         .modal-dialog{ 
             max-width: unset;
@@ -297,7 +322,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     }
 }
 
- #block-openig-ensavoirplussurladhesion, #block-openig-demarchedadhesionaopenig{
+ #block-openig-ensavoirplussurladhesion{
     padding-left: 150px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -368,6 +393,7 @@ h1{
     }
     .tags{
         margin-left: 30px;
+        z-index: 1;
         button{
             background-color: $OPenIG-color_white;
             border: 1px solid $OPenIG-color_blue;
@@ -1210,7 +1236,7 @@ form{
 .view-taxonomy-term.view-display-id-taxonomy-term{
     margin-top: 5rem !important;
 }
-.view.view-taxonomy-term{
+.view.view-taxonomy-term, .view-terme-de-taxonomie-utilisateur{
     margin-top: 5rem;
     position: relative;
     .view-content{
@@ -1227,6 +1253,9 @@ form{
                 flex-direction: column;
                 padding: 0;
             }
+            .views-field-type, .views-field-nid, .views-field-field-file, .views-field-field-link{
+                display: none;
+            }
             .views-field-fieldset{
                 .titlepicto{
                     display: flex;
@@ -1234,6 +1263,12 @@ form{
                     padding: 1rem;
                     .views-field-title{
                         width: 100%;
+                        color: $OPenIG-color_black;
+                        font-family: 'Exo_semiBold';
+                        font-size: $OPenIG-font-size-base;
+                        font-weight: 600;
+                        text-decoration: none;
+                        text-transform: uppercase;
                         a{
                             color: $OPenIG-color_black;
                             font-family: 'Exo_semiBold';
@@ -1292,103 +1327,6 @@ form{
                     border-bottom: 1px solid $OPenIG-color_black;
                 }
             }
-        }
-    }
-    .pager__item--last, .pager__item--first{
-        display: none;
-    }
-    .pager__item--previous, .pager__item--next{
-        background-color: $OPenIG-color_white;
-        border-radius: 0;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border: none;
-        width: 42px;
-        height: 42px;
-        text-align: center;
-        .page-link{
-            border: none;
-            height: 100%;
-            width: 100%;
-            padding: 0 !important;
-            span{
-                display: none;
-            }
-        }
-        .page-link::before{
-            font-family: "Font Awesome 6 Free";
-            color: $OPenIG-color_deep-gray;
-            font-size: 28px;
-        }
-    }
-    .pager__item--next{
-        margin-left: 5rem !important;
-        .page-link::before{
-            content: '\f054';
-        }
-    }
-    .pager__item--previous{
-        margin-right: 5rem !important;
-        .page-link::before{
-            content: '\f053';
-        }
-    }
-    .page-item{
-        background-color: $OPenIG-color_white;
-        border-radius: 0;
-        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-        border: none;
-        width: 42px;
-        height: 42px;
-        text-align: center;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        .page-link{
-            border: none;
-            width: 100%;
-            height: 100%;
-            padding: 0.5rem;
-            color: $OPenIG-color_black;
-            font-family: 'Russo One';
-            font-size: $OPenIG-font-size-lg;
-        }
-    }
-    .page-item.is-active.active{
-        box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
-        .page-link{
-            color: $OPenIG-color_red;
-            background-color: transparent;
-            border-radius: 0;
-            border: none;
-        }
-    }
-    .page-item:focus, .page-link:focus{
-        border: none !important;
-    }
-    .page-link:focus{
-        box-shadow: none;
-    }
-
-
-    .slick__arrow{
-        button.slick-arrow{
-            position: relative !important;
-            top: unset !important;
-            transform: translateY(0) !important;
-            background-color: $OPenIG-color_white !important;
-            border-radius: 0 !important;
-            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16) !important;
-            border: none;
-        }
-        button.slick-arrow::before{
-            color: $OPenIG-color_deep-gray!important;
-            font-family: "Font Awesome 6 Free" !important;
-            opacity: 1 !important;
-        }
-        button.slick-next::before{
-            content: '\f054' !important;
-        }
-        button.slick-prev::before{
-            content: '\f053' !important;
         }
     }
 }
@@ -1454,4 +1392,193 @@ form{
             border-radius: 5px;
         }
     }
+}
+
+// Pagination 
+
+.page-item{
+    background-color: $OPenIG-color_white;
+    border-radius: 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    border: none;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    .page-link{
+        border: none;
+        width: 100%;
+        height: 100%;
+        padding: 0.5rem;
+        color: $OPenIG-color_black;
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-lg;
+    }
+}
+.page-item.disabled{
+    display: none;
+}
+.page-item.is-active.active{
+    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
+    .page-link{
+        color: $OPenIG-color_red;
+        background-color: transparent;
+        border-radius: 0;
+        border: none;
+    }
+}
+.page-item:focus, .page-link:focus{
+    border: none !important;
+}
+.page-link:focus{
+    box-shadow: none;
+}
+
+.pager__item--last, .pager__item--first{
+    display: none;
+}
+.pager__item--previous, .pager__item--next{
+    background-color: $OPenIG-color_white;
+    border-radius: 0;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    border: none;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    .page-link{
+        border: none;
+        height: 100%;
+        width: 100%;
+        padding: 0 !important;
+        span{
+            display: none;
+        }
+    }
+    .page-link::before{
+        font-family: "Font Awesome 6 Free";
+        color: $OPenIG-color_deep-gray;
+        font-size: 28px;
+    }
+}
+.pager__item--next{
+    margin-left: 5rem !important;
+    .page-link::before{
+        content: '\f054';
+    }
+}
+.pager__item--previous{
+    margin-right: 5rem !important;
+    .page-link::before{
+        content: '\f053';
+    }
+}
+
+.page-item:not(:first-child) .page-link{
+    margin-left: 0;
+}
+
+// Modal CKAN
+#modalckan{
+    .modal-dialog{
+        max-width: 75%;
+        width: 75%;
+        .modal-body{
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+// Formulaires d'inscription et de connexion 
+form.user-register-form, form.user-login-form, form.user-pass{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+form.user-register-form{
+    .form-type-email, .form-type-textfield, .form-type-tel, .form-type-entity-autocomplete, .form-actions{
+        margin-top: 2rem;
+    }
+    a.btn:hover{
+        background-color: $OPenIG-color_blue;
+    }
+    .form-type-entity-autocomplete{
+        label{
+            width: 100%;
+        }
+    }
+}
+
+.ui-widget.ui-widget-content{
+    .ui-dialog-buttonpane.ui-widget-content{
+        .ui-dialog-buttonset.form-actions{
+            button{
+                background-color: $OPenIG-color_blue;
+                border: none;
+            }
+            button:focus{
+                color: $OPenIG-color_white;
+            }
+        }
+    }
+    .field-add-more-submit.button.js-form-submit.form-submit{
+        font-size: $OPenIG-font-size-sm;
+    }
+    td .button.js-form-submit.form-submit{
+        font-size: $OPenIG-font-size-sm
+    }
+    form{
+        font-family: 'OpenSans_Regular';
+        > div, > fieldset{
+            margin-top: 2rem;
+        }
+        h4{
+            font-weight: 400;
+        }
+        th.field-label{
+            padding: 0;
+        }
+    }
+    .form-actions{
+        button{
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+        }
+    }
+
+    .tabledrag-toggle-weight-wrapper{
+        button{
+            font-size: $OPenIG-font-size-sm;
+            color: $OPenIG-color_blue;
+        }
+    }
+}
+
+.view-terme-de-taxonomie-utilisateur{
+    margin-top: 3rem;
+    .card-body{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .nom-prenom{
+            display: flex;
+            flex-wrap: wrap;
+            color: $OPenIG-color_black;
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-base;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            .views-field-field-firstname{
+                margin-right: 0.5rem;
+            }
+        }
+    }
+}
+
+.view-display-id-termes_gt{
+    margin-top: 5rem;
 }

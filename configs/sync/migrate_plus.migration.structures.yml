@@ -34,6 +34,13 @@ process:
     source: '@my_department_array'
     process:
       target_id: id
+  moderation_state:
+    plugin: static_map
+    source: is_active
+    map:
+      0: draft
+      1: published
+    default_value: draft
 destination:
   plugin: 'entity:node'
   default_bundle: structure

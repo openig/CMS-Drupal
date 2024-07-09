@@ -281,6 +281,7 @@ header{
             border-bottom: 1px solid $OPenIG-color_red;
             padding-left: 0;
             padding-right: 0;
+            margin-right: .5rem;
         }
         span, a{
             color: $OPenIG-color_dark-gray;
@@ -291,6 +292,19 @@ header{
             color: $OPenIG-color_blue;
             background-color: $OPenIG-color_light-gray;
             height: 100%;
+        }
+        .fontawesome-icon{
+            i{
+                color: $OPenIG-color_dark-gray;
+                font-size: 20px;
+            }
+        }
+        a.deconnexion{
+            margin-left: .5rem;
+            border: none;
+        }
+        .contextual{
+            top: 35px;
         }
     }
 }

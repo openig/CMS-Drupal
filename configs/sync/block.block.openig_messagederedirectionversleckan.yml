@@ -1,0 +1,25 @@
+uuid: a6a15d5c-022e-41c6-9f4f-2bf50c098376
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:1db3ab99-b399-4306-945c-8967eb3e0d2a'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_messagederedirectionversleckan
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:1db3ab99-b399-4306-945c-8967eb3e0d2a'
+settings:
+  id: 'block_content:1db3ab99-b399-4306-945c-8967eb3e0d2a'
+  label: 'Message de redirection vers le CKAN'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

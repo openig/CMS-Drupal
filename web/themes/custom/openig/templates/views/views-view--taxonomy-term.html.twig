@@ -67,9 +67,13 @@
       {{ rows }}
     </div>
   {% elseif empty %}
-    <div class="view-empty">
-      {{ empty }}
-    </div>
+    {% if vid == 'outils_competences' %}
+      {{ render_block('openig_views_block_outils_competences') }}
+    {% else %}
+      <div class="view-empty container">
+        {{ empty }}
+      </div>
+    {% endif %}
   {% endif %}
 
   {% if pager %}

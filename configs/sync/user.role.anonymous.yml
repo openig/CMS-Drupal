@@ -4,12 +4,17 @@ status: true
 dependencies:
   config:
     - filter.format.restricted_html
+    - node.type.structure
+    - workflows.workflow.editorial
+    - workflows.workflow.structure
   module:
     - comment
     - contact
+    - content_moderation
     - eu_cookie_compliance
     - filter
     - media
+    - node
     - simplenews
     - system
 _core:
@@ -23,8 +28,11 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'access user profiles'
+  - 'create structure content'
   - 'display eu cookie compliance popup'
   - 'subscribe to newsletters'
+  - 'use editorial transition create_new_draft'
+  - 'use structure transition create_new_draft'
   - 'use text format restricted_html'
   - 'view media'
   - 'view user email addresses'

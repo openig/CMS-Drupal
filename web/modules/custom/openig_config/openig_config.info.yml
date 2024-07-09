@@ -52,3 +52,8 @@ dependencies:
   - responsive_image
   - nodeaccess
   - eu_cookie_compliance
+  - openig_filter_annuaire
+  - menu_link_attributes
+  - field_permissions
+  - entity_reference_modal
+  - content_moderation
