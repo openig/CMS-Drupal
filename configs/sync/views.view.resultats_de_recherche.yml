@@ -1762,6 +1762,7 @@ display:
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
+      sorts: {  }
       arguments: {  }
       filters:
         status:
@@ -1964,6 +1965,7 @@ display:
       defaults:
         exposed_form: false
         fields: false
+        sorts: false
         arguments: false
         filters: false
         filter_groups: false
@@ -2100,6 +2102,7 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       sorts: {  }
+      arguments: {  }
       filters: {  }
       filter_groups:
         operator: AND
@@ -2108,6 +2111,7 @@ display:
         exposed_form: false
         fields: false
         sorts: false
+        arguments: false
         filters: false
         filter_groups: false
         header: false
@@ -2135,7 +2139,6 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
-        - url
         - url.query_args
         - 'user.node_grants:view'
       tags:

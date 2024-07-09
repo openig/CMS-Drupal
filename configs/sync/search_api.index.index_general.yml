@@ -158,7 +158,7 @@ processor_settings:
     excerpt_always: false
     excerpt_length: 256
     exclude_fields: {  }
-    highlight: never
+    highlight: always
     highlight_partial: false
   language_with_fallback: {  }
   rendered_item: {  }
