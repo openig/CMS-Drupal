@@ -1506,7 +1506,7 @@ form{
             }
         }
     }
-    a.active{
+    a.active, a.dropdown-toggle{
         border: none;
         border-top: 10px solid $OPenIG-color_yellow;
         border-color: $OPenIG-color_yellow !important;
@@ -1530,7 +1530,7 @@ form{
     a:not(.active):hover{
         border-top-color: $OPenIG-color_white !important;
     }
-    a.active:hover{
+    a.active:hover, a.dropdown-toggle:hover{
         border-top-color: $OPenIG-color_yellow !important;
     }
     a:hover{

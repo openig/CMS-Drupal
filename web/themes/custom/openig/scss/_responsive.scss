@@ -1895,6 +1895,36 @@
             }
         }
     }
+
+    // Formulaires d'inscription et de connexion 
+    .path-user:not(.user-logged-in) .local-task-container{
+        nav{
+            width: 100% !important;
+            ul{
+                overflow: visible;
+                li.nav-item{
+                    width: 100% !important;
+                    background-color: unset !important;
+                    padding: 0 !important;
+                }
+            }
+        }
+        a{
+            min-height: 61px;
+        }
+        a.active{
+            font-size: $OPenIG-font-size-md !important;
+        }
+        a:not(.active){
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
+    form.user-register-form, form.user-login-form, form.user-pass{
+        width: 100% !important;
+        > div{
+            width: 90% !important;
+        }
+    }
 }
 
 @media (max-width: 768px){
