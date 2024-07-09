@@ -6,7 +6,7 @@ dependencies:
     - 'block_content:basic:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
   module:
     - block_content
-    - node
+    - system
     - user
   theme:
     - openig
@@ -32,11 +32,7 @@ visibility:
       user: '@user.current_user_context:current_user'
     roles:
       authenticated: authenticated
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
+  request_path:
+    id: request_path
     negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      groupe_de_travail: groupe_de_travail
-      service: service
+    pages: "/groupe-de-travail/*\r\n/service/*\r\n/annuaire"

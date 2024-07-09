@@ -81,7 +81,7 @@
     }
     .view-annuaire{
         display: flex;
-        align-items: center;
+        //align-items: center;
         .view-header{
             width: 50%;
             position: relative;
@@ -125,3 +125,350 @@
         }
     }
 }
+
+
+// Page annuaire
+.view.view-annuaire.view-display-id-annuaire{
+    .flex_content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .view-content{
+        margin-bottom: 3rem;
+    }
+    .views-row:nth-child(even){
+        background-color: $OPenIG-color_medium-white;
+    }
+    .views-row:nth-child(odd){
+        background-color: $OPenIG-color_white;
+    }
+    .views-row{
+        padding: 1.5rem 2rem;
+        border: 1px solid $OPenIG-color_light-gray;
+        .entete{
+            display: flex;
+            align-items: center;
+            .views-field-field-image{
+                width: fit-content;
+                height: fit-content;
+                border: 1px solid $OPenIG-color_light-gray;
+                .field-content{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    img{
+                        width: 175px;
+                        min-width: 175px;
+                    }
+                }
+            }
+        }
+        .divPrivate{
+            display: flex;
+            align-items: center;
+            p.itemPrivate{
+                font-family: 'OpenSans_Regular';
+                font-size: $OPenIG-font-size-xs;
+                margin: 0;
+                text-align: right;
+            }
+            i{
+                margin-left: 1.5rem;
+                color: $OPenIG-color_blue;
+                font-size: 20px;
+            }
+        }
+        .adresse-complete{
+            display: flex;
+            flex-wrap: wrap;
+            .views-field-field-postcode{
+                margin-right: 10px;
+            }
+            .cp-ville{
+                display: flex;
+            }
+        }
+        .views-field-fieldset-1{
+            margin-top: 1rem;
+        }
+        .adresse-complete::before{
+            content: '\f3c5';
+            font-family: "Font Awesome 6 Free";
+            font-size: 24px;
+            color: $OPenIG-color_gray;
+            margin-right: 10px;
+        }
+        .views-field-field-website{
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            a{
+                color: unset;
+                text-decoration: none;
+                border-bottom: 1px solid $OPenIG-color_dark-gray;
+            }
+        }
+        .taxonomies, .groupes, .outils_competences{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .taxonomies{
+            margin-top: 1.5rem;
+        }
+        .views-field-field-dpt-intervention, .views-field-field-typologie-structure, .groupe, .outil_competence{
+            height: fit-content;
+            width: fit-content;
+            border: 1px solid $OPenIG-color_blue;
+            border-radius: 2rem;
+            font-size: $OPenIG-font-size-xs;
+            margin-right: 10px;
+            margin-top: 0.5rem;
+            a{
+                padding: 0 10px;
+                display: block;
+                width: 100%;
+                font-family: "Exo_regular", sans-serif;
+                color: $OPenIG-color_black;
+                text-decoration: none;
+            }
+        }
+        .views-field-field-website::before{
+            content: '\f0ac';
+            font-family: "Font Awesome 6 Free";
+            font-size: 20px;
+            color: $OPenIG-color_gray;
+            margin-right: 10px;
+        }
+        .views-field-title{
+            font-family: 'Exo_semiBold';
+            font-size: $OPenIG-font-size-lg;
+            font-weight: 600;
+            margin-left: 20px;
+        }
+        .views-field-fieldset-1, .views-field-field-website,
+        .taxonomies, .block-views.block-views-blockcontacts-gt-block-contacts-annuaire,
+        .groupes, .contacts, .outils_competences{
+            margin-left: 200px;
+        }
+        .contacts{
+            display: flex;
+            flex-wrap: wrap;
+            .contact:not(:last-of-type){
+                margin-right: 3rem;
+            }
+            .contact{
+                margin-top: 2rem;
+                .nom_prenom{
+                    display: flex;
+                    align-items: center;
+                }
+                i{
+                    font-size: 22px;
+                    color: $OPenIG-color_gray;
+                    margin-right: 10px;
+                }
+                span{
+                    font-size: $OPenIG-font-size-sm;
+                    margin-right: 5px;
+                }
+                a{
+                    font-size: $OPenIG-font-size-sm;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_dark-gray;
+                    color: unset;
+                    margin-left: 30px;
+                }
+            }
+        }
+        .badges{
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            .referent, .membreCA{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                span{
+                    font-size: $OPenIG-font-size-xs;
+                    margin-top: 0.5rem;
+                }
+                img{
+                    width: 75px;
+                }
+            }
+            > div:not(:last-of-type){
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+
+    // Filtres
+    .formulaire_filtre{
+        max-height: calc(100% + 4rem);
+        overflow: scroll;
+        position: absolute;
+        left: -700px;
+        transition: 1.5s;
+        background-color: $OPenIG-color_white;
+        z-index: 1;
+        border: 1px solid $OPenIG-color_gray;
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        .btn-close-filtre{
+            background-color: transparent;
+            border: none;
+            float: right;
+            i{
+                color: $OPenIG-color_dark-gray;
+                font-size: 24px;
+            }
+        }
+        h2{
+            width: 100%;
+            border-bottom: 0;
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2::before{
+            content: '\f0b0';
+            font-family: "Font Awesome 6 Free";
+            color: $OPenIG-color_yellow;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        form{
+            margin-top: 2rem;
+        }
+        .form-type-textfield{
+            width: 100%;
+            label{
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm;
+                font-family: 'OpenSans_SemiBold';
+                margin-bottom: 0.5rem;
+            }
+        }
+        .form-item-exposed-from-date, .form-item-exposed-to-date{
+            width: 175px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            label{
+                margin-right: 5px;
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+        .js-form-submit{
+            background-color: $OPenIG-color_blue;
+            color: $OPenIG-color_white;
+            border: none;
+            height: 30px;
+            font-size: $OPenIG-font-size-sm;
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+        }
+        .js-form-submit[data-drupal-selector='edit-reset']{
+            background-color: transparent;
+            color: $OPenIG-color_dark-gray;
+            border: 1px solid $OPenIG-color_gray;
+        }
+        label, .form-date{
+            font-size: $OPenIG-font-size-sm;
+        }
+        .form-checkbox{
+            border: 1px solid $OPenIG-color_gray;
+        }
+        .form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding-top: 2rem;
+            input{
+                margin: 0;
+            }
+        }
+        .details-wrapper{
+            padding: 0;
+            margin-top: 15px;
+        }
+        .labelDates{
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: $OPenIG-font-size-sm;
+            font-family: 'OpenSans_SemiBold';
+        }
+        details.form-wrapper{
+            width: 100%;
+            border: 0 !important;
+            background-color: transparent;
+            margin-top: 1rem;
+            box-shadow: none !important;
+            overflow: visible !important;
+            summary{
+                border-bottom: 1px solid $OPenIG-color_gray;
+                background-color: transparent !important;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 0;
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm;
+                font-family: 'OpenSans_SemiBold';
+            }
+            summary::marker {   
+                content: '';
+            }
+            summary[aria-expanded="true"]::after{
+                content: '\f0d8';
+            }
+            summary::after{
+                content: '\f0d7';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+            }
+        }
+    }
+
+    .formulaire_filtre.show{
+        left: 0;
+        transition: 1.5s;
+
+    }
+    .btn_filtre{
+        width: fit-content;
+        height: 30px;
+        background-color: $OPenIG-color_blue;
+        border: none;
+        border-radius: 6px;
+        color: $OPenIG-color_white;
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-sm;
+        padding: 5px 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        i{
+            margin-right: 5px;
+        }
+    }
+    .bloc_filtres{
+        position: relative;
+    }
+
+    .view-empty{
+        margin-top: 3rem;
+    }
+}
+
+/*.path-annuaire{
+    main{
+        min-height: 3000px;
+    }
+}*/

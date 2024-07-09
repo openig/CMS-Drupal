@@ -234,3 +234,79 @@ function openig_preprocess_block(&$variables){
     }
   }
 }
+
+function openig_preprocess_views_view(&$variables){
+  if($variables['id'] == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view_array']['#arguments'][0]);
+    if ($term->vid[0]->target_id == 'outils_competences') {
+      $variables['vid'] = 'outils_competences';
+    }
+  }
+}
+
+function openig_preprocess_views_view_fields(&$variables){
+  if($variables['view']->current_display == 'annuaire'){
+    $node = \Drupal\node\Entity\Node::load($variables['row']->nid);
+    $membresCA = [];
+    $referents = [];
+    $variables['groupes'] = [];
+    $variables['outils_competences'] = [];
+    // Récupération des utilisateurs
+    $database = \Drupal::database();
+    $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {user__field_structure} f ON f.field_structure_target_id = n.nid WHERE f.field_structure_target_id = '".$variables['row']->nid."'");
+    $result = $query->fetchAll();
+    foreach ($result as $key => $value) {
+      // Vérification si un membre du CA
+      $query = $database->query("SELECT f.field_ca_member_value FROM {user__field_ca_member} f  WHERE f.entity_id = '".$value->entity_id."'");
+      $membresCA[] = $query->fetch()->field_ca_member_value;
+
+      // Vérification si référent
+      $query = $database->query("SELECT f.field_referent_value FROM {user__field_referent} f  WHERE f.entity_id = '".$value->entity_id."'");
+      $referents[] = $query->fetch()->field_referent_value;
+    }
+    // Récupération des groupes de travail
+    $query = $database->query("SELECT DISTINCT n.nid, n.title FROM {user__field_structure} s LEFT JOIN {node__field_members} m ON m.field_members_target_id = s.entity_id LEFT JOIN {node_field_data} n ON n.nid = m.entity_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
+    $results = $query->fetchAll();
+    foreach ($results as $result) {
+      if ($result->nid != null) {
+        $variables['groupes'][] = $result;
+      }
+    }
+
+    // Récupération des outils et compétences
+    $query = $database->query("SELECT DISTINCT t.tid, t.name FROM {user__field_structure} s LEFT JOIN {user__field_outils_competences} c ON c.entity_id = s.entity_id LEFT JOIN {taxonomy_term_field_data} t ON t.tid = c.field_outils_competences_target_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
+    $results = $query->fetchAll();
+    foreach ($results as $result) {
+      if ($result->tid != null) {
+        $variables['outils_competences'][] = $result;
+      }
+    }
+    if (in_array(1, $membresCA)) {
+      $variables['membresCA'] = 'oui';
+    }
+    if (in_array(1, $referents)) {
+      $variables['referents'] = 'oui';
+    }
+
+    // Récupération des contacts
+    $variables['contacts'] = [];
+    foreach ($variables['row']->_entity->get('field_contacts') as $key => $value) {
+      $user = \Drupal\user\Entity\User::load($value->target_id);
+      $variables['contacts'][$value->target_id]['prenom'] = $user->get('field_firstname')->value;
+      $variables['contacts'][$value->target_id]['nom'] = $user->get('field_lastname')->value;
+      $variables['contacts'][$value->target_id]['mail'] = $user->get('mail')->value;
+    }
+  }
+
+  if($variables['view']->current_display == 'taxonomy_term'){
+    $term = \Drupal\taxonomy\Entity\Term::load($variables['view']->args[0]);
+    if ($term->vid[0]->target_id == 'typologie_de_structure') {
+      $variables['vid'] = 'typologie_de_structure';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+    }
+    elseif ($term->vid[0]->target_id == 'dpt_intervention') {
+      $variables['vid'] = 'dpt_intervention';
+      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+    }
+  }
+}

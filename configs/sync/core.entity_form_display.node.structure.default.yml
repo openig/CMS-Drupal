@@ -109,7 +109,7 @@ content:
     third_party_settings: {  }
   field_email:
     type: email_default
-    weight: 2
+    weight: 3
     region: content
     settings:
       placeholder: ''
@@ -125,7 +125,7 @@ content:
     third_party_settings: {  }
   field_phone:
     type: telephone_default
-    weight: 26
+    weight: 2
     region: content
     settings:
       placeholder: ''
