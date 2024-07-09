@@ -1493,8 +1493,77 @@ form{
 }
 
 // Formulaires d'inscription et de connexion 
+.path-user:not(.user-logged-in) .local-task-container{
+    nav{
+        margin-bottom: 0;
+        width: 75%;
+        margin: auto;
+        ul{
+            border: none;
+            li.nav-item{
+                width: 33%;
+                text-align: center;
+            }
+        }
+    }
+    a.active{
+        border: none;
+        border-top: 10px solid $OPenIG-color_yellow;
+        border-color: $OPenIG-color_yellow !important;
+        border-radius: 0;
+        background-color: $OPenIG-color_deep-white !important;
+        font-size: 20px;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+    a:not(.active){
+        background-color: $OPenIG-color_white;
+        color: $OPenIG-color_black !important;
+        font-size: $OPenIG-font-size-lg;
+        font-family: 'Exo_regular';
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+        border-top: 10px solid $OPenIG-color_white;
+    }
+    a:not(.active):hover{
+        border-top-color: $OPenIG-color_white !important;
+    }
+    a.active:hover{
+        border-top-color: $OPenIG-color_yellow !important;
+    }
+    a:hover{
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 0;
+    }
+}
+form{
+    input.form-control:focus{
+        box-shadow: 0 0 0 .25rem rgba(0,160,154,.25);
+    }
+}
 form.user-register-form, form.user-login-form, form.user-pass{
-    background-color: rgba(255, 255, 255, 0.6);
+    width: 75%;
+    margin: auto;
+    background-color: $OPenIG-color_deep-white;
+    padding: 5rem 0;
+    > div:first-of-type{
+        margin-top: 0;
+    }
+    > div:not(:first-of-type){
+        margin-top: 3rem;
+    }
+    > div{
+        width: 50%;
+        margin: auto;
+    }
+    div.form-actions{
+        display: flex;
+        justify-content: end;
+    }
 }
 
 form.user-register-form{
