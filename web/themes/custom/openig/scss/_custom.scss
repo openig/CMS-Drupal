@@ -1493,6 +1493,11 @@ form{
 }
 
 // Formulaires d'inscription et de connexion 
+.path-user:not(.user-logged-in) #block-openig-adhesion a[href='/user/login']{
+    background-color: $OPenIG-color_deep-white;
+    color: $OPenIG-color_blue !important;
+    height: 100%;
+}
 .path-user:not(.user-logged-in) .local-task-container{
     nav{
         margin-bottom: 0;
