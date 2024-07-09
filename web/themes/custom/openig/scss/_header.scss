@@ -47,7 +47,7 @@ header{
                             padding-top: 5px !important;
                         }
                         > .dropdown-toggle.show{
-                            background-color: $OPenIG-color_medium-white;
+                            background-color: $OPenIG-color_light-gray;
                             color: $OPenIG-color_blue;
                         }
                         > span::after, > a::after{
@@ -64,13 +64,13 @@ header{
                     }
                     .is-active{
                         color: $OPenIG-color_blue;
-                        background-color: $OPenIG-color_medium-white;
+                        background-color: $OPenIG-color_light-gray;
                         height: 100%;
                     }
                 }
                 ul.dropdown-menu.show{
                     display: flex;
-                    background-color: $OPenIG-color_medium-white;
+                    background-color: $OPenIG-color_light-gray;
                     border: 0;
                     box-shadow: 0px 2px 6px rgba(0,0,0,.16),inset 0px 2px 6px rgba(0,0,0,.16);
                     border-radius: 0;
@@ -138,7 +138,7 @@ header{
         }
         #search-block-form.open{
             display: block;
-            background-color: $OPenIG-color_medium-white;
+            background-color: $OPenIG-color_light-gray;
             filter: drop-shadow(0 1px 2px $OPenIG-color_gray);
             border-radius: 0px;
             position: absolute;
@@ -201,7 +201,7 @@ header{
             }
         }
         #search_icon.open{
-            background-color: $OPenIG-color_medium-white;
+            background-color: $OPenIG-color_deep-white;
             i{
                 color: $OPenIG-color_blue;
             }
