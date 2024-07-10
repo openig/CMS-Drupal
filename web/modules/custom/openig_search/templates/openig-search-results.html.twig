@@ -117,7 +117,7 @@
       <div class="col-lg-10 col-12">
         <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
           {% for item in items %}
-            <div class="views-view-responsive-grid__item">
+            <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
               <div class="views-view-responsive-grid__item-inner">
 
                 <div class="views-field views-field-title">
@@ -138,10 +138,10 @@
 
                 <div class="search-result__source">
                   <span class="search-result__label">Source</span> :
-{#                  {% if item.source == "CKAN Datasets" %}#}
-{#                    OPenIG - Jeux de données#}
-{#                  {% elseif item.source == "OpenIG" %}#}
-{#                    OPenIG - Activité#}
+                  {#                  {% if item.source == "CKAN Datasets" %} #}
+                  {#                    OPenIG - Jeux de données #}
+                  {#                  {% elseif item.source == "OpenIG" %} #}
+                  {#                    OPenIG - Activité #}
                   {% if item.source == "datasets" %}
                     <a href="https://data.laregion.fr">data.laregion.fr</a>
                   {% elseif item.source == "dataset" %}
@@ -179,24 +179,30 @@
       </div>
 
       {% if pager and (pager.count > 0) %}
-        <div class="pager">
-          <ul class="pager__items">
+        <nav class="pager">
+          <ul class="pagination js-pager__items">
             {% for page in pager.pages %}
-              <li class="pager__item {{ pager['current'] == page.number ? 'is-active' : '' }}">
-                {% if (loop.first and pager.current == 0) or (loop.last and pager.current == pager.count) %}
-                  <span>{{ page['label'] }}</span>
-                {% else %}
-                  <a href="{{ page['url'] }}">{{ page['label'] }}</a>
-                {% endif %}
-              </li>
+              {#              <li class="page__item {{ pager['current'] == page.number ? 'is-active' : '' }}"> #}
+              {% if (page['label'] == "Précédent") %}
+                <li class="page-item pager__item--previous">
+                  <a href="{{ page['url'] }}" class="page-link"></a>
+                </li>
+              {% elseif (page['label'] == "Suivant") %}
+                <li class="page-item pager__item--next">
+                  <a href="{{ page['url'] }}" class="page-link"></a>
+                </li>
+              {% else %}
+                <li class="page-item {{ pager['current'] == page.number ? 'is-active' : '' }}">
+                  <a href="{{ page['url'] }}" class="page-link">{{ page['label'] }}</a>
+                </li>
+              {% endif %}
+              {#              </li> #}
             {% endfor %}
           </ul>
-        </div>
+        </nav>
       {% endif %}
     </div>
   </div>
 
 </div>
 
-<!--
-   search : {{ url }} -->

@@ -25,6 +25,6 @@ function openig_search_preprocess_openig_search_results(&$variables) {
 
 function openig_search_preprocess(&$variables, $hook) {
   // Add images path alias
-  $variables['images_path'] = '/' . \Drupal::service('extension.list.module')->getPath('openig_search') . '/images/';
+  $variables['images_path'] = \Drupal::request()->getSchemeAndHttpHost() . '/' . \Drupal::service('extension.list.module')->getPath('openig_search') . '/images/';
 }
 
