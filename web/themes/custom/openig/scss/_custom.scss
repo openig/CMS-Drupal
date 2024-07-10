@@ -1570,6 +1570,23 @@ form.user-register-form, form.user-login-form, form.user-pass{
         display: flex;
         justify-content: end;
     }
+
+    .field--name-field-desired-structure{
+        .description{
+            .dropbutton-widget{
+                border: none;
+                .dropbutton{
+                    a{
+                        background-color: $OPenIG-color_blue;
+                        color: $OPenIG-color_white;
+                        font-size: 26px;
+                        padding: 0 0.75rem;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 form.user-register-form{
