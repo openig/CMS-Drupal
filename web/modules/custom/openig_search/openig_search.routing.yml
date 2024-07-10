@@ -1,5 +1,6 @@
 openig_search.results:
   path: '/recherche2'
+#  path: '/recherche/ressources_externes'
   defaults:
     _title: 'Résultats de la recherche test page 2'
     _controller: '\Drupal\openig_search\Controller\SearchController::search_results'

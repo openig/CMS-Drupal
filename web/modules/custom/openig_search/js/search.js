@@ -1,12 +1,14 @@
-(function ($, Drupal, w) {
-    Drupal.behaviors.openigSearch = {
-        attach: function (context, settings) {
-            $(w, context).once("openigSearch").each( function() {
+(function ($, Drupal, drupalSettings) {
+  Drupal.behaviors.openigSearch = {
+    attach: function (context, settings) {
 
+      $(w, context).once("openigSearch").each( function() {
+console.log('icicrrr');
                 // Watch for inputs & fill search hidden fields
                 function process_facet (input_id, input_value_id) {
                     // Bind category facet
                     $(input_id + " input").on('change', function (e) {
+                      console.log('ici');
                         var array = [];
                         var checkboxes = $(input_id + " input:checked");
 
@@ -30,18 +32,18 @@
                 }
 
                 // Bind category facet
-                process_facet('#facet_category', '#facet_category_value');
+                process_facet('#edit-category-collapsible--2', '#facet_category_value');
 
                 // Bind lineage facet
-                process_facet('#facet_lineage', '#facet_lineage_value');
+                process_facet('#edit-source-collapsible--2', '#facet_lineage_value');
 
                 // Bind ckan_resource_format facet
-                process_facet('#facet_resource_format', '#facet_resource_format_value');
+                process_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
 
                 // Bind ckan_resource_format facet
-                process_facet('#facet_resource_data_type', '#facet_resource_data_type_value');
+                // process_facet('#facet_resource_data_type', '#facet_resource_data_type_value');
 
-            });
-        }
-    };
-}(jQuery, Drupal, drupalSettings, window));
+      });
+    }
+  };
+}(jQuery, Drupal, drupalSettings));

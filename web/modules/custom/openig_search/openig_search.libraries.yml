@@ -4,3 +4,4 @@ openig-search:
     js/search.js: {}
   dependencies:
     - core/jquery
+    - core/drupalSettings

@@ -1,0 +1,221 @@
+{{ render_block('block_openig_local_tasks') }}
+
+<div class="search-results container">
+  ICICICICICI
+  {# filtres #}
+  <div class="view-content container">
+    <div class="formulaire_filtre d-xl-block d-none">
+      <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+      <h2>Filtrer la recherche</h2>
+      <div class="d-xl-block d-none">
+
+        <form class="openig-search-bar" data-drupal-selector="openig-search-bar" action="/recherche2" method="post" id="openig-search-bar" accept-charset="UTF-8">
+
+          <input id="facet_category_value" data-drupal-selector="edit-category" type="hidden" name="category" value="">
+          <input id="facet_lineage_value" data-drupal-selector="edit-lineage" type="hidden" name="lineage" value="OpenIG|datasets">
+          <input id="facet_resource_format_value" data-drupal-selector="edit-resource-format" type="hidden" name="resource_format" value="">
+{#          <input id="facet_resource_data_type_value" data-drupal-selector="edit-resource-data-type" type="hidden" name="resource_data_type" value="">#}
+
+          {% if facets.lineage %}
+            <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+              <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
+                       class="card-header bg-light">Sources
+                <span class="summary"></span>
+              </summary>
+              <div class="details-wrapper card-body">
+                <div class="form-checkboxes bef-checkboxesy">
+                  {% for source in facets.lineage %}
+                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                      <input
+                        type="checkbox"
+                        name="lineage"
+                        value="{{ source }}"
+                        {{ source in filters.lineage ? 'checked="checked"' : '' }}
+                        class="form-checkbox form-check-input"
+                      >
+                      <label class="option">
+                        {% if source == "CKAN Datasets" %}
+                          OPenIG - Jeux de données
+                          {#                                    {% elseif source == "OpenIG" %} #}
+                          {#                                        <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label> #}
+                          {#                                    {% elseif source == "datasets" %} #}
+                          {#                                        <span class="facet-item__label" title="Données open data Région Occitanie">data.laregion.fr</span></label> #}
+                        {% elseif source == "dataset" %}
+                          picto-occitanie.fr
+                        {% else %}
+                          {{ source }}
+                        {% endif %}
+                      </label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </details>
+          {% endif %}
+
+          {% if facets.category %}
+            <details id="edit-category-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+              <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
+                       class="card-header bg-light">
+                Thématiques de connaissance et de données
+                <span class="summary"></span>
+              </summary>
+              <div class="details-wrapper card-body">
+                <div class="form-checkboxes bef-checkboxesy">
+                  {% for cat in facets.category %}
+                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                      <input
+                        type="checkbox"
+                        name="category"
+                        value="{{ cat }}"
+                        {{ cat in filters.category ? 'checked="checked"' : '' }}
+                        class="form-checkbox form-check-input"
+                      >
+                      <label class="option">{{ cat }}</label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </details>
+          {% endif %}
+
+          {% if facets.resource_format %}
+            <details id="edit-format-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+              <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
+                       class="card-header bg-light">Formats
+                <span class="summary"></span>
+              </summary>
+              <div class="details-wrapper card-body">
+                <div class="form-checkboxes bef-checkboxesy">
+                  {% for format in facets.resource_format %}
+                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                      <input
+                        type="checkbox"
+                        name="resource_format"
+                        value="{{ format }}"
+                        {{ format in filters.resource_format ? 'checked="checked"' : '' }}
+                        class="form-checkbox form-check-input"
+                      >
+                      <label class="option">{{ format }}</label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </details>
+          {% endif %}
+
+          <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
+            <input data-drupal-selector="edit-submit-resultats-de-recherche-2" type="submit"
+                   id="edit-submit-resultats-de-recherche--2" value="Valider"
+                   class="button js-form-submit form-submit btn btn-primary">
+            <input data-drupal-selector="edit-reset" type="reset" id="edit-reset--2" name="op" value="Réinitialiser"
+                   class="button js-form-submit form-submit btn btn-primary">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  {# btn filtrer #}
+  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+
+  {# Content #}
+  <div class="layout-content">
+    <div class="page-content">
+      {% if items|length > 0 and count > 0 %}
+        <div class="search-result__count">Nombre de résultats : <span
+            class="search-result__count_value"> {{ count }}</span></div>
+      {% endif %}
+      <div class="col-lg-10 col-12">
+        <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
+          {% for item in items %}
+            <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
+              <div class="views-view-responsive-grid__item-inner">
+
+                <div class="views-field views-field-title">
+                  <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                </div>
+
+                <div class="views-field views-field-field-description">
+                  <span class="field-content">{{ item.description | raw }}</span>
+                </div>
+
+                <div class="views-field views-field-field-tag">
+                   <span class="field-content">
+                    {% for tag in item.tags %}
+                      <a href="#">{{ tag }}</a>
+                    {% endfor %}
+                   </span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <div class="search-result__source">
+                    <span class="search-result__label">Source</span> :
+                    {#                  {% if item.source == "CKAN Datasets" %} #}
+                    {#                    OPenIG - Jeux de données #}
+                    {#                  {% elseif item.source == "OpenIG" %} #}
+                    {#                    OPenIG - Activité #}
+                    {% if item.source == "datasets" %}
+                      <a href="https://data.laregion.fr">data.laregion.fr</a>
+                    {% elseif item.source == "dataset" %}
+                      <a href="https://picto-occitanie.fr">picto-occitanie.fr</a>
+                    {% else %}
+                      {{ item.source }}
+                    {% endif %}
+
+                    {% if item.thumbnail %}
+                      <img src="{{ item.thumbnail }}" alt="{{ item.title }}" class="search-result__thumbnail"/>
+                    {% elseif item.source == "datasets" %}
+                      <img src="{{ images_path  ~ 'pictograms/data-laregion.png' }}" alt="data.laregion.fr"
+                           class="search-result__thumbnail">
+                    {% elseif item.source == "dataset" %}
+                      <img src="{{ images_path  ~ 'pictograms/picto-occitanie.png' }}" alt="picto-occitanie.fr"
+                           class="search-result__thumbnail">
+                    {% else %}
+                      <div class="search-result__nothumbnail"></div>
+                    {% endif %}
+                  </div>
+                  <div class="more-link-externe">
+                    <a href="{{ item.link }}" target="_blank">En savoir plus</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          {% endfor %}
+
+          {% if items|length == 0 %}
+            <div class="search-result__noresults">Aucun résultat ne correspond à vos critères de recherche.</div>
+          {% endif %}
+
+        </div>
+      </div>
+
+      {% if pager and (pager.count > 0) %}
+        <nav class="pager">
+          <ul class="pagination js-pager__items">
+            {% for page in pager.pages %}
+              {#              <li class="page__item {{ pager['current'] == page.number ? 'is-active' : '' }}"> #}
+              {% if (page['label'] == "Précédent") %}
+                <li class="page-item pager__item--previous">
+                  <a href="{{ page['url'] }}" class="page-link"></a>
+                </li>
+              {% elseif (page['label'] == "Suivant") %}
+                <li class="page-item pager__item--next">
+                  <a href="{{ page['url'] }}" class="page-link"></a>
+                </li>
+              {% else %}
+                <li class="page-item {{ pager['current'] == page.number ? 'is-active' : '' }}">
+                  <a href="{{ page['url'] }}" class="page-link">{{ page['label'] }}</a>
+                </li>
+              {% endif %}
+              {#              </li> #}
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+

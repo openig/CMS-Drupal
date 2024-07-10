@@ -224,7 +224,12 @@
       justify-content: end;
       text-align: center;
       margin-top: 3rem;
-      a{
+    }
+    .more-link-externe {
+      align-items: end;
+      display: flex;
+    }
+    .more-link a, .more-link-externe a {
         font-family: 'Russo One';
         font-size: $OPenIG-font-size-lg;
         color: $OPenIG-color_dark-gray;
@@ -232,7 +237,6 @@
         border-bottom: 1px solid $OPenIG-color_red;
         padding-bottom: 5px;
       }
-    }
   }
 
   // Pagination
