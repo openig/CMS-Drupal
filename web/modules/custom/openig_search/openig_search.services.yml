@@ -1,0 +1,3 @@
+services:
+  openig_search.search_query_service:
+    class: Drupal\openig_search\SearchQueryService

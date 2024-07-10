@@ -1,0 +1,4 @@
+name: OPenIG Search
+type: module
+description: 'Build search result from IDG API'
+core_version_requirement: ^10

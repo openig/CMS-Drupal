@@ -1,0 +1,8 @@
+openig_search.results:
+  path: '/recherche2'
+  defaults:
+    _title: 'Résultats de la recherche test page 2'
+    _controller: '\Drupal\openig_search\Controller\SearchController::search_results'
+  methods: [GET, POST]
+  requirements:
+    _permission: 'access content'
