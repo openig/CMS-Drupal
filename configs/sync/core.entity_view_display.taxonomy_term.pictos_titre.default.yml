@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.taxonomy_term.pictos_titre.field_picto
+    - field.field.taxonomy_term.pictos_titre.field_picto_users
     - field.field.taxonomy_term.pictos_titre.field_type_de_contenu
     - field.field.taxonomy_term.pictos_titre.field_vue
     - taxonomy.vocabulary.pictos_titre
@@ -30,7 +31,9 @@ content:
     weight: 0
     region: content
 hidden:
+  breadcrumbs: true
   description: true
+  field_picto_users: true
   field_type_de_contenu: true
   field_vue: true
   langcode: true
