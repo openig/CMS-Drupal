@@ -1616,6 +1616,95 @@ form.user-register-form{
     }
 }
 
+// Modal ajouter une structure
+.path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+    padding: 1rem 5rem;
+    z-index: 99999;
+    .ui-dialog-titlebar{
+        border: none;
+        background-color: $OPenIG-color_white;
+        .ui-dialog-title{
+            font-family: 'Exo_light';
+            font-weight: 300;
+            font-size: $OPenIG-font-size-h3;
+        }
+    }
+    .ui-front.ui-dialog-content.ui-widget-content{
+        padding: 0;
+        form{
+            color: $OPenIG-color_black;
+            margin: 1rem;
+            .form-control{
+                border-color: $OPenIG-color_gray;
+            }
+            .form-control:focus{
+                border-color: transparent;
+            }
+            label{
+                margin-bottom: 0.5rem;
+            }
+            .field--name-field-image, .field--name-field-website{
+                .description{
+                    font-size: $OPenIG-font-size-xs;
+                }
+            }
+            .field-group-fieldset{
+                legend{
+                    display: none;
+                }
+                margin-bottom: 0;
+            }
+            .field-group-fieldset::after{
+                content: '';
+                border-bottom: 1px solid $OPenIG-color_gray;
+                width: 400px;
+                display: block;
+                margin: auto;
+                margin-top: 2rem;
+            }
+            .field--name-body{
+                .form-wrapper{
+                    font-size: $OPenIG-font-size-xs;
+                    a{
+                        color: $OPenIG-color_blue;
+
+                    }
+                }
+            }
+        }
+    }
+    .ui-dialog-buttonpane{
+        background-color: $OPenIG-color_white;
+        border: none;
+        .ui-dialog-buttonset.form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            button:last-of-type{
+                border: 2px solid $OPenIG-color_blue;
+                color: $OPenIG-color_deep-gray;
+                background-color: $OPenIG-color_white;
+                margin-right: 2rem;
+            }
+            button{
+                padding: 0.2rem 1.5rem;
+            }
+        }
+    }
+    /*
+    .ui-dialog-titlebar-close{
+        text-indent: unset;
+        .ui-button-icon{
+            background-image: none;
+            text-indent: unset;
+        }
+        .ui-button-icon::after{
+            content: '\f00d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 400;
+        }
+    }*/
+}
+
 .ui-widget.ui-widget-content{
     .ui-dialog-buttonpane.ui-widget-content{
         .ui-dialog-buttonset.form-actions{
