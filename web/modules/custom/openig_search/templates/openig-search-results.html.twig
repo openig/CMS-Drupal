@@ -1,4 +1,4 @@
-{{ render_block('block_openig_local_tasks') }}
+{# {{ render_block('block_openig_local_tasks') }} #}
 
 <div class="search-results container">
   template : openig-search-results.html.twig
@@ -196,7 +196,6 @@
         <nav class="pager">
           <ul class="pagination js-pager__items">
             {% for page in pager.pages %}
-              {#              <li class="page__item {{ pager['current'] == page.number ? 'is-active' : '' }}"> #}
               {% if (page['label'] == "Précédent") %}
                 <li class="page-item pager__item--previous">
                   <a href="{{ page['url'] }}" class="page-link"></a>
@@ -206,11 +205,11 @@
                   <a href="{{ page['url'] }}" class="page-link"></a>
                 </li>
               {% else %}
-                <li class="page-item {{ pager['current'] == page.number ? 'is-active' : '' }}">
-                  <a href="{{ page['url'] }}" class="page-link">{{ page['label'] }}</a>
+                <li class="page-item {{ pager['current'] == page.number ? 'is-active active' : '' }}">
+                  <a href="{{ page['url'] }}?page={{ page['number'] }}" class="page-link"
+                     data-id="{{ page['label'] }}">{{ page['label'] }}</a>
                 </li>
               {% endif %}
-              {#              </li> #}
             {% endfor %}
           </ul>
         </nav>

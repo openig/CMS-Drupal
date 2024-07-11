@@ -22,8 +22,6 @@
         // Bind value
         $(input_value_id).val(array.join('|'));
 
-        // Auto submit form
-        // $('#openig-search-bar').submit();
       });
     }
 
