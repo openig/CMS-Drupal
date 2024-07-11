@@ -1,0 +1,19 @@
+uuid: f339095d-a518-479c-8b3c-9f6af6aa88df
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_picto_users
+    - taxonomy.vocabulary.pictos_titre
+id: taxonomy_term.pictos_titre.field_picto_users
+field_name: field_picto_users
+entity_type: taxonomy_term
+bundle: pictos_titre
+label: 'Picto users'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

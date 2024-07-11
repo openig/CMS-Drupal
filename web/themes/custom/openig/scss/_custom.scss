@@ -239,7 +239,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
-        background-color: $OPenIG-color_deep-white;
+        background-color: $OPenIG-color_medium-white;
         border-radius: 10px;
         //align-items: center;
         padding: 0 10px;
@@ -1190,7 +1190,7 @@ form{
 
 #block-openig-local-tasks{
     .nav-link{
-        color: $OPenIG-color_blue;
+        color: $OPenIG-color_black;
     }
     .nav-link.active{
         color: $OPenIG-color_black;
@@ -1493,13 +1493,107 @@ form{
 }
 
 // Formulaires d'inscription et de connexion 
+.path-user:not(.user-logged-in) #block-openig-adhesion a[href='/user/login']{
+    background-color: $OPenIG-color_deep-white;
+    color: $OPenIG-color_blue !important;
+    height: 100%;
+}
+.path-user:not(.user-logged-in) .local-task-container{
+    nav{
+        margin-bottom: 0;
+        width: 75%;
+        margin: auto;
+        ul{
+            border: none;
+            li.nav-item{
+                width: 33.3%;
+                text-align: center;
+            }
+        }
+    }
+    a.active, a.dropdown-toggle{
+        border: none;
+        border-top: 10px solid $OPenIG-color_yellow;
+        border-color: $OPenIG-color_yellow !important;
+        border-radius: 0;
+        background-color: $OPenIG-color_medium-white !important;
+        font-size: 20px;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+    a:not(.active){
+        border: none;
+        background-color: $OPenIG-color_white;
+        color: $OPenIG-color_black !important;
+        font-size: $OPenIG-font-size-lg;
+        font-family: 'Exo_regular';
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+        border-top: 10px solid $OPenIG-color_white;
+    }
+    a:not(.active):hover{
+        border-top-color: $OPenIG-color_white !important;
+    }
+    a.active:hover, a.dropdown-toggle:hover{
+        border-top-color: $OPenIG-color_yellow !important;
+    }
+    a:hover{
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 0;
+    }
+}
+form{
+    input.form-control:focus, textarea.form-control:focus{
+        box-shadow: 0 0 0 .25rem rgba(0,160,154,.25);
+    }
+}
 form.user-register-form, form.user-login-form, form.user-pass{
-    background-color: rgba(255, 255, 255, 0.6);
+    width: 75%;
+    margin: auto;
+    background-color: $OPenIG-color_medium-white;
+    padding: 5rem 0;
+    > div:first-of-type{
+        margin-top: 0;
+    }
+    > div, > p{
+        width: 50%;
+        margin: auto;
+    }
+    > div:not(:first-of-type), > p{
+        margin-top: 3rem;
+    }
+    div.form-actions{
+        display: flex;
+        justify-content: end;
+    }
+
+    .field--name-field-desired-structure{
+        .description{
+            .dropbutton-widget{
+                border: none;
+                .dropbutton{
+                    a{
+                        background-color: $OPenIG-color_blue;
+                        color: $OPenIG-color_white;
+                        font-size: 26px;
+                        padding: 0 0.75rem;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 form.user-register-form{
-    .form-type-email, .form-type-textfield, .form-type-tel, .form-type-entity-autocomplete, .form-actions{
-        margin-top: 2rem;
+    #edit-account{
+        > div:not(:first-of-type){
+            margin-top: 3rem;
+        }
     }
     a.btn:hover{
         background-color: $OPenIG-color_blue;
@@ -1508,6 +1602,121 @@ form.user-register-form{
         label{
             width: 100%;
         }
+    }
+    .form-item-name::after, .field--name-field-phone::after{
+        content: '';
+        border-bottom: 1px solid $OPenIG-color_gray;
+        width: 200px;
+        display: block;
+        margin: auto;
+        margin-top: 2rem;
+    }
+    .description{
+        font-size: $OPenIG-font-size-xs;
+    }
+}
+
+// Modal ajouter une structure
+.path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+    padding: 1rem 5rem;
+    z-index: 99999;
+    .ui-dialog-titlebar{
+        border: none;
+        background-color: $OPenIG-color_white;
+        .ui-dialog-title{
+            font-family: 'Exo_light';
+            font-weight: 300;
+            font-size: $OPenIG-font-size-h3;
+        }
+    }
+    .ui-front.ui-dialog-content.ui-widget-content{
+        padding: 0;
+        form{
+            color: $OPenIG-color_black;
+            margin: 1rem;
+            .form-control{
+                border-color: $OPenIG-color_gray;
+            }
+            .form-control:focus{
+                border-color: transparent;
+            }
+            label{
+                margin-bottom: 0.5rem;
+            }
+            .field--name-field-image, .field--name-field-website{
+                .description{
+                    font-size: $OPenIG-font-size-xs;
+                }
+            }
+            .field-group-fieldset{
+                legend{
+                    display: none;
+                }
+                margin-bottom: 0;
+            }
+            .field-group-fieldset::after{
+                content: '';
+                border-bottom: 1px solid $OPenIG-color_gray;
+                width: 400px;
+                display: block;
+                margin: auto;
+                margin-top: 2rem;
+            }
+            .field--name-body{
+                .form-wrapper{
+                    font-size: $OPenIG-font-size-xs;
+                    a{
+                        color: $OPenIG-color_blue;
+
+                    }
+                }
+            }
+        }
+    }
+    .ui-dialog-buttonpane{
+        background-color: $OPenIG-color_white;
+        border: none;
+        .ui-dialog-buttonset.form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            button:last-of-type{
+                border: 2px solid $OPenIG-color_blue;
+                color: $OPenIG-color_deep-gray;
+                background-color: $OPenIG-color_white;
+                margin-right: 2rem;
+            }
+            button{
+                padding: 0.2rem 1.5rem;
+            }
+        }
+    }
+    
+    .ui-dialog-titlebar-close{
+        font-size: 0;
+        text-indent: unset;
+        color: $OPenIG-color_black;
+        opacity: 1;
+        .ui-button-icon{
+            background-image: none;
+            text-indent: unset;
+            font-size: 20px;
+            width: fit-content;
+            height: fit-content;
+            top: 45%;
+        }
+        .ui-button-icon::after{
+            content: '\f00d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 400;
+            color: $OPenIG-color_black;
+        }
+    }
+    .ui-dialog-titlebar-close:hover{
+        color: $OPenIG-color_black;
+    }
+    .ui-dialog-titlebar-close:focus{
+        border: none;
+        box-shadow: none;
     }
 }
 

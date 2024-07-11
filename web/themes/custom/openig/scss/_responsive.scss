@@ -728,13 +728,6 @@
         }
     }
 
-    .path-user{
-        h1{
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-        }
-    }
-
     .path-annuaire{
         .btn_filtre{
             margin-bottom: 3rem !important;
@@ -970,7 +963,7 @@
             }
         }
         .sidebar{
-            background-color: $OPenIG-color_deep-white !important;
+            background-color: $OPenIG-color_medium-white !important;
             padding-top: 2rem;
         }
         .field--name-field-contenu-sidebar .paragraph--type--texte-dropdown{
@@ -1774,15 +1767,6 @@
             }
         }
     }
-    .path-user{
-        .title_share{
-            min-height: unset !important;
-        }
-        #block-openig-page-title h1{
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-        }
-    }
 
     .path-annuaire{
         .btn_filtre{
@@ -1892,6 +1876,48 @@
         .card-body{
             .nom-prenom{
                 font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+    }
+
+    // Formulaires d'inscription et de connexion 
+    .path-user:not(.user-logged-in) .local-task-container{
+        nav{
+            width: 100% !important;
+            ul{
+                overflow: visible;
+                li.nav-item{
+                    width: 100% !important;
+                    background-color: unset !important;
+                    padding: 0 !important;
+                }
+            }
+        }
+        a{
+            min-height: 61px;
+        }
+        a.active{
+            font-size: $OPenIG-font-size-md !important;
+        }
+        a:not(.active){
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
+    form.user-register-form, form.user-login-form, form.user-pass{
+        width: 100% !important;
+        > div, > p{
+            width: 90% !important;
+        }
+    }
+
+    // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 75% !important;
+        right: 0;
+        padding: 1rem;
+        .ui-dialog-titlebar{
+            .ui-dialog-title{
+                font-size: $OPenIG-font-size-lg;
             }
         }
     }
@@ -2031,6 +2057,10 @@
                 width: 100%;
             }
         }
+    }
+     // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 100% !important;
     }
 }
 
