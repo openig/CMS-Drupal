@@ -1690,19 +1690,34 @@ form.user-register-form{
             }
         }
     }
-    /*
+    
     .ui-dialog-titlebar-close{
+        font-size: 0;
         text-indent: unset;
+        color: $OPenIG-color_black;
+        opacity: 1;
         .ui-button-icon{
             background-image: none;
             text-indent: unset;
+            font-size: 20px;
+            width: fit-content;
+            height: fit-content;
+            top: 45%;
         }
         .ui-button-icon::after{
             content: '\f00d';
             font-family: "Font Awesome 6 Free";
             font-weight: 400;
+            color: $OPenIG-color_black;
         }
-    }*/
+    }
+    .ui-dialog-titlebar-close:hover{
+        color: $OPenIG-color_black;
+    }
+    .ui-dialog-titlebar-close:focus{
+        border: none;
+        box-shadow: none;
+    }
 }
 
 .ui-widget.ui-widget-content{
