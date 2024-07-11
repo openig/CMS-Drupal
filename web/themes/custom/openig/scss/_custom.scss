@@ -1793,7 +1793,7 @@ form.user-register-form{
 }
 
 // Compte utilisateur
-.profile{
+.path-user .profile{
     .identite{
         border: 2px solid $OPenIG-color_light-blue;
         border-radius: 10px;
@@ -1840,5 +1840,14 @@ form.user-register-form{
                 font-family: 'Russo One';
             }
         }
+    }
+
+    .outils_competences, .groupes_travail{
+        width: 50%;
+        margin: auto;
+        margin-top: 3rem;
+    }
+    .field--name-field-outils-competences, .liste_groupe{
+        padding: 0.5rem 5rem;
     }
 }

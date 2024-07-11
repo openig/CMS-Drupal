@@ -16,22 +16,45 @@
  * @see template_preprocess_user()
  */
 #}
-<article{{ attributes.addClass('profile') }}>
-  {% if content %}
-  <div class="identite">
-    <div class="nom_prenom">
-      {{content.field_firstname}}
-      {{content.field_lastname}}
-    </div>
-    {{content.member_for}}
-    <div class="email">
-      <a href="mailto:{{elements['#user'].mail.value}}">{{elements['#user'].mail.value}}</a>
-    </div>
-    {{content.field_ca_member}}
-    {{content.field_referent}}
-    {{content.field_structure}}
-    {{content.field_social_network}}
-  </div>
-    {{- content -}}
-  {% endif %}
-</article>
+{% if elements['#view_mode'] == 'full' %}
+  <article{{ attributes.addClass('profile') }}>
+    {% if content %}
+      <div class="identite">
+        <div class="nom_prenom">
+          {{content.field_firstname}}
+          {{content.field_lastname}}
+        </div>
+        {{content.member_for}}
+        <div class="email">
+          <a href="mailto:{{elements['#user'].mail.value}}">{{elements['#user'].mail.value}}</a>
+        </div>
+        {{content.field_ca_member}}
+        {{content.field_referent}}
+        {{content.field_structure}}
+        {{content.field_social_network}}
+      </div>
+      <div class="outils_competences">
+        <h2>Vos outils et compétences</h2>
+        {{- content.field_outils_competences -}}
+      </div>
+      <div class="groupes_travail">
+        <h2>Vos groupes de travail</h2>
+        <ul class="liste_groupe">
+          {% for key,groupe in groupes %}
+            <li><a href="/node/{{key}}">{{groupe.title}}</a> 
+              {% if groupe['user'] == 'check' %}
+                <p>check</p>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </article>
+{% else %}
+  <article{{ attributes.addClass('profile') }}>
+    {% if content %}
+      {{- content -}}
+    {% endif %}
+  </article>
+{% endif %}
