@@ -1915,6 +1915,11 @@
         width: 75% !important;
         right: 0;
         padding: 1rem;
+        .ui-dialog-titlebar{
+            .ui-dialog-title{
+                font-size: $OPenIG-font-size-lg;
+            }
+        }
     }
 }
 
