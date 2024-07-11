@@ -1909,6 +1909,13 @@
             width: 90% !important;
         }
     }
+
+    // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 75% !important;
+        right: 0;
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 768px){
@@ -2045,6 +2052,10 @@
                 width: 100%;
             }
         }
+    }
+     // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 100% !important;
     }
 }
 
