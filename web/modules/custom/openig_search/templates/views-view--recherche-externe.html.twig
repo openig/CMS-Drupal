@@ -1,7 +1,7 @@
 {{ render_block('block_openig_local_tasks') }}
 
 <div class="search-results container">
-  ICICICICICI
+  template : views-view--recherche-externe.html.twig
   {# filtres #}
   <div class="view-content container">
     <div class="formulaire_filtre d-xl-block d-none">
@@ -9,12 +9,9 @@
       <h2>Filtrer la recherche</h2>
       <div class="d-xl-block d-none">
 
-        <form class="openig-search-bar" data-drupal-selector="openig-search-bar" action="/recherche2" method="post" id="openig-search-bar" accept-charset="UTF-8">
-
-          <input id="facet_category_value" data-drupal-selector="edit-category" type="hidden" name="category" value="">
-          <input id="facet_lineage_value" data-drupal-selector="edit-lineage" type="hidden" name="lineage" value="OpenIG|datasets">
-          <input id="facet_resource_format_value" data-drupal-selector="edit-resource-format" type="hidden" name="resource_format" value="">
-{#          <input id="facet_resource_data_type_value" data-drupal-selector="edit-resource-data-type" type="hidden" name="resource_data_type" value="">#}
+        <form class="{{ search_bar_form['#attributes'].class }}"
+              data-drupal-selector="{{ search_bar_form['#attributes'].data-drupal-selector }}" action="/recherche2"
+              id="{{ search_bar_form['#id'] }}">
 
           {% if facets.lineage %}
             <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
@@ -104,12 +101,16 @@
             </details>
           {% endif %}
 
-          <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions--2">
-            <input data-drupal-selector="edit-submit-resultats-de-recherche-2" type="submit"
-                   id="edit-submit-resultats-de-recherche--2" value="Valider"
-                   class="button js-form-submit form-submit btn btn-primary">
-            <input data-drupal-selector="edit-reset" type="reset" id="edit-reset--2" name="op" value="Réinitialiser"
-                   class="button js-form-submit form-submit btn btn-primary">
+          {#  Champs hidden pour permettre les requetes vers l'api  #}
+          {{ search_bar_form.fulltext }}
+          {{ search_bar_form.category }}
+          {{ search_bar_form.lineage }}
+          {{ search_bar_form.resource_format }}
+          {{ search_bar_form.resource_data_type }}
+
+          <div class="form-actions">
+            {{ search_bar_form.submit_desktop }}
+            {{ search_bar_form.reset }}
           </div>
         </form>
       </div>

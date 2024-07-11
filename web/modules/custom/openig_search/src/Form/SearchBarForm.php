@@ -27,7 +27,7 @@ class SearchBarForm extends FormBase {
         // Full text search
         $fulltext = \Drupal::request()->query->get('fulltext');
         $form['fulltext'] = [
-            '#type' => 'textfield',
+            '#type' => 'hidden',
             '#default_value' => $fulltext,
             '#attributes' => [
                 'placeholder' => 'Recherchez ex: vue aérienne, PPRI...'
@@ -78,28 +78,40 @@ class SearchBarForm extends FormBase {
             ]
         ];
 
+
         $form['submit_desktop'] = [
-            '#prefix' => '<div class="form-actions">',
-            '#type' => 'submit',
-            '#value' => $this->t('Rechercher'),
-            '#attributes' => [
-                'class' => ['site-search__desktop'],
-            ],
+          '#type' => 'submit',
+          '#value' => $this->t('Valider'),
+          '#attributes' => [
+            'class' => ['site-search__desktop'],
+          ],
         ];
 
-        $form['submit_mobile'] = [
-            '#suffix' => '</div>',
-            '#type' => 'submit',
-            '#value' => html_entity_decode('&#xf002;'),
-            '#attributes' => [
-                'class' => ['site-search__mobile'],
-            ],
+
+        $form['reset'] = [
+          '#type' => 'button',
+          '#value' => $this->t('Réinitialiser'),
+          '#validate' => [],
+          '#attributes' => [
+            'class'   => ['site-search__desktop'],
+            'onclick' => 'this.form.reset(); return false;'
+          ],
         ];
+
+//        $form['submit_mobile'] = [
+//            '#suffix' => '</div>',
+//            '#type' => 'submit',
+//            '#value' => html_entity_decode('&#xf002;'),
+//            '#attributes' => [
+//                'class' => ['site-search__mobile'],
+//            ],
+//        ];
 
         $form['#cache']['contexts'][] = 'session';
 
         return $form;
     }
+
 
     /**
      * {@inheritdoc}
@@ -113,7 +125,7 @@ class SearchBarForm extends FormBase {
 
         // Bind source parameter if defined
         $lineage = $form_state->getValue('lineage');
-        if ($lineage) { 
+        if ($lineage) {
             $args['lineage'] = $lineage;
         } else {
             $args['lineage'] = 'CKAN Datasets|OpenIG';

@@ -219,6 +219,11 @@
       display: none;
     }
 
+    .search-result__source img{
+      height: 100px;
+      width: 100px;
+    }
+
     .more-link{
       display: flex;
       justify-content: end;

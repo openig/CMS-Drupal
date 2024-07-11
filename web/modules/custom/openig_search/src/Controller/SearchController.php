@@ -78,15 +78,16 @@ class SearchController extends ControllerBase {
         $search = $this->searchQueryService->search($filters, $page ? $page : 0);
 
         return [
-//            '#theme' => 'openig_search_results',
-            '#theme' => 'views_view__recherche_externe',
-            '#items' => $search['results'],
-            '#facets' => $search['facets'],
-            '#filters' => $filters,
-            '#page' => $page ? $page : 1,
-            '#pager' => $search['pager'],
-            "#url" => $search['url'],
-            "#count" => $search['count']
+            '#theme'    => 'openig_search_results',
+//            '#theme' => 'views_view__recherche_externe',
+            '#items'    => $search['results'],
+            '#facets'   => $search['facets'],
+            '#filters'  => $filters,
+            '#page'     => $page ? $page : 1,
+            '#pager'    => $search['pager'],
+            "#url"      => $search['url'],
+            "#count"    => $search['count'],
+            '#search_bar_form'  => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchBarForm'),
         ];
     }
 }
