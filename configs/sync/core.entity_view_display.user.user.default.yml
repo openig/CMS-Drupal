@@ -14,7 +14,6 @@ dependencies:
     - field.field.user.user.field_structure
   module:
     - social_media_links_field
-    - telephone
     - user
 _core:
   default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
@@ -25,37 +24,29 @@ mode: default
 content:
   field_ca_member:
     type: boolean
-    label: above
+    label: hidden
     settings:
-      format: default
+      format: custom
       format_custom_false: ''
-      format_custom_true: ''
+      format_custom_true: "Membre du Conseil d'Administration"
     third_party_settings: {  }
-    weight: 6
-    region: content
-  field_desired_structure:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 9
+    weight: 4
     region: content
   field_firstname:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 5
+    weight: 1
     region: content
   field_lastname:
     type: string
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   field_outils_competences:
     type: entity_reference_label
@@ -63,50 +54,48 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 7
-    region: content
-  field_phone:
-    type: telephone_link
-    label: above
-    settings:
-      title: ''
-    third_party_settings: {  }
     weight: 8
     region: content
   field_referent:
     type: boolean
-    label: above
+    label: hidden
     settings:
-      format: default
+      format: custom
       format_custom_false: ''
-      format_custom_true: ''
+      format_custom_true: Référent
     third_party_settings: {  }
-    weight: 2
+    weight: 5
     region: content
   field_social_network:
     type: social_media_links_field_default
-    label: above
+    label: hidden
     settings:
-      appearance: {  }
-      link_attributes: {  }
+      appearance:
+        orientation: v
+        show_name: 0
+      link_attributes:
+        target: _blank
+        rel: '<none>'
     third_party_settings: {  }
-    weight: 3
+    weight: 7
     region: content
   field_structure:
     type: entity_reference_label
-    label: above
+    label: inline
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 1
+    weight: 6
     region: content
   member_for:
     settings: {  }
     third_party_settings: {  }
-    weight: 0
+    weight: 3
     region: content
 hidden:
   breadcrumbs: true
+  field_desired_structure: true
+  field_phone: true
   langcode: true
   search_api_excerpt: true
   simplenews: true
