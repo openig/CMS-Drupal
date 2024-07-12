@@ -300,6 +300,11 @@
                 width: fit-content;
                 float: right;
                 position: relative;
+                span{
+                    height: 140px;
+                    width: 130px;
+                    background-repeat: no-repeat;
+                }
             }
             img{
                 position: absolute;
@@ -315,7 +320,7 @@
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
                 margin-top: -65px;
-                margin-right: 90px;
+                margin-right: -20px;
             }
         }
         .texte_header{
