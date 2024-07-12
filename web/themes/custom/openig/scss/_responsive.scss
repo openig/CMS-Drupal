@@ -1988,6 +1988,8 @@
                     height: 65% !important;
                     .image{
                         height: 55px;
+                        width: 140px;
+                        background-size: contain;
                     }
                     .verbe_action{
                         font-size: $OPenIG-font-size-base;

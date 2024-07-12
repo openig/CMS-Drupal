@@ -161,6 +161,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 195%;
             }
         }
         .taxonomy-term{
@@ -407,7 +410,7 @@ h1{
     }
     h1{
         margin-bottom: 0;
-        padding-left: 100px;
+        padding-left: 90px;
         //margin-left: 85px;
         position: relative;
         max-width: 75%;
