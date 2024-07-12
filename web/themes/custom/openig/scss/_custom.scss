@@ -407,12 +407,20 @@ h1{
     }
     h1{
         margin-bottom: 0;
-        margin-left: 85px;
+        padding-left: 100px;
+        //margin-left: 85px;
         position: relative;
         max-width: 75%;
+        background-repeat: no-repeat;
+        //height: 150px;
+        padding-top: 25px;
+        background-position: 0 100%;
+        min-height: 150px;
+        padding-bottom: 55px;
         .field--name-title{
             position: relative;
             z-index: 1;
+            display: block;
         }
     }
 }
