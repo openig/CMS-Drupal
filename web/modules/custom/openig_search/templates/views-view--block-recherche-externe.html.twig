@@ -1,7 +1,4 @@
-{{ render_block('block_openig_local_tasks') }}
-
 <div class="search-results container">
-  template : views-view--recherche-externe.html.twig
   {# filtres #}
   <div class="view-content container">
     <div class="formulaire_filtre d-xl-block d-none">
@@ -10,7 +7,7 @@
       <div class="d-xl-block d-none">
 
         <form class="{{ search_bar_form['#attributes'].class }}"
-              data-drupal-selector="{{ search_bar_form['#attributes'].data-drupal-selector }}" action="/recherche2"
+              data-drupal-selector="{{ search_bar_form['#attributes'].data-drupal-selector }}" action="/recherche/ressources_externes"
               id="{{ search_bar_form['#id'] }}">
 
           {% if facets.lineage %}
@@ -196,7 +193,6 @@
         <nav class="pager">
           <ul class="pagination js-pager__items">
             {% for page in pager.pages %}
-              {#              <li class="page__item {{ pager['current'] == page.number ? 'is-active' : '' }}"> #}
               {% if (page['label'] == "Précédent") %}
                 <li class="page-item pager__item--previous">
                   <a href="{{ page['url'] }}" class="page-link"></a>
@@ -206,11 +202,11 @@
                   <a href="{{ page['url'] }}" class="page-link"></a>
                 </li>
               {% else %}
-                <li class="page-item {{ pager['current'] == page.number ? 'is-active' : '' }}">
-                  <a href="{{ page['url'] }}" class="page-link">{{ page['label'] }}</a>
+                <li class="page-item {{ pager['current'] == page.number ? 'is-active active' : '' }}">
+                  <a href="{{ page['url'] }}?page={{ page['number'] }}" class="page-link"
+                     data-id="{{ page['label'] }}">{{ page['label'] }}</a>
                 </li>
               {% endif %}
-              {#              </li> #}
             {% endfor %}
           </ul>
         </nav>

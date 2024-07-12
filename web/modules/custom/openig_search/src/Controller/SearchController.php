@@ -78,8 +78,9 @@ class SearchController extends ControllerBase {
         $search = $this->searchQueryService->search($filters, $page ? $page : 0);
 
         return [
-            '#theme'    => 'openig_search_results',
+//            '#theme'    => 'openig_search_results',
 //            '#theme' => 'views_view__recherche_externe',
+            '#theme' => 'views_view__block_recherche_externe',
             '#items'    => $search['results'],
             '#facets'   => $search['facets'],
             '#filters'  => $filters,

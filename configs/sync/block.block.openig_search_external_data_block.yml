@@ -1,0 +1,18 @@
+uuid: 1e1519d9-0af2-4a8a-98fd-0e8e169b0338
+langcode: fr
+status: false
+dependencies:
+  theme:
+    - openig
+id: openig_search_external_data_block
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: openig_search_external_data_block
+settings:
+  id: openig_search_external_data_block
+  label: 'Search external data block'
+  label_display: '0'
+  provider: null
+visibility: {  }

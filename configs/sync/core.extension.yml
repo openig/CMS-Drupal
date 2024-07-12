@@ -69,6 +69,7 @@ module:
   openig_adhesion: 0
   openig_config: 0
   openig_filter_annuaire: 0
+  openig_search: 0
   openig_sql_migrate: 0
   openig_webform: 0
   options: 0

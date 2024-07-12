@@ -5,7 +5,8 @@
  */
 function openig_search_theme() {
     return [
-        'openig_search_results' => [
+        'views_view__block_recherche_externe' => [
+//        'openig_search_results' => [
 //        'views_view__recherche_externe' => [
             'variables' => [
                 'items' => [],

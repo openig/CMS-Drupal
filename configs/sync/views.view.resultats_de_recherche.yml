@@ -1963,6 +1963,7 @@ display:
         groups:
           1: AND
       defaults:
+        use_ajax: false
         exposed_form: false
         fields: false
         sorts: false
@@ -1970,6 +1971,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+      use_ajax: true
       display_description: ''
       header:
         result:
@@ -2108,6 +2110,7 @@ display:
         operator: AND
         groups: {  }
       defaults:
+        use_ajax: false
         exposed_form: false
         fields: false
         sorts: false
@@ -2115,6 +2118,7 @@ display:
         filters: false
         filter_groups: false
         header: false
+      use_ajax: true
       display_description: ''
       header: {  }
       exposed_block: false
