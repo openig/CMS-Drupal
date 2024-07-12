@@ -1921,6 +1921,24 @@
             }
         }
     }
+
+    // Compte utilisateur
+    .path-user .profile{
+        .identite{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-sm;
+            .nom_prenom{
+                font-size: $OPenIG-font-size-h2 !important;
+            }
+        }
+        .outils_competences, .groupes_travail{
+            width: 100% !important;
+            .field--name-field-outils-competences, .liste_groupe{
+                padding: 0.5rem !important;
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -2061,6 +2079,21 @@
      // Modal ajouter une structure
     .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
         width: 100% !important;
+    }
+
+    // Compte utilisateur
+    .path-user .profile{
+        .identite{
+            padding: 1rem !important;
+            .social-media-links--platforms{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .link_social_media{
+                display: none;
+            }
+        }
     }
 }
 

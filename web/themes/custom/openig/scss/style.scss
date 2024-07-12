@@ -47,6 +47,12 @@ $fa-font-path: "../fonts";
 }
 
 @font-face {
+    font-family: 'Exo_bold';
+    src: url('../fonts/Exo/Exo-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
     font-family: 'OpenSans_Regular';
     src: url('../fonts/OpenSans/static/OpenSans-Regular.ttf');
     font-weight: 400;
