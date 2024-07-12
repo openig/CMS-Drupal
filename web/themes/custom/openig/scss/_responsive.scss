@@ -1941,12 +1941,10 @@
     }
 
     .path-user{
-        .form_reset_pass{
+        .form_reset_pass, .user-form{
             font-size: $OPenIG-font-size-sm;
-            #edit-actions{
-                input{
-                    font-size: $OPenIG-font-size-sm;
-                }
+            input[type='submit']{
+                font-size: $OPenIG-font-size-sm;
             }
         }
     }

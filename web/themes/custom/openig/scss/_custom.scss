@@ -1636,6 +1636,20 @@ form.user-register-form{
         margin-top: 5rem;
         background-color: rgba(255, 255, 255, 0.6);
     }
+    .user-form{
+        .form-item{
+            margin-bottom: 1.5rem;
+        }
+        .confirm-parent{
+            margin: 0;
+        }
+        .password-confirm-message{
+            margin-top: 1.5rem;
+        }
+        .link.tabledrag-toggle-weight{
+            color: $OPenIG-color_blue;
+        }
+    }
 }
 
 // Modal ajouter une structure
