@@ -1794,6 +1794,7 @@ form.user-register-form{
 
 // Compte utilisateur
 .path-user .profile{
+    margin-bottom: 3rem;
     .identite{
         border: 2px solid $OPenIG-color_light-blue;
         border-radius: 10px;
@@ -1819,10 +1820,16 @@ form.user-register-form{
         .email, .field--name-field-ca-member, .field--name-field-referent, .field--name-field-structure{
             margin-bottom: 1rem;
         }
+        .email{
+            a{
+                color: $OPenIG-color_black;
+            }
+        }
         .social-media-links--platforms{
             margin-top: 2rem;
             li{
                 display: flex;
+                flex-wrap: wrap;
                 align-items: center;
                 margin-bottom: 1.5rem;
             }
@@ -1846,8 +1853,42 @@ form.user-register-form{
         width: 50%;
         margin: auto;
         margin-top: 3rem;
+        background-color: rgba(255, 255, 255, 0.6);
     }
     .field--name-field-outils-competences, .liste_groupe{
         padding: 0.5rem 5rem;
+        a{
+            color: $OPenIG-color_black;
+            text-decoration: none;
+        }
+    }
+    .groupes_travail{
+        .liste_groupe{
+            li{
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+            li.nocheck{
+                opacity: 0.5;
+            }
+        }
+    }
+    .outils_competences{
+        .field--name-field-outils-competences{
+            .field__item{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+            .field__item::after{
+                content: '\f00c';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+            }
+        }
     }
 }

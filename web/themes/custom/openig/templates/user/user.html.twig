@@ -41,10 +41,12 @@
         <h2>Vos groupes de travail</h2>
         <ul class="liste_groupe">
           {% for key,groupe in groupes %}
-            <li><a href="/node/{{key}}">{{groupe.title}}</a> 
-              {% if groupe['user'] == 'check' %}
-                <p>check</p>
-              {% endif %}
+            {% if groupe['user'] == 'check' %}
+              <li class="check">{{groupe.title}}
+              <i class="fa-solid fa-check"></i>
+            {% else %}
+              <li class="nocheck">{{groupe.title}}
+            {% endif %}
             </li>
           {% endfor %}
         </ul>
