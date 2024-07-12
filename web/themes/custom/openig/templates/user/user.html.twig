@@ -20,10 +20,12 @@
   <article{{ attributes.addClass('profile') }}>
     {% if content %}
       <div class="identite">
-        <div class="nom_prenom">
-          {{content.field_firstname}}
-          {{content.field_lastname}}
-        </div>
+        {% if content.field_firstname[0] or content.field_lastname[0] %}
+          <div class="nom_prenom">
+            {{content.field_firstname}}
+            {{content.field_lastname}}
+          </div>
+        {% endif %}
         {{content.member_for}}
         <div class="email">
           <a href="mailto:{{elements['#user'].mail.value}}">{{elements['#user'].mail.value}}</a>
@@ -33,10 +35,12 @@
         {{content.field_structure}}
         {{content.field_social_network}}
       </div>
-      <div class="outils_competences">
-        <h2>Vos outils et compétences</h2>
-        {{- content.field_outils_competences -}}
-      </div>
+      {% if content.field_outils_competences[0] %}
+        <div class="outils_competences">
+          <h2>Vos outils et compétences</h2>
+          {{- content.field_outils_competences -}}
+        </div>
+      {% endif %}
       <div class="groupes_travail">
         <h2>Vos groupes de travail</h2>
         <ul class="liste_groupe">
