@@ -1616,6 +1616,28 @@ form.user-register-form{
     }
 }
 
+.path-user .ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
+    a.ui-state-active{
+        border: none;
+    }
+    a{
+        color: $OPenIG-color_black;
+        background-color: transparent;
+    }
+    a:hover{
+        background-color: transparent;
+        color: $OPenIG-color_blue;
+        border: none;
+    }
+}
+
+.path-user{
+    .form_reset_pass{
+        margin-top: 5rem;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
 // Modal ajouter une structure
 .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
     padding: 1rem 5rem;

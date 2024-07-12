@@ -1939,6 +1939,17 @@
             }
         }
     }
+
+    .path-user{
+        .form_reset_pass{
+            font-size: $OPenIG-font-size-sm;
+            #edit-actions{
+                input{
+                    font-size: $OPenIG-font-size-sm;
+                }
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
