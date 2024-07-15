@@ -1,6 +1,8 @@
 <?php
 use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 /**
  * @file
  * OPenIG theme file.
@@ -264,6 +266,13 @@ function openig_preprocess_block(&$variables){
     $current_path = \Drupal::service('path.current')->getPath();
     if(substr($current_path, 0, 5) === "/node"){
       $variables['node_content'] = 'node';
+    }
+  }
+  if($variables['elements']['#id'] == 'openig_lanewsletter'){
+    $file = File::load($variables['content']['field_picto'][0]['#item']->target_id);
+    if($file->uri[0]->value){
+      $url = \Drupal::service('file_url_generator')->generateString($file->uri[0]->value);
+      $variables['url_picto'] = $url;
     }
   }
 }
