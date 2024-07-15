@@ -114,7 +114,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/quotes.png" alt="Citation" />'
+            text: themes/custom/openig/pictos/quotes.png
             make_link: false
             path: ''
             absolute: false
