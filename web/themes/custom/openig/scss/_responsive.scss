@@ -1427,6 +1427,11 @@
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
+                span{
+                    width: 30px !important;
+                    height: 30px !important;
+                    background-size: cover;
+               }
             }
             .views-field-title, .views-field-view-node{
                 a{

@@ -18,8 +18,10 @@
  * @see template_preprocess_views_view_field()
  */
 #}
-{% if (view.current_display == 'actualites') or (view.current_display == 'actualites_accueil') or (view.current_display == 'actualites_accueil_mobile')
-or (view.current_display == 'actualite_mise_en_avant') or (view.current_display == 'actualites_mobile') %}
+{% if ((view.current_display == 'actualites') or (view.current_display == 'actualites_accueil') or (view.current_display == 'actualites_accueil_mobile')
+or (view.current_display == 'actualite_mise_en_avant') or (view.current_display == 'actualites_mobile')) and (field.options['id'] == 'nothing') %}
+	<span style="background-image: url(' {{ output -}}');"></span>
+{% elseif (view.current_display == 'groupes_travail_accueil') or (view.current_display == 'groupes_de_travail') %}
 	<span style="background-image: url(' {{ output -}}');"></span>
 {% else %}
 	{{ output -}}

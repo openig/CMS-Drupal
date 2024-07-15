@@ -167,7 +167,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-gt.png" alt="Groupe de personnes" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-gt.png
             make_link: false
             path: ''
             absolute: false
@@ -1274,7 +1274,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-gt.png" alt="Groupe de personnes" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-gt.png
             make_link: false
             path: ''
             absolute: false
