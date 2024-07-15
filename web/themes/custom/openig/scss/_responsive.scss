@@ -1372,7 +1372,11 @@
             padding: 0.5rem 0 .5rem 1rem !important;
         }
         .views-field-nothing{
-            width: 23px !important;
+            span{
+                width: 23px !important;
+                height: 23px !important;
+                background-size: cover;
+           }
         }
         .views-field-created, .views-field-view-node a{
             font-size: $OPenIG-font-size-xs !important;

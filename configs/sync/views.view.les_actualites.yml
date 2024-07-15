@@ -1032,7 +1032,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -1639,7 +1639,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -2128,7 +2128,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -2747,7 +2747,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -3382,7 +3382,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false

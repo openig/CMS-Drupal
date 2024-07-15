@@ -183,6 +183,13 @@
                     }
                     .views-field-nothing{
                        width: 40px;
+                        span{
+                            width: 40px;
+                            height: 40px;
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                       }
                     }
                 }
             }
