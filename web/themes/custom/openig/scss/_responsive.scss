@@ -760,7 +760,10 @@
         width: 100% !important;
         h1{
             padding-left: 65px !important;
-            margin-left: 0 !important;
+            //margin-left: 0 !important;
+            min-height: 100px !important;
+            background-size: 90px;
+            max-width: 100% !important;
         }
         img{
             left: 0 !important;
@@ -795,6 +798,9 @@
     }
 
     .path-l-agenda, .path-les-actualites, .path-annuaire{
+        .title_share{
+            margin-bottom: 2rem;
+        }
         #block-openig-addtoanysharebuttons{
             position: absolute !important;
         }
