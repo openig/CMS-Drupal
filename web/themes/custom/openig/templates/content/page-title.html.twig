@@ -14,11 +14,23 @@
 #}
 {{ title_prefix }}
 {% if title|render|striptags|trim %}
+{#
 <h1{{title_attributes}}>
     {% if picto_uri is defined %}
       <img src="{{ file_url(picto_uri) }}" alt="{{picto_alt}}" />
     {% endif %}
     {{ title }}
 </h1>
+#}
+{% if picto_uri is defined %}
+  <h1{{title_attributes}} style="background-image: url('{{ file_url(picto_uri) }}');">
+    {{ title }}
+  </h1>
+{% else %}
+  <h1{{title_attributes}}>
+    {{ title }}
+  </h1>
+{% endif %}
+
 {% endif %}
 {{ title_suffix }}

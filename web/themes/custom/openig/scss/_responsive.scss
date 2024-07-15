@@ -178,6 +178,18 @@
                     }
                 }
             }
+            .field--name-field-picto{
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
+            }
         }
     }
     .premiere_section.open{
@@ -507,6 +519,16 @@
             }
             .field--name-field-picto{
                 margin-right: 0 !important;
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
             }
         }
         #block-openig-socialmedialinks{
@@ -760,7 +782,10 @@
         width: 100% !important;
         h1{
             padding-left: 65px !important;
-            margin-left: 0 !important;
+            //margin-left: 0 !important;
+            min-height: 100px !important;
+            background-size: 90px;
+            max-width: 100% !important;
         }
         img{
             left: 0 !important;
@@ -795,6 +820,9 @@
     }
 
     .path-l-agenda, .path-les-actualites, .path-annuaire{
+        .title_share{
+            margin-bottom: 2rem;
+        }
         #block-openig-addtoanysharebuttons{
             position: absolute !important;
         }
@@ -1366,7 +1394,11 @@
             padding: 0.5rem 0 .5rem 1rem !important;
         }
         .views-field-nothing{
-            width: 23px !important;
+            span{
+                width: 23px !important;
+                height: 23px !important;
+                background-size: cover;
+           }
         }
         .views-field-created, .views-field-view-node a{
             font-size: $OPenIG-font-size-xs !important;
@@ -1417,6 +1449,11 @@
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
+                span{
+                    width: 30px !important;
+                    height: 30px !important;
+                    background-size: cover;
+               }
             }
             .views-field-title, .views-field-view-node{
                 a{
@@ -1614,7 +1651,13 @@
                     right: unset !important;
                     display: flex;
                     justify-content: end;
-                    width: 100%;
+                    width: 100% !important;
+                    height: unset !important;
+                    span{
+                        width: 35px !important;
+                        height: 35px !important;
+                        background-size: contain;
+                    }
                     img{
                         width: 35px;
                     }
@@ -1988,6 +2031,8 @@
                     height: 65% !important;
                     .image{
                         height: 55px;
+                        width: 140px;
+                        background-size: contain;
                     }
                     .verbe_action{
                         font-size: $OPenIG-font-size-base;
