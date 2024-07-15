@@ -303,7 +303,6 @@
                     height: 110px;
                     width: 130px;
                     background-repeat: no-repeat;
-                    z-index: -1;
                 }
             }
             img{
@@ -320,6 +319,7 @@
                 font-weight: 600;
                 margin-top: -20px;
                 margin-right: -20px;
+                z-index: 1;
             }
         }
         .texte_header{
