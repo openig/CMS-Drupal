@@ -1651,7 +1651,13 @@
                     right: unset !important;
                     display: flex;
                     justify-content: end;
-                    width: 100%;
+                    width: 100% !important;
+                    height: unset !important;
+                    span{
+                        width: 35px !important;
+                        height: 35px !important;
+                        background-size: contain;
+                    }
                     img{
                         width: 35px;
                     }

@@ -354,7 +354,7 @@ function openig_preprocess_views_view_fields(&$variables){
 }
 
 function openig_preprocess_field(&$variables){
-  if (($variables['field_name'] == 'field_picto') and ($variables['entity_type'] == 'menu_link_content')) {
+  if ((($variables['field_name'] == 'field_picto') and ($variables['entity_type'] == 'menu_link_content')) or (($variables['field_name'] == 'field_picto') and ($variables['element']['#bundle'] == 'membre'))) {
     $file = File::load($variables['items'][0]['content']['#item']->target_id);
     if($file->uri[0]->value){
       $url = \Drupal::service('file_url_generator')->generateString($file->uri[0]->value);
