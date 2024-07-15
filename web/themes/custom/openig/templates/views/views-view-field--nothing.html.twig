@@ -23,6 +23,8 @@ or (view.current_display == 'actualite_mise_en_avant') or (view.current_display 
 	<span style="background-image: url(' {{ output -}}');"></span>
 {% elseif (view.current_display == 'groupes_travail_accueil') or (view.current_display == 'groupes_de_travail') %}
 	<span style="background-image: url(' {{ output -}}');"></span>
+{% elseif (view.current_display == 'services_accueil') or (view.current_display == 'services') %}
+	<span style="background-image: url(' {{ output -}}');"></span>
 {% else %}
 	{{ output -}}
 {% endif %}

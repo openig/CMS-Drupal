@@ -170,6 +170,13 @@
             .views-field-nothing{
                width: 40px;
                margin-left: 10px;
+               span{
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-repeat: no-repeat;
+                background-position: center;
+               }
             }
             .views-field-field-image{
                 width: 115px;
