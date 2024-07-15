@@ -178,6 +178,18 @@
                     }
                 }
             }
+            .field--name-field-picto{
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
+            }
         }
     }
     .premiere_section.open{
@@ -507,6 +519,16 @@
             }
             .field--name-field-picto{
                 margin-right: 0 !important;
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
             }
         }
         #block-openig-socialmedialinks{
