@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: bloc_newsletter
 label: 'Bloc newsletter'
-revision: false
+revision: 0
 description: ''

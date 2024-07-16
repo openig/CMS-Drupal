@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: demarche_d_adhesion_a_openig
 label: "Démarche d'adhésion à OPenIG"
-revision: false
+revision: 0
 description: ''
