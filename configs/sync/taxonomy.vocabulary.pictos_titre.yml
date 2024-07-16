@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Pictos titre'
 vid: pictos_titre
-description: ''
+description: null
 weight: 0
+new_revision: false

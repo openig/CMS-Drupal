@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: "Département d'intervention"
 vid: dpt_intervention
-description: ''
+description: null
 weight: 0
+new_revision: false
