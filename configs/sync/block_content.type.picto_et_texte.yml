@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: picto_et_texte
 label: 'Picto et texte'
-revision: false
+revision: 0
 description: ''

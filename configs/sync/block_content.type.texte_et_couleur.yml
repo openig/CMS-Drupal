@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: texte_et_couleur
 label: 'Texte et couleur'
-revision: false
+revision: 0
 description: ''
