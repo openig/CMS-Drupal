@@ -92,5 +92,4 @@ content:
     weight: 5
     region: content
 hidden:
-  breadcrumbs: true
   search_api_excerpt: true

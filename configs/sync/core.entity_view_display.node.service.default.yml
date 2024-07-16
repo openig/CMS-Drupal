@@ -85,7 +85,6 @@ content:
     region: content
 hidden:
   addtoany: true
-  breadcrumbs: true
   field_access_restricted: true
   field_weight: true
   langcode: true

@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Type de ressource'
 vid: type_de_ressource
-description: ''
+description: null
 weight: 0
+new_revision: false

@@ -35,11 +35,6 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
-  content_moderation_control:
-    settings: {  }
-    third_party_settings: {  }
-    weight: -20
-    region: content
   field_address:
     type: basic_string
     label: above
@@ -144,7 +139,6 @@ content:
     region: content
 hidden:
   addtoany: true
-  breadcrumbs: true
   langcode: true
   links: true
   search_api_excerpt: true

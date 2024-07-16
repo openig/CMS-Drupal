@@ -45,8 +45,6 @@ content:
     weight: 100
     region: content
 hidden:
-  addtoany: true
-  breadcrumbs: true
   field_entreprise: true
   field_poste: true
   field_tag: true

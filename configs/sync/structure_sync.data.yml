@@ -1,3 +1,4 @@
+langcode: fr
 blocks:
   -
     info: 'Message de redirection vers le CKAN'
