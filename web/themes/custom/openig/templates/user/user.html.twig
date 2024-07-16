@@ -1,0 +1,66 @@
+{#
+/**
+ * @file
+ * Theme override to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+{% if elements['#view_mode'] == 'full' %}
+  <article{{ attributes.addClass('profile') }}>
+    {% if content %}
+      <div class="identite">
+        {% if content.field_firstname[0] or content.field_lastname[0] %}
+          <div class="nom_prenom">
+            {{content.field_firstname}}
+            {{content.field_lastname}}
+          </div>
+        {% endif %}
+        {{content.member_for}}
+        <div class="email">
+          <a href="mailto:{{elements['#user'].mail.value}}">{{elements['#user'].mail.value}}</a>
+        </div>
+        {{content.field_ca_member}}
+        {{content.field_referent}}
+        {{content.field_structure}}
+        {{content.field_social_network}}
+      </div>
+      {% if content.field_outils_competences[0] %}
+        <div class="outils_competences">
+          <h2>Vos outils et compétences</h2>
+          {{- content.field_outils_competences -}}
+        </div>
+      {% endif %}
+      <div class="groupes_travail">
+        <h2>Vos groupes de travail</h2>
+        <ul class="liste_groupe">
+          {% for key,groupe in groupes %}
+            {% if groupe['user'] == 'check' %}
+              <li class="check">{{groupe.title}}
+              <i class="fa-solid fa-check"></i>
+            {% else %}
+              <li class="nocheck">{{groupe.title}}
+            {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </article>
+{% else %}
+  <article{{ attributes.addClass('profile') }}>
+    {% if content %}
+      {{- content -}}
+    {% endif %}
+  </article>
+{% endif %}

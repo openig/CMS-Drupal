@@ -38,8 +38,8 @@ process:
     plugin: static_map
     source: is_active
     map:
-      0: draft
-      1: published
+      - draft
+      - published
     default_value: draft
 destination:
   plugin: 'entity:node'

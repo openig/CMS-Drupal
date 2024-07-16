@@ -36,9 +36,9 @@ content:
     region: content
     settings:
       add_new_button_title: +
-      modal_form_mode: default
-      modal_width: 80%
-      modal_title: 'Ajouter nouveau'
+      modal_form_mode: modal
+      modal_width: 50%
+      modal_title: 'Ajouter une structure'
       duplicate: false
       search: false
       match_operator: CONTAINS

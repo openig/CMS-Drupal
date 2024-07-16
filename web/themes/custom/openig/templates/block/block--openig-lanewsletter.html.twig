@@ -34,6 +34,7 @@
     'view-header'
   ]
 %}
+
 <div{{ attributes.addClass(classes) }}>
     <div class="region_huit"></div>
     <div class="contenuFlex">
@@ -42,8 +43,9 @@
             {% if label %}
                 <div class="title_header">
                     <div class="picto_titre">
-                        {{content.field_picto}}
+                        {#{{content.field_picto}}#}
                         <h2{{ title_attributes }}>{{ label }}</h2>
+                        <span style="background-image:url('{{ url_picto }}')"></span>
                     </div>
                 </div>
             {% endif %}

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: taxonomies
 label: Taxonomies
-revision: 0
+revision: false
 description: ''

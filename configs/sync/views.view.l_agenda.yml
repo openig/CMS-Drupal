@@ -842,16 +842,20 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
               field_tag_target_id:
                 plugin_id: bef
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: true
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
@@ -2344,7 +2348,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n        \r\n        <img src=\"/themes/custom/openig/pictos/accueil-titre/calendrier-titre.png\" alt=\"Calendrier\" />\r\n\r\n        <h2>[view:title]</h2> \r\n    \r\n    </div>\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <h2>[view:title]</h2> \r\n    \r\n        <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/calendrier-titre.png')\"></span>\r\n\r\n    </div>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }

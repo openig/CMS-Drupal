@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 id: adresse_et_contact
 label: 'Adresse et contact'
-revision: 0
+revision: false
 description: ''

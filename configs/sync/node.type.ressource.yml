@@ -12,7 +12,7 @@ third_party_settings:
 name: Ressource
 type: ressource
 description: 'Contenu de type fichier ou lien qui est appelé dans différents types de contenu'
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true
