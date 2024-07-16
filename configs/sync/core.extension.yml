@@ -1,5 +1,6 @@
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
+langcode: fr
 module:
   addtoany: 0
   admin_toolbar: 0
@@ -68,6 +69,7 @@ module:
   openig_adhesion: 0
   openig_config: 0
   openig_filter_annuaire: 0
+  openig_search_internal: 0
   openig_sql_migrate: 0
   openig_webform: 0
   options: 0
