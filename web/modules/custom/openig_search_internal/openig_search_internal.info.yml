@@ -1,0 +1,5 @@
+name: OPenIG Search internal
+type: module
+description: OPenIG Search internal resources
+package: Custom
+core_version_requirement: ^10

@@ -31,6 +31,7 @@
  * @ingroup themeable
  */
 #}
+
 {% for field in fields -%}
 
   {{ field.separator }}
@@ -66,10 +67,15 @@
 
 {%- endfor %}
 
-{% if urlCustom is not null %}
-  <div class="more-link">
-    <a href="{{ urlCustom }}" target="_blank">En savoir plus</a>
-  </div>
-{% endif %}
-
+<div class="more-link">
+  {% if accessCheck %}
+    {% if urlCustom is not null %}
+        <a href="{{ urlCustom }}" target="_blank">En savoir plus</a>
+    {% endif %}
+  {% else %}
+    <div class="col-2 divPrivate">
+      <p class="itemPrivate">Contenu réservé aux adhérents</p><i class="fa-solid fa-lock"></i>
+    </div>
+  {% endif %}
+</div>
 

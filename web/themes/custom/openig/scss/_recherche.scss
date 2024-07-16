@@ -242,6 +242,22 @@
         border-bottom: 1px solid $OPenIG-color_red;
         padding-bottom: 5px;
       }
+    }
+    .divPrivate{
+      display: flex;
+      align-items: center;
+      p.itemPrivate{
+        font-family: 'OpenSans_Regular';
+        font-size: $OPenIG-font-size-xs;
+        margin: 0;
+        text-align: right;
+      }
+      i{
+        margin-left: 1.5rem;
+        color: $OPenIG-color_blue;
+        font-size: 20px;
+      }
+    }
   }
 
   // Pagination

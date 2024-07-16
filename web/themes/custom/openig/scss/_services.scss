@@ -170,6 +170,13 @@
             .views-field-nothing{
                width: 40px;
                margin-left: 10px;
+               span{
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-repeat: no-repeat;
+                background-position: center;
+               }
             }
             .views-field-field-image{
                 width: 115px;
@@ -299,6 +306,11 @@
                 width: fit-content;
                 float: right;
                 position: relative;
+                span{
+                    height: 110px;
+                    width: 130px;
+                    background-repeat: no-repeat;
+                }
             }
             img{
                 position: absolute;
@@ -313,7 +325,8 @@
                 font-family: 'Exo_semiBold';
                 font-weight: 600;
                 margin-top: -20px;
-                margin-right: 90px;
+                margin-right: -20px;
+                z-index: 1;
             }
         }
         .texte_header{

@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: 'Outils et compétences'
 vid: outils_competences
-description: ''
+description: null
 weight: 0

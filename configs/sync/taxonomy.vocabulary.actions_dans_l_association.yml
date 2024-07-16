@@ -4,5 +4,5 @@ status: true
 dependencies: {  }
 name: "Action dans l'association"
 vid: actions_dans_l_association
-description: ''
+description: null
 weight: 0

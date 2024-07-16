@@ -1,0 +1,8 @@
+openig_search_internal:
+  version: 1.x
+  js:
+    js/openig_search_internal.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+
