@@ -29,11 +29,6 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
-    weight: 11
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_ca_member:
     type: boolean_checkbox
     weight: 6
@@ -109,7 +104,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 12
+    weight: 11
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -119,6 +114,7 @@ content:
     settings: {  }
     third_party_settings: {  }
 hidden:
+  contact: true
   langcode: true
   language: true
   timezone: true

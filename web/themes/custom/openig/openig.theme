@@ -1,5 +1,8 @@
 <?php
 use Drupal\node\Entity\Node;
+use Drupal\node\NodeInterface;
+use Drupal\file\Entity\File;
+use Drupal\media\Entity\Media;
 /**
  * @file
  * OPenIG theme file.
@@ -28,8 +31,40 @@ function openig_preprocess_field__node(&$variables){
 }
 
 function openig_preprocess_page_title(&$variables) {
-  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les vues
   $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
+  
+  $path = \Drupal::service('path.current')->getPath();
+  $path_args = explode('/', $path);
+  $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
+  $type = $node_load->type->target_id;
+  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les nodes
+  if ($route->getPath() == '/node/{node}') {
+    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+    if($pictos){
+      $first_element = reset($pictos);
+      if($first_element){
+        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+      }
+    }
+  }
+  
+  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les pages user
+  if (substr($route->getPath(), 0, 5) == '/user') {
+    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_picto_users' => '/user']);
+    if($pictos){
+      $first_element = reset($pictos);
+      if($first_element){
+        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+      }
+    }
+  }
+
+  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les vues
+
   if($route->getDefault('_controller') == 'Drupal\views\Routing\ViewPageController::handle'){
     $id = $route->getDefault('view_id');
     $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_vue' => $id]);
@@ -233,6 +268,13 @@ function openig_preprocess_block(&$variables){
       $variables['node_content'] = 'node';
     }
   }
+  if($variables['elements']['#id'] == 'openig_lanewsletter'){
+    $file = File::load($variables['content']['field_picto'][0]['#item']->target_id);
+    if($file->uri[0]->value){
+      $url = \Drupal::service('file_url_generator')->generateString($file->uri[0]->value);
+      $variables['url_picto'] = $url;
+    }
+  }
 }
 
 function openig_preprocess_views_view(&$variables){
@@ -309,4 +351,33 @@ function openig_preprocess_views_view_fields(&$variables){
       $variables['title_row'] = $variables['row']->_entity->title[0]->value;
     }
   }
+}
+
+function openig_preprocess_field(&$variables){
+  if ((($variables['field_name'] == 'field_picto') and ($variables['entity_type'] == 'menu_link_content')) or (($variables['field_name'] == 'field_picto') and ($variables['element']['#bundle'] == 'membre'))) {
+    $file = File::load($variables['items'][0]['content']['#item']->target_id);
+    if($file->uri[0]->value){
+      $url = \Drupal::service('file_url_generator')->generateString($file->uri[0]->value);
+      $variables['url_picto'] = $url;
+    }
+  }
+}
+
+function openig_preprocess_user(&$variables){
+  $database = \Drupal::database();
+  // Récupération des groupes de travail
+  $query = $database->query("SELECT DISTINCT n.nid, n.title FROM {node_field_data} n WHERE n.type = 'groupe_de_travail'");
+  $results = $query->fetchAll();
+    foreach ($results as $result) {
+      if ($result->nid != null) {
+        $query = $database->query("SELECT DISTINCT u.uid FROM {users_field_data} u LEFT JOIN {node__field_members} m ON m.field_members_target_id = u.uid WHERE m.entity_id = '".$result->nid."' AND u.uid = '".$variables['elements']['#user']->uid->value."'");
+        $resultsuser = $query->fetchAll();
+
+        $variables['groupes'][$result->nid]['title'] = $result->title;
+
+        foreach ($resultsuser as $resultuser) {
+          $variables['groupes'][$result->nid]['user'] = 'check';
+        }
+      }
+    }
 }

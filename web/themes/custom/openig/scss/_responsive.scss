@@ -178,6 +178,18 @@
                     }
                 }
             }
+            .field--name-field-picto{
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
+            }
         }
     }
     .premiere_section.open{
@@ -507,6 +519,16 @@
             }
             .field--name-field-picto{
                 margin-right: 0 !important;
+                width: 25px;
+                height: 25px;
+                padding-top: 4px;
+                span{
+                    padding: 0;
+                    display: block;
+                    width: 25px;
+                    height: 25px;
+                    background-size: contain;
+                }
             }
         }
         #block-openig-socialmedialinks{
@@ -728,13 +750,6 @@
         }
     }
 
-    .path-user{
-        h1{
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-        }
-    }
-
     .path-annuaire{
         .btn_filtre{
             margin-bottom: 3rem !important;
@@ -767,7 +782,10 @@
         width: 100% !important;
         h1{
             padding-left: 65px !important;
-            margin-left: 0 !important;
+            //margin-left: 0 !important;
+            min-height: 100px !important;
+            background-size: 90px;
+            max-width: 100% !important;
         }
         img{
             left: 0 !important;
@@ -802,6 +820,9 @@
     }
 
     .path-l-agenda, .path-les-actualites, .path-annuaire{
+        .title_share{
+            margin-bottom: 2rem;
+        }
         #block-openig-addtoanysharebuttons{
             position: absolute !important;
         }
@@ -970,7 +991,7 @@
             }
         }
         .sidebar{
-            background-color: $OPenIG-color_deep-white !important;
+            background-color: $OPenIG-color_medium-white !important;
             padding-top: 2rem;
         }
         .field--name-field-contenu-sidebar .paragraph--type--texte-dropdown{
@@ -1373,7 +1394,11 @@
             padding: 0.5rem 0 .5rem 1rem !important;
         }
         .views-field-nothing{
-            width: 23px !important;
+            span{
+                width: 23px !important;
+                height: 23px !important;
+                background-size: cover;
+           }
         }
         .views-field-created, .views-field-view-node a{
             font-size: $OPenIG-font-size-xs !important;
@@ -1424,6 +1449,11 @@
         .view-content{
             .views-field-nothing{
                 min-width: 30px;
+                span{
+                    width: 30px !important;
+                    height: 30px !important;
+                    background-size: cover;
+               }
             }
             .views-field-title, .views-field-view-node{
                 a{
@@ -1621,7 +1651,13 @@
                     right: unset !important;
                     display: flex;
                     justify-content: end;
-                    width: 100%;
+                    width: 100% !important;
+                    height: unset !important;
+                    span{
+                        width: 35px !important;
+                        height: 35px !important;
+                        background-size: contain;
+                    }
                     img{
                         width: 35px;
                     }
@@ -1774,15 +1810,6 @@
             }
         }
     }
-    .path-user{
-        .title_share{
-            min-height: unset !important;
-        }
-        #block-openig-page-title h1{
-            padding-left: 0 !important;
-            margin-left: 0 !important;
-        }
-    }
 
     .path-annuaire{
         .btn_filtre{
@@ -1895,6 +1922,75 @@
             }
         }
     }
+
+    // Formulaires d'inscription et de connexion 
+    .path-user:not(.user-logged-in) .local-task-container{
+        nav{
+            width: 100% !important;
+            ul{
+                overflow: visible;
+                li.nav-item{
+                    width: 100% !important;
+                    background-color: unset !important;
+                    padding: 0 !important;
+                }
+            }
+        }
+        a{
+            min-height: 61px;
+        }
+        a.active{
+            font-size: $OPenIG-font-size-md !important;
+        }
+        a:not(.active){
+            font-size: $OPenIG-font-size-base !important;
+        }
+    }
+    form.user-register-form, form.user-login-form, form.user-pass{
+        width: 100% !important;
+        > div, > p{
+            width: 90% !important;
+        }
+    }
+
+    // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 75% !important;
+        right: 0;
+        padding: 1rem;
+        .ui-dialog-titlebar{
+            .ui-dialog-title{
+                font-size: $OPenIG-font-size-lg;
+            }
+        }
+    }
+
+    // Compte utilisateur
+    .path-user .profile{
+        .identite{
+            width: 100% !important;
+            font-size: $OPenIG-font-size-sm;
+            .nom_prenom{
+                font-size: $OPenIG-font-size-h2 !important;
+            }
+        }
+        .outils_competences, .groupes_travail{
+            width: 100% !important;
+            .field--name-field-outils-competences, .liste_groupe{
+                padding: 0.5rem !important;
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
+
+    .path-user{
+        .form_reset_pass, .user-form{
+            font-size: $OPenIG-font-size-sm;
+            input[type='submit']{
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -1935,6 +2031,8 @@
                     height: 65% !important;
                     .image{
                         height: 55px;
+                        width: 140px;
+                        background-size: contain;
                     }
                     .verbe_action{
                         font-size: $OPenIG-font-size-base;
@@ -2029,6 +2127,25 @@
             .modal-dialog{
                 margin: auto;
                 width: 100%;
+            }
+        }
+    }
+     // Modal ajouter une structure
+    .path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+        width: 100% !important;
+    }
+
+    // Compte utilisateur
+    .path-user .profile{
+        .identite{
+            padding: 1rem !important;
+            .social-media-links--platforms{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            .link_social_media{
+                display: none;
             }
         }
     }

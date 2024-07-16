@@ -2344,7 +2344,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n        \r\n        <img src=\"/themes/custom/openig/pictos/accueil-titre/calendrier-titre.png\" alt=\"Calendrier\" />\r\n\r\n        <h2>[view:title]</h2> \r\n    \r\n    </div>\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <h2>[view:title]</h2> \r\n    \r\n        <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/calendrier-titre.png')\"></span>\r\n\r\n    </div>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
