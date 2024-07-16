@@ -1,0 +1,45 @@
+<?php 
+
+use Drupal\node\Entity\Node;
+
+/**
+* Implements hook_mail().
+*/
+function openig_user_notifications_mail($key, &$message, $params) {
+	switch ($key) {
+	  case 'user_insert':
+		$message['from'] = Drupal::config('system.site')->get('mail');
+		$message['subject'] = $params['subject'];
+		$message['body'][] = $params['message'];
+		break;
+	}
+}
+
+
+/**
+ * Implements hook_entity_insert().
+ */
+function openig_user_notifications_user_insert($user) {
+	
+	if ($user->field_desired_structure[0]) {
+		$node_load = Node::load($user->field_desired_structure[0]->target_id);
+		$mailManager = Drupal::service('plugin.manager.mail');
+		$module = 'openig_user_notifications';
+		$key = 'user_insert';
+		$to = Drupal::config('system.site')->get('mail');
+		$params['subject'] = 'Demande rattachement à une structure';
+		$params['message'] = "L'utilisateur ".$user->name[0]->value.' souhaite être rattaché à la structure '.$node_load->title[0]->value;
+		$langcode = 'fr';
+		$send = true;
+		$mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+	}
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+/*
+function openig_user_notifications_entity_update(EntityInterface $entity) {
+	dump($entity);
+}
+*/
