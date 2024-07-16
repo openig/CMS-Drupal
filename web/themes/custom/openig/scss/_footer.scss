@@ -58,6 +58,17 @@ footer{
         }
         .field--name-field-picto{
             margin-right: 10px;
+            margin-right: 10px;
+            width: 25px;
+            height: 25px;
+            padding-top: 4px;
+            span{
+                padding: 0;
+                display: block;
+                width: 25px;
+                height: 25px;
+                background-size: contain;
+            }
             img{
                 width: 32px;
 
@@ -69,6 +80,14 @@ footer{
             padding-right: 0;
             padding-bottom: 0;
             margin-bottom: .5rem;
+            margin-right: .5rem;
+        }
+        a.deconnexion{
+            margin-left: .5rem;
+            border: none;
+        }
+        .contextual{
+            top: 35px;
         }
         ul{
             font-family: "OpenSans_Bold", sans-serif;

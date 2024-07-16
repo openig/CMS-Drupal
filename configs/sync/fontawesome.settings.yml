@@ -1,6 +1,5 @@
 _core:
   default_config_hash: O6iR50mYuA_c7wYr4mehe-lHJNwCMYbXQrbKamgYEPs
-langcode: fr
 tag: i
 method: svg
 load_assets: false

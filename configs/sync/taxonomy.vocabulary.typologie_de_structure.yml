@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Typologie de structure'
 vid: typologie_de_structure
-description: ''
+description: null
 weight: 0
+new_revision: false

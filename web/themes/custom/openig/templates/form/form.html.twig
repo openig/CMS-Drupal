@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+{% if element['#form_id'] == 'user_pass_reset' %}
+  <div class="container form_reset_pass">
+    <div class="row">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-11">
+        <form{{ attributes }}>
+          {{ children }}
+        </form>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <form{{ attributes }}>
+    {{ children }}
+  </form>
+{% endif %}

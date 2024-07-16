@@ -161,6 +161,9 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 195%;
             }
         }
         .taxonomy-term{
@@ -239,7 +242,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     .share_liste{
         height: 100px;
         border: 1px solid $OPenIG-color_gray;
-        background-color: $OPenIG-color_deep-white;
+        background-color: $OPenIG-color_medium-white;
         border-radius: 10px;
         //align-items: center;
         padding: 0 10px;
@@ -407,12 +410,20 @@ h1{
     }
     h1{
         margin-bottom: 0;
-        margin-left: 85px;
+        padding-left: 90px;
+        //margin-left: 85px;
         position: relative;
         max-width: 75%;
+        background-repeat: no-repeat;
+        //height: 150px;
+        padding-top: 25px;
+        background-position: 0 100%;
+        min-height: 150px;
+        padding-bottom: 55px;
         .field--name-title{
             position: relative;
             z-index: 1;
+            display: block;
         }
     }
 }
@@ -648,6 +659,15 @@ h3{
         position: absolute;
         top: 15px;
         right: 15px;
+        width: 50px;
+        height: 50px;
+        span{
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
       }
       
       .cardmembers .field.field--name-field-image.field--type-image.field--label-hidden.field__item {
@@ -1007,6 +1027,13 @@ h3{
                     min-width: 40px;
                     height: 29px;
                 }
+                span{
+                    width: 40px;
+                    height: 40px;
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-position: center;
+               }
             }
         }
     }
@@ -1088,6 +1115,12 @@ h3{
             width: fit-content;
             float: right;
             position: relative;
+            span{
+                height: 140px;
+                width: 130px;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
         }
         img{
             position: absolute;
@@ -1124,7 +1157,7 @@ h3{
             font-family: 'Exo_semiBold';
             font-weight: 600;
             margin-top: -65px;
-            margin-right: 90px;
+            margin-right: -30px;
             padding-left: 2rem;
         }
         .field--name-field-picto{
@@ -1190,7 +1223,7 @@ form{
 
 #block-openig-local-tasks{
     .nav-link{
-        color: $OPenIG-color_blue;
+        color: $OPenIG-color_black;
     }
     .nav-link.active{
         color: $OPenIG-color_black;
@@ -1493,13 +1526,107 @@ form{
 }
 
 // Formulaires d'inscription et de connexion 
+.path-user:not(.user-logged-in) #block-openig-adhesion a[href='/user/login']{
+    background-color: $OPenIG-color_deep-white;
+    color: $OPenIG-color_blue !important;
+    height: 100%;
+}
+.path-user:not(.user-logged-in) .local-task-container{
+    nav{
+        margin-bottom: 0;
+        width: 75%;
+        margin: auto;
+        ul{
+            border: none;
+            li.nav-item{
+                width: 33.3%;
+                text-align: center;
+            }
+        }
+    }
+    a.active, a.dropdown-toggle{
+        border: none;
+        border-top: 10px solid $OPenIG-color_yellow;
+        border-color: $OPenIG-color_yellow !important;
+        border-radius: 0;
+        background-color: $OPenIG-color_medium-white !important;
+        font-size: 20px;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+    }
+    a:not(.active){
+        border: none;
+        background-color: $OPenIG-color_white;
+        color: $OPenIG-color_black !important;
+        font-size: $OPenIG-font-size-lg;
+        font-family: 'Exo_regular';
+        height: 100%;
+        padding: 0.5rem 1rem 1rem 1rem;
+        border-top: 10px solid $OPenIG-color_white;
+    }
+    a:not(.active):hover{
+        border-top-color: $OPenIG-color_white !important;
+    }
+    a.active:hover, a.dropdown-toggle:hover{
+        border-top-color: $OPenIG-color_yellow !important;
+    }
+    a:hover{
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        border-radius: 0;
+    }
+}
+form{
+    input.form-control:focus, textarea.form-control:focus{
+        box-shadow: 0 0 0 .25rem rgba(0,160,154,.25);
+    }
+}
 form.user-register-form, form.user-login-form, form.user-pass{
-    background-color: rgba(255, 255, 255, 0.6);
+    width: 75%;
+    margin: auto;
+    background-color: $OPenIG-color_medium-white;
+    padding: 5rem 0;
+    > div:first-of-type{
+        margin-top: 0;
+    }
+    > div, > p{
+        width: 50%;
+        margin: auto;
+    }
+    > div:not(:first-of-type), > p{
+        margin-top: 3rem;
+    }
+    div.form-actions{
+        display: flex;
+        justify-content: end;
+    }
+
+    .field--name-field-desired-structure{
+        .description{
+            .dropbutton-widget{
+                border: none;
+                .dropbutton{
+                    a{
+                        background-color: $OPenIG-color_blue;
+                        color: $OPenIG-color_white;
+                        font-size: 26px;
+                        padding: 0 0.75rem;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
 }
 
 form.user-register-form{
-    .form-type-email, .form-type-textfield, .form-type-tel, .form-type-entity-autocomplete, .form-actions{
-        margin-top: 2rem;
+    #edit-account{
+        > div:not(:first-of-type){
+            margin-top: 3rem;
+        }
     }
     a.btn:hover{
         background-color: $OPenIG-color_blue;
@@ -1508,6 +1635,157 @@ form.user-register-form{
         label{
             width: 100%;
         }
+    }
+    .form-item-name::after, .field--name-field-phone::after{
+        content: '';
+        border-bottom: 1px solid $OPenIG-color_gray;
+        width: 200px;
+        display: block;
+        margin: auto;
+        margin-top: 2rem;
+    }
+    .description{
+        font-size: $OPenIG-font-size-xs;
+    }
+}
+
+.path-user .ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
+    a.ui-state-active{
+        border: none;
+    }
+    a{
+        color: $OPenIG-color_black;
+        background-color: transparent;
+    }
+    a:hover{
+        background-color: transparent;
+        color: $OPenIG-color_blue;
+        border: none;
+    }
+}
+
+.path-user{
+    .form_reset_pass{
+        margin-top: 5rem;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .user-form{
+        .form-item{
+            margin-bottom: 1.5rem;
+        }
+        .confirm-parent{
+            margin: 0;
+        }
+        .password-confirm-message{
+            margin-top: 1.5rem;
+        }
+        .link.tabledrag-toggle-weight{
+            color: $OPenIG-color_blue;
+        }
+    }
+}
+
+// Modal ajouter une structure
+.path-user .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons{
+    padding: 1rem 5rem;
+    z-index: 99999;
+    .ui-dialog-titlebar{
+        border: none;
+        background-color: $OPenIG-color_white;
+        .ui-dialog-title{
+            font-family: 'Exo_light';
+            font-weight: 300;
+            font-size: $OPenIG-font-size-h3;
+        }
+    }
+    .ui-front.ui-dialog-content.ui-widget-content{
+        padding: 0;
+        form{
+            color: $OPenIG-color_black;
+            margin: 1rem;
+            .form-control{
+                border-color: $OPenIG-color_gray;
+            }
+            .form-control:focus{
+                border-color: transparent;
+            }
+            label{
+                margin-bottom: 0.5rem;
+            }
+            .field--name-field-image, .field--name-field-website{
+                .description{
+                    font-size: $OPenIG-font-size-xs;
+                }
+            }
+            .field-group-fieldset{
+                legend{
+                    display: none;
+                }
+                margin-bottom: 0;
+            }
+            .field-group-fieldset::after{
+                content: '';
+                border-bottom: 1px solid $OPenIG-color_gray;
+                width: 400px;
+                display: block;
+                margin: auto;
+                margin-top: 2rem;
+            }
+            .field--name-body{
+                .form-wrapper{
+                    font-size: $OPenIG-font-size-xs;
+                    a{
+                        color: $OPenIG-color_blue;
+
+                    }
+                }
+            }
+        }
+    }
+    .ui-dialog-buttonpane{
+        background-color: $OPenIG-color_white;
+        border: none;
+        .ui-dialog-buttonset.form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            button:last-of-type{
+                border: 2px solid $OPenIG-color_blue;
+                color: $OPenIG-color_deep-gray;
+                background-color: $OPenIG-color_white;
+                margin-right: 2rem;
+            }
+            button{
+                padding: 0.2rem 1.5rem;
+            }
+        }
+    }
+    
+    .ui-dialog-titlebar-close{
+        font-size: 0;
+        text-indent: unset;
+        color: $OPenIG-color_black;
+        opacity: 1;
+        .ui-button-icon{
+            background-image: none;
+            text-indent: unset;
+            font-size: 20px;
+            width: fit-content;
+            height: fit-content;
+            top: 45%;
+        }
+        .ui-button-icon::after{
+            content: '\f00d';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 400;
+            color: $OPenIG-color_black;
+        }
+    }
+    .ui-dialog-titlebar-close:hover{
+        color: $OPenIG-color_black;
+    }
+    .ui-dialog-titlebar-close:focus{
+        border: none;
+        box-shadow: none;
     }
 }
 
@@ -1581,4 +1859,105 @@ form.user-register-form{
 
 .view-display-id-termes_gt{
     margin-top: 5rem;
+}
+
+// Compte utilisateur
+.path-user .profile{
+    margin-bottom: 3rem;
+    .identite{
+        border: 2px solid $OPenIG-color_light-blue;
+        border-radius: 10px;
+        width: 50%;
+        margin: auto;
+        padding: 1.5rem 5rem;
+        background-color: $OPenIG-color_white;
+        h4.label, .field__label{
+            font-weight: initial;
+        }
+        .nom_prenom{
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 30px;
+            font-family: 'Exo_bold';
+            font-weight: 700;
+            justify-content: center;
+            margin-bottom: 3rem;
+            .field--name-field-lastname{
+                margin-left: 0.5rem;
+            }
+        }
+        .email, .field--name-field-ca-member, .field--name-field-referent, .field--name-field-structure{
+            margin-bottom: 1rem;
+        }
+        .email{
+            a{
+                color: $OPenIG-color_black;
+            }
+        }
+        .social-media-links--platforms{
+            margin-top: 2rem;
+            li{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-bottom: 1.5rem;
+            }
+            a{
+                color: $OPenIG-color_black;
+                text-decoration: none;
+                span::before{
+                    font-size: 25px;
+                }
+            }
+            a.link_social_media{
+                border-bottom: 1px solid $OPenIG-color_red;
+                color: $OPenIG-color_dark-gray;
+                margin-left: 0.5rem;
+                font-family: 'Russo One';
+            }
+        }
+    }
+
+    .outils_competences, .groupes_travail{
+        width: 50%;
+        margin: auto;
+        margin-top: 3rem;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .field--name-field-outils-competences, .liste_groupe{
+        padding: 0.5rem 5rem;
+        a{
+            color: $OPenIG-color_black;
+            text-decoration: none;
+        }
+    }
+    .groupes_travail{
+        .liste_groupe{
+            li{
+                list-style-type: none;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+            li.nocheck{
+                opacity: 0.5;
+            }
+        }
+    }
+    .outils_competences{
+        .field--name-field-outils-competences{
+            .field__item{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 0.5rem;
+            }
+            .field__item::after{
+                content: '\f00c';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+            }
+        }
+    }
 }

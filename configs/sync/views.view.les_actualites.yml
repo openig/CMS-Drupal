@@ -519,6 +519,7 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 5
+          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -548,16 +549,20 @@ display:
                 advanced:
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: false
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
               field_tag_target_id:
                 plugin_id: bef
                 advanced:
                   sort_options: false
                   rewrite:
                     filter_rewrite_values: ''
+                    filter_rewrite_values_key: false
                   collapsible: true
                   is_secondary: false
+                  collapsible_disable_automatic_open: false
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
@@ -1032,7 +1037,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -1639,7 +1644,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -2128,7 +2133,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -2458,7 +2463,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <img src=\"/themes/custom/openig/pictos/accueil-titre/megaphone-titre.png\" alt=\"Mégaphone\" />\r\n\r\n        <h2>[view:title]</h2> \r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/megaphone-titre.png')\"></span>\r\n\r\n        <h2>[view:title]</h2> \r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
@@ -2747,7 +2752,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false
@@ -3382,7 +3387,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '<img src="/themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png" alt="Mégaphone" />'
+            text: /themes/custom/openig/pictos/paves-cliquables/picto-pave-actu.png
             make_link: false
             path: ''
             absolute: false

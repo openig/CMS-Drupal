@@ -183,6 +183,13 @@
                     }
                     .views-field-nothing{
                        width: 40px;
+                        span{
+                            width: 40px;
+                            height: 40px;
+                            display: block;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                       }
                     }
                 }
             }
@@ -439,6 +446,11 @@
                 width: fit-content;
                 float: left;
                 position: relative;
+                span{
+                    height: 140px;
+                    width: 130px;
+                    background-repeat: no-repeat;
+                }
             }
             img{
                 position: absolute;
@@ -448,7 +460,7 @@
             }
             h2{
                 margin-top: -30px;
-                margin-left: 90px;
+                margin-left: -30px;
                 width: fit-content;
                 border-bottom: 0;
                 margin-bottom: 0;
