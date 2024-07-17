@@ -1674,6 +1674,40 @@ form.user-register-form{
         background-color: rgba(255, 255, 255, 0.6);
     }
     .user-form{
+        .horizontal-tabs{
+            display: flex;
+            flex-direction: column;
+            .horizontal-tabs-list{
+                background-color: $OPenIG-color_white;
+                li, li:hover{
+                    background-color: $OPenIG-color_white;
+                    a{
+                        color: $OPenIG-color_black;
+                    }
+                }
+                li.selected, li.selected:hover{
+                    background-color: $OPenIG-color_white
+                }
+            }
+            .horizontal-tabs-panes{
+                background-color: $OPenIG-color_white;
+                > details > .details-wrapper{
+                    width: 75%;
+                    margin: auto;
+                    .form-item-field-desired-structure-0-target-id{
+                        label{
+                            width: 100%;
+                        }
+                        input{
+                            border-radius: 0.375rem !important;
+                        }
+                    }
+                    input{
+                        border-color: $OPenIG-color_gray;
+                    }
+                }
+            }
+        }
         .form-item{
             margin-bottom: 1.5rem;
         }
