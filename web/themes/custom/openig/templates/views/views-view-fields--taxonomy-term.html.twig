@@ -31,7 +31,7 @@
 #}
 {% for field in fields -%}
 	{% if (vid == 'dpt_intervention') or (vid == 'typologie_de_structure') %}
-		{% if (field.class == 'nothing-1') or (field.class == 'view-node')  %}
+		{% if (field.class == 'nothing-1') or (field.class == 'view-node') or (field.class == 'field-image')  %}
 			<div class="d-none">
 		{% endif %}
 	{% endif %}
@@ -69,7 +69,7 @@
 		</{{ field.wrapper_element }}>
 	{%- endif %}
 	{% if (vid == 'dpt_intervention') or (vid == 'typologie_de_structure') %}
-		{% if (field.class == 'nothing-1') or (field.class == 'view-node')  %}
+		{% if (field.class == 'nothing-1') or (field.class == 'view-node') or (field.class == 'field-image')   %}
 				</div>
 		{% endif %}
 	{% endif %}
