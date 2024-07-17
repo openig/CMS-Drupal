@@ -1740,6 +1740,9 @@ form.user-register-form{
                     }
                 }
             }
+            .form-item.form-type-vertical-tabs.form-item.form-no-label{
+                display: none;
+            }
         }
     }
     .ui-dialog-buttonpane{
