@@ -1,14 +1,27 @@
+
+
+<nav class="tabs-wrapper tabs-primary is-collapsible" id="block-openig-tabs">
+  <ul class="nav nav-tabs flex-column flex-md-row primary clearfix">
+    <li class="nav-item" id="nbContenuEditorial" data-id="">
+      <a class="nav-link"  href="/recherche">Résultats de la recherche sur le contenu éditorial</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active is-active" aria-current="page" href="/recherche/ressources_externes" >Résultats de la recherche sur les datas</a>
+    </li>
+  </ul>
+</nav>
+
+
 <div class="search-results container">
   {# filtres #}
   <div class="view-content container">
     <div class="formulaire_filtre d-xl-block d-none">
       <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-      <h2>Filtrer la recherche</h2>
       <div class="d-xl-block d-none">
 
-        <form class="{{ search_bar_form['#attributes'].class }}"
-              data-drupal-selector="{{ search_bar_form['#attributes'].data-drupal-selector }}" action="/recherche/ressources_externes"
-              id="{{ search_bar_form['#id'] }}">
+        <form class="{{ search_filter_form['#attributes'].class[0] }}"
+              data-drupal-selector="{{ search_filter_form['#attributes'].data-drupal-selector }}" action="/recherche/ressources_externes"
+              id="{{ search_filter_form['#id'] }}">
 
           {% if facets.lineage %}
             <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
@@ -30,10 +43,11 @@
                       <label class="option">
                         {% if source == "CKAN Datasets" %}
                           OPenIG - Jeux de données
-                          {#                                    {% elseif source == "OpenIG" %} #}
-                          {#                                        <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label> #}
-                          {#                                    {% elseif source == "datasets" %} #}
-                          {#                                        <span class="facet-item__label" title="Données open data Région Occitanie">data.laregion.fr</span></label> #}
+                        {% elseif source == "OpenIG" %}
+                          <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label>
+                        {% elseif source == "datasets" %}
+                          <span class="facet-item__label"
+                                title="Données open data Région Occitanie">data.laregion.fr</span></label>
                         {% elseif source == "dataset" %}
                           picto-occitanie.fr
                         {% else %}
@@ -98,16 +112,16 @@
             </details>
           {% endif %}
 
-          {#  Champs hidden pour permettre les requetes vers l'api  #}
-          {{ search_bar_form.fulltext }}
-          {{ search_bar_form.category }}
-          {{ search_bar_form.lineage }}
-          {{ search_bar_form.resource_format }}
-          {{ search_bar_form.resource_data_type }}
+          {#  Champs hidden pour permettre les requetes vers l'api #}
+          {{ search_filter_form.fulltext }}
+          {{ search_filter_form.category }}
+          {{ search_filter_form.lineage }}
+          {{ search_filter_form.resource_format }}
+          {{ search_filter_form.resource_data_type }}
 
           <div class="form-actions">
-            {{ search_bar_form.submit_desktop }}
-            {{ search_bar_form.reset }}
+            {{ search_filter_form.submit_desktop }}
+            {{ search_filter_form.reset }}
           </div>
         </form>
       </div>
@@ -211,6 +225,7 @@
           </ul>
         </nav>
       {% endif %}
+
     </div>
   </div>
 

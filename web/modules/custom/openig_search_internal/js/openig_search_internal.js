@@ -1,12 +1,12 @@
 (function ($) {
   $(document).ready(function () {
 
-    if ($('#block-openig-local-tasks')) {
+    if ($('#block-openig-tabs')) {
       // Badge nombre de résultat - onglet contenu éditorial
-      let onglet = $('#block-openig-local-tasks #nbContenuEditorial');
+      let onglet = $('#block-openig-tabs #nbContenuEditorial');
       let nbrElementNoFilter = onglet.data('id');
 
-      let badge = $('#block-openig-local-tasks #nbContenuEditorial a');
+      let badge = $('#block-openig-tabs #nbContenuEditorial a');
 
       let headerSearch = $('.view-resultats-de-recherche #nbrContenu');
       let nbrElementFilter = headerSearch.data('id');

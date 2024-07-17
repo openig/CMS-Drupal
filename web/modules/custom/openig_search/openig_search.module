@@ -5,9 +5,7 @@
  */
 function openig_search_theme() {
     return [
-        'views_view__block_recherche_externe' => [
-//        'openig_search_results' => [
-//        'views_view__recherche_externe' => [
+        'openig_search_results' => [
             'variables' => [
                 'items' => [],
                 'facets' => [],
@@ -16,7 +14,7 @@ function openig_search_theme() {
                 'page' => '',
                 'count' => '',
                 'url' => '',
-                'search_bar_form' => ''
+                'search_filter_form' => ''
             ],
         ],
     ];

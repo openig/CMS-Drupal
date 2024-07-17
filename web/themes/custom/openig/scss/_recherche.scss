@@ -1,10 +1,13 @@
 
 // Onglets
-#block-openig-local-tasks {
+#block-openig-tabs {
   .nav-tabs {
     font-weight: 600;
     #nbContenuEditorial .badge {
       margin: 1em;
+    }
+    a {
+      color: $OPenIG-color_black;
     }
   }
 }
@@ -340,4 +343,4 @@
       display: none;
     }
   }
-}
+

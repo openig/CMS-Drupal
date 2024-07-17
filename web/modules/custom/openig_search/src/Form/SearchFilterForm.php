@@ -10,13 +10,13 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Our custom hero form.
  */
-class SearchBarForm extends FormBase {
+class SearchFilterForm extends FormBase {
 
     /**
      * {@inheritdoc}
      */
     public function getFormId() {
-        return "openig_search_bar";
+        return "openig_search_filter";
     }
 
     /**
@@ -97,15 +97,6 @@ class SearchBarForm extends FormBase {
             'onclick' => 'this.form.reset(); return false;'
           ],
         ];
-
-//        $form['submit_mobile'] = [
-//            '#suffix' => '</div>',
-//            '#type' => 'submit',
-//            '#value' => html_entity_decode('&#xf002;'),
-//            '#attributes' => [
-//                'class' => ['site-search__mobile'],
-//            ],
-//        ];
 
         $form['#cache']['contexts'][] = 'session';
 

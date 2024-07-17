@@ -278,6 +278,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 6
           total_pages: null
           id: 0
@@ -1971,7 +1972,7 @@ display:
         filters: false
         filter_groups: false
         header: false
-      use_ajax: true
+      use_ajax: false
       display_description: ''
       header:
         result:
@@ -1986,7 +1987,7 @@ display:
           content: '@total'
       exposed_block: true
       display_extenders: {  }
-      path: recherche
+      path: recherche2
       menu:
         type: 'default tab'
         title: 'Résultats de la recherche sur le contenu éditorial'
@@ -2118,12 +2119,12 @@ display:
         filters: false
         filter_groups: false
         header: false
-      use_ajax: true
+      use_ajax: false
       display_description: ''
       header: {  }
       exposed_block: false
       display_extenders: {  }
-      path: recherche/ressources_externes
+      path: recherche2/ressources_externes
       menu:
         type: tab
         title: 'Résultats de la recherche sur les datas'

@@ -1,0 +1,9 @@
+openig_search.results:
+#  path: '/recherche'
+  path: '/recherche/ressources_externes'
+  defaults:
+    _title: 'Résultats de recherche'
+    _controller: '\Drupal\openig_search\Controller\SearchController::search_results'
+  methods: [GET, POST]
+  requirements:
+    _permission: 'access content'
