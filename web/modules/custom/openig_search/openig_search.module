@@ -14,12 +14,13 @@ function openig_search_theme() {
                 'page' => '',
                 'count' => '',
                 'url' => '',
+                'pathSearchInternal' => '',
                 'search_filter_form' => ''
             ],
         ],
         'openig_search_internal_results' => [
             'variables' => [
-              'items' => '',
+              'pathSearchInternal' => '',
             ],
         ],
     ];
@@ -29,7 +30,16 @@ function openig_search_preprocess_openig_search_results(&$variables) {
     $variables['#attached']['library'][] = 'openig_search/openig-search';
 }
 
+
 function openig_search_preprocess(&$variables, $hook) {
   // Add images path alias
   $variables['images_path'] = \Drupal::request()->getSchemeAndHttpHost() . '/' . \Drupal::service('extension.list.module')->getPath('openig_search') . '/images/';
+}
+
+
+function openig_search_form_alter(&$form, &$form_state, $form_id) {
+  if($form['#id'] === "views-exposed-form-resultats-de-recherche-block-filter-search-internal" ||
+    $form['#id'] === "views-exposed-form-resultats-de-recherche-block-1"){
+    $form['#action'] = '/recherche';
+  }
 }

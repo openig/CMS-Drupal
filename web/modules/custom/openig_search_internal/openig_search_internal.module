@@ -12,14 +12,14 @@ function openig_search_internal_views_pre_render(ViewExecutable $view){
 
 
 function openig_search_internal_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
-  if (($view->id() == 'resultats_de_recherche') && $view->current_display == 'recherche_contenu_editorial') {
+  if (($view->id() == 'resultats_de_recherche') && $view->current_display == 'block_filter_search_internal') {
     $query = $view->getQuery();
     $query->options['skip_access'] = true;
 	}
 }
 
 
-function openig_search_internal_preprocess_views_view_fields__recherche_contenu_editorial(&$variables){
+function openig_search_internal_preprocess_views_view_fields__block_filter_search_internal(&$variables){
   // Check si la ressource est inaccessible
   $node_check = $variables['row']->_object->getEntity();
   $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
@@ -73,7 +73,7 @@ function openig_search_internal_preprocess_menu_local_task(&$variables){
   $variables['nbContenu'] = $nb_resultats;
 }
 
-function openig_search_internal_preprocess_views_view__recherche_contenu_editorial(&$variables){
+function openig_search_internal_preprocess_views_view__block_filter_search_internal(&$variables){
   $variables['nbContenu'] = $variables['view']->total_rows;
 }
 

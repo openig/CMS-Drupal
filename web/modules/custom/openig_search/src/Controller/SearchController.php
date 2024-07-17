@@ -77,6 +77,11 @@ class SearchController extends ControllerBase {
         // Call serach service with current page & facets
         $search = $this->searchQueryService->search($filters, $page ? $page : 0);
 
+        // Récupération du path de la recherche interne avec les filtres - onglet
+        $session = \Drupal::request()->getSession();
+        $pathSearchInternal = $session->get('pathSearchInternal');
+
+
         return [
             '#theme'    => 'openig_search_results',
             '#items'    => $search['results'],
@@ -86,6 +91,7 @@ class SearchController extends ControllerBase {
             '#pager'    => $search['pager'],
             "#url"      => $search['url'],
             "#count"    => $search['count'],
+            '#pathSearchInternal'  => $pathSearchInternal,
             '#search_filter_form'  => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
         ];
     }
@@ -93,9 +99,34 @@ class SearchController extends ControllerBase {
 
   public function search_internal_results() {
 
+    // Récupération des filtres du recherche saisie
+    $search_types = \Drupal::request()->get('type');
+    $search_tag = \Drupal::request()->get('field_tag');
+    $search_fulltext = \Drupal::request()->get('search_api_fulltext');
+
+    // Reconstruction du path
+    $path = "/recherche?";
+    if($search_types !== null){
+      foreach ($search_types as $type){
+        $path .= "type[$type]=$type&";
+      }
+    }
+    if($search_tag !== null){
+      foreach ($search_tag as $tag){
+        $path .= "field_tag[$tag]=$tag&";
+      }
+    }
+    if($search_fulltext !== null){
+      $path .= "search_api_fulltext=".str_replace(" ", "+", $search_fulltext)."";
+    }
+
+    // Enregistrement du path avec les filtres en session pour les onglets
+    $session = \Drupal::request()->getSession();
+    $session->set('pathSearchInternal', $path);
+
     return [
-      '#theme'    => 'openig_search_internal_results',
-      '#items'    => 'tests',
+      '#theme'              => 'openig_search_internal_results',
+      '#pathSearchInternal' => $path,
     ];
   }
 

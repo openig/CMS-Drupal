@@ -36,11 +36,11 @@
   'view-' ~ id|clean_class,
   'view-id-' ~ id,
   'view-display-id-' ~ display_id,
-  dom_id ? 'js-view-dom-id-' ~ dom_id
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  'container'
 ]
 %}
-
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes) }} data-id="{{ nbContenu }}">
   {{ title_prefix }}
   {% if title %}
     {{ title }}
@@ -62,29 +62,19 @@
     </div>
   {% endif %}
 
-  <div class="view-content container">
-    <div class="formulaire_filtre d-xl-block d-none">
-      <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-      <div class="d-xl-block d-none">
-        {{ render_block('openig_formulaireexposeresultats_de_recherche_contenu_editorial') }}
-      </div>
-    </div>
-    <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-    <div class="col-lg-10 col-12">
+  {% if rows %}
+    <div class="view-content">
       {{ rows }}
     </div>
-  </div>
-  {% if empty %}
-    <div class="view-empty container">
+  {% elseif empty %}
+    <div class="view-empty">
       {{ empty }}
     </div>
   {% endif %}
-  <div class="">
-    {% if pager %}
-      {{ pager }}
-    {% endif %}
-  </div>
 
+  {% if pager %}
+    {{ pager }}
+  {% endif %}
   {% if attachment_after %}
     <div class="attachment attachment-after">
       {{ attachment_after }}
