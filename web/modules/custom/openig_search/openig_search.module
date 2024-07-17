@@ -17,6 +17,11 @@ function openig_search_theme() {
                 'search_filter_form' => ''
             ],
         ],
+        'openig_search_internal_results' => [
+            'variables' => [
+              'items' => '',
+            ],
+        ],
     ];
 }
 

@@ -89,4 +89,14 @@ class SearchController extends ControllerBase {
             '#search_filter_form'  => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
         ];
     }
+
+
+  public function search_internal_results() {
+
+    return [
+      '#theme'    => 'openig_search_internal_results',
+      '#items'    => 'tests',
+    ];
+  }
+
 }

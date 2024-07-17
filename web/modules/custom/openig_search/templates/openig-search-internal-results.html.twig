@@ -1,0 +1,25 @@
+<nav class="tabs-wrapper tabs-primary is-collapsible" id="block-openig-tabs">
+  <ul class="nav nav-tabs flex-column flex-md-row primary clearfix">
+    <li class="nav-item" id="nbContenuEditorial" data-id="20">
+      <a class="nav-link active is-active" aria-current="page" href="/recherche">Résultats de la recherche sur le contenu éditorial</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/recherche/ressources_externes">Résultats de la recherche sur les datas</a>
+    </li>
+  </ul>
+</nav>
+
+
+<div class="search-results container">
+
+  <div class="formulaire_filtre d-xl-block d-none">
+    <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+    <div class="d-xl-block d-none">
+      {{ render_block('openig_formulaireexpose_block_filter_search_internal') }}
+    </div>
+  </div>
+
+  {# btn filtrer #}
+  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+
+</div>

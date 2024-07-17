@@ -341,4 +341,24 @@
         }
     })
 
+     // Badge nombre de résultat ressources internes - onglet contenu éditorial
+    if ($('#block-openig-tabs')) {
+
+      let onglet = $('#block-openig-tabs #nbContenuEditorial');
+      let nbrElementNoFilter = onglet.data('id');
+      let badge = $('#block-openig-tabs #nbContenuEditorial a');
+      let headerSearch = $('.view-resultats-de-recherche #nbrContenu');
+      let nbrElementFilter = headerSearch.data('id');
+
+      var nbrElement = "";
+      if (nbrElementFilter == undefined) {
+        nbrElement = nbrElementNoFilter;
+      } else {
+        nbrElement = nbrElementFilter;
+      }
+
+      badge.append("<span class='badge rounded-pill bg-warning text-black'>" + nbrElement + "</span>");
+    }
+
+
 })(jQuery);
