@@ -102,6 +102,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  user_register_notify: 0
   video_embed_field: 0
   video_embed_peertube: 0
   views_fieldsets: 0
