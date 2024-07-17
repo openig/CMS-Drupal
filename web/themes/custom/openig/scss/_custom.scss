@@ -1429,6 +1429,10 @@ form{
 
 // Pagination 
 
+.pager{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 .page-item{
     background-color: $OPenIG-color_white;
     border-radius: 0;
