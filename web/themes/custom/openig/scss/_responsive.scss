@@ -862,6 +862,9 @@
     .view.view-l-agenda.view-display-id-agenda{
         margin-top: 0rem !important;
         margin-bottom: 3rem !important;
+        .view-empty{
+            font-size: $OPenIG-font-size-lg;
+        }
         .views-field-field-webform input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
         }
@@ -912,6 +915,9 @@
     }
     .view-les-actualites.view-display-id-actualites{
         margin-top: 0 !important;
+        .view-empty{
+            font-size: $OPenIG-font-size-lg;
+        }
     }
     .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
         border-bottom: 1px solid $OPenIG-color_gray !important;
@@ -1823,7 +1829,7 @@
             margin-top: 5rem;
         }
         .view-empty{
-            font-size: $OPenIG-font-size-sm;
+            font-size: $OPenIG-font-size-lg;
         }
         .views-row{
             padding: 1.5rem !important;
