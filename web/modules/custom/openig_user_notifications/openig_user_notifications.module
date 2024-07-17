@@ -1,0 +1,63 @@
+<?php 
+
+use Drupal\node\Entity\Node;
+
+/**
+* Implements hook_mail().
+*/
+function openig_user_notifications_mail($key, &$message, $params) {
+	switch ($key) {
+	  case 'user_structure':
+		$message['from'] = Drupal::config('system.site')->get('mail');
+		$message['subject'] = $params['subject'];
+		$message['body'][] = $params['message'];
+		break;
+	}
+}
+
+
+/**
+ * Implements hook_entity_insert().
+ */
+function openig_user_notifications_user_insert($user) {
+	// Envoi d'un e-mail aux administrateurs du site si un utilisateur créé un compte avec le champ structure souhaitée renseigné
+	if ($user->field_desired_structure[0]) {
+		$node_load = Node::load($user->field_desired_structure[0]->target_id);
+		$mailManager = Drupal::service('plugin.manager.mail');
+		$module = 'openig_user_notifications';
+		$key = 'user_structure';
+		$to = Drupal::config('system.site')->get('mail');
+		$params['subject'] = 'Demande de rattachement à une structure';
+		$params['message'] = "L'utilisateur ".$user->name[0]->value.' souhaite être rattaché à la structure '.$node_load->title[0]->value;
+		$langcode = 'fr';
+		$send = true;
+		$mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+	}
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function openig_user_notifications_user_update($user) {
+	// Envoi d'un e-mail aux administrateurs du site si un utilisateur modifie son compte avec le champ structure souhaitée renseigné
+	if ($user->field_desired_structure[0]) {
+		$user_load = \Drupal\user\Entity\User::load($user->id());
+		//Récupération de l'ancienne valeur
+		$original_value = $user->original->get('field_desired_structure')->entity->nid->value;
+		//Récupération de la nouvelle valeur
+		$updated_value = $user_load->get('field_desired_structure')->entity->nid->value;
+		//Vérification si les valeurs sont différentes
+		if ($original_value != $updated_value) {
+			$node_load = Node::load($user->field_desired_structure[0]->target_id);
+			$mailManager = Drupal::service('plugin.manager.mail');
+			$module = 'openig_user_notifications';
+			$key = 'user_structure';
+			$to = Drupal::config('system.site')->get('mail');
+			$params['subject'] = 'Demande de rattachement à une structure';
+			$params['message'] = "L'utilisateur ".$user->name[0]->value.' souhaite être rattaché à la structure '.$node_load->title[0]->value;
+			$langcode = 'fr';
+			$send = true;
+			$mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
+		}		
+	}
+}

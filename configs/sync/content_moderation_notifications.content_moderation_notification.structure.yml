@@ -1,0 +1,18 @@
+uuid: b96cf589-bdb1-4b54-9d93-a65920c0f9ad
+langcode: fr
+status: true
+dependencies: {  }
+id: structure
+workflow: structure
+transitions:
+  create_new_draft: create_new_draft
+roles:
+  administrator: administrator
+author: false
+site_mail: false
+emails: ''
+subject: "Demande création d'une structure"
+body:
+  value: "<p>Nouvelle demande de création d'une structure : [node:title]</p>"
+  format: basic_html
+label: Structure
