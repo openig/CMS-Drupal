@@ -148,17 +148,17 @@ class SearchQueryService
         natcasesort($facets['resource_format']);
       }
 
-      // resource_data_type facets
-      if (isset($decode->aggregations->_global->resource_data_type->buckets) && count($decode->aggregations->_global->resource_data_type->buckets)) {
-        $facets['resource_data_type'] = [];
-        $allowed_resource_data_type = ['Événement', 'Actualité', 'Ressource', 'Groupe de travail'];
-        foreach ($decode->aggregations->_global->resource_data_type->buckets as $format) {
-          if (in_array($format->key, $allowed_resource_data_type)) {
-            array_push($facets['resource_data_type'], $format->key);
-          }
-        }
-        natcasesort($facets['resource_data_type']);
-      }
+      // resource_data_type facets (Todo à voir si bien plus utile)
+//      if (isset($decode->aggregations->_global->resource_data_type->buckets) && count($decode->aggregations->_global->resource_data_type->buckets)) {
+//        $facets['resource_data_type'] = [];
+//        $allowed_resource_data_type = ['Événement', 'Actualité', 'Ressource', 'Groupe de travail'];
+//        foreach ($decode->aggregations->_global->resource_data_type->buckets as $format) {
+//          if (in_array($format->key, $allowed_resource_data_type)) {
+//            array_push($facets['resource_data_type'], $format->key);
+//          }
+//        }
+//        natcasesort($facets['resource_data_type']);
+//      }
     }
 
     return $this->return_result_with_pager($results, $facets, $count, $page, $url);

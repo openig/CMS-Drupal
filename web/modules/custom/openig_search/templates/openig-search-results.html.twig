@@ -6,7 +6,7 @@
       <a class="nav-link" href="{{ pathSearchInternal }}">Résultats de la recherche sur le contenu éditorial</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active is-active" aria-current="page" href="/recherche/ressources_externes" >Résultats de la recherche sur les datas</a>
+      <a class="nav-link active is-active" aria-current="page" href="{{ pathSearchExternal }}" >Résultats de la recherche sur les datas</a>
     </li>
   </ul>
 </nav>
@@ -113,11 +113,10 @@
           {% endif %}
 
           {#  Champs hidden pour permettre les requetes vers l'api #}
-          {{ search_filter_form.fulltext }}
+{#          {{ search_filter_form.fulltext }}#}
           {{ search_filter_form.category }}
           {{ search_filter_form.lineage }}
           {{ search_filter_form.resource_format }}
-          {{ search_filter_form.resource_data_type }}
 
           <div class="form-actions">
             {{ search_filter_form.submit_desktop }}

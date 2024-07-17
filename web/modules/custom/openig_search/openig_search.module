@@ -15,12 +15,14 @@ function openig_search_theme() {
                 'count' => '',
                 'url' => '',
                 'pathSearchInternal' => '',
+                'pathSearchExternal' => '',
                 'search_filter_form' => ''
             ],
         ],
         'openig_search_internal_results' => [
             'variables' => [
               'pathSearchInternal' => '',
+              'pathSearchExternal' => '',
             ],
         ],
     ];

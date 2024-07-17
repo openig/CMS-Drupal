@@ -32,19 +32,20 @@ class SearchController extends ControllerBase {
         // Initialize min score
         $min_score = 0;
 
-        // Fulltext search
-        $fulltext = \Drupal::request()->query->get('fulltext');
+        // Fulltext search - Barre de recherche
+        $session = \Drupal::request()->getSession();
+        $fulltext = $session->get('searchFulltext');
         if ($fulltext) {
             $filters['query'] = $fulltext;
             $min_score = $min_score + 0.1;
         }
 
-        // Content type
-        $resource_data_type = \Drupal::request()->query->get('resource_data_type');
-        if ($resource_data_type) {
-            $filters['resource_data_type'] = $resource_data_type;
-            $min_score = $min_score + 100;
-        }
+        // Content type - (todo A confirmer si plus utile)
+//        $resource_data_type = \Drupal::request()->query->get('resource_data_type');
+//        if ($resource_data_type) {
+//            $filters['resource_data_type'] = $resource_data_type;
+//            $min_score = $min_score + 100;
+//        }
 
         // Source search
         $lineage = \Drupal::request()->query->get('lineage');
@@ -78,9 +79,46 @@ class SearchController extends ControllerBase {
         $search = $this->searchQueryService->search($filters, $page ? $page : 0);
 
         // Récupération du path de la recherche interne avec les filtres - onglet
-        $session = \Drupal::request()->getSession();
         $pathSearchInternal = $session->get('pathSearchInternal');
 
+        // Enregistrement du path (recherche externe API) avec les filtres en session pour les onglets
+        // lineage=CKAN+Extension+Showcases&lineage=OpenIG&
+        // category=Arts+plastiques&category=Cin%C3%A9ma&
+        // resource_format=CSV&
+        //op=Valider
+
+        $category_field = \Drupal::request()->get('category');
+        $lineage_field = \Drupal::request()->get('lineage');
+        $resource_format_field = \Drupal::request()->get('resource_format');
+        dump($lineage_field);
+        dump($category_field);
+        dump($resource_format_field);
+
+
+        $pathSearchExternal = "/recherche/ressources_externes?";
+        if(!empty($lineage_field)){
+          $lineage_field_trim = explode("|", $lineage_field);
+          dump($lineage_field_trim);
+          foreach ($lineage_field_trim as $lineage){
+            $pathSearchExternal .= "lineage=".str_replace(" ", "+", $lineage)."&";
+          }
+        }
+        if(!empty($category_field)){
+          $category_field_trim = explode("|", $lineage_field);
+          dump($category_field_trim);
+          foreach ($category_field_trim as $category){
+            $pathSearchExternal .= "category=".str_replace(" ", "+", $category)."&";
+          }
+        }
+        if(!empty($resource_format_field)){
+          $resource_format_field_trim = explode("|", $lineage_field);
+          dump($resource_format_field_trim);
+          foreach ($resource_format_field_trim as $resource_format){
+            $pathSearchExternal .= "resource_format=".str_replace(" ", "+", $resource_format)."&";
+          }
+        }
+        dump($pathSearchExternal);
+        $session->set('pathSearchExternal', $pathSearchExternal);
 
         return [
             '#theme'    => 'openig_search_results',
@@ -92,6 +130,7 @@ class SearchController extends ControllerBase {
             "#url"      => $search['url'],
             "#count"    => $search['count'],
             '#pathSearchInternal'  => $pathSearchInternal,
+            '#pathSearchExternal'  => $pathSearchExternal,
             '#search_filter_form'  => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
         ];
     }
@@ -104,29 +143,37 @@ class SearchController extends ControllerBase {
     $search_tag = \Drupal::request()->get('field_tag');
     $search_fulltext = \Drupal::request()->get('search_api_fulltext');
 
+    $session = \Drupal::request()->getSession();
+
     // Reconstruction du path
-    $path = "/recherche?";
+    $pathSearchInternal = "/recherche?";
     if($search_types !== null){
       foreach ($search_types as $type){
-        $path .= "type[$type]=$type&";
+        $pathSearchInternal .= "type[$type]=$type&";
       }
     }
     if($search_tag !== null){
       foreach ($search_tag as $tag){
-        $path .= "field_tag[$tag]=$tag&";
+        $pathSearchInternal .= "field_tag[$tag]=$tag&";
       }
     }
     if($search_fulltext !== null){
-      $path .= "search_api_fulltext=".str_replace(" ", "+", $search_fulltext)."";
+      $pathSearchInternal .= "search_api_fulltext=".str_replace(" ", "+", $search_fulltext)."";
+      // Enregistrement barre de recherche en session pour les contenu externes
+      $session->set('searchFulltext', str_replace(" ", "+", $search_fulltext));
     }
 
     // Enregistrement du path avec les filtres en session pour les onglets
+    $session->set('pathSearchInternal', $pathSearchInternal);
+
+    // Récupération du path de la recherche externe avec les filtres - onglet
     $session = \Drupal::request()->getSession();
-    $session->set('pathSearchInternal', $path);
+    $pathSearchExternal = $session->get('pathSearchExternal');
 
     return [
       '#theme'              => 'openig_search_internal_results',
-      '#pathSearchInternal' => $path,
+      '#pathSearchInternal' => $pathSearchInternal,
+      '#pathSearchExternal' => $pathSearchExternal,
     ];
   }
 

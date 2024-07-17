@@ -25,14 +25,14 @@ class SearchFilterForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         // Full text search
-        $fulltext = \Drupal::request()->query->get('fulltext');
-        $form['fulltext'] = [
-            '#type' => 'hidden',
-            '#default_value' => $fulltext,
-            '#attributes' => [
-                'placeholder' => 'Recherchez ex: vue aérienne, PPRI...'
-            ]
-        ];
+//        $fulltext = \Drupal::request()->query->get('fulltext');
+//        $form['fulltext'] = [
+//            '#type' => 'hidden',
+//            '#default_value' => $fulltext,
+//            '#attributes' => [
+//                'placeholder' => 'Recherchez ex: vue aérienne, PPRI...'
+//            ]
+//        ];
 
         // Category search
         $category = \Drupal::request()->query->get('category');
@@ -68,15 +68,15 @@ class SearchFilterForm extends FormBase {
         ];
 
         // Format search
-        $resource_data_type = \Drupal::request()->query->get('resource_data_type');
-        $form['resource_data_type'] = [
-            '#type' => 'hidden',
-            '#maxlength' => 300,
-            '#default_value' => $resource_data_type,
-            '#attributes' => [
-                'id' => 'facet_resource_data_type_value'
-            ]
-        ];
+//        $resource_data_type = \Drupal::request()->query->get('resource_data_type');
+//        $form['resource_data_type'] = [
+//            '#type' => 'hidden',
+//            '#maxlength' => 300,
+//            '#default_value' => $resource_data_type,
+//            '#attributes' => [
+//                'id' => 'facet_resource_data_type_value'
+//            ]
+//        ];
 
 
         $form['submit_desktop'] = [
