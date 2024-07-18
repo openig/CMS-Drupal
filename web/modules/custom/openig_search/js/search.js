@@ -25,17 +25,43 @@
       });
     }
 
-    // Bind category facet
-    process_facet('#edit-category-collapsible--2', '#facet_category_value');
+      // Bind category facet
+      process_facet('#edit-category-collapsible--2', '#facet_category_value');
 
-    // Bind lineage facet
-    process_facet('#edit-source-collapsible--2', '#facet_lineage_value');
+      // Bind lineage facet
+      process_facet('#edit-source-collapsible--2', '#facet_lineage_value');
 
-    // Bind ckan_resource_format facet
-    process_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
+      // Bind ckan_resource_format facet
+      process_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
 
-    // Bind ckan_resource_format facet
-    // process_facet('#facet_resource_data_type', '#facet_resource_data_type_value');
+      // Bind ckan_resource_format facet
+      // process_facet('#facet_resource_data_type', '#facet_resource_data_type_value');
+
+
+    function process_reset_facet(input_id, input_value_id) {
+        var checkboxes = $(input_id + " input:checked");
+        // Get all checked checkboxes
+        $.each(checkboxes, function () {
+          if ($(this).prop('checked', true)) {
+            $(this).removeAttr('checked');
+          }
+        });
+        // Reset value
+        $(input_value_id).val('');
+    }
+
+    // Permet de reset les checkboxes
+    $('#edit-reset').on('click', function (event){
+      // Bind category facet
+      process_reset_facet('#edit-category-collapsible--2', '#facet_category_value');
+
+      // Bind lineage facet
+      process_reset_facet('#edit-source-collapsible--2', '#facet_lineage_value');
+
+      // Bind ckan_resource_format facet
+      process_reset_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
+
+    });
 
   });
 

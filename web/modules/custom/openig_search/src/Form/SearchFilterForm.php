@@ -25,14 +25,15 @@ class SearchFilterForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         // Full text search
-//        $fulltext = \Drupal::request()->query->get('fulltext');
-//        $form['fulltext'] = [
-//            '#type' => 'hidden',
-//            '#default_value' => $fulltext,
-//            '#attributes' => [
-//                'placeholder' => 'Recherchez ex: vue aérienne, PPRI...'
-//            ]
-//        ];
+        $fulltext = \Drupal::request()->query->get('fulltext');
+        $form['fulltext'] = [
+            '#type' => 'hidden',
+            '#default_value' => $fulltext,
+            '#attributes' => [
+                'placeholder' => 'Recherchez ex: vue aérienne, PPRI...',
+                'id'          => 'facet_fulltext_value'
+            ]
+        ];
 
         // Category search
         $category = \Drupal::request()->query->get('category');
@@ -91,17 +92,18 @@ class SearchFilterForm extends FormBase {
         $form['reset'] = [
           '#type' => 'button',
           '#value' => $this->t('Réinitialiser'),
-          '#validate' => [],
           '#attributes' => [
             'class'   => ['site-search__desktop'],
-            'onclick' => 'this.form.reset(); return false;'
           ],
+
         ];
+
 
         $form['#cache']['contexts'][] = 'session';
 
         return $form;
     }
+
 
 
     /**
@@ -126,8 +128,8 @@ class SearchFilterForm extends FormBase {
         if ($resource_format) { $args['resource_format'] = $resource_format; }
 
         // Bind content type parameter if defined
-        $resource_data_type = $form_state->getValue('resource_data_type');
-        if ($resource_data_type) { $args['resource_data_type'] = $resource_data_type; }
+//        $resource_data_type = $form_state->getValue('resource_data_type');
+//        if ($resource_data_type) { $args['resource_data_type'] = $resource_data_type; }
 
         $form_state->setRedirect('openig_search.results', $args);
     }
