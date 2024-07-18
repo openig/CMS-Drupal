@@ -109,7 +109,9 @@
                 .field-content{
                     text-align: center;
                     img{
-                        width: 174px;
+                        max-width: 174px;
+                        max-height: 125px;
+                        width: auto;
                     }
                 }
             }
