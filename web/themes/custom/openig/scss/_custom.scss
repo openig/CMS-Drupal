@@ -1429,6 +1429,10 @@ form{
 
 // Pagination 
 
+.pager{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
 .page-item{
     background-color: $OPenIG-color_white;
     border-radius: 0;
@@ -1740,6 +1744,9 @@ form.user-register-form{
                     }
                 }
             }
+            .form-item.form-type-vertical-tabs.form-item.form-no-label{
+                display: none;
+            }
         }
     }
     .ui-dialog-buttonpane{
@@ -1850,8 +1857,12 @@ form.user-register-form{
             font-weight: 600;
             text-decoration: none;
             text-transform: uppercase;
+            a{
+                color: $OPenIG-color_black;
+                text-decoration: none;
+            }
             .views-field-field-firstname{
-                margin-right: 0.5rem;
+                padding-right: 0.5rem;
             }
         }
     }
