@@ -1996,6 +1996,16 @@
                 font-size: $OPenIG-font-size-sm;
             }
         }
+        .user-form{
+            .horizontal-tabs{
+                width: 100% !important;
+                .horizontal-tabs-panes{
+                    > details > .details-wrapper{
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -2078,6 +2088,54 @@
         }
         .card_agenda{
             margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (max-width: 640px){
+    .path-user{
+        .user-form{
+            .horizontal-tabs{
+                border: none;
+                .tabledrag-toggle-weight{
+                    font-size: $OPenIG-font-size-xs;
+                }
+                #edit-group-informations-utilisateur{
+                    > .details-wrapper{
+                        > div:first-of-type{
+                            margin-top: 0;
+                        }
+                        > div:not(:first-of-type), > p{
+                            margin-top: 3rem;
+                        }
+                    }
+                }
+                #edit-account{
+                    > div:not(:first-of-type){
+                        margin-top: 3rem;
+                    }
+                }
+                .form-item-field-desired-structure-0-target-id{
+                    label{
+                        width: 100%;
+                    }
+                    input{
+                        border-radius: 0.375rem !important;
+                    }
+                    .dropbutton-widget{
+                        border: none;
+                        .dropbutton{
+                            a, a:hover, a:active, a:focus-visible{
+                                background-color: $OPenIG-color_blue;
+                                color: $OPenIG-color_white;
+                                font-size: 26px;
+                                padding: 0 0.75rem;
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

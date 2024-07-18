@@ -1677,6 +1677,8 @@ form.user-register-form{
         .horizontal-tabs{
             display: flex;
             flex-direction: column;
+            width: 75%;
+            margin: auto;
             .horizontal-tabs-list{
                 background-color: $OPenIG-color_white;
                 li, li:hover{
@@ -1728,6 +1730,9 @@ form.user-register-form{
                     input{
                         border-color: $OPenIG-color_gray;
                     }
+                }
+                .tabledrag-toggle-weight{
+                    font-size: $OPenIG-font-size-sm;
                 }
             }
         }
