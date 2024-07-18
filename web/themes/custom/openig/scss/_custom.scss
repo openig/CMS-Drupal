@@ -1751,6 +1751,9 @@ form.user-register-form{
         div.form-actions{
             display: flex;
             justify-content: end;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
         }
         .description{
             font-size: $OPenIG-font-size-xs;
