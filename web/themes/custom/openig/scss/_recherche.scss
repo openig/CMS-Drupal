@@ -12,7 +12,7 @@
   }
 }
 
-.block-openig-views-block-filter-search-internal, .search-results {
+.search-results {
 
     .view-header {
       display: none;
@@ -79,7 +79,7 @@
         font-family: 'Exo_semiBold';
       }
 
-      .js-form-submit[data-drupal-selector='edit-reset'] {
+      .js-form-submit[data-drupal-selector='edit-reset'], .js-form-submit[data-drupal-selector='edit-reset-resultats-de-recherche'] {
         background-color: transparent;
         color: $OPenIG-color_dark-gray;
         border: 1px solid $OPenIG-color_gray;

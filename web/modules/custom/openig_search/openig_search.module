@@ -32,6 +32,12 @@ function openig_search_preprocess_openig_search_results(&$variables) {
     $variables['#attached']['library'][] = 'openig_search/openig-search';
 }
 
+function openig_search_views_pre_render(\Drupal\views\ViewExecutable $view){
+  if (isset($view) && ($view->storage->id() == 'resultats_de_recherche')) {
+    $view->element['#attached']['library'][] = 'openig_search/openig-search';
+  }
+}
+
 
 function openig_search_preprocess(&$variables, $hook) {
   // Add images path alias
