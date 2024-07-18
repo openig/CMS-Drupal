@@ -17,6 +17,7 @@ dependencies:
     - node
     - search
     - simplenews
+    - sitemap
     - system
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
@@ -28,6 +29,7 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
+  - 'access sitemap'
   - 'access user profiles'
   - 'create structure content'
   - 'display eu cookie compliance popup'

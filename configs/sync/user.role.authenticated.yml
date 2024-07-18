@@ -21,6 +21,7 @@ dependencies:
     - search
     - shortcut
     - simplenews
+    - sitemap
     - system
     - toolbar
 _core:
@@ -34,6 +35,7 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'access sitemap'
   - 'access toolbar'
   - 'access user profiles'
   - 'create structure content'
