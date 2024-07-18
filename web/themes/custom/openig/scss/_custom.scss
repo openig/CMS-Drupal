@@ -1980,10 +1980,7 @@ form.user-register-form{
         .social-media-links--platforms{
             margin-top: 2rem;
             li{
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                margin-bottom: 1.5rem;
+                margin-right: 3rem;
             }
             a{
                 color: $OPenIG-color_black;
@@ -1991,12 +1988,6 @@ form.user-register-form{
                 span::before{
                     font-size: 25px;
                 }
-            }
-            a.link_social_media{
-                border-bottom: 1px solid $OPenIG-color_red;
-                color: $OPenIG-color_dark-gray;
-                margin-left: 0.5rem;
-                font-family: 'Russo One';
             }
         }
     }
