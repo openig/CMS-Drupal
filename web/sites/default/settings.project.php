@@ -11,7 +11,6 @@
 $settings['trusted_host_patterns'] = [
 	'^openig\.org$',
 	'^.+\.openig\.org$',
-	'^teicee\.fr$',
 	'^.+\.teicee\.fr$',
 ];
 
@@ -22,8 +21,8 @@ $databases = array(
 	'default' => array(
 		'default' => array(
 			'driver'    => 'pgsql',
-			'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
-			'autoload'  => 'core/modules/pgsql/src/Driver/Database/pgsql/',
+#			'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
+#			'autoload'  => 'core/modules/pgsql/src/Driver/Database/pgsql/',
 			'host'      => "127.0.0.1",
 			'port'      => "5432",
 			'database'  => "drupal10",
@@ -35,8 +34,8 @@ $databases = array(
 	'migrate' => array(
 		'default' => array(
 			'driver'    => 'pgsql',
-			'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
-			'autoload'  => 'core/modules/pgsql/src/Driver/Database/pgsql/',
+#			'namespace' => 'Drupal\\pgsql\\Driver\\Database\\pgsql',
+#			'autoload'  => 'core/modules/pgsql/src/Driver/Database/pgsql/',
 			'host'      => "127.0.0.1",
 			'port'      => "5432",
 			'database'  => "drupal8",
