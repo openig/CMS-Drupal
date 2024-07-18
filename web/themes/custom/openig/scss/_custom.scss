@@ -2035,3 +2035,15 @@ form.user-register-form{
         }
     }
 }
+
+// sitemap
+.contenu_sitemap{
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.6);
+    .sitemap-item{
+        margin-bottom: 3rem;
+    }
+    .sitemap-item:first-of-type{
+        margin-top: 2rem;
+    }
+}
