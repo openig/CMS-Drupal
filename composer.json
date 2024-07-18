@@ -52,6 +52,7 @@
         "drupal/search_api_solr": "^4.3",
         "drupal/simple_sitemap": "^4.1",
         "drupal/simplenews": "^4.0",
+        "drupal/sitemap": "^2.0@beta",
         "drupal/slick_views": "^3.0",
         "drupal/social_media_links": "^2.9",
         "drupal/structure_sync": "^2.0",
