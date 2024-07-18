@@ -1613,7 +1613,7 @@ form.user-register-form, form.user-login-form, form.user-pass{
             .dropbutton-widget{
                 border: none;
                 .dropbutton{
-                    a{
+                    a, a:hover, a:active, a:focus-visible{
                         background-color: $OPenIG-color_blue;
                         color: $OPenIG-color_white;
                         font-size: 26px;
@@ -1694,12 +1694,35 @@ form.user-register-form{
                 > details > .details-wrapper{
                     width: 75%;
                     margin: auto;
+                    > div:first-of-type{
+                        margin-top: 0;
+                    }
+                    > div:not(:first-of-type), > p{
+                        margin-top: 3rem;
+                    }
+                    #edit-account{
+                        > div:not(:first-of-type){
+                            margin-top: 3rem;
+                        }
+                    }
                     .form-item-field-desired-structure-0-target-id{
                         label{
                             width: 100%;
                         }
                         input{
                             border-radius: 0.375rem !important;
+                        }
+                        .dropbutton-widget{
+                            border: none;
+                            .dropbutton{
+                                a, a:hover, a:active, a:focus-visible{
+                                    background-color: $OPenIG-color_blue;
+                                    color: $OPenIG-color_white;
+                                    font-size: 26px;
+                                    padding: 0 0.75rem;
+                                    border: none;
+                                }
+                            }
                         }
                     }
                     input{
@@ -1719,6 +1742,13 @@ form.user-register-form{
         }
         .link.tabledrag-toggle-weight{
             color: $OPenIG-color_blue;
+        }
+        div.form-actions{
+            display: flex;
+            justify-content: end;
+        }
+        .description{
+            font-size: $OPenIG-font-size-xs;
         }
     }
 }
