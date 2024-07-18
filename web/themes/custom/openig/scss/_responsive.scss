@@ -1954,7 +1954,7 @@
     }
     form.user-register-form, form.user-login-form, form.user-pass{
         width: 100% !important;
-        > div, > p{
+        > div, > p, > fieldset{
             width: 90% !important;
         }
     }

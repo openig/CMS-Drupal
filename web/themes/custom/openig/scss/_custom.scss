@@ -1596,11 +1596,11 @@ form.user-register-form, form.user-login-form, form.user-pass{
     > div:first-of-type{
         margin-top: 0;
     }
-    > div, > p{
+    > div, > p, >fieldset{
         width: 50%;
         margin: auto;
     }
-    > div:not(:first-of-type), > p{
+    > div:not(:first-of-type), > p, > fieldset{
         margin-top: 3rem;
     }
     div.form-actions{
