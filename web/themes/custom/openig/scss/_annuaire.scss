@@ -103,6 +103,11 @@
         .view-content{
             width: 50%;
             height: 100%;
+            .adherent{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             .views-field-field-image{
                 margin-bottom: 2.5rem;
                 margin-top: 2.5rem;

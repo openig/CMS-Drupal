@@ -56,7 +56,7 @@
     {% for row in items %}
       <div class="row" {{ row.attributes.addClass(row_classes, options.row_class_default ? 'row-' ~ loop.index) }}>
         {% for column in row.content %}
-          <div class="col-6"{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
+          <div class="col-6 adherent"{{ column.attributes.addClass(col_classes, options.col_class_default ? 'col-' ~ loop.index) }}>
             {{- column.content -}}
           </div>
         {% endfor %}
