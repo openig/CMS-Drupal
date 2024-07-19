@@ -89,13 +89,12 @@
         {{ rows }}      
       </div>
     {% endif %}
+    {% if empty %}
+      <div class="view-empty container">
+        {{ empty }}
+      </div>
+    {% endif %}
   </div>
-  {% if empty %}
-    <div class="view-empty container">
-      {{ empty }}
-    </div>
-  {% endif %}
-
   {% if pager %}
     {{ pager }}
   {% endif %}

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_webform
     - node.type.groupe_de_travail
+    - webform.webform.rejoindre_un_groupe_de_travail
   module:
     - webform
 id: node.groupe_de_travail.field_webform
@@ -15,7 +16,13 @@ label: Webform
 description: ''
 required: false
 translatable: false
-default_value: {  }
+default_value:
+  -
+    target_uuid: 1c8ab104-906f-4595-a371-fe8792e83287
+    default_data: ''
+    status: open
+    open: ''
+    close: ''
 default_value_callback: ''
 settings:
   handler: 'default:webform'

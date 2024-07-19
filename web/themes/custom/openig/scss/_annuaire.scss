@@ -103,13 +103,20 @@
         .view-content{
             width: 50%;
             height: 100%;
+            .adherent{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             .views-field-field-image{
                 margin-bottom: 2.5rem;
                 margin-top: 2.5rem;
                 .field-content{
                     text-align: center;
                     img{
-                        width: 174px;
+                        max-width: 174px;
+                        max-height: 125px;
+                        width: auto;
                     }
                 }
             }
@@ -140,6 +147,7 @@
     }
     .view-content{
         margin-bottom: 3rem;
+        min-height: 200px;
     }
     .views-row:nth-child(even){
         background-color: $OPenIG-color_medium-white;
@@ -154,9 +162,9 @@
             display: flex;
             align-items: center;
             .views-field-field-image{
+                min-width: 175px;
                 width: fit-content;
                 height: fit-content;
-                border: 1px solid $OPenIG-color_light-gray;
                 .field-content{
                     width: 100%;
                     height: 100%;
@@ -166,6 +174,7 @@
                     img{
                         width: 175px;
                         min-width: 175px;
+                        border: 1px solid $OPenIG-color_light-gray;
                     }
                 }
             }
@@ -468,7 +477,9 @@
     }
 
     .view-empty{
-        margin-top: 3rem;
+        font-size: $OPenIG-font-size-xl;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.6);
     }
 }
 

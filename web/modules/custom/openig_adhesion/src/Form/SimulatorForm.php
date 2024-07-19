@@ -128,10 +128,14 @@ class SimulatorForm extends FormBase {
         ];
 
         // Captcha
-        $form['captcha'] = [
-            '#type' => 'captcha',
-            '#captcha_type' => 'captcha/Math',
-        ];
+        $user = \Drupal::currentUser();
+        if (!$user->isAuthenticated()) {
+            $form['captcha'] = [
+                '#type' => 'captcha',
+                '#captcha_type' => 'hcaptcha/hCaptcha',
+            ];
+        }
+       
 
         $form['simulation_result'] = [
             '#type' => 'hidden',

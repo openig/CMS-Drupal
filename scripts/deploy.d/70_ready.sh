@@ -8,7 +8,7 @@
 ### - DRUPAL_USER
 ### - DRUPAL_PASS
 
-deploy_drupal_ready() {
+init_d10_ready() {
 	[ -n "${BIN_DRUSH}" ] || return 0
 	cd "${DIR_DOCROOT}"
 	
@@ -18,14 +18,14 @@ deploy_drupal_ready() {
 	p_section "Drupal instance informations..."
 	${BIN_DRUSH} core:status
 }
-deploy_drupal_ready
+init_d10_ready
 
 ###
 ### Mise en place du compte administrateur
 ###
-deploy_drupal_account() {
+init_d10_account() {
 	[ -n "${DRUPAL_USER}" ] || return 0
-	[ -z "${DB_STATUS}"   ] || return 0
+	[ -n "${DB_STATUS}"   ] || return 0
 	[ -n "${BIN_DRUSH}"   ] || return 0
 	
 	p_section "Drupal administrator account..."
@@ -39,4 +39,4 @@ deploy_drupal_account() {
 	${BIN_DRUSH} user:role:add administrator "${DRUPAL_USER}"
 	${BIN_DRUSH} user:unblock                "${DRUPAL_USER}"
 }
-deploy_drupal_account
+init_d10_account

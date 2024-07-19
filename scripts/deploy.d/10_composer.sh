@@ -4,11 +4,12 @@
 ### - DIR_HOSTING
 ### - DIR_DOCROOT
 ### - CMD_COMPOSER
+### - SOLR_NAME
 
 ###
 ### Création initiale du projet Drupal avec Composer
 ###
-deploy_composer_create() {
+init_d10_composer_create() {
 	cd "${DIR_HOSTING}"
 	[ -f "./composer.json" ] && return 0
 	[ -n "${CMD_COMPOSER}" ] || return 0
@@ -29,16 +30,16 @@ deploy_composer_create() {
 	[ -d "./vendor/bin" ] && rm -rf "./vendor/bin"
 	${CMD_COMPOSER} remove  "drupal/core-project-message"
 	${CMD_COMPOSER} require "drush/drush"
-	${CMD_COMPOSER} require "drupal/search_api_solr:^4.3"
+	[ -z "${SOLR_NAME}" ] || ${CMD_COMPOSER} require "drupal/search_api_solr"
 	
 	return 0
 }
-deploy_composer_create
+init_d10_composer_create
 
 ###
 ### Installation des dépendances du projet avec Composer
 ###
-deploy_composer_install() {
+init_d10_composer_install() {
 	cd "${DIR_HOSTING}"
 	[ -f "./composer.json" ] || return 0
 	[ -n "${CMD_COMPOSER}" ] || return 0
@@ -54,4 +55,4 @@ deploy_composer_install() {
 	
 	return 0
 }
-deploy_composer_install
+init_d10_composer_install

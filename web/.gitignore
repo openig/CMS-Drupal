@@ -1,8 +1,7 @@
 
 ### Ignore configuration files that may contain sensitive information
-/sites/*/services*.yml
-#/sites/*/settings*.php
-/sites/*/settings.local.php
+/sites/*/*.local.php
+/sites/*/default.*
 
 ### Ignore paths that contain user-generated content.
 /sites/*/files
@@ -11,15 +10,14 @@
 
 ### Ignore drupal core (if not versioning drupal sources)
 /core
+/libraries
 /profiles/*.txt
+/profiles/contrib
 /modules/*.txt
-/modules/contrib/*
+/modules/contrib
 /themes/*.txt
-/themes/contrib/*
-/sites/*.txt
-/sites/*.php
-/sites/*.yml
-/libraries/*
+/themes/contrib
+/sites/*.*
 
 ### Ignore drupal files
 /.csslint*
