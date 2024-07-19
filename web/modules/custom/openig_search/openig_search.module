@@ -16,13 +16,17 @@ function openig_search_theme() {
                 'url' => '',
                 'pathSearchInternal' => '',
                 'pathSearchExternal' => '',
-                'search_filter_form' => ''
+                'search_filter_form' => '',
+                'nbResultats'        => '',
+                'ressourceInterne'   => null,
             ],
         ],
         'openig_search_internal_results' => [
             'variables' => [
               'pathSearchInternal' => '',
               'pathSearchExternal' => '',
+              'nbResultats'        => '',
+              'ressourceInterne'   => null,
             ],
         ],
     ];

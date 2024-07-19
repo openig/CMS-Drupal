@@ -3,8 +3,8 @@
 #block-openig-tabs {
   .nav-tabs {
     font-weight: 600;
-    #nbContenuEditorial .badge {
-      margin: 1em;
+    .badge {
+      margin-left: 1em;
     }
     a {
       color: $OPenIG-color_black;
@@ -79,10 +79,10 @@
         font-family: 'Exo_semiBold';
       }
 
-      .js-form-submit[data-drupal-selector='edit-reset'], .js-form-submit[data-drupal-selector='edit-reset-resultats-de-recherche'] {
-        background-color: transparent;
-        color: $OPenIG-color_dark-gray;
-        border: 1px solid $OPenIG-color_gray;
+      .js-form-submit[data-drupal-selector='edit-reset'], #edit-reset-resultats-de-recherche.js-form-submit[data-drupal-selector='edit-reset-resultats-de-recherche'] {
+        background-color: transparent !important;
+        color: $OPenIG-color_dark-gray !important;
+        border: 1px solid $OPenIG-color_gray !important;
       }
 
       label {

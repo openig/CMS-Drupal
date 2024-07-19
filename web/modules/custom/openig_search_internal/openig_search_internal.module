@@ -59,21 +59,3 @@ function openig_search_internal_preprocess_views_view_fields__block_filter_searc
     $variables['urlCustom'] = $alias;
   }
 }
-
-function openig_search_internal_preprocess_menu_local_task(&$variables){
-  // Récupération des types de contenu
-  $query = \Drupal::entityQuery('node');
-  $condition_and = $query->andConditionGroup();
-  $condition_and->condition('type', ['article', 'evenement', 'groupe_de_travail', 'page', 'service', 'ressource'], 'IN');
-  $query->condition($condition_and);
-  $query->condition('status', 1);
-  $query->accessCheck(false);
-  $nb_resultats = $query->count()->execute();
-
-  $variables['nbContenu'] = $nb_resultats;
-}
-
-function openig_search_internal_preprocess_views_view__block_filter_search_internal(&$variables){
-  $variables['nbContenu'] = $variables['view']->total_rows;
-}
-

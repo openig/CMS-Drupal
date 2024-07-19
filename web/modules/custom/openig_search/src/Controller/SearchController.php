@@ -40,6 +40,7 @@ class SearchController extends ControllerBase
 
         // Fulltext search - Barre de recherche
         $fulltext = $session->get('searchFulltext');
+
         $host = \Drupal::request()->server->get('SITE_URL');
         $referer = \Drupal::request()->headers->get('referer');
         $pathReferer = $host . '/recherche?search_api_fulltext=' . $fulltext;
@@ -92,6 +93,9 @@ class SearchController extends ControllerBase
         $pathSearchExternal = \Drupal::request()->getRequestUri();
         $session->set('pathSearchExternal', $pathSearchExternal);
 
+        // Récupération du nombre d'éléments de la recherche interne
+        $nb_resultats = $session->get('nb_resultats');
+
         return [
             '#theme' => 'openig_search_results',
             '#items' => $search['results'],
@@ -104,6 +108,8 @@ class SearchController extends ControllerBase
             '#pathSearchInternal' => $pathSearchInternal,
             '#pathSearchExternal' => $pathSearchExternal,
             '#search_filter_form' => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
+            '#nbResultats'        => $nb_resultats,
+            '#ressourceInterne'   => false,
         ];
     }
 
@@ -111,9 +117,42 @@ class SearchController extends ControllerBase
     public function search_internal_results()
     {
         // Récupération champ de recherche saisie
+        $search_fieldTags = \Drupal::request()->get('field_tag');
+        $search_types = \Drupal::request()->get('type');
         $search_fulltext = \Drupal::request()->get('search_api_fulltext');
 
+        // Requête pour la récupération du nombre de contenu récupéré
+        $index = \Drupal\search_api\Entity\Index::load('index_general');
+        $query = $index->query();
+        if($search_fulltext){
+          $query->keys($search_fulltext);
+        }
+        if(!empty($search_types) && is_array($search_types)) {
+          // Conditions sur le type de contenu
+          $conditions = $query->createConditionGroup('OR');
+          foreach($search_types as $type) {
+            $conditions->addCondition('type', $type);
+          }
+          $query->addConditionGroup($conditions);
+        }
+
+        if(!empty($search_fieldTags) && is_array($search_fieldTags)){
+          //Conditions sur les thématiques
+          $conditions = $query->createConditionGroup('OR');
+          foreach ($search_fieldTags as $thematique) {
+            $conditions->addCondition('field_tag', $thematique);
+          }
+          $query->addConditionGroup($conditions);
+        }
+
+        $query->setLanguages(['fr']);
+        $query->addCondition('status', 1);
+
+        $nb_resultats = $query->execute()->getResultCount();
+
         $session = \Drupal::request()->getSession();
+        // Enregistrement du nombre d'éléments de la recherche interne
+        $session->set('nb_resultats', $nb_resultats);
 
         if ($search_fulltext !== null) {
           // Enregistrement barre de recherche en session pour les contenu externes
@@ -125,12 +164,14 @@ class SearchController extends ControllerBase
         $session->set('pathSearchInternal', $pathSearchInternal);
 
         // Récupération du path de la recherche externe avec les filtres - onglet
-        $pathSearchExternal = $session->get('pathSearchExternal');
+        $pathSearchExternal = $session->get('pathSearchExternal') !== null ? $session->get('pathSearchExternal') : '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext;
 
         return [
           '#theme' => 'openig_search_internal_results',
           '#pathSearchInternal' => $pathSearchInternal,
           '#pathSearchExternal' => $pathSearchExternal,
+          '#nbResultats'        => $nb_resultats,
+          '#ressourceInterne'   => true,
         ];
     }
 

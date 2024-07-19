@@ -1,0 +1,16 @@
+
+<nav class="tabs-wrapper tabs-primary is-collapsible" id="block-openig-tabs">
+  <ul class="nav nav-tabs flex-column flex-md-row primary clearfix">
+    <li class="nav-item">
+      <a class="nav-link {% if ressourceInterne %} active is-active{% endif %}" {% if ressourceInterne %} aria-current="page" {% endif %} href="{{ pathSearchInternal }}">
+        Résultats de la recherche sur le contenu éditorial
+        <span class='badge rounded-pill bg-warning text-black'> {{ nbResultats }} </span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% if ressourceInterne == false %} active is-active{% endif %}" {% if ressourceInterne == false %} aria-current="page" {% endif %} href="{{ pathSearchExternal }}">
+        Résultats de la recherche sur les datas
+      </a>
+    </li>
+  </ul>
+</nav>

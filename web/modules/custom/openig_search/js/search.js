@@ -63,31 +63,7 @@
 
     });
 
-
-    // Badge nombre de résultat ressources internes - onglet contenu éditorial
-    // let onglet = $('#block-openig-tabs #nbContenuEditorial');
-    let bloc = $('#block-openig-tabs');
-    // let nbrElementOnglet = onglet.data('id');
-    let nbrElementOnglet = bloc.data('id');
-
-    let badge = $('#block-openig-tabs #nbContenuEditorial a');
-    let headerSearch = $('.search-results .layout-content #nbrContenu');
-
-    let nbrElementHeader = headerSearch.data('id');
-
-    // onglet.attr('data-id', nbrElementHeader);
-    bloc.attr('data-id', nbrElementHeader);
-
-    var nbrElement = "";
-    if (nbrElementHeader == undefined) {
-      nbrElement = nbrElementOnglet;
-    } else {
-      nbrElement = nbrElementHeader;
-    }
-    badge.append("<span class='badge rounded-pill bg-warning text-black'>" + nbrElement + "</span>");
-
   });
-
 
 })(jQuery, Drupal);
 

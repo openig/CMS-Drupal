@@ -1,16 +1,5 @@
 
-
-<nav class="tabs-wrapper tabs-primary is-collapsible" id="block-openig-tabs">
-  <ul class="nav nav-tabs flex-column flex-md-row primary clearfix">
-    <li class="nav-item" id="nbContenuEditorial" data-id="">
-      <a class="nav-link" href="{{ pathSearchInternal }}">Résultats de la recherche sur le contenu éditorial</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active is-active" aria-current="page" href="{{ pathSearchExternal }}" >Résultats de la recherche sur les datas</a>
-    </li>
-  </ul>
-</nav>
-
+{% include '@openig_search/_nav_openig_search.html.twig' %}
 
 <div class="search-results container">
   {# filtres #}
@@ -33,29 +22,31 @@
               <div class="details-wrapper card-body">
                 <div class="form-checkboxes bef-checkboxesy">
                   {% for source in facets.lineage %}
-                    <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
-                      <input
-                        type="checkbox"
-                        name="lineage"
-                        value="{{ source }}"
-                        {{ source in filters.lineage ? 'checked="checked"' : '' }}
-                        class="form-checkbox form-check-input"
-                      >
-                      <label class="option">
-                        {% if source == "CKAN Datasets" %}
-                          OPenIG - Jeux de données
-                        {% elseif source == "OpenIG" %}
-                          <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label>
-                        {% elseif source == "datasets" %}
-                          <span class="facet-item__label"
-                                title="Données open data Région Occitanie">data.laregion.fr</span></label>
-                        {% elseif source == "dataset" %}
-                          picto-occitanie.fr
-                        {% else %}
-                          {{ source }}
-                        {% endif %}
-                      </label>
-                    </div>
+                    {% if source != 'OpenIG' and source != 'OPenIG' %}
+                      <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                        <input
+                          type="checkbox"
+                          name="lineage"
+                          value="{{ source }}"
+                          {{ source in filters.lineage ? 'checked="checked"' : '' }}
+                          class="form-checkbox form-check-input"
+                        >
+                        <label class="option">
+                          {% if source == "CKAN Datasets" %}
+                            OPenIG - Jeux de données
+{#                          {% elseif source == "OpenIG" %}#}
+{#                            <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label>#}
+                          {% elseif source == "datasets" %}
+                            <span class="facet-item__label"
+                                  title="Données open data Région Occitanie">data.laregion.fr</span></label>
+                          {% elseif source == "dataset" %}
+                            picto-occitanie.fr
+                          {% else %}
+                            {{ source }}
+                          {% endif %}
+                        </label>
+                      </div>
+                    {% endif %}
                   {% endfor %}
                 </div>
               </div>
@@ -114,7 +105,6 @@
           {% endif %}
 
           {#  Champs hidden pour permettre les requetes vers l'api #}
-{#          {{ search_filter_form.fulltext }}#}
           {{ search_filter_form.category }}
           {{ search_filter_form.lineage }}
           {{ search_filter_form.resource_format }}
