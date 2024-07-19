@@ -60,3 +60,4 @@ dependencies:
   - openig_user_notifications
   - user_register_notify
   - sitemap
+  - change_pwd_page
