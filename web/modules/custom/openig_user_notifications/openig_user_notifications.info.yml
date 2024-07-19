@@ -1,0 +1,5 @@
+name: OPenIG User notifications
+type: module
+description: OPenIG User notifications structure
+package: Custom
+core_version_requirement: ^10

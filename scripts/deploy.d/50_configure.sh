@@ -16,7 +16,7 @@
 ###
 ### Désactivation de l'exécution automatique du cron
 ###
-deploy_drupal_cron() {
+init_d10_conf_cron() {
 	cd "${DIR_DOCROOT}"
 	
 	p_section "Drupal CRON disabled..."
@@ -26,7 +26,7 @@ deploy_drupal_cron() {
 ###
 ### Reparamétrage du moteur d'indexation
 ###
-deploy_drupal_search() {
+init_d10_conf_search() {
 	cd "${DIR_DOCROOT}"
 	
 	if [ -n "${SOLR_HOST}" -o -n "${SOLR_NAME}" ]; then
@@ -55,42 +55,67 @@ deploy_drupal_search() {
 ###
 ### Reparamétrage du module SMTP
 ###
-deploy_drupal_mailer() {
+init_d10_conf_mailer() {
 	[ -n "${SMTP_HOST}" ] || return 0
 	cd "${DIR_DOCROOT}"
 	
 	p_section "Drupal SMTP initialisation..."
-#	MAIL_SYSTEM="$(${BIN_DRUSH} cget --format=string mailsystem.settings defaults.sender)"
-	MAIL_SYSTEM="$(${BIN_DRUSH} cget --format=string system.mail interface.default)"
+	MAIL_SYSTEM="$(${BIN_DRUSH} pm:list --type=module --status=enabled --package=Mail --filter=mailer --field=name 2>/dev/null | head -n1 || true)"
+	[ -n "${MAIL_SYSTEM}" ] || MAIL_SYSTEM="$(${BIN_DRUSH} cget --format=string  mailsystem.settings      defaults.sender    2>/dev/null || true)"
+#	[ -n "${MAIL_SYSTEM}" ] || MAIL_SYSTEM="$(${BIN_DRUSH} cget --format=string  system.mail              interface.default  2>/dev/null || true)"
 	case "${MAIL_SYSTEM}" in
-		'swiftmailer*'     )  ## Swift Mailer
-			MAIL_TRANSPORT="$(${BIN_DRUSH} cget --format=string swiftmailer.transport transport)"
+		'symfony_mailer'*  )  ## Symfony Mailer
+			MAIL_TRANSPORT="$(${BIN_DRUSH} cget --format=string symfony_mailer.settings default_transport)"
 			case "${MAIL_TRANSPORT}" in
-				'smtp'     )  ## SMTP
-					${BIN_DRUSH} cset --format=yaml swiftmailer.transport smtp_host     --value="'${SMTP_HOST}'"
-					${BIN_DRUSH} cset --format=yaml swiftmailer.transport smtp_port     --value="'${SMTP_PORT}'"
-					${BIN_DRUSH} cset --format=yaml swiftmailer.transport smtp_username --value="'${SMTP_USER}'"
-					${BIN_DRUSH} cset --format=yaml swiftmailer.transport smtp_password --value="'${SMTP_PASS}'"
-					${BIN_DRUSH} cset --format=yaml swiftmailer.transport smtp_encryption --value="'0'" ## 0|ssl|tls
-					p_success "Drupal mailsystem using 'swiftmailer+smtp': configuration done"
+				'smtp'*    )  ## SMTP
+					MAIL_CONF="{ verify_peer: false, local_domain: '', restart_threshold: null, restart_threshold_sleep: null, ping_threshold: null }"
+					MAIL_CONF="{ user: '${SMTP_USER}', pass: '${SMTP_PASS}', host: '${SMTP_HOST}', port: ${SMTP_PORT:-null}, query: ${MAIL_CONF} }"
+					${BIN_DRUSH} cset --input-format=yaml "symfony_mailer.mailer_transport.${MAIL_TRANSPORT}" configuration "${MAIL_CONF}"
+					p_success "Drupal mailsystem using 'SymfonyMailer+smtp': configuration done"
 				;;
-				'sendmail' )  ## Sendmail
-					${BIN_DRUSH} cset --format=string swiftmailer.transport sendmail_path --value='/usr/sbin/sendmail'
-					${BIN_DRUSH} cset --format=string swiftmailer.transport sendmail_mode --value='t'   ## bs|t
-					p_success "Drupal mailsystem using 'swiftmailer+sendmail': configuration done"
+				'sendmail'*)  ## Sendmail (cf $settings['mailer_sendmail_commands'])
+					MAIL_CONF="{ query: { command: '/usr/sbin/sendmail' } }"
+					${BIN_DRUSH} cset --input-format=yaml "symfony_mailer.mailer_transport.${MAIL_TRANSPORT}" configuration "${MAIL_CONF}"
+					p_success "Drupal mailsystem using 'SymfonyMailer+sendmail': configuration done"
 				;;
-				'native'   )  ## PHP
+				'nati'*    )  ## PHP (native|natif)
 					# send all e-mails using the built-in mail functionality of PHP
 					# not configured here: please refer to the PHP documentation
-					p_success "Drupal mailsystem using 'swiftmailer+native': nothing to configure here"
-				;;
-				'spool'    )  ## Spool
-					# saves the message to a spool file
-					# another process can then read from the spool and take care of sending the emails
-					p_success "Drupal mailsystem using 'swiftmailer+spool': nothing to configure here"
+					p_success "Drupal mailsystem using 'SymfonyMailer+native': nothing to configure here"
 				;;
 				* )
-					p_warning "Drupal mailsystem unknown swiftmailer: nothing configured here"
+					p_warning "Drupal mailsystem unknown SymfonyMailer transport: nothing configured here"
+				;;
+			esac
+		;;
+		'swiftmailer'*     )  ## Swift Mailer
+			MAIL_TRANSPORT="$(${BIN_DRUSH} cget --format=string swiftmailer.transport transport)"
+			case "${MAIL_TRANSPORT}" in
+				'smtp'*    )  ## SMTP
+					${BIN_DRUSH} cset --input-format=yaml swiftmailer.transport smtp_host     "'${SMTP_HOST}'"
+					${BIN_DRUSH} cset --input-format=yaml swiftmailer.transport smtp_port     "'${SMTP_PORT}'"
+					${BIN_DRUSH} cset --input-format=yaml swiftmailer.transport smtp_username "'${SMTP_USER}'"
+					${BIN_DRUSH} cset --input-format=yaml swiftmailer.transport smtp_password "'${SMTP_PASS}'"
+					${BIN_DRUSH} cset --input-format=yaml swiftmailer.transport smtp_encryption "'0'" ## 0|ssl|tls
+					p_success "Drupal mailsystem using 'SwiftMailer+smtp': configuration done"
+				;;
+				'sendmail'*)  ## Sendmail
+					${BIN_DRUSH} cset --input-format=string swiftmailer.transport sendmail_path '/usr/sbin/sendmail'
+					${BIN_DRUSH} cset --input-format=string swiftmailer.transport sendmail_mode 'bs'  ## bs|t
+					p_success "Drupal mailsystem using 'SwiftMailer+sendmail': configuration done"
+				;;
+				'nati'*    )  ## PHP
+					# send all e-mails using the built-in mail functionality of PHP
+					# not configured here: please refer to the PHP documentation
+					p_success "Drupal mailsystem using 'SwiftMailer+native': nothing to configure here"
+				;;
+				'spool'*   )  ## Spool
+					# saves the message to a spool file
+					# another process can then read from the spool and take care of sending the emails
+					p_success "Drupal mailsystem using 'SwiftMailer+spool': nothing to configure here"
+				;;
+				* )
+					p_warning "Drupal mailsystem unknown SwiftMailer transport: nothing configured here"
 				;;
 			esac
 		;;
@@ -102,8 +127,11 @@ deploy_drupal_mailer() {
 		'webform_php_mail' )  ## Webform PHP mailer
 			p_warning "Drupal mailsystem using 'webform': nothing configured here"
 		;;
+		'sendmail'*)
+			p_warning "Drupal mailsystem using 'sendmail': nothing configured here"
+		;;
 		* )
-			p_warning "Drupal mailsystem unknown: nothing configured here"
+			p_warning "Drupal mailsystem UNKNOWN! (nothing configured here)"
 		;;
 	esac
 	return 0
@@ -111,16 +139,16 @@ deploy_drupal_mailer() {
 
 ################################################################################ MAIN
 
-deploy_drupal_configure() {
+init_d10_configure() {
 	## fin du script d'init si la commande drush n'est pas disponible
 	[ -z "${BIN_DRUSH}" ] && p_warning "Commande Drush non disponible (aucune configuration Drupal effectuée) !" && return 0
 	## fin du script d'init si la base de données n'est pas initialisée
 	[ -z "${DB_STATUS}" ] && p_warning "Base de données non disponible (aucune configuration Drupal effectuée) !" && return 0
 	
-	deploy_drupal_cron
-	deploy_drupal_search
-	deploy_drupal_mailer
+	init_d10_conf_cron
+	init_d10_conf_search
+	init_d10_conf_mailer
 	
 	return 0
 }
-deploy_drupal_configure
+init_d10_configure

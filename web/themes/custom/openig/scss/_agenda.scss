@@ -4,7 +4,9 @@
 }
 .view-l-agenda{
     .view-empty{
-        margin-top: 3rem;
+        font-size: $OPenIG-font-size-xl;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.6);
     }
     .views-field-field-dates-4{
         display: none;

@@ -1224,6 +1224,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 16
           total_pages: null
           id: 0
@@ -1241,7 +1242,6 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 5
-          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -1271,8 +1271,8 @@ display:
                 advanced:
                   placeholder_text: ''
                   collapsible: false
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
               field_dpt_intervention_target_id:
                 plugin_id: bef
                 advanced:
@@ -1281,8 +1281,8 @@ display:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
                   collapsible: true
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
@@ -1294,8 +1294,8 @@ display:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
                   collapsible: true
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false
@@ -1689,7 +1689,7 @@ display:
       use_more_always: true
       use_more_text: "En savoir plus sur l'adhésion"
       link_display: custom_url
-      link_url: /
+      link_url: /openig/pourquoi-adherer
       header:
         area:
           id: area

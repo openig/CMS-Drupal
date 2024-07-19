@@ -147,6 +147,11 @@
 }
 .view-les-actualites.view-display-id-actualites{
     margin-top: 5rem !important;
+    .view-empty{
+        font-size: $OPenIG-font-size-xl;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
 }
 .view.view-les-actualites{
     position: relative;

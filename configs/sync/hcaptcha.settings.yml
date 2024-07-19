@@ -1,8 +1,7 @@
 _core:
   default_config_hash: CqlpQWBwxWgF4d1BcwQ_qKL-2mo2exqFqRHeAzyrSwo
-langcode: fr
-site_key: ''
-secret_key: ''
+site_key: 71863f30-ad50-4eae-819c-29d470e83246
+secret_key: ES_42ec22985c014beca2c46aeaf0bcc594
 hcaptcha_src: 'https://hcaptcha.com/1/api.js'
 widget:
   theme: ''
