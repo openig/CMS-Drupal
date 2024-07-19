@@ -1996,6 +1996,13 @@
                 font-size: $OPenIG-font-size-sm;
             }
         }
+        .user-form, .change-pwd-form{
+            width: 100% !important;
+            margin-bottom: 3rem;
+            .tabledrag-toggle-weight{
+                font-size: $OPenIG-font-size-xs;
+            }
+        }
     }
 }
 
@@ -2145,14 +2152,6 @@
     .path-user .profile{
         .identite{
             padding: 1rem !important;
-            .social-media-links--platforms{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-            }
-            .link_social_media{
-                display: none;
-            }
         }
     }
 }
