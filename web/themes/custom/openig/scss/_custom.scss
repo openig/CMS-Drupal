@@ -1609,6 +1609,9 @@ form.user-register-form, form.user-login-form, form.user-pass{
     }
 
     .field--name-field-desired-structure{
+        input{
+            border-radius: 0.375rem !important;
+        }
         .description{
             .dropbutton-widget{
                 border: none;
@@ -1673,7 +1676,7 @@ form.user-register-form{
         margin-top: 5rem;
         background-color: rgba(255, 255, 255, 0.6);
     }
-    .user-form{          
+    #user-form{          
         width: 60%;
         margin: auto;                       
         > div:first-of-type{
