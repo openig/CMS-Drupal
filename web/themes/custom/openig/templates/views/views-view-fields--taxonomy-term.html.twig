@@ -74,3 +74,12 @@
 		{% endif %}
 	{% endif %}
 {%- endfor %}
+<div class="more-link">
+	{% if accessCheck %}
+	{% else %}
+	  <div class="col-2 divPrivate">
+		<p class="itemPrivate">Contenu réservé aux adhérents</p><i class="fa-solid fa-lock"></i>
+	  </div>
+	{% endif %}
+  </div>
+  
