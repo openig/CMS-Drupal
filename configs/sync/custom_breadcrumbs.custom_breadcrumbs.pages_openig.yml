@@ -1,0 +1,15 @@
+uuid: 80a9bb1e-7fb1-4a87-9845-2771344de389
+langcode: fr
+status: true
+dependencies: {  }
+id: pages_openig
+label: 'Pages OPenIG'
+description: ''
+entityType: _none
+entityBundle: _none
+language: und
+breadcrumbPaths: '<nolink>'
+breadcrumbTitles: OPenIG
+type: '2'
+pathPattern: '/openig/*'
+extraCacheContexts: ''
