@@ -2037,8 +2037,14 @@
         .bloc_filtres{
             padding-top: 2rem;
         }
+        .search-result__noresults{
+            font-size: $OPenIG-font-size-lg;
+        }
         .search-results{
             margin-bottom: 3rem;
+            .view-empty{
+                font-size: $OPenIG-font-size-lg;
+            }
         }
         .views-view-responsive-grid__item{
             padding: 20px !important;

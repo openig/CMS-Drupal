@@ -2,18 +2,16 @@
 {% include '@openig_search/_nav_openig_search.html.twig' %}
 
 <div class="search-results">
-  <div class="container">
-    <div class="bloc_filtres">
-      <div class="formulaire_filtre d-xl-block d-none">
-        <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-        <div class="d-xl-block d-none">
-          {{ render_block('openig_formulaireexpose_block_filter_search_internal') }}
-        </div>
+  <div class="container bloc_filtres">
+    <div class="formulaire_filtre d-xl-block d-none">
+      <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
+      <div class="d-xl-block d-none">
+        {{ render_block('openig_formulaireexpose_block_filter_search_internal') }}
       </div>
-
-      {# btn filtrer #}
-      <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
     </div>
+
+    {# btn filtrer #}
+    <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
     {# Content #}
     <div class="layout-content">
       {{ render_block('openig_views_block_filter_search_internal') }}

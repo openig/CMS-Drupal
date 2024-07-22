@@ -51,16 +51,24 @@
     }
   }
 }
-
+.search-result__noresults{
+  font-size: $OPenIG-font-size-xl;
+  text-align: center;
+}
 .search-results {
   background-color: $OPenIG-color_medium-white;
   padding-bottom: 2rem;
   .view-header {
     display: none;
   }
-
+  .view-empty{
+    font-size: $OPenIG-font-size-xl;
+    text-align: center;
+  }
   // Filtres
   .formulaire_filtre {
+    max-height: calc(100% + 10rem);
+    overflow: scroll;
     margin-top: 2rem;
     position: absolute;
     left: -700px;
