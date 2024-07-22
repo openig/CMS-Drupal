@@ -65,7 +65,7 @@
 
     // Permet l'affichage de la recherche full text
     if($('#dataSearch').attr('data-id')) {
-      let dataString = $('<h4> Pour votre requête ' + $('#dataSearch').attr('data-id') + '</h4>');
+      let dataString = $('<span> Pour votre requête ' + $('#dataSearch').attr('data-id') + '</span>');
       $(dataString).insertAfter('h1#titleSearch');
     }
 
