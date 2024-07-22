@@ -3,13 +3,14 @@
 #block-openig-tabs {
   margin: auto;
   margin-top: 5rem;
+  padding: 0;
   .nav-tabs {
     font-weight: 600;
     border: none;
     .badge {
       margin-left: 1em;
       font-family: 'Russo One';
-      font-size: $OPenIG-font-size-lg;
+      font-size: $OPenIG-font-size-base;
       padding: 0.5rem;
     }
     li{
@@ -178,6 +179,9 @@
         font-weight: 600;
       }
     }
+    details[open=""].form-wrapper summary::after {
+      content: '\f0d8';
+    }
   }
 
   .formulaire_filtre.show {
@@ -207,6 +211,13 @@
 
   .bloc_filtres {
     position: relative;
+  }
+
+  .search-result__count{
+    margin-bottom: 1rem;
+    font-family: 'Exo_semiBold';
+    font-weight: 600;
+    font-size: $OPenIG-font-size-lg;
   }
 
   // Affichage des elements filtrés
@@ -251,10 +262,19 @@
       display: none;
     }
 
-    .search-result__source img{
-      height: 100px;
-      width: 100px;
-    }
+    .search-result__source{
+      img{
+        margin-left: 1rem;
+        height: 100px;
+        width: 100px;
+      }
+      a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+        border-bottom: 1px solid $OPenIG-color_black;
+      }
+
+    } 
 
     .more-link{
       display: flex;
@@ -267,7 +287,6 @@
       display: flex;
     }
     .more-link a, .more-link-externe a {
-        //font-family: 'Russo One';
         font-family: "Exo_semiBold";
         font-weight: 600;
         font-size: $OPenIG-font-size-lg;
