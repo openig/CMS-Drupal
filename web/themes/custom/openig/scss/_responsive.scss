@@ -749,7 +749,16 @@
             }
         }
     }
-
+    .path-recherche{
+        .formulaire_filtre{
+            .js-form-item-search-api-fulltext{
+                display: none;
+            }
+            .form--inline{
+                width: 350px;
+            }
+        }
+    }
     .path-annuaire{
         .btn_filtre{
             margin-bottom: 3rem !important;
@@ -2004,6 +2013,67 @@
             }
         }
     }
+    .path-recherche{
+        #block-openig-tabs{
+            ul.nav-tabs{
+                flex-direction: row !important;
+            }
+            li{
+                width: 50% !important;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+            }
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                text-align: left !important;
+            }
+            .badge{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .bloc_filtres{
+            padding-top: 2rem;
+        }
+        .search-results{
+            margin-bottom: 3rem;
+        }
+        .views-view-responsive-grid__item{
+            padding: 20px !important;
+        }
+        .views-field-title{
+            font-size: $OPenIG-font-size-sm !important;
+            margin-bottom: 1rem !important;
+        }
+        .views-field-field-tag{
+            margin: 1rem 0 !important;
+            a{
+                font-size: 9px !important;
+            }
+        }
+        .search-result__count{
+            font-size: $OPenIG-font-size-base !important;
+        }
+        .views-field-field-news-overview, .views-field-field-theme-overview, .views-field-field-description, .search-result__source{
+            font-size: $OPenIG-font-size-xs;
+        }
+        .source_more{
+            flex-wrap: wrap;
+        }
+        .more-link, .more-link-externe{
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+        .search-result__source{
+            img{
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -2086,6 +2156,12 @@
         .card_agenda{
             margin-bottom: 1rem;
         }
+    }
+}
+
+@media (max-width: 767.98px){
+    #block-openig-tabs.tabs-wrapper.is-collapsible .nav-item:not(.active){
+        display: block;
     }
 }
 
