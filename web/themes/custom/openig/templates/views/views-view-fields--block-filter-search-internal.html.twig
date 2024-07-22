@@ -51,9 +51,13 @@
 
   {%- if field.element_type -%}
     {% if field.class == "title" %}
-    <a href="{{ urlCustom }}">
-      <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-      </a>
+      {% if accessCheck %}
+        <a href="{{ urlCustom }}">
+          <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+        </a>
+      {% else %}
+        {{ field.content }}
+      {% endif %}
     {% else %}
       <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
     {% endif %}
