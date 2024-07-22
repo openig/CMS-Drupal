@@ -47,6 +47,11 @@ class SearchController extends ControllerBase
         if ($fulltext && $pathReferer === $referer) {
           $filters['query'] = $fulltext;
           $min_score = $min_score + 0.1;
+          $search_fulltext = $fulltext;
+        }
+        // si recherche réinitialisé
+        else{
+          $search_fulltext = null;
         }
 
         // Content type - (todo A confirmer si plus utile)
@@ -110,6 +115,7 @@ class SearchController extends ControllerBase
             '#search_filter_form' => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
             '#nbResultats'        => $nb_resultats,
             '#ressourceInterne'   => false,
+            '#fulltext'           => $search_fulltext
         ];
     }
 
@@ -172,6 +178,7 @@ class SearchController extends ControllerBase
           '#pathSearchExternal' => $pathSearchExternal,
           '#nbResultats'        => $nb_resultats,
           '#ressourceInterne'   => true,
+          '#fulltext'           => $search_fulltext
         ];
     }
 

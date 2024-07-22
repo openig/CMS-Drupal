@@ -60,8 +60,15 @@
 
       // Bind ckan_resource_format facet
       process_reset_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
-
     });
+
+
+    // Permet l'affichage de la recherche full text
+    if($('#dataSearch').attr('data-id')) {
+      let dataString = $('<h4> Pour votre requête ' + $('#dataSearch').attr('data-id') + '</h4>');
+      $(dataString).insertAfter('h1#titleSearch');
+    }
+
 
   });
 
