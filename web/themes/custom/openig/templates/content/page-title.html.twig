@@ -28,7 +28,7 @@
   </h1>
 {% else %}
   {% if title|render|striptags|trim == 'Résultats de recherche' %}
-    <h1{{title_attributes}} style="background-image: url('/themes/custom/openig/img/pictos/jumelles-titreh1.png');">
+    <h1{{title_attributes}} id="titleSearch" style="background-image: url('/themes/custom/openig/img/pictos/jumelles-titreh1.png');">
       {{ title }}
     </h1>
   {% else %}

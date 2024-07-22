@@ -23,6 +23,7 @@ function openig_search_theme() {
                 'search_filter_form' => '',
                 'nbResultats'        => '',
                 'ressourceInterne'   => null,
+                'fulltext'           => null
             ],
         ],
         'openig_search_internal_results' => [
@@ -31,6 +32,7 @@ function openig_search_theme() {
               'pathSearchExternal' => '',
               'nbResultats'        => '',
               'ressourceInterne'   => null,
+              'fulltext'           => null
             ],
         ],
     ];

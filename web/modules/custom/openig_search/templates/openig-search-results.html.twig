@@ -1,9 +1,9 @@
 
 {% include '@openig_search/_nav_openig_search.html.twig' %}
 
-<div class="search-results container">
+<div class="search-results">
   {# filtres #}
-  <div class="view-content container">
+  <div class="view-content container bloc_filtres">
     <div class="formulaire_filtre d-xl-block d-none">
       <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
       <h2>Filtrer la recherche</h2>
@@ -119,16 +119,20 @@
   </div>
 
   {# btn filtrer #}
-  <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+  <div class="container">
+    <div class="bloc_filtres">
+      <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+    </div>
+  </div>
 
   {# Content #}
-  <div class="layout-content">
+  <div class="layout-content container">
     <div class="page-content">
       {% if items|length > 0 and count > 0 %}
         <div class="search-result__count">Nombre de résultats : <span
             class="search-result__count_value"> {{ count }}</span></div>
       {% endif %}
-      <div class="col-lg-10 col-12">
+      <div class="col-12">
         <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
           {% for item in items %}
             <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
@@ -138,19 +142,19 @@
                   <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
                 </div>
 
+                <div class="views-field views-field-field-tag">
+                  <span class="field-content">
+                   {% for tag in item.tags %}
+                     <a href="{{item.link}}">{{ tag }}</a>
+                   {% endfor %}
+                  </span>
+               </div>
+
                 <div class="views-field views-field-field-description">
                   <span class="field-content">{{ item.description | raw }}</span>
                 </div>
 
-                <div class="views-field views-field-field-tag">
-                   <span class="field-content">
-                    {% for tag in item.tags %}
-                      <a href="#">{{ tag }}</a>
-                    {% endfor %}
-                   </span>
-                </div>
-
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between source_more">
                   <div class="search-result__source">
                     <span class="search-result__label">Source</span> :
                     {#                  {% if item.source == "CKAN Datasets" %} #}

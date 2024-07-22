@@ -1,3 +1,4 @@
+
 // title
 #block-openig-page-title {
   flex-direction: column;
@@ -10,349 +11,329 @@
   }
 }
 
-  // Onglets
-  #block-openig-tabs {
-    .nav-tabs {
+
+// Onglets
+#block-openig-tabs {
+  margin: auto;
+  margin-top: 5rem;
+  padding: 0;
+  .nav-tabs {
+    font-weight: 600;
+    border: none;
+    .badge {
+      margin-left: 1em;
+      font-family: 'Russo One';
+      font-size: $OPenIG-font-size-base;
+      padding: 0.5rem;
+    }
+    li{
+      width: 50%;
+    }
+    a {
+      text-align: center;
+      color: $OPenIG-color_black;
+      font-family: 'Exo_regular';
+      font-size: 1.25rem;
+      background-color: $OPenIG-color_white;
+      border-radius: 0;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 1rem;
+      height: 100%;
+    }
+    a.is-active{
+      border-top: 7px solid $OPenIG-color_yellow;
+      background-color: $OPenIG-color_medium-white;
+      font-family: 'Exo_semiBold';
       font-weight: 600;
-      .badge {
-        margin-left: 1em;
-      }
-      a {
-        color: $OPenIG-color_black;
-      }
     }
   }
+}
 
-  .search-results {
+.search-results {
+  background-color: $OPenIG-color_medium-white;
+  padding-bottom: 2rem;
+  .view-header {
+    display: none;
+  }
 
-    .view-header {
+  // Filtres
+  .formulaire_filtre {
+    margin-top: 2rem;
+    position: absolute;
+    left: -700px;
+    transition: 1.5s;
+    background-color: $OPenIG-color_white;
+    z-index: 1;
+    border: 1px solid $OPenIG-color_gray;
+    border-radius: 10px;
+    padding: 10px;
+    width: 400px;
+
+    .btn-close-filtre {
+      background-color: transparent;
+      border: none;
+      float: right;
+
+      i {
+        color: $OPenIG-color_dark-gray;
+        font-size: 24px;
+      }
+    }
+
+    h2 {
+      width: 100%;
+      border-bottom: 0;
+      font-family: 'Russo One';
+      font-size: $OPenIG-font-size-lg;
+      color: $OPenIG-color_gray;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2::before {
+      content: '\f0b0';
+      font-family: "Font Awesome 6 Free";
+      color: $OPenIG-color_yellow;
+      font-weight: 600;
+      margin-right: 15px;
+      font-size: 24px;
+    }
+
+    form {
+      margin-top: 2rem;
+    }
+
+    .js-form-item-search-api-fulltext{
       display: none;
     }
 
-    // Filtres
-    .formulaire_filtre {
-      position: absolute;
-      left: -700px;
-      transition: 1.5s;
-      background-color: $OPenIG-color_white;
-      z-index: 1;
+    .js-form-submit {
+      background-color: $OPenIG-color_blue;
+      color: $OPenIG-color_white;
+      border: none;
+      height: 30px;
+      font-size: $OPenIG-font-size-sm;
+      font-weight: 600;
+      font-family: 'Exo_semiBold';
+    }
+
+    .js-form-submit[data-drupal-selector='edit-reset'], #edit-reset-resultats-de-recherche.js-form-submit[data-drupal-selector='edit-reset-resultats-de-recherche'] {
+      background-color: transparent !important;
+      color: $OPenIG-color_dark-gray !important;
+      border: 1px solid $OPenIG-color_gray !important;
+    }
+
+    label {
+      font-size: $OPenIG-font-size-sm;
+    }
+
+    .form-checkbox {
       border: 1px solid $OPenIG-color_gray;
-      border-radius: 10px;
-      padding: 10px;
-      width: 400px;
+    }
 
-      .btn-close-filtre {
-        background-color: transparent;
-        border: none;
-        float: right;
+    .form-actions {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      padding-top: 2rem;
 
-        i {
-          color: $OPenIG-color_dark-gray;
-          font-size: 24px;
-        }
+      input {
+        margin: 0;
       }
+    }
 
-      h2 {
-        width: 100%;
-        border-bottom: 0;
-        font-family: 'Russo One';
-        font-size: $OPenIG-font-size-lg;
-        color: $OPenIG-color_gray;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+    .details-wrapper {
+      padding: 0;
+      margin-top: 15px;
+    }
 
-      h2::before {
-        content: '\f0b0';
-        font-family: "Font Awesome 6 Free";
-        color: $OPenIG-color_yellow;
-        font-weight: 600;
-        margin-right: 15px;
-        font-size: 24px;
-      }
+    .labelDates {
+      font-weight: 600;
+      margin-bottom: 0;
+      font-size: $OPenIG-font-size-sm;
+      font-family: 'OpenSans_SemiBold';
+    }
 
-      form {
-        margin-top: 2rem;
-      }
+    details.form-wrapper {
+      width: 100%;
+      border: 0 !important;
+      background-color: transparent;
+      margin-top: 1rem;
+      box-shadow: none !important;
+      overflow: visible !important;
 
-      .js-form-item-search-api-fulltext{
-        display: none;
-      }
-
-      .js-form-submit {
-        background-color: $OPenIG-color_blue;
-        color: $OPenIG-color_white;
-        border: none;
-        height: 30px;
-        font-size: $OPenIG-font-size-sm;
-        font-weight: 600;
-        font-family: 'Exo_semiBold';
-      }
-
-      .js-form-submit[data-drupal-selector='edit-reset'], #edit-reset-resultats-de-recherche.js-form-submit[data-drupal-selector='edit-reset-resultats-de-recherche'] {
+      summary {
+        border-bottom: 1px solid $OPenIG-color_gray;
         background-color: transparent !important;
-        color: $OPenIG-color_dark-gray !important;
-        border: 1px solid $OPenIG-color_gray !important;
-      }
-
-      label {
-        font-size: $OPenIG-font-size-sm;
-      }
-
-      .form-checkbox {
-        border: 1px solid $OPenIG-color_gray;
-      }
-
-      .form-actions {
         display: flex;
-        flex-direction: row-reverse;
         justify-content: space-between;
-        padding-top: 2rem;
-
-        input {
-          margin: 0;
-        }
-      }
-
-      .details-wrapper {
-        padding: 0;
-        margin-top: 15px;
-      }
-
-      .labelDates {
+        padding: 5px 0;
         font-weight: 600;
-        margin-bottom: 0;
         font-size: $OPenIG-font-size-sm;
         font-family: 'OpenSans_SemiBold';
       }
 
-      details.form-wrapper {
-        width: 100%;
-        border: 0 !important;
-        background-color: transparent;
-        margin-top: 1rem;
-        box-shadow: none !important;
-        overflow: visible !important;
-
-        summary {
-          border-bottom: 1px solid $OPenIG-color_gray;
-          background-color: transparent !important;
-          display: flex;
-          justify-content: space-between;
-          padding: 5px 0;
-          font-weight: 600;
-          font-size: $OPenIG-font-size-sm;
-          font-family: 'OpenSans_SemiBold';
-        }
-
-        summary::marker {
-          content: '';
-        }
-
-        summary[aria-expanded="true"]::after {
-          content: '\f0d8';
-        }
-
-        summary::after {
-          content: '\f0d7';
-          font-family: "Font Awesome 6 Free";
-          font-weight: 600;
-        }
+      summary::marker {
+        content: '';
       }
-    }
 
-    .formulaire_filtre.show {
-      left: 0;
-      transition: 1.5s;
-
-    }
-
-    .btn_filtre {
-      margin-top: 3rem;
-      margin-bottom: 3rem;
-      height: 30px;
-      background-color: $OPenIG-color_blue;
-      border: none;
-      border-radius: 6px;
-      color: $OPenIG-color_white;
-      font-family: 'Exo_semiBold', sans-serif;
-      font-weight: 600;
-      font-size: $OPenIG-font-size-sm;
-      padding: 5px 10px;
-      box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-
-      i {
-        margin-right: 5px;
+      summary[aria-expanded="true"]::after {
+        content: '\f0d8';
       }
-    }
 
-    .bloc_filtres {
-      position: relative;
-    }
-
-    // Affichage des elements filtrés
-    .views-view-responsive-grid__item{
-      background-color: #fff;
-      border: 1px solid #878786;
-      border-radius: 10px;
-      padding: 30px;
-      .views-field.views-field-title {
-        font-size: 2rem;
-        font-family: "Exo_semiBold";
+      summary::after {
+        content: '\f0d7';
+        font-family: "Font Awesome 6 Free";
         font-weight: 600;
-        margin-bottom: 2rem;
-        a{
-          color: #0a0909;
-          text-decoration: none;
-        }
       }
-      .views-field.views-field-field-tag{
-        margin: 2rem 0;
-        width: 100%;
-        a{
-          border: 1px solid #00a09a;
-          border-radius: 50px;
-          padding: 2px 10px;
-          font-size: .75rem;
-          text-decoration: none;
-          color: #0a0909;
-          margin-right: 10px;
-          font-family: "Exo_regular";
-        }
-      }
+    }
+    details[open=""].form-wrapper summary::after {
+      content: '\f0d8';
+    }
+  }
 
-      .paragraphs-description .paragraphs-content-wrapper, .paragraphs-description .paragraphs-plugin-wrapper{
-        height: fit-content;
-      }
-      .paragraphs-description .summary-content{
-        color: $OPenIG-color_black;
-      }
+  .formulaire_filtre.show {
+    left: 0;
+    transition: 1.5s;
 
-      .views-field.views-field-type{
-        display: none;
-      }
+  }
 
-      .search-result__source img{
+  .btn_filtre {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 30px;
+    background-color: $OPenIG-color_blue;
+    border: none;
+    border-radius: 6px;
+    color: $OPenIG-color_white;
+    font-family: 'Exo_semiBold', sans-serif;
+    font-weight: 600;
+    font-size: $OPenIG-font-size-sm;
+    padding: 5px 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+
+    i {
+      margin-right: 5px;
+    }
+  }
+
+  .bloc_filtres {
+    position: relative;
+  }
+
+  .search-result__count{
+    margin-bottom: 1rem;
+    font-family: 'Exo_semiBold';
+    font-weight: 600;
+    font-size: $OPenIG-font-size-lg;
+  }
+
+  // Affichage des elements filtrés
+  .views-view-responsive-grid__item{
+    background-color: #fff;
+    border: 1px solid #878786;
+    border-radius: 10px;
+    padding: 30px;
+    .views-field.views-field-title {
+      font-size: 2rem;
+      font-family: "Exo_semiBold";
+      font-weight: 600;
+      margin-bottom: 2rem;
+      a{
+        color: #0a0909;
+        text-decoration: none;
+      }
+    }
+    .views-field.views-field-field-tag{
+      margin: 2rem 0;
+      width: 100%;
+      a{
+        border: 1px solid #00a09a;
+        border-radius: 50px;
+        padding: 2px 10px;
+        font-size: .75rem;
+        text-decoration: none;
+        color: #0a0909;
+        margin-right: 10px;
+        font-family: "Exo_regular";
+      }
+    }
+
+    .paragraphs-description .paragraphs-content-wrapper, .paragraphs-description .paragraphs-plugin-wrapper{
+      height: fit-content;
+    }
+    .paragraphs-description .summary-content{
+      color: $OPenIG-color_black;
+    }
+
+    .views-field.views-field-type{
+      display: none;
+    }
+
+    .search-result__source{
+      img{
+        margin-left: 1rem;
         height: 100px;
         width: 100px;
       }
-
-      .more-link{
-        display: flex;
-        justify-content: end;
-        text-align: center;
-        margin-top: 3rem;
-      }
-      .more-link-externe {
-        align-items: end;
-        display: flex;
-      }
-      .more-link a, .more-link-externe a {
-        font-family: 'Russo One';
-        font-size: $OPenIG-font-size-lg;
-        color: $OPenIG-color_dark-gray;
+      a{
+        color: $OPenIG-color_black;
         text-decoration: none;
-        border-bottom: 1px solid $OPenIG-color_red;
-        padding-bottom: 5px;
+        border-bottom: 1px solid $OPenIG-color_black;
       }
+
     }
-    .divPrivate{
+
+    .more-link{
       display: flex;
-      align-items: center;
-      p.itemPrivate{
-        font-family: 'OpenSans_Regular';
-        font-size: $OPenIG-font-size-xs;
-        margin: 0;
-        text-align: right;
-      }
-      i{
-        margin-left: 1.5rem;
-        color: $OPenIG-color_blue;
-        font-size: 20px;
-      }
+      justify-content: end;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .more-link-externe {
+      align-items: end;
+      display: flex;
+    }
+    .more-link a, .more-link-externe a {
+      font-family: "Exo_semiBold";
+      font-weight: 600;
+      font-size: $OPenIG-font-size-lg;
+      color: $OPenIG-color_black;
+      text-decoration: none;
+      border-bottom: 1px solid $OPenIG-color_deep-gray;
+      padding-bottom: 2px;
     }
   }
+  .divPrivate{
+    display: flex;
+    align-items: center;
+    p.itemPrivate{
+      font-family: 'OpenSans_Regular';
+      font-size: $OPenIG-font-size-xs;
+      margin: 0;
+      text-align: right;
+    }
+    i{
+      margin-left: 1.5rem;
+      color: $OPenIG-color_blue;
+      font-size: 20px;
+    }
+  }
+}
 
-  // Pagination
-  .pager__item--last, .pager__item--first{
+// Pagination
+.pager{
+  background-color: transparent;
+  margin-top: 2rem;
+}
+
+.views-field-fieldset{
+  .contenu{
     display: none;
   }
-  .pager__item--previous, .pager__item--next{
-    background-color: $OPenIG-color_white;
-    border-radius: 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-    border: none;
-    width: 42px;
-    height: 42px;
-    text-align: center;
-    .page-link{
-      border: none;
-      height: 100%;
-      width: 100%;
-      padding: 0 !important;
-      span{
-        display: none;
-      }
-    }
-    .page-link::before{
-      font-family: "Font Awesome 6 Free";
-      color: $OPenIG-color_deep-gray;
-      font-size: 28px;
-    }
-  }
-  .pager__item--next{
-    margin-left: 5rem !important;
-    .page-link::before{
-      content: '\f054';
-    }
-  }
-  .pager__item--previous{
-    margin-right: 5rem !important;
-    .page-link::before{
-      content: '\f053';
-    }
-  }
-  .page-item{
-    background-color: $OPenIG-color_white;
-    border-radius: 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-    border: none;
-    width: 42px;
-    height: 42px;
-    text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    .page-link{
-      border: none;
-      width: 100%;
-      height: 100%;
-      padding: 0.5rem;
-      color: $OPenIG-color_black;
-      font-family: 'Russo One';
-      font-size: $OPenIG-font-size-lg;
-    }
-  }
-  .page-item.is-active.active{
-    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
-    .page-link{
-      color: $OPenIG-color_red;
-      background-color: transparent;
-      border-radius: 0;
-      border: none;
-    }
-  }
-  .page-item:focus, .page-link:focus{
-    border: none !important;
-  }
-  .page-link:focus{
-    box-shadow: none;
-  }
-
-  .views-field-fieldset{
-    .contenu{
-      display: none;
-    }
-  }
-
+}
 
