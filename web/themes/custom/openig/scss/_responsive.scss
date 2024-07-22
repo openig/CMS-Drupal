@@ -236,6 +236,7 @@
         form, .form--inline.clearfix{
             display: flex;
             align-items: center;
+            justify-content: center;
             .form-item-search-api-fulltext{
                 width: 85%;
                 label::after{
@@ -2014,6 +2015,13 @@
         }
     }
     .path-recherche{
+        #block-openig-page-title {
+            span {
+              top: -40px !important;
+              left: 125px !important;
+              font-size: $OPenIG-font-size-sm !important;
+            }
+        }
         #block-openig-tabs{
             ul.nav-tabs{
                 flex-direction: row !important;
