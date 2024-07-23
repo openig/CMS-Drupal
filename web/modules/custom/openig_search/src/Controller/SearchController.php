@@ -42,7 +42,6 @@ class SearchController extends ControllerBase
 
         // Récupération du nombre d'éléments de la recherche interne
         $nb_resultats = $datas['#session']->get('nb_resultats');
-
         return [
             '#theme'    => 'openig_search_results',
             '#items'    => $datas['#items'], //$search['results'],
@@ -52,7 +51,7 @@ class SearchController extends ControllerBase
             '#pager'    => $datas['#pager'], // $search['pager'],
             "#url"      => $datas['#url'], //$search['url'],
             "#count"    => $datas['#count'], //$search['count'],
-            '#fulltext' => $datas['#fulltext'], // $search_fulltext
+            '#fulltext' => $datas['#search_filter_form']['search_api_fulltext']['#value'], // $search_fulltext
             '#search_filter_form' => $datas['#search_filter_form'], // \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
             '#pathSearchInternal' => $pathSearchInternal,
             '#pathSearchExternal' => $pathSearchExternal,
@@ -76,8 +75,7 @@ class SearchController extends ControllerBase
     $session = \Drupal::request()->getSession();
 
     // Fulltext search - Barre de recherche
-    $fulltext = $session->get('searchFulltext');
-
+    $fulltext = $session->get('search_api_fulltext');
     $host = \Drupal::request()->server->get('SITE_URL');
     $referer = \Drupal::request()->headers->get('referer');
     $pathReferer = $host . '/recherche?search_api_fulltext=' . $fulltext;
@@ -194,7 +192,22 @@ class SearchController extends ControllerBase
         $session->set('pathSearchInternal', $pathSearchInternal);
 
         // Récupération du path de la recherche externe avec les filtres - onglet
-        $pathSearchExternal = $session->get('pathSearchExternal') !== null ? $session->get('pathSearchExternal') : '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext;
+        if ($session->get('pathSearchExternal') !== null) {
+          if (!str_contains($session->get('pathSearchExternal'), 'search_api_fulltext')) {
+            if (str_contains($session->get('pathSearchExternal'), '?')) { 
+              $pathSearchExternal = $session->get('pathSearchExternal').'&search_api_fulltext='.$search_fulltext;
+            }
+            else{
+              $pathSearchExternal = $session->get('pathSearchExternal').'?search_api_fulltext='.$search_fulltext;
+            }
+          }else{
+            $pathSearchExternal = $session->get('pathSearchExternal');
+          }
+         
+        }else{
+          $pathSearchExternal = '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext;
+        }
+        //$pathSearchExternal = $session->get('pathSearchExternal') !== null ? $session->get('pathSearchExternal') : '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext;
 
         return [
           '#theme' => 'openig_search_internal_results',

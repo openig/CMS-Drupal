@@ -25,8 +25,8 @@ class SearchFilterForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         // Full text search
-        $fulltext = \Drupal::request()->query->get('fulltext');
-        $form['fulltext'] = [
+        $fulltext = \Drupal::request()->query->get('search_api_fulltext');
+        $form['search_api_fulltext'] = [
             '#type' => 'hidden',
             '#default_value' => $fulltext,
             '#attributes' => [
@@ -112,7 +112,7 @@ class SearchFilterForm extends FormBase {
      * {@inheritdoc}
      */
     public function submitForm(array &$form, FormStateInterface $form_state) {
-        $args = [ 'fulltext' => $form_state->getValue('fulltext'), 'page' => 0 ];
+        $args = [ 'search_api_fulltext' => $form_state->getValue('search_api_fulltext'), 'page' => 0 ];
 
         // Bind category parameter if defined
         $category = $form_state->getValue('category');
