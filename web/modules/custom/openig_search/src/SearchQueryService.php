@@ -245,7 +245,7 @@ class SearchQueryService
         array_push($pager['pages'], [
           'number' => $i,
           'label' => $i + 1,
-          'url' => preg_replace('/page=(\d+)/', "page=$i", \Drupal::request()->getUri())
+          'url' => preg_replace('/?page=(\d+)/', "page=$i", \Drupal::request()->getUri())
         ]);
       }
     }
@@ -253,13 +253,31 @@ class SearchQueryService
 
     if ($current != $page_count) {
       // Push last label
-      $next = $current + 1;
-      array_push($pager['pages'], [
-        'number' => $next,
-        'label' => 'Suivant',
-        'url' => preg_replace('/page=(\d+)/', "page=$next", \Drupal::request()->getUri())
-      ]);
+      if ($_GET['page']) {
+        $next = $current + 1;
+        array_push($pager['pages'], [
+          'number' => $next,
+          'label' => 'Suivant',
+          'url' => preg_replace('/page=(\d+)/', "page=$next", \Drupal::request()->getUri())
+        ]);
+      }else{
+        $next = $current + 1;
+        if (str_contains(\Drupal::request()->getUri(), '?')) { 
+          array_push($pager['pages'], [
+            'number' => $next,
+            'label' => 'Suivant',
+            'url' => \Drupal::request()->getUri().'&page='.$next
+          ]);
+        }else{
+          array_push($pager['pages'], [
+            'number' => $next,
+            'label' => 'Suivant',
+            'url' => \Drupal::request()->getUri().'?page='.$next
+          ]);
+        }
+      }
     }
+
 
     return [
       'results' => $results,
