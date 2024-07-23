@@ -690,10 +690,10 @@
             font-weight: 600;
             font-family: 'Exo_semiBold';
         }
-        .js-form-submit[data-drupal-selector='edit-reset']{
-            background-color: transparent;
-            color: $OPenIG-color_dark-gray;
-            border: 1px solid $OPenIG-color_gray;
+        .js-form-submit[value='Réinitialiser']{
+            background-color: transparent !important;
+            color: $OPenIG-color_dark-gray !important;
+            border: 1px solid $OPenIG-color_gray !important;
         }
         .js-form-type-textfield input{
             font-size: $OPenIG-font-size-sm;
@@ -752,6 +752,9 @@
     }
     .path-recherche{
         .formulaire_filtre{
+            form{
+                flex-direction: column;
+            }
             .js-form-item-search-api-fulltext{
                 display: none;
             }
@@ -873,7 +876,7 @@
         margin-top: 0rem !important;
         margin-bottom: 3rem !important;
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
         .views-field-field-webform input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
@@ -926,7 +929,7 @@
     .view-les-actualites.view-display-id-actualites{
         margin-top: 0 !important;
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
     }
     .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
@@ -1839,7 +1842,7 @@
             margin-top: 5rem;
         }
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
         .views-row{
             padding: 1.5rem !important;
@@ -2046,12 +2049,12 @@
             padding-top: 2rem;
         }
         .search-result__noresults{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
         .search-results{
             margin-bottom: 3rem;
             .view-empty{
-                font-size: $OPenIG-font-size-lg;
+                font-size: $OPenIG-font-size-lg !important;
             }
         }
         .views-view-responsive-grid__item{
