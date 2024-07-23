@@ -148,7 +148,7 @@ class SearchController extends ControllerBase
         $search_fieldTags = \Drupal::request()->get('field_tag');
         $search_types = \Drupal::request()->get('type');
         $search_fulltext = \Drupal::request()->get('search_api_fulltext');
-
+        
         // Requête pour la récupération du nombre de contenu récupéré
         $index = \Drupal\search_api\Entity\Index::load('index_general');
         $query = $index->query();
@@ -184,7 +184,7 @@ class SearchController extends ControllerBase
 
         if ($search_fulltext !== null) {
           // Enregistrement barre de recherche en session pour les contenu externes
-          $session->set('search_api_fulltext', str_replace(" ", "+", $search_fulltext));
+          $session->set('search_api_fulltext', $search_fulltext);
         }
 
         $pathSearchInternal = \Drupal::request()->getRequestUri();
@@ -201,7 +201,7 @@ class SearchController extends ControllerBase
               $pathSearchExternal = $session->get('pathSearchExternal').'?search_api_fulltext='.$search_fulltext;
             }
           }else{
-            $pathSearchExternal = $session->get('pathSearchExternal');
+            $pathSearchExternal = '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext;
           }
          
         }else{
