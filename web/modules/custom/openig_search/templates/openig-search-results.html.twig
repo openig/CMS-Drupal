@@ -208,7 +208,7 @@
                   </li>
                 {% else %}
                   <li class="page-item {{ pager['current'] == page.number ? 'is-active active' : '' }}">
-                    <a href="{{ page['url'] }}?page={{ page['number'] }}" class="page-link"
+                    <a href="{{ page['url'] }}" class="page-link"
                       data-id="{{ page['label'] }}">{{ page['label'] }}</a>
                   </li>
                 {% endif %}

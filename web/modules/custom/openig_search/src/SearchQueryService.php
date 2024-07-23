@@ -242,11 +242,27 @@ class SearchQueryService
 
     for ($i = 0; $i <= $page_count; $i++) {
       if ($i == 0 || ($i == $current - 1) || $current == $i || ($i == $current + 1)) {
-        array_push($pager['pages'], [
-          'number' => $i,
-          'label' => $i + 1,
-          'url' => preg_replace('/?page=(\d+)/', "page=$i", \Drupal::request()->getUri())
-        ]);
+        if ($_GET['page']) {
+          array_push($pager['pages'], [
+            'number' => $i,
+            'label' => $i + 1,
+            'url' => preg_replace('/page=(\d+)/', "page=$i", \Drupal::request()->getUri())
+          ]);
+        }else{
+          if (str_contains(\Drupal::request()->getUri(), '?')) { 
+            array_push($pager['pages'], [
+              'number' => $i,
+              'label' => $i + 1,
+              'url' => \Drupal::request()->getUri().'&page='.$i
+            ]);
+          }else{
+            array_push($pager['pages'], [
+              'number' => $i,
+              'label' => $i + 1,
+              'url' => \Drupal::request()->getUri().'?page='.$i
+            ]);
+          }
+        }
       }
     }
 
