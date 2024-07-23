@@ -79,15 +79,15 @@ class SearchController extends ControllerBase
     $host = \Drupal::request()->server->get('SITE_URL');
     $referer = \Drupal::request()->headers->get('referer');
     $pathReferer = $host . '/recherche?search_api_fulltext=' . $search_api_fulltext;
-    if ($search_api_fulltext && $pathReferer === $referer) {
+    //if ($search_api_fulltext && $pathReferer === $referer) {
       $filters['query'] = $search_api_fulltext;
       $min_score = $min_score + 0.1;
       $search_fulltext = $search_api_fulltext;
-    }
+    //}
     // si recherche réinitialisé
-    else{
-      $search_fulltext = null;
-    }
+    //else{
+      //$search_fulltext = null;
+    //}
 
     // Content type - (todo A confirmer si plus utile)
     //        $resource_data_type = \Drupal::request()->query->get('resource_data_type');
