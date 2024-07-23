@@ -95,7 +95,6 @@ class SearchFilterForm extends FormBase {
           '#attributes' => [
             'class'   => ['site-search__desktop'],
           ],
-
         ];
 
 
@@ -105,6 +104,9 @@ class SearchFilterForm extends FormBase {
     }
 
 
+    public function reminderFormReset($form, &$form_state) {
+      $form_state->setRebuild(FALSE);
+    }
 
     /**
      * {@inheritdoc}

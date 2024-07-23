@@ -51,7 +51,8 @@
     }
 
     // Permet de reset les checkboxes
-    $('#edit-reset').on('click', function (event){
+    $('#edit-reset--2').on('click', function (event){
+      // event.preventDefault();
       // Bind category facet
       process_reset_facet('#edit-category-collapsible--2', '#facet_category_value');
 
@@ -60,6 +61,7 @@
 
       // Bind ckan_resource_format facet
       process_reset_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
+      // $(this).unbind('click').click();
     });
 
 

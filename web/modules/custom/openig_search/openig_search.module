@@ -35,6 +35,20 @@ function openig_search_theme() {
               'fulltext'           => null
             ],
         ],
+        'openig_search_external_filter_block' => [
+          'variables' => [
+            'filters' => [],
+            'facets'  => [],
+            'page'    => '',
+            'items'   => [],
+            'pager'   => [],
+            'url'     => '',
+            'fulltext' => null,
+            'search_filter_form' => '',
+            'count'   => '',
+          ],
+        ],
+
     ];
 }
 
