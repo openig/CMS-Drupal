@@ -25,10 +25,10 @@ class SearchFilterForm extends FormBase {
     public function buildForm(array $form, FormStateInterface $form_state) {
 
         // Full text search
-        $fulltext = \Drupal::request()->query->get('search_api_fulltext');
+        $search_api_fulltext = \Drupal::request()->query->get('search_api_fulltext');
         $form['search_api_fulltext'] = [
             '#type' => 'hidden',
-            '#default_value' => $fulltext,
+            '#default_value' => $search_api_fulltext,
             '#attributes' => [
                 'placeholder' => 'Recherchez ex: vue aérienne, PPRI...',
                 'id'          => 'facet_fulltext_value'
@@ -82,7 +82,7 @@ class SearchFilterForm extends FormBase {
 
         $form['submit_desktop'] = [
           '#type' => 'submit',
-          '#value' => $this->t('Valider'),
+          '#value' => $this->t('Appliquer'),
           '#attributes' => [
             'class' => ['site-search__desktop'],
           ],
@@ -90,10 +90,11 @@ class SearchFilterForm extends FormBase {
 
 
         $form['reset'] = [
-          '#type' => 'button',
+          '#type' => 'submit',
           '#value' => $this->t('Réinitialiser'),
+          '#name' => 'reset',
           '#attributes' => [
-            'class'   => ['site-search__desktop'],
+            'class'   => ['site-search__desktop','reset_button'],
           ],
         ];
 

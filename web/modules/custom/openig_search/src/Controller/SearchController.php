@@ -51,7 +51,7 @@ class SearchController extends ControllerBase
             '#pager'    => $datas['#pager'], // $search['pager'],
             "#url"      => $datas['#url'], //$search['url'],
             "#count"    => $datas['#count'], //$search['count'],
-            '#fulltext' => $datas['#search_filter_form']['search_api_fulltext']['#value'], // $search_fulltext
+            '#search_api_fulltext' => $datas['#search_filter_form']['search_api_fulltext']['#value'], // $search_fulltext
             '#search_filter_form' => $datas['#search_filter_form'], // \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
             '#pathSearchInternal' => $pathSearchInternal,
             '#pathSearchExternal' => $pathSearchExternal,
@@ -75,14 +75,14 @@ class SearchController extends ControllerBase
     $session = \Drupal::request()->getSession();
 
     // Fulltext search - Barre de recherche
-    $fulltext = $session->get('search_api_fulltext');
+    $search_api_fulltext = $session->get('search_api_fulltext');
     $host = \Drupal::request()->server->get('SITE_URL');
     $referer = \Drupal::request()->headers->get('referer');
-    $pathReferer = $host . '/recherche?search_api_fulltext=' . $fulltext;
-    if ($fulltext && $pathReferer === $referer) {
-      $filters['query'] = $fulltext;
+    $pathReferer = $host . '/recherche?search_api_fulltext=' . $search_api_fulltext;
+    if ($search_api_fulltext && $pathReferer === $referer) {
+      $filters['query'] = $search_api_fulltext;
       $min_score = $min_score + 0.1;
-      $search_fulltext = $fulltext;
+      $search_fulltext = $search_api_fulltext;
     }
     // si recherche réinitialisé
     else{
@@ -132,7 +132,7 @@ class SearchController extends ControllerBase
       '#filters'  => $filters,
       '#page'     => $page ? $page : 1,
       '#search_filter_form' => \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
-      '#fulltext' => $search_fulltext,
+      '#search_api_fulltext' => $search_fulltext,
       '#pager'    => $search['pager'],
       "#url"      => $search['url'],
       "#count"    => $search['count'],
@@ -184,7 +184,7 @@ class SearchController extends ControllerBase
 
         if ($search_fulltext !== null) {
           // Enregistrement barre de recherche en session pour les contenu externes
-          $session->set('searchFulltext', str_replace(" ", "+", $search_fulltext));
+          $session->set('search_api_fulltext', str_replace(" ", "+", $search_fulltext));
         }
 
         $pathSearchInternal = \Drupal::request()->getRequestUri();
@@ -215,7 +215,7 @@ class SearchController extends ControllerBase
           '#pathSearchExternal' => $pathSearchExternal,
           '#nbResultats'        => $nb_resultats,
           '#ressourceInterne'   => true,
-          '#fulltext'           => $search_fulltext
+          '#search_api_fulltext' => $search_fulltext
         ];
     }
 

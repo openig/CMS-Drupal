@@ -7,12 +7,13 @@
       $(input_id + " input").on('change', function (e) {
         var array = [];
         var checkboxes = $(input_id + " input:checked");
-
         // Get all checked checkboxes
+        
         $.each(checkboxes, function () {
           if ($(this).prop('checked', true)) {
             array.push($(this).val());
           } else {
+            $(this).removeAttr('checked');
             array = array.filter(function (el) {
               return el !== $(this).val();
             })
@@ -21,7 +22,6 @@
 
         // Bind value
         $(input_value_id).val(array.join('|'));
-
       });
     }
 
@@ -51,7 +51,7 @@
     }
 
     // Permet de reset les checkboxes
-    $('#edit-reset--2').on('click', function (event){
+    $('.reset_button').on('click', function (event){
       // event.preventDefault();
       // Bind category facet
       process_reset_facet('#edit-category-collapsible--2', '#facet_category_value');

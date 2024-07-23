@@ -51,7 +51,6 @@ class SearchExternalFilterBlock extends BlockBase implements ContainerFactoryPlu
 
       $controller_search = new SearchController($this->searchQueryService);
       $rendering_in_block = $controller_search->filter_search_results();
-
       return [
         '#theme'                => 'openig_search_external_filter_block',
         '#filters'              => $rendering_in_block['#filters'],

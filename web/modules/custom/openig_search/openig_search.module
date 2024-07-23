@@ -23,7 +23,7 @@ function openig_search_theme() {
                 'search_filter_form' => '',
                 'nbResultats'        => '',
                 'ressourceInterne'   => null,
-                'fulltext'           => null
+                'search_api_fulltext' => null
             ],
         ],
         'openig_search_internal_results' => [
@@ -32,7 +32,7 @@ function openig_search_theme() {
               'pathSearchExternal' => '',
               'nbResultats'        => '',
               'ressourceInterne'   => null,
-              'fulltext'           => null
+              'search_api_fulltext' => null
             ],
         ],
         'openig_search_external_filter_block' => [
@@ -43,7 +43,7 @@ function openig_search_theme() {
             'items'   => [],
             'pager'   => [],
             'url'     => '',
-            'fulltext' => null,
+            'search_api_fulltext' => null,
             'search_filter_form' => '',
             'count'   => '',
           ],
