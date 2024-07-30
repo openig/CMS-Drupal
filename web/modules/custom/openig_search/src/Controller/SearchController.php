@@ -126,11 +126,15 @@ class SearchController extends ControllerBase
     // Get page from request
     $page = \Drupal::request()->query->get('page');
 
-    dump($filters);
-
     // Call serach service with current page & facets
     $search = $this->searchQueryService->search($filters, $page ? $page : 0);
 
+    // Permet la correction des filtres de recherche Sources - twig pas de différence entre dataset et datasets
+    foreach ($search['facets']['lineage'] as $key => $lineage) {
+      if($lineage === 'datasets'){
+        $search['facets']['lineage'][$key] = 'datasets_region';
+      }
+    }
 
     return [
       '#facets'   => $search['facets'],
