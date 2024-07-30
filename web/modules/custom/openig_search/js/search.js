@@ -27,12 +27,15 @@
 
       // Bind category facet
       process_facet('#edit-category-collapsible--2', '#facet_category_value');
+      process_facet('#edit-category-collapsible-mobile', '#facet_category_value_mobile');
 
       // Bind lineage facet
       process_facet('#edit-source-collapsible--2', '#facet_lineage_value');
+      process_facet('#edit-source-collapsible-mobile', '#facet_lineage_value_mobile');
 
       // Bind ckan_resource_format facet
       process_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
+      process_facet('#edit-format-collapsible-mobile', '#facet_resource_format_value_mobile');
 
       // Bind ckan_resource_format facet
       // process_facet('#facet_resource_data_type', '#facet_resource_data_type_value');
@@ -55,12 +58,15 @@
       // event.preventDefault();
       // Bind category facet
       process_reset_facet('#edit-category-collapsible--2', '#facet_category_value');
+      process_reset_facet('#edit-category-collapsible-mobile', '#facet_category_value_mobile');
 
       // Bind lineage facet
       process_reset_facet('#edit-source-collapsible--2', '#facet_lineage_value');
+      process_reset_facet('#edit-source-collapsible-mobile', '#facet_lineage_value_mobile');
 
       // Bind ckan_resource_format facet
       process_reset_facet('#edit-format-collapsible--2', '#facet_resource_format_value');
+      process_reset_facet('#edit-format-collapsible-mobile', '#facet_resource_format_value_mobile');
       // $(this).unbind('click').click();
     });
 

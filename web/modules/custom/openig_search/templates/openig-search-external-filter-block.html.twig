@@ -4,9 +4,15 @@
         id="{{ search_filter_form['#id'] }}">
 
     {% if facets.lineage %}
-      <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
-        <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
-                 class="card-header bg-light">Sources
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-source-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-source-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">Sources
+        {% else %}
+        <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-source-collapsible--2" aria-expanded="false"
+                   class="card-header bg-light">Sources
+        {% endif %}
           <span class="summary"></span>
         </summary>
         <div class="details-wrapper card-body">
@@ -44,10 +50,17 @@
     {% endif %}
 
     {% if facets.category %}
-      <details id="edit-category-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
-        <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
-                 class="card-header bg-light">
-          Thématiques de connaissance et de données
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-category-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-category-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">
+            Thématiques de connaissance et de données
+      {% else %}
+        <details id="edit-category-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-category-collapsible--2" aria-expanded="false"
+                  class="card-header bg-light">
+            Thématiques de connaissance et de données
+      {% endif %}
           <span class="summary"></span>
         </summary>
         <div class="details-wrapper card-body">
@@ -70,9 +83,15 @@
     {% endif %}
 
     {% if facets.resource_format %}
-      <details id="edit-format-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
-        <summary role="button" aria-controls="edit-type-collapsible--2" aria-expanded="false"
-                 class="card-header bg-light">Formats
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-format-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-type-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">Formats
+        {% else %}
+          <details id="edit-format-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+            <summary role="button" aria-controls="dit-format-collapsible--2" aria-expanded="false"
+                    class="card-header bg-light">Formats
+        {% endif %}
           <span class="summary"></span>
         </summary>
         <div class="details-wrapper card-body">

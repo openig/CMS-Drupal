@@ -125,3 +125,34 @@ function openig_search_preprocess_views_view_fields__block_filter_search_interna
     $variables['urlCustom'] = $alias;
   }
 }
+
+function openig_search_preprocess_block(&$variables){
+  if (($variables['base_plugin_id'] == 'openig_search_external_filter_block') and ($variables['attributes']['id'] == 'openig_searchexternalfilterblock_mobile') ) {
+    dump($variables);
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#id'] = 'edit-search-api-fulltext-mobile';
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['data-drupal-selector'] = 'edit-search-api-fulltext-mobile';
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['id'] = 'facet_fulltext_value_mobile';
+
+    $variables['content']['#search_filter_form']['category']['#id'] = 'edit-category-mobile';
+    $variables['content']['#search_filter_form']['category']['#attributes']['data-drupal-selector'] = 'edit-category-mobile';
+    $variables['content']['#search_filter_form']['category']['#attributes']['id'] = 'facet_category_value_mobile';
+
+    $variables['content']['#search_filter_form']['lineage']['#id'] = 'edit-lineage-mobile';
+    $variables['content']['#search_filter_form']['lineage']['#attributes']['data-drupal-selector'] = 'edit-lineage-mobile';
+    $variables['content']['#search_filter_form']['lineage']['#attributes']['id'] = 'facet_lineage_value_mobile';
+
+    $variables['content']['#search_filter_form']['resource_format']['#id'] = 'edit-resource-format-mobile';
+    $variables['content']['#search_filter_form']['resource_format']['#attributes']['data-drupal-selector'] = 'edit-resource-format-mobile';
+    $variables['content']['#search_filter_form']['resource_format']['#attributes']['id'] = 'facet_resource_format_value_mobile';
+
+    $variables['content']['#search_filter_form']['submit_desktop']['#id'] = 'edit-submit-desktop-mobile';
+    $variables['content']['#search_filter_form']['submit_desktop']['#attributes']['data-drupal-selector'] = 'edit-submit-desktop-mobile';
+
+    $variables['content']['#search_filter_form']['reset']['#id'] = 'edit-reset-mobile';
+    $variables['content']['#search_filter_form']['reset']['#attributes']['data-drupal-selector'] = 'edit-reset-mobile';
+
+    $variables['content']['#search_filter_form']['#id'] = 'openig-search-filter-mobile';
+    $variables['content']['#search_filter_form']['#attributes']['data-drupal-selector'] = 'openig-search-filter-mobile';
+
+  }
+}
