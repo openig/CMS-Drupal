@@ -136,6 +136,7 @@ class SearchController extends ControllerBase
       }
     }
 
+    
     return [
       '#facets'   => $search['facets'],
       '#filters'  => $filters,
@@ -185,11 +186,8 @@ class SearchController extends ControllerBase
         $query->addCondition('status', 1);
 
         $nb_resultats = $query->execute()->getResultCount();
-               $session = \Drupal::request()->getSession();
-               $session->set('search_api_fulltext', null);
-               $session->set('nb_resultats', null);
-               $session->set('pathSearchExternal', null);   $session = \Drupal::request()->getSession();
-               $session->set('pathSearchInternal', null); // Enregistrement du nombre d'éléments de la recherche interne
+
+        // Enregistrement du nombre d'éléments de la recherche interne
 
         // Enregistrement en session du nombre de résultat onglet contenu interne (pour la page contenu externes)
         // $session->set('nb_resultats', $nb_resultats);
