@@ -41,7 +41,8 @@ class SearchController extends ControllerBase
         // $datas['#session']->set('pathSearchExternal', $pathSearchExternal);
 
         // Récupération du nombre d'éléments de la recherche interne
-        // $nb_resultats = $datas['#session']->get('nb_resultats');
+        $session = \Drupal::request()->getSession();
+        $nb_resultats = $session->get('nb_resultats');
 
         $search_fulltext = $datas['#search_filter_form']['search_api_fulltext']['#value'];
         return [
@@ -57,7 +58,7 @@ class SearchController extends ControllerBase
             '#search_filter_form' => $datas['#search_filter_form'], // \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
             '#pathSearchInternal' => '/recherche/?search_api_fulltext='.$search_fulltext, // $pathSearchInternal,
             '#pathSearchExternal' => '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext, // $pathSearchExternal,
-            '#nbResultats'        => null, //$nb_resultats,
+            '#nbResultats'        => $nb_resultats,
             '#ressourceInterne'   => false
         ];
     }
@@ -136,7 +137,7 @@ class SearchController extends ControllerBase
       }
     }
 
-    
+
     return [
       '#facets'   => $search['facets'],
       '#filters'  => $filters,
@@ -146,7 +147,6 @@ class SearchController extends ControllerBase
       "#url"      => $search['url'],
       "#count"    => $search['count'],
       '#items'    => $search['results'],
-      // '#session'  => $session,
     ];
   }
 
@@ -187,10 +187,9 @@ class SearchController extends ControllerBase
 
         $nb_resultats = $query->execute()->getResultCount();
 
-        // Enregistrement du nombre d'éléments de la recherche interne
-
         // Enregistrement en session du nombre de résultat onglet contenu interne (pour la page contenu externes)
-        // $session->set('nb_resultats', $nb_resultats);
+        $session = \Drupal::request()->getSession();
+        $session->set('nb_resultats', $nb_resultats);
 
         // Enregistrement barre de recherche en session pour les contenu externes
         // $session->set('search_api_fulltext', $search_fulltext);
