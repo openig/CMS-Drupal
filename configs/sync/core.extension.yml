@@ -81,6 +81,7 @@ module:
   path_alias: 0
   pgsql: 0
   responsive_image: 0
+  scheduler: 0
   search_api: 0
   search_api_solr: 0
   shortcut: 0

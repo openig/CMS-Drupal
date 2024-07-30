@@ -17,9 +17,11 @@ dependencies:
     - image.style.thumbnail
     - node.type.groupe_de_travail
   module:
+    - content_moderation
     - field_group
     - paragraphs
     - path
+    - scheduler
     - svg_image
     - text
     - webform
@@ -182,6 +184,12 @@ content:
     settings:
       include_locked: true
     third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   path:
     type: path
     weight: 12
@@ -194,6 +202,17 @@ content:
     region: content
     settings:
       display_label: true
+    third_party_settings: {  }
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 52
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  scheduler_settings:
+    weight: 50
+    region: content
+    settings: {  }
     third_party_settings: {  }
   simple_sitemap:
     weight: 11
@@ -232,4 +251,12 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 54
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  publish_state: true
+  unpublish_state: true
