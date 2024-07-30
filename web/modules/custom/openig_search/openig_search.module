@@ -128,7 +128,7 @@ function openig_search_preprocess_views_view_fields__block_filter_search_interna
 
 function openig_search_preprocess_block(&$variables){
   if (($variables['base_plugin_id'] == 'openig_search_external_filter_block') and ($variables['attributes']['id'] == 'block-openig-searchexternalfilterblock-mobile') ) {
-    \Drupal::service('cache.render')->invalidateAll();
+//    \Drupal::service('cache.render')->invalidateAll();
     $variables['content']['#search_filter_form']['search_api_fulltext']['#id'] = 'edit-search-api-fulltext-mobile';
     $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['data-drupal-selector'] = 'edit-search-api-fulltext-mobile';
     $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['id'] = 'facet_fulltext_value_mobile';

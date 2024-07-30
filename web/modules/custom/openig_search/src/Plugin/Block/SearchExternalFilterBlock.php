@@ -58,6 +58,9 @@ class SearchExternalFilterBlock extends BlockBase implements ContainerFactoryPlu
         '#facets'               => $rendering_in_block['#facets'],
         '#page'                 => $rendering_in_block['#page'],
         '#search_filter_form'   => $rendering_in_block['#search_filter_form'],
+        '#cache'      => [
+          'max-age' => 0
+        ],
         '#attached' => [
           'library' => [
             'openig_search/search',
