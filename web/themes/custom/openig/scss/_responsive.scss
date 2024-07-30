@@ -229,13 +229,14 @@
             }
         }
     }
-    #block-openig-formulairederecherche-mobile.search-block-form, #block-openig-formulairederecherche-mobile--2.search-block-form{
+    #block-openig-formulairederecherche-mobile.search-block-form, .block-search{
         height: 70px;
         width: 100%;
         margin-top: 3rem;
         form, .form--inline.clearfix{
             display: flex;
             align-items: center;
+            justify-content: center;
             .form-item-search-api-fulltext{
                 width: 85%;
                 label::after{
@@ -272,7 +273,7 @@
                 background-color: $OPenIG-color_white;
                 border-radius: 10px;
                 box-shadow: 0px 2px 6px rgba(0,0,0,.16);
-                margin-left: 2rem;
+                margin-left: 0.5rem;
             }
             .form-actions::after{
                 content: '\f002';
@@ -689,10 +690,10 @@
             font-weight: 600;
             font-family: 'Exo_semiBold';
         }
-        .js-form-submit[data-drupal-selector='edit-reset']{
-            background-color: transparent;
-            color: $OPenIG-color_dark-gray;
-            border: 1px solid $OPenIG-color_gray;
+        .js-form-submit[value='Réinitialiser']{
+            background-color: transparent !important;
+            color: $OPenIG-color_dark-gray !important;
+            border: 1px solid $OPenIG-color_gray !important;
         }
         .js-form-type-textfield input{
             font-size: $OPenIG-font-size-sm;
@@ -749,7 +750,19 @@
             }
         }
     }
-
+    .path-recherche{
+        .formulaire_filtre{
+            form{
+                flex-direction: column;
+            }
+            .js-form-item-search-api-fulltext{
+                display: none;
+            }
+            .form--inline{
+                width: 350px;
+            }
+        }
+    }
     .path-annuaire{
         .btn_filtre{
             margin-bottom: 3rem !important;
@@ -863,7 +876,7 @@
         margin-top: 0rem !important;
         margin-bottom: 3rem !important;
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
         .views-field-field-webform input.form-submit{
             font-size: $OPenIG-font-size-sm !important;
@@ -916,7 +929,7 @@
     .view-les-actualites.view-display-id-actualites{
         margin-top: 0 !important;
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
     }
     .paragraph--type--texte-dropdown.paragraph--view-mode--default h2{
@@ -1829,7 +1842,7 @@
             margin-top: 5rem;
         }
         .view-empty{
-            font-size: $OPenIG-font-size-lg;
+            font-size: $OPenIG-font-size-lg !important;
         }
         .views-row{
             padding: 1.5rem !important;
@@ -2004,6 +2017,80 @@
             }
         }
     }
+    .path-recherche{
+        #block-openig-page-title {
+            span {
+              top: -40px !important;
+              left: 125px !important;
+              font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+        #block-openig-tabs{
+            ul.nav-tabs{
+                flex-direction: row !important;
+            }
+            li{
+                width: 50% !important;
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+            }
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+                text-align: left !important;
+            }
+            .badge{
+                font-size: $OPenIG-font-size-xs !important;
+            }
+        }
+        .bloc_filtres{
+            padding-top: 2rem;
+        }
+        .search-result__noresults{
+            font-size: $OPenIG-font-size-lg !important;
+        }
+        .search-results{
+            margin-bottom: 3rem;
+            .view-empty{
+                font-size: $OPenIG-font-size-lg !important;
+            }
+        }
+        .views-view-responsive-grid__item{
+            padding: 20px !important;
+        }
+        .views-field-title{
+            font-size: $OPenIG-font-size-sm !important;
+            margin-bottom: 1rem !important;
+        }
+        .views-field-field-tag{
+            margin: 1rem 0 !important;
+            a{
+                font-size: 9px !important;
+            }
+        }
+        .search-result__count{
+            font-size: $OPenIG-font-size-base !important;
+        }
+        .views-field-field-news-overview, .views-field-field-theme-overview, .views-field-field-description, .search-result__source{
+            font-size: $OPenIG-font-size-xs;
+        }
+        .source_more{
+            flex-wrap: wrap;
+        }
+        .more-link, .more-link-externe{
+            a{
+                font-size: $OPenIG-font-size-sm !important;
+            }
+        }
+        .search-result__source{
+            img{
+                width: 50px !important;
+                height: 50px !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px){
@@ -2086,6 +2173,12 @@
         .card_agenda{
             margin-bottom: 1rem;
         }
+    }
+}
+
+@media (max-width: 767.98px){
+    #block-openig-tabs.tabs-wrapper.is-collapsible .nav-item:not(.active){
+        display: block;
     }
 }
 

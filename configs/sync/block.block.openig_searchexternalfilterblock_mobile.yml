@@ -1,0 +1,20 @@
+uuid: 2b0ca35c-4a05-40cf-9cae-0e045af6525e
+langcode: fr
+status: false
+dependencies:
+  module:
+    - openig_search
+  theme:
+    - openig
+id: openig_searchexternalfilterblock_mobile
+theme: openig
+region: mobile_seconde_section
+weight: 0
+provider: null
+plugin: openig_search_external_filter_block
+settings:
+  id: openig_search_external_filter_block
+  label: 'Search external filter block'
+  label_display: visible
+  provider: openig_search
+visibility: {  }

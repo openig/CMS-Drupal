@@ -51,9 +51,13 @@
 
   {%- if field.element_type -%}
     {% if field.class == "title" %}
-    <a href="{{ urlCustom }}">
-      <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
-      </a>
+      {% if accessCheck %}
+        <a href="{{ urlCustom }}">
+          <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+        </a>
+      {% else %}
+        {{ field.content }}
+      {% endif %}
     {% else %}
       <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
     {% endif %}
@@ -70,10 +74,10 @@
 <div class="more-link">
   {% if accessCheck %}
     {% if urlCustom is not null %}
-        <a href="{{ urlCustom }}" target="_blank">En savoir plus</a>
+      <a href="{{ urlCustom }}" target="_blank">En savoir plus</a>
     {% endif %}
   {% else %}
-    <div class="col-2 divPrivate">
+    <div class="divPrivate">
       <p class="itemPrivate">Contenu réservé aux adhérents</p><i class="fa-solid fa-lock"></i>
     </div>
   {% endif %}

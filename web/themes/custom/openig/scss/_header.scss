@@ -152,8 +152,10 @@ header{
             .form--inline.clearfix{
               display: flex;
               justify-content: center;
+              width: 100%;
+
             }
-            .form-type-search{
+            .form-type-textfield{
                 width: 85%;
                 label::after{
                     content: '';
@@ -177,6 +179,7 @@ header{
                 background-color: $OPenIG-color_white;
                 border-radius: 10px;
                 box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+                margin-left: 1rem;
             }
             .form-actions::after{
                 content: '\f002';

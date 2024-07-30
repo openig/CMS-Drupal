@@ -1,22 +1,77 @@
 
-// Onglets
-#block-openig-local-tasks {
-  .nav-tabs {
-    font-weight: 600;
-    #nbContenuEditorial .badge {
-      margin: 1em;
+// title
+.path-recherche{
+  #block-openig-page-title {
+    flex-direction: column;
+    span {
+      color: $OPenIG-color_gray;
+      font-weight: 600;
+      position: relative;
+      top: -60px;
+      left: 188px;
+      font-family: 'Exo_semiBold';
+      font-size: $OPenIG-font-size-h2;
     }
   }
-}
 
-.view.view-resultats-de-recherche {
-
-    .view-header.container {
+  // Onglets
+  #block-openig-tabs {
+    margin: auto;
+    margin-top: 5rem;
+    padding: 0;
+    .nav-tabs {
+      font-weight: 600;
+      border: none;
+      .badge {
+        margin-left: 1em;
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-base;
+        padding: 0.5rem;
+      }
+      li{
+        width: 50%;
+      }
+      a {
+        text-align: center;
+        color: $OPenIG-color_black;
+        font-family: 'Exo_regular';
+        font-size: 1.25rem;
+        background-color: $OPenIG-color_white;
+        border-radius: 0;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1rem;
+        height: 100%;
+      }
+      a.is-active{
+        border-top: 7px solid $OPenIG-color_yellow;
+        background-color: $OPenIG-color_medium-white;
+        font-family: 'Exo_semiBold';
+        font-weight: 600;
+      }
+    }
+  }
+  .search-result__noresults{
+    font-size: $OPenIG-font-size-xl;
+    text-align: center;
+  }
+  .search-results {
+    background-color: $OPenIG-color_medium-white;
+    padding-bottom: 2rem;
+    .view-header {
       display: none;
     }
-
+    .view-empty{
+      font-size: $OPenIG-font-size-xl;
+      text-align: center;
+    }
     // Filtres
     .formulaire_filtre {
+      max-height: calc(100% + 10rem);
+      overflow: scroll;
+      margin-top: 2rem;
       position: absolute;
       left: -700px;
       transition: 1.5s;
@@ -76,10 +131,10 @@
         font-family: 'Exo_semiBold';
       }
 
-      .js-form-submit[data-drupal-selector='edit-reset'] {
-        background-color: transparent;
-        color: $OPenIG-color_dark-gray;
-        border: 1px solid $OPenIG-color_gray;
+      .js-form-submit[value='Réinitialiser']{
+        background-color: transparent !important;
+        color: $OPenIG-color_dark-gray !important;
+        border: 1px solid $OPenIG-color_gray !important;
       }
 
       label {
@@ -146,6 +201,9 @@
           font-weight: 600;
         }
       }
+      details[open=""].form-wrapper summary::after {
+        content: '\f0d8';
+      }
     }
 
     .formulaire_filtre.show {
@@ -177,60 +235,87 @@
       position: relative;
     }
 
-  // Affichage des elements filtrés
-  .views-view-responsive-grid__item{
-    background-color: #fff;
-    border: 1px solid #878786;
-    border-radius: 10px;
-    padding: 30px;
-    .views-field.views-field-title {
-      font-size: 2rem;
-      font-family: "Exo_semiBold";
+    .search-result__count{
+      margin-bottom: 1rem;
+      font-family: 'Exo_semiBold';
       font-weight: 600;
-      margin-bottom: 2rem;
-      a{
-        color: #0a0909;
-        text-decoration: none;
+      font-size: $OPenIG-font-size-lg;
+    }
+
+    // Affichage des elements filtrés
+    .views-view-responsive-grid__item{
+      background-color: #fff;
+      border: 1px solid #878786;
+      border-radius: 10px;
+      padding: 30px;
+      .views-field.views-field-title {
+        font-size: 2rem;
+        font-family: "Exo_semiBold";
+        font-weight: 600;
+        margin-bottom: 2rem;
+        a{
+          color: #0a0909;
+          text-decoration: none;
+        }
       }
-    }
-    .views-field.views-field-field-tag{
-      margin: 2rem 0;
-      width: 100%;
-      a{
-        border: 1px solid #00a09a;
-        border-radius: 50px;
-        padding: 2px 10px;
-        font-size: .75rem;
-        text-decoration: none;
-        color: #0a0909;
-        margin-right: 10px;
-        font-family: "Exo_regular";
+      .views-field.views-field-field-tag{
+        margin: 2rem 0;
+        width: 100%;
+        a{
+          border: 1px solid #00a09a;
+          border-radius: 50px;
+          padding: 2px 10px;
+          font-size: .75rem;
+          text-decoration: none;
+          color: #0a0909;
+          margin-right: 10px;
+          font-family: "Exo_regular";
+        }
       }
-    }
 
-    .paragraphs-description .paragraphs-content-wrapper, .paragraphs-description .paragraphs-plugin-wrapper{
-      height: fit-content;
-    }
-    .paragraphs-description .summary-content{
-      color: $OPenIG-color_black;
-    }
+      .paragraphs-description .paragraphs-content-wrapper, .paragraphs-description .paragraphs-plugin-wrapper{
+        height: fit-content;
+      }
+      .paragraphs-description .summary-content{
+        color: $OPenIG-color_black;
+      }
 
-    .views-field.views-field-type{
-      display: none;
-    }
+      .views-field.views-field-type{
+        display: none;
+      }
 
-    .more-link{
-      display: flex;
-      justify-content: end;
-      text-align: center;
-      margin-top: 3rem;
-      a{
-        font-family: 'Russo One';
+      .search-result__source{
+        img{
+          margin-left: 1rem;
+          height: 100px;
+          width: 100px;
+        }
+        a{
+          color: $OPenIG-color_black;
+          text-decoration: none;
+          border-bottom: 1px solid $OPenIG-color_black;
+        }
+
+      }
+
+      .more-link{
+        display: flex;
+        justify-content: end;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .more-link-externe {
+        align-items: end;
+        display: flex;
+      }
+      .more-link a, .more-link-externe a {
+        font-family: "Exo_semiBold";
+        font-weight: 600;
         font-size: $OPenIG-font-size-lg;
-        color: $OPenIG-color_dark-gray;
+        color: $OPenIG-color_black;
         text-decoration: none;
-        border-bottom: 1px solid $OPenIG-color_red;
-        padding-bottom: 5px;
+        border-bottom: 1px solid $OPenIG-color_deep-gray;
+        padding-bottom: 2px;
       }
     }
     .divPrivate{
@@ -251,78 +336,9 @@
   }
 
   // Pagination
-  .pager__item--last, .pager__item--first{
-    display: none;
-  }
-  .pager__item--previous, .pager__item--next{
-    background-color: $OPenIG-color_white;
-    border-radius: 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-    border: none;
-    width: 42px;
-    height: 42px;
-    text-align: center;
-    .page-link{
-      border: none;
-      height: 100%;
-      width: 100%;
-      padding: 0 !important;
-      span{
-        display: none;
-      }
-    }
-    .page-link::before{
-      font-family: "Font Awesome 6 Free";
-      color: $OPenIG-color_deep-gray;
-      font-size: 28px;
-    }
-  }
-  .pager__item--next{
-    margin-left: 5rem !important;
-    .page-link::before{
-      content: '\f054';
-    }
-  }
-  .pager__item--previous{
-    margin-right: 5rem !important;
-    .page-link::before{
-      content: '\f053';
-    }
-  }
-  .page-item{
-    background-color: $OPenIG-color_white;
-    border-radius: 0;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
-    border: none;
-    width: 42px;
-    height: 42px;
-    text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    .page-link{
-      border: none;
-      width: 100%;
-      height: 100%;
-      padding: 0.5rem;
-      color: $OPenIG-color_black;
-      font-family: 'Russo One';
-      font-size: $OPenIG-font-size-lg;
-    }
-  }
-  .page-item.is-active.active{
-    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, .16);
-    .page-link{
-      color: $OPenIG-color_red;
-      background-color: transparent;
-      border-radius: 0;
-      border: none;
-    }
-  }
-  .page-item:focus, .page-link:focus{
-    border: none !important;
-  }
-  .page-link:focus{
-    box-shadow: none;
+  .pager{
+    background-color: transparent;
+    margin-top: 2rem;
   }
 
   .views-field-fieldset{
@@ -330,4 +346,5 @@
       display: none;
     }
   }
+
 }

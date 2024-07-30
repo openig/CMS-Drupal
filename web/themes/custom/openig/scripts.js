@@ -13,9 +13,7 @@
             $('#views-exposed-form-resultats-de-recherche-block-1').toggleClass('open');
             $('#search_icon').toggleClass('open');
         });
-
-        $('#views-exposed-form-resultats-de-recherche-block-1 .form-submit').val('');
-        $('#block-openig-formulaireexposeresultats-de-rechercheblock-1-mobile .form-submit').val('');
+        $('.block-search .form-submit').val('');
         var media1200 = window.matchMedia("(min-width: 1200px)")
         if(media1200.matches){
             // Garder le sous-menu affiché si l'un de ses liens est actifs
@@ -340,4 +338,5 @@
             })
         }
     })
+
 })(jQuery);

@@ -1,0 +1,20 @@
+uuid: d4af4f87-0fd0-4ea3-9506-fd1db42d639a
+langcode: fr
+status: false
+dependencies:
+  module:
+    - openig_search
+  theme:
+    - openig
+id: openig_search_external_filter_block
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: openig_search_external_filter_block
+settings:
+  id: openig_search_external_filter_block
+  label: 'Filtrer la recherche'
+  label_display: visible
+  provider: openig_search
+visibility: {  }
