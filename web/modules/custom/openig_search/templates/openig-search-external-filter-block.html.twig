@@ -24,7 +24,7 @@
                     type="checkbox"
                     name="lineage"
                     value="{{ source }}"
-                    {{ source == filters.lineage ? 'checked="checked"' : '' }}
+                    {{ source in filters.lineage ? 'checked="checked"' : '' }}
                     class="form-checkbox form-check-input"
                   >
                   <label class="option">
