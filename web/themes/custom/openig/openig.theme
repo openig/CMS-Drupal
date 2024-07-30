@@ -32,7 +32,7 @@ function openig_preprocess_field__node(&$variables){
 
 function openig_preprocess_page_title(&$variables) {
   $route = \Drupal::routeMatch()->getCurrentRouteMatch()->getRouteObject();
-  
+
   $path = \Drupal::service('path.current')->getPath();
   $path_args = explode('/', $path);
   $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
@@ -49,7 +49,7 @@ function openig_preprocess_page_title(&$variables) {
       }
     }
   }
-  
+
   // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les pages user
   if (substr($route->getPath(), 0, 5) == '/user') {
     $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_picto_users' => '/user']);
@@ -94,7 +94,7 @@ function openig_preprocess_node(&$variables, $hook){
       $ressourcesCheck = [];
       // Récupération des types de ressources
       $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
-     
+
       // Création d'un tableau avec les types de ressources
       foreach ($types as $type) {
         $name = $type->name[0]->value;
@@ -124,7 +124,7 @@ function openig_preprocess_node(&$variables, $hook){
             $referencedEntityType = $name[0]['value'];
             // Ajout de la ressource dans le tableau de son type
             $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value][] = $referencedEntity;
-            if ($check == false) {  
+            if ($check == false) {
               $variables['ressources'][$referencedEntityType]['Entity'][$referencedEntity->nid->value]['check'] = 'false';
             }
             else{
@@ -143,7 +143,7 @@ function openig_preprocess_node(&$variables, $hook){
       }
 
       // Vérification si l'utilisateur est membre
-      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());    
+      $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
       $userID = $user->uid[0]->value;
       foreach ($variables['node']->field_members as $membre) {
         if ($membre->target_id == $userID) {
@@ -159,7 +159,7 @@ function openig_preprocess_node(&$variables, $hook){
         $variables['evenements'] = 'oui';
       }
       break;
-      
+
       case "article":
         $variables['ressources'] = array();
         $nid = $variables['node']->nid->value;
@@ -168,7 +168,7 @@ function openig_preprocess_node(&$variables, $hook){
         $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
         $result = $query->fetchAll();
         $ressourcesCheck = [];
-        
+
         // Début compteur des ressources inaccessibles
         $countCheckFalse = 0;
         foreach ($result as $ressource) {
@@ -180,7 +180,7 @@ function openig_preprocess_node(&$variables, $hook){
 
           $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
 
-          if ($check == false) {  
+          if ($check == false) {
             $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
             // Incrémentation du compteur de ressources inaccessibles
             $countCheckFalse++ ;
@@ -201,7 +201,7 @@ function openig_preprocess_node(&$variables, $hook){
         $query = $database->query("SELECT f.entity_id FROM {node} n JOIN {node__field_linked_content} f ON f.field_linked_content_target_id = n.nid WHERE f.field_linked_content_target_id = '".$nid."'");
         $result = $query->fetchAll();
         $ressourcesCheck = [];
-        
+
         // Début compteur des ressources inaccessibles
         $countCheckFalse = 0;
         foreach ($result as $ressource) {
@@ -213,7 +213,7 @@ function openig_preprocess_node(&$variables, $hook){
 
           $variables['ressources']['Entity'][$node_check->nid->value][] = $node_check;
 
-          if ($check == false) {  
+          if ($check == false) {
             $variables['ressources']['Entity'][$node_check->nid->value]['check'] = 'false';
             // Incrémentation du compteur de ressources inaccessibles
             $countCheckFalse++ ;
@@ -381,3 +381,4 @@ function openig_preprocess_user(&$variables){
       }
     }
 }
+

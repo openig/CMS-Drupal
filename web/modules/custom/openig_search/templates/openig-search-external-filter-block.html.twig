@@ -1,0 +1,126 @@
+  <form class="{{ search_filter_form['#attributes'].class[0] }}"
+        data-drupal-selector="{{ search_filter_form['#attributes'].data-drupal-selector }}"
+        action="/recherche/ressources_externes"
+        id="{{ search_filter_form['#id'] }}">
+
+    {% if facets.lineage %}
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-source-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-source-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">Sources
+        {% else %}
+        <details id="edit-source-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-source-collapsible--2" aria-expanded="false"
+                   class="card-header bg-light">Sources
+        {% endif %}
+          <span class="summary"></span>
+        </summary>
+        <div class="details-wrapper card-body">
+          <div class="form-checkboxes bef-checkboxesy">
+            {% for source in facets.lineage %}
+              {% if source != 'OpenIG' and source != 'OPenIG' %}
+                <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                  <input
+                    type="checkbox"
+                    name="lineage"
+                    value="{{ source }}"
+                    {{ source in filters.lineage ? 'checked="checked"' : '' }}
+                    class="form-checkbox form-check-input"
+                  >
+                  <label class="option">
+                    {% if source == "CKAN Datasets" %}
+                    OPenIG - Jeux de données
+                    {% elseif source == "OpenIG" %}
+                    <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label>
+                  {% elseif source == "datasets_region" %}
+                    <span class="facet-item__label"
+                          title="Données open data Région Occitanie">data.laregion.fr</span></label>
+                  {% elseif source == "dataset" %}
+                    picto-occitanie.fr
+                  {% else %}
+                    {{ source }}
+                  {% endif %}
+                  </label>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if facets.category %}
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-category-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-category-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">
+            Thématiques de connaissance et de données
+      {% else %}
+        <details id="edit-category-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-category-collapsible--2" aria-expanded="false"
+                  class="card-header bg-light">
+            Thématiques de connaissance et de données
+      {% endif %}
+          <span class="summary"></span>
+        </summary>
+        <div class="details-wrapper card-body">
+          <div class="form-checkboxes bef-checkboxesy">
+            {% for cat in facets.category %}
+              <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="{{ cat }}"
+                  {{ cat in filters.category ? 'checked="checked"' : '' }}
+                  class="form-checkbox form-check-input"
+                >
+                <label class="option">{{ cat }}</label>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {% if facets.resource_format %}
+      {% if search_filter_form['#id'] == 'openig-search-filter-mobile' %}
+        <details id="edit-format-collapsible-mobile" class="form-item js-form-wrapper form-wrapper card">
+          <summary role="button" aria-controls="edit-type-collapsible-mobile" aria-expanded="false"
+                  class="card-header bg-light">Formats
+        {% else %}
+          <details id="edit-format-collapsible--2" class="form-item js-form-wrapper form-wrapper card">
+            <summary role="button" aria-controls="dit-format-collapsible--2" aria-expanded="false"
+                    class="card-header bg-light">Formats
+        {% endif %}
+          <span class="summary"></span>
+        </summary>
+        <div class="details-wrapper card-body">
+          <div class="form-checkboxes bef-checkboxesy">
+            {% for format in facets.resource_format %}
+              <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
+                <input
+                  type="checkbox"
+                  name="resource_format"
+                  value="{{ format }}"
+                  {{ format in filters.resource_format ? 'checked="checked"' : '' }}
+                  class="form-checkbox form-check-input"
+                >
+                <label class="option">{{ format }}</label>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </details>
+    {% endif %}
+
+    {#  Champs hidden pour permettre les requetes vers l'api  #}
+    {{ search_filter_form.search_api_fulltext }}
+    {{ search_filter_form.category }}
+    {{ search_filter_form.lineage }}
+    {{ search_filter_form.resource_format }}
+
+    <div class="form-actions">
+      {{ search_filter_form.submit_desktop }}
+      {{ search_filter_form.reset }}
+    </div>
+  </form>

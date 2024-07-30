@@ -95,7 +95,7 @@ header{
                             background-color: transparent;
                         }
                     }
-                    
+
                 }
             }
         }
@@ -105,7 +105,7 @@ header{
                 img{
                     height: 78px;
                 }
-            }   
+            }
             padding-bottom: 15px;
         }
         .region-navigation-deuxieme-section{
@@ -130,14 +130,13 @@ header{
     }
 
     // Barre de recherche
-    #block-openig-formulairederecherche.search-block-form{
+    #block-openig-formulaireexposeresultats-de-rechercheblock {
         height: 70px;
         width: 70px;
-        #search-block-form{
+        #views-exposed-form-resultats-de-recherche-block-1{
             display: none;
         }
-        #search-block-form.open{
-            display: block;
+        #views-exposed-form-resultats-de-recherche-block-1.open{
             background-color: $OPenIG-color_light-gray;
             filter: drop-shadow(0 1px 2px $OPenIG-color_gray);
             border-radius: 0px;
@@ -150,13 +149,19 @@ header{
             justify-content: space-around;
             height: 150px;
             padding: 0 30px;
-            .form-type-search{
+            .form--inline.clearfix{
+              display: flex;
+              justify-content: center;
+              width: 100%;
+
+            }
+            .form-type-textfield{
                 width: 85%;
                 label::after{
                     content: '';
                 }
             }
-            input.form-search{
+            input.form-text{
                 border-radius: 2rem;
                 box-shadow: 0 0 0 .30rem rgba(0, 160, 154,.25);
             }
@@ -174,6 +179,7 @@ header{
                 background-color: $OPenIG-color_white;
                 border-radius: 10px;
                 box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+                margin-left: 1rem;
             }
             .form-actions::after{
                 content: '\f002';
@@ -194,7 +200,7 @@ header{
             border: none;
             height: 100%;
             width: 100%;
-            padding-bottom: 30px;            
+            padding-bottom: 30px;
             i{
                 font-size: 30px;
                 color: $OPenIG-color_dark-gray;
@@ -240,7 +246,7 @@ header{
                     }
                 }
             }
-            
+
         }
     }
 

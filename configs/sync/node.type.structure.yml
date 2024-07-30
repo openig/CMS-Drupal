@@ -12,7 +12,7 @@ third_party_settings:
 name: Structure
 type: structure
 description: "Contenu présentant les structures adhérentes qui s'affichent dans l'annuaire"
-help: ''
+help: null
 new_revision: true
 preview_mode: 1
 display_submitted: true

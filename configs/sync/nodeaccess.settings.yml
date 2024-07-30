@@ -1,5 +1,6 @@
 _core:
   default_config_hash: ev_QLQNwc0-1EGokxDRzrPpUi1kLXjeBRd5vhwpB6h0
+langcode: fr
 allowed_grant_operations:
   grant_view: true
   grant_update: false

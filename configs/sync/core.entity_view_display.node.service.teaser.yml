@@ -40,6 +40,7 @@ content:
     region: content
 hidden:
   addtoany: true
+  breadcrumbs: true
   field_access_restricted: true
   field_body: true
   field_contact: true
