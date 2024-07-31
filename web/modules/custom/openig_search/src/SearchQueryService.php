@@ -241,7 +241,7 @@ class SearchQueryService
 
 
     for ($i = 0; $i <= $page_count; $i++) {
-      if ($i == 0 || ($i == $current - 1) || $current == $i || ($i == $current + 1)) {
+      if ($i == 0 || ($i == $current - 3) || ($i == $current - 2) || ($i == $current - 1) || $current == $i || ($i == $current + 1) || ($i == $current + 2) || ($i == $current + 3)) {
         if ($_GET['page']) {
           array_push($pager['pages'], [
             'number' => $i,
@@ -249,7 +249,7 @@ class SearchQueryService
             'url' => preg_replace('/page=(\d+)/', "page=$i", \Drupal::request()->getUri())
           ]);
         }else{
-          if (str_contains(\Drupal::request()->getUri(), '?')) { 
+          if (str_contains(\Drupal::request()->getUri(), '?')) {
             array_push($pager['pages'], [
               'number' => $i,
               'label' => $i + 1,
@@ -278,7 +278,7 @@ class SearchQueryService
         ]);
       }else{
         $next = $current + 1;
-        if (str_contains(\Drupal::request()->getUri(), '?')) { 
+        if (str_contains(\Drupal::request()->getUri(), '?')) {
           array_push($pager['pages'], [
             'number' => $next,
             'label' => 'Suivant',

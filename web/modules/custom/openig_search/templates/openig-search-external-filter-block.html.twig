@@ -18,12 +18,12 @@
         <div class="details-wrapper card-body">
           <div class="form-checkboxes bef-checkboxesy">
             {% for source in facets.lineage %}
-              {% if source != 'OpenIG' and source != 'OPenIG' %}
+{#              {% if source != 'OpenIG' and source != 'OPenIG' %}#}
                 <div class="js-form-item form-item js-form-type-checkbox form-type-checkbox">
                   <input
                     type="checkbox"
                     name="lineage"
-                    value="{{ source }}"
+                    value="{% if source == "region Datasets" %}datasets{% else %}{{ source }}{% endif %}"
                     {{ source in filters.lineage ? 'checked="checked"' : '' }}
                     class="form-checkbox form-check-input"
                   >
@@ -32,7 +32,7 @@
                     OPenIG - Jeux de données
                     {% elseif source == "OpenIG" %}
                     <span class="facet-item__label" title="Toutes les informations sur les activités d'OPenIG">OPenIG - Activités</span></label>
-                  {% elseif source == "datasets_region" %}
+                  {% elseif source == "region Datasets" %}
                     <span class="facet-item__label"
                           title="Données open data Région Occitanie">data.laregion.fr</span></label>
                   {% elseif source == "dataset" %}
@@ -42,7 +42,7 @@
                   {% endif %}
                   </label>
                 </div>
-              {% endif %}
+{#              {% endif %}#}
             {% endfor %}
           </div>
         </div>

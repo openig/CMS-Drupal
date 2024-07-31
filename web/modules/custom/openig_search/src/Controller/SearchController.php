@@ -133,10 +133,22 @@ class SearchController extends ControllerBase
     // Permet la correction des filtres de recherche Sources - twig pas de différence entre dataset et datasets
     foreach ($search['facets']['lineage'] as $key => $lineage) {
       if($lineage === 'datasets'){
-        $search['facets']['lineage'][$key] = 'datasets_region';
+        $search['facets']['lineage'][$key] = 'region Datasets';
       }
     }
 
+    if(is_array($filters['lineage'])){
+      foreach ($filters['lineage'] as $key => $lineage) {
+        if($lineage === 'datasets'){
+          $filters['lineage'][$key] = 'region Datasets';
+        }
+      }
+    }
+    else{
+      if($filters['lineage'] === 'datasets'){
+        $filters['lineage'] = 'region Datasets';
+      }
+    }
 
     return [
       '#facets'   => $search['facets'],
