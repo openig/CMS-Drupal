@@ -44,20 +44,22 @@ class SearchController extends ControllerBase
         $session = \Drupal::request()->getSession();
         $nb_resultats = $session->get('nb_resultats');
 
+        // Nettoyage de la string recherché sinon on récupére le page=
         $search_fulltext = $datas['#search_filter_form']['search_api_fulltext']['#value'];
+
         return [
             '#theme'    => 'openig_search_results',
-            '#items'    => $datas['#items'], //$search['results'],
-            '#facets'   => $datas['#facets'], // $search['facets'],
-            '#filters'  => $datas['#filters'],// $filters,
-            '#page'     => $datas['#page'], //$page ? $page : 1,
-            '#pager'    => $datas['#pager'], // $search['pager'],
-            "#url"      => $datas['#url'], //$search['url'],
-            "#count"    => $datas['#count'], //$search['count'],
+            '#items'    => $datas['#items'],
+            '#facets'   => $datas['#facets'],
+            '#filters'  => $datas['#filters'],
+            '#page'     => $datas['#page'],
+            '#pager'    => $datas['#pager'],
+            "#url"      => $datas['#url'],
+            "#count"    => $datas['#count'],
             '#search_api_fulltext' => $search_fulltext,
-            '#search_filter_form' => $datas['#search_filter_form'], // \Drupal::formBuilder()->getForm('Drupal\openig_search\Form\SearchFilterForm'),
-            '#pathSearchInternal' => '/recherche/?search_api_fulltext='.$search_fulltext, // $pathSearchInternal,
-            '#pathSearchExternal' => '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext, // $pathSearchExternal,
+            '#search_filter_form' => $datas['#search_filter_form'],
+            '#pathSearchInternal' => '/recherche/?search_api_fulltext='.$search_fulltext,
+            '#pathSearchExternal' => '/recherche/ressources_externes?search_api_fulltext='.$search_fulltext,
             '#nbResultats'        => $nb_resultats,
             '#ressourceInterne'   => false
         ];
