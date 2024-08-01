@@ -754,6 +754,7 @@
         .formulaire_filtre{
             form{
                 flex-direction: column;
+                align-items: center;
             }
             .js-form-item-search-api-fulltext{
                 display: none;
