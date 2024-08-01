@@ -498,10 +498,11 @@ h3{
 
 .paragraph--type--type-de-contenu.paragraph--view-mode--sidebar{
     .node--type-ressource.node--view-mode-sidebar{
-        .node__content{
+        a.imageRessource{
             border: 1px solid $OPenIG-color_deep-gray;
             border-radius: 5px;
             overflow: hidden;
+            margin-bottom: 0.5rem;
         }
         a{
             display: block;

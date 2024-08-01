@@ -80,7 +80,10 @@
 {{ attach_library('bootstrap5/node') }}
 <article{{ attributes.addClass(classes) }}>
   <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+    {% if content.field_link[0] %}
+      <a href="{{ content.field_link[0]['#url'] }}" rel="bookmark" target="_blank">{{ label[0]['#context']['value'] }}</a>
+    {% elseif content.field_file[0] %}
+      <a href="{{ file_url( content.field_file[0]['#file'].uri[0].value) }}" rel="bookmark" target="_blank">{{ label[0]['#context']['value'] }}</a>
+    {% endif %}
   </div>
-
 </article>
