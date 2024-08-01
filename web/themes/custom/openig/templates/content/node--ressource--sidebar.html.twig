@@ -85,24 +85,28 @@
                 <a class="imageRessource" href="{{ content.field_link[0]['#url'].uri }}" target="_blank">
                     {{ drupal_image(content.field_image[0]['#item'].target_id, '', {alt: content.field_image[0]['#item'].alt }) }}
                 </a>
+                <a class="titleRessource" href="{{ content.field_link[0]['#url'].uri }}" target="_blank">{{label[0]['#context']['value']}}</a>
             {% elseif content.field_file[0] %}
                 <a class="imageRessource" href="{{ file_url(content.field_file[0]['#file'].uri.value) }}" target="_blank">
                     {{ drupal_image(content.field_image[0]['#item'].target_id, '', {alt: content.field_image[0]['#item'].alt }) }}
                 </a>
+                <a class="titleRessource" href="{{ file_url(content.field_file[0]['#file'].uri.value) }}" target="_blank">{{label[0]['#context']['value']}}</a>
             {% endif %}
         </div>
     {% else %}
         {% if content.field_link[0] %}
-            <a class="titleRessource" href="{{ content.field_link[0]['#url'].uri }}" target="_blank">{{content.field_link[0]['#title']}}</a>
+            <a class="titleRessource" href="{{ content.field_link[0]['#url'].uri }}" target="_blank">{{label[0]['#context']['value']}}</a>
         {% elseif content.field_file[0] %}
-            <a class="titleRessource" href="{{ file_url(content.field_file[0]['#file'].uri.value) }}" target="_blank">{{content.field_file[0]['#description']}}</a>
+            <a class="titleRessource" href="{{ file_url(content.field_file[0]['#file'].uri.value) }}" target="_blank">{{label[0]['#context']['value']}}</a>
         {% endif %}
     {% endif %}
   {{ title_prefix }}
+  {#
   {% if label and not page %}
     {% if content.field_image[0] %}
-        <a class="labelRessource" href="{{ url }}" rel="bookmark">{{ label }}</a>
+        <a class="labelRessource" href="{{ url }}" rel="bookmark">{{ label[0]['#context']['value'] }}</a>
     {% endif %}
   {% endif %}
+        #}
   {{ title_suffix }}
 </article>
