@@ -8,6 +8,7 @@ dependencies:
     - node.type.groupe_de_travail
     - node.type.page
     - node.type.ressource
+    - node.type.service
 id: node.ressource.field_linked_content
 field_name: field_linked_content
 entity_type: node
@@ -25,6 +26,7 @@ settings:
       article: article
       groupe_de_travail: groupe_de_travail
       page: page
+      service: service
     sort:
       field: _none
       direction: ASC
