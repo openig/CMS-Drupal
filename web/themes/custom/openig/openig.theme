@@ -3,6 +3,9 @@ use Drupal\node\Entity\Node;
 use Drupal\node\NodeInterface;
 use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
+
 /**
  * @file
  * OPenIG theme file.
@@ -424,6 +427,11 @@ function openig_preprocess_views_view_fields(&$variables){
       $variables['vid'] = 'dpt_intervention';
       $variables['title_row'] = $variables['row']->_entity->title[0]->value;
     }
+    // Check si la ressource est inaccessible
+    $node_check = $variables['row']->_object;
+    $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+    $check = $variables['row']->_entity->access('view', $user);
+    $variables['accessCheck'] = $check;
   }
 }
 
