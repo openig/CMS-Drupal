@@ -1,0 +1,158 @@
+<?php
+
+use \Drupal\views\Plugin\views\query\QueryPluginBase;
+use \Drupal\views\ViewExecutable;
+
+
+/**
+ * Implements hook_theme().
+ */
+function openig_search_theme() {
+    return [
+        'openig_search_results' => [
+            'variables' => [
+                'items' => [],
+                'facets' => [],
+                'filters' => [],
+                'pager' => [],
+                'page' => '',
+                'count' => '',
+                'url' => '',
+                'pathSearchInternal' => '',
+                'pathSearchExternal' => '',
+                'search_filter_form' => '',
+                'nbResultats'        => '',
+                'ressourceInterne'   => null,
+                'search_api_fulltext' => null
+            ],
+        ],
+        'openig_search_internal_results' => [
+            'variables' => [
+              'pathSearchInternal' => '',
+              'pathSearchExternal' => '',
+              'nbResultats'        => '',
+              'ressourceInterne'   => null,
+              'search_api_fulltext' => null
+            ],
+        ],
+        'openig_search_external_filter_block' => [
+          'variables' => [
+            'filters' => [],
+            'facets'  => [],
+            'page'    => '',
+            'items'   => [],
+            'pager'   => [],
+            'url'     => '',
+            'search_api_fulltext' => null,
+            'search_filter_form' => '',
+            'count'   => '',
+          ],
+        ],
+
+    ];
+}
+
+function openig_search_preprocess_openig_search_results(&$variables) {
+    $variables['#attached']['library'][] = 'openig_search/openig-search';
+}
+
+function openig_search_views_pre_render(\Drupal\views\ViewExecutable $view){
+  if (isset($view) && ($view->storage->id() == 'resultats_de_recherche')) {
+    $view->element['#attached']['library'][] = 'openig_search/openig-search';
+  }
+}
+
+
+function openig_search_preprocess(&$variables, $hook) {
+  // Add images path alias
+  $variables['images_path'] = \Drupal::request()->getSchemeAndHttpHost() . '/' . \Drupal::service('extension.list.module')->getPath('openig_search') . '/images/';
+}
+
+
+function openig_search_form_alter(&$form, &$form_state, $form_id) {
+  if($form['#id'] === "views-exposed-form-resultats-de-recherche-block-filter-search-internal" ||
+    $form['#id'] === "views-exposed-form-resultats-de-recherche-block-1"){
+    $form['#action'] = '/recherche';
+  }
+}
+
+
+function openig_search_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if (($view->id() == 'resultats_de_recherche') && $view->current_display == 'block_filter_search_internal') {
+    $query = $view->getQuery();
+    $query->options['skip_access'] = true;
+  }
+}
+
+
+function openig_search_preprocess_views_view_fields__block_filter_search_internal(&$variables){
+  // Check si la ressource est inaccessible
+  $node_check = $variables['row']->_object->getEntity();
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $check = $node_check->access('view', $user);
+  $variables['accessCheck'] = $check;
+
+  // Surcharge des liens "En savoir plus" suivant le type de contenu
+  if($variables['row']->_object->getEntity()->type->target_id === "evenement"){
+    $nid = $variables['row']->_object->getEntity()->nid->value;
+    $variables['urlCustom'] = '/l-agenda?id='.$nid;
+  }
+  elseif($variables['row']->_object->getEntity()->type->target_id === "ressource"){
+    // Si champ lien alors affichage
+    if(!empty($variables['row']->_object->getEntity()->field_link->getValue())){
+      $variables['urlCustom'] = $variables['row']->_object->getEntity()->field_link->getValue()[0]['uri'];
+    }
+    // Si champ fichier alors affichage
+    elseif(!empty($variables['row']->_object->getEntity()->field_file->getValue())){
+      // Récupération du fichier
+      $file = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_object->getEntity()->field_file->getValue()[0]['target_id']);
+      $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file->uri->getValue()[0]['value']);
+    }
+    // Si champ image alors affichage
+    elseif(!empty($variables['row']->_object->getEntity()->field_image->getValue())){
+      // Récupération de l'image
+      $file_img = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_object->getEntity()->field_image->getValue()[0]['target_id']);
+      $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file_img->uri->getValue()[0]['value']);
+    }
+    else{
+      $variables['urlCustom'] = null;
+    }
+  }
+  else{
+    $langcode = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $nid = $variables['row']->_object->getEntity()->nid->value;
+    $alias = \Drupal::service('path_alias.manager')->getAliasByPath('/node/'.$nid, ($langcode));
+    $variables['urlCustom'] = $alias;
+  }
+}
+
+function openig_search_preprocess_block(&$variables){
+  if (($variables['base_plugin_id'] == 'openig_search_external_filter_block') and ($variables['attributes']['id'] == 'block-openig-searchexternalfilterblock-mobile') ) {
+//    \Drupal::service('cache.render')->invalidateAll();
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#id'] = 'edit-search-api-fulltext-mobile';
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['data-drupal-selector'] = 'edit-search-api-fulltext-mobile';
+    $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['id'] = 'facet_fulltext_value_mobile';
+
+    $variables['content']['#search_filter_form']['category']['#id'] = 'edit-category-mobile';
+    $variables['content']['#search_filter_form']['category']['#attributes']['data-drupal-selector'] = 'edit-category-mobile';
+    $variables['content']['#search_filter_form']['category']['#attributes']['id'] = 'facet_category_value_mobile';
+
+    $variables['content']['#search_filter_form']['lineage']['#id'] = 'edit-lineage-mobile';
+    $variables['content']['#search_filter_form']['lineage']['#attributes']['data-drupal-selector'] = 'edit-lineage-mobile';
+    $variables['content']['#search_filter_form']['lineage']['#attributes']['id'] = 'facet_lineage_value_mobile';
+
+    $variables['content']['#search_filter_form']['resource_format']['#id'] = 'edit-resource-format-mobile';
+    $variables['content']['#search_filter_form']['resource_format']['#attributes']['data-drupal-selector'] = 'edit-resource-format-mobile';
+    $variables['content']['#search_filter_form']['resource_format']['#attributes']['id'] = 'facet_resource_format_value_mobile';
+
+    $variables['content']['#search_filter_form']['submit_desktop']['#id'] = 'edit-submit-desktop-mobile';
+    $variables['content']['#search_filter_form']['submit_desktop']['#attributes']['data-drupal-selector'] = 'edit-submit-desktop-mobile';
+
+    $variables['content']['#search_filter_form']['reset']['#id'] = 'edit-reset-mobile';
+    $variables['content']['#search_filter_form']['reset']['#attributes']['data-drupal-selector'] = 'edit-reset-mobile';
+
+    $variables['content']['#search_filter_form']['#id'] = 'openig-search-filter-mobile';
+    $variables['content']['#search_filter_form']['#attributes']['data-drupal-selector'] = 'openig-search-filter-mobile';
+
+  }
+}

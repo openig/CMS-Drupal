@@ -35,7 +35,6 @@ settings:
       - horizontalLine
       - '|'
       - heading
-      - fontSize
       - showBlocks
       - '|'
       - sourceEditing
@@ -56,35 +55,6 @@ settings:
       multiBlock: true
     ckeditor5_sourceEditing:
       allowed_tags: {  }
-    ckeditor_font_font:
-      supportAllSizeValues: false
-      supportAllFamilyValues: false
-      font_names: {  }
-      font_sizes:
-        -
-          title: 0.75rem
-          model: 0.75rem
-        -
-          title: 0.875rem
-          model: 0.875rem
-        -
-          title: 1rem
-          model: 1rem
-        -
-          title: 1.125rem
-          model: 1.125rem
-        -
-          title: 1.5rem
-          model: 1.5rem
-        -
-          title: 2rem
-          model: 2rem
-        -
-          title: 2.125rem
-          model: 2.125rem
-        -
-          title: 2.5rem
-          model: 2.5rem
     editor_advanced_link_link:
       enabled_attributes:
         - target

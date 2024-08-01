@@ -335,7 +335,7 @@
             font-weight: 600;
             font-family: 'Exo_semiBold';
         }
-        .js-form-submit[data-drupal-selector='edit-reset']{
+        .js-form-submit[name='reset']{
             background-color: transparent;
             color: $OPenIG-color_dark-gray;
             border: 1px solid $OPenIG-color_gray;

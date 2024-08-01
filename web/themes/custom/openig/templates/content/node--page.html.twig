@@ -93,6 +93,42 @@
       <div class="col-lg-1"></div>
       <div{{ content_attributes.addClass('node__content col-lg-7 col-12') }}>
         {{ content|without('field_contenu_sidebar','field_tag') }}
+        {% if ressources %}   
+          <div class="accordion" id="accordionPage">
+            <div class="accordion-item">
+                {% if (ressources['Entity']|length == ressources['count']) and (ressources['Entity']|length != 0) %}
+                    <h2 class="accordion-header accordion-disabled" id="headingRessources">
+                        <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRessources" aria-expanded="false" aria-controls="collapseRessources">
+                            Ressources
+                            <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+                        </button>
+                    </h2>
+                {% else %}
+                    <h2 class="accordion-header" id="headingRessources">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRessources" aria-expanded="false" aria-controls="collapseRessources">
+                            Ressources
+                        </button>
+                    </h2>
+                    <div id="collapseRessources" class="accordion-collapse collapse" aria-labelledby="headingRessources" data-bs-parent="#accordionPage">
+                        <div class="accordion-body content_ressources">
+                            {% for ressource in ressources['Entity'] %}
+                                {% if ressource['check'] == 'true' %}
+                                    <div class="no_locked">
+                                        {{ drupal_entity('node', ressource[0].nid.value, 'ressource_dans_groupe_de_travail') }}
+                                    </div>
+                                {% else %}
+                                    <div class="locked">
+                                        <p>{{ressource[0].title.value}}</p>
+                                        <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+          </div>
+        {% endif %}
       </div>
       <div class="col-lg-1"></div>
       <div class="col-lg-3">

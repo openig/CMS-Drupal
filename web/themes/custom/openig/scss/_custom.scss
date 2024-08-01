@@ -498,10 +498,11 @@ h3{
 
 .paragraph--type--type-de-contenu.paragraph--view-mode--sidebar{
     .node--type-ressource.node--view-mode-sidebar{
-        .node__content{
+        a.imageRessource{
             border: 1px solid $OPenIG-color_deep-gray;
             border-radius: 5px;
             overflow: hidden;
+            margin-bottom: 0.5rem;
         }
         a{
             display: block;
@@ -1208,7 +1209,7 @@ form{
         font-weight: 600;
         font-family: 'Exo_semiBold';
     }
-    .js-form-submit[data-drupal-selector='edit-reset'], .js-form-submit[data-drupal-selector='edit-reset']:hover, .js-form-submit[data-drupal-selector='edit-reset']:focus, .js-form-submit[data-drupal-selector='edit-reset']:active{
+    .js-form-submit[name='reset'], .js-form-submit[name='reset']:hover, .js-form-submit[name='reset']:focus, .js-form-submit[name='reset']:active{
         background-color: transparent !important;
         color: $OPenIG-color_dark-gray !important;
         border: 1px solid $OPenIG-color_gray;

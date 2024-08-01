@@ -50,6 +50,7 @@
         "drupal/nodeaccess": "^2.0@alpha",
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.12",
+        "drupal/scheduler": "^2.0",
         "drupal/search_api_solr": "^4.3",
         "drupal/simple_sitemap": "^4.1",
         "drupal/simplenews": "^4.0",

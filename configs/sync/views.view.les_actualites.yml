@@ -502,6 +502,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 12
           total_pages: null
           id: 0
@@ -519,7 +520,6 @@ display:
             offset: false
             offset_label: Décalage
           quantity: 5
-          pagination_heading_level: h4
       exposed_form:
         type: bef
         options:
@@ -551,8 +551,8 @@ display:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
                   collapsible: false
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
               field_tag_target_id:
                 plugin_id: bef
                 advanced:
@@ -561,8 +561,8 @@ display:
                     filter_rewrite_values: ''
                     filter_rewrite_values_key: false
                   collapsible: true
-                  is_secondary: false
                   collapsible_disable_automatic_open: false
+                  is_secondary: false
                 select_all_none: false
                 select_all_none_nested: false
                 display_inline: false

@@ -29,6 +29,9 @@ init_d10_status() {
 	## fin du script d'init si la commande drush n'est pas disponible
 	[ -z "${BIN_DRUSH}" ] && p_warning "Commande Drush non disponible (aucune configuration Drupal effectuée) !" && return 0
 	
+	## attente de disponibilité de la base de données
+	! is_database_ready && p_warning "Base de données indisponible !" && return 1
+	
 	p_section "Nettoyage complet des caches de l'instance Drupal..."
 	${BIN_DRUSH} cache:rebuild 2>/dev/null || true
 	

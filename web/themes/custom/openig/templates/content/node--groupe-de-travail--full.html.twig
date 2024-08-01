@@ -173,22 +173,22 @@
                 {% for key,type in ressources %}
                     <div class="accordion-item">
                         {% if (type['allCheckFalse'] != 'false') and (type['Entity']|length != 0) %}
-                            <h2 class="accordion-header accordion-disabled" id="heading{{key}}">
-                                <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
+                            <h2 class="accordion-header accordion-disabled" id="heading{{key|replace({' ': ''})}}">
+                                <button disabled='disabled' class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key|replace({' ': ''})}}" aria-expanded="false" aria-controls="collapse{{key|replace({' ': ''})}}">
                                     {{key}}
                                     <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                                 </button>
                             </h2>
                         {% else %}
-                            <h2 class="accordion-header" id="heading{{key}}">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key}}" aria-expanded="false" aria-controls="collapse{{key}}">
+                            <h2 class="accordion-header" id="heading{{key|replace({' ': ''})}}">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{key|replace({' ': ''})}}" aria-expanded="false" aria-controls="collapse{{key|replace({' ': ''})}}">
                                     {{key}}
                                     <span class="numberTitle">
                                         {{ type['Entity']|length }}
                                     </span>
                                 </button>
                             </h2>
-                            <div id="collapse{{key}}" class="accordion-collapse collapse" aria-labelledby="heading{{key}}" data-bs-parent="#accordionGroupeTravail">
+                            <div id="collapse{{key|replace({' ': ''})}}" class="accordion-collapse collapse" aria-labelledby="heading{{key|replace({' ': ''})}}" data-bs-parent="#accordionGroupeTravail">
                                 <div class="accordion-body content_ressources">
                                 {% for ressource in type['Entity'] %}
                                     {% if (ressource['check'] == 'true') or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
@@ -197,8 +197,8 @@
                                         </div>
                                     {% else %}
                                         <div class="locked">
-                                            <p>{{ressource[0].field_file[0].description}}</p>
-                                            <p>{{ressource[0].field_link[0].title}}</p>
+                                            <p>{{ressource[0].title[0].value}}</p>
+                                            <p>{{rressource[0].title[0].value}}</p>
                                             <p class="itemPrivate">Réservé aux adhérents<i class="fa-solid fa-lock"></i></p>
                                         </div>
                                     {% endif %}

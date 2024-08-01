@@ -74,6 +74,153 @@
             margin-bottom: 0;
         }
     }
+
+    #accordionService{
+        .accordion-item{
+            border: none;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+            border-radius: 5px;
+            border: 1px solid $OPenIG-color_deep-white;
+            font-size: $OPenIG-font-size-sm;
+            .field--name-field-animators, .field--name-field-members{
+                column-count: 3;
+            }
+            .field--name-field-animators, .field--name-field-members, .content_ressources{
+                //column-count: 3;
+                .file{
+                    background-image: none;
+                    padding-left: 0;
+                }
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+                .profile{
+                    display: flex;
+                    .field--name-field-firstname{
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .content_ressources{
+                .locked{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    p{
+                        margin-bottom: 0;
+                    }
+                    p.itemPrivate{
+                        display: flex;
+                        align-items: center;
+                        font-size: $OPenIG-font-size-xs;
+                    }
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 16px;
+                    }
+                }
+                .node--type-ressource{
+                    .node__content{
+                        margin-top: 0;
+                    }
+                }
+                > div:not(:last-of-type){
+                    margin-bottom: 1.5rem;
+                }
+            }
+            .field__item{
+                margin-bottom: 5px;
+            }
+            
+            .accordion-disabled{
+                .itemPrivate{
+                    position: absolute;
+                    right: 2rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: $OPenIG-font-size-sm;
+                    font-family: 'OpenSans_Regular';
+                    font-weight: 400;
+                    display: flex;
+                    align-items: center;
+                    i{
+                        margin-left: 1rem;
+                        color: $OPenIG-color_blue;
+                        font-size: 18px;
+                    }
+                }
+                button::after{
+                    background-image: none;
+                }
+            }
+        }
+        .accordion-item.open{
+            border-left: 4px solid $OPenIG-color_blue;
+        }
+        h2.accordion-header{
+            border-bottom: none;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            .numberTitle{
+                font-size: $OPenIG-font-size-xs;
+                background-color: $OPenIG-color_yellow;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: -15px;
+                margin-left: 10px;
+            }
+        }
+        .accordion-button{
+            padding: 25px;
+        }
+        .accordion-button:not(.collapsed){
+            background-color: $OPenIG-color_light-gray;
+            border: 1px solid $OPenIG-color_deep-white;
+            color: $OPenIG-color_black;
+        }
+        .accordion-button:focus{
+            box-shadow: none;
+            border: none;
+        }
+    }
+
+    .liste_accordeon{
+        border-radius: 10px;
+        border: 1px solid $OPenIG-color_gray;
+        overflow: hidden;
+        margin-top: 4rem;
+        h2{
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            font-size: $OPenIG-font-size-base;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+        .item_accordeon:not(:last-of-type){
+            border-bottom: 1px solid $OPenIG-color_gray;
+        }
+        .item_accordeon{            
+            font-size: $OPenIG-font-size-sm;
+            background-color: $OPenIG-color_white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px;
+            i{
+                color: $OPenIG-color_blue;
+                margin-left: 10px;
+                font-size: $OPenIG-font-size-base;
+            }
+        }
+    }
 }
 
 .buttonUse{

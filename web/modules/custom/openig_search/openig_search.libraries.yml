@@ -1,0 +1,7 @@
+openig-search:
+  version: 1.x
+  js:
+    js/search.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
