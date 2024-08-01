@@ -101,7 +101,7 @@
   {{ title_prefix }}
   {% if label and not page %}
     {% if content.field_image[0] %}
-        <a class="labelRessource" href="{{ url }}" rel="bookmark">{{ label }}</a>
+        <a class="labelRessource" href="{{ url }}" rel="bookmark">{{ label[0]['#context']['value'] }}</a>
     {% endif %}
   {% endif %}
   {{ title_suffix }}
