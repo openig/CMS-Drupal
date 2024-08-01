@@ -337,6 +337,21 @@ function openig_preprocess_block(&$variables){
       $variables['url_picto'] = $url;
     }
   }
+
+  if (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposeannuaireannuaire-mobile') ) {
+    $variables['content']['#id'] = 'views-exposed-form-annuaire-annuaire-mobile';
+    $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-annuaire-annuaire-mobile';
+  }
+  elseif (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposel-agendaagenda-mobile')) {
+    $variables['content']['#id'] = 'views-exposed-form-l-agenda-agenda-mobile';
+    $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-l-agenda-agenda-mobile';
+  }
+  elseif (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposeresultats-de-recherche-internal-mobile')) {
+    $variables['content']['#id'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
+    $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
+  }
+ 
+
 }
 
 function openig_preprocess_views_view(&$variables){

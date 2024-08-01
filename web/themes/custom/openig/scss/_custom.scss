@@ -295,7 +295,7 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         }
     }
     .modal{
-        .modal-dialog{ 
+        .modal-dialog{
             max-width: unset;
             width: 75%;
             .modal-header,.modal-body{
@@ -459,7 +459,7 @@ h3{
         padding-left: 10px;
     }
 }
-  
+
 .paragraph--type--texte-dropdown.paragraph--view-mode--sidebar{
     box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
     border-radius: 15px;
@@ -615,13 +615,17 @@ h3{
 }
 
 .paragraph--type--membres{
+
+    .cardmembers .image_membre{
+      min-height: 100px;
+    }
     .cardmembers h2.field.field--name-field-text.field--type-text-long.field--label-hidden.field__item {
         padding: 0 10rem;
         font-size: $OPenIG-font-size-lg;
         border-bottom: none;
         background-color: rgba(255, 255, 255, 0.6);
       }
-      
+
       .field--name-field-membre {
         display: flex;
         flex-direction: row;
@@ -634,7 +638,7 @@ h3{
       .modal-dialog {
         max-width: 60rem;
       }
-      
+
       .card-member {
         border-radius: 20px;
         margin: 1rem;
@@ -648,14 +652,14 @@ h3{
         border: none;
         // z-index: 1; Commenté car conflit avec modal de la vidéo
       }
-      
+
       .card-member .field--name-field-image img {
         width: 150px;
         height: 150px;
         border-radius: 50%;
         border: 1px solid #000;
       }
-      
+
       .field--name-field-picto {
         position: absolute;
         top: 15px;
@@ -670,7 +674,7 @@ h3{
             background-position: center;
         }
       }
-      
+
       .cardmembers .field.field--name-field-image.field--type-image.field--label-hidden.field__item {
         display: flex;
         justify-content: center;
@@ -681,13 +685,13 @@ h3{
         height: 165px;
         border-radius: 50%;
       }
-      
+
       .field.field--name-field-poste.field--type-string.field--label-hidden.field__item {
         font-weight: 600;
         font-size: $OPenIG-font-size-base;
         font-family: 'Exo_semiBold', sans-serif;
       }
-      
+
       .field.field--name-field-prenom-nom.field--type-string.field--label-hidden.field__item {
         font-family: 'Exo_semiBold', sans-serif;
         font-weight: 600;
@@ -697,7 +701,7 @@ h3{
         font-family: 'Exo_regular', sans-serif;
         font-size: $OPenIG-font-size-sm;
       }
-      
+
       .field.field--name-field-email.field--type-email.field--label-hidden.field__item {
         font-weight: 600;
         font-size: $OPenIG-font-size-base;
@@ -706,7 +710,7 @@ h3{
         text-align: end;
         text-decoration: underline;
       }
-      
+
       .field.field--name-field-email.field--type-email.field--label-hidden.field__item a {
         color: $OPenIG-color_black
       }
@@ -729,7 +733,7 @@ h3{
       .field--name-field-ligne-de-membres > .field__item {
         position: relative;
       }
-      
+
       .background-membres {
         background-color: #f2f6e7;
         z-index: 0;
@@ -737,7 +741,7 @@ h3{
         width: 130%;
         height: 23rem;
       }
-      
+
       // Alternate the background position for the cards
       .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .background-membres {
         left: -150px;
@@ -747,14 +751,14 @@ h3{
         right: -145px;
         left: auto;
       }
-      
+
       // Alternate the cards position like the background
       .field--name-field-ligne-de-membres > .field__item:nth-child(odd) .paragraph--type--ligne-de-membres {
         display: flex;
         justify-content: flex-start;
         margin-left: -150px;
       }
-      
+
       .field--name-field-ligne-de-membres > .field__item:nth-child(even) .paragraph--type--ligne-de-membres {
         display: flex;
         justify-content: flex-end;
@@ -764,15 +768,15 @@ h3{
       .field--name-field-ligne-de-membres > .field__item:not(:first-of-type){
         margin-top: 1rem;
       }
-      
-      
+
+
 }
 
 @media (max-width: 1400px) {
     .paragraph--type--membres{
         .card-member {
             width: 250px;
-        }    
+        }
     }
 }
 
@@ -1146,7 +1150,7 @@ h3{
         .field--name-field-image{
             min-width: 50%;
             width: 50%;
-            float: left; 
+            float: left;
         }
         .contenuTexte{
             width: 100%;
@@ -1196,8 +1200,8 @@ h3{
             padding-bottom: 5px;
         }
     }
-    
-    
+
+
 }
 
 // Formulaires
@@ -1428,7 +1432,7 @@ form{
     }
 }
 
-// Pagination 
+// Pagination
 
 .pager{
     background-color: rgba(255, 255, 255, 0.6);
@@ -1530,7 +1534,7 @@ form{
     }
 }
 
-// Formulaires d'inscription et de connexion 
+// Formulaires d'inscription et de connexion
 .path-user:not(.user-logged-in) #block-openig-adhesion a[href='/user/login']{
     background-color: $OPenIG-color_deep-white;
     color: $OPenIG-color_blue !important;
@@ -1677,9 +1681,9 @@ form.user-register-form{
         margin-top: 5rem;
         background-color: rgba(255, 255, 255, 0.6);
     }
-    #user-form{          
+    #user-form{
         width: 60%;
-        margin: auto;                       
+        margin: auto;
         > div:first-of-type{
             margin-top: 0;
         }
@@ -1836,7 +1840,7 @@ form.user-register-form{
             }
         }
     }
-    
+
     .ui-dialog-titlebar-close{
         font-size: 0;
         text-indent: unset;
