@@ -135,21 +135,3 @@
     }
 }
 
-.more-link{
-  .divPrivate{
-    display: flex;
-    justify-content: center;
-    p.itemPrivate{
-      font-family: 'OpenSans_Regular';
-      font-size: $OPenIG-font-size-xs;
-      margin: 0;
-      text-align: right;
-    }
-    i{
-      margin-left: 1.5rem;
-      color: $OPenIG-color_blue;
-      font-size: 20px;
-    }
-  }
-}
-
