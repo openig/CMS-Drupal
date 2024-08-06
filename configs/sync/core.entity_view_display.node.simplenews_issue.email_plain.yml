@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.email_plain
+    - field.field.node.simplenews_issue.field_a_la_une
+    - field.field.node.simplenews_issue.field_a_savoir
+    - field.field.node.simplenews_issue.field_agenda
+    - field.field.node.simplenews_issue.field_bienvenue
+    - field.field.node.simplenews_issue.field_coup_de_projecteur
     - field.field.node.simplenews_issue.field_date
     - field.field.node.simplenews_issue.field_fond_vert
     - field.field.node.simplenews_issue.field_le_mot_du_president
@@ -21,6 +26,11 @@ content: {  }
 hidden:
   addtoany: true
   breadcrumbs: true
+  field_a_la_une: true
+  field_a_savoir: true
+  field_agenda: true
+  field_bienvenue: true
+  field_coup_de_projecteur: true
   field_date: true
   field_fond_vert: true
   field_le_mot_du_president: true

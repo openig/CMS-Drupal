@@ -1,0 +1,38 @@
+uuid: ad0c7714-a304-4f5d-b467-a66d73aa2010
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_picto
+    - paragraphs.paragraphs_type.bienvenue
+  module:
+    - image
+id: paragraph.bienvenue.field_picto
+field_name: field_picto
+entity_type: paragraph
+bundle: bienvenue
+label: Picto
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 343e98d3-5646-4985-b5de-7543eb323be6
+    alt: ''
+    title: ''
+    width: 96
+    height: 56
+field_type: image

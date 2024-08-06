@@ -1,0 +1,28 @@
+uuid: 1f522828-6ada-474e-b981-ed1c2d3b32ac
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.groupe_de_travail
+    - field.field.paragraph.coup_de_projecteur.field_picto
+    - field.field.paragraph.coup_de_projecteur.field_title
+    - field.field.paragraph.coup_de_projecteur.field_type_de_contenu
+    - paragraphs.paragraphs_type.coup_de_projecteur
+id: paragraph.coup_de_projecteur.groupe_de_travail
+targetEntityType: paragraph
+bundle: coup_de_projecteur
+mode: groupe_de_travail
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto: true
+  field_type_de_contenu: true
+  search_api_excerpt: true

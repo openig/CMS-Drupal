@@ -1,0 +1,38 @@
+uuid: 3f359f80-80a7-46da-86e7-97f8f572c1ab
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_picto
+    - paragraphs.paragraphs_type.agenda
+  module:
+    - image
+id: paragraph.agenda.field_picto
+field_name: field_picto
+entity_type: paragraph
+bundle: agenda
+label: Picto
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'png gif jpg jpeg webp svg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: true
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: 14f5118f-8c4b-42bc-89b7-5c95065f5755
+    alt: ''
+    title: ''
+    width: 77
+    height: 54
+field_type: image

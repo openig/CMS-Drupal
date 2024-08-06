@@ -4,6 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.email_html
+    - field.field.node.simplenews_issue.field_a_la_une
+    - field.field.node.simplenews_issue.field_a_savoir
+    - field.field.node.simplenews_issue.field_agenda
+    - field.field.node.simplenews_issue.field_bienvenue
+    - field.field.node.simplenews_issue.field_coup_de_projecteur
     - field.field.node.simplenews_issue.field_date
     - field.field.node.simplenews_issue.field_fond_vert
     - field.field.node.simplenews_issue.field_le_mot_du_president
@@ -19,6 +24,51 @@ targetEntityType: node
 bundle: simplenews_issue
 mode: email_html
 content:
+  field_a_la_une:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_a_savoir:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_agenda:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_bienvenue:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_coup_de_projecteur:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 6
+    region: content
   field_date:
     type: entity_reference_revisions_entity_view
     label: hidden
@@ -35,7 +85,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 7
     region: content
   field_le_mot_du_president:
     type: entity_reference_revisions_entity_view

@@ -1,0 +1,21 @@
+uuid: 74b8622d-d01c-42c5-83eb-53702c179fe7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.a_savoir
+id: paragraph.a_savoir.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: a_savoir
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'A savoir'
+default_value_callback: ''
+settings: {  }
+field_type: string

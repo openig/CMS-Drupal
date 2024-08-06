@@ -1,0 +1,51 @@
+uuid: 500ed7be-2646-4d2d-a561-ba77ff8720c4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.agenda.field_picto
+    - field.field.paragraph.agenda.field_title
+    - field.field.paragraph.agenda.field_type_de_contenu
+    - paragraphs.paragraphs_type.agenda
+  module:
+    - svg_image
+id: paragraph.agenda.default
+targetEntityType: paragraph
+bundle: agenda
+mode: default
+content:
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type_de_contenu:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

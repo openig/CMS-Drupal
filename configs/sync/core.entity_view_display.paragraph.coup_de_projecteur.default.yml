@@ -1,0 +1,51 @@
+uuid: d4ef879c-270d-4d73-864d-5b1062f09c0c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.coup_de_projecteur.field_picto
+    - field.field.paragraph.coup_de_projecteur.field_title
+    - field.field.paragraph.coup_de_projecteur.field_type_de_contenu
+    - paragraphs.paragraphs_type.coup_de_projecteur
+  module:
+    - svg_image
+id: paragraph.coup_de_projecteur.default
+targetEntityType: paragraph
+bundle: coup_de_projecteur
+mode: default
+content:
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type_de_contenu:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

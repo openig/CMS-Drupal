@@ -23,8 +23,8 @@ settings:
     uuid: ''
     alt: ''
     title: ''
-    width: 50
-    height: 49
+    width: 96
+    height: 56
 module: image
 locked: false
 cardinality: 1
