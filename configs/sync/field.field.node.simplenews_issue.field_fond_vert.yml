@@ -1,11 +1,11 @@
-uuid: ec6fa7db-90e8-4d87-b7b7-b187baaabb3f
+uuid: 1762688d-8364-459a-80f0-eb5d09c596e4
 langcode: fr
 status: true
 dependencies:
   config:
     - field.storage.node.field_fond_vert
     - node.type.simplenews_issue
-    - paragraphs.paragraphs_type.title_text
+    - paragraphs.paragraphs_type.fond_vert
   module:
     - entity_reference_revisions
 id: node.simplenews_issue.field_fond_vert
@@ -22,43 +22,46 @@ settings:
   handler: 'default:paragraph'
   handler_settings:
     target_bundles:
-      title_text: title_text
+      fond_vert: fond_vert
     negate: 0
     target_bundles_drag_drop:
       accordeon:
-        weight: 13
-        enabled: false
-      le_mot_du_president:
         weight: 14
         enabled: false
-      ligne_de_membres:
+      fond_vert:
         weight: 15
-        enabled: false
-      membre:
+        enabled: true
+      le_mot_du_president:
         weight: 16
         enabled: false
-      membres:
+      ligne_de_membres:
         weight: 17
         enabled: false
-      mois_et_annee:
+      membre:
         weight: 18
         enabled: false
-      onglet_d_accordeon:
+      membres:
         weight: 19
         enabled: false
-      picto_text:
-        weight: 21
-        enabled: false
-      pictos_et_texte:
+      mois_et_annee:
         weight: 20
         enabled: false
-      texte_dropdown:
+      onglet_d_accordeon:
+        weight: 21
+        enabled: false
+      picto_text:
+        weight: 23
+        enabled: false
+      pictos_et_texte:
         weight: 22
         enabled: false
-      title_text:
-        weight: 23
-        enabled: true
-      type_de_contenu:
+      texte_dropdown:
         weight: 24
+        enabled: false
+      title_text:
+        weight: 25
+        enabled: false
+      type_de_contenu:
+        weight: 26
         enabled: false
 field_type: entity_reference_revisions

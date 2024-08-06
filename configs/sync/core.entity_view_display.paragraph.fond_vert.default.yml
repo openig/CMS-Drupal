@@ -1,0 +1,31 @@
+uuid: b15377df-3132-4bcc-bd71-8cde9fd4aa8d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fond_vert.field_body
+    - field.field.paragraph.fond_vert.field_title
+    - paragraphs.paragraphs_type.fond_vert
+id: paragraph.fond_vert.default
+targetEntityType: paragraph
+bundle: fond_vert
+mode: default
+content:
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

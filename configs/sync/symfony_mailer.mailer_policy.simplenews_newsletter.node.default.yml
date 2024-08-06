@@ -1,0 +1,8 @@
+uuid: 4e1c39ed-3ff5-432a-89b6-72c7c3ee0915
+langcode: fr
+status: true
+dependencies:
+  config:
+    - simplenews.newsletter.default
+id: simplenews_newsletter.node.default
+configuration: {  }

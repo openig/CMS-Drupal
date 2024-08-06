@@ -1,0 +1,21 @@
+uuid: cd66ccba-5067-4013-8ace-5e6e1a2b82bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.fond_vert
+id: paragraph.fond_vert.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: fond_vert
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Retour sur'
+default_value_callback: ''
+settings: {  }
+field_type: string

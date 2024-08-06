@@ -1,0 +1,10 @@
+uuid: a5879e85-3c6a-4207-87bd-4f111cd4ba62
+langcode: fr
+status: true
+dependencies: {  }
+id: fond_vert
+label: 'Fond vert'
+icon_uuid: null
+icon_default: null
+description: 'Newsletter - Paragraph fond vert'
+behavior_plugins: {  }

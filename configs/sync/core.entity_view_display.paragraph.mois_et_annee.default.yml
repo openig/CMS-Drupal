@@ -15,7 +15,7 @@ mode: default
 content:
   field_annee:
     type: number_integer
-    label: above
+    label: hidden
     settings:
       thousand_separator: ''
       prefix_suffix: true
@@ -24,7 +24,7 @@ content:
     region: content
   field_mois:
     type: list_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 0

@@ -4,9 +4,9 @@ status: true
 dependencies: {  }
 _core:
   default_config_hash: wg5cCxB554rXZx4TIzUACcXRXe-VSodwqcq-_QS4Tv0
-name: 'Default newsletter'
+name: Newsletter
 id: default
-description: 'This is an example newsletter. Change it.'
+description: Newsletter
 format: plain
 priority: 0
 receipt: true
@@ -15,6 +15,7 @@ subject: '[[simplenews-newsletter:name]] [node:title]'
 from_address: webmaster@openig.org
 hyperlinks: false
 allowed_handlers:
+  0: '0'
   simplenews_all: '0'
 new_account: 'off'
 access: default
