@@ -1,0 +1,10 @@
+uuid: 80c899fd-de14-4060-ab48-1c73897edc60
+langcode: fr
+status: true
+dependencies: {  }
+id: le_mot_du_president
+label: 'Paragraphe - Le mot du président'
+icon_uuid: null
+icon_default: null
+description: 'Newsletter  - Paragraphe "Le mot du président"'
+behavior_plugins: {  }

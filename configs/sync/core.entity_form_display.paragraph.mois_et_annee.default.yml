@@ -1,0 +1,29 @@
+uuid: 9f9c8cc9-0102-48c6-8d10-bd81942de2e9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.mois_et_annee.field_annee
+    - field.field.paragraph.mois_et_annee.field_mois
+    - paragraphs.paragraphs_type.mois_et_annee
+id: paragraph.mois_et_annee.default
+targetEntityType: paragraph
+bundle: mois_et_annee
+mode: default
+content:
+  field_annee:
+    type: number
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_mois:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

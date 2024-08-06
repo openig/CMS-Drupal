@@ -4,10 +4,9 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.simplenews_issue.field_actualite
-    - field.field.node.simplenews_issue.field_bloc
-    - field.field.node.simplenews_issue.field_evenement
-    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_date
+    - field.field.node.simplenews_issue.field_fond_vert
+    - field.field.node.simplenews_issue.field_le_mot_du_president
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
@@ -22,10 +21,9 @@ content: {  }
 hidden:
   addtoany: true
   breadcrumbs: true
-  field_actualite: true
-  field_bloc: true
-  field_evenement: true
-  field_tag: true
+  field_date: true
+  field_fond_vert: true
+  field_le_mot_du_president: true
   langcode: true
   links: true
   search_api_excerpt: true

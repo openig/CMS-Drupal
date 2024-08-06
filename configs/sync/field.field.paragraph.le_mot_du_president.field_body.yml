@@ -1,0 +1,19 @@
+uuid: 83db1d80-fe6b-4a16-9f74-36abab7e51f2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.le_mot_du_president
+id: paragraph.le_mot_du_president.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: le_mot_du_president
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

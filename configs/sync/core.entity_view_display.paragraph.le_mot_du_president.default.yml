@@ -1,0 +1,74 @@
+uuid: 538aedee-df96-4ca8-ae7f-71ee55240dcb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.le_mot_du_president.field_auteur
+    - field.field.paragraph.le_mot_du_president.field_body
+    - field.field.paragraph.le_mot_du_president.field_image
+    - field.field.paragraph.le_mot_du_president.field_picto
+    - field.field.paragraph.le_mot_du_president.field_title
+    - paragraphs.paragraphs_type.le_mot_du_president
+  module:
+    - svg_image
+id: paragraph.le_mot_du_president.default
+targetEntityType: paragraph
+bundle: le_mot_du_president
+mode: default
+content:
+  field_auteur:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_body:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: vignette_150x150
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

@@ -1,0 +1,76 @@
+uuid: e8f071c8-d3e0-4b71-b115-1b71f318ef37
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.mot_du_president
+    - field.field.block_content.mot_du_president.body
+    - field.field.block_content.mot_du_president.field_auteur
+    - field.field.block_content.mot_du_president.field_image
+    - field.field.block_content.mot_du_president.field_picto
+    - field.field.block_content.mot_du_president.field_titre
+  module:
+    - svg_image
+    - text
+id: block_content.mot_du_president.default
+targetEntityType: block_content
+bundle: mot_du_president
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_auteur:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_titre:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

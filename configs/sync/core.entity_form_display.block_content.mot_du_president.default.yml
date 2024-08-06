@@ -1,0 +1,78 @@
+uuid: 39caf3ae-f1ec-4ce3-82a1-4c65dfaa2b8e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.mot_du_president
+    - field.field.block_content.mot_du_president.body
+    - field.field.block_content.mot_du_president.field_auteur
+    - field.field.block_content.mot_du_president.field_image
+    - field.field.block_content.mot_du_president.field_picto
+    - field.field.block_content.mot_du_president.field_titre
+    - image.style.thumbnail
+  module:
+    - svg_image
+    - text
+id: block_content.mot_du_president.default
+targetEntityType: block_content
+bundle: mot_du_president
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_auteur:
+    type: string_textfield
+    weight: 5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 3
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_picto:
+    type: image_image
+    weight: 2
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_titre:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 6
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: 4863486a-756f-46e5-a95f-7f1d0e11b4ba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_annee
+    - paragraphs.paragraphs_type.mois_et_annee
+id: paragraph.mois_et_annee.field_annee
+field_name: field_annee
+entity_type: paragraph
+bundle: mois_et_annee
+label: Année
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 2010
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

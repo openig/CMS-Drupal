@@ -1,0 +1,19 @@
+uuid: 4d0d1471-d3a1-4faa-ba1f-02109b669542
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.mot_du_president
+    - field.storage.block_content.field_auteur
+id: block_content.mot_du_president.field_auteur
+field_name: field_auteur
+entity_type: block_content
+bundle: mot_du_president
+label: Auteur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
