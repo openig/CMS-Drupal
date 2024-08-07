@@ -1,0 +1,164 @@
+.node--type-simplenews-issue{
+  font-family: 'exo';
+  //text-align: center;
+  background-color: white;
+
+  .bloc-newsletter {
+    margin: 50px auto;
+  }
+
+  .field--name-title {
+    font-family: 'exo';
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+  .field--name-field-title, .field--name-field-date{
+    font-family: 'Russo One';
+    border: none;
+  }
+
+  .field--name-field-body {
+    font-family: 'open sans';
+  }
+
+  .bloc-newsletter.mois-annee{
+    text-align: center;
+    .paragraph--type--mois-et-annee{
+      font-size: 1.5rem;
+      font-family: 'Russo One';
+      margin: 20px auto 50px auto;
+      color: #BE1621;
+      display: inline-block;
+      border: 1px solid black;
+      text-align: center;
+      padding: 12px 14px;
+      border-radius: 16px;
+      text-transform: lowercase;
+      .field--name-field-mois{
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  /** Mot de président + Retour sur (fond vert) **/
+  .paragraph--type--le-mot-du-president {
+    h2 {
+      padding-top: 8px;
+      text-align: start;
+      margin: 0 0 -13px 10px;
+    }
+  }
+
+  .paragraph--type--fond-vert {
+    h2 {
+      padding-top: 8px;
+      text-align: start;
+      margin: 0 0 -13px 10px;
+    }
+    .field--name-field-body {
+
+    }
+  }
+
+  .bloc-subtitle {
+    display: flex;
+  }
+  .bloc-fond-vert {
+    background-color: #f2f6e7;
+    padding: 20px 0;
+    .bloc-content {
+      padding: 25px 15px;
+      display: flex;
+      justify-content: space-around;
+      .field--name-field-image{
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+    .field--name-field-body {
+      text-align: start;
+    }
+    .field-auteur {
+      .field--name-field-auteur {
+        text-align: end;
+        padding-right: 100px;
+      }
+    }
+  }
+
+  /** titre bloc à gauche **/
+  .node__content .bloc-newsletter:nth-child(odd) {
+    .row{
+      text-align: end;
+    }
+    .h3 {
+      text-align: start;
+    }
+  }
+
+  /** titre bloc à droite **/
+  .node__content .bloc-newsletter:nth-child(even) {
+    .row {
+      text-align: start;
+      .col-11 {
+        order: 2;
+        }
+    }
+    .h3 {
+      text-align: end;
+    }
+  }
+
+
+  .field--name-field-title {
+    margin-bottom: -14px;
+    padding-top: 8px;
+  }
+
+  .cadre-gris-title {
+    background-image: url('/themes/custom/openig/img/newsletter/cadre-gris-titre-right.png');
+    height: 20px;
+    width: auto;
+  }
+
+  .paragraph--type--fond-vert .field--name-field-body {
+    text-align: start !important;
+  }
+
+  h3 {
+    font-family: 'exo';
+    font-weight: 500;
+  }
+
+  /** Bienvenu **/
+  .field--name-field-bienvenue {
+    margin: 40px auto;
+  }
+
+  /*** Coup de projecteur ***/
+  .paragraph--type--coup-de-projecteur{
+    .field--name-field-type-de-contenu {
+      .tags {
+        display: none;
+      }
+    }
+    .field--name-field-tag {
+      display: flex;
+      .field__item{
+        border: 1px solid #C2DB7E;
+        border-radius: 21px;
+        margin: 10px 5px;
+        padding: 2px 8px;
+      }
+    }
+    .field--name-field-image {
+      display: flex;
+      justify-content: space-around;
+
+    }
+  }
+
+}

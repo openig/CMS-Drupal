@@ -9,3 +9,9 @@ global-styling:
     /libraries/slick/slick/slick.min.js: {}
   dependencies:
       - core/jquery
+
+email:
+  css:
+    theme:
+      css/mail.css: { preprocess: false }
+
