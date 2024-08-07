@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.coup_de_projecteur.field_body
+    - field.field.paragraph.coup_de_projecteur.field_image
     - field.field.paragraph.coup_de_projecteur.field_picto
     - field.field.paragraph.coup_de_projecteur.field_title
     - field.field.paragraph.coup_de_projecteur.field_type_de_contenu
@@ -23,6 +25,8 @@ content:
     region: content
 hidden:
   breadcrumbs: true
+  field_body: true
+  field_image: true
   field_picto: true
   field_type_de_contenu: true
   search_api_excerpt: true

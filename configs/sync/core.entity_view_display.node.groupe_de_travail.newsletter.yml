@@ -1,0 +1,81 @@
+uuid: 1cbd76c6-3ad7-4279-b49d-c52b89513225
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter
+    - field.field.node.groupe_de_travail.field_animators
+    - field.field.node.groupe_de_travail.field_archive
+    - field.field.node.groupe_de_travail.field_body
+    - field.field.node.groupe_de_travail.field_contenu_sidebar
+    - field.field.node.groupe_de_travail.field_image
+    - field.field.node.groupe_de_travail.field_members
+    - field.field.node.groupe_de_travail.field_tag
+    - field.field.node.groupe_de_travail.field_theme_overview
+    - field.field.node.groupe_de_travail.field_webform
+    - field.field.node.groupe_de_travail.field_weight
+    - field.field.node.groupe_de_travail.field_working_group_objective
+    - image.style.medium
+    - node.type.groupe_de_travail
+  module:
+    - svg_image
+    - text
+    - user
+id: node.groupe_de_travail.newsletter
+targetEntityType: node
+bundle: groupe_de_travail
+mode: newsletter
+content:
+  field_contact:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: contact
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tag:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_theme_overview:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_animators: true
+  field_archive: true
+  field_body: true
+  field_contenu_sidebar: true
+  field_members: true
+  field_webform: true
+  field_weight: true
+  field_working_group_objective: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

@@ -11,7 +11,7 @@ configuration:
   host: maildev
   port: 25
   query:
-    verify_peer: true
+    verify_peer: false
     local_domain: ''
     restart_threshold: null
     restart_threshold_sleep: null

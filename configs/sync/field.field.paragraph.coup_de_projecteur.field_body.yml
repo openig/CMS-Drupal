@@ -1,0 +1,19 @@
+uuid: a01d676c-3504-417d-9910-f5f2a7743419
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_body
+    - paragraphs.paragraphs_type.coup_de_projecteur
+id: paragraph.coup_de_projecteur.field_body
+field_name: field_body
+entity_type: paragraph
+bundle: coup_de_projecteur
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

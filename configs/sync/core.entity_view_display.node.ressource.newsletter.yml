@@ -1,0 +1,107 @@
+uuid: 1e4a647b-56bc-4469-9329-c0a88783ebc6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter
+    - field.field.node.ressource.field_description
+    - field.field.node.ressource.field_file
+    - field.field.node.ressource.field_format
+    - field.field.node.ressource.field_image
+    - field.field.node.ressource.field_link
+    - field.field.node.ressource.field_linked_content
+    - field.field.node.ressource.field_tag
+    - field.field.node.ressource.field_type
+    - image.style.wide
+    - node.type.ressource
+  module:
+    - file
+    - link
+    - options
+    - svg_image
+    - text
+    - user
+id: node.ressource.newsletter
+targetEntityType: node
+bundle: ressource
+mode: newsletter
+content:
+  field_description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_file:
+    type: file_default
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_format:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_link:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_linked_content:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_tag:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_type:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

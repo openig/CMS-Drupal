@@ -3,6 +3,8 @@ langcode: fr
 status: true
 dependencies:
   config:
+    - field.field.paragraph.coup_de_projecteur.field_body
+    - field.field.paragraph.coup_de_projecteur.field_image
     - field.field.paragraph.coup_de_projecteur.field_picto
     - field.field.paragraph.coup_de_projecteur.field_title
     - field.field.paragraph.coup_de_projecteur.field_type_de_contenu
@@ -14,6 +16,28 @@ targetEntityType: paragraph
 bundle: coup_de_projecteur
 mode: default
 content:
+  field_body:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_picto:
     type: image
     label: hidden
@@ -41,7 +65,7 @@ content:
     type: entity_reference_entity_view
     label: hidden
     settings:
-      view_mode: teaser
+      view_mode: newsletter
       link: false
     third_party_settings: {  }
     weight: 2
