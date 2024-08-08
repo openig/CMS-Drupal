@@ -1,0 +1,8 @@
+uuid: 512df8a5-91b6-4602-b4b5-882691df00ab
+langcode: fr
+status: true
+dependencies: {  }
+id: liens
+label: 'Liens '
+revision: false
+description: 'Liens multiples'

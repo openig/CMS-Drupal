@@ -12,12 +12,10 @@ dependencies:
     - field.field.node.ressource.field_linked_content
     - field.field.node.ressource.field_tag
     - field.field.node.ressource.field_type
-    - image.style.wide
+    - image.style.medium
     - node.type.ressource
   module:
-    - file
     - link
-    - options
     - svg_image
     - text
     - user
@@ -31,29 +29,14 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 3
-    region: content
-  field_file:
-    type: file_default
-    label: hidden
-    settings:
-      use_description_as_link_text: true
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_format:
-    type: list_default
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    weight: 5
+    weight: 2
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: medium
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -61,7 +44,7 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 1
+    weight: 3
     region: content
   field_link:
     type: link
@@ -75,21 +58,13 @@ content:
     third_party_settings: {  }
     weight: 4
     region: content
-  field_linked_content:
-    type: entity_reference_label
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 7
-    region: content
   field_tag:
     type: entity_reference_label
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 1
     region: content
   field_type:
     type: entity_reference_label
@@ -102,6 +77,9 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
+  field_file: true
+  field_format: true
+  field_linked_content: true
   langcode: true
   links: true
   search_api_excerpt: true

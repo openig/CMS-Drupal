@@ -10,14 +10,13 @@ dependencies:
     - field.field.node.evenement.field_image
     - field.field.node.evenement.field_tag
     - field.field.node.evenement.field_webform
-    - image.style.wide
+    - image.style.medium
     - node.type.evenement
   module:
     - daterange_compact
     - entity_reference_revisions
     - svg_image
     - user
-    - webform
 id: node.evenement.newsletter
 targetEntityType: node
 bundle: evenement
@@ -30,7 +29,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 2
     region: content
   field_dates:
     type: daterange_compact
@@ -38,22 +37,14 @@ content:
     settings:
       daterange_compact_format: medium_datetime
     third_party_settings: {  }
-    weight: 0
-    region: content
-  field_groupe_de_travail:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 3
+    weight: 1
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: medium
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -61,7 +52,7 @@ content:
         height: null
       svg_render_as_image: true
     third_party_settings: {  }
-    weight: 2
+    weight: 4
     region: content
   field_tag:
     type: entity_reference_label
@@ -69,24 +60,17 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_webform:
-    type: webform_entity_reference_entity_view
-    label: hidden
-    settings:
-      source_entity: true
-      lazy: false
-    third_party_settings: {  }
-    weight: 6
+    weight: 0
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 3
     region: content
 hidden:
   addtoany: true
   breadcrumbs: true
+  field_groupe_de_travail: true
+  field_webform: true
   langcode: true
   search_api_excerpt: true

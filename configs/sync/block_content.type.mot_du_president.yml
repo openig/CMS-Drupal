@@ -1,8 +1,0 @@
-uuid: 6d29644c-9bb2-4860-b0e7-5d8b9343fbcd
-langcode: fr
-status: true
-dependencies: {  }
-id: mot_du_president
-label: 'Le mot du président'
-revision: false
-description: 'Newsletter Bloc - Le mot du président'

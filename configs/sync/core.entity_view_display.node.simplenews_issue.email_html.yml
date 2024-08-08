@@ -31,7 +31,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_a_savoir:
     type: entity_reference_revisions_entity_view
@@ -40,7 +40,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 5
+    weight: 6
     region: content
   field_agenda:
     type: entity_reference_revisions_entity_view
@@ -49,7 +49,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_bienvenue:
     type: entity_reference_revisions_entity_view
@@ -58,7 +58,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_coup_de_projecteur:
     type: entity_reference_revisions_entity_view
@@ -67,7 +67,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 6
+    weight: 7
     region: content
   field_date:
     type: entity_reference_revisions_entity_view
@@ -85,7 +85,7 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_le_mot_du_president:
     type: entity_reference_revisions_entity_view
@@ -93,6 +93,11 @@ content:
     settings:
       view_mode: default
       link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  toc_js:
+    settings: {  }
     third_party_settings: {  }
     weight: 1
     region: content

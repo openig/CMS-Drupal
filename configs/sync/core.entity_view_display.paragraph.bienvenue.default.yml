@@ -27,7 +27,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: vignette_150x150
+      image_style: medium
       image_loading:
         attribute: lazy
       svg_attributes:

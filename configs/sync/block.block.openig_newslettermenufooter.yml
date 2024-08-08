@@ -1,23 +1,23 @@
-uuid: 0d3e1542-be71-4b33-814d-d63b4f1eb5b2
+uuid: 07bef772-75e1-47d7-82c0-ce3979ea8566
 langcode: fr
 status: false
 dependencies:
   content:
-    - 'block_content:basic:80673789-61a5-4014-a53e-6a10209477d9'
+    - 'block_content:liens:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
   module:
     - block_content
     - node
   theme:
     - openig
-id: openig_messageblocutiliserinaccessible
+id: openig_newslettermenufooter
 theme: openig
 region: content
-weight: -16
+weight: 2
 provider: null
-plugin: 'block_content:80673789-61a5-4014-a53e-6a10209477d9'
+plugin: 'block_content:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
 settings:
-  id: 'block_content:80673789-61a5-4014-a53e-6a10209477d9'
-  label: 'Message bloc Utiliser inaccessible'
+  id: 'block_content:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
+  label: 'Newsletter - Menu footer'
   label_display: '0'
   provider: block_content
   status: true
@@ -30,4 +30,4 @@ visibility:
     context_mapping:
       node: '@node.node_route_context:node'
     bundles:
-      service: service
+      simplenews_issue: simplenews_issue
