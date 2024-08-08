@@ -31,22 +31,26 @@
       <tr>
         <td>
           <div style="padding: 0px 0px 0px 0px;" class="clearfix">
-            {{ phrasedaccroche_content }}
-            {{ imageaccueil_content }}
+            <div class="header">
+              {{ logo_content }}
+              {{ phrasedaccroche_content }}
+            </div>
             {{ body }}
+            <div class="footer">
+              {{ socialmedial_content }}
+              {#  <a href="[simplenews-subscriber:unsubscribe-url]">test lien désinscription</a>#}
+              {{ pieddepage_content }}
+            </div>
           </div>
         </td>
       </tr>
     </table>
   </div>
   </body>
-  <footer>
-    {{ socialmedial_content }}
-  </footer>
   </html>
 {% else %}
+  {{ logo_content }}
   {{ phrasedaccroche_content }}
-  {{ imageaccueil_content }}
   {{ body }}
   {{ socialmedial_content }}
 {% endif %}

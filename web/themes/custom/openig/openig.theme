@@ -465,57 +465,38 @@ function openig_preprocess_user(&$variables){
 }
 
 
-/*function openig_preprocess_simplenews_newsletter_body(&$variables) {
-
-  $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_phrasedaccrocheheader');
-    if ($phrasedaccroche_block) {
-       $phrasedaccroche_content = \Drupal::entityTypeManager()
-           ->getViewBuilder('block')
-           ->view($phrasedaccroche_block);
-       $variables['phrasedaccroche_content'] = $phrasedaccroche_content;
-    }
-
-  $imageaccueil_block = Drupal\block\Entity\Block::load('openig_imageaccueil');
-    if ($imageaccueil_block) {
-      $imageaccueil_content = \Drupal::entityTypeManager()
-               ->getViewBuilder('block')
-               ->view($imageaccueil_block);
-           $variables['logo_content'] = $imageaccueil_content;
-    }
-
-  $socialmedial_block = Drupal\block\Entity\Block::load('openig_socialmedialinks');
-    if ($socialmedial_block) {
-      $socialmedial_content = \Drupal::entityTypeManager()
-           ->getViewBuilder('block')
-           ->view($socialmedial_block);
-      $variables['socialmedial_content'] = $socialmedial_content;
-    }
-}*/
-
 function openig_preprocess_email_wrap(&$variables) {
 
-  $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_phrasedaccrocheheader');
-    if ($phrasedaccroche_block) {
+  $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_newsletterphrasedaccroche');
+  if ($phrasedaccroche_block) {
        $phrasedaccroche_content = \Drupal::entityTypeManager()
            ->getViewBuilder('block')
            ->view($phrasedaccroche_block);
        $variables['phrasedaccroche_content'] = $phrasedaccroche_content;
-    }
+  }
 
-  $imageaccueil_block = Drupal\block\Entity\Block::load('openig_imageaccueil');
-    if ($imageaccueil_block) {
-      $imageaccueil_content = \Drupal::entityTypeManager()
-               ->getViewBuilder('block')
-               ->view($imageaccueil_block);
-           $variables['logo_content'] = $imageaccueil_content;
-    }
+  $logo_block = Drupal\block\Entity\Block::load('openig_newsletterlogo');
+  if ($logo_block) {
+      $logo_content = \Drupal::entityTypeManager()
+         ->getViewBuilder('block')
+         ->view($logo_block);
+      $variables['logo_content'] = $logo_content;
+  }
 
   $socialmedial_block = Drupal\block\Entity\Block::load('openig_socialmedialinks');
-    if ($socialmedial_block) {
-      $socialmedial_content = \Drupal::entityTypeManager()
-           ->getViewBuilder('block')
-           ->view($socialmedial_block);
-      $variables['socialmedial_content'] = $socialmedial_content;
-    }
+  if ($socialmedial_block) {
+     $socialmedial_content = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($socialmedial_block);
+     $variables['socialmedial_content'] = $socialmedial_content;
+  }
+
+  $pieddepage_block = Drupal\block\Entity\Block::load('openig_newslettermenufooter');
+  if ($pieddepage_block) {
+    $pieddepage_content = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($pieddepage_block);
+    $variables['pieddepage_content'] = $pieddepage_content;
+  }
 
  }

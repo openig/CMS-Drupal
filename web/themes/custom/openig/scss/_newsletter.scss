@@ -138,13 +138,41 @@
     margin: 40px auto;
   }
 
-  /*** Coup de projecteur ***/
-  .paragraph--type--coup-de-projecteur{
+
+  /** paragraph--type--a-savoir **/
+  .paragraph--type--a-savoir {
     .field--name-field-type-de-contenu {
       .tags {
         display: none;
       }
+      .field--name-field-tag {
+        display: flex;
+        .field__item{
+          border: 1px solid #C2DB7E;
+          border-radius: 21px;
+          margin: 10px 5px;
+          padding: 2px 8px;
+        }
+      }
+      .field--name-field-image {
+        display: flex;
+        justify-content: space-around;
+
+      }
+      .node__meta{
+        display: none;
+      }
     }
+  }
+
+
+
+  /*** Coup de projecteur ***/
+  .paragraph--type--coup-de-projecteur {
+    .field--name-field-type-de-contenu {
+      .tags {
+        display: none;
+      }
     .field--name-field-tag {
       display: flex;
       .field__item{
@@ -159,6 +187,74 @@
       justify-content: space-around;
 
     }
+    }
   }
+}
 
+/** Bloc nous suivre **/
+#block-openig-socialmedialinks{
+  margin: 100px;
+  h2{
+    font-family: "OpenSans_Bold", sans-serif;
+    font-size: $OPenIG-font-size-base;
+    font-weight: 700;
+    color: $OPenIG-color_black;
+    margin-bottom: 1rem;
+    border-bottom: none !important;
+  }
+  .social-media-links--platforms{
+    display: flex;
+    justify-content: flex-end;
+    li{
+      a{
+      a{
+        color: $OPenIG-color_black;
+      }
+    }
+   }
+  }
+}
+
+
+/** Sommaire **/
+.toc-js {
+  display: block;
+  border: none;
+  background-image: url('/themes/custom/openig/img/newsletter/bg-sommaire.png');
+  background-repeat: no-repeat;
+  height: 100px;
+  width: auto;
+  text-align: center;
+  //background-position: center;
+}
+
+.toc-js .toc-title.h2 {
+  font-family: "Russo One";
+  border: none;
+}
+
+.toc-js {
+  background: #e4e0e057;
+  padding: 1rem; /* make left a little more */
+  width: fit-content;
+  min-width: 500px;
+  margin-top: 2rem;
+  border: 1px solid #cbcbcb;
+}
+.toc-js ul {
+  padding-left: 0;
+}
+.toc-js a {
+  color: var(--body-color);
+}
+.toc-title {
+  font-size: 1.2rem;
+}
+.toc-h2 {
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.toc-h3 {
+  margin-left: 2rem;
+  list-style: circle;
 }
