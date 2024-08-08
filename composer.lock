@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1b7759a22365d846513aed86184be12f",
+    "content-hash": "b8a3d76fbc794629b6ac1215d88c6032",
     "packages": [
         {
             "name": "algolia/places",
@@ -4966,6 +4966,50 @@
             "homepage": "https://www.drupal.org/project/sync_uuids",
             "support": {
                 "source": "https://git.drupalcode.org/project/sync_uuids"
+            }
+        },
+        {
+            "name": "drupal/toc_js",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/toc_js.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/toc_js-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "75f987b29cf2f48b631efe2f51a7620d7295cb32"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1688027858",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "flocondetoile",
+                    "homepage": "https://www.drupal.org/user/2006064"
+                }
+            ],
+            "description": "Toc.js module integrate the jQuery plugin TOC.js into Drupal.",
+            "homepage": "https://drupal.org/project/toc_js",
+            "support": {
+                "source": "https://git.drupalcode.org/project/toc_js"
             }
         },
         {

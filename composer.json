@@ -12,6 +12,18 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "toc/toc",
+                "version": "v0.3.2",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://raw.githubusercontent.com/jgallen23/toc/greenkeeper/update-all/dist/toc.min.js",
+                    "type": "file"
+                }
+            }
         }
     ],
     "require": {
@@ -61,6 +73,7 @@
         "drupal/svg_image": "^3.0",
         "drupal/symfony_mailer": "^1.4",
         "drupal/sync_uuids": "^1.1",
+        "drupal/toc_js": "^2.1",
         "drupal/twig_blocks": "^2.5",
         "drupal/twig_tweak": "^3.3",
         "drupal/user_register_notify": "^2.0@beta",
