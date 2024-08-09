@@ -20,12 +20,15 @@
     {# Content #}
     <div class="layout-content">
       <div class="page-content">
+
         {% if items|length > 0 and count > 0 %}
-          <div class="search-result__count">Nombre de résultats : <span
-              class="search-result__count_value"> {{ count }}</span></div>
+          <div class="search-result__count">Nombre de résultats :
+            <span class="search-result__count_value"> {{ count }}</span>
+          </div>
         {% endif %}
         <div class="col-12">
           <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
+
             {% for item in items %}
               <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
                 <div class="views-view-responsive-grid__item-inner">
@@ -40,20 +43,20 @@
                       <a href="{{item.link}}">{{ tag }}</a>
                     {% endfor %}
                     </span>
-                </div>
+                  </div>
 
                   <div class="views-field views-field-field-description">
-                    <span class="field-content">{{ item.description | raw }}</span>
+                    <span class="field-content">{{ item.description|escape('html')|raw }}</span>
                   </div>
 
                   <div class="d-flex justify-content-between source_more">
                     <div class="search-result__source">
                       <span class="search-result__label">Source</span> :
-                      {#                  {% if item.source == "CKAN Datasets" %} #}
-                      {#                    OPenIG - Jeux de données #}
-                      {#                  {% elseif item.source == "OpenIG" %} #}
-                      {#                    OPenIG - Activité #}
-                      {% if item.source == "datasets" %}
+                      {% if item.source == "CKAN Datasets" %}
+                        OPenIG - Jeux de données
+                      {% elseif item.source == "OpenIG" %}
+                        OPenIG - Activité
+                      {% elseif item.source == "datasets" %}
                         <a href="https://data.laregion.fr">data.laregion.fr</a>
                       {% elseif item.source == "dataset" %}
                         <a href="https://picto-occitanie.fr">picto-occitanie.fr</a>
