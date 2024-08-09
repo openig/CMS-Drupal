@@ -35,7 +35,7 @@ content:
     type: daterange_compact
     label: hidden
     settings:
-      daterange_compact_format: medium_datetime
+      daterange_compact_format: medium_date
     third_party_settings: {  }
     weight: 1
     region: content
@@ -58,7 +58,7 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content

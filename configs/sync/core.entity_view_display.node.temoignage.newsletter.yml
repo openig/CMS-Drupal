@@ -9,7 +9,7 @@ dependencies:
     - field.field.node.temoignage.field_image
     - field.field.node.temoignage.field_poste
     - field.field.node.temoignage.field_tag
-    - image.style.wide
+    - image.style.medium
     - node.type.temoignage
   module:
     - svg_image
@@ -40,7 +40,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: medium
       image_loading:
         attribute: lazy
       svg_attributes:
@@ -62,7 +62,7 @@ content:
     type: entity_reference_label
     label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     weight: 0
     region: content
