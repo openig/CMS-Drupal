@@ -46,7 +46,7 @@
                   </div>
 
                   <div class="views-field views-field-field-description">
-                    <span class="field-content">{{ item.description|escape('html')|raw }}</span>
+                    <span class="field-content">{{ item.description|striptags('<br><p>')|raw }}</span>
                   </div>
 
                   <div class="d-flex justify-content-between source_more">

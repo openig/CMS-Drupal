@@ -333,6 +333,15 @@
         font-size: 20px;
       }
     }
+    .layout-content {
+      .page-content{
+        .views-field-field-description{
+          p{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 
   // Pagination
