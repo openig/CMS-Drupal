@@ -10872,6 +10872,15 @@
             ]
         },
         {
+            "name": "toc/toc",
+            "version": "v0.3.2",
+            "dist": {
+                "type": "file",
+                "url": "https://raw.githubusercontent.com/jgallen23/toc/greenkeeper/update-all/dist/toc.min.js"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "twig/twig",
             "version": "v3.10.3",
             "source": {
