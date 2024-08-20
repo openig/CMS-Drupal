@@ -1,0 +1,23 @@
+uuid: e9366035-367c-42d7-af31-690e606b5a7c
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.annuaire
+  module:
+    - views
+  theme:
+    - openig
+id: openig_formulaireexposeannuaireannuaire_mobile
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'views_exposed_filter_block:annuaire-annuaire'
+settings:
+  id: 'views_exposed_filter_block:annuaire-annuaire'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Filtrer la recherche'
+visibility: {  }
