@@ -48,13 +48,21 @@ class SearchFilterForm extends FormBase {
 
         // Source search
         $lineage = \Drupal::request()->query->get('lineage');
+        $clearLineage = explode('|', $lineage);
+        foreach ($clearLineage as $key => $lineage) {
+          if($lineage === 'datasets'){
+            $clearLineage[$key] = 'region Datasets';
+          }
+        }
+        $arrayLineage = implode('|', $clearLineage);
+
         $form['lineage'] = [
-            '#type' => 'hidden',
-            '#maxlength' => 300,
-            '#default_value' => $lineage,
-            '#attributes' => [
-                'id' => 'facet_lineage_value'
-            ]
+          '#type' => 'hidden',
+          '#maxlength' => 300,
+          '#default_value' => $arrayLineage,
+          '#attributes' => [
+            'id' => 'facet_lineage_value'
+          ]
         ];
 
         // Format search
