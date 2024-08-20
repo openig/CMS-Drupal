@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.simplenews_issue.field_a_savoir
     - field.field.node.simplenews_issue.field_agenda
     - field.field.node.simplenews_issue.field_bienvenue
+    - field.field.node.simplenews_issue.field_contenu
     - field.field.node.simplenews_issue.field_coup_de_projecteur
     - field.field.node.simplenews_issue.field_date
     - field.field.node.simplenews_issue.field_fond_vert
@@ -24,50 +25,14 @@ targetEntityType: node
 bundle: simplenews_issue
 mode: email_html
 content:
-  field_a_la_une:
+  field_contenu:
     type: entity_reference_revisions_entity_view
     label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
-    weight: 4
-    region: content
-  field_a_savoir:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_agenda:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 5
-    region: content
-  field_bienvenue:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 3
-    region: content
-  field_coup_de_projecteur:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 7
+    weight: 2
     region: content
   field_date:
     type: entity_reference_revisions_entity_view
@@ -78,24 +43,6 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
-  field_fond_vert:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 8
-    region: content
-  field_le_mot_du_president:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 2
-    region: content
   toc_js:
     settings: {  }
     third_party_settings: {  }
@@ -104,6 +51,13 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
+  field_a_la_une: true
+  field_a_savoir: true
+  field_agenda: true
+  field_bienvenue: true
+  field_coup_de_projecteur: true
+  field_fond_vert: true
+  field_le_mot_du_president: true
   langcode: true
   links: true
   search_api_excerpt: true

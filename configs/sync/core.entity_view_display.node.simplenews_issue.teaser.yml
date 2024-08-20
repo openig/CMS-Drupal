@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.simplenews_issue.field_a_savoir
     - field.field.node.simplenews_issue.field_agenda
     - field.field.node.simplenews_issue.field_bienvenue
+    - field.field.node.simplenews_issue.field_contenu
     - field.field.node.simplenews_issue.field_coup_de_projecteur
     - field.field.node.simplenews_issue.field_date
     - field.field.node.simplenews_issue.field_fond_vert
@@ -30,6 +31,7 @@ hidden:
   field_a_savoir: true
   field_agenda: true
   field_bienvenue: true
+  field_contenu: true
   field_coup_de_projecteur: true
   field_date: true
   field_fond_vert: true
@@ -38,3 +40,4 @@ hidden:
   links: true
   search_api_excerpt: true
   simplenews_issue: true
+  toc_js: true
