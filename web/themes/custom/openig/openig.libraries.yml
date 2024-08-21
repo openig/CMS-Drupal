@@ -13,5 +13,4 @@ global-styling:
 email:
   css:
     theme:
-      css/mail.css: { preprocess: false }
-
+      css/style.min.css: { preprocess: false }

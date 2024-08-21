@@ -26,7 +26,7 @@ third_party_settings:
     unpublish_required: false
     unpublish_revision: false
   toc_js:
-    toc_js_active: 1
+    toc_js_active: 0
     title: Sommaire
     selectors: h2.field--name-field-title
     selectors_minimum: '10'

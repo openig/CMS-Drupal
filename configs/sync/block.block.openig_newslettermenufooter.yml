@@ -3,7 +3,7 @@ langcode: fr
 status: false
 dependencies:
   content:
-    - 'block_content:liens:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
+    - 'block_content:liens:43a74ae9-ed71-4ef3-ae85-25a231a67817'
   module:
     - block_content
     - node
@@ -14,9 +14,9 @@ theme: openig
 region: content
 weight: 2
 provider: null
-plugin: 'block_content:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
+plugin: 'block_content:43a74ae9-ed71-4ef3-ae85-25a231a67817'
 settings:
-  id: 'block_content:6a9f2d76-4e57-4360-81b1-f60ac5e7e365'
+  id: 'block_content:43a74ae9-ed71-4ef3-ae85-25a231a67817'
   label: 'Newsletter - Menu footer'
   label_display: '0'
   provider: block_content

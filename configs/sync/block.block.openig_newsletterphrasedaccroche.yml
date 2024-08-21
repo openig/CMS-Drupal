@@ -3,7 +3,7 @@ langcode: fr
 status: false
 dependencies:
   content:
-    - 'block_content:basic:c2d0a413-8ca0-4219-8c5d-d621699c62bd'
+    - 'block_content:basic:584be301-e7d3-4f75-9b65-493ec95ac00a'
   module:
     - block_content
     - node
@@ -14,9 +14,9 @@ theme: openig
 region: content
 weight: 0
 provider: null
-plugin: 'block_content:c2d0a413-8ca0-4219-8c5d-d621699c62bd'
+plugin: 'block_content:584be301-e7d3-4f75-9b65-493ec95ac00a'
 settings:
-  id: 'block_content:c2d0a413-8ca0-4219-8c5d-d621699c62bd'
+  id: 'block_content:584be301-e7d3-4f75-9b65-493ec95ac00a'
   label: "Newsletter - Phrase d'accroche"
   label_display: '0'
   provider: block_content

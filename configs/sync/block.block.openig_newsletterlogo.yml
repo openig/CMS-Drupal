@@ -3,7 +3,7 @@ langcode: fr
 status: false
 dependencies:
   content:
-    - 'block_content:image:b0bcb7cc-798a-4713-b073-b0695747650d'
+    - 'block_content:image:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
   module:
     - block_content
     - node
@@ -14,9 +14,9 @@ theme: openig
 region: content
 weight: -1
 provider: null
-plugin: 'block_content:b0bcb7cc-798a-4713-b073-b0695747650d'
+plugin: 'block_content:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
 settings:
-  id: 'block_content:b0bcb7cc-798a-4713-b073-b0695747650d'
+  id: 'block_content:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
   label: 'Newsletter - Logo '
   label_display: '0'
   provider: block_content

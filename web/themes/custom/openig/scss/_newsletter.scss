@@ -10,27 +10,35 @@
   text-align: center;
 }
 
+.header{
+  background-color: #f2f6e7;
+}
+
 /** Bloc Phrase d'accroche  **/
 .header #block-openig-newsletterphrasedaccroche .field--name-body p {
-  font-family: 'exo';
+  font-family: 'Russo One';
   text-align: center;
-  font-size: 1.3rem;
+  font-size: $OPenIG-font-size-base;
   font-weight: bold;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0 !important;
 }
 
-
-/** Titre Newsletter **/
-.node--type-simplenews-issue > h2 {
-  text-align: center;
+// Titre email 
+.node--type-simplenews-issue.node--view-mode-email-html{
+  padding: 0;
+  h1{
+    height: 75px;
+    background-color: $OPenIG-color_light-gray;
+    width: 90%;
+    text-align: center;
+    font-size: $OPenIG-font-size-h1 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.node--type-simplenews-issue > h2 .field--name-title {
-  color: black;
-  font-size: 1.8em;
-}
-.node--type-simplenews-issue > h2 a {
-  text-decoration: none;
-}
-
 
 
 .node--type-simplenews-issue {
@@ -64,20 +72,22 @@
   text-align: center;
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee {
-  font-size: 1.5rem;
+  font-size: $OPenIG-font-size-h2;
   font-family: 'Russo One';
-  margin: 20px auto 50px auto;
-  color: #BE1621;
+  margin: 0 auto 3rem auto;
+  color: $OPenIG-color_red;
   display: inline-block;
   border: 1px solid black;
   text-align: center;
-  padding: 12px 14px;
+  padding: 0.5rem 0.75rem;
   border-radius: 16px;
   text-transform: lowercase;
   font-weight: bold;
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-mois {
   font-size: 1.2rem;
+  border-bottom: 4px solid $OPenIG-color_black;
+  font-weight: lighter;
 }
 
 
@@ -165,41 +175,73 @@
 
 
 /** Mot de président + Retour sur (fond vert) **/
-.node--type-simplenews-issue .paragraph--type--le-mot-du-president h2 {
-  padding-top: 8px;
-  text-align: start;
-  margin: 0 0 -13px 10px;
 
-}
+.node--type-simplenews-issue{
+  .paragraph--type--le-mot-du-president h2 {
+    padding-top: 8px;
+    text-align: start;
+    margin: 0 0 -1rem 1rem;
+    font-weight: bold !important;
+    font-size: $OPenIG-font-size-h2 !important;
+  }
+  .paragraph--type--fond-vert h2 {
+    padding-top: 8px;
+    text-align: start;
+    margin: 0 0 -1rem 1rem;
+  }
 
-.node--type-simplenews-issue .paragraph--type--fond-vert h2 {
-  padding-top: 8px;
-  text-align: start;
-  margin: 0 0 -13px 10px;
-}
-
-.node--type-simplenews-issue .bloc-subtitle {
-  display: flex;
-}
-.node--type-simplenews-issue .bloc-fond-vert {
-  background-color: #f2f6e7;
-  padding: 20px 0;
-}
-.node--type-simplenews-issue .bloc-fond-vert .bloc-content {
-  padding: 25px 15px;
-  display: flex;
-  justify-content: space-around;
-}
-.node--type-simplenews-issue .bloc-fond-vert .bloc-content .field--name-field-image img {
-  border-radius: 50%;
-}
-.node--type-simplenews-issue .bloc-fond-vert .bloc-content .field--name-field-body {
-  text-align: start;
-}
-.node--type-simplenews-issue .bloc-fond-vert .bloc-content .field-auteur .field--name-field-auteur {
-  text-align: end;
-  padding-right: 100px;
-}
+  .bloc-subtitle {
+    display: flex;
+  }
+  .bloc-fond-vert {
+    background-color: #f2f6e7;
+    padding: 20px 0;
+    .bloc-content {
+      padding: 1rem 0.5rem;
+      display: flex;
+      position: relative;
+      padding-bottom: 0;
+      //justify-content: space-around;
+      .field--name-field-image{
+        border-radius: 50%;
+        background-color: #D7DACE;
+        width: 165px;
+        height: 165px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 1px solid $OPenIG-color_black;
+        }
+      } 
+      .field--name-field-body {
+        text-align: start;
+        max-width: 60%;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        font-size: $OPenIG-font-size-base !important;
+      }
+      .picto_quote{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 3rem;
+        background-repeat: no-repeat;
+      }
+    }
+    .field-auteur{
+      margin-bottom: 1rem;
+      .field--name-field-auteur {
+        text-align: end;
+        padding-right: 3rem;
+      }
+    }
+  }
+  
+} 
 
 
 /** titre bloc à gauche **/
@@ -236,7 +278,7 @@
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .field--name-field-title {
-  margin-bottom: -14px;
+  margin-bottom: -1rem;
   padding-top: 8px;
 }
 
