@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a node.
+ * Theme override to display a node.
  *
  * Available variables:
  * - node: The node entity with limited access to object properties and methods.
@@ -65,22 +65,35 @@
  *
  * @see template_preprocess_node()
  *
- * @ingroup themeable
  */
 #}
-<article{{ attributes }}>
+{%
+	set classes = [
+	  'node',
+	  'node--type-' ~ node.bundle|clean_class,
+	  node.isPromoted() ? 'node--promoted',
+	  node.isSticky() ? 'node--sticky',
+	  not node.isPublished() ? 'node--unpublished',
+	  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+	  'container'
+	]
+  %}
+  {{ attach_library('bootstrap5/node') }}
+  <article{{ attributes.addClass(classes) }}>
+  
+	{{ title_prefix }}
+	{% if label and not page %}
+		<div class="title_container">
+			<h2 class="title_contenu">
+				<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+			</h2>
+		</div>
+	{% endif %}
+	{{ title_suffix }}
 
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h3{{ title_attributes }}>
-{#      <a href="{{ url }}" rel="bookmark">{{ label }}</a>#}
-      {{ label }}
-    </h3>
-  {% endif %}
-  {{ title_suffix }}
-
-  <div{{ content_attributes }}>
-    {{ content }}
-  </div>
-
-</article>
+	<div{{ content_attributes.addClass('node__content') }}>
+	{{ content }}
+	</div>
+  
+  </article>
+  
