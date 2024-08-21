@@ -61,3 +61,4 @@ dependencies:
   - sitemap
   - change_pwd_page
   - scheduler
+  - paragraphs_summary
