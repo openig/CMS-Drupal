@@ -7,10 +7,7 @@ dependencies:
     - node.type.article
     - node.type.groupe_de_travail
     - node.type.page
-    - node.type.ressource
     - node.type.service
-    - node.type.structure
-    - node.type.temoignage
     - paragraphs.paragraphs_type.a_la_une
 id: paragraph.a_la_une.field_type_de_contenu
 field_name: field_type_de_contenu
@@ -29,13 +26,10 @@ settings:
       article: article
       groupe_de_travail: groupe_de_travail
       page: page
-      ressource: ressource
       service: service
-      structure: structure
-      temoignage: temoignage
     sort:
       field: publish_on
       direction: DESC
     auto_create: false
-    auto_create_bundle: ressource
+    auto_create_bundle: article
 field_type: entity_reference

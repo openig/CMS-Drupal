@@ -45,15 +45,15 @@
 	  view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
 	  not paragraph.isPublished() ? 'paragraph--unpublished'
 	]
-  %}
-  {% block paragraph %}
+%}
+{% block paragraph %}
 	<div{{ attributes.addClass(classes) }}>
-	  {% block content %}
-	  	<div class="titre_rubrique">
+		{% block content %}
+		<div class="titre_rubrique">
 			<div class="picto_titre" style="background-image: url('{{ file_url(picto_uri) }}');"></div>
 			{{content.field_title}}
 		</div>
 		{{ content|without('field_title','field_picto') }}
-	  {% endblock %}
+		{% endblock %}
 	</div>
-  {% endblock paragraph %}
+{% endblock paragraph %}

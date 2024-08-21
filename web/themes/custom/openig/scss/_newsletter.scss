@@ -178,18 +178,9 @@
 
 .node--type-simplenews-issue{
   .paragraph--type--le-mot-du-president h2 {
-    padding-top: 8px;
-    text-align: start;
-    margin: 0 0 -1rem 1rem;
     font-weight: bold !important;
     font-size: $OPenIG-font-size-h2 !important;
   }
-  .paragraph--type--fond-vert h2 {
-    padding-top: 8px;
-    text-align: start;
-    margin: 0 0 -1rem 1rem;
-  }
-
   .bloc-subtitle {
     display: flex;
   }
@@ -251,14 +242,98 @@
       }
       /** titre bloc à gauche **/
       > .paragraph:nth-child(odd){
+        .titre_rubrique{
+          flex-direction: row;
+        }
         h2.field--name-field-title {
           text-align: start;
+          margin-left: 1rem;
+        }
+        .picto_titre{
+          margin-right: 1rem;
+        }
+        .field--name-field-type-de-contenu{
+          .title_container{
+            display: flex;
+            justify-content: end;
+            .title_contenu{
+              text-align: end;
+            }
+          }
+          .field--name-field-tag{
+            justify-content: end;
+          }
+          .field--name-created{
+            text-align: end;
+          }
         }
       }
       /** titre bloc à droite **/
-      > .paragraph:nth-child(even) h2.field--name-field-title {
-        text-align: end;
+      > .paragraph:nth-child(even){
+        .titre_rubrique{
+          flex-direction: row-reverse;
+        }
+        h2.field--name-field-title {
+          margin-right: 1rem;
+          text-align: end;
+        }
+        .picto_titre{
+          margin-left: 1rem;
+        }
+        .field--name-field-type-de-contenu{
+          .title_container{
+            display: flex;
+            justify-content: start;
+            .title_contenu{
+              text-align: start;
+            }
+          }
+          .field--name-field-tag{
+            justify-content: start;
+          }
+          .field--name-created{
+            text-align: start;
+          }
+        }
+      } 
+    }
+  }
+  .node--type-article{
+    margin-top: 2rem;
+    .tags {
+      display: none;
+    }
+    .field--name-field-tag {
+      display: flex;
+      .field__item {
+        border: 1px solid #C2DB7E;
+        border-radius: 21px;
+        padding: 0.1rem 0.75rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
       }
+    }
+    .field--name-created{
+      display: block;
+      margin-bottom: 1rem;
+    }
+    h2{
+      a{
+        text-decoration: none;
+        color: $OPenIG-color_black;
+        font-weight: bold;
+        font-size: $OPenIG-font-size-h2 !important;
+      }
+      max-width: 50%;
+      border-bottom: 0 !important;
+    }
+    .field--name-field-image {
+      display: flex;
+      justify-content: space-around;
+    }
+    .node__meta{
+      display: none;
     }
   }
 }
@@ -268,7 +343,6 @@
   .title{
     width: 100%;
     h2{
-      margin-right: 1rem;
       font-weight: bold !important;
       font-size: $OPenIG-font-size-h2 !important;
     }
@@ -278,7 +352,6 @@
     width: 100px;
     height: 50px;
     background-size: contain;
-    margin-left: 1rem;
   }
 }
 
@@ -320,49 +393,17 @@
 /** Bienvenu **/
 .paragraph--type--bienvenue{
   .field--name-field-contenu{
-    margin-top: 1.5rem;
+    margin-top: 2rem;
   }
   .field--name-field-image {
     display: flex;
     justify-content: center;
     img{
       margin-right: 1rem;
-      border: 1px solid $OPenIG-color_black;
     }
   }
   
 } 
-
-
-/** A la une **/
-.paragraph--type--a-la-une .field--name-field-type-de-contenu .tags {
-  display: none;
-}
-.paragraph--type--a-la-une .field--name-field-type-de-contenu h2 {
-  color: black;
-}
-
-.paragraph--type--a-la-une .field--name-field-type-de-contenu h2 a {
-  text-decoration: none;
-}
-
-.paragraph--type--a-la-une .field--name-field-type-de-contenu .field--name-field-tag {
-  display: flex;
-}
-.paragraph--type--a-la-une .field--name-field-type-de-contenu .field--name-field-tag .field__item {
-  border: 1px solid #C2DB7E;
-  border-radius: 21px;
-  margin: 10px 5px;
-  padding: 2px 8px;
-}
-
-.paragraph--type--a-la-une .field--name-field-type-de-contenu .field--name-field-image {
-  display: flex;
-  justify-content: space-around;
-}
-.paragraph--type--a-la-une .field--name-field-type-de-contenu .node__meta{
-  display: none;
-}
 
 
 
