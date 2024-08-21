@@ -4,7 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.groupe_de_travail
-    - field.field.paragraph.bienvenue.field_body
+    - field.field.paragraph.bienvenue.field_contenu
     - field.field.paragraph.bienvenue.field_image
     - field.field.paragraph.bienvenue.field_picto
     - field.field.paragraph.bienvenue.field_title
@@ -24,7 +24,7 @@ content:
     region: content
 hidden:
   breadcrumbs: true
-  field_body: true
+  field_contenu: true
   field_image: true
   field_picto: true
   search_api_excerpt: true

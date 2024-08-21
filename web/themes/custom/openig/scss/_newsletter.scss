@@ -243,25 +243,43 @@
   
 } 
 
+.node--type-simplenews-issue{
+  .node__content{
+    .bloc-newsletter{
+      > .paragraph{
+        margin-top: 3rem;
+      }
+      /** titre bloc à gauche **/
+      > .paragraph:nth-child(odd){
+        h2.field--name-field-title {
+          text-align: start;
+        }
+      }
+      /** titre bloc à droite **/
+      > .paragraph:nth-child(even) h2.field--name-field-title {
+        text-align: end;
+      }
+    }
+  }
+}
 
-/** titre bloc à gauche **/
-.node--type-simplenews-issue .node__content .bloc-newsletter:nth-child(odd) .row {
-  text-align: end;
-}
-.node--type-simplenews-issue .node__content .bloc-newsletter:nth-child(odd) .h3 {
-  text-align: start;
-}
-
-
-/** titre bloc à droite **/
-.node--type-simplenews-issue .node__content .bloc-newsletter:nth-child(even) .row {
-  text-align: start;
-}
-.node--type-simplenews-issue .node__content .bloc-newsletter:nth-child(even) .row {
-  flex-direction: row-reverse;
-}
-.node--type-simplenews-issue.node__content .bloc-newsletter:nth-child(even) .row .col-11 .h3 {
-  text-align: end;
+.titre_rubrique{
+  display: flex;
+  .title{
+    width: 100%;
+    h2{
+      margin-right: 1rem;
+      font-weight: bold !important;
+      font-size: $OPenIG-font-size-h2 !important;
+    }
+  }
+  .picto_titre{
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    background-size: contain;
+    margin-left: 1rem;
+  }
 }
 
 
@@ -283,8 +301,8 @@
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .cadre-gris-title {
-  background-image: url('/themes/custom/openig/img/newsletter/cadre-gris-titre-right.png');
-  height: 20px;
+  background-color: #EAEAEA;
+  height: 30px;
   width: auto;
 }
 
@@ -300,10 +318,20 @@
 
 
 /** Bienvenu **/
-.paragraph--type--bienvenue .field--name-field-image {
-  display: flex;
-  justify-content: space-around;
-}
+.paragraph--type--bienvenue{
+  .field--name-field-contenu{
+    margin-top: 1.5rem;
+  }
+  .field--name-field-image {
+    display: flex;
+    justify-content: center;
+    img{
+      margin-right: 1rem;
+      border: 1px solid $OPenIG-color_black;
+    }
+  }
+  
+} 
 
 
 /** A la une **/
