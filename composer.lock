@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8a3d76fbc794629b6ac1215d88c6032",
+    "content-hash": "0e527576ea7dda0c4f59f85a87abb096",
     "packages": [
         {
             "name": "algolia/places",
@@ -4059,6 +4059,59 @@
             "homepage": "https://www.drupal.org/project/paragraphs",
             "support": {
                 "source": "https://git.drupalcode.org/project/paragraphs"
+            }
+        },
+        {
+            "name": "drupal/paragraphs_summary",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/paragraphs_summary.git",
+                "reference": "1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/paragraphs_summary-1.2.0.zip",
+                "reference": "1.2.0",
+                "shasum": "0ad87863955df3287b04faf8c88a01ccb342f2ac"
+            },
+            "require": {
+                "drupal/core": "^8 | ^9 || ^10 || ^11",
+                "drupal/paragraphs": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.2.0",
+                    "datestamp": "1723162983",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "opi",
+                    "homepage": "https://www.drupal.org/user/263678"
+                },
+                {
+                    "name": "VladimirAus",
+                    "homepage": "https://www.drupal.org/user/673120"
+                }
+            ],
+            "description": "Paragraphs summary module",
+            "homepage": "http://drupal.org/project/paragraphs_summary",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://git.drupalcode.org/project/paragraphs_summary",
+                "issues": "http://drupal.org/project/issues/paragraphs_summary"
             }
         },
         {

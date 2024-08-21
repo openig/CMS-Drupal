@@ -177,7 +177,7 @@
 /** Mot de président + Retour sur (fond vert) **/
 
 .node--type-simplenews-issue{
-  .paragraph--type--le-mot-du-president h2 {
+  .paragraph--type--le-mot-du-president h2.field--name-field-title {
     font-weight: bold !important;
     font-size: $OPenIG-font-size-h2 !important;
   }
@@ -263,7 +263,7 @@
           .field--name-field-tag{
             justify-content: end;
           }
-          .field--name-created{
+          .field--name-created, .field--name-field-dates{
             text-align: end;
           }
         }
@@ -291,14 +291,14 @@
           .field--name-field-tag{
             justify-content: start;
           }
-          .field--name-created{
+          .field--name-created, .field--name-field-dates{
             text-align: start;
           }
         }
       } 
     }
   }
-  .node--type-article{
+  .node--type-article, .node--type-evenement{
     margin-top: 2rem;
     .tags {
       display: none;
@@ -318,7 +318,7 @@
       display: block;
       margin-bottom: 1rem;
     }
-    h2{
+    h2.title_contenu{
       a{
         text-decoration: none;
         color: $OPenIG-color_black;
@@ -331,18 +331,34 @@
     .field--name-field-image {
       display: flex;
       justify-content: space-around;
+      margin-top: 1rem;
     }
     .node__meta{
       display: none;
     }
   }
+  .node--type-evenement{
+    .paragraph--type--title-text{
+      h2.field--name-field-title{
+        padding-top: 0;
+        margin-bottom: 0;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        border-bottom: 0 !important;
+        font-weight: bold !important;
+      }
+    }
+    .node__content > .field{
+      margin-bottom: 0;
+    }
+  } 
 }
 
 .titre_rubrique{
   display: flex;
   .title{
     width: 100%;
-    h2{
+    h2.field--name-field-title{
       font-weight: bold !important;
       font-size: $OPenIG-font-size-h2 !important;
     }

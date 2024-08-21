@@ -14,7 +14,7 @@ dependencies:
     - node.type.evenement
   module:
     - daterange_compact
-    - entity_reference_revisions
+    - paragraphs_summary
     - svg_image
     - user
 id: node.evenement.newsletter
@@ -23,11 +23,13 @@ bundle: evenement
 mode: newsletter
 content:
   field_body:
-    type: entity_reference_revisions_entity_view
+    type: paragraphs_summary
     label: hidden
     settings:
-      view_mode: default
-      link: ''
+      allowed_bundles:
+        title_text: title_text
+      view_mode: preview
+      limit: '1'
     third_party_settings: {  }
     weight: 2
     region: content
