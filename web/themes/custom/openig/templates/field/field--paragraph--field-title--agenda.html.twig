@@ -55,12 +55,11 @@
 
 {% if label_hidden %}
 
-  <div class="row">
   {% if multiple %}
 
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
-        <div class="col-11">
+        <div class="title">
           <h2{{ item.attributes.addClass('field__item') }}>{{ item.content }}</h2>
           <div class="cadre-gris-title"></div>
         </div>
@@ -70,7 +69,7 @@
   {% else %}
 
     {% for item in items %}
-      <div class="col-11">
+      <div class="title">
         <h2{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</h2>
         <div class="cadre-gris-title"></div>
       </div>
@@ -80,7 +79,6 @@
 
 {% else %}
 
-  <div class="row">
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
 
@@ -95,6 +93,5 @@
       {% if multiple %}
     </div>
     {% endif %}
-  </div>
 
 {% endif %}

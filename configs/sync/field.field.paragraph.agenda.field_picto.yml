@@ -25,12 +25,12 @@ settings:
   max_filesize: ''
   max_resolution: ''
   min_resolution: ''
-  alt_field: true
+  alt_field: false
   alt_field_required: true
   title_field: false
   title_field_required: false
   default_image:
-    uuid: 14f5118f-8c4b-42bc-89b7-5c95065f5755
+    uuid: ''
     alt: ''
     title: ''
     width: 77

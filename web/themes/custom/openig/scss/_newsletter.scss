@@ -314,9 +314,9 @@
         margin-right: 0.5rem;
       }
     }
-    .field--name-created{
+    .field--name-created, .field--name-field-dates{
       display: block;
-      margin-bottom: 1rem;
+      margin-bottom: 1rem !important;
     }
     h2.title_contenu{
       a{
@@ -350,6 +350,7 @@
       margin-right: 0 !important;
       border-bottom: 0 !important;
       font-weight: bold !important;
+      text-align: start !important;
     }
   }
 }
@@ -423,36 +424,6 @@
 
 
 
-
-/** Agenda **/
-.paragraph--type--agenda .field--name-field-type-de-contenu .tags {
-  display: none;
-}
-.paragraph--type--agenda .field--name-field-type-de-contenu h2 {
-  color: black;
-}
-
-.paragraph--type--agenda .field--name-field-type-de-contenu h2 a {
-  text-decoration: none;
-}
-
-.paragraph--type--agenda .field--name-field-type-de-contenu .field--name-field-tag {
-  display: flex;
-}
-.paragraph--type--agenda .field--name-field-type-de-contenu .field--name-field-tag .field__item {
-  border: 1px solid #C2DB7E;
-  border-radius: 21px;
-  margin: 10px 5px;
-  padding: 2px 8px;
-}
-
-.paragraph--type--agenda .field--name-field-type-de-contenu .field--name-field-image {
-  display: flex;
-  justify-content: space-around;
-}
-.paragraph--type--agenda .field--name-field-type-de-contenu .node__meta{
-  display: none;
-}
 
 
 /** A Savoir **/
