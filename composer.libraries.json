@@ -5,8 +5,7 @@
     "require": {
         "bgrins/spectrum": "^1.6",
         "recurser/jquery-simple-color": "^1.2",
-        "kenwheeler/slick": "^1.8",
-        "toc/toc": "^0.3.2"
+        "kenwheeler/slick": "^1.8"
     },
     "repositories": {
         "jquery-simple-color": {
@@ -42,18 +41,6 @@
                 "dist": {
                     "url": "https://github.com/kenwheeler/slick/archive/refs/tags/1.8.0.zip",
                     "type": "zip"
-                }
-            }
-        },
-        "toc": {
-            "type": "package",
-            "package": {
-                "name": "toc/toc",
-                "version": "v0.3.2",
-                "type": "drupal-library",
-                "dist": {
-                    "url": "https://raw.githubusercontent.com/jgallen23/toc/greenkeeper/update-all/dist/toc.min.js",
-                    "type": "file"
                 }
             }
         }

@@ -62,7 +62,6 @@
         "drupal/svg_image": "^3.0",
         "drupal/symfony_mailer": "^1.4",
         "drupal/sync_uuids": "^1.1",
-        "drupal/toc_js": "^2.1",
         "drupal/twig_blocks": "^2.5",
         "drupal/twig_tweak": "^3.3",
         "drupal/user_register_notify": "^2.0@beta",
