@@ -85,7 +85,6 @@ function openig_preprocess_page_title(&$variables) {
 
 function openig_preprocess_node(&$variables, $hook){
   $type = $variables['node']->getType();
-
   switch($type) {
     case "groupe_de_travail":
       $variables['ressources'] = array();
@@ -287,6 +286,20 @@ function openig_preprocess_node(&$variables, $hook){
 
         }
         break;
+      case "simplenews_issue":
+        $variables['paragraphs'] = [];
+        foreach ($variables['node']->field_contenu as $value) {
+          $paragraph = \Drupal\paragraphs\Entity\Paragraph::load( $value->target_id );
+          $id = $paragraph->id[0]->value;
+          $title = $paragraph->field_title[0]->value;
+          $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
+          $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+          $noUppercaseString =  strtolower($noEspaceString);
+          $variables['paragraphs'][$id]['id'] = $id;
+          $variables['paragraphs'][$id]['title'] = $title;
+          $variables['paragraphs'][$id]['link'] = $noUppercaseString;
+        }
+        break;
     default:
       break;
   }
@@ -441,6 +454,17 @@ function openig_preprocess_field(&$variables){
     if($file->uri[0]->value){
       $url = \Drupal::service('file_url_generator')->generateString($file->uri[0]->value);
       $variables['url_picto'] = $url;
+    }
+  }
+  if (($variables['entity_type'] == 'paragraph') and ($variables['field_name'] == 'field_title')) {
+    if (($variables['element']['#bundle'] == 'le_mot_du_president') or ($variables['element']['#bundle'] == 'bienvenue') or ($variables['element']['#bundle'] == 'a_la_une')
+    or ($variables['element']['#bundle'] == 'agenda') or ($variables['element']['#bundle'] == 'a_savoir') or ($variables['element']['#bundle'] == 'coup_de_projecteur') or ($variables['element']['#bundle'] == 'fond_vert')) {
+      $title = $variables['element'][0]['#context']['value'];
+      $id = $variables['element']['#object']->id[0]->value;
+      $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
+      $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+      $noUppercaseString =  strtolower($noEspaceString);
+      $variables['ancre'] = $noUppercaseString.$id;
     }
   }
 }
