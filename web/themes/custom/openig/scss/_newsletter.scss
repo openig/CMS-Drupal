@@ -177,7 +177,7 @@
 /** Mot de président + Retour sur (fond vert) **/
 
 .node--type-simplenews-issue{
-  .paragraph--type--le-mot-du-president h2.field--name-field-title {
+  .paragraph--type--le-mot-du-president h2.field--name-field-title, .paragraph--type--fond-vert h2.field--name-field-title {
     font-weight: bold !important;
     font-size: $OPenIG-font-size-h2 !important;
   }
@@ -231,7 +231,15 @@
       }
     }
   }
-  
+  .paragraph--type--fond-vert{
+    .bloc-fond-vert{
+      .field--name-field-body {
+        margin-top: 1rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
 } 
 
 .node--type-simplenews-issue{
