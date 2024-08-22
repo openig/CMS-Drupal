@@ -96,9 +96,14 @@
 		</div>
 	  </footer>
 	{% endif %}
-  
+	
 	<div{{ content_attributes.addClass('node__content') }}>
+		{{content.field_date}}
 		<div class="sommaire">
+			<div class="top_left"></div>
+			<div class="top_right"></div>
+			<div class="bottom_left"></div>
+			<div class="bottom_right"></div>
 			<h2>Sommaire</h2>
 			<div class="liste">
 				<ul>
@@ -108,7 +113,7 @@
 				</ul>
 			</div>
 		</div>
-	  	{{ content }}
+		{{ content|without('field_date') }}
 	</div>
   
   </article>

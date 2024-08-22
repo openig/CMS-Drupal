@@ -97,16 +97,79 @@
   margin-bottom: 160px;
 }
 
+
 .sommaire {
   position: relative;
-  //background-image: url('/themes/custom/openig/img/newsletter/bg-sommaire.png');
-  //padding-top: 50px;
-  //padding-bottom: 50px;
-  //background-repeat: no-repeat;
-  //object-fit: cover;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  width: 450px;
+  margin: auto;
+  background-color: #F5F5F5;
+  margin-bottom: 100px;
+  h2{
+    font-family: "Russo One";
+    border: none !important;
+    position: absolute;
+    font-weight: bold !important;
+    top: -15px;
+    right: 25px;
+    font-size: $OPenIG-font-size-h2 !important;
+  }
+  .liste{
+    width: 95%;
+    margin: auto;
+    li::marker{
+      color: $OPenIG-color_red !important;
+    }
+    li{
+      margin-bottom: 1.5rem;
+      color: $OPenIG-color_red;
+      a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+        border-bottom: 1px solid $OPenIG-color_black;
+      }
+    } 
+  }
 }
-
+.top_left{
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-left.png');
+  position: absolute;
+  left: -10px;
+  height: 81px;
+  width: 81px;
+  top: -10px;
+  background-repeat: no-repeat;
+}
+.bottom_right{
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-right.png');
+  position: absolute;
+  height: 81px;
+  width: 81px;
+  right: -10px;
+  bottom: -10px;  
+  background-repeat: no-repeat;
+}
+.top_right{
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire.png');
+  position: absolute;
+  right: -45px;
+  height: 81px;
+  width: 48px;
+  top: -25px;
+  background-repeat: no-repeat;
+}
+.bottom_left{
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire-left.png');
+  position: absolute;
+  left: -45px;
+  height: 81px;
+  width: 48px;
+  bottom: -25px;
+  background-repeat: no-repeat;
+}
 /** todo Pas pris en compte dans le template mail **/
+/*
 .sommaire::after {
   content: "";
   background-image: url('/themes/custom/openig/img/newsletter/carre-rouge.png');
@@ -172,7 +235,7 @@
   right: 50px;
   top: -15px;
 }
-
+*/
 
 /** Mot de président + Retour sur (fond vert) **/
 
