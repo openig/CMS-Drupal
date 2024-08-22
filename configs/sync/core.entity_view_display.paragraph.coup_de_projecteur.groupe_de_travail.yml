@@ -4,11 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.paragraph.groupe_de_travail
-    - field.field.paragraph.coup_de_projecteur.field_body
+    - field.field.paragraph.coup_de_projecteur.field_contenu
     - field.field.paragraph.coup_de_projecteur.field_image
     - field.field.paragraph.coup_de_projecteur.field_picto
     - field.field.paragraph.coup_de_projecteur.field_title
-    - field.field.paragraph.coup_de_projecteur.field_type_de_contenu
     - paragraphs.paragraphs_type.coup_de_projecteur
 id: paragraph.coup_de_projecteur.groupe_de_travail
 targetEntityType: paragraph
@@ -25,8 +24,7 @@ content:
     region: content
 hidden:
   breadcrumbs: true
-  field_body: true
+  field_contenu: true
   field_image: true
   field_picto: true
-  field_type_de_contenu: true
   search_api_excerpt: true

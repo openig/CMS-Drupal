@@ -1,0 +1,26 @@
+uuid: 35b414dd-d32b-498f-bf8f-21f4a32161ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_contenu
+    - filter.format.basic_html
+    - filter.format.full_html
+    - paragraphs.paragraphs_type.coup_de_projecteur
+  module:
+    - text
+id: paragraph.coup_de_projecteur.field_contenu
+field_name: field_contenu
+entity_type: paragraph
+bundle: coup_de_projecteur
+label: Contenu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+    - full_html
+field_type: text_long
