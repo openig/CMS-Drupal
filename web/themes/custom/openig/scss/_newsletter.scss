@@ -246,7 +246,7 @@
   .node__content{
     .bloc-newsletter{
       > .paragraph{
-        margin-top: 3rem;
+        margin-top: 70px;
       }
       /** titre bloc à gauche **/
       > .paragraph:nth-child(odd){
@@ -307,7 +307,7 @@
     }
   }
   .node--type-article, .node--type-evenement, .node--type-groupe-de-travail, .node--type-page, .node--type-service{
-    margin-top: 2rem;
+    margin-top: 3rem;
     .tags {
       display: none;
     }
@@ -363,7 +363,7 @@
   }
 
   .field--name-field-contenu{
-    margin-top: 2rem;
+    margin-top: 3rem;
     h2, h3{
       border-bottom: 0 !important;
       font-weight: bold !important;
