@@ -1,0 +1,19 @@
+uuid: a5669143-9af3-40a7-9edf-9ecede7aa52c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_siret
+    - node.type.structure
+id: node.structure.field_siret
+field_name: field_siret
+entity_type: node
+bundle: structure
+label: SIRET
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

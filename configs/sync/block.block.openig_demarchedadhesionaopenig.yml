@@ -1,0 +1,30 @@
+uuid: f5455d4b-ddd2-46e6-aa36-9787a66d26bc
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:demarche_d_adhesion_a_openig:52b752d8-78e8-4e1a-987d-c111d74c2817'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_demarchedadhesionaopenig
+theme: openig
+region: content
+weight: -27
+provider: null
+plugin: 'block_content:52b752d8-78e8-4e1a-987d-c111d74c2817'
+settings:
+  id: 'block_content:52b752d8-78e8-4e1a-987d-c111d74c2817'
+  label: "Démarche d'adhésion à OPenIG"
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /openig/pourquoi-adherer

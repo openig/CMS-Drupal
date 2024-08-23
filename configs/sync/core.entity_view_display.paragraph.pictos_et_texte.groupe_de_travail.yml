@@ -1,0 +1,26 @@
+uuid: aec85b93-81f4-4365-b232-3bc1f106b007
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.groupe_de_travail
+    - field.field.paragraph.pictos_et_texte.field_picto_et_texte
+    - field.field.paragraph.pictos_et_texte.field_title
+    - paragraphs.paragraphs_type.pictos_et_texte
+id: paragraph.pictos_et_texte.groupe_de_travail
+targetEntityType: paragraph
+bundle: pictos_et_texte
+mode: groupe_de_travail
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto_et_texte: true
+  search_api_excerpt: true

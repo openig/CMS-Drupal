@@ -1,0 +1,27 @@
+uuid: 97e8cd96-c686-47be-8c62-4358b48b9c07
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomies
+    - field.field.block_content.taxonomies.body
+    - field.field.block_content.taxonomies.field_taxonomie
+id: block_content.taxonomies.default
+targetEntityType: block_content
+bundle: taxonomies
+mode: default
+content:
+  field_taxonomie:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: page_d_accueil
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  body: true
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

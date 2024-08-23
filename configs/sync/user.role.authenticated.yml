@@ -1,0 +1,55 @@
+uuid: b9840f42-688d-434f-b0fb-08b76218ba99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+    - filter.format.webform_default
+    - node.type.structure
+    - workflows.workflow.editorial
+    - workflows.workflow.structure
+  module:
+    - comment
+    - contact
+    - content_moderation
+    - eu_cookie_compliance
+    - field_permissions
+    - file
+    - filter
+    - media
+    - node
+    - shortcut
+    - simplenews
+    - sitemap
+    - system
+    - toolbar
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Utilisateur authentifié'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access sitemap'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'create structure content'
+  - 'delete own files'
+  - 'display eu cookie compliance popup'
+  - 'edit own structure content'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'subscribe to newsletters'
+  - 'use editorial transition create_new_draft'
+  - 'use structure transition create_new_draft'
+  - 'use text format basic_html'
+  - 'use text format webform_default'
+  - 'view field_ca_member'
+  - 'view field_referent'
+  - 'view field_structure'
+  - 'view media'
+  - 'view user email addresses'

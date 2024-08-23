@@ -1,0 +1,42 @@
+uuid: 7dde1c34-ea85-48a3-851d-066c486dd3b8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.page_d_accueil
+    - field.field.taxonomy_term.actions_dans_l_association.field_lien
+    - field.field.taxonomy_term.actions_dans_l_association.field_picto
+    - taxonomy.vocabulary.actions_dans_l_association
+  module:
+    - link
+    - svg_image
+id: taxonomy_term.actions_dans_l_association.page_d_accueil
+targetEntityType: taxonomy_term
+bundle: actions_dans_l_association
+mode: page_d_accueil
+content:
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_picto:
+    type: image_url
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  description: true
+  langcode: true
+  search_api_excerpt: true

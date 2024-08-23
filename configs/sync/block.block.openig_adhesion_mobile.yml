@@ -1,0 +1,33 @@
+uuid: 4619faed-a20e-4d89-9e15-cd633e22912f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.adhesion
+  module:
+    - system
+    - user
+  theme:
+    - openig
+id: openig_adhesion_mobile
+theme: openig
+region: mobile_seconde_section
+weight: -31
+provider: null
+plugin: 'system_menu_block:adhesion'
+settings:
+  id: 'system_menu_block:adhesion'
+  label: Adhésion
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      anonymous: anonymous

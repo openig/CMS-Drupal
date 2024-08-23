@@ -1,0 +1,29 @@
+uuid: c403a690-5a52-4b7d-b3dd-ca8097831335
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.l_agenda
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__l_agenda_agenda_accueil
+theme: openig
+region: troisieme_section_accueil
+weight: -22
+provider: null
+plugin: 'views_block:l_agenda-agenda_accueil'
+settings:
+  id: 'views_block:l_agenda-agenda_accueil'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

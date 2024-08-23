@@ -1,0 +1,13 @@
+uuid: 7e14b467-ca78-4589-972e-e335946b87ec
+langcode: fr
+status: true
+dependencies:
+  module:
+    - comment
+_core:
+  default_config_hash: lfyE_snmvfg_EQ3VDyhUtGAXgmqtEiqa46I3bTMg8DU
+id: comment_save_action
+label: 'Enregistrer le commentaire'
+type: comment
+plugin: 'entity:save_action:comment'
+configuration: {  }

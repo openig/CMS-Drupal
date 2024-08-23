@@ -1,0 +1,7 @@
+uuid: 0654d19d-7505-41f3-bca0-53dd0b16c26e
+langcode: fr
+status: false
+dependencies: {  }
+formId: node_groupe_de_travail_form
+captchaType: default
+label: node_groupe_de_travail_form

@@ -1,0 +1,66 @@
+uuid: 318be91f-2f98-4229-aa48-c9877103ef17
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_body
+    - node.type.groupe_de_travail
+    - paragraphs.paragraphs_type.accordeon
+    - paragraphs.paragraphs_type.membres
+    - paragraphs.paragraphs_type.pictos_et_texte
+    - paragraphs.paragraphs_type.texte_dropdown
+    - paragraphs.paragraphs_type.title_text
+  module:
+    - entity_reference_revisions
+id: node.groupe_de_travail.field_body
+field_name: field_body
+entity_type: node
+bundle: groupe_de_travail
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      texte_dropdown: texte_dropdown
+      title_text: title_text
+      accordeon: accordeon
+      membres: membres
+      pictos_et_texte: pictos_et_texte
+    negate: 0
+    target_bundles_drag_drop:
+      accordeon:
+        weight: -19
+        enabled: true
+      ligne_de_membres:
+        weight: -13
+        enabled: false
+      membre:
+        weight: -15
+        enabled: false
+      membres:
+        weight: -18
+        enabled: true
+      onglet_d_accordeon:
+        weight: -12
+        enabled: false
+      picto_text:
+        weight: -16
+        enabled: false
+      pictos_et_texte:
+        weight: -17
+        enabled: true
+      texte_dropdown:
+        weight: -21
+        enabled: true
+      title_text:
+        weight: -20
+        enabled: true
+      type_de_contenu:
+        weight: -14
+        enabled: false
+field_type: entity_reference_revisions

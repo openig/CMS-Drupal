@@ -1,0 +1,22 @@
+uuid: 4afa14e6-2e0e-4acc-8dd2-e4dbf7c630c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.demarche_d_adhesion_a_openig
+    - field.storage.block_content.field_etapes
+  module:
+    - text
+id: block_content.demarche_d_adhesion_a_openig.field_etapes
+field_name: field_etapes
+entity_type: block_content
+bundle: demarche_d_adhesion_a_openig
+label: Étapes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats: {  }
+field_type: text_long

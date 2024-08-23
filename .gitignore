@@ -35,9 +35,10 @@ auth.json
 ### Projet
 /configs/*.local
 /configs/solr_config.zip
-/vendor/
-/bin/
-/temp/*
-/files/*
-/private/*
+/vendor
+/bin
+/temp
+/files
+/private
 salt.txt
+

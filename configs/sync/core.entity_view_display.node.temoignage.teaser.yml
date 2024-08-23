@@ -1,0 +1,54 @@
+uuid: 70ca331b-54e8-4b03-b833-7dfb57a16719
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.temoignage.body
+    - field.field.node.temoignage.field_entreprise
+    - field.field.node.temoignage.field_image
+    - field.field.node.temoignage.field_poste
+    - field.field.node.temoignage.field_tag
+    - image.style.medium
+    - node.type.temoignage
+  module:
+    - image
+    - text
+    - user
+id: node.temoignage.teaser
+targetEntityType: node
+bundle: temoignage
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: content
+      image_style: medium
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_entreprise: true
+  field_poste: true
+  field_tag: true
+  langcode: true
+  search_api_excerpt: true

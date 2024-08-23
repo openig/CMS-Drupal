@@ -1,0 +1,8 @@
+uuid: a747cf25-7fe4-42bb-a819-8ebbaa21d51a
+langcode: fr
+status: true
+dependencies: {  }
+id: date_courte
+label: 'Date courte évènements'
+locked: false
+pattern: 'd M'

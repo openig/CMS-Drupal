@@ -1,0 +1,85 @@
+// Sub theme styling.
+@import 'variables_drupal';
+
+// Bootstrap overriden variables.
+// @see https://getbootstrap.com/docs/5.2/customize/sass/#variable-defaults.
+@import 'variables_bootstrap';
+
+// Include bootstrap.
+@import '../../../../themes/contrib/bootstrap5/scss/style';
+
+// Font family
+
+$fa-font-path: "../fonts";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+@font-face {
+    font-family: 'Russo One';
+    src: url('../fonts/RussoOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Exo_light';
+    src: url('../fonts/Exo/Exo-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Exo_regular';
+    src: url('../fonts/Exo/Exo-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Exo_semiBold';
+    src: url('../fonts/Exo/Exo-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Exo_medium';
+    src: url('../fonts/Exo/Exo-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Exo_bold';
+    src: url('../fonts/Exo/Exo-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'OpenSans_Regular';
+    src: url('../fonts/OpenSans/static/OpenSans-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'OpenSans_SemiBold';
+    src: url('../fonts/OpenSans/static/OpenSans-SemiBold.ttf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'OpenSans_Bold';
+    src: url('../fonts/OpenSans/static/OpenSans-Bold.ttf');
+    font-weight: 700;
+}
+
+// Files scss
+
+@import 'custom';
+@import 'header';
+@import 'footer';
+@import 'groupes_de_travail';
+@import 'actualites';
+@import 'agenda';
+@import 'pages';
+@import 'services';
+@import 'annuaire.scss';
+@import 'responsive';
+@import 'recherche';

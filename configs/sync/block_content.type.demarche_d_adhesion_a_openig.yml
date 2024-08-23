@@ -1,0 +1,8 @@
+uuid: 561278e7-3240-4e26-a14e-11f1cc15637e
+langcode: fr
+status: true
+dependencies: {  }
+id: demarche_d_adhesion_a_openig
+label: "Démarche d'adhésion à OPenIG"
+revision: false
+description: ''

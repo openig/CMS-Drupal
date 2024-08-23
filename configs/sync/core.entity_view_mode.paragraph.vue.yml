@@ -1,0 +1,11 @@
+uuid: 2626cf67-bb20-4138-abb9-22836fb0b70f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.vue
+label: Vue
+description: ''
+targetEntityType: paragraph
+cache: true

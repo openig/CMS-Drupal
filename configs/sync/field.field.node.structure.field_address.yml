@@ -1,0 +1,19 @@
+uuid: 1a0f0973-c99d-4090-b59d-10a44645ccff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - node.type.structure
+id: node.structure.field_address
+field_name: field_address
+entity_type: node
+bundle: structure
+label: Adresse
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

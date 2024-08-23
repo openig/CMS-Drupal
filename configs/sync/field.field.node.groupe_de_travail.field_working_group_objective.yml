@@ -1,0 +1,24 @@
+uuid: d680177e-ddb8-4b11-9ae7-d169a52be05e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_working_group_objective
+    - node.type.groupe_de_travail
+  module:
+    - text
+id: node.groupe_de_travail.field_working_group_objective
+field_name: field_working_group_objective
+entity_type: node
+bundle: groupe_de_travail
+label: 'Objectifs du groupe de travail'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

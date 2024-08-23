@@ -1,0 +1,23 @@
+uuid: 32a2e789-9f3b-4731-8b5c-e0275befe2ba
+langcode: fr
+status: true
+dependencies:
+  module:
+    - field_permissions
+    - social_media_links_field
+    - user
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: user.field_social_network
+field_name: field_social_network
+entity_type: user
+type: social_media_links_field
+settings: {  }
+module: social_media_links_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

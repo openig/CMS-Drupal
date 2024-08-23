@@ -1,0 +1,9 @@
+uuid: ae521e8c-02de-4faa-8d5c-d29252ac2b1a
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Pictos titre'
+vid: pictos_titre
+description: null
+weight: 0
+new_revision: false

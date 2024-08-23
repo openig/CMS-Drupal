@@ -1,0 +1,29 @@
+uuid: 71c54401-3ee9-4f56-83b0-36b71125c5ff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.les_services
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__les_services_services_accueil
+theme: openig
+region: cinquieme_section_accueil
+weight: -21
+provider: null
+plugin: 'views_block:les_services-services_accueil'
+settings:
+  id: 'views_block:les_services-services_accueil'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

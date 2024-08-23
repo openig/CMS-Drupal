@@ -1,0 +1,86 @@
+uuid: 7d30d779-5480-4cc3-b46b-bac2ebc0216f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.pictos_titre.field_picto
+    - field.field.taxonomy_term.pictos_titre.field_picto_users
+    - field.field.taxonomy_term.pictos_titre.field_type_de_contenu
+    - field.field.taxonomy_term.pictos_titre.field_vue
+    - image.style.thumbnail
+    - taxonomy.vocabulary.pictos_titre
+  module:
+    - path
+    - svg_image
+id: taxonomy_term.pictos_titre.default
+targetEntityType: taxonomy_term
+bundle: pictos_titre
+mode: default
+content:
+  field_picto:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_picto_users:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_type_de_contenu:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_vue:
+    type: options_select
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 5
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 8
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

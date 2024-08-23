@@ -1,0 +1,32 @@
+uuid: 1754e700-7290-485d-a404-4a052ef18ae2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.simplenews_issue.field_actualite
+    - field.field.node.simplenews_issue.field_bloc
+    - field.field.node.simplenews_issue.field_evenement
+    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.simplenews_issue
+    - node.type.simplenews_issue
+  module:
+    - user
+_core:
+  default_config_hash: n2xAKuCwCLXGUcR4BjVa08OIbG6UDdyIQFjq_S91h50
+id: node.simplenews_issue.teaser
+targetEntityType: node
+bundle: simplenews_issue
+mode: teaser
+content: {  }
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_actualite: true
+  field_bloc: true
+  field_evenement: true
+  field_tag: true
+  langcode: true
+  links: true
+  search_api_excerpt: true
+  simplenews_issue: true

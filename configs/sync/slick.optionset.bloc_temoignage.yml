@@ -1,0 +1,66 @@
+uuid: 86afbac6-4f82-457d-a5bd-63c41cc4bf7d
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_temoignage
+name: bloc_temoignage
+weight: 0
+label: 'Bloc témoignage'
+group: ''
+skin: default
+breakpoints: 0
+optimized: false
+options:
+  options__active_tab: edit-options-settings
+  settings:
+    mobileFirst: false
+    asNavFor: ''
+    accessibility: true
+    adaptiveHeight: false
+    autoplay: false
+    pauseOnHover: true
+    pauseOnDotsHover: false
+    pauseOnFocus: true
+    autoplaySpeed: 3000
+    arrows: true
+    prevArrow: Précédent
+    nextArrow: Suivant
+    downArrow: false
+    downArrowTarget: ''
+    downArrowOffset: 0
+    centerMode: false
+    centerPadding: 50px
+    dots: true
+    dotsClass: slick-dots
+    appendDots: $(element)
+    draggable: true
+    fade: false
+    focusOnSelect: false
+    infinite: true
+    initialSlide: 0
+    lazyLoad: progressive
+    mouseWheel: false
+    randomize: false
+    respondTo: window
+    rtl: false
+    rows: 1
+    slidesPerRow: 1
+    slide: ''
+    slidesToShow: 1
+    slidesToScroll: 1
+    speed: 500
+    swipe: true
+    swipeToSlide: true
+    edgeFriction: 0.35
+    touchMove: false
+    touchThreshold: 5
+    useCSS: true
+    cssEase: ease
+    cssEaseBezier: ''
+    cssEaseOverride: ''
+    useTransform: true
+    easing: linear
+    variableWidth: false
+    vertical: false
+    verticalSwiping: false
+    waitForAnimate: true

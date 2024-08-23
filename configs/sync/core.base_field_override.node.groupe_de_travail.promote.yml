@@ -1,0 +1,22 @@
+uuid: bc3e47c9-e231-42a1-b00e-a36e92afb507
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.groupe_de_travail
+id: node.groupe_de_travail.promote
+field_name: promote
+entity_type: node
+bundle: groupe_de_travail
+label: "Promu en page d'accueil"
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

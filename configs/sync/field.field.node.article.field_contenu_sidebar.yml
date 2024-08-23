@@ -1,0 +1,59 @@
+uuid: d8ac9ede-518d-4664-ac97-ac1f17453fcf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contenu_sidebar
+    - node.type.article
+    - paragraphs.paragraphs_type.texte_dropdown
+    - paragraphs.paragraphs_type.title_text
+    - paragraphs.paragraphs_type.type_de_contenu
+  module:
+    - entity_reference_revisions
+id: node.article.field_contenu_sidebar
+field_name: field_contenu_sidebar
+entity_type: node
+bundle: article
+label: 'Contenu sidebar'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      title_text: title_text
+      texte_dropdown: texte_dropdown
+      type_de_contenu: type_de_contenu
+    negate: 0
+    target_bundles_drag_drop:
+      accordeon:
+        weight: -14
+        enabled: false
+      ligne_de_membres:
+        weight: -13
+        enabled: false
+      membre:
+        weight: -16
+        enabled: false
+      membres:
+        weight: -12
+        enabled: false
+      onglet_d_accordeon:
+        weight: -11
+        enabled: false
+      picto_text:
+        weight: -15
+        enabled: false
+      texte_dropdown:
+        weight: -18
+        enabled: true
+      title_text:
+        weight: -19
+        enabled: true
+      type_de_contenu:
+        weight: -17
+        enabled: true
+field_type: entity_reference_revisions

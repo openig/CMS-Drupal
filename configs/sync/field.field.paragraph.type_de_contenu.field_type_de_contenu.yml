@@ -1,0 +1,29 @@
+uuid: 0c2c047b-7fd7-4163-b80b-c2d4660ad25e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_de_contenu
+    - node.type.ressource
+    - paragraphs.paragraphs_type.type_de_contenu
+id: paragraph.type_de_contenu.field_type_de_contenu
+field_name: field_type_de_contenu
+entity_type: paragraph
+bundle: type_de_contenu
+label: 'Type de contenu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      ressource: ressource
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ressource
+field_type: entity_reference

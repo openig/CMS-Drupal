@@ -1,0 +1,8 @@
+uuid: c0b8b190-415f-4a3c-bbc7-e9992571c19f
+langcode: fr
+status: true
+dependencies: {  }
+id: picto_et_texte
+label: 'Picto et texte'
+revision: false
+description: ''

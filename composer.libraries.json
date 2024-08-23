@@ -1,0 +1,48 @@
+{
+    "name": "drupal/additional-libraries",
+    "description": "Install external librairies from others repositories (libs js/css...).",
+    "type": "metapackage",
+    "require": {
+        "bgrins/spectrum": "^1.6",
+        "recurser/jquery-simple-color": "^1.2",
+        "kenwheeler/slick": "^1.8"
+    },
+    "repositories": {
+        "jquery-simple-color": {
+            "type": "package",
+            "package": {
+                "name": "recurser/jquery-simple-color",
+                "version": "v1.2.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/recurser/jquery-simple-color/archive/refs/tags/v1.2.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        "spectrum": {
+            "type": "package",
+            "package": {
+                "name": "bgrins/spectrum",
+                "version": "v1.6.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/bgrins/spectrum/archive/refs/tags/1.6.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        "slick": {
+            "type": "package",
+            "package": {
+                "name": "kenwheeler/slick",
+                "version": "v1.8.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/kenwheeler/slick/archive/refs/tags/1.8.0.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    }
+}

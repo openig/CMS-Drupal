@@ -1,0 +1,36 @@
+uuid: d110b49b-76fc-44a5-9c05-8a627fd9ab1b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.texte_dropdown.field_texte
+    - field.field.paragraph.texte_dropdown.field_title
+    - paragraphs.paragraphs_type.texte_dropdown
+  module:
+    - text
+id: paragraph.texte_dropdown.default
+targetEntityType: paragraph
+bundle: texte_dropdown
+mode: default
+content:
+  field_texte:
+    type: text_textarea_with_summary
+    weight: 1
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

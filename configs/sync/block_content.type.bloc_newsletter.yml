@@ -1,0 +1,8 @@
+uuid: 6a493afb-36a4-4911-802f-e5be9a3237b0
+langcode: fr
+status: true
+dependencies: {  }
+id: bloc_newsletter
+label: 'Bloc newsletter'
+revision: false
+description: ''

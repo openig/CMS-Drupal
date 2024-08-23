@@ -1,0 +1,26 @@
+uuid: bb92828e-3523-436f-8839-5a7b9160fe6b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.ligne_de_membres.field_membre
+    - paragraphs.paragraphs_type.ligne_de_membres
+  module:
+    - entity_reference_revisions
+id: paragraph.ligne_de_membres.default
+targetEntityType: paragraph
+bundle: ligne_de_membres
+mode: default
+content:
+  field_membre:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

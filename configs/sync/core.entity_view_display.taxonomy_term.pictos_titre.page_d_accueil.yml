@@ -1,0 +1,41 @@
+uuid: 21b07d86-58a8-44bd-a622-4199d925ad9c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.page_d_accueil
+    - field.field.taxonomy_term.pictos_titre.field_picto
+    - field.field.taxonomy_term.pictos_titre.field_picto_users
+    - field.field.taxonomy_term.pictos_titre.field_type_de_contenu
+    - field.field.taxonomy_term.pictos_titre.field_vue
+    - taxonomy.vocabulary.pictos_titre
+  module:
+    - svg_image
+    - text
+id: taxonomy_term.pictos_titre.page_d_accueil
+targetEntityType: taxonomy_term
+bundle: pictos_titre
+mode: page_d_accueil
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_picto:
+    type: image_url
+    label: hidden
+    settings:
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto_users: true
+  field_type_de_contenu: true
+  field_vue: true
+  langcode: true
+  search_api_excerpt: true

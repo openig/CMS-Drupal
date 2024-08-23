@@ -1,0 +1,96 @@
+uuid: 46eb3b7a-23d6-4cb8-9714-a6265f7a67a2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.membre.field_email
+    - field.field.paragraph.membre.field_entreprise
+    - field.field.paragraph.membre.field_image
+    - field.field.paragraph.membre.field_picto
+    - field.field.paragraph.membre.field_poste
+    - field.field.paragraph.membre.field_prenom_nom
+    - field.field.paragraph.membre.field_video
+    - paragraphs.paragraphs_type.membre
+  module:
+    - svg_image
+    - video_embed_field
+id: paragraph.membre.default
+targetEntityType: paragraph
+bundle: membre
+mode: default
+content:
+  field_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_entreprise:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: vignette_150x150
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_poste:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_prenom_nom:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_video:
+    type: video_embed_field_video
+    label: hidden
+    settings:
+      autoplay: true
+      responsive: true
+      width: 854
+      height: 480
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

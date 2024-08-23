@@ -1,0 +1,29 @@
+uuid: c91f140f-d466-4cc0-9d12-b33effec4a46
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.les_actualites
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__les_actualites_actualite_mise_en_avant
+theme: openig
+region: deuxieme_section_accueil
+weight: -21
+provider: null
+plugin: 'views_block:les_actualites-actualite_mise_en_avant'
+settings:
+  id: 'views_block:les_actualites-actualite_mise_en_avant'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

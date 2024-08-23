@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 65.81 64.24">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-6 {
+        fill: none;
+      }
+
+      .cls-7 {
+        fill: #be1822;
+        stroke: #be1822;
+      }
+
+      .cls-7, .cls-6 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #000;
+      }
+
+      .cls-6 {
+        stroke: #1d1d1b;
+        stroke-width: .5px;
+      }
+
+      .cls-4 {
+        fill: #00a09a;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="22.25" y="1.82" width="9.81" height="11.28" transform="translate(2.68 21.39) rotate(-45)"/>
+    </clipPath>
+  </defs>
+  <g id="Calque_1" data-name="Calque 1">
+    <g>
+      <path class="cls-3" d="M17.51,30.32c9.07,0,16.41,7.35,16.41,16.41s-7.35,16.41-16.41,16.41S1.09,55.8,1.09,46.74s7.35-16.41,16.41-16.41ZM17.51,64.24c9.67,0,17.51-7.84,17.51-17.51s-7.84-17.51-17.51-17.51S0,37.07,0,46.74s7.84,17.51,17.51,17.51ZM24.97,38.42l-11.84,3.94-3.95,11.83-.43,1.3,1.3-.43,11.83-3.95,3.95-11.83.43-1.3-1.3.43h0Z"/>
+      <polygon class="cls-4" points="21.02 50.25 10.48 53.76 14 43.22 24.54 39.71 21.02 50.25"/>
+      <circle class="cls-3" cx="17.51" cy="46.74" r="2.19"/>
+      <circle class="cls-5" cx="17.51" cy="46.74" r="1.09"/>
+    </g>
+  </g>
+  <g id="Calque_2" data-name="Calque 2">
+    <g>
+      <circle class="cls-7" cx="62.6" cy="35.08" r="2.71"/>
+      <g class="cls-1">
+        <g id="Groupe_de_masques_34" data-name="Groupe de masques 34">
+          <path id="xmark-light" class="cls-3" d="M34.57,8.13c0,.27-.22.49-.49.49h-5.75v5.75c0,.27-.22.49-.49.49s-.49-.22-.49-.49v-5.75h-5.75c-.27,0-.49-.22-.49-.49s.22-.49.49-.49h5.75V1.89c0-.27.22-.49.49-.49s.49.22.49.49v5.75h5.75c.27,0,.49.21.49.48h0Z"/>
+        </g>
+      </g>
+      <circle class="cls-6" cx="45.42" cy="52.78" r="2.71"/>
+    </g>
+  </g>
+</svg>

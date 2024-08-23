@@ -1,0 +1,25 @@
+uuid: bb707d4a-198b-4c9b-9828-0319f3a15557
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.contacts_gt
+  module:
+    - views
+  theme:
+    - openig
+id: openig_views_block__contacts_gt_contacts_service
+theme: openig
+region: content
+weight: -11
+provider: null
+plugin: 'views_block:contacts_gt-contacts_service'
+settings:
+  id: 'views_block:contacts_gt-contacts_service'
+  label: ''
+  label_display: visible
+  provider: views
+  context_mapping: {  }
+  views_label: ''
+  items_per_page: none
+visibility: {  }

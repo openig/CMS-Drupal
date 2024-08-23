@@ -1,0 +1,30 @@
+uuid: 86933407-03c8-4cf1-a9e5-c13fb1ef7a19
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_outils_competences
+    - taxonomy.vocabulary.outils_competences
+  module:
+    - user
+id: user.user.field_outils_competences
+field_name: field_outils_competences
+entity_type: user
+bundle: user
+label: 'Outils et compétences'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      outils_competences: outils_competences
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

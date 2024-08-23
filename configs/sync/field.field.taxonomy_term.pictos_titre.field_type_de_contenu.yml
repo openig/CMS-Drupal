@@ -1,0 +1,23 @@
+uuid: 3b7cff6a-7df1-4ccc-ab39-f7ce6455eaf3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_type_de_contenu
+    - taxonomy.vocabulary.pictos_titre
+id: taxonomy_term.pictos_titre.field_type_de_contenu
+field_name: field_type_de_contenu
+entity_type: taxonomy_term
+bundle: pictos_titre
+label: 'Type de contenu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node_type'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

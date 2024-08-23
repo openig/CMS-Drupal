@@ -1,0 +1,11 @@
+uuid: 7a362e1f-51c7-42f6-bf4c-4064f31af8b0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.actions_dans_l_association
+id: taxonomy_term.actions_dans_l_association
+target_entity_type_id: taxonomy_term
+target_bundle: actions_dans_l_association
+default_langcode: site_default
+language_alterable: false

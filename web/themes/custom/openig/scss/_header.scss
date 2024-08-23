@@ -1,0 +1,323 @@
+// Header
+
+// Gestion de la position sticky du header si la barre d'administration est présente
+body.toolbar-horizontal.toolbar-tray-open header{
+    top: 79px;
+}
+body.toolbar-vertical.toolbar-tray-open header, body.toolbar-horizontal header, body.toolbar-vertical header{
+    top: 39px;
+}
+
+header{
+	box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background-color: $OPenIG-color_white;
+    padding: 15px 0;
+    font-family:"OpenSans_Bold";
+    font-size: $OPenIG-font-size-sm;
+    font-weight: bold;
+    color: $OPenIG-color_dark-gray;
+    padding-bottom: 0;
+    .navigation_droite{
+        display: flex;
+        justify-content: space-between;
+    }
+    .navigation{
+        .region-navigation-premiere-section, .region-navigation-deuxieme-section, .region-navigation-troisieme-section{
+            display: flex;
+            align-items: end;
+            nav {
+                ul{
+                    flex-direction: row;
+                    li.nav-item{
+                        display: flex;
+                        align-items: baseline;
+                    }
+                    li.nav-item:not(:last-of-type)::after{
+                        content: '|';
+                        //margin-top: 7px;
+                    }
+                    li.dropdown{
+                        > .dropdown-toggle{
+                            align-items: baseline;
+                            height: 70px;
+                            padding-bottom: 0;
+                            padding-top: 5px !important;
+                        }
+                        > .dropdown-toggle.show{
+                            background-color: $OPenIG-color_light-gray;
+                            color: $OPenIG-color_blue;
+                        }
+                        > span::after, > a::after{
+                            border: none;
+                            content:'\f0d7';
+                            font-family: "Font Awesome 6 Free";
+                            font-weight: 600;
+                            font-size: $OPenIG-font-size-lg;
+                            padding-left: 4px;
+                        }
+                        .dropdown-item:hover, .dropdown-item:focus, .dropdown-item:active{
+                            background-color: transparent;
+                        }
+                    }
+                    .is-active{
+                        color: $OPenIG-color_blue;
+                        background-color: $OPenIG-color_light-gray;
+                        height: 100%;
+                    }
+                }
+                ul.dropdown-menu.show{
+                    display: flex;
+                    background-color: $OPenIG-color_light-gray;
+                    border: 0;
+                    box-shadow: 0px 2px 6px rgba(0,0,0,.16),inset 0px 2px 6px rgba(0,0,0,.16);
+                    border-radius: 0;
+                    color: $OPenIG-color_dark-gray;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    padding-top: 0;
+                    position: absolute;
+                    transform: translate(0px, 70px) !important;
+                    .nav-item{
+                        align-items: baseline;
+                        .dropdown-item{
+                            color: $OPenIG-color_dark-gray;
+                            font-size: $OPenIG-font-size-sm;
+                            font-weight: bold;
+                        }
+                        .dropdown-item:hover{
+                            background-color: transparent;
+                        }
+                        .is-active{
+                            color: $OPenIG-color_blue;
+                            background-color: transparent;
+                        }
+                    }
+
+                }
+            }
+        }
+        // Logo
+        #block-openig-branding{
+            .navbar-brand{
+                img{
+                    height: 78px;
+                }
+            }
+            padding-bottom: 15px;
+        }
+        .region-navigation-deuxieme-section{
+            nav ul{
+                li.nav-item:not(:last-of-type)::after{
+                    color: $OPenIG-color_red;
+                }
+            }
+        }
+        .region-navigation-troisieme-section{
+            nav{
+                ul{
+                    > li:first-child::before{
+                        content: '';
+                        border-left: 4px solid $OPenIG-color_red;
+                        height: 40px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    // Barre de recherche
+    #block-openig-formulaireexposeresultats-de-rechercheblock {
+        height: 70px;
+        width: 70px;
+        #views-exposed-form-resultats-de-recherche-block-1{
+            display: none;
+        }
+        #views-exposed-form-resultats-de-recherche-block-1.open{
+            background-color: $OPenIG-color_light-gray;
+            filter: drop-shadow(0 1px 2px $OPenIG-color_gray);
+            border-radius: 0px;
+            position: absolute;
+            transform: translate(-80%,2px);
+            width: 700px;
+            box-shadow: inset 0px 2px 6px rgba(0,0,0,.16);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 150px;
+            padding: 0 30px;
+            .form--inline.clearfix{
+              display: flex;
+              justify-content: center;
+              width: 100%;
+
+            }
+            .form-type-textfield{
+                width: 85%;
+                label::after{
+                    content: '';
+                }
+            }
+            input.form-text{
+                border-radius: 2rem;
+                box-shadow: 0 0 0 .30rem rgba(0, 160, 154,.25);
+            }
+            .form-submit{
+                background-color: transparent !important;
+                border: none;
+                position: relative;
+                z-index: 1;
+                padding: 0;
+                width: 40px;
+                height: 40px;
+            }
+            .form-actions{
+                position: relative;
+                background-color: $OPenIG-color_white;
+                border-radius: 10px;
+                box-shadow: 0px 2px 6px rgba(0,0,0,.16);
+                margin-left: 1rem;
+            }
+            .form-actions::after{
+                content: '\f002';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 400;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                z-index: 0;
+            }
+        }
+        #search_icon{
+            text-align: end;
+            padding-right: 10px;
+            background-color: transparent;
+            border: none;
+            height: 100%;
+            width: 100%;
+            padding-bottom: 30px;
+            i{
+                font-size: 30px;
+                color: $OPenIG-color_dark-gray;
+            }
+        }
+        #search_icon.open{
+            background-color: $OPenIG-color_deep-white;
+            i{
+                color: $OPenIG-color_blue;
+            }
+        }
+    }
+
+    // Menu FAQ
+    #block-openig-faq{
+        //margin-bottom: 32px;
+        display: flex;
+        height: 70px;
+        ul{
+            margin-bottom: 0;
+            margin-left: 15px;
+            li.nav-item{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                span, a{
+                    color: $OPenIG-color_dark-gray;
+                    text-decoration: underline;
+                }
+                span.is-active ,a.is-active{
+                    color: $OPenIG-color_blue;
+                }
+                span.is-active ,a.is-active{
+                    color: $OPenIG-color_blue;
+                    background-color: $OPenIG-color_light-gray;
+                    height: 100%;
+                }
+                .fontawesome-icon{
+                    margin-right: 5px;
+                    i{
+                        font-size: 30px;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+        }
+    }
+
+    // Menu principal
+    #block-openig-main-navigation{
+        margin-left: 10px;
+        ul{
+            li{
+                a,span{
+                    padding-left: .75rem;
+                    padding-right: .75rem;
+                    padding-top: 10px;
+                }
+            }
+        }
+    }
+
+    // Menu adhésion
+    #block-openig-adhesion{
+        height: 70px;
+        display: flex;
+        .nav-item{
+            .nav-link{
+                padding-bottom: 0;
+            }
+        }
+        .field--name-field-picto{
+            margin-right: 10px;
+            width: 25px;
+            height: 25px;
+            padding-top: 9px;
+            span{
+                padding: 0;
+                display: block;
+                width: 25px;
+                height: 25px;
+                background-size: contain;
+            }
+            img{
+                width: 32px;
+
+            }
+        }
+        .logged{
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-left: 0;
+            padding-right: 0;
+            margin-right: .5rem;
+        }
+        span, a{
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            padding-top: 9px;
+        }
+        span.is-active ,a.is-active{
+            color: $OPenIG-color_blue;
+            background-color: $OPenIG-color_light-gray;
+            height: 100%;
+        }
+        .fontawesome-icon{
+            i{
+                color: $OPenIG-color_dark-gray;
+                font-size: 20px;
+            }
+        }
+        a.deconnexion{
+            margin-left: .5rem;
+            border: none;
+        }
+        .contextual{
+            top: 35px;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+openig_search.settings:
+  path: '/admin/config/search/openig'
+  defaults:
+    _form: '\Drupal\openig_search\Form\SettingsForm'
+    _title: 'OpenIG Search Parameters'
+  requirements:
+    _permission: 'administer openig search'
+
+
+openig_search.results:
+  path: '/recherche/ressources_externes'
+  defaults:
+    _title: 'Résultats de recherche'
+    _controller: '\Drupal\openig_search\Controller\SearchController::search_results'
+  methods: [GET, POST]
+  requirements:
+    _permission: 'access content'
+
+
+openig_search.internal_results:
+  path: '/recherche'
+  defaults:
+    _title: 'Résultats de recherche'
+    _controller: '\Drupal\openig_search\Controller\SearchController::search_internal_results'
+  methods: [GET, POST]
+  requirements:
+    _permission: 'access content'

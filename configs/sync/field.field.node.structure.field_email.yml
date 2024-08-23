@@ -1,0 +1,19 @@
+uuid: fc249f88-4e13-4c44-8361-a81ae0b99d20
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email
+    - node.type.structure
+id: node.structure.field_email
+field_name: field_email
+entity_type: node
+bundle: structure
+label: 'Adresse email'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

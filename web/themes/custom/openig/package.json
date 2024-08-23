@@ -1,0 +1,79 @@
+{
+  "name": "openig",
+  "version": "1.0.x",
+  "description": "Bootstrap5 theme for Drupal 9 and 10.",
+  "main": "index.js",
+  "scripts": {
+    "dep-install": "yarn install --non-interactive --frozen-lockfile --check-files",
+    "dep-check": "yarn check --non-interactive --verify-tree --integrity",
+    "build-css": "gulp buildcss",
+    "build-js": "gulp buildjs",
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@popperjs/core": "^2.11.4",
+    "bootstrap": "^5.1"
+  },
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.49.9"
+  },
+  "keywords": [
+    "drupal",
+    "theme",
+    "bootstrap"
+  ],
+  "author": [
+    {
+      "name": "Vladimir R",
+      "email": "info@tomato-elephant-studio.com",
+      "url": "https://www.drupal.org/u/vladimiraus"
+    },
+    {
+      "name": "Janna M",
+      "email": "info@tomato-elephant-studio.com",
+      "url": "https://www.drupal.org/u/JannaKha"
+    },
+    {
+      "name": "téïcée",
+      "email": "support@teicee.com",
+      "url": "https://www.teicee.com"
+    }
+  ],
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": "commonjs",
+              "targets": {
+                "node": "current"
+              }
+            }
+          ]
+        ]
+      },
+      "legacy": {
+        "presets": [
+          [
+            "env",
+            {
+              "modules": false
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "license": "MIT"
+}

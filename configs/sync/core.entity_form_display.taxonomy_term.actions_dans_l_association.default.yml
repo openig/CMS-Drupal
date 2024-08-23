@@ -1,0 +1,73 @@
+uuid: d0df2053-cf03-487b-929d-81f498284eed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.actions_dans_l_association.field_lien
+    - field.field.taxonomy_term.actions_dans_l_association.field_picto
+    - image.style.thumbnail
+    - taxonomy.vocabulary.actions_dans_l_association
+  module:
+    - link
+    - path
+    - svg_image
+id: taxonomy_term.actions_dans_l_association.default
+targetEntityType: taxonomy_term
+bundle: actions_dans_l_association
+mode: default
+content:
+  field_lien:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_picto:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 3
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  simple_sitemap:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 6
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+hidden:
+  description: true
+  publish_on: true
+  publish_state: true
+  unpublish_on: true
+  unpublish_state: true

@@ -1,0 +1,155 @@
+uuid: b5534e13-5183-4e53-b46b-e2ba65ed5b2f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_social_network
+  module:
+    - social_media_links_field
+    - user
+id: user.user.field_social_network
+field_name: field_social_network
+entity_type: user
+bundle: user
+label: 'Réseaux sociaux'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  iconset: 'fontawesome:2x'
+  platforms:
+    instagram:
+      enabled: '1'
+      description: ''
+      weight: '-10'
+    website:
+      description: ''
+      weight: '-9'
+      enabled: 0
+    meetup:
+      description: ''
+      weight: '-8'
+      enabled: 0
+    vkontakte:
+      description: ''
+      weight: '-7'
+      enabled: 0
+    bitbucket:
+      description: ''
+      weight: '-6'
+      enabled: 0
+    gitlab:
+      description: ''
+      weight: '-5'
+      enabled: 0
+    youtube:
+      description: ''
+      weight: '-4'
+      enabled: 0
+    rss:
+      description: ''
+      weight: '-3'
+      enabled: 0
+    youtube_channel:
+      description: ''
+      weight: '-2'
+      enabled: 0
+    facebook:
+      enabled: '1'
+      description: ''
+      weight: '-1'
+    tumblr:
+      description: ''
+      weight: '0'
+      enabled: 0
+    telegram:
+      description: ''
+      weight: '1'
+      enabled: 0
+    mastodon:
+      description: ''
+      weight: '2'
+      enabled: 0
+    goodreads:
+      description: ''
+      weight: '3'
+      enabled: 0
+    googleplay:
+      description: ''
+      weight: '4'
+      enabled: 0
+    behance:
+      description: ''
+      weight: '5'
+      enabled: 0
+    pinterest:
+      description: ''
+      weight: '6'
+      enabled: 0
+    drupal:
+      description: ''
+      weight: '7'
+      enabled: 0
+    contact:
+      description: ''
+      weight: '8'
+      enabled: 0
+    linkedin:
+      enabled: '1'
+      description: ''
+      weight: '9'
+    googleplus:
+      description: ''
+      weight: '10'
+      enabled: 0
+    tiktok:
+      description: ''
+      weight: '11'
+      enabled: 0
+    slideshare:
+      description: ''
+      weight: '12'
+      enabled: 0
+    vimeo:
+      description: ''
+      weight: '13'
+      enabled: 0
+    flickr:
+      description: ''
+      weight: '14'
+      enabled: 0
+    twitter:
+      enabled: '1'
+      description: ''
+      weight: '15'
+    glassdoor:
+      description: ''
+      weight: '16'
+      enabled: 0
+    xing:
+      description: ''
+      weight: '17'
+      enabled: 0
+    whatsapp:
+      description: ''
+      weight: '18'
+      enabled: 0
+    email:
+      description: ''
+      weight: '19'
+      enabled: 0
+    github:
+      enabled: '1'
+      description: ''
+      weight: '20'
+    patreon:
+      description: ''
+      weight: '21'
+      enabled: 0
+    amazon:
+      description: ''
+      weight: '22'
+      enabled: 0
+field_type: social_media_links_field

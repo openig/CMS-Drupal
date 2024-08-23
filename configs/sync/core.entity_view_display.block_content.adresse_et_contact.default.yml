@@ -1,0 +1,56 @@
+uuid: 23c6b4bf-54be-4c8a-a971-d9e058802666
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.adresse_et_contact
+    - field.field.block_content.adresse_et_contact.body
+    - field.field.block_content.adresse_et_contact.field_email
+    - field.field.block_content.adresse_et_contact.field_lien
+    - field.field.block_content.adresse_et_contact.field_telephone
+  module:
+    - link
+    - text
+id: block_content.adresse_et_contact.default
+targetEntityType: block_content
+bundle: adresse_et_contact
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_email:
+    type: email_mailto
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: _blank
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_telephone:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

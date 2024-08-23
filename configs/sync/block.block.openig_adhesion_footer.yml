@@ -1,0 +1,25 @@
+uuid: ce9bb6c1-3b90-4cd5-99fc-8a4c87fdd203
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.adhesion
+  module:
+    - system
+  theme:
+    - openig
+id: openig_adhesion_footer
+theme: openig
+region: haut_footer_droite
+weight: 0
+provider: null
+plugin: 'system_menu_block:adhesion'
+settings:
+  id: 'system_menu_block:adhesion'
+  label: Adhésion
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

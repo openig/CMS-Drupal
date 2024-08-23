@@ -1,0 +1,32 @@
+uuid: c0269ee4-2b62-47f2-9989-8297bdeaff14
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: vertical_tab
+    publish_enable: true
+    publish_past_date: error
+    publish_past_date_created: false
+    publish_required: false
+    publish_revision: false
+    publish_touch: true
+    show_message_after_update: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: false
+name: Structure
+type: structure
+description: "Contenu présentant les structures adhérentes qui s'affichent dans l'annuaire"
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

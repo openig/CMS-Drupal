@@ -1,0 +1,8 @@
+uuid: 8f30dee6-2900-4f77-8eb8-e47e2e8ed3e7
+langcode: fr
+status: true
+dependencies: {  }
+id: adresse_et_contact
+label: 'Adresse et contact'
+revision: false
+description: ''

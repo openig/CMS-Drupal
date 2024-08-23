@@ -1,0 +1,35 @@
+name: OPenIG
+type: theme
+description: 'OPenIG subtheme based on Bootstrap 5 theme.'
+core_version_requirement: '^9.4 || ^10'
+'base theme': bootstrap5
+libraries:
+  - openig/global-styling
+ckeditor_stylesheets:
+  - css/style.min.css
+ckeditor5-stylesheets:
+  - css/ck5style.min.css
+regions:
+  navigation_premiere_section: Navigation première section
+  navigation_deuxieme_section: Navigation deuxième section
+  navigation_troisieme_section: Navigation troisième section
+  breadcrumb: Fil d'ariane
+  content: Contenu
+  premiere_section_accueil: Première section accueil
+  deuxieme_section_accueil: Deuxième section accueil
+  troisieme_section_accueil: Troisième section accueil
+  quatrieme_section_accueil: Quatrième section accueil
+  cinquieme_section_accueil: Cinquième section accueil
+  sixieme_section_accueil: Sixième section accueil
+  septieme_section_accueil: Septième section accueil
+  huitieme_section_accueil: Huitième section accueil
+  haut_footer_centre: Haut du footer centre
+  haut_footer_droite: Haut du footer droite
+  bas_footer_gauche: Bas du footer gauche
+  bas_footer_centre: Bas du footer centre
+  bas_footer_droite: Bas du footer droite
+  footer: Pied de page
+  mobile_premiere_section: Mobile première section
+  mobile_seconde_section: Mobile seconde section
+libraries-override:
+  bootstrap5/global-styling: false

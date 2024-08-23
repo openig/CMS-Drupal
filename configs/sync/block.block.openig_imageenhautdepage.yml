@@ -1,0 +1,30 @@
+uuid: b2e9586f-33c0-49ec-929a-769367c29ab7
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:image:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_imageenhautdepage
+theme: openig
+region: content
+weight: -18
+provider: null
+plugin: 'block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
+settings:
+  id: 'block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
+  label: 'Image en haut de page'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/*'

@@ -1,0 +1,29 @@
+uuid: 9d7f29b6-f1c4-44d2-a81e-78b605c2b074
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tag
+    - node.type.groupe_de_travail
+    - taxonomy.vocabulary.tags
+id: node.groupe_de_travail.field_tag
+field_name: field_tag
+entity_type: node
+bundle: groupe_de_travail
+label: Tag
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      tags: tags
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

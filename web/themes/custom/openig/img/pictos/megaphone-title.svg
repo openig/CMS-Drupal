@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 63.2 55.75">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #be1822;
+        stroke: #be1822;
+      }
+
+      .cls-6, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #000;
+      }
+
+      .cls-5 {
+        stroke: #1d1d1b;
+        stroke-width: .5px;
+      }
+
+      .cls-4 {
+        fill: #00a09a;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" x="19.63" y="1.82" width="9.81" height="11.28" transform="translate(1.91 19.54) rotate(-45)"/>
+    </clipPath>
+  </defs>
+  <path class="cls-3" d="M28.44,28.42v24.89h3.56v-24.89h-3.56ZM26.67,30.3L.89,36.74v-1.21h-.89v10.67h.89v-1.21l8.09,2.02c-.06.31-.09.63-.09.97,0,2.94,2.39,5.33,5.33,5.33,2.38,0,4.39-1.56,5.08-3.71l-.09-.03,7.46,1.86v-.91L.89,44.08v-6.42l25.78-6.44v-.91ZM9.78,47.98c0-.26.02-.51.06-.75l8.6,2.15c-.58,1.77-2.25,3.04-4.22,3.04-2.46,0-4.44-1.99-4.44-4.44h0ZM14.22,42.64h-.02.04-.02,0,0Z"/>
+  <rect class="cls-4" x="29.33" y="29.31" width="1.78" height="23.11"/>
+  <circle class="cls-6" cx="59.98" cy="35.09" r="2.71"/>
+  <g class="cls-1">
+    <g id="Groupe_de_masques_34" data-name="Groupe de masques 34">
+      <path id="xmark-light" class="cls-3" d="M31.95,8.14c0,.27-.22.49-.49.49h-5.75s0,5.75,0,5.75c0,.27-.22.49-.49.49-.27,0-.49-.22-.49-.49v-5.75s-5.75,0-5.75,0c-.27,0-.49-.22-.49-.49,0-.27.22-.49.49-.49h5.75s0-5.75,0-5.75c0-.27.22-.49.49-.49.27,0,.49.22.49.49v5.75s5.75,0,5.75,0c.27,0,.49.21.49.48,0,0,0,0,0,0Z"/>
+    </g>
+  </g>
+  <circle class="cls-5" cx="42.8" cy="52.79" r="2.71"/>
+</svg>

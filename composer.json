@@ -16,10 +16,60 @@
     ],
     "require": {
         "composer/installers": "^2.0",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/addtoany": "^2.0",
+        "drupal/admin_toolbar": "^3.4",
+        "drupal/back_to_top": "^3.0",
+        "drupal/better_exposed_filters": "^6.0",
+        "drupal/bootstrap5": "^3.0",
+        "drupal/change_pwd_page": "^2.0",
+        "drupal/ckeditor_accordion": "^2.1",
+        "drupal/ckeditor_font": "^2.0@beta",
+        "drupal/color_field": "^3.0",
+        "drupal/conditional_fields": "^4.0@alpha",
+        "drupal/content_moderation_notifications": "^3.6",
         "drupal/core-composer-scaffold": "^10.2",
         "drupal/core-recommended": "^10.2",
+        "drupal/custom_breadcrumbs": "^1.1",
+        "drupal/custom_view_filters": "^2.0",
+        "drupal/daterange_compact": "^2.1",
+        "drupal/easy_breadcrumb": "^2.0",
+        "drupal/editor_advanced_link": "^2.2",
+        "drupal/entity_reference_modal": "^1.0",
+        "drupal/eu_cookie_compliance": "^1.24",
+        "drupal/field_group": "^3.4",
+        "drupal/field_permissions": "^1.3",
+        "drupal/fontawesome": "^2.26",
+        "drupal/hcaptcha": "^1.2",
+        "drupal/menu_item_extras": "^3.0",
+        "drupal/menu_link_attributes": "^1.3",
+        "drupal/menu_per_role": "^1.6",
+        "drupal/metatag": "^2.0",
+        "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_tools": "^6.0",
+        "drupal/nodeaccess": "^2.0@alpha",
+        "drupal/paragraphs": "^1.17",
+        "drupal/pathauto": "^1.12",
+        "drupal/scheduler": "^2.0",
         "drupal/search_api_solr": "^4.3",
-        "drush/drush": "^12.4"
+        "drupal/simple_sitemap": "^4.1",
+        "drupal/simplenews": "^4.0",
+        "drupal/sitemap": "^2.0@beta",
+        "drupal/slick_views": "^3.0",
+        "drupal/social_media_links": "^2.9",
+        "drupal/structure_sync": "^2.0",
+        "drupal/svg_image": "^3.0",
+        "drupal/sync_uuids": "^1.1",
+        "drupal/twig_blocks": "^2.5",
+        "drupal/twig_tweak": "^3.3",
+        "drupal/user_register_notify": "^2.0@beta",
+        "drupal/video_embed_peertube": "^1.3",
+        "drupal/views_fieldsets": "^4.0",
+        "drupal/webform": "^6.2",
+        "drupal/weight": "^3.4",
+        "drush/drush": "^12.4",
+        "kenwheeler/slick": "^1.8",
+        "wikimedia/composer-merge-plugin": "^2.1"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -32,15 +82,31 @@
             "drupal/core-composer-scaffold": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true,
+            "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true,
         "bin-dir": "bin"
     },
     "extra": {
+        "merge-plugin": {
+            "include": [
+                "./composer.libraries.json",
+                "./web/modules/contrib/webform/composer.libraries.json"
+            ]
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
+            }
+        },
+        "patches": {
+            "drupal/bootstrap5": {
+                "Passing percentage units to the global abs() function is deprecated": "https://www.drupal.org/files/issues/2023-10-05/bootstrap5-3391813.patch"
+            },
+            "drupal/social_media_links":{
+                "Replace Twitter with X": "https://www.drupal.org/files/issues/2023-09-01/replace_twitter_x-3384469-3.patch"
             }
         },
         "installer-paths": {

@@ -1,0 +1,434 @@
+// Vue agenda
+.view.view-l-agenda.view-display-id-agenda{
+    margin-top: 7rem;
+}
+.view-l-agenda{
+    .view-empty{
+        font-size: $OPenIG-font-size-xl;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+    .views-field-field-dates-4{
+        display: none;
+    }
+    .views-field-nid{
+        display: none;
+    }
+    .carousel{
+        padding-top: 10px;
+        background-color: $OPenIG-color_medium-white;
+        margin-bottom: 3rem;
+    }
+    .slick--optionset--agenda{
+        margin-left: 2rem;
+    }
+    .slick--optionset--agenda .slick__slider{
+        background-color: $OPenIG-color_white;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    #annee{
+        text-align: center;
+        font-family: 'Russo One';
+        font-size: $OPenIG-font-size-h2;
+    }
+    .slick.slick--optionset--agenda .slick__slide.slick-current{
+        border: 2px solid $OPenIG-color_yellow;
+        box-shadow: none;
+    }
+    .slick.slick--optionset--agenda .slick__slide{
+        width: 195px !important;
+        height: 200px !important;
+        border: none;
+        border-radius: 2rem;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+        overflow: hidden;
+        .views-field-field-dates{
+            font-size: $OPenIG-font-size-xl;
+            font-family: 'Exo_semiBold';
+            text-align: center;
+            width: 75px;
+            margin: auto;
+            border-bottom: 5px solid $OPenIG-color_yellow
+        }
+        .views-field-title{
+            text-align: center !important;
+            margin-top: 5px;
+            font-size: $OPenIG-font-size-md;
+            a{
+                color: $OPenIG-color_black;
+                text-decoration: none;
+            }
+        }
+        .annee{
+            display: none;
+        }
+        .views-field-fieldset{
+            .contenu{
+                display: none;
+            }
+        }
+    }
+    
+    #contenu_evenement{
+        background-color: rgb(255, 255, 255, 0.6);
+        .views-field-field-dates-2{
+            width: fit-content;
+            border-bottom: 5px solid $OPenIG-color_yellow;
+            font-size: $OPenIG-font-size-h2;
+            font-family: 'Exo_medium';
+            font-weight: 500;
+        }
+        .views-field-field-tag{
+            margin-top: 2rem;
+            width: 100%;
+            .field-content{
+                width: 100%;
+            }
+            a{
+                border: 1px solid $OPenIG-color_blue;
+                border-radius: 50px;
+                padding: 2px 10px;
+                font-size: $OPenIG-font-size-xs;
+                text-decoration: none;
+                color: $OPenIG-color_black;
+                margin-right: 10px;
+                font-family: 'Exo_regular';
+            }
+        }
+        .views-field-title-1{
+            font-size: $OPenIG-font-size-xl;
+            width: 70%;
+            float: left;
+            font-family: 'Exo_semiBold';
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+        .views-field-field-image{
+            width: 30%;
+            float: right;
+            padding: 0 10px;
+            img{
+                border-radius: 15px;
+            }
+        }
+        .detail-evenement{
+            margin-top: 2rem;
+        }
+        .views-field-field-dates-3{
+            margin-bottom: 2rem;
+            font-family: 'OpenSans_SemiBold';
+            font-weight: 600;
+            width: 70%;
+            .field-content::before{
+                content: '\f017';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 400;
+                margin-right: 5px;
+            }
+        }
+        .views-field-field-body{
+            width: 100%;
+            h2{
+                width: fit-content;
+            }
+        }
+    }
+}
+.path-l-agenda{
+    // Filtres
+    .formulaire_filtre{
+        top: 0;
+        position: absolute;
+        left: -100rem;
+        transition: 1.5s;
+        background-color: $OPenIG-color_white;
+        z-index: 1;
+        border: 1px solid $OPenIG-color_gray;
+        border-radius: 10px;
+        padding: 10px;
+        width: 400px;
+        .btn-close-filtre{
+            background-color: transparent;
+            border: none;
+            float: right;
+            i{
+                color: $OPenIG-color_dark-gray;
+                font-size: 24px;
+            }
+        }
+        h2{
+            width: 100%;
+            border-bottom: 0;
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2::before{
+            content: '\f0b0';
+            font-family: "Font Awesome 6 Free";
+            color: $OPenIG-color_yellow;
+            font-weight: 600;
+            margin-right: 15px;
+            font-size: 24px;
+        }
+        form{
+            margin-top: 2rem;
+        }
+        .form-item-exposed-from-date, .form-item-exposed-to-date{
+            width: 175px;
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            label{
+                margin-right: 5px;
+                font-size: $OPenIG-font-size-sm;
+            }
+        }
+        .js-form-submit{
+            background-color: $OPenIG-color_blue;
+            color: $OPenIG-color_white;
+            border: none;
+            height: 30px;
+            font-size: $OPenIG-font-size-sm;
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+        }
+        .js-form-submit[name='reset']{
+            background-color: transparent;
+            color: $OPenIG-color_dark-gray;
+            border: 1px solid $OPenIG-color_gray;
+        }
+        label, .form-date{
+            font-size: $OPenIG-font-size-sm;
+        }
+        .form-checkbox{
+            border: 1px solid $OPenIG-color_gray;
+        }
+        .form-actions{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            padding-top: 2rem;
+            input{
+                margin: 0;
+            }
+        }
+        .details-wrapper{
+            padding: 0;
+            margin-top: 15px;
+        }
+        .labelDates{
+            font-weight: 600;
+            margin-bottom: 0;
+            font-size: $OPenIG-font-size-sm;
+            font-family: 'OpenSans_SemiBold';
+        }
+        details.form-wrapper{
+            width: 100%;
+            border: 0;
+            background-color: transparent;
+            margin-top: 1rem;
+            summary{
+                border-bottom: 1px solid $OPenIG-color_gray;
+                background-color: transparent !important;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px 0;
+                font-weight: 600;
+                font-size: $OPenIG-font-size-sm;
+                font-family: 'OpenSans_SemiBold';
+            }
+            summary::marker {   
+                content: '';
+            }
+            summary[aria-expanded="true"]::after{
+                content: '\f0d8';
+            }
+            summary::after{
+                content: '\f0d7';
+                font-family: "Font Awesome 6 Free";
+                font-weight: 600;
+            }
+        }
+    }
+    .formulaire_filtre.show{
+        left: 0;
+        top: 0;
+        transition: 1.5s;
+
+    }
+    .btn_filtre{
+        margin-bottom: 1.5rem;
+        height: 30px;
+        background-color: $OPenIG-color_blue;
+        border: none;
+        border-radius: 6px;
+        color: $OPenIG-color_white;
+        font-family: 'Exo_semiBold', sans-serif;
+        font-weight: 600;
+        font-size: $OPenIG-font-size-sm;
+        padding: 5px 10px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        i{
+            margin-right: 5px;
+        }
+    }
+    .bloc_filtres{
+        position: relative;
+    }
+}
+
+// Bloc agenda page d'accueil
+
+#block-openig-views-block-l-agenda-agenda-accueil{
+    position: relative;
+    margin-top: 7rem;
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: right;
+                position: relative;
+                span{
+                    height: 140px;
+                    width: 130px;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                }
+            }
+            img{
+                position: absolute;
+                max-height: 140px;
+                top: 0;
+                height: fit-content;
+                right: 0;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                margin-top: -65px;
+                margin-right: -20px;
+            }
+        }
+        .texte_header{
+            width: 50%;
+            float: right;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    .card_agenda a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+    }
+    .card_agenda > a{
+        width: 100%;
+        height: 100%;
+    }
+    .row{
+        justify-content: space-around;
+    }
+}
+.view-l-agenda{
+    .view-content {
+        .row{
+            display: flex;
+            //justify-content: space-around;
+        }
+        .card_agenda{
+            width: 195px !important;
+            height: 200px !important;
+            border: none;
+            border-radius: 2rem;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+            overflow: hidden;
+            .views-field-field-dates{
+                font-size: $OPenIG-font-size-xl;
+                font-family: 'Exo_semiBold';
+                text-align: center;
+                width: 75px;
+                margin: auto;
+                border-bottom: 5px solid $OPenIG-color_yellow
+            }
+            .views-field-title{
+                text-align: center;
+                margin-top: 5px;
+                font-size: $OPenIG-font-size-md;
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                }
+            }
+            .annee{
+                display: none;
+            }
+            .views-field-fieldset{
+                .contenu{
+                    display: none;
+                }
+            }
+        }
+    }
+    .more-link{
+        text-align: center;
+        margin-top: 3rem;
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
+    .webform-button--submit, .webform-button--submit:active{
+        background-color: $OPenIG-color_blue;
+        border: none;
+    }
+} 
+
+// Fiche évènement
+
+.node--type-evenement{
+    .node__content{
+        > .field{
+            margin-bottom: 1rem;
+        }
+        .webform-button--submit, .webform-button--submit:active{
+            background-color: $OPenIG-color_blue;
+            border: none;
+        }
+    }
+}

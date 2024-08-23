@@ -1,0 +1,512 @@
+// Fiche groupe de travail
+
+.page-node-type-groupe-de-travail{
+    color: $OPenIG-color_black;
+    font-family: 'OpenSans_Regular', sans-serif;
+    font-size: $OPenIG-font-size-base;
+    .no_sidebar{
+        margin: auto;
+    }
+    .btngroupe{
+        height: 30px;
+        margin-top: 2rem;
+        #btnRejoindre{
+            float: right;
+            background-color: $OPenIG-color_blue;
+            border: none;
+            border-radius: 6px;
+            color: $OPenIG-color_white;
+            font-family: 'Exo_semiBold', sans-serif;
+            font-weight: 600;
+            font-size: $OPenIG-font-size-sm;
+            padding: 5px 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+        }
+    }
+    .node--type-groupe-de-travail{
+        margin-top: 5rem;
+        position: relative;
+        #btnRejoindre_bas{
+            background-color: $OPenIG-color_blue;
+            border: none;
+            border-radius: 6px;
+            color: $OPenIG-color_white;
+            font-family: 'Exo_semiBold', sans-serif;
+            font-weight: 600;
+            font-size: $OPenIG-font-size-sm;
+            padding: 5px 10px;
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+                    
+        }
+        .btnShareRejoindre{
+            display: flex;
+            justify-content: space-around;
+            align-items: baseline;
+            margin: auto;
+            margin-top: 50px;
+            border-top: 1px solid $OPenIG-color_gray;
+            padding-top: 35px;
+            min-width: 400px;
+            width: fit-content;
+        }
+        .field--name-field-working-group-objective{
+            margin-bottom: 4rem;
+            background-color: rgb(255, 255, 255, 0.6);
+            h2{
+                margin-bottom: 30px;
+            }
+        }
+        .field--name-field-theme-overview{
+            margin-bottom: 4rem;
+            background-color: rgb(255, 255, 255, 0.6);
+            h2{
+                margin-bottom: 30px;
+            }
+        }
+        .field--name-field-body{
+            margin-bottom: 4rem;
+            .paragraph{
+                margin-bottom: 4rem;
+            }
+        }
+
+        #accordionGroupeTravail{
+            .accordion-item{
+                border: none;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+                border-radius: 5px;
+                border: 1px solid $OPenIG-color_deep-white;
+                font-size: $OPenIG-font-size-sm;
+                .field--name-field-animators, .field--name-field-members{
+                    column-count: 3;
+                }
+                .field--name-field-animators, .field--name-field-members, .content_ressources{
+                    //column-count: 3;
+                    .file{
+                        background-image: none;
+                        padding-left: 0;
+                    }
+                    a{
+                        color: $OPenIG-color_black;
+                        text-decoration: none;
+                        border-bottom: 1px solid $OPenIG-color_black;
+                    }
+                    .profile{
+                        display: flex;
+                        .field--name-field-firstname{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .content_ressources{
+                    .locked{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        position: relative;
+                        p{
+                            margin-bottom: 0;
+                        }
+                        p.itemPrivate{
+                            display: flex;
+                            align-items: center;
+                            font-size: $OPenIG-font-size-xs;
+                        }
+                        i{
+                            margin-left: 1rem;
+                            color: $OPenIG-color_blue;
+                            font-size: 16px;
+                        }
+                    }
+                    .node--type-ressource{
+                        .node__content{
+                            margin-top: 0;
+                        }
+                    }
+                    > div:not(:last-of-type){
+                        margin-bottom: 1.5rem;
+                    }
+                }
+                .field__item{
+                    margin-bottom: 5px;
+                }
+                
+                .accordion-disabled{
+                    .itemPrivate{
+                        position: absolute;
+                        right: 2rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        font-size: $OPenIG-font-size-sm;
+                        font-family: 'OpenSans_Regular';
+                        font-weight: 400;
+                        display: flex;
+                        align-items: center;
+                        i{
+                            margin-left: 1rem;
+                            color: $OPenIG-color_blue;
+                            font-size: 18px;
+                        }
+                    }
+                    button::after{
+                        background-image: none;
+                    }
+                }
+            }
+            .accordion-item.open{
+                border-left: 4px solid $OPenIG-color_blue;
+            }
+            h2.accordion-header{
+                border-bottom: none;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                .numberTitle{
+                    font-size: $OPenIG-font-size-xs;
+                    background-color: $OPenIG-color_yellow;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: -15px;
+                    margin-left: 10px;
+                }
+            }
+            .accordion-button{
+                padding: 25px;
+            }
+            .accordion-button:not(.collapsed){
+                background-color: $OPenIG-color_light-gray;
+                border: 1px solid $OPenIG-color_deep-white;
+                color: $OPenIG-color_black;
+            }
+            .accordion-button:focus{
+                box-shadow: none;
+                border: none;
+            }
+        }
+
+        .liste_accordeon{
+            border-radius: 10px;
+            border: 1px solid $OPenIG-color_gray;
+            overflow: hidden;
+            margin-top: 4rem;
+            h2{
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                font-size: $OPenIG-font-size-base;
+                margin-bottom: 0;
+                border-bottom: none;
+            }
+            .item_accordeon:not(:last-of-type){
+                border-bottom: 1px solid $OPenIG-color_gray;
+            }
+            .item_accordeon{            
+                font-size: $OPenIG-font-size-sm;
+                background-color: $OPenIG-color_white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 25px;
+                i{
+                    color: $OPenIG-color_blue;
+                    margin-left: 10px;
+                    font-size: $OPenIG-font-size-base;
+                }
+            }
+        }
+        #block-openig-views-block-contacts-gt-contacts-gt, #block-openig-views-block-agenda-gt-agenda-gt{
+            margin-bottom: 5rem;
+            background-color: rgb(255, 255, 255, 0.6);
+            h2{
+                border-bottom: 1px solid $OPenIG-color_yellow;
+                font-family: 'Exo_semiBold';
+                font-size: $OPenIG-font-size-base;
+                padding-bottom: 10px;
+                padding-left: 10px;
+            }
+            .views-row{
+                margin-left: 10px;
+                margin-top: 10px;
+                a{
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                    font-family: 'Exo_semiBold';
+                    font-weight: 600;
+                }
+                .views-field-mail{
+                    margin-top: 10px;
+                }
+            }
+            .views-row:not(:first-of-type){
+                margin-top: 30px;
+            }
+            .nom-prenom{
+                display: flex;
+                .views-field-field-firstname{
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        .field--name-field-contenu-sidebar{
+            margin-top: 5rem;
+            > .field__item{
+                margin-top: 5rem;
+            }
+        }
+    }
+}
+
+// Vue Groupes de travail
+.view-les-groupes-de-travail.view-display-id-groupes_de_travail{
+    margin-top: 5rem;
+}
+.view.view-les-groupes-de-travail{
+    .field--name-field-picto-et-texte{
+        background-color: rgb(255, 255, 255, 0.6);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+        > .field__item{
+            width: 45%;
+        }
+    }     
+    .view-content{
+        margin-top: 2rem;
+        .card{
+            border: none;
+            box-shadow: 0px 3px 10px rgba(0, 0, 0, .16);
+            border-radius: 20px;
+            .card-body{
+                display: flex;
+                flex-direction: column;
+            }
+            .card-header{
+                background-color: transparent;
+                padding: 20px;
+                border-bottom-width: 2px;
+            }
+            .top-card{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .views-field-title{
+                a{
+                    color: $OPenIG-color_black;
+                    font-family: 'Exo_semiBold';
+                    font-size: $OPenIG-font-size-base;
+                    font-weight: 600;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                }
+            }
+            .views-field-nothing{
+               width: 40px;
+               margin-left: 10px;
+               span{
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-repeat: no-repeat;
+                background-position: center;
+           }
+            }
+            .views-field-field-image{
+                width: 115px;
+                height: 115px;
+                border-radius: 100%;
+                background-color: rgba(250, 185, 27, .5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 1rem;
+                .field-content{
+                    overflow: hidden;
+                    border: 1px solid $OPenIG-color_deep-gray;
+                    border-radius: 100%;
+                    width: 100px;
+                    height: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $OPenIG-color_white;
+                    img{
+                        height: 100px;
+                        max-width: fit-content;
+                        display: block;
+                        margin: auto;
+                    }
+                }
+            }
+            .views-field-field-tag{
+                margin-top: 1rem;
+                width: 100%;
+                .field-content{
+                    width: 100%;
+                }
+                a{
+                    border: 1px solid $OPenIG-color_blue;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+                    font-size: $OPenIG-font-size-xs;
+                    text-decoration: none;
+                    color: $OPenIG-color_black;
+                    margin-right: 10px;
+                    font-family: 'Exo_regular';
+                }
+            }
+            .views-field-field-theme-overview{
+                font-size: $OPenIG-font-size-sm;
+                margin-top: 1rem;
+            }
+            .views-field-view-node{
+                margin-top: 1rem;
+                text-align: right;
+                a{
+                    font-family: 'Exo_semiBold';
+                    font-size: $OPenIG-font-size-sm;
+                    font-weight: 600;
+                    color: $OPenIG-color_black;
+                    text-decoration: none;
+                    border-bottom: 1px solid $OPenIG-color_black;
+                }
+            }
+        }
+    }
+    .more-link{
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        a{
+            font-family: 'Russo One';
+            font-size: $OPenIG-font-size-lg;
+            color: $OPenIG-color_dark-gray;
+            text-decoration: none;
+            border-bottom: 1px solid $OPenIG-color_red;
+            padding-bottom: 5px;
+        }
+    }
+}
+
+.view-les-groupes-de-travail{
+    .view-header{
+        h2{
+            margin-bottom: 2rem;
+        }
+    }
+    .row_groupe{
+        margin-bottom: 2rem;
+    }
+}
+
+#block-openig-views-block-les-groupes-de-travail-archives{
+    margin-top: 5rem;
+    .views-field-title{
+        a{
+            text-transform: none;
+        }
+    }
+    .views-field-field-tag{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .views-field-field-theme-overview{
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .views-field-view-node{
+        margin-top: 0;
+    }
+}
+
+
+// Bloc groupes de travail page d'accueil
+
+#block-openig-views-block-groupes-travail-accueil{
+    position: relative;
+    padding-top: 50px;
+    margin-top: 7rem;
+    height: fit-content;
+    padding-bottom: 2rem;
+    .region_quatre{
+        background-color: #f2f6e7;
+        width: 90%;
+        max-height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+    .view-header{
+        .header_block{
+            position: relative;
+        }
+        .title_header{
+            position: relative;
+            height: 150px;
+            width: 100%;
+            .picto_titre{
+                height: 150px;
+                display: flex;
+                align-items: center;
+                width: fit-content;
+                float: left;
+                position: relative;
+                span{
+                    height: 140px;
+                    width: 150px;
+                    background-repeat: no-repeat;
+                }
+            }
+            img{
+                position: absolute;
+                height: 140px;
+                left: 0;
+                height: fit-content;
+            }
+            h2{
+                width: fit-content;
+                border-bottom: 0;
+                margin-bottom: 0;
+                font-family: 'Exo_semiBold';
+                font-weight: 600;
+                margin-top: -50px;
+                margin-left: -50px;
+            }
+        }
+        .texte_header{
+            width: 50%;
+            padding-bottom: 3rem;
+        }
+        .nombre_header{
+            position: absolute;
+            top: 30px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 100px;
+            .nombre{
+                font-size: $OPenIG-font-size-numbers-home;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+            }
+            .type_contenu{
+                font-size: $OPenIG-font-size-base;
+                font-family: 'Russo One';
+                color: $OPenIG-color_gray;
+                margin-top: -30px;
+            }
+        }
+    }
+    .view-content{
+        margin-top: 0rem;
+    }
+}

@@ -1,0 +1,29 @@
+uuid: 332c0e3a-f6d1-4dfb-9897-ba58d4a0e89d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.bloc_temoignage
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__bloc_temoignage_block_temoignage
+theme: openig
+region: septieme_section_accueil
+weight: -21
+provider: null
+plugin: 'views_block:bloc_temoignage-block_temoignage'
+settings:
+  id: 'views_block:bloc_temoignage-block_temoignage'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

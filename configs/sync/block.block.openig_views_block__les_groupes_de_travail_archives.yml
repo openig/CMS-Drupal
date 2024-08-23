@@ -1,0 +1,29 @@
+uuid: c0fb68b5-4a16-4d98-94a8-7d66a643776c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.les_groupes_de_travail
+  module:
+    - system
+    - views
+  theme:
+    - openig
+id: openig_views_block__les_groupes_de_travail_archives
+theme: openig
+region: content
+weight: -20
+provider: null
+plugin: 'views_block:les_groupes_de_travail-groupes_de_travail_archives'
+settings:
+  id: 'views_block:les_groupes_de_travail-groupes_de_travail_archives'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /les-groupes-de-travail

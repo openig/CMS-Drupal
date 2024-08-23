@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Theme override for page titles.
+ *
+ * Available variables:
+ * - title_attributes: HTML attributes for the page title element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title: The page title, for use in the actual content.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ */
+#}
+{{ title_prefix }}
+{% if title|render|striptags|trim %}
+{#
+<h1{{title_attributes}}>
+    {% if picto_uri is defined %}
+      <img src="{{ file_url(picto_uri) }}" alt="{{picto_alt}}" />
+    {% endif %}
+    {{ title }}
+</h1>
+#}
+{% if picto_uri is defined %}
+  <h1{{title_attributes}} style="background-image: url('{{ file_url(picto_uri) }}');">
+    {{ title }}
+  </h1>
+{% else %}
+  {% if title|render|striptags|trim == 'Résultats de recherche' %}
+    <h1{{title_attributes}} id="titleSearch" style="background-image: url('/themes/custom/openig/img/pictos/jumelles-titreh1.png');">
+      {{ title }}
+    </h1>
+  {% else %}
+    <h1{{title_attributes}}>
+      {{ title }}
+    </h1>
+  {% endif %}
+{% endif %}
+
+{% endif %}
+{{ title_suffix }}

@@ -29,14 +29,14 @@ set -e
 
 cd "$(dirname "$0")"
 
-DIR_INCD="$(pwd)/deploy.d"
+DIR_INCD="${PWD}/deploy.d"
 
 cd ".."
 
 ################################################################################ VARS
 
 ### Définition des chemins des dossiers
-DIR_HOSTING="$(pwd)"
+DIR_HOSTING="${PWD}"
 DIR_PUBHTML="web/"
 DIR_DOCROOT=
 DIR_STARTER=
@@ -60,15 +60,18 @@ SOLR_HOST="localhost"
 SOLR_NAME="recherche_solr"
 SOLR_CORE="drupal_core"
 
+### Définition du compte administrateur
+DRUPAL_USER="admin"
+DRUPAL_PASS=
+DRUPAL_MAIL=
+
 ### Définition des paramètres de l'instance
 DRUPAL_NAME=
 DRUPAL_LANG=
 DRUPAL_THEME="openig"
 
-### Définition du compte administrateur
-DRUPAL_USER="admin"
-DRUPAL_PASS=
-DRUPAL_MAIL=
+### Construction du thème en mode production
+RUN_YARN="build"
 
 ################################################################################ UTIL
 

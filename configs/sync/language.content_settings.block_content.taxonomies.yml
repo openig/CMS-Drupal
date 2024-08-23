@@ -1,0 +1,11 @@
+uuid: 7c2f8894-c022-457a-867e-ee5fcda74a71
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.taxonomies
+id: block_content.taxonomies
+target_entity_type_id: block_content
+target_bundle: taxonomies
+default_langcode: site_default
+language_alterable: false

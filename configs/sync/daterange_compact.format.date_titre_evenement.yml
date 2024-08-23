@@ -1,0 +1,20 @@
+uuid: 9103646d-3295-494e-ab82-fa52e94918ef
+langcode: fr
+status: true
+dependencies: {  }
+id: date_titre_evenement
+label: 'Date titre évènement'
+default_pattern: 'd F Y'
+default_separator: ' au '
+same_day_start_pattern: 'd F Y'
+same_day_end_pattern: ''
+same_day_separator: ''
+same_day_omit_duplicate_ampm: false
+same_month_start_pattern: ''
+same_month_end_pattern: ''
+same_month_separator: ''
+same_year_start_pattern: 'd F'
+same_year_end_pattern: 'd F Y'
+same_year_separator: ' au '
+zero_minutes_omit: false
+zero_minutes_omit_pattern: ':i'

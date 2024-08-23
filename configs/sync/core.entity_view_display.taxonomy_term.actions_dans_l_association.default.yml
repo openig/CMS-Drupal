@@ -1,0 +1,48 @@
+uuid: 5bcf2aaf-117a-44b2-9b7b-a3c83499ea36
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.actions_dans_l_association.field_lien
+    - field.field.taxonomy_term.actions_dans_l_association.field_picto
+    - taxonomy.vocabulary.actions_dans_l_association
+  module:
+    - link
+    - svg_image
+id: taxonomy_term.actions_dans_l_association.default
+targetEntityType: taxonomy_term
+bundle: actions_dans_l_association
+mode: default
+content:
+  field_lien:
+    type: link
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  description: true
+  langcode: true
+  search_api_excerpt: true

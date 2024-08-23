@@ -1,0 +1,38 @@
+uuid: f1b37273-c960-4862-ab8b-29f09beaefd9
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - openig
+id: openig_communiquermutualiser
+theme: openig
+region: content
+weight: -29
+provider: null
+plugin: 'block_content:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
+settings:
+  id: 'block_content:72e90d94-a3c7-4a16-95c9-98bfa0191b1f'
+  label: 'Communiquer / Mutualiser'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/groupe-de-travail/*\r\n/service/*\r\n/annuaire"

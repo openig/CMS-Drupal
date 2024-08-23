@@ -1,0 +1,6 @@
+name: OPenIG Search
+type: module
+package: Custom
+description: 'Build search result from IDG API'
+core_version_requirement: ^10
+configure: openig_search.settings

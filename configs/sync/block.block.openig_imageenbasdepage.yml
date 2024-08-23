@@ -1,0 +1,30 @@
+uuid: d9773eda-e573-41fe-aae7-ecc52083710f
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:image:555f7a44-f502-42f6-be3c-da8191356402'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_imageenbasdepage
+theme: openig
+region: content
+weight: -17
+provider: null
+plugin: 'block_content:555f7a44-f502-42f6-be3c-da8191356402'
+settings:
+  id: 'block_content:555f7a44-f502-42f6-be3c-da8191356402'
+  label: 'Image en bas de page'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: '/*'

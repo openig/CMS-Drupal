@@ -1,0 +1,16 @@
+include:
+  - project: 'gitlabci-marketplace/utils'
+    ref: master
+    file: 'deploy.yml'
+
+deploy_test:
+  extends:
+    - .deploy_docker
+  variables:
+    DEPLOY_USER: openig
+    DEPLOY_HOST: devel-web
+    DOCKER_PATH: /home/projets/openig/docker
+    PROJECT_PATH: /home/projets/openig/drupal
+  only:
+    refs:
+      - develop

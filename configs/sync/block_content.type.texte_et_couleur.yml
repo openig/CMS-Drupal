@@ -1,0 +1,8 @@
+uuid: d5ab191a-9022-4ad2-baa3-86c71029b58a
+langcode: fr
+status: true
+dependencies: {  }
+id: texte_et_couleur
+label: 'Texte et couleur'
+revision: false
+description: ''

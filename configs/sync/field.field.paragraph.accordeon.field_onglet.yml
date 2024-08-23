@@ -1,0 +1,55 @@
+uuid: 27f9658a-0e09-48bc-bf77-ed4ea3a9e550
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_onglet
+    - paragraphs.paragraphs_type.accordeon
+    - paragraphs.paragraphs_type.onglet_d_accordeon
+  module:
+    - entity_reference_revisions
+id: paragraph.accordeon.field_onglet
+field_name: field_onglet
+entity_type: paragraph
+bundle: accordeon
+label: Onglet
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      onglet_d_accordeon: onglet_d_accordeon
+    negate: 0
+    target_bundles_drag_drop:
+      accordeon:
+        weight: 10
+        enabled: false
+      ligne_de_membres:
+        weight: 11
+        enabled: false
+      membre:
+        weight: 12
+        enabled: false
+      membres:
+        weight: 13
+        enabled: false
+      onglet_d_accordeon:
+        weight: 14
+        enabled: true
+      picto_text:
+        weight: 15
+        enabled: false
+      texte_dropdown:
+        weight: 16
+        enabled: false
+      title_text:
+        weight: 17
+        enabled: false
+      type_de_contenu:
+        weight: 18
+        enabled: false
+field_type: entity_reference_revisions

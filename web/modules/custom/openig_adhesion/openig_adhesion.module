@@ -1,0 +1,55 @@
+<?php
+
+use Drupal\block\Entity\Block;
+
+/**
+ * Implements hook_theme().
+ */
+function openig_adhesion_theme() {
+    return [
+        'openig_adhesion_simulator' => [
+            'variables' => [
+                'simulator_form' => ''
+            ],
+        ],
+    ];
+}
+
+/**
+ * Implements hook_mail().
+ */
+function openig_adhesion_mail($key, &$message, $params) {
+    switch ($key) {
+        case 'openig_adhesion_simulator_submit':
+            $message['from'] = \Drupal::config('system.site')->get('mail');
+            $message['subject'] = $params['subject'];
+            $message['body'][] = $params['message'];
+            break;
+    }
+}
+
+function openig_adhesion_preprocess_openig_adhesion_simulator(&$variables) {
+    $variables['#attached']['library'][] = 'openig_adhesion/openig-adhesion';
+
+    // Fetch block
+    $block_config = Block::load('simulatoradhesionblock');
+
+    if ($block_config) {
+        $settings = $block_config->get('settings');
+        $js_variables = [];
+
+        // Bind variables
+        $js_variables['formula_population'] = $settings['openig_adhesion_simulator_formula_population'];
+        $js_variables['formula_budget'] = $settings['openig_adhesion_simulator_formula_budget'];
+        $js_variables['formula_salaries_1'] = $settings['openig_adhesion_simulator_formula_salaries_1'];
+        $js_variables['formula_salaries_2'] = $settings['openig_adhesion_simulator_formula_salaries_2'];
+        $js_variables['formula_salaries_3'] = $settings['openig_adhesion_simulator_formula_salaries_3'];
+        $js_variables['formula_salaries_4'] = $settings['openig_adhesion_simulator_formula_salaries_4'];
+        $js_variables['formula_salaries_5'] = $settings['openig_adhesion_simulator_formula_salaries_5'];
+        $js_variables['formula_salaries_6'] = $settings['openig_adhesion_simulator_formula_salaries_6'];
+        $js_variables['formula_salaries_7'] = $settings['openig_adhesion_simulator_formula_salaries_7'];
+
+        $variables['#attached']['drupalSettings']['openig_adhesion']['openigAdhesion'] = $js_variables;
+    }
+
+}

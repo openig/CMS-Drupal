@@ -23,11 +23,14 @@ DB_STATUS=
 ###
 ### Afficher l'état de l'instance Drupal
 ###
-deploy_drupal_status() {
+init_d10_status() {
 	cd "${DIR_DOCROOT}"
 	
 	## fin du script d'init si la commande drush n'est pas disponible
 	[ -z "${BIN_DRUSH}" ] && p_warning "Commande Drush non disponible (aucune configuration Drupal effectuée) !" && return 0
+	
+	## attente de disponibilité de la base de données
+	! is_database_ready && p_warning "Base de données indisponible !" && return 1
 	
 	p_section "Nettoyage complet des caches de l'instance Drupal..."
 	${BIN_DRUSH} cache:rebuild 2>/dev/null || true
@@ -40,12 +43,12 @@ deploy_drupal_status() {
 	
 	return 0
 }
-deploy_drupal_status
+init_d10_status
 
 ###
 ### Installation de l'instance (équivalent du wizard web)
 ###
-deploy_drupal_install() {
+init_d10_install() {
 	[ -n "${BIN_DRUSH}" ] || return 0
 	[ -z "${DB_STATUS}" ] || return 0
 	cd "${DIR_DOCROOT}"
@@ -74,15 +77,15 @@ deploy_drupal_install() {
 	chmod u+w "${DIR_SETTINGS}" "${DIR_SETTINGS}/settings".* 2>/dev/null || true
 	
 	## nouvelle recherche de l'état de la db (devrait être opérationnelle)
-	deploy_drupal_status
+	init_d10_status
 	return 0
 }
-deploy_drupal_install
+init_d10_install
 
 ###
 ### Update de l'instance
 ###
-deploy_drupal_update() {
+init_d10_update() {
 	[ -n "${BIN_DRUSH}" ] || return 0
 	[ -n "${DB_STATUS}" ] || return 0
 	cd "${DIR_DOCROOT}"
@@ -94,4 +97,4 @@ deploy_drupal_update() {
 	## Todo autres imports ? (traduction)
 	return 0
 }
-deploy_drupal_update
+init_d10_update

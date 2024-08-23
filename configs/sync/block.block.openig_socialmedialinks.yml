@@ -1,0 +1,165 @@
+uuid: a8143075-17c4-4702-a470-b9da01268362
+langcode: fr
+status: true
+dependencies:
+  module:
+    - social_media_links
+  theme:
+    - openig
+id: openig_socialmedialinks
+theme: openig
+region: bas_footer_droite
+weight: -27
+provider: null
+plugin: social_media_links_block
+settings:
+  id: social_media_links_block
+  label: 'Nous suivre'
+  label_display: visible
+  provider: social_media_links
+  platforms:
+    linkedin:
+      value: company/openig
+      description: ''
+      weight: '-43'
+    twitter:
+      value: idg_openig
+      description: ''
+      weight: '-42'
+    tiktok:
+      value: ''
+      description: ''
+      weight: '-41'
+    rss:
+      value: ''
+      description: ''
+      weight: '-40'
+    flickr:
+      value: ''
+      description: ''
+      weight: '-39'
+    telegram:
+      value: ''
+      description: ''
+      weight: '-38'
+    amazon:
+      value: ''
+      description: ''
+      weight: '-37'
+    youtube_channel:
+      value: ''
+      description: ''
+      weight: '-36'
+    goodreads:
+      value: ''
+      description: ''
+      weight: '-35'
+    email:
+      value: ''
+      description: ''
+      weight: '-34'
+    website:
+      value: ''
+      description: ''
+      weight: '-33'
+    instagram:
+      value: ''
+      description: ''
+      weight: '-32'
+    vkontakte:
+      value: ''
+      description: ''
+      weight: '-31'
+    pinterest:
+      value: ''
+      description: ''
+      weight: '-30'
+    gitlab:
+      value: ''
+      description: ''
+      weight: '-29'
+    contact:
+      value: ''
+      description: ''
+      weight: '-28'
+    bitbucket:
+      value: ''
+      description: ''
+      weight: '-27'
+    facebook:
+      value: ''
+      description: ''
+      weight: '-26'
+    slideshare:
+      value: ''
+      description: ''
+      weight: '-25'
+    vimeo:
+      value: ''
+      description: ''
+      weight: '-24'
+    whatsapp:
+      value: ''
+      description: ''
+      weight: '-23'
+    meetup:
+      value: ''
+      description: ''
+      weight: '-22'
+    glassdoor:
+      value: ''
+      description: ''
+      weight: '-21'
+    googleplay:
+      value: ''
+      description: ''
+      weight: '-20'
+    tumblr:
+      value: ''
+      description: ''
+      weight: '-19'
+    mastodon:
+      value: ''
+      description: ''
+      weight: '-18'
+    github:
+      value: ''
+      description: ''
+      weight: '-17'
+    drupal:
+      value: ''
+      description: ''
+      weight: '-16'
+    patreon:
+      value: ''
+      description: ''
+      weight: '-15'
+    googleplus:
+      value: ''
+      description: ''
+      weight: '-14'
+    behance:
+      value: ''
+      description: ''
+      weight: '-13'
+    xing:
+      value: ''
+      description: ''
+      weight: '-12'
+    youtube:
+      value: ''
+      description: ''
+      weight: '-11'
+  appearance:
+    orientation: h
+    show_name: 0
+    suggestion: ''
+  link_attributes:
+    target: _blank
+    rel: '<none>'
+  iconset:
+    style: 'fontawesome:2x'
+    installed_iconsets:
+      fontawesome:
+        examples: ''
+visibility: {  }

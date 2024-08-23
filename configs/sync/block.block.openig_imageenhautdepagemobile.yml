@@ -1,0 +1,25 @@
+uuid: dee04d0a-eb7a-4364-a943-501e0e945328
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:image:4bd052d3-79d0-4cc0-ab26-65dc18594529'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_imageenhautdepagemobile
+theme: openig
+region: content
+weight: -16
+provider: null
+plugin: 'block_content:4bd052d3-79d0-4cc0-ab26-65dc18594529'
+settings:
+  id: 'block_content:4bd052d3-79d0-4cc0-ab26-65dc18594529'
+  label: 'Image en haut de page mobile'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,33 @@
+uuid: 70914aef-ee2b-4cc8-acc8-b3d9560a5947
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.image
+    - field.field.block_content.image.field_image
+  module:
+    - svg_image
+id: block_content.image.default
+targetEntityType: block_content
+bundle: image
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

@@ -1,0 +1,49 @@
+uuid: ebc7c5eb-e3e1-4339-a52c-16eac62c850d
+langcode: en
+status: true
+dependencies: {  }
+id: structures
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: Structures
+source:
+  plugin: structures
+  key: migrate
+process:
+  title: legal_name
+  body: description
+  status: is_active
+  field_email: email
+  field_website: website
+  field_address: address
+  field_postcode: postcode
+  field_city: city
+  field_phone: phone
+  field_image/target_id: logo
+  field_siret: siren
+  field_crige_partner: is_crige_partner
+  field_typologie_structure/target_id: organisation_type_id
+  my_department_array:
+    plugin: departmentProcess
+    source: postcode
+  field_dpt_intervention:
+    plugin: sub_process
+    source: '@my_department_array'
+    process:
+      target_id: id
+  moderation_state:
+    plugin: static_map
+    source: is_active
+    map:
+      - draft
+      - published
+    default_value: draft
+destination:
+  plugin: 'entity:node'
+  default_bundle: structure
+migration_dependencies:
+  required:
+    - logos_structures

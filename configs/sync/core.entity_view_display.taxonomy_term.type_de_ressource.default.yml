@@ -1,0 +1,24 @@
+uuid: b2b2a619-600a-46ed-b5bd-5eb67bba6fd0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.type_de_ressource
+  module:
+    - text
+id: taxonomy_term.type_de_ressource.default
+targetEntityType: taxonomy_term
+bundle: type_de_ressource
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

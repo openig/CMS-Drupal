@@ -1,0 +1,23 @@
+uuid: 84d44d18-609c-4c4c-8505-969a2a68edbb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.texte_et_couleur
+    - field.storage.block_content.field_lien
+  module:
+    - link
+id: block_content.texte_et_couleur.field_lien
+field_name: field_lien
+entity_type: block_content
+bundle: texte_et_couleur
+label: Lien
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

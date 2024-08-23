@@ -1,0 +1,8 @@
+uuid: db99ab19-886c-4927-9624-851bca5472fb
+langcode: fr
+status: true
+dependencies: {  }
+id: lien
+label: Lien
+revision: false
+description: ''

@@ -1,0 +1,101 @@
+uuid: c642da80-de19-480b-9d03-b32e848025a4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_ca_member
+    - field.field.user.user.field_desired_structure
+    - field.field.user.user.field_firstname
+    - field.field.user.user.field_lastname
+    - field.field.user.user.field_outils_competences
+    - field.field.user.user.field_phone
+    - field.field.user.user.field_referent
+    - field.field.user.user.field_social_network
+    - field.field.user.user.field_structure
+  module:
+    - social_media_links_field
+    - user
+_core:
+  default_config_hash: mZLyuWM9CQx2ZJVqFGSbzgFnHzudVbHBYmdU256A5Wk
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_ca_member:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: "Membre du Conseil d'Administration"
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_firstname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_lastname:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_outils_competences:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 8
+    region: content
+  field_referent:
+    type: boolean
+    label: hidden
+    settings:
+      format: custom
+      format_custom_false: ''
+      format_custom_true: Référent
+    third_party_settings: {  }
+    weight: 5
+    region: content
+  field_social_network:
+    type: social_media_links_field_default
+    label: hidden
+    settings:
+      appearance:
+        orientation: h
+        show_name: 0
+      link_attributes:
+        target: _blank
+        rel: '<none>'
+    third_party_settings: {  }
+    weight: 7
+    region: content
+  field_structure:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  member_for:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  breadcrumbs: true
+  field_desired_structure: true
+  field_phone: true
+  langcode: true
+  search_api_excerpt: true
+  simplenews: true

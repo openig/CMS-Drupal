@@ -1,0 +1,10 @@
+uuid: be093c93-4dd1-4c04-962c-cbcdcae04577
+langcode: fr
+status: true
+dependencies: {  }
+id: ligne_de_membres
+label: 'Ligne de membres'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

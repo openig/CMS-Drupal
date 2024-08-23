@@ -1,0 +1,58 @@
+uuid: 49b17493-64e8-45eb-b35b-c69266aa1e32
+langcode: fr
+status: true
+dependencies: {  }
+id: logos_structures
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: null
+label: 'Migrate structures logos to media'
+source:
+  plugin: logos_structures
+  constants:
+    source_base_path: 'https://idgo.openig.org/media/'
+    DRUPAL_FILE_DIRECTORY: 'public://logos/'
+  ids:
+    id:
+      type: integer
+process:
+  pseudo_destination_filename:
+    -
+      plugin: callback
+      callable: basename
+      source: logo
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Cannot import empty image filename.'
+  pseudo_destination_path:
+    -
+      plugin: concat
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@pseudo_destination_filename'
+  source_full_path:
+    -
+      plugin: concat
+      source:
+        - constants/source_base_path
+        - logo
+    -
+      plugin: urlencode
+  uri:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: '@source_full_path'
+    -
+      plugin: file_copy
+      source:
+        - '@source_full_path'
+        - '@pseudo_destination_path'
+      file_exists: rename
+      move: false
+destination:
+  plugin: 'entity:file'
+migration_dependencies: null

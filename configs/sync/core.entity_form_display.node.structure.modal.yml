@@ -1,0 +1,183 @@
+uuid: 3b644c30-76c8-4611-a12e-11744e62c661
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_form_mode.node.modal
+    - field.field.node.structure.body
+    - field.field.node.structure.field_address
+    - field.field.node.structure.field_city
+    - field.field.node.structure.field_contacts
+    - field.field.node.structure.field_crige_partner
+    - field.field.node.structure.field_dpt_intervention
+    - field.field.node.structure.field_email
+    - field.field.node.structure.field_image
+    - field.field.node.structure.field_phone
+    - field.field.node.structure.field_postcode
+    - field.field.node.structure.field_siret
+    - field.field.node.structure.field_typologie_structure
+    - field.field.node.structure.field_website
+    - image.style.thumbnail
+    - node.type.structure
+  module:
+    - field_group
+    - link
+    - svg_image
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_postal_address:
+      children:
+        - field_address
+        - field_postcode
+        - field_city
+      label: 'Adresse postal'
+      region: content
+      parent_name: ''
+      weight: 5
+      format_type: fieldset
+      format_settings:
+        classes: ''
+        show_empty_fields: false
+        id: ''
+        description: ''
+        required_fields: true
+id: node.structure.modal
+targetEntityType: node
+bundle: structure
+mode: modal
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 10
+    region: content
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_address:
+    type: string_textarea
+    weight: 18
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_city:
+    type: string_textfield
+    weight: 20
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_contacts:
+    type: entity_reference_autocomplete
+    weight: 9
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_crige_partner:
+    type: boolean_checkbox
+    weight: 11
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_dpt_intervention:
+    type: entity_reference_autocomplete
+    weight: 8
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_image:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_phone:
+    type: telephone_default
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_postcode:
+    type: string_textfield
+    weight: 19
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_siret:
+    type: string_textfield
+    weight: 6
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_typologie_structure:
+    type: entity_reference_autocomplete
+    weight: 7
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_website:
+    type: link_default
+    weight: 4
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 120
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  langcode: true
+  moderation_state: true
+  path: true
+  promote: true
+  publish_on: true
+  publish_state: true
+  scheduler_settings: true
+  simple_sitemap: true
+  status: true
+  sticky: true
+  uid: true
+  unpublish_on: true
+  unpublish_state: true

@@ -1,0 +1,23 @@
+uuid: fa0318d7-99a7-4b7d-b00a-eb6a8e93f79e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - openig
+id: openig_identitedusite
+theme: openig
+region: haut_footer_centre
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Identité du site'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

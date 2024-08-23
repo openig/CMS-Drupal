@@ -1,0 +1,49 @@
+uuid: 6406233c-f814-492a-aabf-5a14967e9aff
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_membre
+    - paragraphs.paragraphs_type.ligne_de_membres
+    - paragraphs.paragraphs_type.membre
+  module:
+    - entity_reference_revisions
+id: paragraph.ligne_de_membres.field_membre
+field_name: field_membre
+entity_type: paragraph
+bundle: ligne_de_membres
+label: Membres
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      membre: membre
+    negate: 0
+    target_bundles_drag_drop:
+      ligne_de_membres:
+        weight: 8
+        enabled: false
+      membre:
+        weight: 7
+        enabled: true
+      membres:
+        weight: 8
+        enabled: false
+      picto_text:
+        weight: 9
+        enabled: false
+      texte_dropdown:
+        weight: 10
+        enabled: false
+      title_text:
+        weight: 11
+        enabled: false
+      type_de_contenu:
+        weight: 12
+        enabled: false
+field_type: entity_reference_revisions

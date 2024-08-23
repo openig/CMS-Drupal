@@ -1,0 +1,5 @@
+name: OPenIG Filter annuaire
+type: module
+description: OPenIG Filter annuaire
+package: Custom
+core_version_requirement: ^10

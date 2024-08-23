@@ -1,0 +1,23 @@
+uuid: 5ff97378-25b2-4e29-84e1-832854f906eb
+langcode: fr
+status: false
+dependencies:
+  config:
+    - views.view.les_actualites
+  module:
+    - views
+  theme:
+    - openig
+id: openig_formulaireexposeles_actualitesactualites
+theme: openig
+region: content
+weight: -9
+provider: null
+plugin: 'views_exposed_filter_block:les_actualites-actualites'
+settings:
+  id: 'views_exposed_filter_block:les_actualites-actualites'
+  label: ''
+  label_display: visible
+  provider: views
+  views_label: 'Filtrer la recherche'
+visibility: {  }

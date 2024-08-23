@@ -1,0 +1,30 @@
+uuid: 66cf0d5c-811d-4c97-9836-4713b6192362
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:texte_et_couleur:e14ec2d8-cb66-494e-8514-885a3ede0489'
+  module:
+    - block_content
+    - system
+  theme:
+    - openig
+id: openig_phrasedaccrocheheader
+theme: openig
+region: premiere_section_accueil
+weight: -13
+provider: null
+plugin: 'block_content:e14ec2d8-cb66-494e-8514-885a3ede0489'
+settings:
+  id: 'block_content:e14ec2d8-cb66-494e-8514-885a3ede0489'
+  label: "Phrase d'accroche header"
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
