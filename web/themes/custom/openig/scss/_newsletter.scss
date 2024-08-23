@@ -1,13 +1,26 @@
+.mesh{
+  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors-9.png');
+  background-repeat: no-repeat;
+  width: 1097px;
+  height: 673px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .email-type-simplenews-newsletter {
-  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
   height: 20px;
   width: 50%;
   margin: auto;
 }
 
 /** Bloc logo  **/
-.header #block-openig-newsletterlogo .field--name-field-image {
+.header #block-openig-newsletterlogo {
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .header{
@@ -23,20 +36,26 @@
   margin-top: 1rem;
   padding-bottom: 1rem;
   margin-bottom: 0 !important;
+  position: relative;
+  z-index: 1;
 }
 
 // Titre email 
 .node--type-simplenews-issue.node--view-mode-email-html{
   padding: 0;
-  h1{
+  .titleNews{
     height: 75px;
     background-color: $OPenIG-color_light-gray;
     width: 90%;
     text-align: center;
-    font-size: $OPenIG-font-size-h1 !important;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  h1{
+    font-size: $OPenIG-font-size-h1 !important;
+    z-index: 1;
+    position: relative;
   }
 }
 
@@ -83,6 +102,9 @@
   border-radius: 16px;
   text-transform: lowercase;
   font-weight: bold;
+  background-color: white;
+  z-index: 1;
+  position: relative;
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-mois {
   font-size: 1.2rem;
@@ -106,6 +128,7 @@
   margin: auto;
   background-color: #F5F5F5;
   margin-bottom: 100px;
+  z-index: 1;
   h2{
     font-family: "Russo One";
     border: none !important;
@@ -309,6 +332,8 @@
   .node__content{
     .bloc-newsletter{
       > .paragraph{
+        position: relative;
+        z-index: 1;
         margin-top: 70px;
       }
       /** titre bloc à gauche **/
