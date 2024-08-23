@@ -1,5 +1,5 @@
 .mesh{
-  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors-9.png');
+  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
   background-repeat: no-repeat;
   width: 1097px;
   height: 673px;
@@ -8,6 +8,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
 .email-type-simplenews-newsletter {
@@ -20,7 +21,7 @@
 .header #block-openig-newsletterlogo {
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header{
@@ -37,7 +38,7 @@
   padding-bottom: 1rem;
   margin-bottom: 0 !important;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 // Titre email 
@@ -45,16 +46,23 @@
   padding: 0;
   .titleNews{
     height: 75px;
-    background-color: $OPenIG-color_light-gray;
-    width: 90%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+  .backgroundTitle{
+    height: 75px;
+    background-color: $OPenIG-color_light-gray;
+    width: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   h1{
     font-size: $OPenIG-font-size-h1 !important;
-    z-index: 1;
+    z-index: 2;
     position: relative;
   }
 }
@@ -103,7 +111,7 @@
   text-transform: lowercase;
   font-weight: bold;
   background-color: white;
-  z-index: 1;
+  z-index: 2;
   position: relative;
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-mois {
@@ -128,7 +136,7 @@
   margin: auto;
   background-color: #F5F5F5;
   margin-bottom: 100px;
-  z-index: 1;
+  z-index: 2;
   h2{
     font-family: "Russo One";
     border: none !important;
@@ -333,7 +341,7 @@
     .bloc-newsletter{
       > .paragraph{
         position: relative;
-        z-index: 1;
+        z-index: 2;
         margin-top: 70px;
       }
       /** titre bloc à gauche **/
