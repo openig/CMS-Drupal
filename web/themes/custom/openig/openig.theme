@@ -299,6 +299,21 @@ function openig_preprocess_node(&$variables, $hook){
           $variables['paragraphs'][$id]['title'] = $title;
           $variables['paragraphs'][$id]['link'] = $noUppercaseString;
         }
+        $socialmedial_block = Drupal\block\Entity\Block::load('openig_socialmedialinks');
+        if ($socialmedial_block) {
+           $socialmedial_content = \Drupal::entityTypeManager()
+              ->getViewBuilder('block')
+              ->view($socialmedial_block);
+           $variables['socialmedial_content'] = $socialmedial_content;
+        }
+      
+        $pieddepage_block = Drupal\block\Entity\Block::load('openig_newslettermenufooter');
+        if ($pieddepage_block) {
+          $pieddepage_content = \Drupal::entityTypeManager()
+              ->getViewBuilder('block')
+              ->view($pieddepage_block);
+          $variables['pieddepage_content'] = $pieddepage_content;
+        }
         break;
     default:
       break;

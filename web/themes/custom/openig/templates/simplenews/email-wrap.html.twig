@@ -22,10 +22,9 @@
   'email-sub-type-' ~ sub_type|clean_class,
 ]
 %}
-
 {% if is_html %}
   <html>
-  <body>
+  <body class="body_email">
   <div class="mesh"></div>
   <div{{ attributes.addClass(classes) }}>
     <table width="100%" cellpadding="0" cellspacing="0">
@@ -37,11 +36,11 @@
               {{ phrasedaccroche_content }}
             </div>
             {{ body }}
-            <div class="footer">
+           {#  <div class="footer">
               {{ socialmedial_content }}
-              {#  <a href="[simplenews-subscriber:unsubscribe-url]">test lien désinscription</a>#}
+                <a href="[simplenews-subscriber:unsubscribe-url]">test lien désinscription</a>
               {{ pieddepage_content }}
-            </div>
+            </div> #}
           </div>
         </td>
       </tr>

@@ -80,7 +80,7 @@
   %}
   {{ attach_library('bootstrap5/node') }}
   <article{{ attributes.addClass(classes) }}>
-  
+
 	{{ title_prefix }}
 	{% if label and not page %}
 		<div class="titleNews">
@@ -120,4 +120,10 @@
 	</div>
   
   </article>
-  
+  <div class="footer">
+	{{ socialmedial_content }}
+	<div id="block-openig-newslettermenufooter">
+		<a href="{{ drupal_token('simplenews-subscriber:unsubscribe-url') }}">Se désabonner</a>
+		{{ pieddepage_content }}
+	</div>
+  </div>

@@ -1,3 +1,9 @@
+.body_email{
+  .main-container{
+    overflow-y: visible;
+  }
+}
+
 .mesh{
   background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
   background-repeat: no-repeat;
@@ -422,6 +428,10 @@
       display: block;
       margin-bottom: 1rem !important;
     }
+    .field--name-created, .field--name-field-dates{
+      background-image: url('/themes/custom/openig/img/newsletter/calendar-week-solid.svg');
+      background-repeat: no-repeat;
+    }
     h2.title_contenu{
       a{
         text-decoration: none;
@@ -569,19 +579,15 @@
   justify-content: center;
 }
 
-.footer #block-openig-newslettermenufooter .field--name-field-lien {
-  display: flex;
+.footer #block-openig-newslettermenufooter a:not(:last-child){
+  border-right: 1px solid white;
+  margin-right: 10px;
 }
-.footer #block-openig-newslettermenufooter .field--name-field-lien .field__item span::after {
-  content: "|";
-}
-.footer #block-openig-newslettermenufooter .field--name-field-lien  .field__item span {
+
+.footer #block-openig-newslettermenufooter a {
   color: #f0f0ef;
   padding-right: 10px;
+  text-decoration: none;
+  font-size: $OPenIG-font-size-sm;
 }
-
-.footer ul{
-  list-style-type : none;
-}
-
 
