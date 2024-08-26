@@ -19,6 +19,14 @@ html, body{
   height: 20px;
   width: 50%;
   margin: auto;
+  .link_node{
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    right: 15px;
+    color: $OPenIG-color_black;
+    font-size: $OPenIG-font-size-sm;
+  }
 }
 
 /** Bloc logo  **/
