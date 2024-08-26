@@ -13,6 +13,7 @@ html, body{
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  max-width: 100%;
 }
 
 .email-type-simplenews-newsletter {
@@ -154,6 +155,7 @@ html, body{
   background-color: #F5F5F5;
   margin-bottom: 100px;
   z-index: 2;
+  max-width: 75%;
   h2{
     font-family: "Russo One";
     border: none !important;
@@ -303,6 +305,7 @@ html, body{
       display: flex;
       position: relative;
       padding-bottom: 0;
+      flex-wrap: wrap;
       //justify-content: space-around;
       .field--name-field-image{
         border-radius: 50%;
@@ -462,7 +465,7 @@ html, body{
         font-weight: bold;
         font-size: $OPenIG-font-size-h2 !important;
       }
-      max-width: 50%;
+      max-width: 75%;
       border-bottom: 0 !important;
     }
     .field--name-field-image {
