@@ -22,7 +22,7 @@ html, body{
   .link_node{
     position: absolute;
     z-index: 2;
-    top: 15px;
+    top: 20px;
     right: 15px;
     color: $OPenIG-color_black;
     font-size: $OPenIG-font-size-sm;
@@ -34,6 +34,7 @@ html, body{
   text-align: center;
   position: relative;
   z-index: 2;
+  padding-top: 15px;
 }
 
 .header{
