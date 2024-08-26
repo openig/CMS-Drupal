@@ -3,7 +3,7 @@ _core:
 langcode: fr
 hash_expiration: 86400
 newsletter:
-  issue_tokens: false
+  issue_tokens: true
   format: html
   priority: 0
   receipt: true

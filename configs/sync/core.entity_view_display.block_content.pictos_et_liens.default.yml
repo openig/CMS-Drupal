@@ -1,0 +1,27 @@
+uuid: 8f0d8caa-6f39-48c0-925d-b66751192c79
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.pictos_et_liens
+    - field.field.block_content.pictos_et_liens.field_picto_et_lien
+  module:
+    - entity_reference_revisions
+id: block_content.pictos_et_liens.default
+targetEntityType: block_content
+bundle: pictos_et_liens
+mode: default
+content:
+  field_picto_et_lien:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

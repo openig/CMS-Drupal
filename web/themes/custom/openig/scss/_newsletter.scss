@@ -1,7 +1,5 @@
-.body_email{
-  .main-container{
-    overflow-y: visible;
-  }
+html, body{
+  height: auto;
 }
 
 .mesh{
@@ -558,27 +556,33 @@
 
 
 /** Bloc Nous suivre **/
-.footer #block-openig-socialmedialinks {
-  margin: 100px auto;
+.footer #block-openig-newsletternoussuivre {
+  margin: 75px auto;
   text-align: center;
   border-top: 2px solid;
   border-bottom: 2px solid;
-  width: 24%;
-}
-.footer #block-openig-socialmedialinks h2 {
-  font-family: "OpenSans_Bold", sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #0a0909;
-  margin-bottom: 1rem;
-  border-bottom: none !important;
-}
-.footer #block-openig-socialmedialinks .social-media-links--platforms {
-  display: flex;
-  justify-content: center;
-}
-.footer #block-openig-socialmedialinks .social-media-links--platforms li a {
-  color: #0a0909;
+  width: fit-content;
+  padding: 1rem 2rem;
+  h2 {
+    font-family: "OpenSans_Bold", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a0909;
+    margin-bottom: 1rem;
+    border-bottom: none !important;
+  }
+  .field--name-field-picto-et-lien{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .field__item:not(:last-child){
+      margin-right: 1rem;
+    }
+    img{
+      width: 25px;
+    }
+  }
 }
 
 /** Bloc Menu pied de page **/
@@ -586,9 +590,9 @@
   background-color: #585756;
   margin: 70px 0;
   text-align: center;
-  padding: 15px;
   display: flex;
   justify-content: center;
+  padding: 1.5rem;
 }
 
 .footer #block-openig-newslettermenufooter a:not(:last-child){

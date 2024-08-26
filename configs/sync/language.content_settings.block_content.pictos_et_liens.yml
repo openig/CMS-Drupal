@@ -1,0 +1,11 @@
+uuid: 1da9040b-796c-427b-b60c-9dd13e7663aa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.pictos_et_liens
+id: block_content.pictos_et_liens
+target_entity_type_id: block_content
+target_bundle: pictos_et_liens
+default_langcode: site_default
+language_alterable: false

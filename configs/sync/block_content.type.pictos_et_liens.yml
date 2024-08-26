@@ -1,0 +1,8 @@
+uuid: e17ee77e-c707-465e-84dc-458f3de6a976
+langcode: fr
+status: true
+dependencies: {  }
+id: pictos_et_liens
+label: 'Pictos et liens'
+revision: false
+description: null

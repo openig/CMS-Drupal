@@ -1,0 +1,25 @@
+uuid: 5d29d098-b826-4796-9649-fba514fd42ab
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:pictos_et_liens:a8799922-f4bb-4f9e-9e5c-5f1c497817b8'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_newsletternoussuivre
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:a8799922-f4bb-4f9e-9e5c-5f1c497817b8'
+settings:
+  id: 'block_content:a8799922-f4bb-4f9e-9e5c-5f1c497817b8'
+  label: 'Nous suivre'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
