@@ -18,8 +18,9 @@ html, body{
 
 .email-type-simplenews-newsletter {
   height: 20px;
-  width: 50%;
+  width: 100%;
   margin: auto;
+  max-width: 650px;
   .link_node{
     position: absolute;
     z-index: 2;
