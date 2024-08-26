@@ -131,8 +131,12 @@ html, body{
   font-size: 1.2rem;
   border-bottom: 4px solid $OPenIG-color_black;
   font-weight: lighter;
-}
+  padding-bottom: 3px;
 
+}
+.node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-annee {
+  padding-top: 3px;
+}
 
 /** Sommaire **/
 .bloc-sommaire {
