@@ -53,7 +53,14 @@ function openig_search_theme() {
 }
 
 function openig_search_preprocess_openig_search_results(&$variables) {
-    $variables['#attached']['library'][] = 'openig_search/openig-search';
+  $variables['#attached']['library'][] = 'openig_search/openig-search';
+  $config = \Drupal::config('openig_search.settings');
+  $variables['config_externe'] = $config->get('external_search_enabled', TRUE);
+}
+
+function openig_search_preprocess_openig_search_internal_results(&$variables) {
+  $config = \Drupal::config('openig_search.settings');
+  $variables['config_externe'] = $config->get('external_search_enabled', TRUE);
 }
 
 function openig_search_views_pre_render(\Drupal\views\ViewExecutable $view){
