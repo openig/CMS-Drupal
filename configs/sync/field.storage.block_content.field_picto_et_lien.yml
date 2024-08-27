@@ -1,0 +1,25 @@
+uuid: 4a60b6ef-5782-4b28-9583-5b3cedcd0e6b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - block_content
+    - entity_reference_revisions
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: block_content.field_picto_et_lien
+field_name: field_picto_et_lien
+entity_type: block_content
+type: entity_reference_revisions
+settings:
+  target_type: paragraph
+module: entity_reference_revisions
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,94 @@
+uuid: b9b3c178-79d8-47d4-b526-d665e28ecf2d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contenu
+    - node.type.simplenews_issue
+    - paragraphs.paragraphs_type.a_la_une
+    - paragraphs.paragraphs_type.a_savoir
+    - paragraphs.paragraphs_type.agenda
+    - paragraphs.paragraphs_type.bienvenue
+    - paragraphs.paragraphs_type.coup_de_projecteur
+    - paragraphs.paragraphs_type.fond_vert
+    - paragraphs.paragraphs_type.le_mot_du_president
+  module:
+    - entity_reference_revisions
+id: node.simplenews_issue.field_contenu
+field_name: field_contenu
+entity_type: node
+bundle: simplenews_issue
+label: Contenu
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      le_mot_du_president: le_mot_du_president
+      bienvenue: bienvenue
+      a_la_une: a_la_une
+      agenda: agenda
+      a_savoir: a_savoir
+      coup_de_projecteur: coup_de_projecteur
+      fond_vert: fond_vert
+    negate: 0
+    target_bundles_drag_drop:
+      a_la_une:
+        weight: -34
+        enabled: true
+      a_savoir:
+        weight: -32
+        enabled: true
+      accordeon:
+        weight: -37
+        enabled: false
+      agenda:
+        weight: -33
+        enabled: true
+      bienvenue:
+        weight: -35
+        enabled: true
+      coup_de_projecteur:
+        weight: -31
+        enabled: true
+      fond_vert:
+        weight: -30
+        enabled: true
+      le_mot_du_president:
+        weight: -36
+        enabled: true
+      ligne_de_membres:
+        weight: -29
+        enabled: false
+      membre:
+        weight: -28
+        enabled: false
+      membres:
+        weight: -27
+        enabled: false
+      mois_et_annee:
+        weight: -26
+        enabled: false
+      onglet_d_accordeon:
+        weight: -25
+        enabled: false
+      picto_text:
+        weight: -23
+        enabled: false
+      pictos_et_texte:
+        weight: -24
+        enabled: false
+      texte_dropdown:
+        weight: -22
+        enabled: false
+      title_text:
+        weight: -21
+        enabled: false
+      type_de_contenu:
+        weight: -20
+        enabled: false
+field_type: entity_reference_revisions

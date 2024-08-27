@@ -1,0 +1,8 @@
+uuid: 0bc0e562-baaf-4310-8b31-59c03704cf6b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - simplenews
+id: simplenews_newsletter.node
+configuration: {  }

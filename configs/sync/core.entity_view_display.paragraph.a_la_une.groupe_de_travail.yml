@@ -1,0 +1,28 @@
+uuid: f48ffcf7-5959-4d20-aa74-ae2e117f4a99
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.groupe_de_travail
+    - field.field.paragraph.a_la_une.field_picto
+    - field.field.paragraph.a_la_une.field_title
+    - field.field.paragraph.a_la_une.field_type_de_contenu
+    - paragraphs.paragraphs_type.a_la_une
+id: paragraph.a_la_une.groupe_de_travail
+targetEntityType: paragraph
+bundle: a_la_une
+mode: groupe_de_travail
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto: true
+  field_type_de_contenu: true
+  search_api_excerpt: true

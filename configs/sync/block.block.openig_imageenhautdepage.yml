@@ -12,7 +12,7 @@ dependencies:
 id: openig_imageenhautdepage
 theme: openig
 region: content
-weight: -18
+weight: -26
 provider: null
 plugin: 'block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3'
 settings:

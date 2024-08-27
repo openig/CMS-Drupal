@@ -1,0 +1,78 @@
+uuid: a3d71247-91ae-49ca-9376-a1171849c3d4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter
+    - field.field.node.evenement.field_body
+    - field.field.node.evenement.field_dates
+    - field.field.node.evenement.field_groupe_de_travail
+    - field.field.node.evenement.field_image
+    - field.field.node.evenement.field_tag
+    - field.field.node.evenement.field_webform
+    - image.style.medium
+    - node.type.evenement
+  module:
+    - daterange_compact
+    - paragraphs_summary
+    - svg_image
+    - user
+id: node.evenement.newsletter
+targetEntityType: node
+bundle: evenement
+mode: newsletter
+content:
+  field_body:
+    type: paragraphs_summary
+    label: hidden
+    settings:
+      allowed_bundles:
+        title_text: title_text
+      view_mode: preview
+      limit: '1'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_dates:
+    type: daterange_compact
+    label: hidden
+    settings:
+      daterange_compact_format: medium_date
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_tag:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_groupe_de_travail: true
+  field_webform: true
+  langcode: true
+  search_api_excerpt: true

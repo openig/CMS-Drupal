@@ -1,0 +1,26 @@
+uuid: c0cb6b03-97c9-4986-b393-911d8c466614
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.groupe_de_travail
+    - field.field.paragraph.fond_vert.field_body
+    - field.field.paragraph.fond_vert.field_title
+    - paragraphs.paragraphs_type.fond_vert
+id: paragraph.fond_vert.groupe_de_travail
+targetEntityType: paragraph
+bundle: fond_vert
+mode: groupe_de_travail
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_body: true
+  search_api_excerpt: true

@@ -1,0 +1,33 @@
+uuid: 7e597c38-fdc2-4a03-ab7e-70e1382d49d9
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:image:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
+  module:
+    - block_content
+    - node
+  theme:
+    - openig
+id: openig_newsletterlogo
+theme: openig
+region: content
+weight: -1
+provider: null
+plugin: 'block_content:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
+settings:
+  id: 'block_content:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
+  label: 'Newsletter - Logo '
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      simplenews_issue: simplenews_issue

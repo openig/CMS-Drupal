@@ -1,0 +1,26 @@
+uuid: 34f23d4e-17fb-4b9d-acb5-d588eecfdbf8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.fond_vert.field_body
+    - field.field.paragraph.fond_vert.field_title
+    - paragraphs.paragraphs_type.fond_vert
+id: paragraph.fond_vert.sidebar
+targetEntityType: paragraph
+bundle: fond_vert
+mode: sidebar
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_body: true
+  search_api_excerpt: true

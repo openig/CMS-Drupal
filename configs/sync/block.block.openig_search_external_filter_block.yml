@@ -9,7 +9,7 @@ dependencies:
 id: openig_search_external_filter_block
 theme: openig
 region: content
-weight: 0
+weight: -12
 provider: null
 plugin: openig_search_external_filter_block
 settings:

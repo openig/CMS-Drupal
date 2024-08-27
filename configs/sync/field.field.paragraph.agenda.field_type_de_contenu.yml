@@ -1,0 +1,29 @@
+uuid: 1caf9b7a-3c2b-4da8-b850-c32c4c4f651c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_de_contenu
+    - node.type.evenement
+    - paragraphs.paragraphs_type.agenda
+id: paragraph.agenda.field_type_de_contenu
+field_name: field_type_de_contenu
+entity_type: paragraph
+bundle: agenda
+label: 'Type de contenu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      evenement: evenement
+    sort:
+      field: publish_on
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: evenement
+field_type: entity_reference

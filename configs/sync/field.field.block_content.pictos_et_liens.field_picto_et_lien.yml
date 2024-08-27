@@ -1,0 +1,85 @@
+uuid: cea74039-0a96-4715-bba4-a69dafb141a3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.pictos_et_liens
+    - field.storage.block_content.field_picto_et_lien
+    - paragraphs.paragraphs_type.pictos_et_liens
+  module:
+    - entity_reference_revisions
+id: block_content.pictos_et_liens.field_picto_et_lien
+field_name: field_picto_et_lien
+entity_type: block_content
+bundle: pictos_et_liens
+label: 'Picto et lien'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      pictos_et_liens: pictos_et_liens
+    negate: 0
+    target_bundles_drag_drop:
+      a_la_une:
+        weight: 22
+        enabled: false
+      a_savoir:
+        weight: 23
+        enabled: false
+      accordeon:
+        weight: 20
+        enabled: false
+      agenda:
+        weight: 21
+        enabled: false
+      bienvenue:
+        weight: 24
+        enabled: false
+      coup_de_projecteur:
+        weight: 25
+        enabled: false
+      fond_vert:
+        weight: 26
+        enabled: false
+      le_mot_du_president:
+        weight: 27
+        enabled: false
+      ligne_de_membres:
+        weight: 28
+        enabled: false
+      membre:
+        weight: 29
+        enabled: false
+      membres:
+        weight: 30
+        enabled: false
+      mois_et_annee:
+        weight: 31
+        enabled: false
+      onglet_d_accordeon:
+        weight: 32
+        enabled: false
+      picto_text:
+        weight: 35
+        enabled: false
+      pictos_et_liens:
+        weight: 33
+        enabled: true
+      pictos_et_texte:
+        weight: 34
+        enabled: false
+      texte_dropdown:
+        weight: 36
+        enabled: false
+      title_text:
+        weight: 37
+        enabled: false
+      type_de_contenu:
+        weight: 38
+        enabled: false
+field_type: entity_reference_revisions

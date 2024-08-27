@@ -1,0 +1,46 @@
+uuid: 52adbebe-bcb7-41c3-8f8e-e6dc4fa0cb3e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a_savoir.field_picto
+    - field.field.paragraph.a_savoir.field_title
+    - field.field.paragraph.a_savoir.field_type_de_contenu
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.a_savoir
+  module:
+    - svg_image
+id: paragraph.a_savoir.default
+targetEntityType: paragraph
+bundle: a_savoir
+mode: default
+content:
+  field_picto:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_type_de_contenu:
+    type: entity_reference_autocomplete
+    weight: 2
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

@@ -12,7 +12,7 @@ dependencies:
 id: openig_actionsdanslassociation
 theme: openig
 region: premiere_section_accueil
-weight: -12
+weight: -36
 provider: null
 plugin: 'block_content:d1dbc935-9685-453f-b144-b6b413e092d3'
 settings:

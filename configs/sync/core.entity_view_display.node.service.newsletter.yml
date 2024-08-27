@@ -1,0 +1,74 @@
+uuid: c9ffade4-3259-4c7c-93de-38b37db4e1bd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.newsletter
+    - field.field.node.service.field_access_restricted
+    - field.field.node.service.field_body
+    - field.field.node.service.field_contact
+    - field.field.node.service.field_image
+    - field.field.node.service.field_link
+    - field.field.node.service.field_requirement
+    - field.field.node.service.field_tag
+    - field.field.node.service.field_weight
+    - image.style.medium
+    - node.type.service
+  module:
+    - paragraphs_summary
+    - svg_image
+    - user
+id: node.service.newsletter
+targetEntityType: node
+bundle: service
+mode: newsletter
+content:
+  field_body:
+    type: paragraphs_summary
+    label: hidden
+    settings:
+      allowed_bundles:
+        title_text: title_text
+        texte_dropdown: 0
+        accordeon: 0
+        membres: 0
+        pictos_et_texte: 0
+      view_mode: default
+      limit: '1'
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: medium
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_tag:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  addtoany: true
+  breadcrumbs: true
+  field_access_restricted: true
+  field_contact: true
+  field_link: true
+  field_requirement: true
+  field_weight: true
+  langcode: true
+  links: true
+  search_api_excerpt: true

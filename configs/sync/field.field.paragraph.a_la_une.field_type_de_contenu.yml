@@ -1,0 +1,37 @@
+uuid: 84105dd1-bfac-494c-843c-ea333921cfa9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_type_de_contenu
+    - node.type.article
+    - node.type.evenement
+    - node.type.groupe_de_travail
+    - node.type.page
+    - node.type.service
+    - paragraphs.paragraphs_type.a_la_une
+id: paragraph.a_la_une.field_type_de_contenu
+field_name: field_type_de_contenu
+entity_type: paragraph
+bundle: a_la_une
+label: 'Type de contenu'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      article: article
+      evenement: evenement
+      groupe_de_travail: groupe_de_travail
+      page: page
+      service: service
+    sort:
+      field: publish_on
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: article
+field_type: entity_reference

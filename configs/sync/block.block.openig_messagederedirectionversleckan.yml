@@ -7,7 +7,7 @@ dependencies:
 id: openig_messagederedirectionversleckan
 theme: openig
 region: content
-weight: 0
+weight: -5
 provider: null
 plugin: 'block_content:1db3ab99-b399-4306-945c-8967eb3e0d2a'
 settings:

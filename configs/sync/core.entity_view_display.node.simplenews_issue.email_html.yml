@@ -4,13 +4,19 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.email_html
-    - field.field.node.simplenews_issue.field_actualite
-    - field.field.node.simplenews_issue.field_bloc
-    - field.field.node.simplenews_issue.field_evenement
-    - field.field.node.simplenews_issue.field_tag
+    - field.field.node.simplenews_issue.field_a_la_une
+    - field.field.node.simplenews_issue.field_a_savoir
+    - field.field.node.simplenews_issue.field_agenda
+    - field.field.node.simplenews_issue.field_bienvenue
+    - field.field.node.simplenews_issue.field_contenu
+    - field.field.node.simplenews_issue.field_coup_de_projecteur
+    - field.field.node.simplenews_issue.field_date
+    - field.field.node.simplenews_issue.field_fond_vert
+    - field.field.node.simplenews_issue.field_le_mot_du_president
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
+    - entity_reference_revisions
     - user
 _core:
   default_config_hash: k7huXut68pdao0qGHWeETfwtQudI0SZ260TyVyGTOFg
@@ -18,14 +24,40 @@ id: node.simplenews_issue.email_html
 targetEntityType: node
 bundle: simplenews_issue
 mode: email_html
-content: {  }
+content:
+  field_contenu:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_date:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  toc_js:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   addtoany: true
   breadcrumbs: true
-  field_actualite: true
-  field_bloc: true
-  field_evenement: true
-  field_tag: true
+  field_a_la_une: true
+  field_a_savoir: true
+  field_agenda: true
+  field_bienvenue: true
+  field_coup_de_projecteur: true
+  field_fond_vert: true
+  field_le_mot_du_president: true
   langcode: true
   links: true
   search_api_excerpt: true

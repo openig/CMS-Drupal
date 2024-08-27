@@ -1,0 +1,33 @@
+uuid: 07bef772-75e1-47d7-82c0-ce3979ea8566
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:liens:43a74ae9-ed71-4ef3-ae85-25a231a67817'
+  module:
+    - block_content
+    - node
+  theme:
+    - openig
+id: openig_newslettermenufooter
+theme: openig
+region: content
+weight: 2
+provider: null
+plugin: 'block_content:43a74ae9-ed71-4ef3-ae85-25a231a67817'
+settings:
+  id: 'block_content:43a74ae9-ed71-4ef3-ae85-25a231a67817'
+  label: 'Newsletter - Menu footer'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      simplenews_issue: simplenews_issue

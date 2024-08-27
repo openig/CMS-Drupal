@@ -1,0 +1,21 @@
+uuid: d56d728e-2b04-49c9-8140-1cf96d11a373
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_mois
+    - paragraphs.paragraphs_type.mois_et_annee
+  module:
+    - options
+id: paragraph.mois_et_annee.field_mois
+field_name: field_mois
+entity_type: paragraph
+bundle: mois_et_annee
+label: Mois
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,10 @@
+uuid: 7676fd9d-6c85-476d-97e1-4e017d97ce97
+langcode: fr
+status: true
+dependencies: {  }
+id: coup_de_projecteur
+label: 'Coup de projecteur'
+icon_uuid: null
+icon_default: null
+description: 'Newsletter - Paragraphe Coup de projecteur'
+behavior_plugins: {  }

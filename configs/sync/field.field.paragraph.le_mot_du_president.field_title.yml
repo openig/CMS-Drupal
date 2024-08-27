@@ -1,0 +1,21 @@
+uuid: 8dabe7b4-2599-4596-80df-4444502bf995
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.le_mot_du_president
+id: paragraph.le_mot_du_president.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: le_mot_du_president
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Le mot du président'
+default_value_callback: ''
+settings: {  }
+field_type: string

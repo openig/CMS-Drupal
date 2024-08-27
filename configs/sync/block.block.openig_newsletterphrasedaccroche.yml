@@ -1,0 +1,33 @@
+uuid: 3aa3225b-d05c-4c8c-9df0-f0e9f3ccef5e
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:584be301-e7d3-4f75-9b65-493ec95ac00a'
+  module:
+    - block_content
+    - node
+  theme:
+    - openig
+id: openig_newsletterphrasedaccroche
+theme: openig
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:584be301-e7d3-4f75-9b65-493ec95ac00a'
+settings:
+  id: 'block_content:584be301-e7d3-4f75-9b65-493ec95ac00a'
+  label: "Newsletter - Phrase d'accroche"
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      simplenews_issue: simplenews_issue
