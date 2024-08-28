@@ -17,7 +17,10 @@ class SearchController extends ControllerBase
 
     public function __construct(SearchQueryService $searchQueryService)
     {
-      $this->searchQueryService = $searchQueryService;
+      $config = \Drupal::config('openig_search.settings');
+      if ($config->get('external_search_enabled', TRUE) == 'TRUE') {
+        $this->searchQueryService = $searchQueryService;
+      }
     }
 
     public static function create(ContainerInterface $container)
