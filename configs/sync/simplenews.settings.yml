@@ -21,7 +21,7 @@ subscription:
   validate_subject: 'Manage your subscriptions at [site:name]'
   validate_body: "We have received a request to manage your subscriptions for [simplenews-subscriber:mail] at [site:url]. To proceed please use the link below.\r\n\r\n[simplenews-subscriber:manage-url]"
 mail:
-  use_cron: false
+  use_cron: true
   textalt: false
   throttle: 20
   spool_progress_expiration: 3600
