@@ -18,19 +18,19 @@ use Drupal\migrate\Row;
 class DepartmentProcess extends ProcessPluginBase {
 
     const insee_departements = array(
-            "01"=>"01 - Ain",
+            /* "01"=>"01 - Ain",
             "02"=>"02 - Aisne",
             "03"=>"03 - Allier",
             "04"=>"04 - Alpes de Haute Provence",
             "05"=>"05 - Hautes Alpes",
             "06"=>"06 - Alpes Maritimes",
             "07"=>"07 - Ardèche",
-            "08"=>"08 - Ardennes",
+            "08"=>"08 - Ardennes", */
             "09"=>"09 - Ariège",
-            "10"=>"10 - Aube",
+            /* "10"=>"10 - Aube", */
             "11"=>"11 - Aude",
             "12"=>"12 - Aveyron",
-            "13"=>"13 - Bouches du Rhône",
+            /* "13"=>"13 - Bouches du Rhône",
             "14"=>"14 - Calvados",
             "15"=>"15 - Cantal",
             "16"=>"16 - Charente",
@@ -47,13 +47,13 @@ class DepartmentProcess extends ProcessPluginBase {
             "26"=>"26 - Drôme",
             "27"=>"27 - Eure",
             "28"=>"28 - Eure et Loir",
-            "29"=>"29 - Finistère",
+            "29"=>"29 - Finistère", */
             "30"=>"30 - Gard",
             "31"=>"31 - Haute Garonne",
             "32"=>"32 - Gers",
-            "33"=>"33 - Gironde",
+            /* "33"=>"33 - Gironde", */
             "34"=>"34 - Hérault",
-            "35"=>"35 - Ille et Vilaine",
+            /* "35"=>"35 - Ille et Vilaine",
             "36"=>"36 - Indre",
             "37"=>"37 - Indre et Loire",
             "38"=>"38 - Isère",
@@ -63,11 +63,11 @@ class DepartmentProcess extends ProcessPluginBase {
             "42"=>"42 - Loire",
             "43"=>"43 - Haute Loire",
             "44"=>"44 - Loire Atlantique",
-            "45"=>"45 - Loiret",
+            "45"=>"45 - Loiret", */
             "46"=>"46 - Lot",
-            "47"=>"47 - Lot et Garonne",
+            /* "47"=>"47 - Lot et Garonne", */
             "48"=>"48 - Lozère",
-            "49"=>"49 - Maine et Loire",
+            /* "49"=>"49 - Maine et Loire",
             "50"=>"50 - Manche",
             "51"=>"51 - Marne",
             "52"=>"52 - Haute Marne",
@@ -82,10 +82,10 @@ class DepartmentProcess extends ProcessPluginBase {
             "61"=>"61 - Orne",
             "62"=>"62 - Pas de Calais",
             "63"=>"63 - Puy de Dôme",
-            "64"=>"64 - Pyrénées Atlantiques",
+            "64"=>"64 - Pyrénées Atlantiques", */
             "65"=>"65 - Hautes Pyrénées",
             "66"=>"66 - Pyrénées Orientales",
-            "67"=>"67 - Bas Rhin",
+            /* "67"=>"67 - Bas Rhin",
             "68"=>"68 - Haut Rhin",
             "69"=>"69 - Rhône",
             "70"=>"70 - Haute Saône",
@@ -98,10 +98,10 @@ class DepartmentProcess extends ProcessPluginBase {
             "77"=>"77 - Seine et Marne",
             "78"=>"78 - Yvelines",
             "79"=>"79 - Deux Sèvres",
-            "80"=>"80 - Somme",
+            "80"=>"80 - Somme", */
             "81"=>"81 - Tarn",
             "82"=>"82 - Tarn et Garonne",
-            "83"=>"83 - Var",
+            /* "83"=>"83 - Var",
             "84"=>"84 - Vaucluse",
             "85"=>"85 - Vendée",
             "86"=>"86 - Vienne",
@@ -119,7 +119,7 @@ class DepartmentProcess extends ProcessPluginBase {
             "973"=>"973 - Guyane",
             "974"=>"974 - Réunion",
             "975"=>"975 - Saint Pierre et Miquelon",
-            "976"=>"976 - Mayotte"
+            "976"=>"976 - Mayotte" */
     );
 
 
