@@ -133,8 +133,10 @@ class SearchController extends ControllerBase
     $page = \Drupal::request()->query->get('page');
 
     // Call serach service with current page & facets
-    $search = $this->searchQueryService->search($filters, $page ? $page : 0);
-
+    $config = \Drupal::config('openig_search.settings');
+    if ($config->get('external_search_enabled', TRUE) == 'TRUE') {
+      $search = $this->searchQueryService->search($filters, $page ? $page : 0);
+    }
     // Permet la correction des filtres de recherche Sources - twig pas de différence entre dataset et datasets
     foreach ($search['facets']['lineage'] as $key => $lineage) {
       if($lineage === 'datasets'){
