@@ -45,6 +45,15 @@
         }
         .navigation_droite{
             padding-left: 0;
+            padding-right: 0;
+            justify-content: end;
+            #block-openig-formulaireexposeresultats-de-rechercheblock{
+                width: 55px;
+                button#search_icon{
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+            }
         }
         .navigation_gauche{
             padding-right: 0;
