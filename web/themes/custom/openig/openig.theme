@@ -141,9 +141,11 @@ function openig_preprocess_node(&$variables, $hook){
       }
       // Vérification si toutes les ressources ne sont pas inaccessibles
       foreach ($variables['ressources'] as $key => $value) {
-        foreach ($value['Entity'] as $entity) {
-          if ($entity['check'] == 'true') {
-            $variables['ressources'][$key]['allCheckFalse'] = 'false';
+        if ($value) {
+          foreach ($value['Entity'] as $entity) {
+            if ($entity['check'] == 'true') {
+              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+            }
           }
         }
       }
@@ -217,9 +219,11 @@ function openig_preprocess_node(&$variables, $hook){
         }
         // Vérification si toutes les ressources ne sont pas inaccessibles
         foreach ($variables['ressources'] as $key => $value) {
-          foreach ($value['Entity'] as $entity) {
-            if ($entity['check'] == 'true') {
-              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+          if ($value) {
+            foreach ($value['Entity'] as $entity) {
+              if ($entity['check'] == 'true') {
+                $variables['ressources'][$key]['allCheckFalse'] = 'false';
+              }
             }
           }
         }
