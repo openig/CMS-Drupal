@@ -38,17 +38,21 @@ function openig_preprocess_page_title(&$variables) {
 
   $path = \Drupal::service('path.current')->getPath();
   $path_args = explode('/', $path);
-  $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
-  $type = $node_load->type->target_id;
-  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les nodes
-  if ($route->getPath() == '/node/{node}') {
-    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
-    if($pictos){
-      $first_element = reset($pictos);
-      if($first_element){
-        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
-        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
-        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+  if(isset($path_args[2])){
+    $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
+    if ($node_load) {
+      $type = $node_load->type->target_id;
+      // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les nodes
+      if ($route->getPath() == '/node/{node}') {
+        $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+        if($pictos){
+          $first_element = reset($pictos);
+          if($first_element){
+            $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+            $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+            $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+          }
+        }
       }
     }
   }
@@ -137,9 +141,11 @@ function openig_preprocess_node(&$variables, $hook){
       }
       // Vérification si toutes les ressources ne sont pas inaccessibles
       foreach ($variables['ressources'] as $key => $value) {
-        foreach ($value['Entity'] as $entity) {
-          if ($entity['check'] == 'true') {
-            $variables['ressources'][$key]['allCheckFalse'] = 'false';
+        if ($value) {
+          foreach ($value['Entity'] as $entity) {
+            if ($entity['check'] == 'true') {
+              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+            }
           }
         }
       }
@@ -213,9 +219,11 @@ function openig_preprocess_node(&$variables, $hook){
         }
         // Vérification si toutes les ressources ne sont pas inaccessibles
         foreach ($variables['ressources'] as $key => $value) {
-          foreach ($value['Entity'] as $entity) {
-            if ($entity['check'] == 'true') {
-              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+          if ($value) {
+            foreach ($value['Entity'] as $entity) {
+              if ($entity['check'] == 'true') {
+                $variables['ressources'][$key]['allCheckFalse'] = 'false';
+              }
             }
           }
         }

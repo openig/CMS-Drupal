@@ -244,7 +244,7 @@ class SearchQueryService
     for ($i = 0; $i <= $page_count; $i++) {
       if ($i == 0 || ($i == $current - 2) || ($i == $current - 1) || $current == $i || ($i == $current + 1) || ($i == $current + 2)) {
 
-        if ($_GET['page']) {
+        if (isset($_GET['page'])) {
           array_push($pager['pages'], [
             'number' => $i,
             'label' => $i + 1,
@@ -262,7 +262,7 @@ class SearchQueryService
 
     if ($current != $page_count) {
       // Push last label
-      if ($_GET['page']) {
+      if (isset($_GET['page'])) {
         $next = $current + 1;
         array_push($pager['pages'], [
           'number' => $next,
