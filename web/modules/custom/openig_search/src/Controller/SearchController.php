@@ -144,7 +144,7 @@ class SearchController extends ControllerBase
       }
     }
 
-    if(is_array($filters['lineage'])){
+    if((isset($filters['lineage'])) and (is_array($filters['lineage']))){
       foreach ($filters['lineage'] as $key => $lineage) {
         if($lineage === 'datasets'){
           $filters['lineage'][$key] = 'region Datasets';
@@ -152,7 +152,7 @@ class SearchController extends ControllerBase
       }
     }
     else{
-      if($filters['lineage'] === 'datasets'){
+      if((isset($filters['lineage'])) and ($filters['lineage'] === 'datasets')){
         $filters['lineage'] = 'region Datasets';
       }
     }
