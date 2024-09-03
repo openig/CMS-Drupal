@@ -1,0 +1,14 @@
+uuid: fced893e-3c36-4f6d-8ea9-03fa6209910f
+langcode: en
+status: true
+dependencies:
+  module:
+    - simplenews
+id: simplenews_newsletter
+configuration:
+  email_body:
+    content:
+      value: "<div class=\"clearfix\">\r\n  {{ body }}\r\n</div>\r\n\r\n{% if mode == 'test' %}\r\n  <p class=\"simplenews-test-message\">This is a test version of the newsletter.</p>\r\n{% endif %}"
+      format: email_html
+  email_subject:
+    value: '[[simplenews-newsletter:name]] [node:title]'

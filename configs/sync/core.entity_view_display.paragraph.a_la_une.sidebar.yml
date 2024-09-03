@@ -1,0 +1,28 @@
+uuid: a47ed34a-efba-4b07-b848-d47992920fc9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.sidebar
+    - field.field.paragraph.a_la_une.field_picto
+    - field.field.paragraph.a_la_une.field_title
+    - field.field.paragraph.a_la_une.field_type_de_contenu
+    - paragraphs.paragraphs_type.a_la_une
+id: paragraph.a_la_une.sidebar
+targetEntityType: paragraph
+bundle: a_la_une
+mode: sidebar
+content:
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_picto: true
+  field_type_de_contenu: true
+  search_api_excerpt: true

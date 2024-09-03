@@ -38,17 +38,21 @@ function openig_preprocess_page_title(&$variables) {
 
   $path = \Drupal::service('path.current')->getPath();
   $path_args = explode('/', $path);
-  $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
-  $type = $node_load->type->target_id;
-  // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les nodes
-  if ($route->getPath() == '/node/{node}') {
-    $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
-    if($pictos){
-      $first_element = reset($pictos);
-      if($first_element){
-        $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
-        $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
-        $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+  if(isset($path_args[2])){
+    $node_load = \Drupal\node\Entity\Node::load($path_args[2]);
+    if ($node_load) {
+      $type = $node_load->type->target_id;
+      // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les nodes
+      if ($route->getPath() == '/node/{node}') {
+        $pictos = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'pictos_titre', 'field_type_de_contenu' => $type]);
+        if($pictos){
+          $first_element = reset($pictos);
+          if($first_element){
+            $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($first_element->field_picto[0]->target_id);
+            $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+            $variables['picto_alt'] = $first_element->field_picto[0]->alt;
+          }
+        }
       }
     }
   }
@@ -85,7 +89,6 @@ function openig_preprocess_page_title(&$variables) {
 
 function openig_preprocess_node(&$variables, $hook){
   $type = $variables['node']->getType();
-
   switch($type) {
     case "groupe_de_travail":
       $variables['ressources'] = array();
@@ -138,9 +141,11 @@ function openig_preprocess_node(&$variables, $hook){
       }
       // Vérification si toutes les ressources ne sont pas inaccessibles
       foreach ($variables['ressources'] as $key => $value) {
-        foreach ($value['Entity'] as $entity) {
-          if ($entity['check'] == 'true') {
-            $variables['ressources'][$key]['allCheckFalse'] = 'false';
+        if ($value) {
+          foreach ($value['Entity'] as $entity) {
+            if ($entity['check'] == 'true') {
+              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+            }
           }
         }
       }
@@ -173,7 +178,7 @@ function openig_preprocess_node(&$variables, $hook){
         $ressourcesCheck = [];
         // Récupération des types de ressources
         $types = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadByProperties(['vid' => 'type_de_ressource']);
-  
+
         // Création d'un tableau avec les types de ressources
         foreach ($types as $type) {
           $name = $type->name[0]->value;
@@ -185,16 +190,16 @@ function openig_preprocess_node(&$variables, $hook){
           $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
           // Check si la ressource est insaccessible
           $check = $node_check->access('view', $user);
-  
+
           /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $referenceItem */
           $referenceItem = $node_check;
           /** @var \Drupal\Core\Entity\Plugin\DataType\EntityReference $entityReference */
           $entityReference = $referenceItem->get('field_type');
           /** @var \Drupal\Core\Entity\Plugin\DataType\EntityAdapter $entityAdapter */
           $id = $entityReference[0]->target_id;
-  
+
           $term = \Drupal\taxonomy\Entity\Term::load($id);
-  
+
           if($term){
             $name = $term->get('name')->getValue();
             /** @var \Drupal\Core\Entity\EntityInterface $referencedEntity */
@@ -214,9 +219,11 @@ function openig_preprocess_node(&$variables, $hook){
         }
         // Vérification si toutes les ressources ne sont pas inaccessibles
         foreach ($variables['ressources'] as $key => $value) {
-          foreach ($value['Entity'] as $entity) {
-            if ($entity['check'] == 'true') {
-              $variables['ressources'][$key]['allCheckFalse'] = 'false';
+          if ($value) {
+            foreach ($value['Entity'] as $entity) {
+              if ($entity['check'] == 'true') {
+                $variables['ressources'][$key]['allCheckFalse'] = 'false';
+              }
             }
           }
         }
@@ -287,6 +294,35 @@ function openig_preprocess_node(&$variables, $hook){
 
         }
         break;
+      case "simplenews_issue":
+        $variables['paragraphs'] = [];
+        foreach ($variables['node']->field_contenu as $value) {
+          $paragraph = \Drupal\paragraphs\Entity\Paragraph::load( $value->target_id );
+          $id = $paragraph->id[0]->value;
+          $title = $paragraph->field_title[0]->value;
+          $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
+          $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+          $noUppercaseString =  strtolower($noEspaceString);
+          $variables['paragraphs'][$id]['id'] = $id;
+          $variables['paragraphs'][$id]['title'] = $title;
+          $variables['paragraphs'][$id]['link'] = $noUppercaseString;
+        }
+        $socialmedial_block = Drupal\block\Entity\Block::load('openig_socialmedialinks');
+        if ($socialmedial_block) {
+           $socialmedial_content = \Drupal::entityTypeManager()
+              ->getViewBuilder('block')
+              ->view($socialmedial_block);
+           $variables['socialmedial_content'] = $socialmedial_content;
+        }
+      
+        $pieddepage_block = Drupal\block\Entity\Block::load('openig_newslettermenufooter');
+        if ($pieddepage_block) {
+          $pieddepage_content = \Drupal::entityTypeManager()
+              ->getViewBuilder('block')
+              ->view($pieddepage_block);
+          $variables['pieddepage_content'] = $pieddepage_content;
+        }
+        break;
     default:
       break;
   }
@@ -350,7 +386,7 @@ function openig_preprocess_block(&$variables){
     $variables['content']['#id'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
     $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
   }
- 
+
 
 }
 
@@ -443,6 +479,17 @@ function openig_preprocess_field(&$variables){
       $variables['url_picto'] = $url;
     }
   }
+  if (($variables['entity_type'] == 'paragraph') and ($variables['field_name'] == 'field_title')) {
+    if (($variables['element']['#bundle'] == 'le_mot_du_president') or ($variables['element']['#bundle'] == 'bienvenue') or ($variables['element']['#bundle'] == 'a_la_une')
+    or ($variables['element']['#bundle'] == 'agenda') or ($variables['element']['#bundle'] == 'a_savoir') or ($variables['element']['#bundle'] == 'coup_de_projecteur') or ($variables['element']['#bundle'] == 'fond_vert')) {
+      $title = $variables['element'][0]['#context']['value'];
+      $id = $variables['element']['#object']->id[0]->value;
+      $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
+      $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+      $noUppercaseString =  strtolower($noEspaceString);
+      $variables['ancre'] = $noUppercaseString.$id;
+    }
+  }
 }
 
 function openig_preprocess_user(&$variables){
@@ -464,3 +511,50 @@ function openig_preprocess_user(&$variables){
     }
 }
 
+
+function openig_preprocess_email_wrap(&$variables) {
+
+  $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_newsletterphrasedaccroche');
+  if ($phrasedaccroche_block) {
+       $phrasedaccroche_content = \Drupal::entityTypeManager()
+           ->getViewBuilder('block')
+           ->view($phrasedaccroche_block);
+       $variables['phrasedaccroche_content'] = $phrasedaccroche_content;
+  }
+
+  $logo_block = Drupal\block\Entity\Block::load('openig_newsletterlogo');
+  if ($logo_block) {
+      $logo_content = \Drupal::entityTypeManager()
+         ->getViewBuilder('block')
+         ->view($logo_block);
+      $variables['logo_content'] = $logo_content;
+  }
+
+  $socialmedial_block = Drupal\block\Entity\Block::load('openig_socialmedialinks');
+  if ($socialmedial_block) {
+     $socialmedial_content = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($socialmedial_block);
+     $variables['socialmedial_content'] = $socialmedial_content;
+  }
+
+  $pieddepage_block = Drupal\block\Entity\Block::load('openig_newslettermenufooter');
+  if ($pieddepage_block) {
+    $pieddepage_content = \Drupal::entityTypeManager()
+        ->getViewBuilder('block')
+        ->view($pieddepage_block);
+    $variables['pieddepage_content'] = $pieddepage_content;
+  }
+
+ }
+
+function openig_preprocess_paragraph(&$variables){
+  if (($variables['elements']['#paragraph']->type[0]->target_id == 'le_mot_du_president') or ($variables['elements']['#paragraph']->type[0]->target_id == 'bienvenue')
+  or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_la_une') or ($variables['elements']['#paragraph']->type[0]->target_id == 'agenda')
+  or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_savoir') or ($variables['elements']['#paragraph']->type[0]->target_id == 'coup_de_projecteur')) {
+    if ($variables['content']['field_picto'][0]) {
+      $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id);
+      $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+    }
+  }
+}

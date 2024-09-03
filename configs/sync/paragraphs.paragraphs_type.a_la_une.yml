@@ -1,0 +1,10 @@
+uuid: 84ec7791-f84e-4044-b89a-f364aafa6bfe
+langcode: fr
+status: true
+dependencies: {  }
+id: a_la_une
+label: 'A la une'
+icon_uuid: null
+icon_default: null
+description: 'Newsletter - Paragraphe A la Une'
+behavior_plugins: {  }

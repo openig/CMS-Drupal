@@ -1,0 +1,21 @@
+uuid: eb95bcdb-a441-4ac6-97e2-c2faced35e98
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.a_la_une
+id: paragraph.a_la_une.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: a_la_une
+label: Titre
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'A la Une'
+default_value_callback: ''
+settings: {  }
+field_type: string

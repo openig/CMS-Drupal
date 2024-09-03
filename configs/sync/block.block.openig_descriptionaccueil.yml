@@ -12,7 +12,7 @@ dependencies:
 id: openig_descriptionaccueil
 theme: openig
 region: premiere_section_accueil
-weight: -11
+weight: -35
 provider: null
 plugin: 'block_content:8c419593-e0f3-47c9-b2e9-4118e5b46a0f'
 settings:

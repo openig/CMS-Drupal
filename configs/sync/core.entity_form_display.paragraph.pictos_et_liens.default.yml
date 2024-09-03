@@ -1,0 +1,36 @@
+uuid: 7ad1516e-0855-4a09-9709-2a3c23f928cf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pictos_et_liens.field_lien
+    - field.field.paragraph.pictos_et_liens.field_picto
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.pictos_et_liens
+  module:
+    - link
+    - svg_image
+id: paragraph.pictos_et_liens.default
+targetEntityType: paragraph
+bundle: pictos_et_liens
+mode: default
+content:
+  field_lien:
+    type: link_default
+    weight: 2
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_picto:
+    type: image_image
+    weight: 1
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

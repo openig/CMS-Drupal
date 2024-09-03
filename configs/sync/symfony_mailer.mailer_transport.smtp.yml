@@ -1,0 +1,18 @@
+uuid: 17e11e11-1e6b-4e80-b6f4-155ac2187eba
+langcode: fr
+status: true
+dependencies: {  }
+id: smtp
+label: SMTP
+plugin: smtp
+configuration:
+  user: ''
+  pass: ''
+  host: maildev
+  port: 25
+  query:
+    verify_peer: false
+    local_domain: ''
+    restart_threshold: null
+    restart_threshold_sleep: null
+    ping_threshold: null

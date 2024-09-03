@@ -1,0 +1,10 @@
+uuid: 763518c3-7f9f-4681-9032-e66f57ce9b17
+langcode: fr
+status: true
+dependencies: {  }
+id: pictos_et_liens
+label: 'Pictos et liens'
+icon_uuid: null
+icon_default: null
+description: 'Newsletter - Pictos et liens des réseaux sociaux'
+behavior_plugins: {  }

@@ -1,123 +1,123 @@
 
 {% include '@openig_search/_nav_openig_search.html.twig' %}
+{% if config_externe == true %}
+  <div class="search-results">
+    {# filtres #}
+    <div class="view-content container bloc_filtres">
+      <div class="formulaire_filtre d-xl-block d-none">
+        <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
 
-<div class="search-results">
-  {# filtres #}
-  <div class="view-content container bloc_filtres">
-    <div class="formulaire_filtre d-xl-block d-none">
-      <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-
-      {#  Bloc custom - Filtre recherche   #}
-      {{ render_block('openig_search_external_filter_block') }}
-
-    </div>
-
-    {# btn filtrer #}
-    <div class="bloc_filtres">
-      <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
-    </div>
-
-    {# Content #}
-    <div class="layout-content">
-      <div class="page-content">
-
-        {% if items|length > 0 and count > 0 %}
-          <div class="search-result__count">Nombre de résultats :
-            <span class="search-result__count_value"> {{ count }}</span>
-          </div>
-        {% endif %}
-        <div class="col-12">
-          <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
-
-            {% for item in items %}
-              <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
-                <div class="views-view-responsive-grid__item-inner">
-
-                  <div class="views-field views-field-title">
-                    <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
-                  </div>
-
-                  <div class="views-field views-field-field-tag">
-                    <span class="field-content">
-                    {% for tag in item.tags %}
-                      <a href="{{item.link}}">{{ tag }}</a>
-                    {% endfor %}
-                    </span>
-                  </div>
-
-                  <div class="views-field views-field-field-description">
-                    <span class="field-content">{{ item.description|striptags('<br><p>')|raw }}</span>
-                  </div>
-
-                  <div class="d-flex justify-content-between source_more">
-                    <div class="search-result__source">
-                      <span class="search-result__label">Source</span> :
-                      {% if item.source == "CKAN Datasets" %}
-                        OPenIG - Jeux de données
-                      {% elseif item.source == "OpenIG" %}
-                        OPenIG - Activité
-                      {% elseif item.source == "datasets" %}
-                        <a href="https://data.laregion.fr">data.laregion.fr</a>
-                      {% elseif item.source == "dataset" %}
-                        <a href="https://picto-occitanie.fr">picto-occitanie.fr</a>
-                      {% else %}
-                        {{ item.source }}
-                      {% endif %}
-
-                      {% if item.thumbnail %}
-                        <img src="{{ item.thumbnail }}" alt="{{ item.title }}" class="search-result__thumbnail"/>
-                      {% elseif item.source == "datasets" %}
-                        <img src="{{ images_path  ~ 'pictograms/data-laregion.png' }}" alt="data.laregion.fr"
-                            class="search-result__thumbnail">
-                      {% elseif item.source == "dataset" %}
-                        <img src="{{ images_path  ~ 'pictograms/picto-occitanie.png' }}" alt="picto-occitanie.fr"
-                            class="search-result__thumbnail">
-                      {% else %}
-                        <div class="search-result__nothumbnail"></div>
-                      {% endif %}
-                    </div>
-                    <div class="more-link-externe">
-                      <a href="{{ item.link }}" target="_blank">En savoir plus</a>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            {% endfor %}
-
-            {% if items|length == 0 %}
-              <div class="search-result__noresults">Aucun résultat</div>
-            {% endif %}
-
-          </div>
-        </div>
-
-        {% if pager and (pager.count > 0) %}
-          <nav class="pager">
-            <ul class="pagination js-pager__items">
-              {% for page in pager.pages %}
-                {% if (page['label'] == "Précédent") %}
-                  <li class="page-item pager__item--previous">
-                    <a href="{{ page['url'] }}" class="page-link"></a>
-                  </li>
-                {% elseif (page['label'] == "Suivant") %}
-                  <li class="page-item pager__item--next">
-                    <a href="{{ page['url'] }}" class="page-link"></a>
-                  </li>
-                {% else %}
-                  <li class="page-item {{ pager['current'] == page.number ? 'is-active active' : '' }}">
-                    <a href="{{ page['url'] }}" class="page-link"
-                      data-id="{{ page['label'] }}">{{ page['label'] }}</a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </nav>
-        {% endif %}
+        {#  Bloc custom - Filtre recherche   #}
+        {{ render_block('openig_search_external_filter_block') }}
 
       </div>
+
+      {# btn filtrer #}
+      <div class="bloc_filtres">
+        <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
+      </div>
+
+      {# Content #}
+      <div class="layout-content">
+        <div class="page-content">
+
+          {% if items|length > 0 and count > 0 %}
+            <div class="search-result__count">Nombre de résultats :
+              <span class="search-result__count_value"> {{ count }}</span>
+            </div>
+          {% endif %}
+          <div class="col-12">
+            <div class="views-view-responsive-grid views-view-responsive-grid--horizontal">
+
+              {% for item in items %}
+                <div class="views-view-responsive-grid__item" style="margin-bottom:10px;">
+                  <div class="views-view-responsive-grid__item-inner">
+
+                    <div class="views-field views-field-title">
+                      <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+                    </div>
+
+                    <div class="views-field views-field-field-tag">
+                      <span class="field-content">
+                      {% for tag in item.tags %}
+                        <a href="{{item.link}}">{{ tag }}</a>
+                      {% endfor %}
+                      </span>
+                    </div>
+
+                    <div class="views-field views-field-field-description">
+                      <span class="field-content">{{ item.description|striptags('<br><p>')|raw }}</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between source_more">
+                      <div class="search-result__source">
+                        <span class="search-result__label">Source</span> :
+                        {% if item.source == "CKAN Datasets" %}
+                          OPenIG - Jeux de données
+                        {% elseif item.source == "OpenIG" %}
+                          OPenIG - Activité
+                        {% elseif item.source == "datasets" %}
+                          <a href="https://data.laregion.fr">data.laregion.fr</a>
+                        {% elseif item.source == "dataset" %}
+                          <a href="https://picto-occitanie.fr">picto-occitanie.fr</a>
+                        {% else %}
+                          {{ item.source }}
+                        {% endif %}
+
+                        {% if item.thumbnail %}
+                          <img src="{{ item.thumbnail }}" alt="{{ item.title }}" class="search-result__thumbnail"/>
+                        {% elseif item.source == "datasets" %}
+                          <img src="{{ images_path  ~ 'pictograms/data-laregion.png' }}" alt="data.laregion.fr"
+                              class="search-result__thumbnail">
+                        {% elseif item.source == "dataset" %}
+                          <img src="{{ images_path  ~ 'pictograms/picto-occitanie.png' }}" alt="picto-occitanie.fr"
+                              class="search-result__thumbnail">
+                        {% else %}
+                          <div class="search-result__nothumbnail"></div>
+                        {% endif %}
+                      </div>
+                      <div class="more-link-externe">
+                        <a href="{{ item.link }}" target="_blank">En savoir plus</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              {% endfor %}
+
+              {% if items|length == 0 %}
+                <div class="search-result__noresults">Aucun résultat</div>
+              {% endif %}
+
+            </div>
+          </div>
+
+          {% if pager and (pager.count > 0) %}
+            <nav class="pager">
+              <ul class="pagination js-pager__items">
+                {% for page in pager.pages %}
+                  {% if (page['label'] == "Précédent") %}
+                    <li class="page-item pager__item--previous">
+                      <a href="{{ page['url'] }}" class="page-link"></a>
+                    </li>
+                  {% elseif (page['label'] == "Suivant") %}
+                    <li class="page-item pager__item--next">
+                      <a href="{{ page['url'] }}" class="page-link"></a>
+                    </li>
+                  {% else %}
+                    <li class="page-item {{ pager['current'] == page.number ? 'is-active active' : '' }}">
+                      <a href="{{ page['url'] }}" class="page-link"
+                        data-id="{{ page['label'] }}">{{ page['label'] }}</a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endif %}
+
+        </div>
+      </div>
     </div>
+
   </div>
-
-</div>
-
+{% endif %}

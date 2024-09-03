@@ -1,0 +1,51 @@
+uuid: e59eef93-2713-43d8-a806-73c27971c89a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.a_savoir.field_picto
+    - field.field.paragraph.a_savoir.field_title
+    - field.field.paragraph.a_savoir.field_type_de_contenu
+    - paragraphs.paragraphs_type.a_savoir
+  module:
+    - svg_image
+id: paragraph.a_savoir.default
+targetEntityType: paragraph
+bundle: a_savoir
+mode: default
+content:
+  field_picto:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type_de_contenu:
+    type: entity_reference_entity_view
+    label: hidden
+    settings:
+      view_mode: newsletter
+      link: false
+    third_party_settings: {  }
+    weight: 2
+    region: content
+hidden:
+  breadcrumbs: true
+  search_api_excerpt: true

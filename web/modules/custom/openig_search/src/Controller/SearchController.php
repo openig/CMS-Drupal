@@ -17,7 +17,10 @@ class SearchController extends ControllerBase
 
     public function __construct(SearchQueryService $searchQueryService)
     {
-      $this->searchQueryService = $searchQueryService;
+      $config = \Drupal::config('openig_search.settings');
+      if ($config->get('external_search_enabled', TRUE) == 'TRUE') {
+        $this->searchQueryService = $searchQueryService;
+      }
     }
 
     public static function create(ContainerInterface $container)
@@ -130,8 +133,10 @@ class SearchController extends ControllerBase
     $page = \Drupal::request()->query->get('page');
 
     // Call serach service with current page & facets
-    $search = $this->searchQueryService->search($filters, $page ? $page : 0);
-
+    $config = \Drupal::config('openig_search.settings');
+    if ($config->get('external_search_enabled', TRUE) == 'TRUE') {
+      $search = $this->searchQueryService->search($filters, $page ? $page : 0);
+    }
     // Permet la correction des filtres de recherche Sources - twig pas de différence entre dataset et datasets
     foreach ($search['facets']['lineage'] as $key => $lineage) {
       if($lineage === 'datasets'){
@@ -139,7 +144,7 @@ class SearchController extends ControllerBase
       }
     }
 
-    if(is_array($filters['lineage'])){
+    if((isset($filters['lineage'])) and (is_array($filters['lineage']))){
       foreach ($filters['lineage'] as $key => $lineage) {
         if($lineage === 'datasets'){
           $filters['lineage'][$key] = 'region Datasets';
@@ -147,7 +152,7 @@ class SearchController extends ControllerBase
       }
     }
     else{
-      if($filters['lineage'] === 'datasets'){
+      if((isset($filters['lineage'])) and ($filters['lineage'] === 'datasets')){
         $filters['lineage'] = 'region Datasets';
       }
     }

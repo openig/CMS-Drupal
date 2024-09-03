@@ -1,0 +1,626 @@
+html, body{
+  height: auto;
+}
+
+.mesh{
+  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
+  background-repeat: no-repeat;
+  width: 1097px;
+  height: 673px;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  max-width: 100%;
+}
+
+.email-type-simplenews-newsletter {
+  height: 20px;
+  width: 100%;
+  margin: auto;
+  max-width: 650px;
+  .link_node{
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    right: 15px;
+    color: $OPenIG-color_black;
+    font-size: $OPenIG-font-size-sm;
+  }
+}
+
+/** Bloc logo  **/
+.header #block-openig-newsletterlogo {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding-top: 15px;
+}
+
+.header{
+  background-color: #f2f6e7;
+}
+
+/** Bloc Phrase d'accroche  **/
+.header #block-openig-newsletterphrasedaccroche .field--name-body p {
+  font-family: 'Russo One';
+  text-align: center;
+  font-size: $OPenIG-font-size-base;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 0 !important;
+  position: relative;
+  z-index: 2;
+}
+
+// Titre email 
+.node--type-simplenews-issue.node--view-mode-email-html{
+  padding: 0;
+  .titleNews{
+    height: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .backgroundTitle{
+    height: 75px;
+    background-color: $OPenIG-color_light-gray;
+    width: 90%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  h1{
+    font-size: $OPenIG-font-size-h1 !important;
+    z-index: 2;
+    position: relative;
+  }
+}
+
+
+.node--type-simplenews-issue {
+  font-family: 'Exo_regular';
+  background-color: white;
+}
+.node--type-simplenews-issue  .bloc-newsletter {
+  margin: 50px auto;
+}
+
+.node--type-simplenews-issue .field--name-title {
+  font-family: 'Exo_regular';
+}
+.node--type-simplenews-issue .field--name-title a {
+  color: black;
+  text-decoration: none;
+}
+
+
+/** Mois année **/
+.node--type-simplenews-issue  .field--name-field-title, .field--name-field-date {
+  font-family: 'Russo One';
+  border: none;
+}
+
+.node--type-simplenews-issue .field--name-field-body {
+  font-family: 'OpenSans_Regular';
+}
+
+.node--type-simplenews-issue .bloc-newsletter.mois-annee {
+  text-align: center;
+}
+.node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee {
+  font-size: $OPenIG-font-size-h2;
+  font-family: 'Russo One';
+  margin: 0 auto 3rem auto;
+  color: $OPenIG-color_red;
+  display: inline-block;
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 16px;
+  text-transform: lowercase;
+  font-weight: bold;
+  background-color: white;
+  z-index: 2;
+  position: relative;
+}
+.node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-mois {
+  font-size: 1.2rem;
+  border-bottom: 4px solid $OPenIG-color_black;
+  font-weight: lighter;
+  padding-bottom: 3px;
+
+}
+.node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-annee {
+  padding-top: 3px;
+}
+
+/** Sommaire **/
+.bloc-sommaire {
+  position: relative;
+  margin-bottom: 160px;
+}
+
+
+.sommaire {
+  position: relative;
+  padding-top: 2.5rem;
+  padding-bottom: 1rem;
+  width: 450px;
+  margin: auto;
+  background-color: #F5F5F5;
+  margin-bottom: 100px;
+  z-index: 2;
+  max-width: 75%;
+  h2{
+    font-family: "Russo One";
+    border: none !important;
+    position: absolute;
+    font-weight: bold !important;
+    top: -15px;
+    right: 25px;
+    font-size: $OPenIG-font-size-h2 !important;
+  }
+  .liste{
+    width: 95%;
+    margin: auto;
+    li::marker{
+      color: $OPenIG-color_red !important;
+    }
+    li{
+      margin-bottom: 1.5rem;
+      color: $OPenIG-color_red;
+      a{
+        color: $OPenIG-color_black;
+        text-decoration: none;
+        border-bottom: 1px solid $OPenIG-color_black;
+      }
+    } 
+  }
+}
+.top_left{
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-left.png');
+  position: absolute;
+  left: -10px;
+  height: 81px;
+  width: 81px;
+  top: -10px;
+  background-repeat: no-repeat;
+}
+.bottom_right{
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-right.png');
+  position: absolute;
+  height: 81px;
+  width: 81px;
+  right: -10px;
+  bottom: -10px;  
+  background-repeat: no-repeat;
+}
+.top_right{
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire.png');
+  position: absolute;
+  right: -45px;
+  height: 81px;
+  width: 48px;
+  top: -25px;
+  background-repeat: no-repeat;
+}
+.bottom_left{
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire-left.png');
+  position: absolute;
+  left: -45px;
+  height: 81px;
+  width: 48px;
+  bottom: -25px;
+  background-repeat: no-repeat;
+}
+/** todo Pas pris en compte dans le template mail **/
+/*
+.sommaire::after {
+  content: "";
+  background-image: url('/themes/custom/openig/img/newsletter/carre-rouge.png');
+  position: absolute;
+  left: -10px;
+  height: 100px;
+  width: 100px;
+  bottom: -10px;
+  top: -10px;
+}
+
+.sommaire::before {
+  content: "";
+  background-image: url('/themes/custom/openig/img/newsletter/carre-rouge.png');
+  position: absolute;
+  right: -10px;
+  height: 100px;
+  width: 100px;
+  bottom: -10px;
+}
+
+.bloc-icon::before {
+  content: "";
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire-left.png');
+  position: absolute;
+  left: -10px;
+  height: 100px;
+  width: 100px;
+  bottom: -110px;
+  background-repeat: no-repeat;
+}
+
+.bloc-icon::after {
+  content: "";
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire.png');
+  position: absolute;
+  right: -61px;
+  height: 100px;
+  width: 100px;
+  bottom: -10px;
+  top: -88px;
+  background-repeat: no-repeat;
+}
+
+.toc-js {
+  display: block;
+  border: none;
+  background-color: #F5F5F5;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: auto;
+  text-align: center;
+  background-position: center;
+  position: relative;
+  z-index: 9;
+}
+
+
+.toc-js .toc-title.h2 {
+  font-family: "Russo One";
+  border: none;
+  position: absolute;
+  right: 50px;
+  top: -15px;
+}
+*/
+
+/** Mot de président + Retour sur (fond vert) **/
+
+.node--type-simplenews-issue{
+  .paragraph--type--le-mot-du-president h2.field--name-field-title, .paragraph--type--fond-vert h2.field--name-field-title {
+    font-weight: bold !important;
+    font-size: $OPenIG-font-size-h2 !important;
+  }
+  .bloc-subtitle {
+    display: flex;
+  }
+  .bloc-fond-vert {
+    background-color: #f2f6e7;
+    padding: 20px 0;
+    .bloc-content {
+      padding: 1rem 0.5rem;
+      display: flex;
+      position: relative;
+      padding-bottom: 0;
+      flex-wrap: wrap;
+      //justify-content: space-around;
+      .field--name-field-image{
+        border-radius: 50%;
+        background-color: #D7DACE;
+        width: 165px;
+        height: 165px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 1px solid $OPenIG-color_black;
+        }
+      } 
+      .field--name-field-body {
+        text-align: start;
+        max-width: 60%;
+        margin-top: 2rem;
+        margin-left: 1rem;
+        font-size: $OPenIG-font-size-base !important;
+      }
+      .picto_quote{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        right: 3rem;
+        background-repeat: no-repeat;
+      }
+    }
+    .field-auteur{
+      margin-bottom: 1rem;
+      .field--name-field-auteur {
+        text-align: end;
+        padding-right: 3rem;
+      }
+    }
+  }
+  .paragraph--type--fond-vert{
+    .bloc-fond-vert{
+      .field--name-field-body {
+        margin-top: 1rem;
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+} 
+
+.node--type-simplenews-issue{
+  .node__content{
+    .bloc-newsletter{
+      > .paragraph{
+        position: relative;
+        z-index: 2;
+        margin-top: 70px;
+      }
+      /** titre bloc à gauche **/
+      > .paragraph:nth-child(odd){
+        .titre_rubrique{
+          flex-direction: row;
+        }
+        h2.field--name-field-title {
+          text-align: start;
+          margin-left: 1rem;
+        }
+        .picto_titre{
+          margin-right: 1rem;
+        }
+        .field--name-field-type-de-contenu{
+          .title_container{
+            display: flex;
+            justify-content: end;
+            .title_contenu{
+              text-align: end;
+            }
+          }
+          .field--name-field-tag{
+            justify-content: end;
+          }
+          .field--name-created, .field--name-field-dates{
+            text-align: end;
+          }
+          .date_newsletter{
+            justify-content: end;
+          }
+        }
+      }
+      /** titre bloc à droite **/
+      > .paragraph:nth-child(even){
+        .titre_rubrique{
+          flex-direction: row-reverse;
+        }
+        h2.field--name-field-title {
+          margin-right: 1rem;
+          text-align: end;
+        }
+        .picto_titre{
+          margin-left: 1rem;
+        }
+        .field--name-field-type-de-contenu{
+          .title_container{
+            display: flex;
+            justify-content: start;
+            .title_contenu{
+              text-align: start;
+            }
+          }
+          .field--name-field-tag{
+            justify-content: start;
+          }
+          .field--name-created, .field--name-field-dates{
+            text-align: start;
+          }
+          .date_newsletter{
+            justify-content: start;
+          }
+        }
+      } 
+    }
+  }
+  .node--type-article, .node--type-evenement, .node--type-groupe-de-travail, .node--type-page, .node--type-service{
+    margin-top: 3rem;
+    .tags {
+      display: none;
+    }
+    .field--name-field-tag {
+      display: flex;
+      .field__item {
+        border: 1px solid #C2DB7E;
+        border-radius: 21px;
+        padding: 0.1rem 0.75rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+    .date_newsletter{
+      width: 100%;
+      display: flex;
+    }
+    .field--name-created, .field--name-field-dates{
+      display: block;
+      margin-bottom: 1rem !important;
+      width: fit-content;
+      padding-left: 20px;
+      background-position-y: center;
+      background-image: url('/themes/custom/openig/img/newsletter/calendar.png');
+      background-repeat: no-repeat;
+      background-size: 15px 15px;
+    }
+    h2.title_contenu{
+      a{
+        text-decoration: none;
+        color: $OPenIG-color_black;
+        font-weight: bold;
+        font-size: $OPenIG-font-size-h2 !important;
+      }
+      max-width: 75%;
+      border-bottom: 0 !important;
+    }
+    .field--name-field-image {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 1rem;
+    }
+    .node__meta{
+      display: none;
+    }
+  }
+  .node--type-evenement{
+    .node__content > .field{
+      margin-bottom: 0;
+    }
+  } 
+  .paragraph--type--title-text{
+    h2.field--name-field-title{
+      padding-top: 0 !important;
+      margin-bottom: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-bottom: 0 !important;
+      font-weight: bold !important;
+      text-align: start !important;
+    }
+  }
+
+  .field--name-field-contenu{
+    margin-top: 3rem;
+    h2, h3{
+      border-bottom: 0 !important;
+      font-weight: bold !important;
+
+    }
+  }
+}
+
+.titre_rubrique{
+  display: flex;
+  .title{
+    width: 100%;
+    h2.field--name-field-title{
+      font-weight: bold !important;
+      font-size: $OPenIG-font-size-h2 !important;
+    }
+  }
+  .picto_titre{
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    background-size: contain;
+  }
+}
+
+
+.node--type-simplenews-issue .node__content .bloc-newsletter .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.node--type-simplenews-issue .node__content .bloc-newsletter .row .col-1 {
+  width: 10%;
+}
+.node--type-simplenews-issue .node__content .bloc-newsletter .row .col-11 {
+  width: 80%
+}
+
+.node--type-simplenews-issue .node__content .bloc-newsletter .field--name-field-title {
+  margin-bottom: -1rem;
+  padding-top: 8px;
+}
+
+.node--type-simplenews-issue .node__content .bloc-newsletter .cadre-gris-title {
+  background-color: #EAEAEA;
+  height: 30px;
+  width: auto;
+}
+
+.node--type-simplenews-issue .node__content .bloc-newsletter .paragraph--type--fond-vert .field--name-field-body {
+  text-align: start !important;
+}
+
+/** Bienvenu **/
+.paragraph--type--bienvenue, .paragraph--type--coup-de-projecteur{
+  .field--name-field-image {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    img{
+      margin-right: 1rem;
+    }
+  }
+  
+} 
+
+.paragraph--type--a-savoir{
+  .picto_titre{
+    height: 70px;
+  }
+}
+
+
+
+
+/** Bloc Nous suivre **/
+.footer #block-openig-newsletternoussuivre {
+  margin: 75px auto;
+  text-align: center;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  width: fit-content;
+  padding: 1rem 2rem;
+  h2 {
+    font-family: "OpenSans_Bold", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #0a0909;
+    margin-bottom: 1rem;
+    border-bottom: none !important;
+  }
+  .field--name-field-picto-et-lien{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .field__item:not(:last-child){
+      margin-right: 1rem;
+    }
+    img{
+      width: 25px;
+    }
+  }
+}
+
+/** Bloc Menu pied de page **/
+.footer #block-openig-newslettermenufooter {
+  background-color: #585756;
+  margin: 70px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.footer #block-openig-newslettermenufooter a:not(:last-child){
+  border-right: 1px solid white;
+  margin-right: 10px;
+}
+
+.footer #block-openig-newslettermenufooter a {
+  color: #f0f0ef;
+  padding-right: 10px;
+  text-decoration: none;
+  font-size: $OPenIG-font-size-sm;
+}
+

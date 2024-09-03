@@ -1,0 +1,82 @@
+uuid: 0e2076e5-c1f6-4093-b896-4b3596c39d29
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coup_de_projecteur
+    - node.type.simplenews_issue
+    - paragraphs.paragraphs_type.coup_de_projecteur
+  module:
+    - entity_reference_revisions
+id: node.simplenews_issue.field_coup_de_projecteur
+field_name: field_coup_de_projecteur
+entity_type: node
+bundle: simplenews_issue
+label: 'Coup de projecteur'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      coup_de_projecteur: coup_de_projecteur
+    negate: 0
+    target_bundles_drag_drop:
+      a_la_une:
+        weight: 21
+        enabled: false
+      a_savoir:
+        weight: 22
+        enabled: false
+      accordeon:
+        weight: 19
+        enabled: false
+      agenda:
+        weight: 20
+        enabled: false
+      bienvenue:
+        weight: 23
+        enabled: false
+      coup_de_projecteur:
+        weight: 24
+        enabled: true
+      fond_vert:
+        weight: 25
+        enabled: false
+      le_mot_du_president:
+        weight: 26
+        enabled: false
+      ligne_de_membres:
+        weight: 27
+        enabled: false
+      membre:
+        weight: 28
+        enabled: false
+      membres:
+        weight: 29
+        enabled: false
+      mois_et_annee:
+        weight: 30
+        enabled: false
+      onglet_d_accordeon:
+        weight: 31
+        enabled: false
+      picto_text:
+        weight: 33
+        enabled: false
+      pictos_et_texte:
+        weight: 32
+        enabled: false
+      texte_dropdown:
+        weight: 34
+        enabled: false
+      title_text:
+        weight: 35
+        enabled: false
+      type_de_contenu:
+        weight: 36
+        enabled: false
+field_type: entity_reference_revisions

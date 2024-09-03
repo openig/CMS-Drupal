@@ -1314,16 +1314,14 @@ display:
             format: basic_html
           tokenize: false
       sorts:
-        title:
-          id: title
-          table: node_field_data
-          field: title
+        random:
+          id: random
+          table: views
+          field: random
           relationship: none
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: title
-          plugin_id: standard
+          plugin_id: random
           order: ASC
           expose:
             label: ''
@@ -1536,7 +1534,7 @@ display:
       display_extenders: {  }
       path: annuaire
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'

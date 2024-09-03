@@ -1,0 +1,73 @@
+uuid: 13eed994-4ea7-4e54-8dd8-ef837a0a95c8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_a_la_une
+    - node.type.simplenews_issue
+    - paragraphs.paragraphs_type.a_la_une
+  module:
+    - entity_reference_revisions
+id: node.simplenews_issue.field_a_la_une
+field_name: field_a_la_une
+entity_type: node
+bundle: simplenews_issue
+label: 'A la une'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      a_la_une: a_la_une
+    negate: 0
+    target_bundles_drag_drop:
+      a_la_une:
+        weight: 17
+        enabled: true
+      accordeon:
+        weight: 16
+        enabled: false
+      bienvenue:
+        weight: 18
+        enabled: false
+      fond_vert:
+        weight: 19
+        enabled: false
+      le_mot_du_president:
+        weight: 20
+        enabled: false
+      ligne_de_membres:
+        weight: 21
+        enabled: false
+      membre:
+        weight: 22
+        enabled: false
+      membres:
+        weight: 23
+        enabled: false
+      mois_et_annee:
+        weight: 24
+        enabled: false
+      onglet_d_accordeon:
+        weight: 25
+        enabled: false
+      picto_text:
+        weight: 27
+        enabled: false
+      pictos_et_texte:
+        weight: 26
+        enabled: false
+      texte_dropdown:
+        weight: 28
+        enabled: false
+      title_text:
+        weight: 29
+        enabled: false
+      type_de_contenu:
+        weight: 30
+        enabled: false
+field_type: entity_reference_revisions

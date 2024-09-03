@@ -1,6 +1,4 @@
-
 <p class="d-none" id="dataSearch" data-id="{{ search_api_fulltext }}"></p>
-
 <nav class="tabs-wrapper tabs-primary is-collapsible container-lg" id="block-openig-tabs">
   <ul class="nav nav-tabs flex-column flex-md-row primary clearfix">
     <li class="nav-item">
@@ -9,10 +7,12 @@
         <span class='badge rounded-pill bg-warning text-black'> {{ nbResultats }} </span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link {% if ressourceInterne == false %} active is-active{% endif %}" {% if ressourceInterne == false %} aria-current="page" {% endif %} href="{{ pathSearchExternal }}">
-        Résultats de la recherche sur les datas
-      </a>
-    </li>
+    {% if config_externe == true %}
+      <li class="nav-item">
+        <a class="nav-link {% if ressourceInterne == false %} active is-active{% endif %}" {% if ressourceInterne == false %} aria-current="page" {% endif %} href="{{ pathSearchExternal }}">
+          Résultats de la recherche sur les datas
+        </a>
+      </li>
+    {% endif %}
   </ul>
 </nav>
