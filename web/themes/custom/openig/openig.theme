@@ -295,6 +295,9 @@ function openig_preprocess_node(&$variables, $hook){
         }
         break;
       case "simplenews_issue":
+        global $base_url;
+        $variables['base_path'] = $base_url;
+        
         $variables['paragraphs'] = [];
         foreach ($variables['node']->field_contenu as $value) {
           $paragraph = \Drupal\paragraphs\Entity\Paragraph::load( $value->target_id );
