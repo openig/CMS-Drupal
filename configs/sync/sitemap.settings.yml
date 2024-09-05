@@ -2,11 +2,13 @@ _core:
   default_config_hash: xu0yG13sSQJcXrOJJqsn44W_hUWAIFHVlphrzxT2ycU
 langcode: fr
 page_title: Sitemap
+path: sitemap
 message:
   value: ''
   format: plain_text
 plugins:
   frontpage:
+    base_plugin: frontpage
     enabled: true
     weight: -39
     settings:
@@ -15,6 +17,7 @@ plugins:
     id: frontpage
     provider: sitemap
   'menu:main':
+    base_plugin: menu
     enabled: true
     weight: -38
     settings:
@@ -23,6 +26,7 @@ plugins:
     id: 'menu:main'
     provider: sitemap
   'menu:faq':
+    base_plugin: menu
     enabled: true
     weight: -37
     settings:
@@ -31,6 +35,7 @@ plugins:
     id: 'menu:faq'
     provider: sitemap
   'menu:footer':
+    base_plugin: menu
     enabled: true
     weight: -36
     settings:
