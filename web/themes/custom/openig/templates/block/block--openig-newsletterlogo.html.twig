@@ -40,7 +40,6 @@
 	{% endif %}
 	{{ title_suffix }}
 	{% block content %}
-	  <a href="/"><img src="{{ file_url(content.field_image[0]['#item'].entity.uri.value) }}" /></a>
+	  <a href="{{ url('<front>') }}"><img src="{{ content.field_image[0]['#item'].entity.uri.value|file_url(false) }}" /></a>
 	{% endblock %}
   </div>
-  

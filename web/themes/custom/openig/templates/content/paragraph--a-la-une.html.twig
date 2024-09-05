@@ -50,7 +50,7 @@
 	<div{{ attributes.addClass(classes) }}>
 		{% block content %}
 		<div class="titre_rubrique">
-			<div class="picto_titre" style="background-image: url('{{ file_url(picto_uri) }}');"></div>
+			<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 			{{content.field_title}}
 		</div>
 		{{ content|without('field_title','field_picto') }}
