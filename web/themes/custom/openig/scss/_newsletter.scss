@@ -3,11 +3,11 @@ html, body{
 }
 
 .mesh{
-  //background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
-  //background-repeat: no-repeat;
+  background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
+  background-repeat: no-repeat;
   width: 1097px;
   height: 673px;
-  //background-size: cover;
+  background-size: cover;
   position: absolute;
   top: 0;
   left: 50%;
@@ -184,40 +184,40 @@ html, body{
   }
 }
 .top_left{
-  //background-image: url('/themes/custom/openig/img/newsletter/square-red-left.png');
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-left.png');
   position: absolute;
   left: -10px;
   height: 81px;
   width: 81px;
   top: -10px;
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 .bottom_right{
-  //background-image: url('/themes/custom/openig/img/newsletter/square-red-right.png');
+  background-image: url('/themes/custom/openig/img/newsletter/square-red-right.png');
   position: absolute;
   height: 81px;
   width: 81px;
   right: -10px;
   bottom: -10px;  
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 .top_right{
-  //background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire.png');
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire.png');
   position: absolute;
   right: -45px;
   height: 81px;
   width: 48px;
   top: -25px;
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 .bottom_left{
-  //background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire-left.png');
+  background-image: url('/themes/custom/openig/img/newsletter/deco-sommaire-left.png');
   position: absolute;
   left: -45px;
   height: 81px;
   width: 48px;
   bottom: -25px;
-  //background-repeat: no-repeat;
+  background-repeat: no-repeat;
 }
 /** todo Pas pris en compte dans le template mail **/
 /*
