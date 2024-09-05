@@ -38,7 +38,7 @@
 %}
 	{% if element['#view_mode'] == 'newsletter' %}
 		<div class="date_newsletter">
-			<span{{ attributes.addClass(classes) }}>
+			<span{{ attributes.addClass(classes) }} style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/calendar.png');">
 				{%- for item in items -%}
 					{{ item.content }}
 				{%- endfor -%}
