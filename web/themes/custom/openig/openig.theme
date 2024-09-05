@@ -31,6 +31,10 @@ function openig_preprocess_field__node(&$variables){
       }
     }
   }
+  if (($variables['field_name'] == 'created') and ($variables['element']['#bundle'] == 'article')) {
+    global $base_url;
+    $variables['base_path'] = $base_url;
+  }
 }
 
 function openig_preprocess_page_title(&$variables) {
@@ -295,6 +299,9 @@ function openig_preprocess_node(&$variables, $hook){
         }
         break;
       case "simplenews_issue":
+        global $base_url;
+        $variables['base_path'] = $base_url;
+
         $variables['paragraphs'] = [];
         foreach ($variables['node']->field_contenu as $value) {
           $paragraph = \Drupal\paragraphs\Entity\Paragraph::load( $value->target_id );
@@ -490,6 +497,11 @@ function openig_preprocess_field(&$variables){
       $variables['ancre'] = $noUppercaseString.$id;
     }
   }
+
+  if (($variables['field_name'] == 'field_dates') and ($variables['element']['#bundle'] == 'evenement')) {
+    global $base_url;
+    $variables['base_path'] = $base_url;
+  }
 }
 
 function openig_preprocess_user(&$variables){
@@ -513,7 +525,8 @@ function openig_preprocess_user(&$variables){
 
 
 function openig_preprocess_email_wrap(&$variables) {
-
+  global $base_url;
+  $variables['base_path'] = $base_url;
   $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_newsletterphrasedaccroche');
   if ($phrasedaccroche_block) {
        $phrasedaccroche_content = \Drupal::entityTypeManager()

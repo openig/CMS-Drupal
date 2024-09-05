@@ -63,7 +63,7 @@
 		{% if element['#view_mode'] == 'newsletter' %}
 	  		<div class="date_newsletter">
 				{% for item in items %}
-					<div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
+					<div{{ attributes.addClass(classes, 'field__item') }} style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/calendar.png');">{{ item.content }}</div>
 				{% endfor %}
 			</div>
 		{% else %}

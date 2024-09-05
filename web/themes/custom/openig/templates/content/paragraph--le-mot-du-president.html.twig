@@ -52,7 +52,7 @@
 			{{ content.field_title }}
 			<div class="bloc-fond-vert">
 				<div class="bloc-content">
-					<div class="picto_quote" style="background-image: url('{{ file_url(picto_uri) }}');"></div>
+					<div class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 					{{content.field_image}}
 					{{content.field_body}}
 				</div>
