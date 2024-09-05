@@ -7,3 +7,4 @@ widget:
   theme: ''
   size: ''
   tabindex: 0
+  max_score: 0.8

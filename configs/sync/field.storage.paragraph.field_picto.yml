@@ -3,13 +3,9 @@ langcode: fr
 status: true
 dependencies:
   module:
-    - field_permissions
     - file
     - image
     - paragraphs
-third_party_settings:
-  field_permissions:
-    permission_type: public
 id: paragraph.field_picto
 field_name: field_picto
 entity_type: paragraph
@@ -23,8 +19,8 @@ settings:
     uuid: ''
     alt: ''
     title: ''
-    width: 96
-    height: 56
+    width: 85
+    height: 50
 module: image
 locked: false
 cardinality: 1
