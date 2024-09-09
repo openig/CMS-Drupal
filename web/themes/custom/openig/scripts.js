@@ -56,7 +56,7 @@
             })
         }
 
-        if(($('body').hasClass('page-node-type-article') || ($('body').hasClass('page-node-type-groupe-de-travail')) || ($('.paragraph').hasClass('paragraph--type--accordeon')))){
+        if(($('body').hasClass('page-node-type-article') || $('body').hasClass('page-node-type-groupe-de-travail') || $('body').hasClass('page-node-type-service') || ($('.paragraph').hasClass('paragraph--type--accordeon')))){
             bordureAccordeons();
             $('.accordion-button').click(function(){
                 bordureAccordeons();
