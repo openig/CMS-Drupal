@@ -5,6 +5,7 @@ use Drupal\file\Entity\File;
 use Drupal\media\Entity\Media;
 use Drupal\views\ViewExecutable;
 use Drupal\views\Plugin\views\query\QueryPluginBase;
+use Drupal\Component\Utility\SortArray;
 
 /**
  * @file
@@ -107,9 +108,12 @@ function openig_preprocess_node(&$variables, $hook){
 
       // Création d'un tableau avec les types de ressources
       foreach ($types as $type) {
+        $weight = $type->weight[0]->value;
         $name = $type->name[0]->value;
         $variables['ressources'][$name] = [];
-        ksort($variables['ressources']);
+        $variables['ressources'][$name]['#weight'] = $weight;
+        uasort($variables['ressources'], [SortArray::class, 'sortByWeightProperty']);
+        //ksort($variables['ressources']);
       }
       foreach ($result as $ressource) {
         $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
@@ -185,9 +189,12 @@ function openig_preprocess_node(&$variables, $hook){
 
         // Création d'un tableau avec les types de ressources
         foreach ($types as $type) {
+          $weight = $type->weight[0]->value;
           $name = $type->name[0]->value;
           $variables['ressources'][$name] = [];
-          ksort($variables['ressources']);
+          $variables['ressources'][$name]['#weight'] = $weight;
+          uasort($variables['ressources'], [SortArray::class, 'sortByWeightProperty']);
+          //ksort($variables['ressources']);
         }
         foreach ($result as $ressource) {
           $node_check = \Drupal\node\Entity\Node::load($ressource->entity_id);
