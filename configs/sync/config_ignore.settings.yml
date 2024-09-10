@@ -1,0 +1,7 @@
+_core:
+  default_config_hash: IgOVnECx6lbVt6JVFnadoEEugneDf3UblPZnOzov43Q
+mode: simple
+ignored_config_entities:
+  - search_api.server.recherche_solr
+  - symfony_mailer.mailer_transport.smtp
+  - system.site

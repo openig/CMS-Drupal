@@ -222,7 +222,7 @@ footer{
     }
 
     // Bloc dernière newsletter
-    #block-openig-dernierenewsletter, #block-openig-dernierenewsletter--2{
+    #block-openig-dernierenewsletter, #block-openig-dernierenewsletter--2, .block-views.block-views-blockderniere-newsletter-block-derniere-newsletter{
         position: absolute;
         right: 0;
         top: 120px;
@@ -232,6 +232,9 @@ footer{
             color: $OPenIG-color_black;
             border-bottom: 1px solid $OPenIG-color_red;
             text-decoration: none;
+        }
+        .views-field-view-node{
+            text-align: center;
         }
     }
 
