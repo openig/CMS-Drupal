@@ -79,14 +79,20 @@
 	]
   %}
   <a href="{{url}}" target="_blank" class="link_node">Voir la version en ligne</a>
+
+	<div class="header">
+		{{ logo_content }}
+		{{ phrasedaccroche_content }}
+	</div>
   {{ attach_library('bootstrap5/node') }}
   <article{{ attributes.addClass(classes) }}>
 
 	{{ title_prefix }}
 	{% if label and not page %}
 		<div class="titleNews">
-			<div class="backgroundTitle"></div>
-			<h1>Newsletter</h1>
+			<div class="backgroundTitle">
+				<h1>Newsletter</h1>
+			</div>
 		</div>
 	{% endif %}
 	{{ title_suffix }}
