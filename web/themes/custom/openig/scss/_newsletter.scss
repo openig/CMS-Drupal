@@ -6,7 +6,7 @@ html, body{
   //background-image: url('/themes/custom/openig/img/newsletter/mesh-colors.png');
   background-repeat: no-repeat;
   width: 1097px;
-  height: 673px;
+  //height: 673px;
   background-size: cover;
   //position: absolute;
   //top: 0;
@@ -16,6 +16,7 @@ html, body{
   max-width: 100%;
   position: relative;
   margin: auto;
+  background-size: contain;
 }
 
 .email-type-simplenews-newsletter {
@@ -36,8 +37,8 @@ html, body{
     width: 100%;
     text-align: end;
     margin: auto;
-    padding-top: 10px;
-    margin-bottom: -27px;
+    //padding-top: 10px;
+    //margin-bottom: -27px;
     padding-right: 15px;
   }
 }
@@ -68,6 +69,10 @@ html, body{
   margin-bottom: 0 !important;
   position: relative;
   z-index: 2;
+  color: black;
+  strong{
+    color: black;
+  }
 }
 
 // Titre email 
@@ -80,6 +85,9 @@ html, body{
     //justify-content: center;
     //align-items: center;
     position: relative;
+    width: 100%;
+    margin: auto;
+    max-width: 650px;
   }
   .backgroundTitle{
     height: 75px;
@@ -89,15 +97,16 @@ html, body{
     //left: 0;
     //top: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
   }
   h1{
     font-size: $OPenIG-font-size-h1 !important;
     z-index: 2;
     position: relative;
     margin-bottom: 0;
-    margin-left: 10%;
+    margin-left: 35%;
+    margin-top: 2%;
   }
 }
 
