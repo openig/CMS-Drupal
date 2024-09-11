@@ -8,26 +8,37 @@ html, body{
   width: 1097px;
   height: 673px;
   background-size: cover;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  //position: absolute;
+  //top: 0;
+  //left: 50%;
+  //transform: translateX(-50%);
   z-index: 1;
   max-width: 100%;
+  position: relative;
+  margin: auto;
 }
 
 .email-type-simplenews-newsletter {
-  height: 20px;
+  //height: 20px;
   width: 100%;
-  margin: auto;
-  max-width: 650px;
+  //margin: auto;
+  //max-width: 650px;
   .link_node{
-    position: absolute;
-    z-index: 2;
-    top: 20px;
-    right: 15px;
+    //position: absolute;
+    z-index: 3;
+    position: relative;
+    //top: 20px;
+    //right: 15px;
     color: $OPenIG-color_black;
     font-size: $OPenIG-font-size-sm;
+    display: block;
+    max-width: 650px;
+    width: 100%;
+    text-align: end;
+    margin: auto;
+    padding-top: 10px;
+    margin-bottom: -27px;
+    padding-right: 15px;
   }
 }
 
@@ -40,7 +51,10 @@ html, body{
 }
 
 .header{
-  background-color: #f2f6e7;
+  background-color: rgba(242,246,231,0.5);
+  width: 100%;
+  margin: auto;
+  max-width: 650px;
 }
 
 /** Bloc Phrase d'accroche  **/
@@ -62,30 +76,38 @@ html, body{
   .titleNews{
     height: 75px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    //display: flex;
+    //justify-content: center;
+    //align-items: center;
     position: relative;
   }
   .backgroundTitle{
     height: 75px;
-    background-color: $OPenIG-color_light-gray;
+    background-color: rgba(237,237,237,0.7);
     width: 90%;
-    position: absolute;
-    left: 0;
-    top: 0;
+    //position: absolute;
+    //left: 0;
+    //top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   h1{
     font-size: $OPenIG-font-size-h1 !important;
     z-index: 2;
     position: relative;
+    margin-bottom: 0;
+    margin-left: 10%;
   }
 }
 
 
 .node--type-simplenews-issue {
+  width: 100%;
+  margin: auto;
+  max-width: 650px;
   font-family: 'Exo_regular';
-  background-color: white;
+  //background-color: white;
 }
 .node--type-simplenews-issue  .bloc-newsletter {
   margin: 50px auto;

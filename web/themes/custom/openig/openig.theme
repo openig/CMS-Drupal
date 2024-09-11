@@ -336,6 +336,22 @@ function openig_preprocess_node(&$variables, $hook){
               ->view($pieddepage_block);
           $variables['pieddepage_content'] = $pieddepage_content;
         }
+
+        $phrasedaccroche_block = Drupal\block\Entity\Block::load('openig_newsletterphrasedaccroche');
+        if ($phrasedaccroche_block) {
+             $phrasedaccroche_content = \Drupal::entityTypeManager()
+                 ->getViewBuilder('block')
+                 ->view($phrasedaccroche_block);
+             $variables['phrasedaccroche_content'] = $phrasedaccroche_content;
+        }
+      
+        $logo_block = Drupal\block\Entity\Block::load('openig_newsletterlogo');
+        if ($logo_block) {
+            $logo_content = \Drupal::entityTypeManager()
+               ->getViewBuilder('block')
+               ->view($logo_block);
+            $variables['logo_content'] = $logo_content;
+        }
         break;
     default:
       break;
