@@ -340,12 +340,14 @@ html, body{
   .bloc-fond-vert {
     background-color: #f2f6e7;
     padding: 20px 0;
+    padding-top: 0px !important;
     .bloc-content {
       padding: 15px;
       display: flex;
       position: relative;
       padding-bottom: 0;
       flex-wrap: wrap;
+      padding-top: 0 !important;
       //justify-content: space-around;
       .field--name-field-image{
         border-radius: 50%;
@@ -411,7 +413,7 @@ html, body{
         }
         h2.field--name-field-title {
           text-align: start;
-          margin-left: 15px;
+          padding-left: 15px;
         }
         .picto_titre{
           margin-right: 15px;
@@ -441,7 +443,7 @@ html, body{
           flex-direction: row-reverse;
         }
         h2.field--name-field-title {
-          margin-right: 15px;
+          padding-right: 15px;
           text-align: end;
         }
         .picto_titre{
@@ -548,6 +550,10 @@ html, body{
   display: flex;
   .title{
     width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    //height: 45px;
     h2.field--name-field-title{
       font-weight: bold !important;
       font-size: 24px !important;
@@ -575,14 +581,26 @@ html, body{
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .field--name-field-title {
-  margin-bottom: -15px;
-  padding-top: 8px;
+  //margin-bottom: -15px;
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+
+.node--type-simplenews-issue .paragraph--type--fond-vert .field--name-field-title,
+.node--type-simplenews-issue .paragraph--type--le-mot-du-president .field--name-field-title{
+  //margin-bottom: -15px !important;
+  //padding-top: 8px !important;
+  //background-image: url('/themes/custom/openig/img/newsletter/fond-vert.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  min-height: 50px;
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .cadre-gris-title {
-  background-color: #EAEAEA;
-  height: 30px;
-  width: auto;
+  //background-color: #EAEAEA;
+  //height: 30px;
+  //width: auto;
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .paragraph--type--fond-vert .field--name-field-body {
@@ -604,7 +622,7 @@ html, body{
 
 .paragraph--type--a-savoir{
   .picto_titre{
-    height: 70px;
+    width: 75px;
   }
 }
 
