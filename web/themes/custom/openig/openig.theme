@@ -518,6 +518,8 @@ function openig_preprocess_field(&$variables){
       $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
       $noUppercaseString =  strtolower($noEspaceString);
       $variables['ancre'] = $noUppercaseString.$id;
+      global $base_url;
+      $variables['base_path'] = $base_url;
     }
   }
 
