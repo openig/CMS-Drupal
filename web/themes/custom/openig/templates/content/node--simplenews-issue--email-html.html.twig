@@ -121,7 +121,7 @@
 					<div class="liste">
 						<ul>
 							{% for key, paragraph in paragraphs %}
-								<li><a href="#{{paragraph['link']}}{{paragraph['id']}}">{{ paragraph['title'] }}</a></li>
+								<li><a href="#paragraph{{paragraph['id']}}">{{ paragraph['title'] }}</a></li>
 							{% endfor %}
 						</ul>
 					</div>

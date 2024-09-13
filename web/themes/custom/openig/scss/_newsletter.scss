@@ -695,10 +695,12 @@ html, body{
   }
 }
 
-.footer{
-  max-width: 650px;
-  width: 100%;
-  margin: auto;
+.email-type-simplenews-newsletter{
+  .footer{
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+  }
 }
 
 /** Bloc Menu pied de page **/
@@ -722,4 +724,3 @@ html, body{
   text-decoration: none;
   font-size: 14px;
 }
-
