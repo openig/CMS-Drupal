@@ -111,7 +111,7 @@
 	<div{{ content_attributes.addClass('node__content') }}>
 		{{content.field_date}}
 		{% if paragraphs %}
-			<div class="sommaireemail" style="width:585px; background:url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-top.png'), url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-bottom.png'), url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-corps.png'); background-repeat: no-repeat, no-repeat, repeat-y; background-position: top, bottom;">
+			<div class="sommaireemail" style="width:585px; background:url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-top.png') no-repeat top, url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-bottom.png') no-repeat bottom, url('{{ base_path }}/themes/custom/openig/img/newsletter/sommaire-corps.png') repeat-y;">				
 				<div style="padding: 62px;">
 					{#<div class="top_left" style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/square-red-left.png');"></div>
 					<div class="top_right" style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/deco-sommaire.png');"></div>
