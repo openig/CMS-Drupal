@@ -277,7 +277,6 @@ html, body{
       display: flex;
       position: relative;
       padding-bottom: 0;
-      flex-wrap: wrap;
       padding-top: 0 !important;
       .field--name-field-image{
         border-radius: 50%;
@@ -285,8 +284,9 @@ html, body{
         width: 165px;
         height: 165px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        .field__item{
+          margin: auto;
+        }
         img {
           width: 150px;
           height: 150px;
@@ -304,8 +304,6 @@ html, body{
       .picto_quote{
         width: 50px;
         height: 50px;
-        position: absolute;
-        right: 30px;
         background-repeat: no-repeat;
       }
     }
@@ -351,19 +349,16 @@ html, body{
         .field--name-field-type-de-contenu{
           .title_container{
             display: flex;
-            justify-content: end;
-            .title_contenu{
-              text-align: end;
-            }
+            direction: rtl;
           }
           .field--name-field-tag{
-            justify-content: end;
-          }
-          .field--name-created, .field--name-field-dates{
-            text-align: end;
+            direction: rtl;
           }
           .date_newsletter{
-            justify-content: end;
+            direction: rtl;
+            .field--name-created, .field--name-field-dates{
+              direction: ltr;
+            }
           }
         }
       }
@@ -382,19 +377,12 @@ html, body{
         .field--name-field-type-de-contenu{
           .title_container{
             display: flex;
-            justify-content: start;
             .title_contenu{
               text-align: start;
             }
           }
-          .field--name-field-tag{
-            justify-content: start;
-          }
           .field--name-created, .field--name-field-dates{
             text-align: start;
-          }
-          .date_newsletter{
-            justify-content: start;
           }
         }
       } 
@@ -441,7 +429,8 @@ html, body{
     }
     .field--name-field-image {
       display: flex;
-      justify-content: space-around;
+      margin: auto;
+      width: fit-content;
       margin-top: 15px;
     }
     .node__meta{
@@ -496,19 +485,6 @@ html, body{
   }
 }
 
-
-.node--type-simplenews-issue .node__content .bloc-newsletter .row {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.node--type-simplenews-issue .node__content .bloc-newsletter .row .col-1 {
-  width: 10%;
-}
-.node--type-simplenews-issue .node__content .bloc-newsletter .row .col-11 {
-  width: 80%
-}
-
 .node--type-simplenews-issue .node__content .bloc-newsletter .field--name-field-title {
   padding-top: 5px;
   margin-bottom: 0;
@@ -531,8 +507,8 @@ html, body{
 .paragraph--type--bienvenue, .paragraph--type--coup-de-projecteur{
   .field--name-field-image {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin: auto;
+    width: fit-content;
     img{
       margin-right: 15px;
     }
