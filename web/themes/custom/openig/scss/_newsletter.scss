@@ -162,7 +162,7 @@ html, body{
   display: inline-block;
   border: 1px solid black;
   text-align: center;
-  padding: 10px;
+  padding: 10px 15px;
   border-radius: 16px;
   text-transform: lowercase;
   font-weight: bold;
@@ -187,7 +187,33 @@ html, body{
   margin-bottom: 160px;
 }
 
+// sommaire dans l'email
+.sommaireemail{
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  margin: auto;
+  margin-bottom: 100px;
+  z-index: 2;
+  .liste{
+    width: 95%;
+    margin: auto;
+    li::marker{
+      color: #BE1621 !important;
+    }
+    li{
+      margin-bottom: 25px;
+      color: #BE1621;
+      a{
+        color: black;
+        text-decoration: none;
+        border-bottom: 1px solid black;
+      }
+    } 
+  }
+}
 
+// sommaire sur le site
 .sommaire {
   position: relative;
   padding-top: 40px;
