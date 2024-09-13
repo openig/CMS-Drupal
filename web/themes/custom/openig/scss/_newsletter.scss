@@ -350,9 +350,17 @@ html, body{
           .title_container{
             display: flex;
             direction: rtl;
+            .title_contenu{
+              direction: ltr;
+              text-align: end;
+            }
           }
           .field--name-field-tag{
             direction: rtl;
+            text-align: end;
+            .field__item{
+              direction: ltr;
+            }
           }
           .date_newsletter{
             direction: rtl;
@@ -366,10 +374,13 @@ html, body{
       > .paragraph:nth-child(even){
         .titre_rubrique{
           direction: rtl;
+          .title{
+            direction: ltr;
+          }
         }
         h2.field--name-field-title {
           padding-right: 15px;
-          text-align: start;
+          text-align: end;
         }
         .picto_titre{
           margin-left: 15px;
