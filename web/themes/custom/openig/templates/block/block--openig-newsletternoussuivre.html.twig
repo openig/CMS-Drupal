@@ -31,7 +31,7 @@
 	  'block',
 	  'block-' ~ configuration.provider|clean_class,
 	  'block-' ~ plugin_id|clean_class,
-	  'block-newsletter-logo'
+	  'block-newsletter-noussuivre'
 	]
   %}
   <div{{ attributes.addClass(classes) }}>
@@ -41,6 +41,7 @@
 	{% endif %}
 	{{ title_suffix }}
 	{% block content %}
-	  <a href="{{ url('<front>') }}"><img src="{{ content.field_image[0]['#item'].entity.uri.value|file_url(false) }}" /></a>
+	  {{ content }}
 	{% endblock %}
   </div>
+  
