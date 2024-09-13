@@ -31,7 +31,7 @@ html, body{
 }
 
 /** Bloc logo  **/
-.header #block-openig-newsletterlogo {
+.header .block-newsletter-logo {
   text-align: center;
   position: relative;
   z-index: 2;
@@ -46,7 +46,7 @@ html, body{
 }
 
 /** Bloc Phrase d'accroche  **/
-.header #block-openig-newsletterphrasedaccroche .field--name-body p {
+.header .block-newsletter-phraseaccroche .field--name-body p {
   font-family: 'Russo One';
   text-align: center;
   font-size: 16px;
@@ -537,7 +537,7 @@ html, body{
 
 
 /** Bloc Nous suivre **/
-.footer #block-openig-newsletternoussuivre {
+.footer .block-newsletter-noussuivre {
   margin: 75px auto;
   text-align: center;
   border-top: 2px solid;
