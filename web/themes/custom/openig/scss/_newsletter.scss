@@ -335,10 +335,10 @@ html, body{
       /** titre bloc à gauche **/
       > .paragraph:nth-child(odd){
         .titre_rubrique{
-          direction: ltr;
+          //direction: ltr;
         }
         h2.field--name-field-title {
-          text-align: start;
+          //text-align: start;
           padding-left: 15px;
         }
         .picto_titre{
@@ -371,14 +371,14 @@ html, body{
       /** titre bloc à droite **/
       > .paragraph:nth-child(even){
         .titre_rubrique{
-          direction: rtl;
+          //direction: rtl;
           .title{
-            direction: ltr;
+            //direction: ltr;
           }
         }
         h2.field--name-field-title {
           padding-right: 15px;
-          text-align: end;
+          //text-align: end;
         }
         .picto_titre{
           margin-left: 15px;

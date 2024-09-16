@@ -47,13 +47,28 @@
 	]
 %}
 {% block paragraph %}
-	<div{{ attributes.addClass(classes) }}>
-		{% block content %}
-		<div class="titre_rubrique">
-			<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
-			{{content.field_title}}
-		</div>
-		{{ content|without('field_title','field_picto') }}
-		{% endblock %}
-	</div>
+	<table{{ attributes.addClass(classes) }} style="width:100%; display:block;">
+		<tbody style="width:100%; display:block;">
+			{% block content %}
+				<tr style="width: 100%; display:block;">
+					{% if attributes[0] == 'is-even' %}
+						<td align="right" style="width: 100%;" class="titre_rubrique">
+							<div style="width:100%">{{content.field_title}}</div>
+							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
+						</td>
+					{% elseif attributes[0] == 'is-odd' %}
+						<td align="left" style="width: 100%; " class="titre_rubrique">
+							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
+							<div style="width:100%">{{content.field_title}}</div>
+						</td>
+					{% endif %}	 
+				{# <div class="titre_rubrique">
+					<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
+					{{content.field_title}}
+				</div> #}
+					<td>{{ content|without('field_title','field_picto') }}</td>
+				</tr> 
+			{% endblock %}
+		</tbody>
+	</table>
 {% endblock paragraph %}

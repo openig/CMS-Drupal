@@ -47,17 +47,33 @@
 	]
 %}
 {% block paragraph %}
-	<div{{ attributes.addClass(classes) }}>
-		{% block content %}
-			{{ content.field_title }}
-			<div class="bloc-fond-vert">
-				<div class="bloc-content">
-					{{content.field_image}}
-					{{content.field_body}}
-					<div class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
-				</div>
-				{{content.field_auteur}}
-			</div>
-		{% endblock %}
-	</div>
+	<table{{ attributes.addClass(classes) }} style="width:100%; display:block;">
+		<tbody style="width:100%; display:block;">
+			{% block content %}
+				<tr style="width: 100%; display:block;">
+					{% if attributes[0] == 'is-even' %}
+						<td align="right" style="width: 100%; display:block; padding: 0;">
+							<div style="width:100%">{{content.field_title}}</div>
+						</td>
+					{% elseif attributes[0] == 'is-odd' %}
+						<td align="left" style="width: 100%; display:block; padding:0;">
+							<div style="width:100%">{{content.field_title}}</div>
+						</td>
+					{% endif %}	 
+					<td style="display: block; width:100%; padding:0;">	
+						<div class="bloc-fond-vert">
+						<div class="bloc-content">
+							{{content.field_image}}
+							{{content.field_body}}
+							<div class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
+						</div>
+							{{content.field_auteur}}
+						</div>
+					</td>
+				</tr> 
+			{% endblock %}
+		</tbody>
+	</table>
+
+		
 {% endblock paragraph %}
