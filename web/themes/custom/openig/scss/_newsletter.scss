@@ -311,10 +311,6 @@ html, body{
     }
     .field-auteur{
       margin-bottom: 15px;
-      .field--name-field-auteur {
-        text-align: end;
-        padding-right: 40px;
-      }
     }
   }
   .paragraph--type--fond-vert{
@@ -339,10 +335,10 @@ html, body{
       /** titre bloc à gauche **/
       > .paragraph:nth-child(odd){
         .titre_rubrique{
-          direction: ltr;
+          //direction: ltr;
         }
         h2.field--name-field-title {
-          text-align: start;
+          //text-align: start;
           padding-left: 15px;
         }
         .picto_titre{
@@ -350,16 +346,16 @@ html, body{
         }
         .field--name-field-type-de-contenu{
           .title_container{
-            display: flex;
+            //display: flex;
             direction: rtl;
             .title_contenu{
-              direction: ltr;
-              text-align: end;
+              //direction: ltr;
+              //text-align: end;
             }
           }
           .field--name-field-tag{
             direction: rtl;
-            text-align: end;
+            //text-align: end;
             .field__item{
               direction: ltr;
             }
@@ -375,34 +371,39 @@ html, body{
       /** titre bloc à droite **/
       > .paragraph:nth-child(even){
         .titre_rubrique{
-          direction: rtl;
+          //direction: rtl;
           .title{
-            direction: ltr;
+            //direction: ltr;
           }
         }
         h2.field--name-field-title {
           padding-right: 15px;
-          text-align: end;
+          //text-align: end;
         }
         .picto_titre{
           margin-left: 15px;
         }
         .field--name-field-type-de-contenu{
           .title_container{
-            display: flex;
+            //display: flex;
             .title_contenu{
-              text-align: start;
+              //text-align: start;
             }
           }
           .field--name-created, .field--name-field-dates{
-            text-align: start;
+            //text-align: start;
           }
         }
       } 
     }
   }
+  .field--name-field-type-de-contenu{
+    > .field__item{
+      margin-top: 40px;
+    }
+  }
   .node--type-article, .node--type-evenement, .node--type-groupe-de-travail, .node--type-page, .node--type-service{
-    margin-top: 40px;
+    margin-top: 0;
     .tags {
       display: none;
     }
