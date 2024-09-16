@@ -47,7 +47,12 @@
   {% if label_hidden %}
     {% if multiple %}
         {% for item in items %}
-          {{ item.content }}
+          {% 
+            set even_odd = [
+              loop.index is odd ? 'is-odd' : 'is-even'
+            ]
+          %}
+          {{ item.content|merge({'#attributes': even_odd}) }}
         {% endfor %}
     {% else %}
       {% for item in items %}
@@ -61,7 +66,7 @@
       <div>
         {% endif %}
         {% for item in items %}
-          <div{{ item.attributes }}>{{ item.content }}</div>
+            <div{{ item.attributes }}>{{ item.content }}</div>
         {% endfor %}
         {% if multiple %}
       </div>
