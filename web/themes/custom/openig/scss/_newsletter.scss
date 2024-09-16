@@ -346,16 +346,16 @@ html, body{
         }
         .field--name-field-type-de-contenu{
           .title_container{
-            display: flex;
+            //display: flex;
             direction: rtl;
             .title_contenu{
-              direction: ltr;
-              text-align: end;
+              //direction: ltr;
+              //text-align: end;
             }
           }
           .field--name-field-tag{
             direction: rtl;
-            text-align: end;
+            //text-align: end;
             .field__item{
               direction: ltr;
             }
@@ -385,13 +385,13 @@ html, body{
         }
         .field--name-field-type-de-contenu{
           .title_container{
-            display: flex;
+            //display: flex;
             .title_contenu{
-              text-align: start;
+              //text-align: start;
             }
           }
           .field--name-created, .field--name-field-dates{
-            text-align: start;
+            //text-align: start;
           }
         }
       } 
