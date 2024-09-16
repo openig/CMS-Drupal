@@ -311,10 +311,6 @@ html, body{
     }
     .field-auteur{
       margin-bottom: 15px;
-      .field--name-field-auteur {
-        text-align: end;
-        padding-right: 40px;
-      }
     }
   }
   .paragraph--type--fond-vert{
@@ -401,8 +397,13 @@ html, body{
       } 
     }
   }
+  .field--name-field-type-de-contenu{
+    > .field__item{
+      margin-top: 40px;
+    }
+  }
   .node--type-article, .node--type-evenement, .node--type-groupe-de-travail, .node--type-page, .node--type-service{
-    margin-top: 40px;
+    margin-top: 0;
     .tags {
       display: none;
     }

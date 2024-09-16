@@ -54,23 +54,25 @@
 %}
 
 {% if label_hidden %}
-  <div class="field-auteur">
-    {% if multiple %}
+  <table class="field-auteur" style="width: 100%; display:block;">
+    <tbody style="width: 100%; display:block;">
+      {% if multiple %}
 
-    <div{{ attributes.addClass(classes, 'field__items') }}>
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
+      <div{{ attributes.addClass(classes, 'field__items') }}>
+        {% for item in items %}
+          <div{{ item.attributes.addClass('field__item') }}>{{ item.content }}</div>
+        {% endfor %}
+      </div>
 
-    {% else %}
-
-      {% for item in items %}
-        <div{{ attributes.addClass(classes, 'field__item') }}>{{ item.content }}</div>
-      {% endfor %}
-
-    {% endif %}
-  </div>
+      {% else %}
+        <tr style="width: 100%; display:block;">
+          {% for item in items %}
+            <td{{ attributes.addClass(classes, 'field__item') }} align="right" style="width: 95%; display:block;">{{ item.content }}</td>
+          {% endfor %}
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
 {% else %}
   <div class="field-auteur">
     <div{{ attributes.addClass(classes) }}>
