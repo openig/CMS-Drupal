@@ -356,6 +356,10 @@ function openig_preprocess_node(&$variables, $hook){
             $variables['logo_content'] = $logo_content;
         }
         break;
+      case "evenement":
+          global $base_url;
+          $variables['base_path'] = $base_url;
+        break;
     default:
       break;
   }
