@@ -404,6 +404,9 @@ html, body{
   }
   .node--type-article, .node--type-evenement, .node--type-groupe-de-travail, .node--type-page, .node--type-service{
     margin-top: 0;
+    .field--name-field-body .paragraph{
+      margin-bottom: 0;
+    }
     .tags {
       display: none;
     }
@@ -438,9 +441,9 @@ html, body{
       border-bottom: 0 !important;
     }
     .field--name-field-image {
-      display: flex;
-      margin: auto;
-      width: fit-content;
+      //display: flex;
+      //margin: auto;
+      //width: fit-content;
       margin-top: 15px;
     }
     .node__meta{
@@ -516,9 +519,9 @@ html, body{
 /** Bienvenu **/
 .paragraph--type--bienvenue, .paragraph--type--coup-de-projecteur{
   .field--name-field-image {
-    display: flex;
-    margin: auto;
-    width: fit-content;
+   // display: flex;
+    //margin: auto;
+    //width: fit-content;
     img{
       margin-right: 15px;
     }
