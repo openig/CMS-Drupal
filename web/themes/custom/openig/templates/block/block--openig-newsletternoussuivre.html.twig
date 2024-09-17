@@ -34,14 +34,19 @@
 	  'block-newsletter-noussuivre'
 	]
   %}
-  <div{{ attributes.addClass(classes) }}>
-	{{ title_prefix }}
-	{% if label %}
-	  <h2{{ title_attributes }}>{{ label }}</h2>
-	{% endif %}
-	{{ title_suffix }}
-	{% block content %}
-	  {{ content }}
-	{% endblock %}
-  </div>
+  <table{{ attributes.addClass(classes) }}>
+	<tbody style="display: block; padding:15px 30px;">
+		<tr style="display: block;">
+			{{ title_prefix }}
+			{% if label %}
+			  <td style="display: block;" align="center"><h2{{ title_attributes }}>{{ label }}</h2></td>
+			{% endif %}
+			{{ title_suffix }}
+			{% block content %}	  
+				<td style="display: block;" align="center">{{ content }}</td>
+			{% endblock %}
+		</tr>
+	</tbody>
+	
+  </table>
   
