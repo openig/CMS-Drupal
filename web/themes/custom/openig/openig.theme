@@ -148,7 +148,7 @@ function openig_preprocess_node(&$variables, $hook){
         }
       }
       // Vérification si toutes les ressources ne sont pas inaccessibles
-      foreach ($variables['ressources'] as $key => $value) {
+      /*foreach ($variables['ressources'] as $key => $value) {
         if ($value) {
           foreach ($value['Entity'] as $entity) {
             if ($entity['check'] == 'true') {
@@ -156,7 +156,7 @@ function openig_preprocess_node(&$variables, $hook){
             }
           }
         }
-      }
+      }*/
 
       // Vérification si l'utilisateur est membre
       $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
@@ -229,7 +229,7 @@ function openig_preprocess_node(&$variables, $hook){
           }
         }
         // Vérification si toutes les ressources ne sont pas inaccessibles
-        foreach ($variables['ressources'] as $key => $value) {
+        /*foreach ($variables['ressources'] as $key => $value) {
           if ($value) {
             foreach ($value['Entity'] as $entity) {
               if ($entity['check'] == 'true') {
@@ -237,7 +237,7 @@ function openig_preprocess_node(&$variables, $hook){
               }
             }
           }
-        }
+        }*/
         break;
 
       case "article":
