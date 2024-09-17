@@ -52,21 +52,33 @@
 			{% block content %}
 				<tr style="width: 100%; display:block;">
 					{% if attributes[0] == 'is-even' %}
-						<td align="right" style="width: 100%;" class="titre_rubrique">
-							<div style="width:100%">{{content.field_title}}</div>
-							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
+						<td align="right" style="width: 100%; display:block;" class="titre_rubrique">
+							<table style="width: 100%; display:block;">
+								<tbody style="width: 100%; display:block;">
+									<tr style="width: 100%; display:flex;">
+										<td align="right" style="width:100%; display:block;">{{content.field_title}}</td>
+										<td class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}'); display:block;"></td>
+									</tr>
+								</tbody>
+							</table>
 						</td>
 					{% elseif attributes[0] == 'is-odd' %}
-						<td align="left" style="width: 100%; " class="titre_rubrique">
-							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
-							<div style="width:100%">{{content.field_title}}</div>
+						<td align="left" style="width: 100%; display:block;" class="titre_rubrique">
+							<table style="width: 100%; display:block;">
+								<tbody style="width: 100%; display:block;">
+									<tr style="width: 100%; display:flex;">
+										<td class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}'); display:block;"></td>
+										<td align="left" style="width:100%; display:block;">{{content.field_title}}</td>
+									</tr>
+								</tbody>
+							</table>
 						</td>
 					{% endif %}	 
 				{# <div class="titre_rubrique">
 					<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 					{{content.field_title}}
 				</div> #}
-					<td>{{ content|without('field_title','field_picto') }}</td>
+					<td style="width: 100%; display:block;">{{ content|without('field_title','field_picto') }}</td>
 				</tr> 
 			{% endblock %}
 		</tbody>
