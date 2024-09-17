@@ -94,11 +94,11 @@
 					{% endif %}
 					{{ title_suffix }}
 				</td>
-				<td style="width: 100%; display:block;" align="left">
+				<td style="width: 100%; display:block; margin-top: 10px; margin-bottom: 15px;" align="left">
 					{{ content.field_tag }}
 				</td>
 				<td style="width: 100%; display:block;" align="left">
-					{{ field_dates }}
+					{{ content.field_dates }}
 				</td>
 			{% elseif attributes[0] == 'is-odd' %}
 				<td style="width: 100%; display:block;" align="right">
@@ -112,11 +112,11 @@
 					{% endif %}
 					{{ title_suffix }}
 				</td>
-				<td style="width: 100%; display:block;" align="right">
+				<td style="width: 100%; display:block; margin-top: 10px; margin-bottom: 15px;" align="right">
 					{{ content.field_tag }}
 				</td>
 				<td style="width: 100%; display:block;" align="right">
-					{{ field_dates }}
+					{{ content.field_dates }}
 				</td>
 			{% endif %}
 			<td style="width: 100%; display:block;" {{ content_attributes.addClass('node__content') }}>
