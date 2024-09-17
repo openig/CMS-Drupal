@@ -334,65 +334,20 @@ html, body{
       }
       /** titre bloc à gauche **/
       > .paragraph:nth-child(odd){
-        .titre_rubrique{
-          //direction: ltr;
-        }
         h2.field--name-field-title {
-          //text-align: start;
           padding-left: 15px;
         }
         .picto_titre{
           margin-right: 15px;
         }
-        .field--name-field-type-de-contenu{
-          .title_container{
-            //display: flex;
-            //direction: rtl;
-            .title_contenu{
-              //direction: ltr;
-              //text-align: end;
-            }
-          }
-          .field--name-field-tag{
-            //direction: rtl;
-            //text-align: end;
-            .field__item{
-              //direction: ltr;
-            }
-          }
-          .date_newsletter{
-            //direction: rtl;
-            .field--name-created, .field--name-field-dates{
-              //direction: ltr;
-            }
-          }
-        }
       }
       /** titre bloc à droite **/
       > .paragraph:nth-child(even){
-        .titre_rubrique{
-          //direction: rtl;
-          .title{
-            //direction: ltr;
-          }
-        }
         h2.field--name-field-title {
           padding-right: 15px;
-          //text-align: end;
         }
         .picto_titre{
           margin-left: 15px;
-        }
-        .field--name-field-type-de-contenu{
-          .title_container{
-            //display: flex;
-            .title_contenu{
-              //text-align: start;
-            }
-          }
-          .field--name-created, .field--name-field-dates{
-            //text-align: start;
-          }
         }
       } 
     }
@@ -411,7 +366,6 @@ html, body{
       display: none;
     }
     .field--name-field-tag {
-      //display: flex;
       border: 1px solid #C2DB7E;
       border-radius: 21px;
       padding: 3px 10px;
@@ -419,7 +373,6 @@ html, body{
     }
     .date_newsletter{
       width: 100%;
-      //display: flex;
     }
     .field--name-created, .field--name-field-dates{
       display: block;
@@ -441,9 +394,6 @@ html, body{
       border-bottom: 0 !important;
     }
     .field--name-field-image {
-      //display: flex;
-      //margin: auto;
-      //width: fit-content;
       margin-top: 15px;
     }
     .node__meta{
@@ -519,9 +469,6 @@ html, body{
 /** Bienvenu **/
 .paragraph--type--bienvenue, .paragraph--type--coup-de-projecteur{
   .field--name-field-image {
-   // display: flex;
-    //margin: auto;
-    //width: fit-content;
     img{
       margin-right: 15px;
     }
@@ -541,11 +488,9 @@ html, body{
 /** Bloc Nous suivre **/
 .footer .block-newsletter-noussuivre {
   margin: 75px auto;
-  text-align: center;
   border-top: 2px solid;
   border-bottom: 2px solid;
-  width: fit-content;
-  padding: 15px 30px;
+  max-width: 650px;
   h2 {
     font-family: "OpenSans_Bold", sans-serif;
     font-size: 15px;
@@ -555,14 +500,9 @@ html, body{
     border-bottom: none !important;
   }
   .field--name-field-picto-et-lien{
-    display: inline-block;
-    width: fit-content;
-    margin: auto;
+    display: flex;
     .field__item{
-      display: inline-block;
-    }
-    .field__item:not(:last-child){
-      margin-right: 15px;
+      width: 100%;
     }
     img{
       width: 25px;
