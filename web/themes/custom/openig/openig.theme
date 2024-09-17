@@ -304,6 +304,9 @@ function openig_preprocess_node(&$variables, $hook){
           }
 
         }
+        if ($variables['view_mode'] == 'newsletter') {
+          $variables['elements']['#even_odd'] = '';
+        }
         break;
       case "simplenews_issue":
         global $base_url;
@@ -527,6 +530,11 @@ function openig_preprocess_field(&$variables){
     global $base_url;
     $variables['base_path'] = $base_url;
   }
+  if ($variables['field_name'] == 'field_type_de_contenu') {
+    if (($variables['element']['#bundle'] == 'a_la_une') or ($variables['element']['#bundle'] == 'a_savoir') or ($variables['element']['#bundle'] == 'agenda')) {
+      $variables['element']['#prev_even_odd'];
+    }
+  }
 }
 
 function openig_preprocess_user(&$variables){
@@ -594,5 +602,7 @@ function openig_preprocess_paragraph(&$variables){
       $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id);
       $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
     }
+    
+    $variables['content']['field_type_de_contenu']['#prev_even_odd'] = '';
   }
 }

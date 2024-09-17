@@ -56,17 +56,18 @@
 							<div style="width:100%">{{content.field_title}}</div>
 							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 						</td>
+						<td>{{ content.field_type_de_contenu|merge({'#prev_even_odd': 'even'}) }}</td>
 					{% elseif attributes[0] == 'is-odd' %}
 						<td align="left" style="width: 100%; " class="titre_rubrique">
 							<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 							<div style="width:100%">{{content.field_title}}</div>
 						</td>
+						<td>{{ content.field_type_de_contenu|merge({'#prev_even_odd': 'odd'}) }}</td>
 					{% endif %}	 
 				{# <div class="titre_rubrique">
 					<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 					{{content.field_title}}
 				</div> #}
-					<td>{{ content|without('field_title','field_picto') }}</td>
 				</tr> 
 			{% endblock %}
 		</tbody>

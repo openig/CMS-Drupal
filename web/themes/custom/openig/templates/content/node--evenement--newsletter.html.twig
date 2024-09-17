@@ -79,20 +79,50 @@
 	]
   %}
   {{ attach_library('bootstrap5/node') }}
-  <article{{ attributes.addClass(classes) }}>
-	{{ title_prefix }}
-	{% if label and not page %}
-		<div class="title_container">
-			<h2 class="title_contenu">
-				<a href="/l-agenda?id={{node.nid[0].value}}" rel="bookmark">{{ label }}</a>
-			</h2>
-		</div>
-	{% endif %}
-	{{ title_suffix }}
-
-	<div{{ content_attributes.addClass('node__content') }}>
-		{{ content }}
-	</div>
-  
-  </article>
+  <table{{ attributes.addClass(classes) }} style="width: 100%; display:block;">
+	<tbody style="width: 100%; display:block;">
+		<tr style="width: 100%; display:block;">
+			{% if attributes[0] == 'is-even' %}
+				<td style="width: 100%; display:block;" align="left">
+					{{ title_prefix }}
+					{% if label and not page %}
+						<div class="title_container">
+							<h2 class="title_contenu">
+								<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+							</h2>
+						</div>
+					{% endif %}
+					{{ title_suffix }}
+				</td>
+				<td style="width: 100%; display:block;" align="left">
+					{{ content.field_tag }}
+				</td>
+				<td style="width: 100%; display:block;" align="left">
+					{{ field_dates }}
+				</td>
+			{% elseif attributes[0] == 'is-odd' %}
+				<td style="width: 100%; display:block;" align="right">
+					{{ title_prefix }}
+					{% if label and not page %}
+						<div class="title_container">
+							<h2 class="title_contenu">
+								<a href="{{ url }}" rel="bookmark">{{ label }}</a>
+							</h2>
+						</div>
+					{% endif %}
+					{{ title_suffix }}
+				</td>
+				<td style="width: 100%; display:block;" align="right">
+					{{ content.field_tag }}
+				</td>
+				<td style="width: 100%; display:block;" align="right">
+					{{ field_dates }}
+				</td>
+			{% endif %}
+			<td style="width: 100%; display:block;" {{ content_attributes.addClass('node__content') }}>
+				{{ content|without('field_tag', 'field_dates') }}
+			</td>
+		</tr>
+	</tbody>
+  </table>
   

@@ -347,23 +347,23 @@ html, body{
         .field--name-field-type-de-contenu{
           .title_container{
             //display: flex;
-            direction: rtl;
+            //direction: rtl;
             .title_contenu{
               //direction: ltr;
               //text-align: end;
             }
           }
           .field--name-field-tag{
-            direction: rtl;
+            //direction: rtl;
             //text-align: end;
             .field__item{
-              direction: ltr;
+              //direction: ltr;
             }
           }
           .date_newsletter{
-            direction: rtl;
+            //direction: rtl;
             .field--name-created, .field--name-field-dates{
-              direction: ltr;
+              //direction: ltr;
             }
           }
         }
