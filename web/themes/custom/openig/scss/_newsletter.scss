@@ -25,8 +25,9 @@ html, body{
     z-index: 3;
     position: relative;
     color: black;
-    font-size: 14px;
-    margin-left: 70%;
+    font-size: 12px;
+    //margin-left: 70%;
+    padding-right: 15px;
   }
 }
 
@@ -83,7 +84,7 @@ html, body{
     z-index: 2;
     position: relative;
     margin-bottom: 0;
-    margin-left: 35%;
+    //margin-left: 35%;
     margin-top: 2%;
     font: bold 42px "Exo_semiBold";
     font-size: 42px !important;
@@ -99,6 +100,10 @@ html, body{
   margin: auto;
   max-width: 650px;
   font-family: 'OpenSans_Regular';
+  h2{
+    font-family: "Russo One";
+    border: none !important;
+  }
 }
 .node--type-simplenews-issue  .bloc-newsletter {
   margin: 50px auto;
@@ -276,7 +281,7 @@ html, body{
     padding-top: 0px !important;
     .bloc-content {
       padding: 15px;
-      display: flex;
+      //display: flex;
       position: relative;
       padding-bottom: 0;
       padding-top: 0 !important;
@@ -297,9 +302,9 @@ html, body{
         }
       } 
       .field--name-field-body {
-        text-align: start;
-        max-width: 60%;
-        margin-top: 35px;
+        //text-align: start;
+        //max-width: 60%;
+        //margin-top: 35px;
         margin-left: 15px;
         font-size: 16px !important;
       }
@@ -311,12 +316,18 @@ html, body{
     }
     .field-auteur{
       margin-bottom: 15px;
+      font-size: 14px;
+    }
+  }
+  .paragraph--type--le-mot-du-president{
+    .field--name-field-body {
+      font-size: 14px !important;
     }
   }
   .paragraph--type--fond-vert{
     .bloc-fond-vert{
       .field--name-field-body {
-        margin-top: 15px;
+        //margin-top: 15px;
         max-width: 100%;
         margin-bottom: 15px;
       }
@@ -434,7 +445,7 @@ html, body{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
-    padding-bottom: 15px;
+    padding-bottom: 3%;
     h2.field--name-field-title{
       font-weight: bold !important;
       font-size: 24px !important;
@@ -449,7 +460,7 @@ html, body{
 }
 
 .node--type-simplenews-issue .node__content .bloc-newsletter .field--name-field-title {
-  padding-top: 5px;
+  padding-top: 0%;
   margin-bottom: 0;
 }
 
@@ -458,7 +469,7 @@ html, body{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: bottom;
-  min-height: 50px;
+  min-height: 40px;
 }
 
 
@@ -470,6 +481,7 @@ html, body{
 .paragraph--type--bienvenue, .paragraph--type--coup-de-projecteur{
   .field--name-field-image {
     img{
+      margin-top: 10px;
       margin-right: 15px;
     }
   }
