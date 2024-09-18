@@ -16,9 +16,11 @@ function openig_preprocess_field__node(&$variables){
   if($variables['field_name'] == 'title'){
     // Récupération des tags au niveau du titre du contenu
     $tags = $variables['element']['#object']->field_tag;
-    foreach ($tags as $tag) {
-      $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
-      $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+    if ($tags) {
+      foreach ($tags as $tag) {
+        $term = \Drupal\taxonomy\Entity\Term::load($tag->target_id);
+        $variables['tags'][$term->tid[0]->value] = $term->name[0]->value;
+      }
     }
     // Utilisation d'une taxonomie pour afficher les pictos à côté des titres dans les types de contenu
     $type = $variables['element']['#bundle'];
