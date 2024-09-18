@@ -61,14 +61,20 @@
 						</td>
 					{% endif %}	 
 					<td style="display: block; width:100%; padding:0;">	
-						<div class="bloc-fond-vert">
-						<div class="bloc-content">
-							{{content.field_image}}
-							{{content.field_body}}
-							<div class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
-						</div>
-							{{content.field_auteur}}
-						</div>
+						<table style="display: block; width:100%; padding-right:15px;" class="bloc-fond-vert">
+							<tbody style="display: block; width:100%;">
+								<tr class="bloc-content"  style="display:block; background-image: url('{{ picto_uri|file_url(false) }}'); background-repeat:no-repeat; background-position: top right; padding-right:50px;">
+									<td>{{content.field_image}}</td>
+									<td>{{content.field_body}}</td>
+{# 									<td align="right" class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></td>
+ #}								</tr>
+								<tr style="width: 100%; display:block;">
+									<td style="width: 100%; display:block;" align="right">
+										{{content.field_auteur}}
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</td>
 				</tr> 
 			{% endblock %}
