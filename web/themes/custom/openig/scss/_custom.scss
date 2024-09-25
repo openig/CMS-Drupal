@@ -76,6 +76,12 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         z-index: -2;
         height: 600px;
     }
+    .alert{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+    }
     .contenu_accroche{
         position: absolute;
         top: 50%;
