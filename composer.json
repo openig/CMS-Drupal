@@ -25,6 +25,7 @@
         "drupal/change_pwd_page": "^2.0",
         "drupal/ckeditor_accordion": "^2.1",
         "drupal/ckeditor_font": "^2.0@beta",
+        "drupal/clientside_validation": "^4.0",
         "drupal/color_field": "^3.0",
         "drupal/conditional_fields": "^4.0@alpha",
         "drupal/config_ignore": "^3.3",
