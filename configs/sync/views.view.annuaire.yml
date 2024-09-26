@@ -1699,7 +1699,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/boussole-titre.png')\"></span>\r\n\r\n         <h2>[view:title]</h2> \r\n     </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">200</span> \r\n    <span class=\"type_contenu\">Adhérents</span>\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/boussole-titre.png')\"></span>\r\n\r\n         <h2>[view:title]</h2> \r\n     </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nVous êtes novice ou expert en géomatique ? Vous utilisez fréquemment ou ponctuellement des données géographiques ? Vous recherchez des données pour un usage technique ou stratégique ?... <br/><br/>\r\n\r\nVous pouvez <a href:\"https://www-dev.openig.org/openig/pourquoi-adherer\">adhérer à OPenIG !</a>\r\n\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">200</span> \r\n    <span class=\"type_contenu\">Adhérents</span>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
