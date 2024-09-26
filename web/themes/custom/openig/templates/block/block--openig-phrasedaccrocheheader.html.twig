@@ -41,6 +41,7 @@
   {{ title_suffix }}
   {% block content %}
     <div class="accroche_header" style="background-color:{{content['field_couleur'][0]['#markup']}}"></div>
+    {{render_block('openig_messages')}}
     <div class="contenu_accroche">
         {{ content|without('field_couleur') }}
     </div>

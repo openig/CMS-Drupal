@@ -76,6 +76,12 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
         z-index: -2;
         height: 600px;
     }
+    .alert{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 3;
+    }
     .contenu_accroche{
         position: absolute;
         top: 50%;
@@ -1781,6 +1787,12 @@ form.user-register-form{
         form{
             color: $OPenIG-color_black;
             margin: 1rem;
+            .form-control.error{
+                border-color: red;
+            }
+            .form-control.error:focus{
+                border-color: red;
+            }
             .form-control{
                 border-color: $OPenIG-color_gray;
             }
