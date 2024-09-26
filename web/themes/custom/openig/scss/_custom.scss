@@ -1787,6 +1787,12 @@ form.user-register-form{
         form{
             color: $OPenIG-color_black;
             margin: 1rem;
+            .form-control.error{
+                border-color: red;
+            }
+            .form-control.error:focus{
+                border-color: red;
+            }
             .form-control{
                 border-color: $OPenIG-color_gray;
             }
