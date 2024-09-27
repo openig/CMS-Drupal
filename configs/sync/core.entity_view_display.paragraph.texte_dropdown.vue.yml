@@ -1,0 +1,27 @@
+uuid: 92d9c844-46e6-4bd4-929b-7bf7b30a314f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.vue
+    - field.field.paragraph.texte_dropdown.field_texte
+    - field.field.paragraph.texte_dropdown.field_title
+    - paragraphs.paragraphs_type.texte_dropdown
+  module:
+    - text
+id: paragraph.texte_dropdown.vue
+targetEntityType: paragraph
+bundle: texte_dropdown
+mode: vue
+content:
+  field_texte:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_title: true
+  search_api_excerpt: true
