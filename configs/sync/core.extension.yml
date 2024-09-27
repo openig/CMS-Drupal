@@ -82,6 +82,7 @@ module:
   path: 0
   path_alias: 0
   pgsql: 0
+  plausible: 0
   responsive_image: 0
   scheduler: 0
   search_api: 0
