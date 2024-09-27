@@ -1,0 +1,27 @@
+uuid: 3e02beec-3fdc-4539-8e15-36e7d6184b23
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.vue
+    - field.field.paragraph.title_text.field_texte
+    - field.field.paragraph.title_text.field_title
+    - paragraphs.paragraphs_type.title_text
+  module:
+    - text
+id: paragraph.title_text.vue
+targetEntityType: paragraph
+bundle: title_text
+mode: vue
+content:
+  field_texte:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
+  field_title: true
+  search_api_excerpt: true
