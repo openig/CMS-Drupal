@@ -556,7 +556,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"col-lg-6 col-xl-5 col-12\">\r\n<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\"</p>\r\n</div>"
+            value: "<div class=\"col-lg-6 col-xl-5 col-12\">\r\n<p>Découvrez nos services dédiés à la géomatique, développés par OPenIG. Accédez à une gamme d'outils performants : visionneuses interactives, applications web, plugins QGIS et bien plus encore. Certains services sont exclusivement réservés aux adhérents.\r\n<br/><br/> Pour mieux comprendre leur utilisation, nous organisons régulièrement des webinaires et événements. Vous pouvez également rejoindre les groupes de travail dédié pour approfondir vos connaissances et échanger avec d'autres utilisateurs.\r\n</p>\r\n</div>"
             format: full_html
           tokenize: false
         entity_block_content:
@@ -699,7 +699,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <h2>[view:title]</h2> \r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/tools-titre.png\"')\"></span>\r\n\r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">[view:total-rows]</span> \r\n    <span class=\"type_contenu\">Services</span>\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n        <h2>[view:title]</h2> \r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/tools-titre.png\"')\"></span>\r\n\r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nDécouvrez nos services dédiés à la géomatique, développés par OPenIG. Accédez à une gamme d'outils performants : visionneuses interactives, applications web, plugins QGIS et bien plus encore. Certains services sont exclusivement réservés aux adhérents.\r\n\r\n</div>\r\n<div class=\"nombre_header\">\r\n    <span class=\"nombre\">[view:total-rows]</span> \r\n    <span class=\"type_contenu\">Services</span>\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }
