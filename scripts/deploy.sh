@@ -60,15 +60,15 @@ SOLR_HOST="localhost"
 SOLR_NAME="recherche_solr"
 SOLR_CORE="drupal_core"
 
-### Définition du compte administrateur
-DRUPAL_USER="admin"
-DRUPAL_PASS=
-DRUPAL_MAIL=
-
 ### Définition des paramètres de l'instance
 DRUPAL_NAME=
 DRUPAL_LANG=
 DRUPAL_THEME="openig"
+
+### Définition du compte administrateur
+DRUPAL_USER="admin"
+DRUPAL_PASS=
+DRUPAL_MAIL=
 
 ### Construction du thème en mode production
 RUN_YARN="build"
