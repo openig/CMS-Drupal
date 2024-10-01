@@ -49,8 +49,8 @@ $databases = array(
 ###
 ### FILE SYSTEM
 ###
+#$settings['file_temp_path']              = $app_root . '/../temp';
 $settings['file_private_path']           = $app_root . '/../private';
-$settings['file_temp_path']              = $app_root . '/../temp';
 $settings['config_sync_directory']       = $app_root . '/../configs/sync';
 $settings['hash_salt'] = file_get_contents($app_root . '/../configs/salt.txt');
 
