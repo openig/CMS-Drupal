@@ -339,4 +339,10 @@
         }
     })
 
+    // Arrêter la vidéo à la fermeture de la modal
+    $('.modalVideo').on('hidden.bs.modal', function (e) {
+        $iframe = $(this).find("iframe");
+        $iframe.attr("src", $iframe.attr("src"));
+    });
+
 })(jQuery);
