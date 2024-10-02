@@ -2353,7 +2353,7 @@ display:
         type: some
         options:
           offset: 0
-          items_per_page: 3
+          items_per_page: 4
       empty: {  }
       sorts:
         created:
@@ -2463,7 +2463,7 @@ display:
           plugin_id: text
           empty: false
           content:
-            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/megaphone-titre.png')\"></span>\r\n\r\n        <h2>[view:title]</h2> \r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nRetrouvez toutes les informations relatives aux évènements et aux actualités d'OPenIG : nouveaux projets, webinaires, colloques, millésimes...\r\n\r\n</div>"
+            value: "<div class=\"title_header\">\r\n    <div class=\"picto_titre\">\r\n\r\n       <span style=\"background-image:url('/themes/custom/openig/pictos/accueil-titre/megaphone-titre.png')\"></span>\r\n\r\n        <h2>[view:title]</h2> \r\n    </div>\r\n</div>\r\n<div class=\"texte_header\">\r\n\r\nRetrouvez toutes les informations relatives activités d'OPenIG : nouveaux projets, webinaires, colloques, millésimes...\r\n\r\n</div>"
             format: full_html
           tokenize: false
       display_extenders: {  }

@@ -36,6 +36,7 @@ auth.json
 /configs/*.local
 /configs/solr_config.zip
 /vendor
+/drush/drush.yml
 /bin
 /temp
 /files

@@ -5,6 +5,7 @@ type: role
 mail_to: ''
 roles:
   administrator: administrator
+  anonymous: '0'
   authenticated: '0'
   content_editor: '0'
   adherent: '0'
@@ -35,18 +36,21 @@ mail_message_ids_header_overwrite_header:
   user_password_reset: '0'
 created_roles_mode: exclude
 created_roles:
+  anonymous: '0'
   authenticated: '0'
   content_editor: '0'
   administrator: '0'
   adherent: '0'
 updated_roles_mode: exclude
 updated_roles:
+  anonymous: '0'
   authenticated: '0'
   content_editor: '0'
   administrator: '0'
   adherent: '0'
 deleted_roles_mode: exclude
 deleted_roles:
+  anonymous: '0'
   authenticated: '0'
   content_editor: '0'
   administrator: '0'
