@@ -12,6 +12,10 @@ use Drupal\Component\Utility\SortArray;
  * OPenIG theme file.
  */
 
+function openig_preprocess_html(&$variables){
+  $variables['tic_is_dev'] = \Drupal\Core\Site\Settings::get('tic_is_dev', false);
+}
+
 function openig_preprocess_field__node(&$variables){
   if($variables['field_name'] == 'title'){
     // Récupération des tags au niveau du titre du contenu

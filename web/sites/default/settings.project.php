@@ -14,6 +14,10 @@ $settings['trusted_host_patterns'] = [
 	'^.+\.teicee\.fr$',
 ];
 
+if (isset($_SERVER['SERVER_NAME'])) {
+	$settings['tic_is_dev'] = preg_match('/^(www\.)?openig\.org$/', $_SERVER['SERVER_NAME']) ? false : true;
+}
+
 ###
 ### DATABASE
 ###
