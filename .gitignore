@@ -33,6 +33,7 @@ auth.json
 ._.DS_Store
 
 ### Projet
+/archives
 /configs/*.local
 /configs/solr_config.zip
 /vendor
