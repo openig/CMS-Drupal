@@ -32,9 +32,13 @@ Mettre en place le projet depuis son dépôt Git dans le dossier de l'hébergeme
 ```bash
 ### Soit par SSH
 git clone "git@git.teicee.fr:openig/openig-d10-website.git" .
+### ou
+git clone "git@github.com:openig/CMS-Drupal.git" .
 
 ### Soit par HTTP
 git clone "https://git.teicee.fr/openig/openig-d10-website.git" .
+### ou
+git clone "https://github.com/openig/CMS-Drupal.git" .
 ```
 
 Définir la configuration spécifique `web/sites/default/settings.local.php`, par exemple :
@@ -67,7 +71,7 @@ SOLR_CORE="drupal_core"
 ### Par exemple la définition du compte administrateur
 DRUPAL_USER="admin"
 DRUPAL_PASS="********"
-DRUPAL_MAIL="webmaster@openig.org"
+DRUPAL_MAIL="webmestre@openig.org"
 ```
 
 Puis lancer les commandes d'initialisation de l'instance avec le script fourni :
