@@ -74,7 +74,7 @@ init_d10_conf_mailer() {
 					p_success "Drupal mailsystem using 'SymfonyMailer+smtp': configuration done"
 				;;
 				'sendmail'*)  ## Sendmail (cf $settings['mailer_sendmail_commands'])
-					MAIL_CONF="{ query: { command: '/usr/sbin/sendmail' } }"
+					MAIL_CONF="{ query: { command: '/usr/sbin/sendmail -t' } }"
 					${BIN_DRUSH} cset --input-format=yaml "symfony_mailer.mailer_transport.${MAIL_TRANSPORT}" configuration "${MAIL_CONF}"
 					p_success "Drupal mailsystem using 'SymfonyMailer+sendmail': configuration done"
 				;;
