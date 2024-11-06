@@ -12,6 +12,12 @@ html, body{
   background-size: contain;
 }
 
+.node--type-simplenews-issue{
+  table, tbody, tr, td{
+    border: none;
+  }
+}
+
 .email-type-simplenews-newsletter {
   width: 100%;
   .linkdiv{

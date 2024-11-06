@@ -81,8 +81,8 @@
   {{ attach_library('bootstrap5/node') }}
   <table{{ attributes.addClass(classes) }} style="width: 100%; display:block;">
 	<tbody style="width: 100%; display:block;">
-		<tr style="width: 100%; display:block;">
-			{% if attributes[0] == 'is-even' %}
+		{% if attributes[0] == 'is-even' %}
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block;" align="left">
 					{{ title_prefix }}
 					{% if label and not page %}
@@ -94,13 +94,19 @@
 					{% endif %}
 					{{ title_suffix }}
 				</td>
+			</tr>
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block; margin-top: 10px; margin-bottom: 15px;" align="left">
 					{{ content.field_tag }}
 				</td>
+			</tr>
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block;" align="left">
 					{{ date }}
 				</td>
-			{% elseif attributes[0] == 'is-odd' %}
+			</tr>
+		{% elseif attributes[0] == 'is-odd' %}
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block;" align="right">
 					{{ title_prefix }}
 					{% if label and not page %}
@@ -109,16 +115,22 @@
 								<a href="{{ url }}" rel="bookmark">{{ label }}</a>
 							</h2>
 						</div>
-					{% endif %}
+				{% endif %}
 					{{ title_suffix }}
 				</td>
+			</tr>
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block; margin-top: 10px; margin-bottom: 15px;" align="right">
 					{{ content.field_tag }}
 				</td>
+			</tr>
+			<tr style="width: 100%; display:block;">
 				<td style="width: 100%; display:block;" align="right">
 					{{ date }}
 				</td>
-			{% endif %}
+			</tr>
+		{% endif %}
+		<tr style="width: 100%; display:block;">
 			<td style="width: 100%; display:block;" {{ content_attributes.addClass('node__content') }}>
 				{{ content|without('field_tag') }}
 			</td>
