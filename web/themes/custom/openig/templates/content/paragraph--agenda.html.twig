@@ -50,10 +50,10 @@
 	<table{{ attributes.addClass(classes) }} style="width:100%; display:block;">
 		<tbody style="width:100%; display:block;">
 			{% block content %}
-				<tr style="width: 100%; display:block;">
-					{% if attributes[0] == 'is-even' %}
+				{% if attributes[0] == 'is-even' %}
+					<tr style="width: 100%; display:block;">
 						<td align="right" style="width: 100%; display:block;" class="titre_rubrique">
-							<table style="width: 100%; display:block;">
+							<table style="width: 100%; display:block; table-layout:fixed;">
 								<tbody style="width: 100%; display:block;">
 									<tr style="width: 100%; display:flex;">
 										<td align="right" style="width:100%; display:block;">{{content.field_title}}</td>
@@ -62,10 +62,14 @@
 								</tbody>
 							</table>
 						</td>
+					</tr>
+					<tr style="width: 100%; display:block;">
 						<td style="width: 100%; display:block;">{{ content.field_type_de_contenu|merge({'#prev_even_odd': 'even'}) }}</td>
-					{% elseif attributes[0] == 'is-odd' %}
+					</tr>
+				{% elseif attributes[0] == 'is-odd' %}
+					<tr style="width: 100%; display:block;">
 						<td align="left" style="width: 100%; display:block;" class="titre_rubrique">
-							<table style="width: 100%; display:block;">
+							<table style="width: 100%; display:block; table-layout:fixed;">
 								<tbody style="width: 100%; display:block;">
 									<tr style="width: 100%; display:flex;">
 										<td class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}'); display:block;"></td>
@@ -74,13 +78,15 @@
 								</tbody>
 							</table>
 						</td>
+					</tr>
+					<tr style="width: 100%; display:block;">
 						<td style="width: 100%; display:block;">{{ content.field_type_de_contenu|merge({'#prev_even_odd': 'odd'}) }}</td>
-					{% endif %}	 
+					</tr>
+				{% endif %}	 
 				{# <div class="titre_rubrique">
 					<div class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}');"></div>
 					{{content.field_title}}
 				</div> #}
-				</tr> 
 			{% endblock %}
 		</tbody>
 	</table>

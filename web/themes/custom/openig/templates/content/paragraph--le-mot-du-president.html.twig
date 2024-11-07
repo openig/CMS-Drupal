@@ -59,12 +59,14 @@
 						<td align="left" style="width: 100%; display:block; padding:0;">
 							<div style="width:100%">{{content.field_title}}</div>
 						</td>
-					{% endif %}	 
+					{% endif %}
+				</tr>
+				<tr style="width: 100%; display:block;">
 					<td style="display: block; width:100%; padding:0;">	
-						<table style="display: block; width:100%; padding-right:15px;" class="bloc-fond-vert">
+						<table style="display: block; width:100%; padding-right:15px; table-layout:fixed;" class="bloc-fond-vert">
 							<tbody style="display: block; width:100%;">
 								<tr class="bloc-content"  style="display:block; background-image: url('{{ picto_uri|file_url(false) }}'); background-repeat:no-repeat; background-position: top right;">
-									<td>{{content.field_image}}</td>
+									<td style="width: 167px; max-width:167px;">{{content.field_image}}</td>
 									<td>{{content.field_body}}</td>
 {# 									<td align="right" class="picto_quote" style="background-image: url('{{ picto_uri|file_url(false) }}');"></td>
  #}								</tr>
