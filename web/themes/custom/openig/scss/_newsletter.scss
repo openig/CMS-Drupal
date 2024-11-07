@@ -12,14 +12,11 @@ html, body{
   background-size: contain;
 }
 
-.node--type-simplenews-issue{
-  table, tbody, tr, td{
-    border: none;
-  }
-}
-
 .email-type-simplenews-newsletter {
   width: 100%;
+  table, tbody, tr, td, img{
+    border: none;
+  }
   .linkdiv{
     display: block;
     max-width: 650px;
@@ -154,6 +151,8 @@ html, body{
   background-color: white;
   z-index: 2;
   position: relative;
+  width: fit-content;
+  max-width: 200px;
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee .field--name-field-mois {
   font-size: 19px;
@@ -304,7 +303,7 @@ html, body{
           width: 150px;
           height: 150px;
           border-radius: 50%;
-          border: 1px solid black;
+          border: 1px solid black !important;
         }
       } 
       .field--name-field-body {
