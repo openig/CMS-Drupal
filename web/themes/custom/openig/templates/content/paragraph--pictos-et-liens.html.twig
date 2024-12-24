@@ -49,7 +49,7 @@
   {% block paragraph %}
 	<div{{ attributes.addClass(classes) }}>
 	  {% block content %}
-		<a href="{{content.field_lien[0]['#title']}}" target="_blank"><img src="{{ file_url(content['field_picto'][0]['#item'].entity.uri.value) }}" alt="{{content.field_picto[0]['#item'].alt}}"></a>
+		<a href="{{content.field_lien[0]['#title']}}" target="_blank"><img src="{{ content.field_picto[0]['#markup'] }}"></a>
 	  {% endblock %}
 	</div>
   {% endblock paragraph %}
