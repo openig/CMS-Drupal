@@ -179,6 +179,11 @@ html, body{
   margin: auto;
   margin-bottom: 100px;
   z-index: 2;
+  h2{
+    border: none !important;
+    font-weight: bold !important;
+    font-size: 24px !important;
+  }
   .liste{
     width: 95%;
     margin: auto;
@@ -281,7 +286,7 @@ html, body{
     display: flex;
   }
   .bloc-fond-vert {
-    background-color: #f2f6e7;
+    /* background-color: #f2f6e7; */
     padding: 20px 0;
     padding-top: 0px !important;
     .bloc-content {
@@ -448,9 +453,9 @@ html, body{
   display: flex;
   .title{
     width: 100%;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: contain;
-    background-position: bottom;
+    background-position: bottom; */
     padding-bottom: 3%;
     //min-height: 40px;
     h2.field--name-field-title{
@@ -473,9 +478,9 @@ html, body{
 
 .node--type-simplenews-issue .paragraph--type--fond-vert .field--name-field-title,
 .node--type-simplenews-issue .paragraph--type--le-mot-du-president .field--name-field-title{
-  background-repeat: no-repeat;
+/*   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom;
+  background-position: bottom; */
   min-height: 40px;
 }
 
@@ -514,7 +519,6 @@ html, body{
     font-family: "OpenSans_Bold", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: #0a0909;
     margin-bottom: 15px;
     border-bottom: none !important;
   }
