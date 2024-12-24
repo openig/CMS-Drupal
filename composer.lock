@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "967b7759a1577f1b9be9acb32aef10cd",
+    "content-hash": "c71bce2ad47aed4bae70f94aaf1fae1b",
     "packages": [
         {
             "name": "algolia/places",
@@ -3402,6 +3402,56 @@
             "homepage": "https://www.drupal.org/project/hcaptcha",
             "support": {
                 "source": "https://git.drupalcode.org/project/hcaptcha"
+            }
+        },
+        {
+            "name": "drupal/image_base64_formatter",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/image_base64_formatter.git",
+                "reference": "2.0.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_base64_formatter-2.0.4.zip",
+                "reference": "2.0.4",
+                "shasum": "df45b9895b1c2231ab6802cf50960adbe01c2952"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.4",
+                    "datestamp": "1688581107",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "vuil",
+                    "homepage": "https://www.drupal.org/user/3568458"
+                }
+            ],
+            "description": "Adds a simple formatter for image fields that prints the base64 of the image.",
+            "homepage": "https://www.drupal.org/project/image_base64_formatter",
+            "keywords": [
+                "Drupal",
+                "image_base64_formatter"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/image_base64_formatter",
+                "issues": "https://www.drupal.org/project/issues/image_base64_formatter",
+                "documentation": "https://www.drupal.org/project/image_base64_formatter"
             }
         },
         {
@@ -11287,7 +11337,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
