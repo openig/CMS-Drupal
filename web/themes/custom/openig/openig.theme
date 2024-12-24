@@ -609,8 +609,9 @@ function openig_preprocess_paragraph(&$variables){
   or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_la_une') or ($variables['elements']['#paragraph']->type[0]->target_id == 'agenda')
   or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_savoir') or ($variables['elements']['#paragraph']->type[0]->target_id == 'coup_de_projecteur')) {
     if ($variables['content']['field_picto'][0]) {
-      $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id);
-      $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
+      /* $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id); */
+      /* $variables['picto_uri'] = $file_picto->get('uri')[0]->value; */
+      $variables['picto_uri'] = $variables['content']['field_picto'][0]['#markup'];
     }
     
     $variables['content']['field_type_de_contenu']['#prev_even_odd'] = '';
