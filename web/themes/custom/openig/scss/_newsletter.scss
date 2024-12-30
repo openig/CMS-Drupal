@@ -14,6 +14,7 @@ html, body{
 
 .email-type-simplenews-newsletter {
   width: 100%;
+  font-family: Arial !important;
   table, tbody, tr, td, img{
     border: none;
   }
@@ -51,7 +52,7 @@ html, body{
 
 /** Bloc Phrase d'accroche  **/
 .header .block-newsletter-phraseaccroche .field--name-body p {
-  font-family: 'Russo One';
+  font-family: Arial;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
@@ -102,9 +103,12 @@ html, body{
   width: 100%;
   margin: auto;
   max-width: 650px;
-  font-family: 'OpenSans_Regular';
+  font-family: Arial !important;
+  h1{
+    font: bold 42px Arial !important;
+  }
   h2{
-    font-family: "Russo One";
+    font-family: Arial;
     border: none !important;
   }
 }
@@ -115,7 +119,7 @@ html, body{
 }
 
 .node--type-simplenews-issue .field--name-title {
-  font-family: 'Exo_medium';
+  font-family: Arial;
 }
 .node--type-simplenews-issue .field--name-title a {
   color: black;
@@ -125,12 +129,12 @@ html, body{
 
 /** Mois année **/
 .node--type-simplenews-issue  .field--name-field-title, .field--name-field-date {
-  font-family: 'Russo One';
+  font-family: Arial;
   border: none;
 }
 
 .node--type-simplenews-issue .field--name-field-body {
-  font-family: 'OpenSans_Regular';
+  font-family: Arial;
 }
 
 .node--type-simplenews-issue .bloc-newsletter.mois-annee {
@@ -138,7 +142,7 @@ html, body{
 }
 .node--type-simplenews-issue .bloc-newsletter.mois-annee .paragraph--type--mois-et-annee {
   font-size: 24px;
-  font-family: 'Russo One';
+  font-family: Arial;
   margin: 0 auto 30px auto;
   color: #BE1621;
   display: inline-block;
@@ -215,7 +219,7 @@ html, body{
   z-index: 2;
   max-width: 75%;
   h2{
-    font-family: "Russo One";
+    font-family: Arial;
     border: none !important;
     position: absolute;
     font-weight: bold !important;
@@ -516,7 +520,7 @@ html, body{
   border-bottom: 2px solid;
   max-width: 650px;
   h2 {
-    font-family: "OpenSans_Bold", sans-serif;
+    font-family: Arial;
     font-size: 15px;
     font-weight: 700;
     margin-bottom: 15px;
