@@ -59,9 +59,8 @@
 
     <div{{ attributes.addClass(classes, 'field__items') }}>
       {% for item in items %}
-        <div class="title" style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/cadre-gris-titre-left.png');">
+        <div class="title">
           <h2{{ item.attributes.addClass('field__item') }}>{{ item.content }}</h2>
-          <div class="cadre-gris-title"></div>
         </div>
       {% endfor %}
     </div>
@@ -69,9 +68,8 @@
   {% else %}
 
     {% for item in items %}
-      <div class="title" style="background-image: url('{{ base_path }}/themes/custom/openig/img/newsletter/cadre-gris-titre-left.png');">
+      <div class="title">
         <h2{{ attributes.addClass(classes, 'field__item') }} id="{{ancre}}">{{ item.content }}</h2>
-        <div class="cadre-gris-title"></div>
       </div>
     {% endfor %}
 
