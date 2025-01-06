@@ -23,7 +23,7 @@ subscription:
 mail:
   use_cron: true
   textalt: false
-  throttle: 20
+  throttle: 50
   spool_progress_expiration: 3600
   spool_expire: 0
   debug: true
