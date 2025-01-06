@@ -7,8 +7,10 @@ dependencies:
     - field.field.paragraph.bienvenue.field_image
     - field.field.paragraph.bienvenue.field_picto
     - field.field.paragraph.bienvenue.field_title
+    - image.style.medium
     - paragraphs.paragraphs_type.bienvenue
   module:
+    - image_base64_formatter
     - svg_image
     - text
 id: paragraph.bienvenue.default
@@ -39,17 +41,14 @@ content:
     weight: 3
     region: content
   field_picto:
-    type: image
+    type: image_base64
     label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
+      image_display: ''
     third_party_settings: {  }
     weight: 1
     region: content

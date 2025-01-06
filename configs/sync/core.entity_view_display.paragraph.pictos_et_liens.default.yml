@@ -7,8 +7,8 @@ dependencies:
     - field.field.paragraph.pictos_et_liens.field_picto
     - paragraphs.paragraphs_type.pictos_et_liens
   module:
+    - image_base64_formatter
     - link
-    - svg_image
 id: paragraph.pictos_et_liens.default
 targetEntityType: paragraph
 bundle: pictos_et_liens
@@ -27,17 +27,14 @@ content:
     weight: 2
     region: content
   field_picto:
-    type: image
+    type: image_base64
     label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-      svg_attributes:
-        width: null
-        height: null
-      svg_render_as_image: true
+      image_display: ''
     third_party_settings: {  }
     weight: 1
     region: content
