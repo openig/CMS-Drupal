@@ -1,0 +1,25 @@
+uuid: 245a4d8c-3337-4de1-8377-969dd41210f6
+langcode: fr
+status: false
+dependencies:
+  content:
+    - 'block_content:pictos_et_liens:6062c441-63b9-4596-8ba7-c38aba2ff974'
+  module:
+    - block_content
+  theme:
+    - openig
+id: openig_noussuivrepa2
+theme: openig
+region: bas_footer_droite
+weight: -37
+provider: null
+plugin: 'block_content:6062c441-63b9-4596-8ba7-c38aba2ff974'
+settings:
+  id: 'block_content:6062c441-63b9-4596-8ba7-c38aba2ff974'
+  label: 'Nous suivre - PA 2'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
