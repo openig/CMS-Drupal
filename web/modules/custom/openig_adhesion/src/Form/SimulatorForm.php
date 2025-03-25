@@ -135,7 +135,7 @@ class SimulatorForm extends FormBase {
                 '#captcha_type' => 'hcaptcha/hCaptcha',
             ];
         }
-       
+
 
         $form['simulation_result'] = [
             '#type' => 'hidden',
@@ -186,6 +186,11 @@ class SimulatorForm extends FormBase {
             // Get result parameter if defined
             $simulation_result = $form_state->getValue('simulation_result');
 
+            $part_variable_organisme_prive = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+            $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
+            $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+
+
             // Send confirmation email
             switch ($organism_type) {
                 case '1':
@@ -202,6 +207,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
+                    $message = str_replace('@part_variable_organisme_prive', $part_variable_organisme_prive, $message);
                     $this->sendMail($settings['type_1_email_title'], $message, $email);
                     break;
                 case '11':
@@ -217,6 +223,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@budget', $budget, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
+                    $message = str_replace('@part_variable_organisme_SIG', $part_variable_organisme_SIG, $message);
                     $this->sendMail($settings['type_3_email_title'], $message, $email);
                     break;
                 case '14':
@@ -225,6 +232,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
+                    $message = str_replace('@part_fixe', $part_fixe, $message);
                     $this->sendMail($settings['type_4_email_title'], $message, $email);
                     break;
             }
