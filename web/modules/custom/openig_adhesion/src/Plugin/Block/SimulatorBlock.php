@@ -114,6 +114,29 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
             '#description' => "Cotisation estimée à budget * pourcentage",
         ];
 
+        $form['openig_adhesion_simulator_formula_population_valeur_plafond'] = [
+            '#type' => 'details',
+            '#title' => 'Valeurs paramètrables',
+            'openig_adhesion_simulator_formula_population_part_variable' => [
+              '#type' => 'textfield',
+              '#title' => 'Plafond de la part variable :',
+              '#description' => "Montant du plafond de la part variable catégorie 1 (Etat, collectivités et EPCI à fiscalité propre).",
+              '#default_value' => isset($config['openig_adhesion_simulator_formula_population_part_variable']) ? $config['openig_adhesion_simulator_formula_population_part_variable'] : '20 000',
+            ],
+            'openig_adhesion_simulator_formula_organisme_valeur_fixe' => [
+              '#type' => 'textfield',
+              '#title' => 'Montant de la part fixe :',
+              '#description' => "Montant de la part fixe catégorie 3 (Personnes physiques).",
+              '#default_value' => isset($config['openig_adhesion_simulator_formula_organisme_valeur_fixe']) ? $config['openig_adhesion_simulator_formula_organisme_valeur_fixe'] : '25',
+            ],
+            'openig_adhesion_simulator_formula_organisme_part_variable' => [
+              '#type' => 'textfield',
+              '#title' => 'Plafond de la part variable :',
+              '#description' => "Montant du plafond de la part variable catégorie 4 (Organismes à « vocation » SI).",
+              '#default_value' => isset($config['openig_adhesion_simulator_formula_organisme_part_variable']) ? $config['openig_adhesion_simulator_formula_organisme_part_variable'] : '25 000',
+            ],
+        ];
+
         $form['openig_adhesion_simulator_formula_salaries'] = array(
             '#type' => 'details',
             '#title' => 'Tranches par taille de l\'organisme',
