@@ -87,9 +87,8 @@
 
             // Budget formula
             $('#edit-budget', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
-                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
-                console.log(display);
+                var total = drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value;
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total.toFixed(2) : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
                 $('#simulator_type_3').html(display + '€');
                 $('#simulation_result').val(display);
             });
