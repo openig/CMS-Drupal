@@ -212,8 +212,11 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         $this->configuration['openig_adhesion_simulator_formula_salaries_6'] = $values['openig_adhesion_simulator_formula_salaries']['openig_adhesion_simulator_formula_salaries_6'];
         $this->configuration['openig_adhesion_simulator_formula_salaries_7'] = $values['openig_adhesion_simulator_formula_salaries']['openig_adhesion_simulator_formula_salaries_7'];
 
+        // Montant de la part variable (cat 1) - Organismes public
         $this->configuration['openig_adhesion_simulator_formula_population_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_population_part_variable'];
+        // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
         $this->configuration['openig_adhesion_simulator_formula_organisme_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_part_variable'];
+        // Montant de la part fixe (cat 3) - Personnes physiques
         $this->configuration['openig_adhesion_simulator_formula_organisme_valeur_fixe'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
     }
 }

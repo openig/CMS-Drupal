@@ -43,6 +43,10 @@ class SimulatorForm extends FormBase {
      * {@inheritdoc}
      */
     public function buildForm(array $form, FormStateInterface $form_state) {
+        /* Récupération de la part fixe "Personne physique" paramètré dans la configuration du block */
+        $block_config = Block::load('simulatoradhesionblock');
+        $settings = $block_config->get('settings');
+        $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
 
         // Organism type
         $form['organism_type'] = [
@@ -108,7 +112,7 @@ class SimulatorForm extends FormBase {
                 <div class="adhesion-simulator-form__title">Personnes individuelles</div>
                 <div class="adhesion-simulator-form__label">Elles permettent à des personnes morales ou physiques d’adhérer à OPenIG avec un niveau de services limité. En revanche, les communes membres de droit (c’est-à-dire dont l’EPCI est adhérente) et désireuses d’apporter leur soutien, conservent logiquement un niveau de services complet. Ces cotisations permettent d’accéder aux instances de gouvernance selon les modalités fixées dans les statuts.</div>
                 <div class="adhesion-simulator-form__result">
-                    <div class="adhesion-simulator-form__option">Cotisation individuel à partir de <span class="adhesion-simulator-form__value" id="simulator_type_3">20€</span></div>
+                    <div class="adhesion-simulator-form__option">Cotisation individuel à partir de <span class="adhesion-simulator-form__value" id="simulator_type_3"> '.$part_fixe.'€</span></div>
                     <div class="adhesion-simulator-form__option">Cotisation personne morale à partir de <span class="adhesion-simulator-form__value" id="simulator_type_3">250€</span></div>
                 </div>
             </div></div>',
@@ -186,8 +190,11 @@ class SimulatorForm extends FormBase {
             // Get result parameter if defined
             $simulation_result = $form_state->getValue('simulation_result');
 
+            // Montant de la part variable (cat 1) - Organismes public
             $part_variable_organisme_prive = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+            // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
             $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
+            // Montant de la part fixe (cat 3) - Personnes physiques
             $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
 
 
