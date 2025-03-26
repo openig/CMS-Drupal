@@ -36,7 +36,7 @@ settings:
   openig_adhesion_simulator_formula_salaries_5: '5000'
   openig_adhesion_simulator_formula_salaries_6: '10000'
   openig_adhesion_simulator_formula_salaries_7: '15000'
-  openig_adhesion_simulator_formula_population_part_variable: '20 000'
-  openig_adhesion_simulator_formula_organisme_part_variable: '25 000'
+  openig_adhesion_simulator_formula_population_part_variable: '20000'
+  openig_adhesion_simulator_formula_organisme_part_variable: '25000'
   openig_adhesion_simulator_formula_organisme_valeur_fixe: '25'
 visibility: {  }
