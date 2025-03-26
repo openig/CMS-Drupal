@@ -51,12 +51,12 @@ function openig_adhesion_preprocess_openig_adhesion_simulator(&$variables) {
         $js_variables['formula_salaries_7'] = $settings['openig_adhesion_simulator_formula_salaries_7'];
 
         // Montant de la part variable (cat 1) - Organismes public
-        $js_variables['population_part_variable'] = intval($settings['openig_adhesion_simulator_formula_population_part_variable']);
+        $js_variables['population_part_variable'] = $settings['openig_adhesion_simulator_formula_population_part_variable'];
         // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
-        $js_variables['organisme_part_variable'] = intval($settings['openig_adhesion_simulator_formula_organisme_part_variable']);
+        $js_variables['organisme_part_variable'] = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
 
         // Montant de la part fixe (cat 3) - Personnes physiques
-        $js_variables['valeur_fixe'] = intval($settings['openig_adhesion_simulator_formula_organisme_valeur_fixe']);
+        $js_variables['valeur_fixe'] = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
 
         $variables['#attached']['drupalSettings']['openig_adhesion']['openigAdhesion'] = $js_variables;
     }
