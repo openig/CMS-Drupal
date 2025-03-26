@@ -46,7 +46,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#type' => 'textarea',
                 '#title' => 'Contenu du mail de confirmation pour les organismes publics :',
                 '#default_value' => isset($config['type_1_email_content']) ? $config['type_1_email_content'] : '',
-                '#description' => "Variables : @type, @population, @simulation_result",
+                '#description' => "Variables : @type, @population, @simulation_result, @part_variable_organisme_prive",
             ],
             'type_2_email_title' => [
                 '#type' => 'textfield',
@@ -68,7 +68,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#type' => 'textarea',
                 '#title' => 'Contenu du mail de confirmation pour les organismes à vocation SIG :',
                 '#default_value' => isset($config['type_3_email_content']) ? $config['type_3_email_content'] : '',
-                '#description' => "Variables : @type, @budget, @simulation_result",
+                '#description' => "Variables : @type, @budget, @simulation_result, @part_variable_organisme_SIG",
             ],
             'type_4_email_title' => [
                 '#type' => 'textfield',
@@ -79,7 +79,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#type' => 'textarea',
                 '#title' => 'Contenu du mail de confirmation pour les personnes morales/physiques :',
                 '#default_value' => isset($config['type_4_email_content']) ? $config['type_4_email_content'] : '',
-                '#description' => "Variables : @type",
+                '#description' => "Variables : @type, @part_fixe",
             ],
         );
 
@@ -211,5 +211,9 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         $this->configuration['openig_adhesion_simulator_formula_salaries_5'] = $values['openig_adhesion_simulator_formula_salaries']['openig_adhesion_simulator_formula_salaries_5'];
         $this->configuration['openig_adhesion_simulator_formula_salaries_6'] = $values['openig_adhesion_simulator_formula_salaries']['openig_adhesion_simulator_formula_salaries_6'];
         $this->configuration['openig_adhesion_simulator_formula_salaries_7'] = $values['openig_adhesion_simulator_formula_salaries']['openig_adhesion_simulator_formula_salaries_7'];
+
+        $this->configuration['openig_adhesion_simulator_formula_population_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_population_part_variable'];
+        $this->configuration['openig_adhesion_simulator_formula_organisme_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_part_variable'];
+        $this->configuration['openig_adhesion_simulator_formula_organisme_valeur_fixe'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
     }
 }
