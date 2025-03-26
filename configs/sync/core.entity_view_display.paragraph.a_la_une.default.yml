@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.a_la_une.field_picto
     - field.field.paragraph.a_la_une.field_title
     - field.field.paragraph.a_la_une.field_type_de_contenu
+    - image.style.picto_newsletter
     - paragraphs.paragraphs_type.a_la_une
   module:
     - svg_image
@@ -19,13 +20,13 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: picto_newsletter
       image_loading:
         attribute: lazy
       svg_attributes:
         width: null
         height: null
-      svg_render_as_image: true
+      svg_render_as_image: false
     third_party_settings: {  }
     weight: 1
     region: content
