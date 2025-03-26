@@ -46,6 +46,11 @@ class SimulatorForm extends FormBase {
         /* Récupération de la part fixe "Personne physique" paramètré dans la configuration du block */
         $block_config = Block::load('simulatoradhesionblock');
         $settings = $block_config->get('settings');
+        // Montant de la part variable (cat 1) - Organismes public
+        $part_variable_organisme_prive = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+        // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
+        $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
+        // Montant de la part fixe (cat 3) - Personnes physiques
         $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
 
         // Organism type
@@ -72,7 +77,7 @@ class SimulatorForm extends FormBase {
             '#title' => 'Population de l\'organisme représenté',
             '#prefix' => '
                 <div id="population" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
-                <div class="adhesion-simulator-form__label">La cotisation est fonction de la population de l’entité. Le tarif par habitant est de 0,07 €. Le plafond de la cotisation est fixé à 20 000 € et sans limite pour les organismes désireux de donner plus ou historiquement financeurs.</div>',
+                <div class="adhesion-simulator-form__label">La cotisation est fonction de la population de l’entité. Le tarif par habitant est de 0,07 €. Le plafond de la cotisation est fixé à '.$part_variable_organisme_prive.'€ et sans limite pour les organismes désireux de donner plus ou historiquement financeurs.</div>',
             '#suffix' => '
                 <div class="adhesion-simulator-form__result">
                     Cotisation estimée à <span class="adhesion-simulator-form__value" id="simulator_type_1">...</span>
@@ -98,7 +103,7 @@ class SimulatorForm extends FormBase {
             '#title' => 'Budget de l\'organisme année N-1',
             '#prefix' => '
                 <div id="budget" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
-                    <div class="adhesion-simulator-form__label">Cotisation proportionnelle à la somme des cotisations perçues par l’organisme l’année précédente, avec un pourcentage de 5% de ces cotisations. Le plafond est fixé à 25 000 €. L’adhésion dans cette catégorie permet à l’adhérent de faire bénéficier ses propres membres de l’ensemble des services d’OPenIG.</div>',
+                    <div class="adhesion-simulator-form__label">Cotisation proportionnelle à la somme des cotisations perçues par l’organisme l’année précédente, avec un pourcentage de 5% de ces cotisations. Le plafond est fixé à '.$part_variable_organisme_SIG.'€. L’adhésion dans cette catégorie permet à l’adhérent de faire bénéficier ses propres membres de l’ensemble des services d’OPenIG.</div>',
             '#suffix' => '
                 <div class="adhesion-simulator-form__result">
                     Cotisation estimée à <span class="adhesion-simulator-form__value" id="simulator_type_3">...</span>

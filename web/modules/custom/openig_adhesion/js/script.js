@@ -24,6 +24,37 @@
                 if (event.target.value > 0 && event.target.value <= 8) {
                     $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
                     $("#edit-population").attr("required", true);
+                    let selectedPopulation = event.target.options[event.target.selectedIndex].text;
+                    console.log(selectedPopulation);
+                    let montantFixe = 0;
+                    switch(selectedPopulation) {
+                      case "Une commune":
+                        montantFixe = 100;
+                        break;
+                      case "Un département":
+                        montantFixe = 500;
+                        break;
+                      case "Une région":
+                        montantFixe = 500;
+                        break;
+                      case "Une communauté de communes":
+                        montantFixe = 200;
+                        break;
+                      case "Une communauté d'agglomération":
+                        montantFixe = 400;
+                        break;
+                      case "Une communauté urbaine":
+                        montantFixe = 200;
+                        break;
+                      case "Une métropole":
+                        montantFixe = 400;
+                        break;
+                      case "Un service déconcentré de l'Etat":
+                        montantFixe = 500;
+                        break;
+                      default:
+                        montantFixe = 0;
+                    }
                 }
 
                 // Salaries
