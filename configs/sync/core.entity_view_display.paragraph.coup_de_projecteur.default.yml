@@ -7,10 +7,8 @@ dependencies:
     - field.field.paragraph.coup_de_projecteur.field_image
     - field.field.paragraph.coup_de_projecteur.field_picto
     - field.field.paragraph.coup_de_projecteur.field_title
-    - image.style.medium
     - paragraphs.paragraphs_type.coup_de_projecteur
   module:
-    - image_base64_formatter
     - svg_image
     - text
 id: paragraph.coup_de_projecteur.default
@@ -41,14 +39,17 @@ content:
     weight: 3
     region: content
   field_picto:
-    type: image_base64
+    type: image
     label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-      image_display: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content

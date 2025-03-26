@@ -7,21 +7,24 @@ dependencies:
     - core.entity_view_mode.block_content.newsletter
     - field.field.block_content.image.field_image
   module:
-    - image_base64_formatter
+    - svg_image
 id: block_content.image.newsletter
 targetEntityType: block_content
 bundle: image
 mode: newsletter
 content:
   field_image:
-    type: image_base64
+    type: image
     label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-      image_display: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content
