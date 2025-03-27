@@ -1,7 +1,6 @@
 (function ($, Drupal, drupalSettings) {
     Drupal.behaviors.openigAdhesion = {
         attach: function (context, settings) {
-
             $('#edit-organism-type', context).on( 'change', function(event) {
 
                 // Hide all
@@ -48,8 +47,20 @@
 
             // Population formula
             $('#edit-population', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value);
-                var display = total <=20000 ? total : 20000;
+                let selectedPopulation = $('#edit-organism-type option:selected').val();
+                let montantFixeMap = {
+                  "1": 100,
+                  "2": 500,
+                  "3": 500,
+                  "4": 200,
+                  "5": 400,
+                  "6": 200,
+                  "7": 400,
+                  "8": 500,
+                };
+                let montantFixe = montantFixeMap[selectedPopulation] || 0;
+                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
                 $('#simulator_type_1').html(display + '€');
                 $('#simulation_result').val(display);
             });
@@ -88,8 +99,8 @@
 
             // Budget formula
             $('#edit-budget', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
-                var display = total <= 25000 ? total : 25000;
+                var total = drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value;
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total.toFixed(2) : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
                 $('#simulator_type_3').html(display + '€');
                 $('#simulation_result').val(display);
             });
