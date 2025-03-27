@@ -6,23 +6,27 @@ dependencies:
     - field.field.paragraph.agenda.field_picto
     - field.field.paragraph.agenda.field_title
     - field.field.paragraph.agenda.field_type_de_contenu
+    - image.style.picto_newsletter
     - paragraphs.paragraphs_type.agenda
   module:
-    - image_base64_formatter
+    - svg_image
 id: paragraph.agenda.default
 targetEntityType: paragraph
 bundle: agenda
 mode: default
 content:
   field_picto:
-    type: image_base64
+    type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: picto_newsletter
       image_loading:
         attribute: lazy
-      image_display: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 1
     region: content
