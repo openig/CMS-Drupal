@@ -24,37 +24,6 @@
                 if (event.target.value > 0 && event.target.value <= 8) {
                     $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
                     $("#edit-population").attr("required", true);
-                    let selectedPopulation = event.target.options[event.target.selectedIndex].text;
-                    console.log(selectedPopulation);
-                    let montantFixe = 0;
-                    switch(selectedPopulation) {
-                      case "Une commune":
-                        montantFixe = 100;
-                        break;
-                      case "Un département":
-                        montantFixe = 500;
-                        break;
-                      case "Une région":
-                        montantFixe = 500;
-                        break;
-                      case "Une communauté de communes":
-                        montantFixe = 200;
-                        break;
-                      case "Une communauté d'agglomération":
-                        montantFixe = 400;
-                        break;
-                      case "Une communauté urbaine":
-                        montantFixe = 200;
-                        break;
-                      case "Une métropole":
-                        montantFixe = 400;
-                        break;
-                      case "Un service déconcentré de l'Etat":
-                        montantFixe = 500;
-                        break;
-                      default:
-                        montantFixe = 0;
-                    }
                 }
 
                 // Salaries
@@ -78,7 +47,19 @@
 
             // Population formula
             $('#edit-population', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value);
+                let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                const montantFixeMap = {
+                  "Une commune": 100,
+                  "Un département": 500,
+                  "Une région": 500,
+                  "Une communauté de communes": 200,
+                  "Une communauté d'agglomération": 400,
+                  "Une communauté urbaine": 200,
+                  "Une métropole": 400,
+                  "Un service déconcentré de l'Etat": 500
+                };
+                let montantFixe = montantFixeMap[selectedPopulation] || 0;
+                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
                 var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
                 $('#simulator_type_1').html(display + '€');
                 $('#simulation_result').val(display);
