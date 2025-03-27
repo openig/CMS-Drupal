@@ -59,6 +59,7 @@ class SimulatorForm extends FormBase {
             '#title' => 'Quel est le type de votre organisme ?',
             '#attributes' => array(
                 'class' => array('organism_type'),
+                'data-options' => json_encode($this->options)
             ),
             '#options' => $this->options,
             '#required' => TRUE,

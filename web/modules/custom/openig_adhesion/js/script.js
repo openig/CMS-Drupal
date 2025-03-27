@@ -47,16 +47,16 @@
 
             // Population formula
             $('#edit-population', context).on( 'keyup', function(event) {
-                let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
-                const montantFixeMap = {
-                  "Une commune": 100,
-                  "Un département": 500,
-                  "Une région": 500,
-                  "Une communauté de communes": 200,
-                  "Une communauté d'agglomération": 400,
-                  "Une communauté urbaine": 200,
-                  "Une métropole": 400,
-                  "Un service déconcentré de l'Etat": 500
+                let selectedPopulation = $('#edit-organism-type option:selected').val();
+                let montantFixeMap = {
+                  "1": 100,
+                  "2": 500,
+                  "3": 500,
+                  "4": 200,
+                  "5": 400,
+                  "6": 200,
+                  "7": 400,
+                  "8": 500,
                 };
                 let montantFixe = montantFixeMap[selectedPopulation] || 0;
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
