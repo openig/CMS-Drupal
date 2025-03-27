@@ -1,0 +1,8 @@
+name: 'OpenIG newsletter'
+type: module
+description: 'Module pour modifier les e-mails de la newsletter.'
+package: Custom
+core_version_requirement: ^10
+dependencies:
+  - simplenews
+  - symfony_mailer

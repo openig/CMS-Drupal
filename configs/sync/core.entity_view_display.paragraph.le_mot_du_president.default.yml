@@ -8,10 +8,8 @@ dependencies:
     - field.field.paragraph.le_mot_du_president.field_image
     - field.field.paragraph.le_mot_du_president.field_picto
     - field.field.paragraph.le_mot_du_president.field_title
-    - image.style.vignette_150x150
     - paragraphs.paragraphs_type.le_mot_du_president
   module:
-    - image_base64_formatter
     - svg_image
 id: paragraph.le_mot_du_president.default
 targetEntityType: paragraph
@@ -49,14 +47,17 @@ content:
     weight: 1
     region: content
   field_picto:
-    type: image_base64
+    type: image
     label: hidden
     settings:
       image_link: ''
       image_style: ''
       image_loading:
         attribute: lazy
-      image_display: ''
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
     weight: 3
     region: content

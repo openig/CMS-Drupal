@@ -1,0 +1,47 @@
+<?php
+
+use Drupal\symfony_mailer\EmailInterface;
+use Drupal\Component\Utility\Html;
+
+
+/**
+ * Implements hook_mailer_TYPE_build() for emails of type simplenews.
+ */
+
+
+function openig_newsletter_mailer_post_render($email){
+    $body = $email->getHtmlBody();
+
+	$dom = Html::load($body);
+	$cid_map = []; 
+	foreach ($dom->getElementsByTagName('img') as $img) {
+
+		$uri = $img->getAttribute('src');
+		
+		if (substr($uri, 0, 5) !== 'data:') {
+			if (substr($uri, 0, 4) !== 'http') {
+				$base_url = \Drupal::request()->getSchemeAndHttpHost();
+				$absolute_url = $base_url . $uri;
+			}else{
+				$absolute_url = $uri;
+			}
+
+			$image_info = getimagesize($absolute_url);
+
+			$image_hash = md5_file($absolute_url);
+			if (isset($cid_map[$image_hash])) {
+				$cid = $cid_map[$image_hash];
+			} else {
+				$cid = 'image@' . md5($uri);
+				$cid_map[$image_hash] = $cid;
+			}
+
+			$email->embedFromPath($absolute_url, $cid, $image_info['mime']);
+
+			$img->setAttribute('src', 'cid:' . $cid);
+		}
+
+	}
+	$body = Html::serialize($dom);
+	$email->setHtmlBody($body);
+}
