@@ -37,8 +37,10 @@ class SimulatorForm extends FormBase {
         // Montant de la part fixe (cat 3) - Personnes physiques
         $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
         // Options paramétré du selecteur Type d'organisme
+        $i = 1;
         foreach($settings['openig_adhesion_simulator_formula_type_organisme_options'] as $option){
-          $this->options[] = $option['label'];
+          $this->options[$i] = $option['label'];
+          $i++;
         }
 
         // Organism type
