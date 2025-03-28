@@ -13,23 +13,7 @@ class SimulatorForm extends FormBase {
     private $options;
 
     public function __construct() {
-        $this->options = [
-            '1' => 'Une commune',
-            '2' => 'Un département',
-            '3' => 'Une région',
-            '4' => 'Une communauté de communes',
-            '5' => 'Une communauté d\'agglomération',
-            '6' => 'Une communauté urbaine',
-            '7' => 'Une métropole',
-            '8' => 'Un service déconcentré de l\'Etat',
-            '9' => 'Un autre EPCI',
-            '10' => 'Un autre organisme public',
-            '11' => 'Un organisme privé',
-            '12' => 'Une association',
-            '13' => 'Un organisme à vocation SIG',
-            '14' => 'Une personne morale [Adhésion de soutien]',
-            '15' => 'Une personne physique [Adhésion de soutien à titre individuel]',
-        ];
+        $this->options = [];
     }
 
     /**
@@ -52,6 +36,10 @@ class SimulatorForm extends FormBase {
         $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
         // Montant de la part fixe (cat 3) - Personnes physiques
         $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+        // Options paramétré du selecteur Type d'organisme
+        foreach($settings['openig_adhesion_simulator_formula_type_organisme_options'] as $option){
+          $this->options[] = $option['label'];
+        }
 
         // Organism type
         $form['organism_type'] = [
@@ -59,7 +47,6 @@ class SimulatorForm extends FormBase {
             '#title' => 'Quel est le type de votre organisme ?',
             '#attributes' => array(
                 'class' => array('organism_type'),
-                'data-options' => json_encode($this->options)
             ),
             '#options' => $this->options,
             '#required' => TRUE,
