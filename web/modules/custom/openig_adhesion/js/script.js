@@ -47,18 +47,13 @@
 
             // Population formula
             $('#edit-population', context).on( 'keyup', function(event) {
-                let selectedPopulation = $('#edit-organism-type option:selected').val();
-                let montantFixeMap = {
-                  "1": 100,
-                  "2": 500,
-                  "3": 500,
-                  "4": 200,
-                  "5": 400,
-                  "6": 200,
-                  "7": 400,
-                  "8": 500,
-                };
-                let montantFixe = montantFixeMap[selectedPopulation] || 0;
+                // Récupération de l'organisme selectionné
+                let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                // Options du selecteur + montants associé paramètré
+                let options_population = drupalSettings.openig_adhesion.openigAdhesion.options_type_organisme;
+                // Recherche du montant lié au type d'organisme selectionné
+                let result = options_population.find(item => item.label === selectedPopulation);
+                let montantFixe = Number(result.amount) || 0;
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
                 var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
                 $('#simulator_type_1').html(display + '€');

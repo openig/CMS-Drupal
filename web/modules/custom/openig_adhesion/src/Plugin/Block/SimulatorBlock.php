@@ -16,6 +16,29 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class SimulatorBlock extends BlockBase implements BlockPluginInterface {
 
+
+    /**
+     * Options par défaut "Quel est le type de votre organisme" (avec montants par défaut).
+     */
+    private $default_options = [
+        '1' => ['label' => 'Une commune', 'amount' => 100],
+        '2' => ['label' => 'Un département', 'amount' => 500],
+        '3' => ['label' => 'Une région', 'amount' => 500],
+        '4' => ['label' => 'Une communauté de communes', 'amount' => 200],
+        '5' => ['label' => 'Une communauté d\'agglomération', 'amount' => 400],
+        '6' => ['label' => 'Une communauté urbaine', 'amount' => 200],
+        '7' => ['label' => 'Une métropole', 'amount' => 400],
+        '8' => ['label' => 'Un service déconcentré de l\'Etat', 'amount' => 500],
+        '9' => ['label' => 'Un autre EPCI', 'amount' => 0],
+        '10' => ['label' => 'Un autre organisme public', 'amount' => 0],
+        '11' => ['label' => 'Un organisme privé', 'amount' => 0],
+        '12' => ['label' => 'Une association', 'amount' => 0],
+        '13' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
+        '14' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
+        '15' => ['label' => 'Une personne physique [Adhésion de soutien à titre individuel]', 'amount' => 0],
+    ];
+
+
     /**
      * {@inheritDoc}
      */
@@ -114,6 +137,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
             '#description' => "Cotisation estimée à budget * pourcentage",
         ];
 
+        // Valeur parametrable => plafond et part fixe
         $form['openig_adhesion_simulator_formula_population_valeur_plafond'] = [
             '#type' => 'details',
             '#title' => 'Valeurs paramètrables',
@@ -136,6 +160,47 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
               '#default_value' => isset($config['openig_adhesion_simulator_formula_organisme_part_variable']) ? $config['openig_adhesion_simulator_formula_organisme_part_variable'] : '25 000',
             ],
         ];
+
+        // Ajout dynamique des options selecteur Type d'organisme (label + montant associé)
+        $form['openig_adhesion_simulator_formula_type_organisme_options'] = [
+            '#type' => 'details',
+            '#title' => $this->t('Options du sélecteur Type d\'organisme'),
+            '#tree' => TRUE,
+            '#prefix' => '<div id="options-wrapper">',
+            '#suffix' => '</div>',
+        ];
+
+        // Récupérer les valeurs existantes ou initialiser une structure vide
+        $options = $config['openig_adhesion_simulator_formula_type_organisme_options'] ?? $this->default_options;
+        // Stocker les options sous forme de structure dynamique
+        $options_count = $form_state->get('options_count') ?? count($options);
+        if ($form_state->getTriggeringElement()['#name'] === 'add_option') {
+            $options_count++;
+            $form_state->set('options_count', $options_count);
+        }
+
+        for ($i = 0; $i < $options_count; $i++) {
+            $option_key = array_keys($options)[$i] ?? $i + 1;
+            $form['openig_adhesion_simulator_formula_type_organisme_options'][$i] = [
+                '#type' => 'container',
+                '#attributes' => ['class' => ['group-organisme']],
+                'label' => [
+                  '#type' => 'textfield',
+                  '#title' => $this->t('Type d\'organisme'),
+                  '#default_value' => $options[$option_key]['label'] ?? '',
+                  '#required' => true,
+                  '#description' => "Label du type d'organisme",
+                ],
+                'amount' => [
+                  '#type' => 'number',
+                  '#title' => $this->t('Montant'),
+                  '#default_value' => $options[$option_key]['amount'] ?? 0,
+                  '#min' => 0,
+                  '#description' => "Montant part fixe lié au type d'organisme",
+                ],
+            ];
+        }
+        /* Fin selecteur Type d'organisme */
 
         $form['openig_adhesion_simulator_formula_salaries'] = array(
             '#type' => 'details',
@@ -218,5 +283,16 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         $this->configuration['openig_adhesion_simulator_formula_organisme_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_part_variable'];
         // Montant de la part fixe (cat 3) - Personnes physiques
         $this->configuration['openig_adhesion_simulator_formula_organisme_valeur_fixe'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+        // Selecteur Type d'organisme
+        $options = [];
+        foreach ($form_state->getValue('openig_adhesion_simulator_formula_type_organisme_options') as $key => $option) {
+            if (!empty($option['label'])) {
+                $options[$key] = [
+                  'label' => $option['label'],
+                  'amount' => $option['amount'],
+                ];
+            }
+        }
+        $this->configuration['openig_adhesion_simulator_formula_type_organisme_options'] = $options;
     }
 }

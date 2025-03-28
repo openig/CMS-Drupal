@@ -57,6 +57,7 @@ function openig_adhesion_preprocess_openig_adhesion_simulator(&$variables) {
 
         // Montant de la part fixe (cat 3) - Personnes physiques
         $js_variables['valeur_fixe'] = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+        $js_variables['options_type_organisme'] = $settings['openig_adhesion_simulator_formula_type_organisme_options'];
 
         $variables['#attached']['drupalSettings']['openig_adhesion']['openigAdhesion'] = $js_variables;
     }
