@@ -39,4 +39,96 @@ settings:
   openig_adhesion_simulator_formula_population_part_variable: '20000'
   openig_adhesion_simulator_formula_organisme_part_variable: '25000'
   openig_adhesion_simulator_formula_organisme_valeur_fixe: '25'
+  select_options:
+    -
+      label: 'Une commune'
+      amount: '100'
+    -
+      label: 'Un département'
+      amount: '500'
+    -
+      label: 'Une région'
+      amount: '500'
+    -
+      label: 'Une communauté de communes'
+      amount: '200'
+    -
+      label: "Une communauté d'agglomération"
+      amount: '400'
+    -
+      label: 'Une communauté urbaine'
+      amount: '200'
+    -
+      label: 'Une métropole'
+      amount: '400'
+    -
+      label: "Un service déconcentré de l'Etat"
+      amount: '500'
+    -
+      label: 'Un autre EPCI'
+      amount: '0'
+    -
+      label: 'Un autre organisme public'
+      amount: '0'
+    -
+      label: 'Un organisme privé'
+      amount: '0'
+    -
+      label: 'Une association'
+      amount: '0'
+    -
+      label: 'Un organisme à vocation SIG'
+      amount: '0'
+    -
+      label: 'Une personne morale [Adhésion de soutien]'
+      amount: '0'
+    -
+      label: 'Une personne physique [Adhésion de soutien à titre individuel]'
+      amount: '0'
+  openig_adhesion_simulator_formula_type_organisme_options:
+    -
+      label: 'Une commune'
+      amount: '100'
+    -
+      label: 'Un département'
+      amount: '500'
+    -
+      label: 'Une région'
+      amount: '500'
+    -
+      label: 'Une communauté de communes'
+      amount: '200'
+    -
+      label: "Une communauté d'agglomération"
+      amount: '400'
+    -
+      label: 'Une communauté urbaine'
+      amount: '200'
+    -
+      label: 'Une métropole'
+      amount: '400'
+    -
+      label: "Un service déconcentré de l'Etat"
+      amount: '500'
+    -
+      label: 'Un autre EPCI'
+      amount: '0'
+    -
+      label: 'Un autre organisme public'
+      amount: '0'
+    -
+      label: 'Un organisme privé'
+      amount: '0'
+    -
+      label: 'Une association'
+      amount: '0'
+    -
+      label: 'Un organisme à vocation SIG'
+      amount: '0'
+    -
+      label: 'Une personne morale [Adhésion de soutien]'
+      amount: '0'
+    -
+      label: 'Une personne physique [Adhésion de soutien à titre individuel]'
+      amount: '0'
 visibility: {  }
