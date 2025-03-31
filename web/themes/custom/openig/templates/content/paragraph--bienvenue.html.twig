@@ -57,7 +57,7 @@
 								<tbody style="width: 100%; display:block;">
 									<tr style="width: 100%; display:flex;">
 										<td align="right" style="width:100%; display:block;">{{content.field_title}}</td>
-										<td class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}'); display:block;"></td>
+										<td class="picto_titre" style="display:block;"><img style="display: block; width:80px;" src="{{ picto_uri|file_url(false) }}" /></td>
 									</tr>
 								</tbody>
 							</table>
@@ -69,7 +69,7 @@
 							<table style="width: 100%; display:block; table-layout:fixed;">
 								<tbody style="width: 100%; display:block;">
 									<tr style="width: 100%; display:flex;">
-										<td class="picto_titre" style="background-image: url('{{ picto_uri|file_url(false) }}'); display:block;"></td>
+										<td class="picto_titre" style="display:block; "><img style="display: block; width:80px;" src="{{ picto_uri|file_url(false) }}" /></td>
 										<td align="left" style="width:100%; display:block;">{{content.field_title}}</td>
 									</tr>
 								</tbody>
