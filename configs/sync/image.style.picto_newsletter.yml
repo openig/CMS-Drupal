@@ -1,0 +1,15 @@
+uuid: 82b89341-ac68-4624-9991-ae2466b809f9
+langcode: fr
+status: true
+dependencies: {  }
+name: picto_newsletter
+label: 'picto newsletter'
+effects:
+  6d1c15b3-e1cc-4bdc-8719-bf012ac12fc1:
+    uuid: 6d1c15b3-e1cc-4bdc-8719-bf012ac12fc1
+    id: image_scale
+    weight: 1
+    data:
+      width: 80
+      height: null
+      upscale: false

@@ -1,0 +1,34 @@
+uuid: 71eec024-532a-4e66-a312-10384825c31d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - block_content.type.image
+    - core.entity_view_mode.block_content.newsletter
+    - field.field.block_content.image.field_image
+  module:
+    - svg_image
+id: block_content.image.newsletter
+targetEntityType: block_content
+bundle: image
+mode: newsletter
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
+  langcode: true
+  search_api_excerpt: true

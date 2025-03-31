@@ -17,10 +17,10 @@ provider: null
 plugin: 'views_block:bloc_temoignage-block_temoignage'
 settings:
   id: 'views_block:bloc_temoignage-block_temoignage'
-  label: 'Les témoignages de nos adhérents'
+  label: 'Les témoignages écrits de nos adhérents'
   label_display: visible
   provider: views
-  views_label: 'Les témoignages de nos adhérents'
+  views_label: 'Les témoignages écrits de nos adhérents'
   items_per_page: none
 visibility:
   request_path:

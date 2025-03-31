@@ -9,7 +9,7 @@ dependencies:
 id: openig_socialmedialinks
 theme: openig
 region: bas_footer_droite
-weight: -27
+weight: -38
 provider: null
 plugin: social_media_links_block
 settings:
@@ -23,7 +23,7 @@ settings:
       description: ''
       weight: '-43'
     twitter:
-      value: idg_openig
+      value: ''
       description: ''
       weight: '-42'
     tiktok:
@@ -47,7 +47,7 @@ settings:
       description: ''
       weight: '-37'
     youtube_channel:
-      value: ''
+      value: UC9KLjdzG9aKW5Z4TRuYnN2Q
       description: ''
       weight: '-36'
     goodreads:
@@ -150,6 +150,18 @@ settings:
       value: ''
       description: ''
       weight: '-11'
+    soundcloud:
+      value: ''
+      description: ''
+      weight: '-10'
+    whatsapp_channel:
+      value: ''
+      description: ''
+      weight: '-9'
+    yandex_zen:
+      value: ''
+      description: ''
+      weight: '-8'
   appearance:
     orientation: h
     show_name: 0
