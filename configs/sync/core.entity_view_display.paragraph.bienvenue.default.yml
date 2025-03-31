@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.bienvenue.field_image
     - field.field.paragraph.bienvenue.field_picto
     - field.field.paragraph.bienvenue.field_title
+    - image.style.picto_newsletter
     - paragraphs.paragraphs_type.bienvenue
   module:
     - svg_image
@@ -43,7 +44,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: picto_newsletter
       image_loading:
         attribute: lazy
       svg_attributes:

@@ -7,6 +7,7 @@ dependencies:
     - field.field.paragraph.coup_de_projecteur.field_image
     - field.field.paragraph.coup_de_projecteur.field_picto
     - field.field.paragraph.coup_de_projecteur.field_title
+    - image.style.picto_newsletter
     - paragraphs.paragraphs_type.coup_de_projecteur
   module:
     - svg_image
@@ -43,7 +44,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: picto_newsletter
       image_loading:
         attribute: lazy
       svg_attributes:

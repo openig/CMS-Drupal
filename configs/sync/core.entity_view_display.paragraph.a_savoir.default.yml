@@ -6,6 +6,7 @@ dependencies:
     - field.field.paragraph.a_savoir.field_picto
     - field.field.paragraph.a_savoir.field_title
     - field.field.paragraph.a_savoir.field_type_de_contenu
+    - image.style.picto_newsletter
     - paragraphs.paragraphs_type.a_savoir
   module:
     - svg_image
@@ -19,7 +20,7 @@ content:
     label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: picto_newsletter
       image_loading:
         attribute: lazy
       svg_attributes:

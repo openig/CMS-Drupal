@@ -22,7 +22,7 @@ settings:
   provider: block_content
   status: true
   info: ''
-  view_mode: full
+  view_mode: newsletter
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'

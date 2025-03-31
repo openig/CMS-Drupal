@@ -1,9 +1,9 @@
-uuid: a836de9a-6d1f-4ed7-8600-fbc2b09286c1
+uuid: 29a04c93-448b-415f-9d07-8ba720d8236f
 langcode: fr
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.email_plain
+    - core.entity_view_mode.node.newsletter
     - field.field.node.simplenews_issue.field_a_la_une
     - field.field.node.simplenews_issue.field_a_savoir
     - field.field.node.simplenews_issue.field_agenda
@@ -16,32 +16,16 @@ dependencies:
     - field.field.node.simplenews_issue.simplenews_issue
     - node.type.simplenews_issue
   module:
-    - entity_reference_revisions
     - user
-_core:
-  default_config_hash: yLPMU-4Mw-Wl011PDZNQMHzzeilyDjLSQZQ4LLQG08k
-id: node.simplenews_issue.email_plain
+id: node.simplenews_issue.newsletter
 targetEntityType: node
 bundle: simplenews_issue
-mode: email_plain
+mode: newsletter
 content:
-  field_contenu:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
+  links:
+    settings: {  }
     third_party_settings: {  }
-    weight: 1
-    region: content
-  field_date:
-    type: entity_reference_revisions_entity_view
-    label: hidden
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    weight: 0
+    weight: 100
     region: content
 hidden:
   addtoany: true
@@ -50,11 +34,11 @@ hidden:
   field_a_savoir: true
   field_agenda: true
   field_bienvenue: true
+  field_contenu: true
   field_coup_de_projecteur: true
+  field_date: true
   field_fond_vert: true
   field_le_mot_du_president: true
   langcode: true
-  links: true
   search_api_excerpt: true
   simplenews_issue: true
-  toc_js: true
