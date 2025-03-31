@@ -10,49 +10,50 @@ use Drupal\Component\Utility\Html;
 
 
 function openig_newsletter_mailer_post_render($email){
-    $body = $email->getHtmlBody();
+	$body = $email->getHtmlBody();
 	// Chargement du contenu du body de l'e-mail
 	$dom = Html::load($body);
-	$cid_map = []; 
+	$cid_map = [];
+
 	foreach ($dom->getElementsByTagName('img') as $img) {
 		// Récupération des uri des images
 		$uri = $img->getAttribute('src');
-		
-		if (substr($uri, 0, 5) !== 'data:') {
-			if (substr($uri, 0, 4) !== 'http') {
-				$base_url = \Drupal::request()->getSchemeAndHttpHost();
-				$chemin = DRUPAL_ROOT . $uri;
-			}else{
-				$base_url = \Drupal::request()->getSchemeAndHttpHost();
-				$chemin_relatif = str_replace($base_url, '', $uri);
-				$chemin = DRUPAL_ROOT . $chemin_relatif;
-			}
 
-			
-			// Récupération des informations de l'image (dont le type)
-			$image_info = getimagesize($chemin);
+		if (empty($uri)) continue;
+		if (substr($uri, 0, 5) === 'data:') continue;
 
-			$image_hash = md5_file($chemin);
-			// Génération du cid si l'image n'est pas déjà passé dans la boucle
-			if (isset($cid_map[$image_hash])) {
-				$cid = $cid_map[$image_hash];
-			} else {
-				$cid = 'image@' . md5($uri);
-				$cid_map[$image_hash] = $cid;
-			}
-			
-			if (file_exists($chemin)) {
-				// Ajout du fichier en pièce jointe
-				$email->attachFromPath($chemin, $cid, $image_info['mime']);
-				// Modfification de la balise img correspondante
-				$img->setAttribute('src', 'cid:' . $cid);
-  			}
-  			else {
-    				\Drupal::logger('openig_newsletter')->warning('Le fichier image n\'existe pas : @chemin', ['@chemin' => $chemin]);
-  			}
+		if (substr($uri, 0, 4) !== 'http') {
+			$base_url = \Drupal::request()->getSchemeAndHttpHost();
+			$chemin = DRUPAL_ROOT . $uri;
+		}else{
+			$base_url = \Drupal::request()->getSchemeAndHttpHost();
+			$chemin_relatif = str_replace($base_url, '', $uri);
+			$chemin = DRUPAL_ROOT . $chemin_relatif;
 		}
 
+		if (! file_exists($chemin)) {
+			\Drupal::logger('openig_newsletter')->warning('Le fichier image n\'existe pas : @chemin', ['@chemin' => $chemin]);
+			continue;
+		}
+
+		// Récupération des informations de l'image (dont le type)
+		$image_info = getimagesize($chemin);
+		$image_hash = md5_file($chemin);
+
+		// Génération du cid si l'image n'est pas déjà passé dans la boucle
+		if (isset($cid_map[$image_hash])) {
+			$cid = $cid_map[$image_hash];
+		} else {
+			$cid = 'image@' . md5($uri);
+			$cid_map[$image_hash] = $cid;
+		}
+		
+		// Ajout du fichier en pièce jointe
+		$email->attachFromPath($chemin, $cid, $image_info['mime']);
+		// Modfification de la balise img correspondante
+		$img->setAttribute('src', 'cid:' . $cid);
 	}
+
 	$body = Html::serialize($dom);
 	$email->setHtmlBody($body);
 }
