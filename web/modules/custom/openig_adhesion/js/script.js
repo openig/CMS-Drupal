@@ -1,7 +1,6 @@
 (function ($, Drupal, drupalSettings) {
     Drupal.behaviors.openigAdhesion = {
         attach: function (context, settings) {
-
             $('#edit-organism-type', context).on( 'change', function(event) {
 
                 // Hide all
@@ -48,8 +47,15 @@
 
             // Population formula
             $('#edit-population', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value);
-                var display = total <=20000 ? total : 20000;
+                // Récupération de l'organisme selectionné
+                let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                // Options du selecteur + montants associé paramètré
+                let options_population = drupalSettings.openig_adhesion.openigAdhesion.options_type_organisme;
+                // Recherche du montant lié au type d'organisme selectionné
+                let result = options_population.find(item => item.label === selectedPopulation);
+                let montantFixe = Number(result.amount) || 0;
+                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
                 $('#simulator_type_1').html(display + '€');
                 $('#simulation_result').val(display);
             });
@@ -88,8 +94,8 @@
 
             // Budget formula
             $('#edit-budget', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
-                var display = total <= 25000 ? total : 25000;
+                var total = drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value;
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total.toFixed(2) : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
                 $('#simulator_type_3').html(display + '€');
                 $('#simulation_result').val(display);
             });
