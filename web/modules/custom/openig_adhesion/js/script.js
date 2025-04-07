@@ -56,50 +56,60 @@
                 let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
                 // Recherche du montant lié au type d'organisme selectionné
                 let montantFixe = partFixeOrganismeCat1(selectedPopulation);
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
-                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
-                $('#simulator_type_1').html(display + '€');
-                $('#simulation_result').val(display);
+
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
+                  var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
+                  $('#simulator_type_1').html(display + '€');
+                  $('#simulation_result').val(display);
+                }
+                else { $('#simulator_type_1').html('...€'); }
             });
 
             // Salaries formula
             $('#edit-salaries', context).on( 'keyup', function(event) {
-                if (event.target.value < 20) {
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  if (event.target.value < 20) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_1 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_1);
-                }
-                if (event.target.value >= 20 && event.target.value <= 50) {
+                  }
+                  if (event.target.value >= 20 && event.target.value <= 50) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_2 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_2);
-                }
-                if (event.target.value >= 51 && event.target.value <= 250) {
+                  }
+                  if (event.target.value >= 51 && event.target.value <= 250) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_3 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_3);
-                }
-                if (event.target.value >= 251 && event.target.value <= 500) {
+                  }
+                  if (event.target.value >= 251 && event.target.value <= 500) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_4 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_4);
-                }
-                if (event.target.value >= 501 && event.target.value <= 1000) {
+                  }
+                  if (event.target.value >= 501 && event.target.value <= 1000) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_5 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_5);
-                }
-                if (event.target.value >= 1001 && event.target.value <= 9999) {
+                  }
+                  if (event.target.value >= 1001 && event.target.value <= 9999) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_6 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_6);
-                }
-                if (event.target.value >= 10000) {
+                  }
+                  if (event.target.value >= 10000) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_7 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_7);
+                  }
                 }
+                else{ $('#simulator_type_2').html('...€'); }
             });
 
             // Budget formula
             $('#edit-budget', context).on( 'keyup', function(event) {
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
                 var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
-                $('#simulator_type_3').html(display + '€');
-                $('#simulation_result').val(display);
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  $('#simulator_type_3').html(display + '€');
+                  $('#simulation_result').val(display);
+                }
+                else { $('#simulator_type_3').html('...€'); }
             });
 
             function validateNumber(evt) {
@@ -134,7 +144,17 @@
                 if (!validateEmail($('#edit-email').val())) {
                     $('#edit-email').focus();
                     $('#email_format_error').html('Votre adresse est invalide');
-                } else {
+                }
+                else if($('#edit-population').val() !== "" && !Number.isInteger(parseFloat($('#edit-population').val()))) {
+                  $('#edit-population').focus();
+                }
+                else if($('#edit-budget').val() !== "" && !Number.isInteger(parseFloat($('#edit-budget').val()))) {
+                  $('#edit-budget').focus();
+                }
+                else if($('#edit-salaries').val() !== "" && !Number.isInteger(parseFloat($('#edit-salaries').val()))) {
+                  $('#edit-salaries').focus();
+                }
+                else {
                     event.target.submit();
                 }
             });

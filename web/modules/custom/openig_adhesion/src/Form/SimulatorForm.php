@@ -67,7 +67,9 @@ class SimulatorForm extends FormBase {
 
         // Population
         $form['dynamic']['population'] = [
-            '#type' => 'textfield',
+            '#type' => 'number',
+            '#step' => 1,
+            '#min' => 0,
             '#title' => 'Population de l\'organisme représenté',
             '#prefix' => '
                 <div id="population" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
@@ -83,7 +85,9 @@ class SimulatorForm extends FormBase {
 
         // Salariés
         $form['dynamic']['salaries'] = [
-            '#type' => 'textfield',
+            '#type' => 'number',
+            '#step' => 1,
+            '#min' => 0,
             '#title' => 'Nombre de salariés',
             '#prefix' => '
                 <div id="salaries" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
@@ -96,7 +100,9 @@ class SimulatorForm extends FormBase {
 
         // Budget
         $form['dynamic']['budget'] = [
-            '#type' => 'textfield',
+            '#type' => 'number',
+            '#step' => 1,
+            '#min' => 0,
             '#title' => 'Budget de l\'organisme année N-1',
             '#prefix' => '
                 <div id="budget" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
