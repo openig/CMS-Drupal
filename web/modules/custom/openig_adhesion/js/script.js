@@ -22,8 +22,13 @@
 
                 // Population
                 if (event.target.value > 0 && event.target.value <= 8) {
-                    $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
+                    // Récupération de l'organisme selectionné
+                    let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                    // Recherche du montant lié au type d'organisme selectionné
+                    let montantFixe = partFixeOrganismeCat1(selectedPopulation);
+                    $('#simulator_type_1_part_fixe_organisme').html(montantFixe + '€');
                     $("#edit-population").attr("required", true);
+                    $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
                 }
 
                 // Salaries
@@ -49,11 +54,8 @@
             $('#edit-population', context).on( 'keyup', function(event) {
                 // Récupération de l'organisme selectionné
                 let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
-                // Options du selecteur + montants associé paramètré
-                let options_population = drupalSettings.openig_adhesion.openigAdhesion.options_type_organisme;
                 // Recherche du montant lié au type d'organisme selectionné
-                let result = options_population.find(item => item.label === selectedPopulation);
-                let montantFixe = Number(result.amount) || 0;
+                let montantFixe = partFixeOrganismeCat1(selectedPopulation);
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
                 var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
                 $('#simulator_type_1').html(display + '€');
@@ -136,6 +138,20 @@
                     event.target.submit();
                 }
             });
+
+
+          /**
+           * Récupére la valeur de la part fixe lié au type d'organisme
+           * @param selectedPopulation
+           */
+          function partFixeOrganismeCat1(selectedPopulation)
+            {
+              // Options du selecteur + montants associé paramètré
+              let options_population = drupalSettings.openig_adhesion.openigAdhesion.options_type_organisme;
+              // Recherche du montant lié au type d'organisme selectionné
+              let result = options_population.find(item => item.label === selectedPopulation);
+              return Number(result.amount) || 0;
+            }
 
         }
     };

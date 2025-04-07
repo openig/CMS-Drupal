@@ -30,6 +30,8 @@ class SimulatorForm extends FormBase {
         /* Récupération de la part fixe "Personne physique" paramètré dans la configuration du block */
         $block_config = Block::load('simulatoradhesionblock');
         $settings = $block_config->get('settings');
+        // Montant par habitant (Population) (cat 1) - Organismes public
+        $openig_adhesion_simulator_formula_population = $settings['openig_adhesion_simulator_formula_population'];
         // Montant de la part variable (cat 1) - Organismes public
         $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
         // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
@@ -67,7 +69,10 @@ class SimulatorForm extends FormBase {
             '#title' => 'Population de l\'organisme représenté',
             '#prefix' => '
                 <div id="population" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
-                <div class="adhesion-simulator-form__label">La cotisation est fonction de la population de l’entité. Le tarif par habitant est de 0,07 €. Le plafond de la cotisation est fixé à '.number_format($part_variable_organisme_public, 0, ',', ' ').'€ et sans limite pour les organismes désireux de donner plus ou historiquement financeurs.</div>',
+                <div class="adhesion-simulator-form__label">
+                La cotisation est constituée de la somme de 2 parts. <br>
+                Une part fixe définie selon la nature juridique de l\'organisme (soit <span class="adhesion-simulator-part_fixe_organisme" id="simulator_type_1_part_fixe_organisme">...</span> pour votre organisme). <br>
+                Une part variable, fonction de la population de l’entité avec un tarif par habitant de '.number_format($openig_adhesion_simulator_formula_population, 2, ',', ' ').'€, plafonnée à '.number_format($part_variable_organisme_public, 0, ',', ' ').'€.</div>',
             '#suffix' => '
                 <div class="adhesion-simulator-form__result">
                     Cotisation estimée à <span class="adhesion-simulator-form__value" id="simulator_type_1">...</span>
@@ -185,6 +190,8 @@ class SimulatorForm extends FormBase {
             // Get result parameter if defined
             $simulation_result = $form_state->getValue('simulation_result');
 
+            // Montant par habitant (Population) (cat 1) - Organismes public
+            $part_fixe_organisme = $settings['openig_adhesion_simulator_formula_population'];
             // Montant de la part variable (cat 1) - Organismes public
             $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
             // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
@@ -210,6 +217,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@population', $population, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
                     $message = str_replace('@part_variable_organisme_public', number_format($part_variable_organisme_public, 0, ',', ' '), $message);
+                    $message = str_replace('@part_fixe_organisme', $part_fixe_organisme, $message);
                     $this->sendMail($settings['type_1_email_title'], $message, $email);
                     break;
                 case '11':
