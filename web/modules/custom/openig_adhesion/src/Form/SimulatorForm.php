@@ -210,8 +210,6 @@ class SimulatorForm extends FormBase {
                 case '6':
                 case '7':
                 case '8':
-                case '9':
-                case '10':
                     $message = $settings['type_1_email_content'];
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
@@ -220,6 +218,8 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@part_fixe_organisme', $part_fixe_organisme, $message);
                     $this->sendMail($settings['type_1_email_title'], $message, $email);
                     break;
+                case '9':
+                case '10':
                 case '11':
                 case '12':
                     $message = $settings['type_2_email_content'];
