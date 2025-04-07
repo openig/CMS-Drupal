@@ -139,7 +139,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         // Valeur parametrable => plafond et part fixe
         $form['openig_adhesion_simulator_formula_population_valeur_plafond'] = [
             '#type' => 'details',
-            '#title' => 'Valeurs paramètrables',
+            '#title' => 'Valeurs paramétrables',
             'openig_adhesion_simulator_formula_population_part_variable' => [
               '#type' => 'number',
               '#title' => 'Plafond de la part variable :',
