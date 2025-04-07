@@ -128,7 +128,5 @@ settings:
     -
       label: 'Une personne morale [Adhésion de soutien]'
       amount: '0'
-    -
-      label: 'Une personne physique [Adhésion de soutien à titre individuel]'
-      amount: '0'
+
 visibility: {  }
