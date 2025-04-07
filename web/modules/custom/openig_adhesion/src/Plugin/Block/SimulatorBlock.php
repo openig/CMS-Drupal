@@ -35,7 +35,6 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         '12' => ['label' => 'Une association', 'amount' => 0],
         '13' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
         '14' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
-        '15' => ['label' => 'Une personne physique [Adhésion de soutien à titre individuel]', 'amount' => 0],
     ];
 
 
@@ -91,7 +90,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#type' => 'textarea',
                 '#title' => 'Contenu du mail de confirmation pour les organismes à vocation SIG :',
                 '#default_value' => isset($config['type_3_email_content']) ? $config['type_3_email_content'] : '',
-                '#description' => "Variables : @type, @budget, @simulation_result, @part_variable_organisme_SIG",
+                '#description' => "Variables : @type, @percent_budget, @budget, @simulation_result, @part_variable_organisme_SIG",
             ],
             'type_4_email_title' => [
                 '#type' => 'textfield',

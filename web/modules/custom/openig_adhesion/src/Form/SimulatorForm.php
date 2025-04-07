@@ -34,6 +34,8 @@ class SimulatorForm extends FormBase {
         $openig_adhesion_simulator_formula_population = $settings['openig_adhesion_simulator_formula_population'];
         // Montant de la part variable (cat 1) - Organismes public
         $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+        // Pourcentage du budget (cat 4) - Organismes à « vocation » SIG
+        $percent_budget = $settings['openig_adhesion_simulator_formula_budget']*100;
         // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
         $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
         // Montant de la part fixe (cat 3) - Personnes physiques
@@ -98,7 +100,7 @@ class SimulatorForm extends FormBase {
             '#title' => 'Budget de l\'organisme année N-1',
             '#prefix' => '
                 <div id="budget" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden">
-                    <div class="adhesion-simulator-form__label">Cotisation proportionnelle à la somme des cotisations perçues par l’organisme l’année précédente, avec un pourcentage de 5,25% de ces cotisations. Le plafond est fixé à '.number_format($part_variable_organisme_SIG, 0, ',', ' ').'€. L’adhésion dans cette catégorie permet à l’adhérent de faire bénéficier ses propres membres de l’ensemble des services d’OPenIG.</div>',
+                    <div class="adhesion-simulator-form__label">Cotisation proportionnelle à la somme des cotisations perçues par l’organisme l’année précédente, avec un pourcentage de '.$percent_budget.'% de ces cotisations. Le plafond est fixé à '.number_format($part_variable_organisme_SIG, 0, ',', ' ').'€. L’adhésion dans cette catégorie permet à l’adhérent de faire bénéficier ses propres membres de l’ensemble des services d’OPenIG.</div>',
             '#suffix' => '
                 <div class="adhesion-simulator-form__result">
                     Cotisation estimée à <span class="adhesion-simulator-form__value" id="simulator_type_3">...</span>
@@ -109,11 +111,9 @@ class SimulatorForm extends FormBase {
         $form['dynamic']['individual'] = [
             '#markup' => '
             <div id="individual" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden"><div class="adhesion-simulator-form__markup">
-                <div class="adhesion-simulator-form__title">Personnes individuelles</div>
-                <div class="adhesion-simulator-form__label">Elles permettent à des personnes morales ou physiques d’adhérer à OPenIG avec un niveau de services limité. En revanche, les communes membres de droit (c’est-à-dire dont l’EPCI est adhérente) et désireuses d’apporter leur soutien, conservent logiquement un niveau de services complet. Ces cotisations permettent d’accéder aux instances de gouvernance selon les modalités fixées dans les statuts.</div>
+                <div class="adhesion-simulator-form__label">L\'adhésion de soutien à titre individuel permet à des personnes physiques d’adhérer à OPenIG avec un niveau de services limité. <br> Cette cotisation ouvre l\'accès aux instances de gouvernance selon les modalités fixées dans les statuts.</div>
                 <div class="adhesion-simulator-form__result">
-                    <div class="adhesion-simulator-form__option">Cotisation individuel à partir de <span class="adhesion-simulator-form__value" id="simulator_type_3"> '.$part_fixe.'€</span></div>
-                    <div class="adhesion-simulator-form__option">Cotisation personne morale à partir de <span class="adhesion-simulator-form__value" id="simulator_type_3">250€</span></div>
+                    <div class="adhesion-simulator-form__option">Cotisation de <span class="adhesion-simulator-form__value" id="simulator_type_3"> '.$part_fixe.'€</span></div>
                 </div>
             </div></div>',
         ];
@@ -196,6 +196,8 @@ class SimulatorForm extends FormBase {
             $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
             // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
             $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
+            // Pourcentage du budget (cat 4) - Organismes à « vocation » SIG
+            $percent_budget = $settings['openig_adhesion_simulator_formula_budget']*100;
             // Montant de la part fixe (cat 3) - Personnes physiques
             $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
 
@@ -234,10 +236,10 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@budget', $budget, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
                     $message = str_replace('@part_variable_organisme_SIG', number_format($part_variable_organisme_SIG, 0, ',', ' '), $message);
+                    $message = str_replace('@percent_budget', $percent_budget, $message);
                     $this->sendMail($settings['type_3_email_title'], $message, $email);
                     break;
                 case '14':
-                case '15':
                     $message = $settings['type_4_email_content'];
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
