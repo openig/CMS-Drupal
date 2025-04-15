@@ -51,7 +51,7 @@
             });
 
             // Population formula
-            $('#edit-population', context).on( 'keyup', function(event) {
+            $('#edit-population', context).on( 'change', function(event) {
                 // Récupération de l'organisme selectionné
                 let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
                 // Recherche du montant lié au type d'organisme selectionné
@@ -67,7 +67,7 @@
             });
 
             // Salaries formula
-            $('#edit-salaries', context).on( 'keyup', function(event) {
+            $('#edit-salaries', context).on( 'change', function(event) {
                 if (Number.isInteger(parseFloat(event.target.value))) {
                   if (event.target.value < 20) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_1 + '€');
@@ -102,7 +102,7 @@
             });
 
             // Budget formula
-            $('#edit-budget', context).on( 'keyup', function(event) {
+            $('#edit-budget', context).on( 'change', function(event) {
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
                 var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
                 if (Number.isInteger(parseFloat(event.target.value))) {
