@@ -32,8 +32,8 @@ class SimulatorForm extends FormBase {
         $settings = $block_config->get('settings');
         // Montant par habitant (Population) (cat 1) - Organismes public
         $openig_adhesion_simulator_formula_population = $settings['openig_adhesion_simulator_formula_population'];
-        // Montant de la part variable (cat 1) - Organismes public
-        $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+        // Montant du plafond de la part variable (cat 1) - Organismes public
+        $part_variable_plafond = $settings['openig_adhesion_simulator_formula_population_part_variable'];
         // Pourcentage du budget (cat 4) - Organismes à « vocation » SIG
         $percent_budget = $settings['openig_adhesion_simulator_formula_budget']*100;
         // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
@@ -76,7 +76,7 @@ class SimulatorForm extends FormBase {
                 <div class="adhesion-simulator-form__label">
                 La cotisation est constituée de la somme de 2 parts. <br>
                 Une part fixe définie selon la nature juridique de l\'organisme (soit <span class="adhesion-simulator-part_fixe_organisme" id="simulator_type_1_part_fixe_organisme">...</span> pour votre organisme). <br>
-                Une part variable, fonction de la population de l’entité avec un tarif par habitant de '.number_format($openig_adhesion_simulator_formula_population, 2, ',', ' ').'€, plafonnée à '.number_format($part_variable_organisme_public, 0, ',', ' ').'€.</div>',
+                Une part variable, fonction de la population de l’entité avec un tarif par habitant de '.number_format($openig_adhesion_simulator_formula_population, 2, ',', ' ').'€, plafonnée à '.number_format($part_variable_plafond, 0, ',', ' ').'€.</div>',
             '#suffix' => '
                 <div class="adhesion-simulator-form__result">
                     Cotisation estimée à <span class="adhesion-simulator-form__value" id="simulator_type_1">...</span>
@@ -197,9 +197,9 @@ class SimulatorForm extends FormBase {
             $simulation_result = $form_state->getValue('simulation_result');
 
             // Montant par habitant (Population) (cat 1) - Organismes public
-            $part_fixe_organisme = $settings['openig_adhesion_simulator_formula_population'];
-            // Montant de la part variable (cat 1) - Organismes public
-            $part_variable_organisme_public = $settings['openig_adhesion_simulator_formula_population_part_variable'];
+            $part_variable_par_habitant  = $settings['openig_adhesion_simulator_formula_population'];
+            // Montant du planfond de la part variable (cat 1) - Organismes public
+            $part_variable_plafond = $settings['openig_adhesion_simulator_formula_population_part_variable'];
             // Montant du plafond variable (cat 4) - Organismes à « vocation » SIG
             $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
             // Pourcentage du budget (cat 4) - Organismes à « vocation » SIG
@@ -222,8 +222,9 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
-                    $message = str_replace('@part_variable_organisme_public', number_format($part_variable_organisme_public, 0, ',', ' '), $message);
-                    $message = str_replace('@part_fixe_organisme', $part_fixe_organisme, $message);
+                    $message = str_replace('@part_variable_plafond', number_format($part_variable_plafond, 0, ',', ' '), $message);
+                    $message = str_replace('@part_variable_par_habitant', $part_variable_par_habitant, $message);
+                    $message = str_replace('@part_fixe', $settings['openig_adhesion_simulator_formula_type_organisme_options'][$organism_type]['amount'] , $message);
                     $this->sendMail($settings['type_1_email_title'], $message, $email);
                     break;
                 case '9':

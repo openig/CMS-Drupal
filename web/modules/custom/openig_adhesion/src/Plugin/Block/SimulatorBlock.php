@@ -68,7 +68,7 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#type' => 'textarea',
                 '#title' => 'Contenu du mail de confirmation pour les organismes publics :',
                 '#default_value' => isset($config['type_1_email_content']) ? $config['type_1_email_content'] : '',
-                '#description' => "Variables : @type, @part_fixe_organisme, @population, @simulation_result, @part_variable_organisme_public",
+                '#description' => "Variables : @type, @part_variable_par_habitant, @population, @simulation_result, @part_variable_plafond, @part_fixe",
             ],
             'type_2_email_title' => [
                 '#type' => 'textfield',
