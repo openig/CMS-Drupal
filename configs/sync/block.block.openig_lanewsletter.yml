@@ -1,6 +1,6 @@
 uuid: d14e14cd-e06e-4ac6-8cbf-5b6b8261a53c
 langcode: fr
-status: true
+status: false
 dependencies:
   content:
     - 'block_content:bloc_newsletter:71468847-678d-426c-83da-d1243eb1a749'
