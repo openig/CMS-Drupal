@@ -1,7 +1,6 @@
 (function ($, Drupal, drupalSettings) {
     Drupal.behaviors.openigAdhesion = {
         attach: function (context, settings) {
-
             $('#edit-organism-type', context).on( 'change', function(event) {
 
                 // Hide all
@@ -23,8 +22,13 @@
 
                 // Population
                 if (event.target.value > 0 && event.target.value <= 8) {
-                    $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
+                    // Récupération de l'organisme selectionné
+                    let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                    // Recherche du montant lié au type d'organisme selectionné
+                    let montantFixe = partFixeOrganismeCat1(selectedPopulation);
+                    $('#simulator_type_1_part_fixe_organisme').html(montantFixe + '€');
                     $("#edit-population").attr("required", true);
+                    $('#population.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
                 }
 
                 // Salaries
@@ -47,51 +51,65 @@
             });
 
             // Population formula
-            $('#edit-population', context).on( 'keyup', function(event) {
-                var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value);
-                var display = total <=20000 ? total : 20000;
-                $('#simulator_type_1').html(display + '€');
-                $('#simulation_result').val(display);
+            $('#edit-population', context).on( 'input keyup', function(event) {
+                // Récupération de l'organisme selectionné
+                let selectedPopulation = $('#edit-organism-type option:selected').text().trim();
+                // Recherche du montant lié au type d'organisme selectionné
+                let montantFixe = partFixeOrganismeCat1(selectedPopulation);
+
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_population * event.target.value + montantFixe);
+                  var display = total <= drupalSettings.openig_adhesion.openigAdhesion.population_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.population_part_variable;
+                  $('#simulator_type_1').html(display + '€');
+                  $('#simulation_result').val(display);
+                }
+                else { $('#simulator_type_1').html('...€'); }
             });
 
             // Salaries formula
-            $('#edit-salaries', context).on( 'keyup', function(event) {
-                if (event.target.value < 20) {
+            $('#edit-salaries', context).on( 'input keyup', function(event) {
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  if (event.target.value < 20) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_1 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_1);
-                }
-                if (event.target.value >= 20 && event.target.value <= 50) {
+                  }
+                  if (event.target.value >= 20 && event.target.value <= 50) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_2 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_2);
-                }
-                if (event.target.value >= 51 && event.target.value <= 250) {
+                  }
+                  if (event.target.value >= 51 && event.target.value <= 250) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_3 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_3);
-                }
-                if (event.target.value >= 251 && event.target.value <= 500) {
+                  }
+                  if (event.target.value >= 251 && event.target.value <= 500) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_4 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_4);
-                }
-                if (event.target.value >= 501 && event.target.value <= 1000) {
+                  }
+                  if (event.target.value >= 501 && event.target.value <= 1000) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_5 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_5);
-                }
-                if (event.target.value >= 1001 && event.target.value <= 9999) {
+                  }
+                  if (event.target.value >= 1001 && event.target.value <= 9999) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_6 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_6);
-                }
-                if (event.target.value >= 10000) {
+                  }
+                  if (event.target.value >= 10000) {
                     $('#simulator_type_2').html(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_7 + '€');
                     $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.formula_salaries_7);
+                  }
                 }
+                else{ $('#simulator_type_2').html('...€'); }
             });
 
             // Budget formula
-            $('#edit-budget', context).on( 'keyup', function(event) {
+            $('#edit-budget', context).on( 'input keyup', function(event) {
                 var total = Math.round(drupalSettings.openig_adhesion.openigAdhesion.formula_budget * event.target.value);
-                var display = total <= 25000 ? total : 25000;
-                $('#simulator_type_3').html(display + '€');
-                $('#simulation_result').val(display);
+                var display = total <= drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable ? total : drupalSettings.openig_adhesion.openigAdhesion.organisme_part_variable;
+                if (Number.isInteger(parseFloat(event.target.value))) {
+                  $('#simulator_type_3').html(display + '€');
+                  $('#simulation_result').val(display);
+                }
+                else { $('#simulator_type_3').html('...€'); }
             });
 
             function validateNumber(evt) {
@@ -126,10 +144,34 @@
                 if (!validateEmail($('#edit-email').val())) {
                     $('#edit-email').focus();
                     $('#email_format_error').html('Votre adresse est invalide');
-                } else {
+                }
+                else if($('#edit-population').val() !== "" && !Number.isInteger(parseFloat($('#edit-population').val()))) {
+                  $('#edit-population').focus();
+                }
+                else if($('#edit-budget').val() !== "" && !Number.isInteger(parseFloat($('#edit-budget').val()))) {
+                  $('#edit-budget').focus();
+                }
+                else if($('#edit-salaries').val() !== "" && !Number.isInteger(parseFloat($('#edit-salaries').val()))) {
+                  $('#edit-salaries').focus();
+                }
+                else {
                     event.target.submit();
                 }
             });
+
+
+          /**
+           * Récupére la valeur de la part fixe lié au type d'organisme
+           * @param selectedPopulation
+           */
+          function partFixeOrganismeCat1(selectedPopulation)
+            {
+              // Options du selecteur + montants associé paramètré
+              let options_population = drupalSettings.openig_adhesion.openigAdhesion.options_type_organisme;
+              // Recherche du montant lié au type d'organisme selectionné
+              let result = options_population.find(item => item.label === selectedPopulation);
+              return Number(result.amount) || 0;
+            }
 
         }
     };
