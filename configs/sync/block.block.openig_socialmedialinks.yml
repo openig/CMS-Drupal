@@ -20,7 +20,7 @@ settings:
   platforms:
     linkedin:
       value: company/openig
-      description: ''
+      description: 'Suivez-nous sur LinkedIn'
       weight: '-43'
     twitter:
       value: ''
@@ -48,7 +48,7 @@ settings:
       weight: '-37'
     youtube_channel:
       value: UC9KLjdzG9aKW5Z4TRuYnN2Q
-      description: ''
+      description: 'Suivez-nous sur notre chaine Youtube'
       weight: '-36'
     goodreads:
       value: ''
