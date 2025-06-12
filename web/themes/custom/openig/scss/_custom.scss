@@ -1620,6 +1620,9 @@ form.user-register-form, form.user-login-form, form.user-pass{
     }
 
     .field--name-field-desired-structure{
+        .input-group{
+            flex-wrap: wrap;
+        }
         input{
             border-radius: 0.375rem !important;
         }
