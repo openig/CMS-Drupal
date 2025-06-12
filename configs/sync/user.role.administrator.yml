@@ -1,11 +1,18 @@
 uuid: 5bb1de13-71ec-4fd5-8748-75839fd37f91
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - field_permissions
 _core:
   default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
 id: administrator
 label: Administrateur
 weight: 3
 is_admin: true
-permissions: {  }
+permissions:
+  - 'create field_contenu_sidebar'
+  - 'edit field_contenu_sidebar'
+  - 'edit own field_contenu_sidebar'
+  - 'view field_contenu_sidebar'
+  - 'view own field_contenu_sidebar'
