@@ -11,8 +11,8 @@ label: Administrateur
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_requirement'
-  - 'edit field_requirement'
-  - 'edit own field_requirement'
-  - 'view field_requirement'
-  - 'view own field_requirement'
+  - 'create field_contenu_sidebar'
+  - 'edit field_contenu_sidebar'
+  - 'edit own field_contenu_sidebar'
+  - 'view field_contenu_sidebar'
+  - 'view own field_contenu_sidebar'
