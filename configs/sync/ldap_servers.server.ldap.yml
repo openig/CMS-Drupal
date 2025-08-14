@@ -16,14 +16,14 @@ bindpw: adm!ldap
 basedn:
   - 'ou=utilisateurs,dc=openig,dc=org'
 user_attr: uid
-account_name_attr: cn
+account_name_attr: uid
 mail_attr: mail
 mail_template: ''
 picture_attr: ''
-unique_persistent_attr: ''
+unique_persistent_attr: uid
 unique_persistent_attr_binary: false
-user_dn_expression: uid=%username
-testing_drupal_username: abonanni
+user_dn_expression: 'uid=%username,%basedn'
+testing_drupal_username: toto
 testing_drupal_user_dn: ''
 grp_unused: true
 grp_object_cat: ''

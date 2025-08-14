@@ -18,4 +18,45 @@ disableAdminPasswordField: true
 userUpdateCronQuery: all_users
 userUpdateCronInterval: always
 userUpdateOnly: false
-ldapUserSyncMappings: {  }
+ldapUserSyncMappings:
+  drupal:
+    field-field_firstname:
+      ldap_attr: '[givenName]'
+      user_attr: '[field.field_firstname]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_lastname:
+      ldap_attr: '[sn]'
+      user_attr: '[field.field_lastname]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_structure:
+      ldap_attr: '[structureUid]'
+      user_attr: '[field.field_structure]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_phone:
+      ldap_attr: '[telephoneNumber]'
+      user_attr: '[field.field_phone]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
