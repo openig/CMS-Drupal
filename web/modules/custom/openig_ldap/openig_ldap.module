@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\user\UserInterface;
+use Drupal\simplenews\Entity\Subscriber;
+use Symfony\Component\Ldap\Entry;
+
+function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $entry, array $context) {
+  /** @var \Drupal\ldap_servers\Processor\TokenProcessor $tokenProcessor */
+  $tokenProcessor = \Drupal::service('ldap.token_processor');
+
+  // dump($account);
+  // $value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[sn]');
+  // $account->set('field_phone', "02 XX XX XX XX");
+
+  // TODO 1 - synchro des réseaux sociaux
+  // dump( $account->get('field_social_network') );
+  // dump( $platforms = \Drupal::service('plugin.manager.social_media_links.platform')->getPlatformsSortedByWeight([]) );
+
+  // 2 - synchro de la structure d'appartenance
+  if ($account->isNew()) {
+    // Create subscriber
+    // $subscriber = Subscriber::loadByUid($account->id());
+    $subscriber = Subscriber::loadByMail($account->getEmail(), 'create');
+    $subscriber->fillFromAccount($account)->save();
+    
+    // Associate subscriber to newsletter
+    $subscriber->subscribe('default');
+    $subscriber->save();
+  }
+
+
+  // TODO 3 - rattachement à la newsletter (si création d'un nouveau user)
+  dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
+  dump( $account->get('field_structure') );
+  
+
+  // die();
+}
+
