@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
+    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.thumbnail
     - node.type.structure
@@ -168,6 +169,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_uid: true
   langcode: true
   moderation_state: true
   path: true

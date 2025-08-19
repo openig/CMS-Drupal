@@ -15,12 +15,14 @@ dependencies:
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
+    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.wide
     - node.type.structure
   module:
     - link
     - svg_image
+    - telephone
     - text
     - user
 id: node.structure.default
@@ -38,14 +40,14 @@ content:
   content_moderation_control:
     settings: {  }
     third_party_settings: {  }
-    weight: -20
+    weight: 0
     region: content
   field_address:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 19
+    weight: 8
     region: content
   field_city:
     type: string
@@ -53,7 +55,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 21
+    weight: 10
     region: content
   field_contacts:
     type: entity_reference_label
@@ -61,7 +63,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 24
+    weight: 12
     region: content
   field_crige_partner:
     type: boolean
@@ -71,7 +73,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 23
+    weight: 11
     region: content
   field_dpt_intervention:
     type: entity_reference_label
@@ -86,7 +88,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 18
+    weight: 7
     region: content
   field_image:
     type: image
@@ -96,15 +98,20 @@ content:
       image_style: wide
       image_loading:
         attribute: lazy
+      svg_attributes:
+        width: null
+        height: null
+      svg_render_as_image: true
     third_party_settings: {  }
-    weight: 0
+    weight: 1
     region: content
   field_phone:
-    type: basic_string
+    type: telephone_link
     label: above
-    settings: {  }
+    settings:
+      title: ''
     third_party_settings: {  }
-    weight: 25
+    weight: 13
     region: content
   field_postcode:
     type: string
@@ -112,7 +119,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 20
+    weight: 9
     region: content
   field_siret:
     type: string
@@ -120,7 +127,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 2
+    weight: 3
     region: content
   field_typologie_structure:
     type: entity_reference_label
@@ -140,11 +147,12 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 17
+    weight: 6
     region: content
 hidden:
   addtoany: true
   breadcrumbs: true
+  field_uid: true
   langcode: true
   links: true
   search_api_excerpt: true

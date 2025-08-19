@@ -16,6 +16,7 @@ dependencies:
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
+    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.medium
     - node.type.structure
@@ -66,6 +67,7 @@ hidden:
   field_postcode: true
   field_siret: true
   field_typologie_structure: true
+  field_uid: true
   field_website: true
   langcode: true
   search_api_excerpt: true
