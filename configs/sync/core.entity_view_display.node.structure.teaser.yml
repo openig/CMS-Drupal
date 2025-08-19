@@ -12,11 +12,11 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_email
     - field.field.node.structure.field_image
+    - field.field.node.structure.field_ldap_uid
     - field.field.node.structure.field_phone
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
-    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.medium
     - node.type.structure
@@ -63,11 +63,11 @@ hidden:
   field_crige_partner: true
   field_dpt_intervention: true
   field_email: true
+  field_ldap_uid: true
   field_phone: true
   field_postcode: true
   field_siret: true
   field_typologie_structure: true
-  field_uid: true
   field_website: true
   langcode: true
   search_api_excerpt: true

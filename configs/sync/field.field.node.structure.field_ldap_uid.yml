@@ -1,15 +1,15 @@
-uuid: c6a22e85-8bd3-4c0a-b852-c36421bbed15
+uuid: 5ab252f2-e6f0-43fb-9a01-3da494435d5e
 langcode: fr
 status: true
 dependencies:
   config:
-    - field.storage.node.field_uid
+    - field.storage.node.field_ldap_uid
     - node.type.structure
-id: node.structure.field_uid
-field_name: field_uid
+id: node.structure.field_ldap_uid
+field_name: field_ldap_uid
 entity_type: node
 bundle: structure
-label: uid
+label: ldap_uid
 description: ''
 required: false
 translatable: false

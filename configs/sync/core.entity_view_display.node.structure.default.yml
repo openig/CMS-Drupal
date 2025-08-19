@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_email
     - field.field.node.structure.field_image
+    - field.field.node.structure.field_ldap_uid
     - field.field.node.structure.field_phone
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
-    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.wide
     - node.type.structure
@@ -152,7 +152,7 @@ content:
 hidden:
   addtoany: true
   breadcrumbs: true
-  field_uid: true
+  field_ldap_uid: true
   langcode: true
   links: true
   search_api_excerpt: true

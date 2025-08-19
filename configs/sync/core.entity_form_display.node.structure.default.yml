@@ -11,11 +11,11 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_email
     - field.field.node.structure.field_image
+    - field.field.node.structure.field_ldap_uid
     - field.field.node.structure.field_phone
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
     - field.field.node.structure.field_typologie_structure
-    - field.field.node.structure.field_uid
     - field.field.node.structure.field_website
     - image.style.thumbnail
     - node.type.structure
@@ -127,6 +127,14 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+  field_ldap_uid:
+    type: string_textfield
+    weight: 26
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_phone:
     type: telephone_default
     weight: 2
@@ -157,14 +165,6 @@ content:
     settings:
       match_operator: CONTAINS
       match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_uid:
-    type: string_textfield
-    weight: 24
-    region: content
-    settings:
       size: 60
       placeholder: ''
     third_party_settings: {  }

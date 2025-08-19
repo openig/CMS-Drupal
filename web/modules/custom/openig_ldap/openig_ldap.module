@@ -15,8 +15,21 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
   // TODO 1 - synchro des réseaux sociaux
   // dump( $account->get('field_social_network') );
   // dump( $platforms = \Drupal::service('plugin.manager.social_media_links.platform')->getPlatformsSortedByWeight([]) );
-
+  
   // 2 - synchro de la structure d'appartenance
+  // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
+  // dump( $account->get('field_structure') );
+  $storage = \Drupal::entityTypeManager()->getStorage('node');
+  $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_uid' => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]')]);
+  if(!empty($structures)) {
+    // associate user with structure
+    $account->set('field_structure', array_values($structures)[0]->nid->value );
+  } else {
+    // else delete structure association
+    $account->set('field_structure', null );
+  }
+
+  // 3 - rattachement à la newsletter (si création d'un nouveau user)
   if ($account->isNew()) {
     // Create subscriber
     // $subscriber = Subscriber::loadByUid($account->id());
@@ -27,12 +40,6 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
     $subscriber->subscribe('default');
     $subscriber->save();
   }
-
-
-  // TODO 3 - rattachement à la newsletter (si création d'un nouveau user)
-  dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
-  dump( $account->get('field_structure') );
-  
 
   // die();
 }
