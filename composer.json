@@ -111,6 +111,9 @@
         "patches": {
             "drupal/bootstrap5": {
                 "Passing percentage units to the global abs() function is deprecated": "https://www.drupal.org/files/issues/2023-10-05/bootstrap5-3391813.patch"
+            },
+            "drupal/ldap": {
+                "Option to associate already existing Drupal accounts during the LDAP users updates": "./scripts/patchs/userUpdateAssociate.patch"
             }
         },
         "installer-paths": {
