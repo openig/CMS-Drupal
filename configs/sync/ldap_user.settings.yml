@@ -18,6 +18,7 @@ disableAdminPasswordField: true
 userUpdateCronQuery: all_users
 userUpdateCronInterval: always
 userUpdateOnly: false
+userUpdateAssociate: true
 ldapUserSyncMappings:
   drupal:
     field-field_firstname:
