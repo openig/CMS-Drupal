@@ -5,29 +5,79 @@ use Drupal\simplenews\Entity\Subscriber;
 use Symfony\Component\Ldap\Entry;
 
 function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $entry, array $context) {
-  /** @var \Drupal\ldap_servers\Processor\TokenProcessor $tokenProcessor */
-  $tokenProcessor = \Drupal::service('ldap.token_processor');
 
-  // dump($account);
-  // $value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[sn]');
-  // $account->set('field_phone', "02 XX XX XX XX");
+    /** @var \Drupal\ldap_servers\Processor\TokenProcessor $tokenProcessor */
+    $tokenProcessor = \Drupal::service('ldap.token_processor');
 
-  // TODO 1 - synchro des réseaux sociaux
-  // dump( $account->get('field_social_network') );
-  // dump( $platforms = \Drupal::service('plugin.manager.social_media_links.platform')->getPlatformsSortedByWeight([]) );
+    // dump($account);
+    // $value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[sn]');
+    // $account->set('field_phone', "02 XX XX XX XX");
+
+    // 1 - synchro des réseaux sociaux
+    $platforms = \Drupal::service('plugin.manager.social_media_links.platform')->getPlatforms();
+    $platform_settings = $account->get('field_social_network')->getFieldDefinition()->getSetting('platforms');
+    //
+    $new_values = array();
+    $new_values[] = [ 
+      "platform" => null,
+      "value" => null,
+      "platform_values" => [
+/*
+        "instagram" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[instagram]')
+        ],
+        "facebook" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[facebook]')
+        ],
+        "linkedin" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[linkedin]')
+        ],
+        "twitter" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[twitter]')
+        ],
+        "github" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[github]')
+        ],
+        "bluesky" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[bluesky]')
+        ]
+*/
+      ]
+    ];
+    foreach ($platforms as $platform_id => $platform) {
+        if (isset($platform_settings[$platform_id]['enabled']) && $platform_settings[$platform_id]['enabled']) {
+            $ldap_value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '['.$platform_id.']');
+            if(strpos($ldap_value, $platform['urlPrefix']) === 0) {
+                $ldap_value = substr($ldap_value, strlen($platform['urlPrefix']));
+            }
+            $new_values[0]["platform_values"][$platform_id] = ["value" => $ldap_value];
+        }
+    }
+    $account->set('field_social_network', $new_values);
+ 
+ 
+    // TODO 2 - synchro de la structure d'appartenance
+    // ! si adhésionIndividuelle activée -> rattacher à la structure d'adhésion individuelle : openig-adherents-personnes-physiques
+    //
+    // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
+    // dump( $account->get('field_structure') );
   
-  // 2 - synchro de la structure d'appartenance
-  // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
-  // dump( $account->get('field_structure') );
-  $storage = \Drupal::entityTypeManager()->getStorage('node');
-  $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_uid' => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]')]);
-  if(!empty($structures)) {
-    // associate user with structure
-    $account->set('field_structure', array_values($structures)[0]->nid->value );
-  } else {
-    // else delete structure association
-    $account->set('field_structure', null );
-  }
+    $individual = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[individualAdhesion]');
+    if(isset($individual) && $individual !== null && $individual) {
+        $structureUid = "openig-adherents-personnes-physiques";
+    } else {
+        $structureUid = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]'); // TODO ; get memberOf
+    }
+  
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $structureUid]);
+    if(!empty($structures)) {
+        // associate user with structure
+        $account->set('field_structure', array_values($structures)[0]->nid->value );
+    } else {
+        // else delete structure association
+        $account->set('field_structure', null );
+    }
 
   // 3 - rattachement à la newsletter (si création d'un nouveau user)
   if ($account->isNew()) {
@@ -42,5 +92,22 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
   }
 
   // die();
+}
+
+function openig_ldap_cron() {
+    \Drupal::logger('openig_ldap')->notice('Structure synchronisation.');
+    // Add your scheduled task logic here
+    //
+
+    // Récupérer les information de connexions LDAP
+/*
+    $service = \Drupal::service('openig_ldap.structure_service_provider');
+    $service->checkLDAP();
+*/
+    // récupérer la liste structures
+    // pour chaque structure
+    // 1. vérifier si elle existe (utilisation de l'uid) 
+    // => si non on la créé ; 
+    // => si oui on update
 }
 
