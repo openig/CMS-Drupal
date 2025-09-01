@@ -1668,6 +1668,27 @@ form.user-register-form{
     .description{
         font-size: $OPenIG-font-size-xs;
     }
+    .structure-souhaitee{
+        display: flex;
+        .add-structure{
+            background-color: $OPenIG-color_blue;
+            color: white;
+            border-radius: 5px;
+            padding: 0 .75rem;
+            border: none;
+            width: 40px;
+            height: 40px;
+            a{
+                color: white;
+                font-size: 26px;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
 }
 
 .path-user .ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
