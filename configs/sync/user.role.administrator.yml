@@ -11,8 +11,8 @@ label: Administrateur
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_phone'
-  - 'edit field_phone'
-  - 'edit own field_phone'
-  - 'view field_phone'
-  - 'view own field_phone'
+  - 'create field_firstname'
+  - 'edit field_firstname'
+  - 'edit own field_firstname'
+  - 'view field_firstname'
+  - 'view own field_firstname'
