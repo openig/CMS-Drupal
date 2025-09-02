@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_email
     - field.field.node.structure.field_image
-    - field.field.node.structure.field_ldap_uid
+    - field.field.node.structure.field_ldap_cn
     - field.field.node.structure.field_phone
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
@@ -63,7 +63,7 @@ hidden:
   field_crige_partner: true
   field_dpt_intervention: true
   field_email: true
-  field_ldap_uid: true
+  field_ldap_cn: true
   field_phone: true
   field_postcode: true
   field_siret: true

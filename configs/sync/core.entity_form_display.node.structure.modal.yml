@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.structure.field_dpt_intervention
     - field.field.node.structure.field_email
     - field.field.node.structure.field_image
-    - field.field.node.structure.field_ldap_uid
+    - field.field.node.structure.field_ldap_cn
     - field.field.node.structure.field_phone
     - field.field.node.structure.field_postcode
     - field.field.node.structure.field_siret
@@ -169,7 +169,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  field_ldap_uid: true
+  field_ldap_cn: true
   langcode: true
   moderation_state: true
   path: true

@@ -1,15 +1,11 @@
-uuid: 002f5ecd-8e8c-4c6f-89c4-df70cd3d695e
+uuid: a32ec7e5-ac82-4a64-981b-a3309c24f11b
 langcode: fr
 status: true
 dependencies:
   module:
-    - field_permissions
     - node
-third_party_settings:
-  field_permissions:
-    permission_type: private
-id: node.field_ldap_uid
-field_name: field_ldap_uid
+id: node.field_ldap_cn
+field_name: field_ldap_cn
 entity_type: node
 type: string
 settings:

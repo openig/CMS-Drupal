@@ -1,0 +1,14 @@
+uuid: 38d22b47-b396-4f6f-830b-24c419106b12
+langcode: fr
+status: true
+dependencies: {  }
+id: all_structures
+label: 'All structures'
+server_id: ldap
+base_dn: 'ou=structures,dc=openig,dc=org'
+filter: '(&(objectClass=structureAsso)(structureValidationStatus=TRUE))'
+attributes: ''
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: sub

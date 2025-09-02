@@ -41,16 +41,6 @@ ldapUserSyncMappings:
       prov_events:
         - create_drupal_user
         - sync_to_drupal_user
-    field-field_structure:
-      ldap_attr: '[structureUid]'
-      user_attr: '[field.field_structure]'
-      convert: false
-      user_tokens: ''
-      config_module: ldap_user
-      prov_module: ldap_user
-      prov_events:
-        - create_drupal_user
-        - sync_to_drupal_user
     field-field_phone:
       ldap_attr: '[telephoneNumber]'
       user_attr: '[field.field_phone]'
