@@ -95,19 +95,51 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
 }
 
 function openig_ldap_cron() {
-    \Drupal::logger('openig_ldap')->notice('Structure synchronisation.');
-    // Add your scheduled task logic here
-    //
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
 
-    // Récupérer les information de connexions LDAP
-/*
-    $service = \Drupal::service('openig_ldap.structure_service_provider');
-    $service->checkLDAP();
-*/
-    // récupérer la liste structures
-    // pour chaque structure
-    // 1. vérifier si elle existe (utilisation de l'uid) 
-    // => si non on la créé ; 
-    // => si oui on update
+    $query = \Drupal::service('ldap.query');
+    $query->load('all_structures');
+    $query->execute();
+    $results = $query->getRawResults();
+    dump($results);
+    foreach($results as $ldap_structure) {
+        $attributes = $ldap_structure->getAttributes();
+        dump($attributes);
+    
+        $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
+        if(!empty($structures)) {
+            // update structure
+            $structure = reset($structures);
+        } else {
+            // else create structure
+            $structure = $storage->create(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
+        }
+
+        $structure->set('field_address', $attributes['postalAddress'][0]);
+        $structure->set('field_postcode', $attributes['postalCode'][0]);
+        $structure->set('field_city', $attributes['l'][0]);
+
+        $structure->set('field_phone', $attributes['telephoneNumber'][0]);
+        $structure->set('field_email', $attributes['mail'][0]);
+        $structure->set('field_website', $attributes['siteWeb'][0]);
+        $structure->set('field_siret', $attributes['businessCategory'][0]);
+
+        $structure->set('body', $attributes['description'][0]);
+
+        // TODO Taxonomie
+        // $structure->set('field_typologie_structure', $attributes['typologie'][0]);
+
+        // TODO Taxonomie
+        // $structure->set('field_dpt_intervention', $attributes['departements'][0]);
+
+        // TODO Fichier image
+        // $structure->set('field_image', $attributes['logoFile'][0]);
+
+
+        $structure->save();
+        
+//        $structureUid = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]'); // TODO ; get memberOf
+    }
+    die();
 }
 
