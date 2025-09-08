@@ -1,6 +1,136 @@
 langcode: fr
 blocks:
   -
+    info: 'Bouton modifier son compte'
+    langcode: fr
+    uuid: 5036e6fb-8b5d-4c0d-a914-ab1bcc943d70
+    bundle: liens
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_lien:
+        -
+          uri: 'https://sso.openig.org/'
+          title: 'Modifier son compte'
+          options: {  }
+  -
+    info: 'Description accueil'
+    langcode: fr
+    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
+    bundle: texte_et_couleur
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>L'association loi 1901 <strong>OPenIG</strong> (Occitanie Pyrénées en Intelligence Géomatique) est la plateforme régionale d'information géographique en <strong>Occitanie</strong>, issue de l’élargissement en 2017 de l’association SIG L-R créée en 1994.&nbsp;</p><p>OPenIG mutualise outils et compétences pour ses adhérents, majoritairement des collectivités, en proposant des <strong>services de partage de données</strong> (via l’Infrastructure de Données Géographiques et Ouvertes, IDGO), d’expertise, d’animation de groupes de travail et d’accompagnement autour de la donnée géographique.&nbsp;</p>"
+          summary: ''
+          format: basic_html
+      field_couleur:
+        -
+          color: '#F0F0EF'
+          opacity: null
+      field_lien:
+        -
+          uri: 'https://www.openig.org/openig/presentation'
+          title: 'En savoir plus'
+          options: {  }
+  -
+    info: 'Vue service'
+    langcode: fr
+    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
+    bundle: picto_et_texte
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_picto_et_texte:
+        -
+          target_id: '6'
+          target_revision_id: '6'
+        -
+          target_id: '7'
+          target_revision_id: '7'
+  -
+    info: 'Vue groupe de travail'
+    langcode: fr
+    uuid: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
+    bundle: picto_et_texte
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_picto_et_texte:
+        -
+          target_id: '2'
+          target_revision_id: '2'
+        -
+          target_id: '1'
+          target_revision_id: '1'
+  -
+    info: "En savoir plus sur l'adhésion"
+    langcode: fr
+    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
+    bundle: lien
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
+          summary: ''
+          format: full_html
+      field_lien:
+        -
+          uri: 'internal:/openig/pourquoi-adherer'
+          title: "En savoir plus sur l'adhésion"
+          options: {  }
+  -
+    info: 'La newsletter'
+    langcode: fr
+    uuid: 71468847-678d-426c-83da-d1243eb1a749
+    bundle: bloc_newsletter
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Restez connecté(e) avec notre actualité en vous abonnant à notre newsletter ! Recevez régulièrement des informations sur les événements, webinaires et actualités d'OPenIG et de nos partenaires, ainsi que les nouveaux services que nous mettons à votre disposition.</p>"
+          summary: ''
+          format: basic_html
+      field_image:
+        -
+          target_id: '541'
+          alt: news
+          title: ''
+          width: '1280'
+          height: '720'
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: 'Voir la dernière newsletter'
+          options: {  }
+      field_picto:
+        -
+          target_id: '67'
+          alt: Journal
+          title: ''
+          width: '115'
+          height: '103'
+  -
+    info: 'Image en bas de page mobile'
+    langcode: fr
+    uuid: 4255c696-6130-4b29-83a6-a1aeb6341d14
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '368'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
     info: 'Newsletter - Nous suivre'
     langcode: fr
     uuid: a8799922-f4bb-4f9e-9e5c-5f1c497817b8
@@ -10,11 +140,26 @@ blocks:
     fields:
       field_picto_et_lien:
         -
-          target_id: '245'
-          target_revision_id: '795'
+          target_id: '177'
+          target_revision_id: '877'
         -
-          target_id: '246'
-          target_revision_id: '796'
+          target_id: '178'
+          target_revision_id: '878'
+  -
+    info: 'Newsletter - Logo '
+    langcode: fr
+    uuid: 2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '365'
+          alt: 'Occitanie Pyrénées en Intelligence Géomatique'
+          title: ''
+          width: '93'
+          height: '95'
   -
     info: 'Newsletter - Menu footer'
     langcode: fr
@@ -25,7 +170,7 @@ blocks:
     fields:
       field_lien:
         -
-          uri: 'entity:node/12'
+          uri: 'entity:node/13'
           title: 'Mentions légales'
           options: {  }
   -
@@ -41,21 +186,6 @@ blocks:
           value: '<p><strong>Au service de vos territoires en Occitanie</strong></p>'
           summary: ''
           format: basic_html
-  -
-    info: 'Newsletter - Logo '
-    langcode: fr
-    uuid: 2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '386'
-          alt: OPenIG
-          title: ''
-          width: '93'
-          height: '95'
   -
     info: 'Message de redirection vers le CKAN'
     langcode: fr
@@ -92,39 +222,6 @@ blocks:
           title: 'Obtenir une simulation'
           options: {  }
   -
-    info: 'Image accueil'
-    langcode: fr
-    uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '33'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
-  -
-    info: "En savoir plus sur l'adhésion"
-    langcode: fr
-    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
-    bundle: lien
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
-          summary: ''
-          format: full_html
-      field_lien:
-        -
-          uri: 'entity:node/36'
-          title: "En savoir plus sur l'adhésion"
-          options: {  }
-  -
     info: 'Adresse et contact'
     langcode: fr
     uuid: 062b31d8-76b5-4710-91ac-088969c978c7
@@ -140,25 +237,14 @@ blocks:
       field_email:
         -
           value: contact@openig.org
-      field_lien: {  }
+      field_lien:
+        -
+          uri: 'https://www.openstreetmap.org/#map=19/43.64530/3.87675&layers=N'
+          title: 'Venir nous voir'
+          options: {  }
       field_telephone:
         -
           value: '04 67 55 86 54'
-  -
-    info: 'Image en bas de page mobile'
-    langcode: fr
-    uuid: 4255c696-6130-4b29-83a6-a1aeb6341d14
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '112'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
   -
     info: 'Image en haut de page mobile'
     langcode: fr
@@ -169,7 +255,7 @@ blocks:
     fields:
       field_image:
         -
-          target_id: '111'
+          target_id: '69'
           alt: mesh
           title: ''
           width: '64'
@@ -188,37 +274,23 @@ blocks:
           summary: ''
           format: basic_html
   -
-    info: 'La newsletter'
+    info: "Actions dans l'association"
     langcode: fr
-    uuid: 71468847-678d-426c-83da-d1243eb1a749
-    bundle: bloc_newsletter
+    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
+    bundle: taxonomies
     revision_id: null
     rev_id_current: null
     fields:
-      body:
+      body: {  }
+      field_taxonomie:
         -
-          value: '<p>eu. quis ante nisi Nullam ipsum Lorem vitae vestibulum sollicitudin vestibulum ut vel vestibulum dignissim laoreet scelerisque. non elit. eu. tortor vel at bibendum nisi nisi tortor a tristique. ut vel Donec adipiscing mauris fringilla. nisi sit tristique. Morbi eu. fermentum non at lacinia Maecenas ligula Sed consectetur fringilla.</p>'
-          summary: ''
-          format: basic_html
-      field_image:
+          target_id: '1'
         -
-          target_id: '104'
-          alt: 'Groupe de personnes'
-          title: ''
-          width: '2034'
-          height: '1016'
-      field_lien:
+          target_id: '2'
         -
-          uri: 'internal:/'
-          title: 'Voir la dernière newsletter'
-          options: {  }
-      field_picto:
+          target_id: '3'
         -
-          target_id: '103'
-          alt: Journal
-          title: ''
-          width: '115'
-          height: '103'
+          target_id: '4'
   -
     info: "Phrase d'accroche header"
     langcode: fr
@@ -237,91 +309,6 @@ blocks:
           color: '#F2F6E7'
           opacity: null
       field_lien: {  }
-  -
-    info: "Phrase d'accroche footer"
-    langcode: fr
-    uuid: a5776ac5-a497-4338-ad15-3db8d5f724ba
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<p>Occitanie Pyrénées en Intelligence Géomatique</p>'
-          summary: ''
-          format: basic_html
-  -
-    info: 'Vue service'
-    langcode: fr
-    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
-    bundle: picto_et_texte
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_picto_et_texte:
-        -
-          target_id: '190'
-          target_revision_id: '419'
-        -
-          target_id: '191'
-          target_revision_id: '420'
-        -
-          target_id: '192'
-          target_revision_id: '421'
-        -
-          target_id: '193'
-          target_revision_id: '422'
-  -
-    info: 'Image en bas de page'
-    langcode: fr
-    uuid: 555f7a44-f502-42f6-be3c-da8191356402
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '19'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
-  -
-    info: 'Vue groupe de travail'
-    langcode: fr
-    uuid: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
-    bundle: picto_et_texte
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_picto_et_texte:
-        -
-          target_id: '52'
-          target_revision_id: '99'
-        -
-          target_id: '53'
-          target_revision_id: '100'
-        -
-          target_id: '54'
-          target_revision_id: '101'
-        -
-          target_id: '55'
-          target_revision_id: '102'
-  -
-    info: 'Image en haut de page'
-    langcode: fr
-    uuid: cc9d0053-0d6f-4f30-aa51-bacb9710c2a3
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '16'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
   -
     info: 'Communiquer / Mutualiser'
     langcode: fr
@@ -350,23 +337,50 @@ blocks:
           title: 'Voir la dernière newsletter'
           options: {  }
   -
-    info: "Actions dans l'association"
+    info: 'Image en haut de page'
     langcode: fr
-    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
-    bundle: taxonomies
+    uuid: cc9d0053-0d6f-4f30-aa51-bacb9710c2a3
+    bundle: image
     revision_id: null
     rev_id_current: null
     fields:
-      body: {  }
-      field_taxonomie:
+      field_image:
         -
-          target_id: '5'
+          target_id: '4'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Image accueil'
+    langcode: fr
+    uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
         -
-          target_id: '6'
+          target_id: '3'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Image en bas de page'
+    langcode: fr
+    uuid: 555f7a44-f502-42f6-be3c-da8191356402
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
         -
-          target_id: '7'
-        -
-          target_id: '8'
+          target_id: '2'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
   -
     info: OpenStreetMap
     langcode: fr
@@ -381,27 +395,18 @@ blocks:
           summary: ''
           format: full_html
   -
-    info: 'Description accueil'
+    info: "Phrase d'accroche footer"
     langcode: fr
-    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
-    bundle: texte_et_couleur
+    uuid: a5776ac5-a497-4338-ad15-3db8d5f724ba
+    bundle: basic
     revision_id: null
     rev_id_current: null
     fields:
       body:
         -
-          value: '<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>'
+          value: '<p>Occitanie Pyrénées en Intelligence Géomatique</p>'
           summary: ''
           format: basic_html
-      field_couleur:
-        -
-          color: '#F0F0EF'
-          opacity: null
-      field_lien:
-        -
-          uri: 'internal:/'
-          title: 'En savoir plus'
-          options: {  }
 menus:
   -
     menu_name: footer

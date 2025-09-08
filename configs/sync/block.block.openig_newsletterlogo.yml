@@ -12,7 +12,7 @@ dependencies:
 id: openig_newsletterlogo
 theme: openig
 region: content
-weight: -1
+weight: -2
 provider: null
 plugin: 'block_content:2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0'
 settings:
