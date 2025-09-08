@@ -32,13 +32,6 @@
       </div>
     </div>
   </div>
-{% elseif element['#form_id'] == 'user_form' %}
-  <form{{ attributes }}>
-    {{ children }}
-     <div class="edit-compte">
-      <a href="https://sso.openig.org/" target="_blank" >Modifier son compte</a>
-    </div>
-  </form>
 {% else %}
   <form{{ attributes }}>
     {{ children }}

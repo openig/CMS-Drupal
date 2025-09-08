@@ -1674,11 +1674,11 @@ form.user-register-form{
             background-color: $OPenIG-color_blue;
             color: white;
             border-radius: 0.375rem;
-            padding: 0 .75rem;
             border: none;
             width: 40px;
             height: 40px;
             a{
+                padding: 0 .75rem;
                 color: white;
                 font-size: 26px;
                 text-decoration: none;
@@ -1767,11 +1767,11 @@ form.user-register-form{
         .edit-compte{
             background-color: $OPenIG-color_blue;
             border-radius: 0.375rem;
-            padding: 0.375rem .75rem;
             border: none;
             width: fit-content;
             float: right;
             a{
+                padding: 0.375rem .75rem;
                 color: white;
                 text-decoration: none;
                 width: 100%;
@@ -1781,6 +1781,27 @@ form.user-register-form{
                 font-weight: 600;
                 font-family: 'Exo_semiBold';
             }
+        }
+    }
+
+    #block-openig-boutonmodifiersoncompte{
+        background-color: $OPenIG-color_blue;
+        border-radius: 0.375rem;
+        border: none;
+        width: fit-content;
+        margin-left: 150px;
+        position: relative;
+        margin-top: -20px;
+        a{
+            padding: 0.375rem .75rem;
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
         }
     }
    
