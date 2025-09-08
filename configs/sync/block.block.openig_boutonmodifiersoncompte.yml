@@ -1,9 +1,9 @@
-uuid: c875daed-8c6c-414f-ab8c-a14d5c5787b4
+uuid: b52d0c45-581d-413b-b1e3-31d31a52f59f
 langcode: fr
 status: true
 dependencies:
   content:
-    - 'block_content:liens:5036e6fb-8b5d-4c0d-a914-ab1bcc943d70'
+    - 'block_content:lien:ddc231c7-1ca6-408a-8157-8b114166e979'
   module:
     - block_content
     - system
@@ -15,9 +15,9 @@ theme: openig
 region: content
 weight: -36
 provider: null
-plugin: 'block_content:5036e6fb-8b5d-4c0d-a914-ab1bcc943d70'
+plugin: 'block_content:ddc231c7-1ca6-408a-8157-8b114166e979'
 settings:
-  id: 'block_content:5036e6fb-8b5d-4c0d-a914-ab1bcc943d70'
+  id: 'block_content:ddc231c7-1ca6-408a-8157-8b114166e979'
   label: 'Bouton modifier son compte'
   label_display: '0'
   provider: block_content
