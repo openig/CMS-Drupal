@@ -1,0 +1,19 @@
+uuid: cc90174b-1f3b-43b5-8357-3e5d08012f35
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ldap_cn
+    - node.type.structure
+id: node.structure.field_ldap_cn
+field_name: field_ldap_cn
+entity_type: node
+bundle: structure
+label: 'LDAP CN'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

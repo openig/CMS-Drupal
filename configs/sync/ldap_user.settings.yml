@@ -1,0 +1,53 @@
+_core:
+  default_config_hash: 2s21v-hdOHG4IFEmUf-z199UgcEdaXGN5qm9K3FIqCY
+drupalAcctProvisionServer: ldap
+ldapEntryProvisionServer: null
+drupalAcctProvisionTriggers:
+  - drupal_on_login
+  - drupal_on_update_create
+ldapEntryProvisionTriggers: {  }
+orphanedIncludeDisabledUsers: true
+orphanedDrupalAcctBehavior: user_cancel_block
+orphanedDrupalAcctReportingInbox: ''
+orphanedCheckQty: 100
+orphanedAccountCheckInterval: weekly
+userConflictResolve: resolve
+manualAccountConflict: conflict_associate
+acctCreation: ldap_behavior
+disableAdminPasswordField: true
+userUpdateCronQuery: all_users
+userUpdateCronInterval: always
+userUpdateOnly: false
+userUpdateAssociate: true
+ldapUserSyncMappings:
+  drupal:
+    field-field_firstname:
+      ldap_attr: '[givenName]'
+      user_attr: '[field.field_firstname]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_lastname:
+      ldap_attr: '[sn]'
+      user_attr: '[field.field_lastname]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user
+    field-field_phone:
+      ldap_attr: '[telephoneNumber]'
+      user_attr: '[field.field_phone]'
+      convert: false
+      user_tokens: ''
+      config_module: ldap_user
+      prov_module: ldap_user
+      prov_events:
+        - create_drupal_user
+        - sync_to_drupal_user

@@ -13,7 +13,6 @@ dependencies:
     - field.field.user.user.field_social_network
     - field.field.user.user.field_structure
   module:
-    - entity_reference_modal
     - path
     - social_media_links_field
     - telephone
@@ -32,27 +31,10 @@ content:
     third_party_settings: {  }
   field_ca_member:
     type: boolean_checkbox
-    weight: 6
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_desired_structure:
-    type: entity_reference_modal
     weight: 5
     region: content
     settings:
-      add_new_button_title: +
-      modal_form_mode: modal
-      modal_width: 50%
-      modal_title: 'Ajouter une structure'
-      duplicate: false
-      search: false
-      bootstrap: false
-      match_operator: CONTAINS
-      match_limit: '10'
-      size: '60'
-      placeholder: ''
+      display_label: true
     third_party_settings: {  }
   field_firstname:
     type: string_textfield
@@ -72,7 +54,7 @@ content:
     third_party_settings: {  }
   field_outils_competences:
     type: entity_reference_autocomplete
-    weight: 8
+    weight: 7
     region: content
     settings:
       match_operator: CONTAINS
@@ -89,14 +71,14 @@ content:
     third_party_settings: {  }
   field_referent:
     type: boolean_checkbox
-    weight: 7
+    weight: 6
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   field_social_network:
     type: social_media_links_field_default
-    weight: 10
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -112,17 +94,18 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   simplenews:
-    weight: 9
+    weight: 8
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   contact: true
+  field_desired_structure: true
   langcode: true
   language: true
   timezone: true

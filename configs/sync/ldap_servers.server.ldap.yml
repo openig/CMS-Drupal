@@ -1,0 +1,38 @@
+uuid: 6096cc3d-8ab5-4e70-b82e-50b07c861ba2
+langcode: fr
+status: true
+dependencies: {  }
+id: ldap
+label: LDAP
+type: openldap
+address: ldap
+port: 1389
+timeout: 10
+encryption: none
+weight: null
+bind_method: service_account
+binddn: 'cn=admin,dc=openig,dc=org'
+bindpw: adm!ldap
+basedn:
+  - 'ou=utilisateurs,dc=openig,dc=org'
+user_attr: uid
+account_name_attr: uid
+mail_attr: mail
+mail_template: ''
+picture_attr: ''
+unique_persistent_attr: entryuuid
+unique_persistent_attr_binary: false
+user_dn_expression: 'uid=%username,%basedn'
+testing_drupal_username: toto
+testing_drupal_user_dn: ''
+grp_unused: true
+grp_object_cat: ''
+grp_nested: false
+grp_user_memb_attr_exists: false
+grp_user_memb_attr: ''
+grp_memb_attr: ''
+grp_memb_attr_match_user_attr: ''
+grp_derive_from_dn: false
+grp_derive_from_dn_attr: ''
+grp_test_grp_dn: ''
+grp_test_grp_dn_writeable: ''

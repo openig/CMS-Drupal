@@ -1,0 +1,103 @@
+diff -rub a/ldap_user/config/install/ldap_user.settings.yml b/ldap_user/config/install/ldap_user.settings.yml
+--- a/ldap_user/config/install/ldap_user.settings.yml	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/config/install/ldap_user.settings.yml	2025-08-26 16:43:05.211464891 +0200
+@@ -10,6 +10,7 @@
+   drupal_on_manual_creation: '0'
+ userUpdateCronQuery: none
+ userUpdateCronInterval: daily
++userUpdateAssociate: false
+ orphanedDrupalAcctBehavior: ldap_user_orphan_email
+ orphanedDrupalAcctReportingInbox: ''
+ orphanedCheckQty: 100
+diff -rub a/ldap_user/config/schema/ldap_user.schema.yml b/ldap_user/config/schema/ldap_user.schema.yml
+--- a/ldap_user/config/schema/ldap_user.schema.yml	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/config/schema/ldap_user.schema.yml	2025-08-26 16:40:16.322115108 +0200
+@@ -55,6 +55,9 @@
+     userUpdateOnly:
+       label: 'Only update already existing Drupal Users. Do not create new users.'
+       type: boolean
++    userUpdateAssociate:
++      label: 'Associate already existing Drupal Users (matching the username).'
++      type: boolean
+     ldapUserSyncMappings:
+       type: config_object
+       label: 'Configured sync mappings'
+diff -rub a/ldap_user/ldap_user.install b/ldap_user/ldap_user.install
+--- a/ldap_user/ldap_user.install	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/ldap_user.install	2025-08-26 16:38:04.801070670 +0200
+@@ -421,5 +421,16 @@
+     $settings->set('ldapUserSyncMappings.drupal', $drupal_mapping);
+     $settings->save();
+   }
++}
++
++/**
++ * Adds settings for update processing to associate existing Drupal users.
++ */
++function ldap_user_update_8409() {
++  // Clear all cache.
++  \Drupal::cache()->deleteAll();
+ 
++  $settings = \Drupal::configFactory()->getEditable('ldap_user.settings');
++  $settings->set('userUpdateAssociate', FALSE);
++  $settings->save();
+ }
+diff -rub a/ldap_user/src/Form/LdapUserAdminForm.php b/ldap_user/src/Form/LdapUserAdminForm.php
+--- a/ldap_user/src/Form/LdapUserAdminForm.php	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/src/Form/LdapUserAdminForm.php	2025-08-26 16:41:54.794901101 +0200
+@@ -279,6 +279,11 @@
+         ],
+       ];
+ 
++      $form['userUpdateMechanism']['userUpdateAssociate'] = [
++        '#type' => 'checkbox',
++        '#title' => $this->t('Associate already existing Drupal users (matching by username).'),
++        '#default_value' => $config->get('userUpdateAssociate'),
++      ];
+       $form['userUpdateMechanism']['userUpdateOnly'] = [
+         '#type' => 'checkbox',
+         '#title' => $this->t('Only update existing. Users will not be created.'),
+@@ -427,6 +432,7 @@
+       ->set('ldapEntryProvisionTriggers', $this->reduceTriggerList($form_state->getValue('ldapEntryProvisionTriggers')))
+       ->set('userUpdateCronQuery', $form_state->getValue('userUpdateCronQuery'))
+       ->set('userUpdateCronInterval', $form_state->getValue('userUpdateCronInterval'))
++      ->set('userUpdateAssociate', $form_state->getValue('userUpdateAssociate'))
+       ->set('userUpdateOnly', $form_state->getValue('userUpdateOnly'))
+       ->set('orphanedDrupalAcctBehavior', $form_state->getValue('orphanedDrupalAcctBehavior'))
+       ->set('orphanedDrupalAcctReportingInbox', $form_state->getValue('orphanedDrupalAcctReportingInbox'))
+diff -rub a/ldap_user/src/Processor/GroupUserUpdateProcessor.php b/ldap_user/src/Processor/GroupUserUpdateProcessor.php
+--- a/ldap_user/src/Processor/GroupUserUpdateProcessor.php	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/src/Processor/GroupUserUpdateProcessor.php	2025-08-26 16:45:59.636866368 +0200
+@@ -277,6 +277,21 @@
+     $this->drupalUserProcessor->reset();
+ 
+     $uid = $this->externalAuth->getUid($username, 'ldap_user');
++
++    // Associate manually created Drupal accounts with related LDAP Account
++    if (!$uid && $this->config->get('userUpdateAssociate')) {
++      $load_by_name = $this->userStorage->loadByProperties(['name' => $username]);
++      $drupalUser = $load_by_name ? reset($load_by_name) : NULL;
++      if ($drupalUser) {
++        $this->logger->notice(
++          'Found the Drupal account %id to associate with the LDAP entry for username "%username"',
++          ['%id' => $drupalUser->id(), '%username' => $username]
++        );
++        $this->externalAuth->save($drupalUser, 'ldap_user', $username);
++        $uid = $this->externalAuth->getUid($username, 'ldap_user');
++      }
++    }
++
+     if (!$uid) {
+       if ($this->config->get('userUpdateOnly')) {
+         return;
+diff -rub a/ldap_user/tests/src/Unit/InstallTest.php b/ldap_user/tests/src/Unit/InstallTest.php
+--- a/ldap_user/tests/src/Unit/InstallTest.php	2024-09-18 19:32:29.000000000 +0200
++++ b/ldap_user/tests/src/Unit/InstallTest.php	2025-08-26 16:39:09.181581083 +0200
+@@ -157,6 +157,7 @@
+       ->willReturnMap([
+         ['orphanedIncludeDisabledUsers', FALSE, NULL],
+         ['userUpdateOnly', FALSE, NULL],
++        ['userUpdateAssociate', FALSE, NULL],
+       ]);
+     $settings->expects($this->once())
+       ->method('save');
