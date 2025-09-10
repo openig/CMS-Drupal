@@ -57,21 +57,26 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
     $account->set('field_social_network', $new_values);
  
  
-    // TODO 2 - synchro de la structure d'appartenance
+    // 2 - synchro de la structure d'appartenance
     // ! si adhésionIndividuelle activée -> rattacher à la structure d'adhésion individuelle : openig-adherents-personnes-physiques
     //
-    // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]') );
+    // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[memberOf]') );
     // dump( $account->get('field_structure') );
   
     $individual = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[individualAdhesion]');
     if(isset($individual) && $individual !== null && $individual) {
-        $structureUid = "openig-adherents-personnes-physiques";
+        $structureCN = "openig-adherents-personnes-physiques";
     } else {
-        $structureUid = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]'); // TODO ; get memberOf
+        // $structureCN = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]');
+        $structureCN = false;
+        $structure = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[memberOf]');
+        if( preg_match('/^cn=(.*),ou=structures,dc=openig,dc=org$/', $structure, $matches) ) {
+            if(array_key_exists(1,$matches)) $structureCN = $matches[1];
+        }
     }
   
     $storage = \Drupal::entityTypeManager()->getStorage('node');
-    $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $structureUid]);
+    $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $structureCN]);
     if(!empty($structures)) {
         // associate user with structure
         $account->set('field_structure', array_values($structures)[0]->nid->value );
@@ -178,7 +183,7 @@ function openig_ldap_cron() {
             $structure->set('field_dpt_intervention', null);
         }
 
-        // TODO Fichier image -> compare base64 of current with LDAP value
+        // Fichier image -> compare base64 of current with LDAP value
         // $structure->set('field_image', $attributes['logoFile'][0]);
 
         if(array_key_exists('logoFile', $attributes) && $attributes['logoFile'][0] !== null) {
@@ -228,8 +233,6 @@ function openig_ldap_cron() {
         $structure->setPublished(); // $structure->set('status', 1);
         $structure->save();
         
-//        $structureUid = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]'); // TODO ; get memberOf
     }
-    die();
 }
 
