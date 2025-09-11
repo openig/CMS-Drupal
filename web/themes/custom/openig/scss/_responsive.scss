@@ -1996,6 +1996,15 @@
         }
     }
 
+    .buttons-login{
+        .container-login{
+            padding: 30px;
+        }
+        p, a, input{
+            font-size: $OPenIG-font-size-sm;
+        }
+    }
+
     // Compte utilisateur
     .path-user .profile{
         .identite{
