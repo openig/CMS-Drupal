@@ -1,0 +1,11 @@
+name: OPenIG LDAP
+package: Custom
+description: 'Users and Structres synhronisation'
+
+type: module
+core_version_requirement: ^10
+
+dependencies:
+  - ldap_user
+  - social_media_links_field
+  - simplenews
