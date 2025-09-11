@@ -1,0 +1,11 @@
+<?php 
+
+/**
+ * Implémente hook_local_tasks_alter().
+ */
+function openig_local_tasks_local_tasks_alter(&$local_tasks) {
+
+    if (isset($local_tasks['user.pass'])) {
+        unset($local_tasks['user.pass']);
+    }
+}
