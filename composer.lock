@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "89ca14c24e71b4c43b4ab335c0e73035",
+    "content-hash": "b7f8c479c555e6ed5a2fe392dfd99160",
     "packages": [
         {
             "name": "algolia/places",
@@ -3804,6 +3804,72 @@
             }
         },
         {
+            "name": "drupal/keycloak",
+            "version": "2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/keycloak.git",
+                "reference": "2.2.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/keycloak-2.2.1.zip",
+                "reference": "2.2.1",
+                "shasum": "7de2a3ce2daffb4b8db1f52be30bd8df85447cf3"
+            },
+            "require": {
+                "drupal/core": "^10.3 || ^11",
+                "drupal/openid_connect": "^3.0@alpha"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.2.1",
+                    "datestamp": "1738172576",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Mario Steinitz",
+                    "homepage": "https://www.drupal.org/u/mario-steinitz",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "cgoffin",
+                    "homepage": "https://www.drupal.org/user/744134"
+                },
+                {
+                    "name": "joseph.olstad",
+                    "homepage": "https://www.drupal.org/user/1321830"
+                },
+                {
+                    "name": "Mario Steinitz",
+                    "homepage": "https://www.drupal.org/user/2536014"
+                },
+                {
+                    "name": "wilco",
+                    "homepage": "https://www.drupal.org/user/48120"
+                }
+            ],
+            "description": "Enables OpenID Connect Keycloak sign on and user data synchronization.",
+            "homepage": "https://www.drupal.org/project/keycloak",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/keycloak",
+                "issues": "https://www.drupal.org/project/issues/keycloak"
+            }
+        },
+        {
             "name": "drupal/ldap",
             "version": "4.12.0",
             "source": {
@@ -4444,6 +4510,77 @@
             "homepage": "https://www.drupal.org/project/nodeaccess",
             "support": {
                 "source": "https://git.drupalcode.org/project/nodeaccess"
+            }
+        },
+        {
+            "name": "drupal/openid_connect",
+            "version": "3.0.0-alpha6",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/openid_connect.git",
+                "reference": "3.0.0-alpha6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/openid_connect-3.0.0-alpha6.zip",
+                "reference": "3.0.0-alpha6",
+                "shasum": "ae9b7a24d8ad2534756e5b2689fad6688e6b3cb0"
+            },
+            "require": {
+                "drupal/core": "^10.2 || ^11",
+                "drupal/externalauth": "^2.0",
+                "ext-json": "*",
+                "php": ">=8.1.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "3.0.0-alpha6",
+                    "datestamp": "1739445531",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Alpha releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "bojanz",
+                    "homepage": "https://www.drupal.org/user/86106"
+                },
+                {
+                    "name": "jcnventura",
+                    "homepage": "https://www.drupal.org/user/122464"
+                },
+                {
+                    "name": "mstrelan",
+                    "homepage": "https://www.drupal.org/user/314289"
+                },
+                {
+                    "name": "pfrilling",
+                    "homepage": "https://www.drupal.org/user/169695"
+                },
+                {
+                    "name": "pjcdawkins",
+                    "homepage": "https://www.drupal.org/user/1025236"
+                },
+                {
+                    "name": "sanduhrs",
+                    "homepage": "https://www.drupal.org/user/28074"
+                }
+            ],
+            "description": "A pluggable client implementation for the OpenID Connect protocol.",
+            "homepage": "https://www.drupal.org/project/openid_connect",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/openid_connect",
+                "issues": "https://www.drupal.org/project/issues/openid_connect"
             }
         },
         {
@@ -11620,6 +11757,7 @@
         "drupal/ckeditor_font": 10,
         "drupal/conditional_fields": 15,
         "drupal/nodeaccess": 15,
+        "drupal/openid_connect": 15,
         "drupal/sitemap": 10,
         "drupal/user_register_notify": 10
     },
