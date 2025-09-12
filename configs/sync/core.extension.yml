@@ -25,7 +25,6 @@ module:
   config_translation: 0
   contact: 0
   content_moderation: 0
-  content_moderation_notifications: 0
   contextual: 0
   custom_breadcrumbs: 0
   custom_view_filters: 0
@@ -85,7 +84,6 @@ module:
   openig_newsletter: 0
   openig_search: 0
   openig_sql_migrate: 0
-  openig_user_notifications: 0
   openig_webform: 0
   options: 0
   page_cache: 0
@@ -121,7 +119,6 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
-  user_register_notify: 0
   video_embed_field: 0
   video_embed_peertube: 0
   views_fieldsets: 0
