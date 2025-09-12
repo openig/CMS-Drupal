@@ -2178,3 +2178,24 @@ form.user-register-form{
         }
     }
 }
+
+// Customisation du bouton "OPENIDConnect" dans le menu
+div.region-navigation-deuxieme-section {
+  li.nav-item::after{
+    content: '|';
+    //margin-top: 7px;
+    color: $OPenIG-color_red;
+  }
+  div#block-openig-openidconnectlogin {
+    height: 70px;
+    input {
+      background-color: transparent !important;
+      color: #585756 !important;
+      padding-top: 9px;
+      font-family: "OpenSans_Bold";
+      font-size: $OPenIG-font-size-sm;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}

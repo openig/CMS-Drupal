@@ -624,7 +624,7 @@ function openig_preprocess_paragraph(&$variables){
 function openig_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id == 'openid_connect_login_form') {
     if (isset($form['openid_connect_client_openig_keycloak_login'])) {
-      $form['openid_connect_client_openig_keycloak_login']['#value'] = 'Se connecter';
+      $form['openid_connect_client_openig_keycloak_login']['#value'] = 'Mon compte';
     }
   }
 }
