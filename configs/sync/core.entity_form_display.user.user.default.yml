@@ -93,6 +93,7 @@ hidden:
   account: true
   contact: true
   field_desired_structure: true
+  field_phone: true
   langcode: true
   language: true
   timezone: true
