@@ -430,6 +430,10 @@ function openig_preprocess_block(&$variables){
     $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
   }
 
+  if ($variables['plugin_id'] == 'system_menu_block:adhesion') {
+    $variables['#cache']['max-age'] = 0;
+  }
+
 
 }
 
@@ -615,16 +619,5 @@ function openig_preprocess_paragraph(&$variables){
     }
     
     $variables['content']['field_type_de_contenu']['#prev_even_odd'] = '';
-  }
-}
-
-/**
- * Implements hook_form_alter().
- */
-function openig_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'openid_connect_login_form') {
-    if (isset($form['openid_connect_client_openig_keycloak_login'])) {
-      $form['openid_connect_client_openig_keycloak_login']['#value'] = 'Mon compte';
-    }
   }
 }
