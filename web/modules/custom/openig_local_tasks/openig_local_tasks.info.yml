@@ -1,0 +1,5 @@
+name: OPenIG local taksk
+type: module
+description: Customisation des onglets local tasks
+package: Custom
+core_version_requirement: ^10

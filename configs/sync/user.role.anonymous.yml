@@ -12,6 +12,7 @@ dependencies:
     - contact
     - content_moderation
     - eu_cookie_compliance
+    - field_permissions
     - filter
     - media
     - node
@@ -29,6 +30,10 @@ permissions:
   - 'access content'
   - 'access site-wide contact form'
   - 'access sitemap'
+  - 'create field_desired_structure'
+  - 'create field_firstname'
+  - 'create field_lastname'
+  - 'create field_phone'
   - 'create structure content'
   - 'display eu cookie compliance popup'
   - 'subscribe to newsletters'

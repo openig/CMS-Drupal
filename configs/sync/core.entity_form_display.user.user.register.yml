@@ -14,8 +14,6 @@ dependencies:
     - field.field.user.user.field_social_network
     - field.field.user.user.field_structure
   module:
-    - entity_reference_modal
-    - path
     - telephone
     - user
 _core:
@@ -31,19 +29,13 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_desired_structure:
-    type: entity_reference_modal
+    type: entity_reference_autocomplete
     weight: 4
     region: content
     settings:
-      add_new_button_title: +
-      modal_form_mode: modal
-      modal_width: 50%
-      modal_title: 'Ajouter une structure'
-      duplicate: false
-      search: false
       match_operator: CONTAINS
-      match_limit: '10'
-      size: '60'
+      match_limit: 10
+      size: 60
       placeholder: ''
     third_party_settings: {  }
   field_firstname:
@@ -69,12 +61,6 @@ content:
     settings:
       placeholder: ''
     third_party_settings: {  }
-  path:
-    type: path
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
   contact: true
   field_ca_member: true
@@ -84,5 +70,6 @@ hidden:
   field_structure: true
   langcode: true
   language: true
+  path: true
   simplenews: true
   timezone: true

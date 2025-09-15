@@ -1,0 +1,15 @@
+<?php 
+
+/**
+ * Implémente hook_local_tasks_alter().
+ */
+function openig_local_tasks_local_tasks_alter(&$local_tasks) {
+
+    // Modification du titre Modifier par Outils et compétences
+    $local_tasks['entity.user.edit_form']['title'] = 'Outils et compétences';
+
+    // Suppression de l'onglet Réinitialisez votre mot de passe
+    if (isset($local_tasks['user.pass'])) {
+        unset($local_tasks['user.pass']);
+    }
+}

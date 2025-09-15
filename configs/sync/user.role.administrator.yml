@@ -11,8 +11,8 @@ label: Administrateur
 weight: 3
 is_admin: true
 permissions:
-  - 'create field_contenu_sidebar'
-  - 'edit field_contenu_sidebar'
-  - 'edit own field_contenu_sidebar'
-  - 'view field_contenu_sidebar'
-  - 'view own field_contenu_sidebar'
+  - 'create field_firstname'
+  - 'edit field_firstname'
+  - 'edit own field_firstname'
+  - 'view field_firstname'
+  - 'view own field_firstname'

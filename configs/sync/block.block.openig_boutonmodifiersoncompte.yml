@@ -1,0 +1,41 @@
+uuid: b52d0c45-581d-413b-b1e3-31d31a52f59f
+langcode: fr
+status: true
+dependencies:
+  content:
+    - 'block_content:lien:ddc231c7-1ca6-408a-8157-8b114166e979'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - openig
+id: openig_boutonmodifiersoncompte
+theme: openig
+region: content
+weight: -36
+provider: null
+plugin: 'block_content:ddc231c7-1ca6-408a-8157-8b114166e979'
+settings:
+  id: 'block_content:ddc231c7-1ca6-408a-8157-8b114166e979'
+  label: 'Bouton modifier son compte'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '/user/*'
+  user_role:
+    id: user_role
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    roles:
+      authenticated: authenticated
+      content_editor: content_editor
+      administrator: administrator
+      adherent: adherent

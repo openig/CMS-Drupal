@@ -11,7 +11,7 @@ dependencies:
 id: openig_views_block_outils_competences
 theme: openig
 region: content
-weight: -2
+weight: -3
 provider: null
 plugin: 'views_block:terme_de_taxonomie_utilisateur-block_outils_competences'
 settings:

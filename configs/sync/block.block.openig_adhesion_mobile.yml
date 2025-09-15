@@ -12,7 +12,7 @@ dependencies:
 id: openig_adhesion_mobile
 theme: openig
 region: mobile_seconde_section
-weight: -31
+weight: -40
 provider: null
 plugin: 'system_menu_block:adhesion'
 settings:
