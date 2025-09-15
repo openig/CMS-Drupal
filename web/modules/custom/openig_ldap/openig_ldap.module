@@ -64,7 +64,7 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
     // dump( $account->get('field_structure') );
   
     $individual = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[individualAdhesion]');
-    if(isset($individual) && $individual !== null && $individual) {
+    if(isset($individual) && $individual !== null && $individual == "TRUE") {
         $structureCN = "openig-adherents-personnes-physiques";
     } else {
         // $structureCN = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]');
@@ -170,10 +170,10 @@ function openig_ldap_cron() {
                 //
                 $query = \Drupal::entityQuery('taxonomy_term')
                     ->condition('vid', 'dpt_intervention')
-                    ->condition('field_code_insee', $department)
+                    ->condition('field_code_insee', intval(substr($department,0,2)))
                     ->accessCheck(TRUE)
                     ->execute();
-                // if term dos not exists => no creation
+                // if term does not exists => no creation
                 if (!empty($query)) {
                     array_push($field_dpt_intervention, reset($query));
                 }
@@ -227,6 +227,11 @@ function openig_ldap_cron() {
         }
 
         // 
+        if(array_key_exists('adhesionStatus', $attributes) && $attributes['adhesionStatus'][0] == "TRUE") {
+	    $structure->set('field_crige_partner', 1);
+	} else {
+	    $structure->set('field_crige_partner', 0);
+	}
 
 
         $structure->set('moderation_state', 'published');
