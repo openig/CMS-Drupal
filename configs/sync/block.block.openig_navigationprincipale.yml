@@ -11,7 +11,7 @@ dependencies:
 id: openig_navigationprincipale
 theme: openig
 region: mobile_seconde_section
-weight: -27
+weight: -36
 provider: null
 plugin: 'system_menu_block:main'
 settings:

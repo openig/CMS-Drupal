@@ -149,6 +149,15 @@
     }
     .region-mobile-seconde-section{
         display: none;
+        div.block-openid-connect.block-openid-connect-login {
+            display: flex;
+            align-items: center;
+            form{
+                border-right: 4px solid $OPenIG-color_red;
+                padding-right: 1rem;
+                margin-right: 1rem;
+            }
+        }
     }
     .region-mobile-seconde-section.open{
         display: block;
@@ -224,9 +233,6 @@
             .navbar-nav{
                 flex-direction: row;
             }
-            border-right: 4px solid $OPenIG-color_red;
-            padding-right: 1rem;
-            margin-right: 1rem;
         }
         .block-system-menu-blockfaq{
             .nav-item{

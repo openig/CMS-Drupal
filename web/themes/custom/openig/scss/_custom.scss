@@ -2180,8 +2180,8 @@ form.user-register-form{
 }
 
 // Customisation du bouton "OPENIDConnect" dans le menu
-div.region-navigation-deuxieme-section {
-  div#block-openig-openidconnectlogin {
+div.region-navigation-deuxieme-section, div.region-mobile-seconde-section {
+  div.block-openid-connect.block-openid-connect-login {
     height: 70px;
     padding-top: 6px;
     form#openid-connect-login-form {
