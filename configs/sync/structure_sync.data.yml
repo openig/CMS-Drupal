@@ -11,7 +11,7 @@ blocks:
       body: {  }
       field_lien:
         -
-          uri: 'https://sso.openig.org/'
+          uri: 'https://sso.openig.org/realms/openig/account?referrer=drupal-dev&referrer_uri=https%3A%2F%2Fwww-dev.openig.org%2Fuser'
           title: 'Modifier son compte'
           options: {  }
   -
