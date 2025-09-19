@@ -12,4 +12,10 @@ function openig_local_tasks_local_tasks_alter(&$local_tasks) {
     if (isset($local_tasks['user.pass'])) {
         unset($local_tasks['user.pass']);
     }
+
+    // Suppression de l'onglet création de compte
+
+    if (isset($local_tasks['user.register'])) {
+        unset($local_tasks['user.register']);
+    }
 }
