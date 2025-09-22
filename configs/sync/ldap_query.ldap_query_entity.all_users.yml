@@ -6,8 +6,8 @@ id: all_users
 label: 'All users'
 server_id: ldap
 base_dn: 'ou=utilisateurs,dc=openig,dc=org'
-filter: objectClass=customUser
-attributes: ''
+filter: '(&(objectClass=customUser)(mail=*))'
+attributes: 'entryuuid,dn,uid,sn,mail,telephoneNumber,individualAdhesion,givenName,userValidationStatus,cn,bluesky,linkedin,facebook,instagram,github,memberOf'
 size_limit: 0
 time_limit: 0
 dereference: 0

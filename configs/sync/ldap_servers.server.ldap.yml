@@ -5,14 +5,14 @@ dependencies: {  }
 id: ldap
 label: LDAP
 type: openldap
-address: ldap
-port: 1389
+address: sso.openig.org
+port: 636
 timeout: 10
-encryption: none
+encryption: ssl
 weight: null
 bind_method: service_account
-binddn: 'cn=admin,dc=openig,dc=org'
-bindpw: adm!ldap
+binddn: 'cn=drupal,dc=openig,dc=org'
+bindpw: '6ayWe-~}7x3C5[cGQ;Q4'
 basedn:
   - 'ou=utilisateurs,dc=openig,dc=org'
 user_attr: uid

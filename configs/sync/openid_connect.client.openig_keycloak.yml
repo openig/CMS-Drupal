@@ -10,7 +10,7 @@ plugin: keycloak
 settings:
   debug: false
   client_id: drupal-dev
-  client_secret:
+  client_secret: UVa4XuzDiJTktZJOghAVOLQRDneGwWxi
   iss_allowed_domains: ''
   keycloak_base: 'https://sso.openig.org'
   keycloak_realm: openig
