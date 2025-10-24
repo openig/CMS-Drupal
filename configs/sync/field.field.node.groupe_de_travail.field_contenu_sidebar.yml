@@ -29,29 +29,8 @@ settings:
       type_de_contenu: type_de_contenu
     negate: 0
     target_bundles_drag_drop:
-      a_la_une:
-        weight: 22
-        enabled: false
-      a_savoir:
-        weight: 23
-        enabled: false
       accordeon:
         weight: -14
-        enabled: false
-      agenda:
-        weight: 21
-        enabled: false
-      bienvenue:
-        weight: 24
-        enabled: false
-      coup_de_projecteur:
-        weight: 25
-        enabled: false
-      fond_vert:
-        weight: 26
-        enabled: false
-      le_mot_du_president:
-        weight: 27
         enabled: false
       ligne_de_membres:
         weight: -13
@@ -62,20 +41,11 @@ settings:
       membres:
         weight: -12
         enabled: false
-      mois_et_annee:
-        weight: 31
-        enabled: false
       onglet_d_accordeon:
         weight: -11
         enabled: false
       picto_text:
         weight: -15
-        enabled: false
-      pictos_et_liens:
-        weight: 33
-        enabled: false
-      pictos_et_texte:
-        weight: 34
         enabled: false
       texte_dropdown:
         weight: -18
