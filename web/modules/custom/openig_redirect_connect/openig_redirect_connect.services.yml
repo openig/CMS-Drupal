@@ -1,0 +1,6 @@
+services:
+  openig_redirect_connect.request_subscriber:
+    class: Drupal\openig_redirect_connect\EventSubscriber\LoginPageRedirectSubscriber
+    arguments: ['@current_user']
+    tags:
+      - { name: event_subscriber }
