@@ -82,6 +82,7 @@ module:
   openig_ldap: 0
   openig_local_tasks: 0
   openig_newsletter: 0
+  openig_redirect_connect: 0
   openig_search: 0
   openig_sql_migrate: 0
   openig_webform: 0
