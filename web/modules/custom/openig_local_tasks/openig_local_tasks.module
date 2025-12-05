@@ -1,4 +1,5 @@
 <?php 
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implémente hook_local_tasks_alter().
@@ -17,5 +18,22 @@ function openig_local_tasks_local_tasks_alter(&$local_tasks) {
 
     if (isset($local_tasks['user.register'])) {
         unset($local_tasks['user.register']);
+    }
+}
+
+function openig_local_tasks_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    // Masquer le champ adresse e-mail dans l'édition d'un utilisateur
+    if (isset($form['account']['mail'])) {
+        $form['account']['mail']['#access'] = FALSE;
+    }
+
+    // Masquer le champ nom d’utilisateur dans l'édition d'un utilisateur
+    if (isset($form['account']['name'])) {
+        $form['account']['name']['#access'] = FALSE;
+    }
+
+    // Masquer le champ de mot de passe dans l'édition d'un utilisateur
+    if (isset($form['account']['pass'])) {
+        $form['account']['pass']['#access'] = FALSE;
     }
 }
