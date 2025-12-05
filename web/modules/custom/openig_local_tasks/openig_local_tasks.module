@@ -36,4 +36,7 @@ function openig_local_tasks_form_user_form_alter(&$form, FormStateInterface $for
     if (isset($form['account']['pass'])) {
         $form['account']['pass']['#access'] = FALSE;
     }
+    if (isset($form['account']['current_pass'])) {
+        $form['account']['current_pass']['#access'] = FALSE;
+    }
 }
