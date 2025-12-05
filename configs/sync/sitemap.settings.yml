@@ -23,6 +23,7 @@ plugins:
     settings:
       title: 'Navigation principale'
       show_disabled: false
+      menu_depth: 9
     id: 'menu:main'
     provider: sitemap
   'menu:faq':
@@ -32,6 +33,7 @@ plugins:
     settings:
       title: FAQ
       show_disabled: false
+      menu_depth: 9
     id: 'menu:faq'
     provider: sitemap
   'menu:footer':
@@ -41,6 +43,7 @@ plugins:
     settings:
       title: 'Pied de page'
       show_disabled: false
+      menu_depth: 9
     id: 'menu:footer'
     provider: sitemap
 include_css: true
