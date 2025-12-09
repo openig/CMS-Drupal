@@ -56,8 +56,6 @@ dependencies:
   - field_permissions
   - entity_reference_modal
   - content_moderation
-  - openig_user_notifications
-  - user_register_notify
   - sitemap
   - scheduler
   - paragraphs_summary

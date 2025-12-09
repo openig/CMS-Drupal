@@ -8,4 +8,9 @@ id: administrator
 label: Administrateur
 weight: 3
 is_admin: true
-permissions: {  }
+permissions:
+  - 'create field_firstname'
+  - 'edit field_firstname'
+  - 'edit own field_firstname'
+  - 'view field_firstname'
+  - 'view own field_firstname'

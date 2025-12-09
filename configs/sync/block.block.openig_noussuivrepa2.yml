@@ -2,10 +2,6 @@ uuid: 245a4d8c-3337-4de1-8377-969dd41210f6
 langcode: fr
 status: false
 dependencies:
-  content:
-    - 'block_content:pictos_et_liens:6062c441-63b9-4596-8ba7-c38aba2ff974'
-  module:
-    - block_content
   theme:
     - openig
 id: openig_noussuivrepa2

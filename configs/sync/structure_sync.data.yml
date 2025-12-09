@@ -1,6 +1,137 @@
 langcode: fr
 blocks:
   -
+    info: 'Bouton modifier son compte'
+    langcode: fr
+    uuid: ddc231c7-1ca6-408a-8157-8b114166e979
+    bundle: lien
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body: {  }
+      field_lien:
+        -
+          uri: 'https://sso.openig.org/realms/openig/account?referrer=drupal-dev&referrer_uri=https%3A%2F%2Fwww-dev.openig.org%2Fuser'
+          title: 'Modifier son compte'
+          options: {  }
+  -
+    info: 'Description accueil'
+    langcode: fr
+    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
+    bundle: texte_et_couleur
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>L'association loi 1901 <strong>OPenIG</strong> (Occitanie Pyrénées en Intelligence Géomatique) est la plateforme régionale d'information géographique en <strong>Occitanie</strong>, issue de l’élargissement en 2017 de l’association SIG L-R créée en 1994.&nbsp;</p><p>OPenIG mutualise outils et compétences pour ses adhérents, majoritairement des collectivités, en proposant des <strong>services de partage de données</strong> (via l’Infrastructure de Données Géographiques et Ouvertes, IDGO), d’expertise, d’animation de groupes de travail et d’accompagnement autour de la donnée géographique.&nbsp;</p>"
+          summary: ''
+          format: basic_html
+      field_couleur:
+        -
+          color: '#F0F0EF'
+          opacity: null
+      field_lien:
+        -
+          uri: 'https://www.openig.org/openig/presentation'
+          title: 'En savoir plus'
+          options: {  }
+  -
+    info: 'Vue service'
+    langcode: fr
+    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
+    bundle: picto_et_texte
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_picto_et_texte:
+        -
+          target_id: '6'
+          target_revision_id: '6'
+        -
+          target_id: '7'
+          target_revision_id: '7'
+  -
+    info: 'Vue groupe de travail'
+    langcode: fr
+    uuid: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
+    bundle: picto_et_texte
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_picto_et_texte:
+        -
+          target_id: '2'
+          target_revision_id: '2'
+        -
+          target_id: '1'
+          target_revision_id: '1'
+  -
+    info: "En savoir plus sur l'adhésion"
+    langcode: fr
+    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
+    bundle: lien
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
+          summary: ''
+          format: full_html
+      field_lien:
+        -
+          uri: 'internal:/openig/pourquoi-adherer'
+          title: "En savoir plus sur l'adhésion"
+          options: {  }
+  -
+    info: 'La newsletter'
+    langcode: fr
+    uuid: 71468847-678d-426c-83da-d1243eb1a749
+    bundle: bloc_newsletter
+    revision_id: null
+    rev_id_current: null
+    fields:
+      body:
+        -
+          value: "<p>Restez connecté(e) avec notre actualité en vous abonnant à notre newsletter ! Recevez régulièrement des informations sur les événements, webinaires et actualités d'OPenIG et de nos partenaires, ainsi que les nouveaux services que nous mettons à votre disposition.</p>"
+          summary: ''
+          format: basic_html
+      field_image:
+        -
+          target_id: '541'
+          alt: news
+          title: ''
+          width: '1280'
+          height: '720'
+      field_lien:
+        -
+          uri: 'internal:/'
+          title: 'Voir la dernière newsletter'
+          options: {  }
+      field_picto:
+        -
+          target_id: '67'
+          alt: Journal
+          title: ''
+          width: '115'
+          height: '103'
+  -
+    info: 'Image en bas de page mobile'
+    langcode: fr
+    uuid: 4255c696-6130-4b29-83a6-a1aeb6341d14
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '368'
+          alt: mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
     info: 'Newsletter - Nous suivre'
     langcode: fr
     uuid: a8799922-f4bb-4f9e-9e5c-5f1c497817b8
@@ -10,11 +141,26 @@ blocks:
     fields:
       field_picto_et_lien:
         -
-          target_id: '245'
-          target_revision_id: '795'
+          target_id: '177'
+          target_revision_id: '877'
         -
-          target_id: '246'
-          target_revision_id: '796'
+          target_id: '178'
+          target_revision_id: '878'
+  -
+    info: 'Newsletter - Logo '
+    langcode: fr
+    uuid: 2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
+        -
+          target_id: '365'
+          alt: 'Occitanie Pyrénées en Intelligence Géomatique'
+          title: ''
+          width: '93'
+          height: '95'
   -
     info: 'Newsletter - Menu footer'
     langcode: fr
@@ -25,7 +171,7 @@ blocks:
     fields:
       field_lien:
         -
-          uri: 'entity:node/12'
+          uri: 'entity:node/13'
           title: 'Mentions légales'
           options: {  }
   -
@@ -41,21 +187,6 @@ blocks:
           value: '<p><strong>Au service de vos territoires en Occitanie</strong></p>'
           summary: ''
           format: basic_html
-  -
-    info: 'Newsletter - Logo '
-    langcode: fr
-    uuid: 2c98cbdb-2fd1-4fba-9ba9-7c9a0d70aff0
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '386'
-          alt: OPenIG
-          title: ''
-          width: '93'
-          height: '95'
   -
     info: 'Message de redirection vers le CKAN'
     langcode: fr
@@ -92,39 +223,6 @@ blocks:
           title: 'Obtenir une simulation'
           options: {  }
   -
-    info: 'Image accueil'
-    langcode: fr
-    uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '33'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
-  -
-    info: "En savoir plus sur l'adhésion"
-    langcode: fr
-    uuid: 04cf00ae-6b51-4aeb-8b25-b764c80e94aa
-    bundle: lien
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: "<p>Adhérer pour accéder à l'intégralité du contenu</p>"
-          summary: ''
-          format: full_html
-      field_lien:
-        -
-          uri: 'entity:node/36'
-          title: "En savoir plus sur l'adhésion"
-          options: {  }
-  -
     info: 'Adresse et contact'
     langcode: fr
     uuid: 062b31d8-76b5-4710-91ac-088969c978c7
@@ -140,25 +238,14 @@ blocks:
       field_email:
         -
           value: contact@openig.org
-      field_lien: {  }
+      field_lien:
+        -
+          uri: 'https://www.openstreetmap.org/#map=19/43.64530/3.87675&layers=N'
+          title: 'Venir nous voir'
+          options: {  }
       field_telephone:
         -
           value: '04 67 55 86 54'
-  -
-    info: 'Image en bas de page mobile'
-    langcode: fr
-    uuid: 4255c696-6130-4b29-83a6-a1aeb6341d14
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '112'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
   -
     info: 'Image en haut de page mobile'
     langcode: fr
@@ -169,7 +256,7 @@ blocks:
     fields:
       field_image:
         -
-          target_id: '111'
+          target_id: '69'
           alt: mesh
           title: ''
           width: '64'
@@ -188,37 +275,23 @@ blocks:
           summary: ''
           format: basic_html
   -
-    info: 'La newsletter'
+    info: "Actions dans l'association"
     langcode: fr
-    uuid: 71468847-678d-426c-83da-d1243eb1a749
-    bundle: bloc_newsletter
+    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
+    bundle: taxonomies
     revision_id: null
     rev_id_current: null
     fields:
-      body:
+      body: {  }
+      field_taxonomie:
         -
-          value: '<p>eu. quis ante nisi Nullam ipsum Lorem vitae vestibulum sollicitudin vestibulum ut vel vestibulum dignissim laoreet scelerisque. non elit. eu. tortor vel at bibendum nisi nisi tortor a tristique. ut vel Donec adipiscing mauris fringilla. nisi sit tristique. Morbi eu. fermentum non at lacinia Maecenas ligula Sed consectetur fringilla.</p>'
-          summary: ''
-          format: basic_html
-      field_image:
+          target_id: '1'
         -
-          target_id: '104'
-          alt: 'Groupe de personnes'
-          title: ''
-          width: '2034'
-          height: '1016'
-      field_lien:
+          target_id: '2'
         -
-          uri: 'internal:/'
-          title: 'Voir la dernière newsletter'
-          options: {  }
-      field_picto:
+          target_id: '3'
         -
-          target_id: '103'
-          alt: Journal
-          title: ''
-          width: '115'
-          height: '103'
+          target_id: '4'
   -
     info: "Phrase d'accroche header"
     langcode: fr
@@ -237,91 +310,6 @@ blocks:
           color: '#F2F6E7'
           opacity: null
       field_lien: {  }
-  -
-    info: "Phrase d'accroche footer"
-    langcode: fr
-    uuid: a5776ac5-a497-4338-ad15-3db8d5f724ba
-    bundle: basic
-    revision_id: null
-    rev_id_current: null
-    fields:
-      body:
-        -
-          value: '<p>Occitanie Pyrénées en Intelligence Géomatique</p>'
-          summary: ''
-          format: basic_html
-  -
-    info: 'Vue service'
-    langcode: fr
-    uuid: 82388b6f-60e8-4c04-acd8-414f10a49a61
-    bundle: picto_et_texte
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_picto_et_texte:
-        -
-          target_id: '190'
-          target_revision_id: '419'
-        -
-          target_id: '191'
-          target_revision_id: '420'
-        -
-          target_id: '192'
-          target_revision_id: '421'
-        -
-          target_id: '193'
-          target_revision_id: '422'
-  -
-    info: 'Image en bas de page'
-    langcode: fr
-    uuid: 555f7a44-f502-42f6-be3c-da8191356402
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '19'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
-  -
-    info: 'Vue groupe de travail'
-    langcode: fr
-    uuid: 8596cb8f-b866-4cd3-9127-7cab0ef7df72
-    bundle: picto_et_texte
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_picto_et_texte:
-        -
-          target_id: '52'
-          target_revision_id: '99'
-        -
-          target_id: '53'
-          target_revision_id: '100'
-        -
-          target_id: '54'
-          target_revision_id: '101'
-        -
-          target_id: '55'
-          target_revision_id: '102'
-  -
-    info: 'Image en haut de page'
-    langcode: fr
-    uuid: cc9d0053-0d6f-4f30-aa51-bacb9710c2a3
-    bundle: image
-    revision_id: null
-    rev_id_current: null
-    fields:
-      field_image:
-        -
-          target_id: '16'
-          alt: mesh
-          title: ''
-          width: '64'
-          height: '64'
   -
     info: 'Communiquer / Mutualiser'
     langcode: fr
@@ -350,23 +338,50 @@ blocks:
           title: 'Voir la dernière newsletter'
           options: {  }
   -
-    info: "Actions dans l'association"
+    info: 'Image en haut de page'
     langcode: fr
-    uuid: d1dbc935-9685-453f-b144-b6b413e092d3
-    bundle: taxonomies
+    uuid: cc9d0053-0d6f-4f30-aa51-bacb9710c2a3
+    bundle: image
     revision_id: null
     rev_id_current: null
     fields:
-      body: {  }
-      field_taxonomie:
+      field_image:
         -
-          target_id: '5'
+          target_id: '4'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Image accueil'
+    langcode: fr
+    uuid: a6cc63d2-2318-4bb8-a541-90b04b51f360
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
         -
-          target_id: '6'
+          target_id: '3'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
+  -
+    info: 'Image en bas de page'
+    langcode: fr
+    uuid: 555f7a44-f502-42f6-be3c-da8191356402
+    bundle: image
+    revision_id: null
+    rev_id_current: null
+    fields:
+      field_image:
         -
-          target_id: '7'
-        -
-          target_id: '8'
+          target_id: '2'
+          alt: Mesh
+          title: ''
+          width: '64'
+          height: '64'
   -
     info: OpenStreetMap
     langcode: fr
@@ -381,33 +396,24 @@ blocks:
           summary: ''
           format: full_html
   -
-    info: 'Description accueil'
+    info: "Phrase d'accroche footer"
     langcode: fr
-    uuid: 8c419593-e0f3-47c9-b2e9-4118e5b46a0f
-    bundle: texte_et_couleur
+    uuid: a5776ac5-a497-4338-ad15-3db8d5f724ba
+    bundle: basic
     revision_id: null
     rev_id_current: null
     fields:
       body:
         -
-          value: '<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>'
+          value: '<p>Occitanie Pyrénées en Intelligence Géomatique</p>'
           summary: ''
           format: basic_html
-      field_couleur:
-        -
-          color: '#F0F0EF'
-          opacity: null
-      field_lien:
-        -
-          uri: 'internal:/'
-          title: 'En savoir plus'
-          options: {  }
 menus:
   -
     menu_name: footer
     title: 'Mentions légales'
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/mentions-legales'
     link_title: ''
     description: null
     enabled: true
@@ -420,7 +426,7 @@ menus:
     menu_name: footer
     title: 'Plan du site'
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/sitemap'
     link_title: ''
     description: null
     enabled: true
@@ -433,7 +439,7 @@ menus:
     menu_name: footer
     title: RGPD
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/rgpd'
     link_title: ''
     description: null
     enabled: true
@@ -446,7 +452,7 @@ menus:
     menu_name: footer
     title: CGU
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/cgu'
     link_title: ''
     description: null
     enabled: true
@@ -462,56 +468,17 @@ menus:
     uri: 'route:<nolink>'
     link_title: ''
     description: null
-    enabled: true
+    enabled: false
     expanded: false
     weight: -48
     langcode: fr
     uuid: cc1f90e4-b5ef-4cd0-9482-4e876ccbb523
     options: {  }
   -
-    menu_name: adhesion
-    title: 'Pourquoi adhérer'
-    parent: null
-    uri: 'route:<nolink>'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -50
-    langcode: fr
-    uuid: b20fa811-542b-4567-8296-e0cc9ffc0874
-    options: {  }
-  -
-    menu_name: adhesion
-    title: 'Mon compte'
-    parent: null
-    uri: 'route:<nolink>'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -49
-    langcode: fr
-    uuid: db9dd5ac-fdad-4d99-9771-f62f88e71967
-    options: {  }
-  -
-    menu_name: adhesion
-    title: 'Nom utilisateur'
-    parent: null
-    uri: 'route:<nolink>'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: -48
-    langcode: fr
-    uuid: 1d617429-90b2-45d9-ad43-8e2ab04b0d94
-    options: {  }
-  -
     menu_name: naviguer
     title: OPenIG
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'entity:node/1'
     link_title: ''
     description: null
     enabled: true
@@ -524,7 +491,7 @@ menus:
     menu_name: naviguer
     title: Annuaire
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/annuaire'
     link_title: ''
     description: null
     enabled: true
@@ -545,12 +512,16 @@ menus:
     weight: -48
     langcode: fr
     uuid: f18e8d78-a874-48a1-b73d-c04a48e3cffc
-    options: {  }
+    options:
+      attributes:
+        class:
+          - ckan
+        target: _blank
   -
     menu_name: naviguer
     title: 'Groupes de travail'
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-groupes-de-travail'
     link_title: ''
     description: null
     enabled: true
@@ -563,7 +534,7 @@ menus:
     menu_name: naviguer
     title: Services
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-services'
     link_title: ''
     description: null
     enabled: true
@@ -576,7 +547,7 @@ menus:
     menu_name: naviguer
     title: Agenda
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/l-agenda'
     link_title: ''
     description: null
     enabled: true
@@ -589,7 +560,7 @@ menus:
     menu_name: naviguer
     title: Actualités
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-actualites'
     link_title: ''
     description: null
     enabled: true
@@ -598,6 +569,74 @@ menus:
     langcode: fr
     uuid: df23a192-bec0-42d2-a28b-ec8ce64c75ba
     options: {  }
+  -
+    menu_name: faq
+    title: FAQ
+    parent: null
+    uri: 'entity:node/7'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: fr
+    uuid: 676720fd-9c04-441d-9ab1-f4efdf169952
+    options: {  }
+  -
+    menu_name: adhesion
+    title: 'Pourquoi adhérer'
+    parent: null
+    uri: 'entity:node/6'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -50
+    langcode: fr
+    uuid: b20fa811-542b-4567-8296-e0cc9ffc0874
+    options: {  }
+  -
+    menu_name: adhesion
+    title: 'Mon compte'
+    parent: null
+    uri: 'internal:/user/login'
+    link_title: ''
+    description: null
+    enabled: false
+    expanded: false
+    weight: -49
+    langcode: fr
+    uuid: db9dd5ac-fdad-4d99-9771-f62f88e71967
+    options: {  }
+  -
+    menu_name: adhesion
+    title: 'Nom utilisateur'
+    parent: null
+    uri: 'internal:/user'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -48
+    langcode: fr
+    uuid: 1d617429-90b2-45d9-ad43-8e2ab04b0d94
+    options: {  }
+  -
+    menu_name: adhesion
+    title: 'Se déconnecter'
+    parent: null
+    uri: 'internal:/user/logout'
+    link_title: ''
+    description: 'Se déconnecter'
+    enabled: true
+    expanded: false
+    weight: 0
+    langcode: fr
+    uuid: 7212f7ca-d86e-4966-90e6-37caaac9914a
+    options:
+      attributes:
+        class:
+          - deconnexion
   -
     menu_name: main
     title: OPenIG
@@ -615,7 +654,7 @@ menus:
     menu_name: main
     title: "Présentation d'OPenIG"
     parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
-    uri: 'entity:node/10'
+    uri: 'entity:node/1'
     link_title: ''
     description: null
     enabled: true
@@ -628,7 +667,7 @@ menus:
     menu_name: main
     title: 'Réseaux et partenaires'
     parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
-    uri: 'route:<nolink>'
+    uri: 'entity:node/2'
     link_title: ''
     description: null
     enabled: true
@@ -641,7 +680,7 @@ menus:
     menu_name: main
     title: "L'association"
     parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
-    uri: 'route:<nolink>'
+    uri: 'entity:node/3'
     link_title: ''
     description: null
     enabled: true
@@ -654,7 +693,7 @@ menus:
     menu_name: main
     title: "Les adhérents d'OPenIG"
     parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
-    uri: 'route:<nolink>'
+    uri: 'entity:node/4'
     link_title: ''
     description: null
     enabled: true
@@ -667,20 +706,33 @@ menus:
     menu_name: main
     title: "L'équipe"
     parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
-    uri: 'route:<nolink>'
+    uri: 'entity:node/5'
+    link_title: ''
+    description: null
+    enabled: true
+    expanded: false
+    weight: -45
+    langcode: fr
+    uuid: 9fbd32ea-a578-4b17-abbc-3366c58a23dc
+    options: {  }
+  -
+    menu_name: main
+    title: 'Pourquoi adhérer'
+    parent: 'menu_link_content:ac5b7b14-b943-464e-bc9f-77e35bd4eeb6'
+    uri: 'entity:node/6'
     link_title: ''
     description: null
     enabled: true
     expanded: false
     weight: -46
     langcode: fr
-    uuid: 9fbd32ea-a578-4b17-abbc-3366c58a23dc
+    uuid: f81deb64-389c-4ed3-8808-ae1aa1325d65
     options: {  }
   -
     menu_name: main
     title: Annuaire
     parent: null
-    uri: 'entity:node/11'
+    uri: 'internal:/annuaire'
     link_title: ''
     description: null
     enabled: true
@@ -701,12 +753,16 @@ menus:
     weight: -47
     langcode: fr
     uuid: d9144fe6-69e0-4976-819f-6ec224236685
-    options: {  }
+    options:
+      attributes:
+        class:
+          - ckan
+        target: _blank
   -
     menu_name: main
-    title: 'Groupe de travail'
+    title: 'Groupes de travail'
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-groupes-de-travail'
     link_title: ''
     description: null
     enabled: true
@@ -719,7 +775,7 @@ menus:
     menu_name: main
     title: Services
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-services'
     link_title: ''
     description: null
     enabled: true
@@ -732,7 +788,7 @@ menus:
     menu_name: main
     title: Agenda
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/l-agenda'
     link_title: ''
     description: null
     enabled: true
@@ -745,7 +801,7 @@ menus:
     menu_name: main
     title: Actualités
     parent: null
-    uri: 'route:<nolink>'
+    uri: 'internal:/les-actualites'
     link_title: ''
     description: null
     enabled: true
@@ -753,19 +809,6 @@ menus:
     weight: -43
     langcode: fr
     uuid: 02a94da8-d7ba-4de2-a0bc-1a486ad102be
-    options: {  }
-  -
-    menu_name: faq
-    title: FAQ
-    parent: null
-    uri: 'route:<nolink>'
-    link_title: ''
-    description: null
-    enabled: true
-    expanded: false
-    weight: 0
-    langcode: fr
-    uuid: 676720fd-9c04-441d-9ab1-f4efdf169952
     options: {  }
 taxonomies:
   actions_dans_l_association:

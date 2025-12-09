@@ -1,0 +1,46 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+{% if element['#name'] == 'field_desired_structure[0][target_id]' %}
+  <div class="structure-souhaitee">
+    {% if attributes.hasClass('button') and not attributes.hasClass('field-add-more-submit') and not attributes.hasClass('btn') %}
+      {%
+        set classes = [
+          'btn',
+          attributes.hasClass('button--danger') ? 'btn-danger' : '',
+          (not attributes.hasClass('media-library-item__remove') and not attributes.hasClass('button--danger')) ? 'btn-primary' : ''
+        ]
+      %}
+      <input{{ attributes.addClass(classes) }} />
+    {% else %}
+      <input{{ attributes }} />
+    {% endif %}
+    {{ children }}
+    <div class="add-structure">
+      <a href="https://sso.openig.org/formulaires/creer-structure.html" target="_blank">+</a>
+    </div>
+  </div>
+{% else %}
+  {% if attributes.hasClass('button') and not attributes.hasClass('field-add-more-submit') and not attributes.hasClass('btn') %}
+    {%
+      set classes = [
+        'btn',
+        attributes.hasClass('button--danger') ? 'btn-danger' : '',
+        (not attributes.hasClass('media-library-item__remove') and not attributes.hasClass('button--danger')) ? 'btn-primary' : ''
+      ]
+    %}
+    <input{{ attributes.addClass(classes) }} />
+  {% else %}
+    <input{{ attributes }} />
+  {% endif %}
+  {{ children }}
+{% endif %}

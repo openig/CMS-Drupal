@@ -1,0 +1,33 @@
+uuid: 87f7402f-66e2-4dce-981d-abdc45ee1cf6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - keycloak
+id: openig_keycloak
+label: 'OpenIG Keycloak'
+plugin: keycloak
+settings:
+  debug: false
+  client_id: drupal-dev
+  client_secret: null
+  iss_allowed_domains: ''
+  keycloak_base: 'https://sso.openig.org'
+  keycloak_realm: openig
+  kc_idp_hint: ''
+  userinfo_update_email: false
+  keycloak_i18n:
+    enabled: false
+    mapping: {  }
+  keycloak_groups:
+    enabled: false
+    claim_name: groups
+    split_groups: false
+    split_groups_limit: false
+    rules: {  }
+  keycloak_sso: true
+  keycloak_sign_out: true
+  check_session:
+    enabled: true
+    interval: 2
+  keycloak_locale_param: kc_locale

@@ -25,7 +25,6 @@ module:
   config_translation: 0
   contact: 0
   content_moderation: 0
-  content_moderation_notifications: 0
   contextual: 0
   custom_breadcrumbs: 0
   custom_view_filters: 0
@@ -54,7 +53,12 @@ module:
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
+  keycloak: 0
   language: 0
+  ldap_authentication: 0
+  ldap_query: 0
+  ldap_servers: 0
+  ldap_user: 0
   link: 0
   locale: 0
   mailer_transport: 0
@@ -71,13 +75,16 @@ module:
   migrate_tools: 0
   node: 0
   nodeaccess: 0
+  openid_connect: 0
   openig_adhesion: 0
   openig_config: 0
   openig_filter_annuaire: 0
+  openig_ldap: 0
+  openig_local_tasks: 0
   openig_newsletter: 0
+  openig_redirect_connect: 0
   openig_search: 0
   openig_sql_migrate: 0
-  openig_user_notifications: 0
   openig_webform: 0
   options: 0
   page_cache: 0
@@ -113,7 +120,6 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
-  user_register_notify: 0
   video_embed_field: 0
   video_embed_peertube: 0
   views_fieldsets: 0
@@ -123,6 +129,7 @@ module:
   weight: 0
   workflows: 0
   pathauto: 1
+  externalauth: 10
   views: 10
   paragraphs: 11
   standard: 1000

@@ -1,0 +1,14 @@
+uuid: 58e7d569-56e4-4646-b8e3-93dc1ec11052
+langcode: fr
+status: true
+dependencies: {  }
+id: structures_with_logo
+label: 'Structures with Logo'
+server_id: ldap
+base_dn: 'ou=structures,dc=openig,dc=org'
+filter: '(&(objectClass=structureAsso)(structureValidationStatus=TRUE)(LogoFile=*))'
+attributes: ''
+size_limit: 0
+time_limit: 0
+dereference: 0
+scope: sub

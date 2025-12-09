@@ -1,0 +1,243 @@
+<?php
+
+use Drupal\user\UserInterface;
+use Drupal\simplenews\Entity\Subscriber;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\Ldap\Entry;
+
+function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $entry, array $context) {
+
+    /** @var \Drupal\ldap_servers\Processor\TokenProcessor $tokenProcessor */
+    $tokenProcessor = \Drupal::service('ldap.token_processor');
+
+    // dump($account);
+    // $value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[sn]');
+    // $account->set('field_phone', "02 XX XX XX XX");
+
+    // 1 - synchro des réseaux sociaux
+    $platforms = \Drupal::service('plugin.manager.social_media_links.platform')->getPlatforms();
+    $platform_settings = $account->get('field_social_network')->getFieldDefinition()->getSetting('platforms');
+    //
+    $new_values = array();
+    $new_values[] = [ 
+      "platform" => null,
+      "value" => null,
+      "platform_values" => [
+/*
+        "instagram" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[instagram]')
+        ],
+        "facebook" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[facebook]')
+        ],
+        "linkedin" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[linkedin]')
+        ],
+        "twitter" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[twitter]')
+        ],
+        "github" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[github]')
+        ],
+        "bluesky" => [
+          "value" => $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[bluesky]')
+        ]
+*/
+      ]
+    ];
+    foreach ($platforms as $platform_id => $platform) {
+        if (isset($platform_settings[$platform_id]['enabled']) && $platform_settings[$platform_id]['enabled']) {
+            $ldap_value = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '['.$platform_id.']');
+            if(strpos($ldap_value, $platform['urlPrefix']) === 0) {
+                $ldap_value = substr($ldap_value, strlen($platform['urlPrefix']));
+            }
+            $new_values[0]["platform_values"][$platform_id] = ["value" => $ldap_value];
+        }
+    }
+    $account->set('field_social_network', $new_values);
+ 
+ 
+    // 2 - synchro de la structure d'appartenance
+    // ! si adhésionIndividuelle activée -> rattacher à la structure d'adhésion individuelle : openig-adherents-personnes-physiques
+    //
+    // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[memberOf]') );
+    // dump( $account->get('field_structure') );
+  
+    $individual = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[individualAdhesion]');
+    if(isset($individual) && $individual !== null && $individual == "TRUE") {
+        $structureCN = "openig-adherents-personnes-physiques";
+    } else {
+        // $structureCN = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[structureUid]');
+        $structureCN = false;
+        $structure = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[memberOf]');
+        if( preg_match('/^cn=(.*),ou=structures,dc=openig,dc=org$/', $structure, $matches) ) {
+            if(array_key_exists(1,$matches)) $structureCN = $matches[1];
+        }
+    }
+  
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $structureCN]);
+    if(!empty($structures)) {
+        // associate user with structure
+        $account->set('field_structure', array_values($structures)[0]->nid->value );
+    } else {
+        // else delete structure association
+        $account->set('field_structure', null );
+    }
+
+  // 3 - rattachement à la newsletter (si création d'un nouveau user)
+  if ($account->isNew()) {
+    // Create subscriber
+    // $subscriber = Subscriber::loadByUid($account->id());
+    $subscriber = Subscriber::loadByMail($account->getEmail(), 'create');
+    $subscriber->fillFromAccount($account)->save();
+    
+    // Associate subscriber to newsletter
+    $subscriber->subscribe('default');
+    $subscriber->save();
+  }
+
+  // die();
+}
+
+function openig_ldap_cron() {
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+    $query = \Drupal::service('ldap.query');
+    $query->load('all_structures');
+    $query->execute();
+    $results = $query->getRawResults();
+    foreach($results as $ldap_structure) {
+        $attributes = $ldap_structure->getAttributes();
+//        dump($attributes);
+    
+        $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
+        if(!empty($structures)) {
+            // update structure
+            $structure = reset($structures);
+        } else {
+            // else create structure
+            $structure = $storage->create(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
+        }
+        
+        $structure->set('title', array_key_exists('o', $attributes) ? $attributes['o'][0] : "");
+
+        $structure->set('field_address', array_key_exists('postalAddress', $attributes) ? $attributes['postalAddress'][0] : null);
+        $structure->set('field_postcode', array_key_exists('postalCode', $attributes) ? $attributes['postalCode'][0] : null);
+        $structure->set('field_city', array_key_exists('l', $attributes) ? $attributes['l'][0] : null);
+
+        $structure->set('field_phone', array_key_exists('telephoneNumber', $attributes) ? $attributes['telephoneNumber'][0] : null);
+        $structure->set('field_email', array_key_exists('mail', $attributes) ? $attributes['mail'][0] : null);
+        $structure->set('field_website', array_key_exists('siteWeb', $attributes) ? $attributes['siteWeb'][0] : null);
+        $structure->set('field_siret', array_key_exists('businessCategory', $attributes) ? $attributes['businessCategory'][0] : null);
+
+        $structure->set('body', array_key_exists('description', $attributes) ? $attributes['description'][0] : null);
+
+        // Taxonomie typology
+        if(array_key_exists('typology', $attributes) && $attributes['typology'][0] !== null) {
+
+            $query = \Drupal::entityQuery('taxonomy_term')
+                ->condition('vid', 'typologie_de_structure')
+                ->condition('name', $attributes['typology'][0])
+                ->accessCheck(TRUE)
+                ->execute();
+
+            $term_id = null;
+            if (!empty($query)) {
+                $term_id = reset($query);
+            } else {
+                // create taxonomy
+                $term_data = [
+                    'vid' => 'typologie_de_structure',
+                    'name' => $attributes['typology'][0],
+                ];
+                $term = Term::create($term_data);
+                $term->save();
+                $term_id = $term->id();
+            }
+            $structure->set('field_typologie_structure', [$term_id]);
+        } else {
+            // dump('no term');
+            $structure->set('field_typologie_structure', null);
+        }
+
+
+        // Taxonomie dpt intervention (multivalué)
+        // $structure->set('field_dpt_intervention', $attributes['departements'][0]);
+        if(array_key_exists('departments', $attributes) && $attributes['departments'][0] !== null) {
+            $field_dpt_intervention = [];
+            foreach( $attributes['departments'] as $department ) {
+                //
+                $query = \Drupal::entityQuery('taxonomy_term')
+                    ->condition('vid', 'dpt_intervention')
+                    ->condition('field_code_insee', intval(substr($department,0,2)))
+                    ->accessCheck(TRUE)
+                    ->execute();
+                // if term does not exists => no creation
+                if (!empty($query)) {
+                    array_push($field_dpt_intervention, reset($query));
+                }
+            }
+            $structure->set('field_dpt_intervention', $field_dpt_intervention);
+        } else {
+            $structure->set('field_dpt_intervention', null);
+        }
+
+        // Fichier image -> compare base64 of current with LDAP value
+        // $structure->set('field_image', $attributes['logoFile'][0]);
+
+        if(array_key_exists('logoFile', $attributes) && $attributes['logoFile'][0] !== null) {
+       
+            $base64 = false;
+            if($structure->hasField('field_image') && $structure->get('field_image')->getValue()) {
+                $file_entity = $structure->get('field_image')[0]->entity;
+                if($file_entity) {
+                    $file_uri = $file_entity->getFileUri();
+                    $file_path = \Drupal::service('file_system')->realpath($file_uri);
+                    if (file_exists($file_path)) {
+                        $image_data = file_get_contents($file_path);
+                        $mime_type = $file_entity->getMimeType();
+                        $base64 = base64_encode($image_data);
+                    }
+                }
+            }
+                
+            // update only if not same image
+            if($attributes['logoFile'][0] != $base64) {
+                $binary_image = base64_decode($attributes['logoFile'][0]);
+
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $mimeType = $finfo->buffer($binary_image);
+                $extension = explode('/', $mimeType )[1];
+
+                // Create file URI
+                $file_uri = 'public://' . $attributes['cn'][0].".".$extension;
+                $file = \Drupal::service('file.repository')->writeData($binary_image, $file_uri, \Drupal\Core\File\FileSystemInterface::EXISTS_RENAME);
+
+                // Associate with node
+                $structure->set('field_image', [
+                    'target_id' => $file->id(),
+                    'alt' => '',
+                    'title' => '',
+                ]);
+            }
+
+        } else {
+            $structure->set('field_image', null);
+        }
+
+        // 
+        if(array_key_exists('adhesionStatus', $attributes) && $attributes['adhesionStatus'][0] == "TRUE") {
+	    $structure->set('field_crige_partner', 1);
+	} else {
+	    $structure->set('field_crige_partner', 0);
+	}
+
+
+        $structure->set('moderation_state', 'published');
+        $structure->setPublished(); // $structure->set('status', 1);
+        $structure->save();
+        
+    }
+}
+

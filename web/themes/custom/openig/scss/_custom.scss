@@ -1668,6 +1668,27 @@ form.user-register-form{
     .description{
         font-size: $OPenIG-font-size-xs;
     }
+    .structure-souhaitee{
+        display: flex;
+        .add-structure{
+            background-color: $OPenIG-color_blue;
+            color: white;
+            border-radius: 0.375rem;
+            border: none;
+            width: 40px;
+            height: 40px;
+            a{
+                padding: 0 .75rem;
+                color: white;
+                font-size: 26px;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
+    }
 }
 
 .path-user .ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
@@ -1743,7 +1764,47 @@ form.user-register-form{
         .description{
             font-size: $OPenIG-font-size-xs;
         }
+        .edit-compte{
+            background-color: $OPenIG-color_blue;
+            border-radius: 0.375rem;
+            border: none;
+            width: fit-content;
+            float: right;
+            a{
+                padding: 0.375rem .75rem;
+                color: white;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                display: block;
+                text-align: center;
+                font-weight: 600;
+                font-family: 'Exo_semiBold';
+            }
+        }
     }
+
+    #block-openig-boutonmodifiersoncompte{
+        background-color: $OPenIG-color_blue;
+        border-radius: 0.375rem;
+        border: none;
+        width: fit-content;
+        margin-left: 150px;
+        position: relative;
+        margin-top: -20px;
+        a{
+            padding: 0.375rem .75rem;
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-align: center;
+            font-weight: 600;
+            font-family: 'Exo_semiBold';
+        }
+    }
+   
     .change-pwd-form{
         background-color: $OPenIG-color_white;
         width: 60%;
@@ -1768,6 +1829,37 @@ form.user-register-form{
         }
         .confirm-parent, .password-parent{
             max-width: unset;
+        }
+    }
+    .buttons-login{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 75px;
+        flex-wrap: wrap;
+        .container-login{
+            background-color: #f8f8f8; 
+            padding:50px;
+            margin-bottom: 20px;
+        }
+        div.button-login{
+            background-color: $OPenIG-color_blue;
+            border-radius: 0.375rem;
+            border: none;
+            width: fit-content;
+            height: fit-content;
+            position: relative;
+            a{
+                padding: 0.375rem .75rem;
+                color: white;
+                text-decoration: none;
+                width: 100%;
+                height: 100%;
+                display: block;
+                text-align: center;
+                font-weight: 600;
+                font-family: 'Exo_semiBold';
+            }
         }
     }
 }
@@ -2085,4 +2177,28 @@ form.user-register-form{
           }
         }
     }
+}
+
+// Customisation du bouton "OPENIDConnect" dans le menu
+div.region-navigation-deuxieme-section, div.region-mobile-seconde-section{
+  div.block-openid-connect.block-openid-connect-login {
+    height: 70px;
+    padding-top: 6px;
+    form#openid-connect-login-form {
+      div::before{
+        content: '|';
+        //margin-top: 7px;
+        color: $OPenIG-color_red;
+      }
+    }
+    input {
+      background-color: transparent !important;
+      color: #585756 !important;
+      padding-top: 3px;
+      font-family: "OpenSans_Bold";
+      font-size: $OPenIG-font-size-sm;
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
 }

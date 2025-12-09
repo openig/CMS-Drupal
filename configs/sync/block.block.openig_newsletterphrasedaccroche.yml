@@ -12,7 +12,7 @@ dependencies:
 id: openig_newsletterphrasedaccroche
 theme: openig
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: 'block_content:584be301-e7d3-4f75-9b65-493ec95ac00a'
 settings:
