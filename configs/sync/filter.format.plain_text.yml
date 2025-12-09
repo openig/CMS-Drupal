@@ -1,7 +1,9 @@
 uuid: 6128874d-5b13-4618-b2dd-ef04493ffe92
 langcode: fr
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - slick
 _core:
   default_config_hash: JLMwODO0epnA_H-jFlH9ezVfa5YBJniRv3MmLqYNl_Q
 name: 'Texte brut'
@@ -27,3 +29,11 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  slick_filter:
+    id: slick_filter
+    provider: slick
+    status: false
+    weight: 4
+    settings:
+      optionset: default
+      media_switch: ''
