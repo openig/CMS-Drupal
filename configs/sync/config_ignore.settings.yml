@@ -2,6 +2,7 @@ _core:
   default_config_hash: IgOVnECx6lbVt6JVFnadoEEugneDf3UblPZnOzov43Q
 mode: simple
 ignored_config_entities:
+  - ldap_servers.server.ldap
   - openid_connect.client.openig_keycloak
   - search_api.server.recherche_solr
   - symfony_mailer.mailer_transport.smtp
