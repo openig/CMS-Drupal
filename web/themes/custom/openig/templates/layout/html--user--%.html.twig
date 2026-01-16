@@ -35,7 +35,7 @@
       'd-flex flex-column'
     ]
   %}
-  
+
   <!DOCTYPE html>
   <html{{ html_attributes.addClass('h-100') }}>
     <head>
@@ -56,13 +56,21 @@
         </a>
       </div>
       {{ page_top }}
-      {{ render_block('openig_imageenhautdepage') }}
-      {{ render_block('openig_imageenhautdepagemobile') }}
+      <div id="block-openig-imageenhautdepage">
+        {{ drupal_entity('block_content', 4) }}
+      </div>
+      <div id="block-openig-imageenhautdepagemobile">
+        {{ drupal_entity('block_content', 19) }}
+      </div>
       {{ page }}
-      {{ render_block('openig_imageenbasdepage') }}
-      {{ render_block('openig_imageenbasdepagemobile') }}
+      <div id="block-openig-imageenbasdepage">
+        {{ drupal_entity('block_content', 3) }}
+      </div>
+      <div id="block-openig-imageenbasdepagemobile">
+        {{ drupal_entity('block_content', 26) }}
+      </div>
       {{ page_bottom }}
       <js-bottom-placeholder token="{{ placeholder_token }}">
     </body>
   </html>
-  
+

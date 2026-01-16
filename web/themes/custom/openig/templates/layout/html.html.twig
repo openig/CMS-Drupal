@@ -55,20 +55,28 @@
       </a>
     </div>
     {{ page_top }}
-    {{ render_block('openig_imageenhautdepage') }}
-    {{ render_block('openig_imageenhautdepagemobile') }}
+    <div id="block-openig-imageenhautdepage">
+      {{ drupal_entity('block_content', 4) }}
+    </div>
+    <div id="block-openig-imageenhautdepagemobile">
+      {{ drupal_entity('block_content', 19) }}
+    </div>
     {% if root_path == 'les-actualites' %}
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-          {{ render_block('openig_formulaireexposeles_actualitesactualites_mobile') }}
+          <h2>Filtrer la recherche</h2>
+          {{ drupal_block('views_exposed_filter_block:les_actualites-actualites_mobile', wrapper=false) }}
         </div>
       </div>
     {% elseif root_path == 'l-agenda' %}
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-          {{ render_block('openig_formulaireexposel_agendaagenda_mobile') }}
+{#          {{ render_block('openig_formulaireexposel_agendaagenda_mobile') }}#}
+          <h2>Filtrer la recherche</h2>
+{#          {{ drupal_block('views_exposed_filter_block:l_agenda-agenda_mobile', wrapper=false) }}#}
+          {{ drupal_block('views_exposed_filter_block:l_agenda-agenda', wrapper=false) }}
         </div>
       </div>
     {% elseif root_path == 'annuaire' %}
@@ -76,7 +84,9 @@
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
             <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-            {{ render_block('openig_formulaireexposeannuaireannuaire_mobile') }}
+{#            {{ render_block('openig_formulaireexposeannuaireannuaire_mobile') }}#}
+            <h2>Filtrer la recherche</h2>
+            {{ drupal_block('views_exposed_filter_block:annuaire-annuaire', wrapper=false) }}
           </div>
         </div>
       {% endif %}
@@ -92,14 +102,19 @@
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
             <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-            {{ render_block('openig_searchexternalfilterblock_mobile') }}
+{#            {{ render_block('openig_searchexternalfilterblock_mobile') }}#}
+            {{ drupal_block('openig_search_external_filter_block') }}
           </div>
         </div>
       {% endif %}
     {% endif %}
     {{ page }}
-    {{ render_block('openig_imageenbasdepage') }}
-    {{ render_block('openig_imageenbasdepagemobile') }}
+    <div id="block-openig-imageenbasdepage">
+      {{ drupal_entity('block_content', 3) }}
+    </div>
+    <div id="block-openig-imageenbasdepagemobile">
+      {{ drupal_entity('block_content', 26) }}
+    </div>
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
