@@ -49,7 +49,7 @@
     <div class="view-header container">
         <div class="header_block">
           {{header}}
-          {{ render_block('openig_views_block__les_actualites_actualite_mise_en_avant') }}
+          {{ drupal_block('views_block:les_actualites-actualite_mise_en_avant', wrapper=true) }}
         </div>
     </div>
   {% endif %}
