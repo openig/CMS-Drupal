@@ -247,7 +247,7 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
                 {% if ((membre is not defined) and ('adherent' in user.getRoles())) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     <div class="btnShareRejoindre">
-                        {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                      {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                         <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                     </div>
                 {% endif %}
@@ -255,7 +255,7 @@
                 <div class="col-12">
                     {% if ((membre is not defined) and ('adherent' in user.getRoles())) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         <div class="btnShareRejoindre">
-                            {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                            {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                             <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                         </div>
                     {% endif %}

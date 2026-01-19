@@ -161,10 +161,7 @@
                 {{content.field_image}}
             </div>
             <div class="btnShareUtiliser">
-{#                {{ render_block('openig_addtoanysharebuttons_bas_page') }}#}
-              <div id="block-openig-addtoanysharebuttons-bas-page">
-                {{ drupal_entity('block', 'openig_addtoanysharebuttons_bas_page') }}
-              </div>
+                  {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                 {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
@@ -221,7 +218,7 @@
             </div>
             <div class="col-12">
                 <div class="btnShareUtiliser">
-                    {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                    {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                      {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                             <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
