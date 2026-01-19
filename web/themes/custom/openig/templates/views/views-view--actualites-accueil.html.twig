@@ -73,8 +73,7 @@
         {{ empty }}
       </div>
     {% endif %}
-    {{render_block('openig_views_block__les_actualites_actualites_accueil_mobile')}}
-
+      {{ drupal_block('views_block:les_actualites-actualites_accueil_mobile', wrapper=false) }}
     {% if pager %}
       {{ pager }}
     {% endif %}

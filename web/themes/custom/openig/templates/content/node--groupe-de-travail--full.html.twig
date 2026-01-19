@@ -205,8 +205,8 @@
                                 {% endfor %}
                                 </div>
                             </div>
-                        {# {% endif %} #}         
-                    </div>                       
+                        {# {% endif %} #}
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -217,9 +217,14 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                      <div id="block-openig-views-block-contacts-gt-contacts-gt">
+                        {{ drupal_block('views_block:contacts_gt-contacts_gt', wrapper=true) }}
+                      </div>
                     {% endif %}
                     {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                    <div id="block-openig-views-block-agenda-gt-agenda-gt">
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', wrapper=true) }}
+                    </div>
                     {{content.field_contenu_sidebar}}
                 </div>
             {% endif %}
@@ -227,9 +232,14 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                      <div id="block-openig-views-block-contacts-gt-contacts-gt">
+                        {{ drupal_block('views_block:contacts_gt-contacts_gt', wrapper=true) }}
+                      </div>
                     {% endif %}
                     {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                    <div id="block-openig-views-block-agenda-gt-agenda-gt">
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', wrapper=true) }}
+                    </div>
                 </div>
             {% endif %}
         {% endif %}
