@@ -24,7 +24,7 @@
     <div class="first_line">
       {% if not logged_in %}
         {{ drupal_menu('adhesion') }}
-        {{ render_block('openig_openidconnectlogin_mobile') }}
+        {{ drupal_block('openid_connect_login') }}
       {% endif %}
       <div id="block-openig-faq-mobile--2" class="contextual-region block block-system block-system-menu-blockfaq">
         {{ drupal_menu('faq') }}
