@@ -217,13 +217,13 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                      <div id="block-openig-views-block-contacts-gt-contacts-gt">
-                        {{ drupal_block('views_block:contacts_gt-contacts_gt', wrapper=true) }}
-                      </div>
+                      {{ drupal_block('views_block:contacts_gt-contacts_gt', {
+                        'id': 'openig-views-block-contacts-gt-contacts-gt'
+                      }, wrapper=true) }}
                     {% endif %}
-                    <div id="block-openig-views-block-agenda-gt-agenda-gt">
-                      {{ drupal_block('views_block:agenda_gt-agenda_gt', wrapper=true) }}
-                    </div>
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', {
+                        'id': 'openig-views-block-agenda-gt-agenda-gt'
+                      }, wrapper=true) }}
                     {{content.field_contenu_sidebar}}
                 </div>
             {% endif %}
@@ -231,13 +231,13 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                      <div id="block-openig-views-block-contacts-gt-contacts-gt">
-                        {{ drupal_block('views_block:contacts_gt-contacts_gt', wrapper=true) }}
-                      </div>
+                      {{ drupal_block('views_block:contacts_gt-contacts_gt', {
+                        'id': 'openig-views-block-contacts-gt-contacts-gt'
+                      }, wrapper=true) }}
                     {% endif %}
-                    <div id="block-openig-views-block-agenda-gt-agenda-gt">
-                      {{ drupal_block('views_block:agenda_gt-agenda_gt', wrapper=true) }}
-                    </div>
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', {
+                        'id': 'openig-views-block-agenda-gt-agenda-gt'
+                      }, wrapper=true) }}
                 </div>
             {% endif %}
         {% endif %}

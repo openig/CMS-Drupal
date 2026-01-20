@@ -56,12 +56,15 @@
       </a>
     </div>
     {{ page_top }}
-    <div id="block-openig-imageenhautdepage">
-      {{ drupal_block('block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3', wrapper=false) }}
-    </div>
-    <div id="block-openig-imageenhautdepagemobile">
-      {{ drupal_block('block_content:4bd052d3-79d0-4cc0-ab26-65dc18594529', wrapper=false) }}
-    </div>
+
+      {{ drupal_block('block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3', {
+        'id': 'openig-imageenhautdepage'
+      }, wrapper=false) }}
+
+      {{ drupal_block('block_content:4bd052d3-79d0-4cc0-ab26-65dc18594529', {
+        'id': 'openig-imageenhautdepagemobile'
+      }, wrapper=false) }}
+
     {% if root_path == 'les-actualites' %}
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
@@ -90,12 +93,15 @@
       {% endif %}
     {% endif %}
     {{ page }}
-    <div id="block-openig-imageenbasdepage">
-      {{ drupal_block('block_content:555f7a44-f502-42f6-be3c-da8191356402', wrapper=false) }}
-    </div>
-    <div id="block-openig-imageenbasdepagemobile">
-      {{ drupal_block('block_content:4255c696-6130-4b29-83a6-a1aeb6341d14', wrapper=false) }}
-    </div>
+
+      {{ drupal_block('block_content:555f7a44-f502-42f6-be3c-da8191356402', {
+        'id': 'openig-imageenbasdepage'
+      }, wrapper=false) }}
+
+      {{ drupal_block('block_content:4255c696-6130-4b29-83a6-a1aeb6341d14', {
+        'id': 'openig-imageenbasdepagemobile'
+      }, wrapper=false) }}
+
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>
