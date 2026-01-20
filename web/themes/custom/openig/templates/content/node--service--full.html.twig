@@ -86,9 +86,8 @@
                 {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 {% else %}
-{#                    {{ render_block('openig_messageblocutiliserinaccessible') }}#}
                     <div id="block-openig-messageblocutiliserinaccessible">
-                      {{ drupal_entity('block_content', 18) }}
+                      {{ drupal_block('block_content:80673789-61a5-4014-a53e-6a10209477d9', wrapper=true) }}
                     </div>
                     <button disabled="disabled"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 {% endif %}
@@ -151,13 +150,14 @@
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-3 sidebar">
-{#                {{ render_block('openig_views_block__contacts_gt_contacts_service') }}#}
+              <div id="block-openig-views-block-contacts-gt-contacts-service">
                 {{ drupal_block('views_block:contacts_gt-contacts_service') }}
-                    {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-                        {% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-                            {{content.field_requirement}}
-                        {% endif %}
-                    {% endif %}
+              </div>
+                {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                  {% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                    {{content.field_requirement}}
+                  {% endif %}
+                {% endif %}
                 {{content.field_image}}
             </div>
             <div class="btnShareUtiliser">

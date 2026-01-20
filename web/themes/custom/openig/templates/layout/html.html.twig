@@ -73,9 +73,7 @@
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-{#          {{ render_block('openig_formulaireexposel_agendaagenda_mobile') }}#}
           <h2>Filtrer la recherche</h2>
-{#          {{ drupal_block('views_exposed_filter_block:l_agenda-agenda_mobile', wrapper=false) }}#}
           {{ drupal_block('views_exposed_filter_block:l_agenda-agenda', wrapper=false) }}
         </div>
       </div>
@@ -84,7 +82,6 @@
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
             <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-{#            {{ render_block('openig_formulaireexposeannuaireannuaire_mobile') }}#}
             <h2>Filtrer la recherche</h2>
             {{ drupal_block('views_exposed_filter_block:annuaire-annuaire', wrapper=false) }}
           </div>
