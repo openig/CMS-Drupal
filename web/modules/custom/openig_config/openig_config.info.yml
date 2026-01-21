@@ -33,7 +33,6 @@ dependencies:
   - menu_item_extras
   - fontawesome
   - svg_image
-  - twig_blocks
   - twig_tweak
   - color_field
   - addtoany
