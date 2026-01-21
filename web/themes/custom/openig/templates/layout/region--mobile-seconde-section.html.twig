@@ -30,9 +30,10 @@
         {{ drupal_menu('faq') }}
       </div>
     </div>
-    <div id="block-openig-formulaireexposeresultats-de-rechercheblock-1-mobile--2" class="views-exposed-form bef-exposed-form contextual-region block block-search container-inline">
-      {{ drupal_block('views_exposed_filter_block:resultats_de_recherche-block_1', wrapper=false) }}
-    </div>
+      {{ drupal_block('views_exposed_filter_block:resultats_de_recherche-block_1', {
+        'id': 'openig-formulairederecherche-mobile',
+        'label_display': '0'
+      }, wrapper=true) }}
     <div id="block-openig-navigationprincipale--2" class="contextual-region block block-menu navigation menu--main">
       {{ drupal_menu('main') }}
     </div>
