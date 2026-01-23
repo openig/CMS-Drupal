@@ -70,7 +70,7 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/simplenews": "^4.0",
         "drupal/sitemap": "^2.0@beta",
-        "drupal/slick": "^3.0",
+        "drupal/slick": "3.0.7",
         "drupal/slick_views": "^3.0",
         "drupal/social_media_links": "^2.9",
         "drupal/structure_sync": "^2.0",
@@ -126,6 +126,9 @@
             },
             "drupal/ldap": {
                 "Option to associate already existing Drupal accounts during the LDAP users updates": "./scripts/patchs/userUpdateAssociate.patch"
+            },
+            "drupal/slick": {
+                "Slick does not initialize for admin": "https://www.drupal.org/files/issues/2026-01-16/slick-3538028-bigpipe-authenticated-hotfix-loadjs-doSlick.patch"
             }
         },
         "installer-paths": {
