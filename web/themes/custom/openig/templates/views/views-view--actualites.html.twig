@@ -75,8 +75,7 @@
         </div>
     </div>
     <div class="view-content d-xl-none d-block">
-{#      <h2>Filtrer la recherche</h2>#}
-{#      {{ drupal_block('views_exposed_filter_block:les_actualites-actualites_mobile', wrapper=false) }}#}
+      {{ drupal_block('views_block:les_actualites-actualites_mobile', wrapper=false) }}
     </div>
   {% if empty %}
     <div class="view-empty container">
