@@ -128,7 +128,7 @@
                 "Option to associate already existing Drupal accounts during the LDAP users updates": "./scripts/patchs/userUpdateAssociate.patch"
             },
             "drupal/slick": {
-                "Slick does not initialize for admin": "https://www.drupal.org/files/issues/2026-01-16/slick-3538028-bigpipe-authenticated-hotfix-loadjs-doSlick.patch"
+                "Slick does not initialize for admin": "https://www.drupal.org/files/issues/2025-12-09/3538028-25.patch"
             }
         },
         "installer-paths": {
