@@ -165,6 +165,7 @@
         background-color: $OPenIG-color_white;
         height: calc(100vh - 60px);
         min-height: fit-content;
+        overflow: scroll;
     }
     .section_background.open{
         background-color: $OPenIG-color_light-gray;

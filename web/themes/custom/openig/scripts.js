@@ -27,11 +27,11 @@
         }
 
         $('#block-openig-navigationprincipale .dropdown-toggle').click(function() {
-            var parent = $('#block-openig-navigationprincipale .dropdown-toggle').closest('.nav-item.dropdown');
+            var parent = $(this).parent('.nav-item.dropdown');
             $(parent).toggleClass('showChild');
         })
         $('#block-openig-navigationprincipale--2 .dropdown-toggle').click(function() {
-            var parent = $('#block-openig-navigationprincipale--2 .dropdown-toggle').closest('.nav-item.dropdown');
+            var parent = $(this).parent('.nav-item.dropdown');
             $(parent).toggleClass('showChild');
         })
 
