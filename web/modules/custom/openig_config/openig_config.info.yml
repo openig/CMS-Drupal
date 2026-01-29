@@ -2,7 +2,7 @@ name: OPenIG Config
 type: module
 description: OPenIG Configuration
 package: Custom
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 dependencies:
   - paragraphs
   - admin_toolbar
@@ -33,7 +33,6 @@ dependencies:
   - menu_item_extras
   - fontawesome
   - svg_image
-  - twig_blocks
   - twig_tweak
   - color_field
   - addtoany

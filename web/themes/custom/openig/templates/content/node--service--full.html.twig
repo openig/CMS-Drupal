@@ -86,8 +86,10 @@
                 {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 {% else %}
-                    {{ render_block('openig_messageblocutiliserinaccessible') }}
-                    <button disabled="disabled"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
+                  {{ drupal_block('block_content:80673789-61a5-4014-a53e-6a10209477d9', {
+                    'id': 'openig-messageblocutiliserinaccessible'
+                  }, wrapper=true) }}
+                  <button disabled="disabled"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
                 {% endif %}
             {% else %}
                 <button onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
@@ -141,23 +143,25 @@
                                     {% endfor %}
                                     </div>
                                 </div>
-{#                             {% endif %}         
- #}                        </div>                       
+{#                             {% endif %}
+ #}                        </div>
                     {% endfor %}
                 </div>
             </div>
             <div class="col-lg-1"></div>
             <div class="col-lg-3 sidebar">
-                {{ render_block('openig_views_block__contacts_gt_contacts_service') }}
-                    {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-                        {% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
-                            {{content.field_requirement}}
-                        {% endif %}
-                    {% endif %}
+                {{ drupal_block('views_block:contacts_gt-contacts_service', {
+                  'id': 'openig-views-block-contacts-gt-contacts-service'
+                }) }}
+                {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                  {% if ('adherent' not in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
+                    {{content.field_requirement}}
+                  {% endif %}
+                {% endif %}
                 {{content.field_image}}
             </div>
             <div class="btnShareUtiliser">
-                {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                  {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                 {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
@@ -166,12 +170,12 @@
                     {% endif %}
                 {% else %}
                     <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>
-                {% endif %}            
+                {% endif %}
             </div>
         {% else %}
             <div{{ content_attributes.addClass('node__content col-lg-8 col-12 no_sidebar') }}>
                 {{ content|without('field_tag','field_contact','field_image','field_requirement','field_link') }}
-                <div class="accordion" id="accordionService">          
+                <div class="accordion" id="accordionService">
                     {% for key,type in ressources %}
                         <div class="accordion-item">
                             {# {% if (type['allCheckFalse'] != 'false') and (type['Entity']|length != 0) %}
@@ -207,14 +211,14 @@
                                     {% endfor %}
                                     </div>
                                 </div>
-                            {# {% endif %}     #}     
-                        </div>                       
+                            {# {% endif %}     #}
+                        </div>
                     {% endfor %}
                 </div>
             </div>
             <div class="col-12">
                 <div class="btnShareUtiliser">
-                    {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                    {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                      {% if (elements['#node'].field_access_restricted.value == 1) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         {% if ('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                             <button class="buttonUse" onclick="window.open('{{content.field_link[0]['#title']}}')"><i class="fa-regular fa-hand-sparkles"></i>Utiliser</button>

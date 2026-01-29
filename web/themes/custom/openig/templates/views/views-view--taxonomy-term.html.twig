@@ -68,7 +68,7 @@
     </div>
   {% elseif empty %}
     {% if vid == 'outils_competences' %}
-      {{ render_block('openig_views_block_outils_competences') }}
+      {{ drupal_block('views_block:terme_de_taxonomie_utilisateur-block_outils_competences', wrapper=false) }}
     {% else %}
       <div class="view-empty container">
         {{ empty }}

@@ -6,10 +6,10 @@
     <div class="view-content container bloc_filtres">
       <div class="formulaire_filtre d-xl-block d-none">
         <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-
         {#  Bloc custom - Filtre recherche   #}
-        {{ render_block('openig_search_external_filter_block') }}
-
+{#        {{ render_block('openig_search_external_filter_block') }}#}
+        <h2>Filtrer la recherche</h2>
+        {{ drupal_block('openig_search_external_filter_block', wrapper=false) }}
       </div>
 
       {# btn filtrer #}

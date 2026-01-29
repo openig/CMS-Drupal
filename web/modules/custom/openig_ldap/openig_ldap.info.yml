@@ -3,7 +3,7 @@ package: Custom
 description: 'Users and Structres synhronisation'
 
 type: module
-core_version_requirement: ^10
+core_version_requirement: ^10 || ^11
 
 dependencies:
   - ldap_user
