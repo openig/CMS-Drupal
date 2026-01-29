@@ -225,7 +225,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        margin-top: 1rem;
+        padding-top: 1rem;
         .block-system-menu-blockadhesion{
             .nav-item{
                 display: flex;
@@ -958,6 +958,10 @@
     }
     .field--name-field-body, .field--name-body, .field--name-field-theme-overview, .field--name-field-working-group-objective, .field--name-field-news-overview, .views-field-field-body, .views-field-field-webform, .views-field-field-webform input{
         font-size: $OPenIG-font-size-sm !important;
+    }
+    .field--name-field-body p img{
+        max-width: 100%;
+        height: auto;
     }
     .accordion h2{
         border: 0 !important;
