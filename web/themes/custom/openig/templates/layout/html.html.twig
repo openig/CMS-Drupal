@@ -102,9 +102,10 @@
       {% else %}
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
-            <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
             <h2>Filtrer la recherche</h2>
-            {{ drupal_block('openig_search_external_filter_block', wrapper=false) }}
+            {{ drupal_block('openig_search_external_filter_block', {
+              'id': 'block-openig-searchexternalfilterblock-mobile'
+            }, wrapper=true) }}
           </div>
         </div>
       {% endif %}

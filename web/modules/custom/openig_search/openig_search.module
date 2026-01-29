@@ -134,7 +134,8 @@ function openig_search_preprocess_views_view_fields__block_filter_search_interna
 }
 
 function openig_search_preprocess_block(&$variables){
-  if (($variables['base_plugin_id'] == 'openig_search_external_filter_block') and ($variables['attributes']['id'] == 'block-openig-searchexternalfilterblock-mobile') ) {
+
+  if (($variables['base_plugin_id'] == 'openig_search_external_filter_block') and ($variables['attributes']['id'] == 'block-block-openig-searchexternalfilterblock-mobile') ) {
 //    \Drupal::service('cache.render')->invalidateAll();
     $variables['content']['#search_filter_form']['search_api_fulltext']['#id'] = 'edit-search-api-fulltext-mobile';
     $variables['content']['#search_filter_form']['search_api_fulltext']['#attributes']['data-drupal-selector'] = 'edit-search-api-fulltext-mobile';
@@ -160,6 +161,6 @@ function openig_search_preprocess_block(&$variables){
 
     $variables['content']['#search_filter_form']['#id'] = 'openig-search-filter-mobile';
     $variables['content']['#search_filter_form']['#attributes']['data-drupal-selector'] = 'openig-search-filter-mobile';
-
+      
   }
 }
