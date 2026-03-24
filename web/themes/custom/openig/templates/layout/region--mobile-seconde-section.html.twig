@@ -34,9 +34,9 @@
         'id': 'openig-formulairederecherche-mobile',
         'label_display': '0'
       }, wrapper=true) }}
-    <div id="block-openig-navigationprincipale--2" class="contextual-region block block-menu navigation menu--main">
-      {{ drupal_menu('main') }}
-    </div>
+    <nav id="block-openig-navigationprincipale--2" class="contextual-region block block-menu navigation menu--main">
+      {{ drupal_menu('main', 0, 0, true) }}
+    </nav>
     {#{{ content }}#}
   </div>
 {% endif %}

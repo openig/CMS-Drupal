@@ -180,6 +180,8 @@ function openig_preprocess_node(&$variables, $hook){
       if($result){
         $variables['evenements'] = 'oui';
       }
+      $variables['#cache']['contexts'][] = 'user.permissions';
+      $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
       break;
 
       case "service":
@@ -244,6 +246,8 @@ function openig_preprocess_node(&$variables, $hook){
             }
           }
         }*/
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
 
       case "article":
@@ -277,6 +281,8 @@ function openig_preprocess_node(&$variables, $hook){
           }
 
         }
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
 
       case "page":
@@ -361,6 +367,8 @@ function openig_preprocess_node(&$variables, $hook){
                ->view($logo_block);
             $variables['logo_content'] = $logo_content;
         }
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
       case "evenement":
           global $base_url;
