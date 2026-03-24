@@ -740,7 +740,10 @@
             font-size: $OPenIG-font-size-sm;
             font-family: 'OpenSans_SemiBold';
         }
-        details.form-wrapper{
+        .form-wrapper{
+            width: 100%;
+        }
+        details{
             width: 100%;
             border: 0 !important;
             background-color: transparent;
@@ -756,6 +759,7 @@
                 font-weight: 600;
                 font-size: $OPenIG-font-size-sm;
                 font-family: 'OpenSans_SemiBold';
+                border-radius: 0;
             }
             summary::marker {
                 content: '';
@@ -767,6 +771,8 @@
                 content: '\f0d7';
                 font-family: "Font Awesome 6 Free";
                 font-weight: 600;
+                background-image: none !important;
+                transform: none !important;
             }
         }
     }
