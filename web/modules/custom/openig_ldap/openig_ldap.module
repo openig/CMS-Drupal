@@ -19,7 +19,7 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
     $platform_settings = $account->get('field_social_network')->getFieldDefinition()->getSetting('platforms');
     //
     $new_values = array();
-    $new_values[] = [ 
+    $new_values[] = [
       "platform" => null,
       "value" => null,
       "platform_values" => [
@@ -55,14 +55,14 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
         }
     }
     $account->set('field_social_network', $new_values);
- 
- 
+
+
     // 2 - synchro de la structure d'appartenance
     // ! si adhésionIndividuelle activée -> rattacher à la structure d'adhésion individuelle : openig-adherents-personnes-physiques
     //
     // dump( $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[memberOf]') );
     // dump( $account->get('field_structure') );
-  
+
     $individual = $tokenProcessor->ldapEntryReplacementsForDrupalAccount($entry, '[individualAdhesion]');
     if(isset($individual) && $individual !== null && $individual == "TRUE") {
         $structureCN = "openig-adherents-personnes-physiques";
@@ -74,7 +74,7 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
             if(array_key_exists(1,$matches)) $structureCN = $matches[1];
         }
     }
-  
+
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $structureCN]);
     if(!empty($structures)) {
@@ -91,7 +91,7 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
     // $subscriber = Subscriber::loadByUid($account->id());
     $subscriber = Subscriber::loadByMail($account->getEmail(), 'create');
     $subscriber->fillFromAccount($account)->save();
-    
+
     // Associate subscriber to newsletter
     $subscriber->subscribe('default');
     $subscriber->save();
@@ -110,7 +110,7 @@ function openig_ldap_cron() {
     foreach($results as $ldap_structure) {
         $attributes = $ldap_structure->getAttributes();
 //        dump($attributes);
-    
+
         $structures = $storage->loadByProperties(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
         if(!empty($structures)) {
             // update structure
@@ -119,7 +119,7 @@ function openig_ldap_cron() {
             // else create structure
             $structure = $storage->create(['type' => 'structure', 'field_ldap_cn' => $attributes['cn'][0]]);
         }
-        
+
         $structure->set('title', array_key_exists('o', $attributes) ? $attributes['o'][0] : "");
 
         $structure->set('field_address', array_key_exists('postalAddress', $attributes) ? $attributes['postalAddress'][0] : null);
@@ -187,7 +187,7 @@ function openig_ldap_cron() {
         // $structure->set('field_image', $attributes['logoFile'][0]);
 
         if(array_key_exists('logoFile', $attributes) && $attributes['logoFile'][0] !== null) {
-       
+
             $base64 = false;
             if($structure->hasField('field_image') && $structure->get('field_image')->getValue()) {
                 $file_entity = $structure->get('field_image')[0]->entity;
@@ -201,7 +201,7 @@ function openig_ldap_cron() {
                     }
                 }
             }
-                
+
             // update only if not same image
             if($attributes['logoFile'][0] != $base64) {
                 $binary_image = base64_decode($attributes['logoFile'][0]);
@@ -212,7 +212,7 @@ function openig_ldap_cron() {
 
                 // Create file URI
                 $file_uri = 'public://' . $attributes['cn'][0].".".$extension;
-                $file = \Drupal::service('file.repository')->writeData($binary_image, $file_uri, \Drupal\Core\File\FileSystemInterface::EXISTS_RENAME);
+                $file = \Drupal::service('file.repository')->writeData($binary_image, $file_uri, \Drupal\Core\File\FileExists::Rename);
 
                 // Associate with node
                 $structure->set('field_image', [
@@ -226,7 +226,7 @@ function openig_ldap_cron() {
             $structure->set('field_image', null);
         }
 
-        // 
+        //
         if(array_key_exists('adhesionStatus', $attributes) && $attributes['adhesionStatus'][0] == "TRUE") {
 	    $structure->set('field_crige_partner', 1);
 	} else {
@@ -237,7 +237,7 @@ function openig_ldap_cron() {
         $structure->set('moderation_state', 'published');
         $structure->setPublished(); // $structure->set('status', 1);
         $structure->save();
-        
+
     }
 }
 
