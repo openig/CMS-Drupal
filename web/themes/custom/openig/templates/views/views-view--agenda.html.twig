@@ -74,7 +74,8 @@
             <button type="button" class="btn_filtre"><i class="fa-regular fa-filter"></i>Filtrer</button>
             <div class="formulaire_filtre">
               <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-              {{ render_block('openig_formulaireexposel_agendaagenda') }}
+              <h2>Filtrer la recherche</h2>
+              {{ drupal_block('views_exposed_filter_block:l_agenda-agenda', wrapper=false) }}
             </div>
           </div>
           <div class="col-lg-10 col-12">
@@ -85,7 +86,7 @@
     </div>
     <div id="contenu_evenement" class="container"></div>
   </div>
-  
+
   {% if empty %}
     <div class="view-empty container">
       {{ empty }}

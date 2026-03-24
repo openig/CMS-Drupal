@@ -68,7 +68,8 @@
         <div class="formulaire_filtre d-xl-block d-none">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
           <div class="">
-            {{ render_block('openig_formulaireexposeannuaireannuaire') }}
+            <h2>Filtrer la recherche</h2>
+            {{ drupal_block('views_exposed_filter_block:annuaire-annuaire', wrapper=false) }}
           </div>
         </div>
         <div class="d-none d-xl-block col-xl-1 col-lg-2 col-3">
@@ -86,7 +87,7 @@
       </div>
     {% else %}
       <div class="non_connecte">
-        {{ rows }}      
+        {{ rows }}
       </div>
     {% endif %}
     {% if empty %}

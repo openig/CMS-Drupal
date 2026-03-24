@@ -84,7 +84,6 @@
 
 
         // Vue Agenda
-
         // Slide actif en fonction de la date du jour
         $(".slick--view--l-agenda .slick-slide").each(function(){
             var time = $(this).find('.views-field-field-dates-4 time');
@@ -111,15 +110,14 @@
 
 
             $(".slick--view--l-agenda .slick-slide").each(function(){
-                var nid = $(this).find('.views-field-nid .field-content');
-                if(id == $.trim(nid.text())){
-                    var index = $(this).attr('data-slick-index');
-                    $('.slick__slider').slick('slickGoTo',index, true);
-                    return false;
+              var nid = $(this).find('.views-field-nid .field-content');
+              if(id == nid.text().trim()){
+                var index = $(this).attr('data-slick-index');
+                $('.slick__slider').slick('slickGoTo',index, true);
+                return false;
                 }
             })
         }
-
 
 
         // Fonction pour modifier l'année et afficher le contenu d'un évènement

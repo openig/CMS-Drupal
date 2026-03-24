@@ -113,7 +113,7 @@
 		</table>
 	{% endif %}
 	{{ title_suffix }}
-  
+
 	{% if display_submitted %}
 	  <footer class="node__meta">
 		{{ author_picture }}
@@ -123,16 +123,16 @@
 		</div>
 	  </footer>
 	{% endif %}
-	
+
 	<div{{ content_attributes.addClass('node__content') }}>
 		{{content.field_date}}
 		{% if paragraphs %}
-			<div class="sommaireemail" style="width:100%; max-width:585px;">	
+			<div class="sommaireemail" style="width:100%; max-width:585px;">
 				<table style="display:block;">
 					<tbody style="display: block; width: 100%;">
 						<tr style="display: block; width: 100%;">
 							<td align="right" style="display: block;">
-								<h2>Sommaire</h2>			
+								<h2>Sommaire</h2>
 							</td>
 						</tr>
 					</tbody>
@@ -155,10 +155,10 @@
 		{% endif %}
 		{{ content|without('field_date') }}
 	</div>
-  
+
   </article>
   <div class="footer">
-	{{render_block('openig_newsletternoussuivre')}}
+    {{ drupal_block('block_content:a8799922-f4bb-4f9e-9e5c-5f1c497817b8', {label: 'Nous suivre'}, wrapper=true) }}
 	<div id="block-openig-newslettermenufooter">
 		<div style="margin:auto;">
 			<a href="{{ drupal_token('simplenews-subscriber:unsubscribe-url') }}">Se désabonner</a>
