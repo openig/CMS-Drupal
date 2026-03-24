@@ -15,7 +15,5 @@ settings:
   label: 'Nous suivre - PA 2'
   label_display: visible
   provider: block_content
-  status: true
-  info: ''
   view_mode: full
 visibility: {  }

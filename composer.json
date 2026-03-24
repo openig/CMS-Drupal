@@ -21,7 +21,7 @@
         "drupal/admin_toolbar": "^3.4",
         "drupal/back_to_top": "^3.0",
         "drupal/better_exposed_filters": "^7.1.1",
-        "drupal/blazy": "^3.0",
+        "drupal/blazy": "^3.0.17",
         "drupal/bootstrap5": "^4.0",
         "drupal/change_pwd_page": "^2.0",
         "drupal/ckeditor_accordion": "^2.1",
@@ -42,7 +42,7 @@
         "drupal/entity_reference_modal": "^1.0",
         "drupal/eu_cookie_compliance": "^1.24",
         "drupal/field_group": "^3.4",
-        "drupal/field_permissions": "^1.5",
+        "drupal/field_permissions": "^1.5.0",
         "drupal/fontawesome": "^3.0",
         "drupal/hcaptcha": "^1.2",
         "drupal/image_base64_formatter": "^2.0",
@@ -70,22 +70,23 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/simplenews": "^4.0",
         "drupal/sitemap": "^2.0@beta",
-        "drupal/slick": "3.0.7",
+        "drupal/slick": "^3.0.7",
         "drupal/slick_views": "^3.0",
         "drupal/social_media_links": "^2.9",
         "drupal/structure_sync": "^2.0",
         "drupal/svg_image": "^3.0",
         "drupal/symfony_mailer": "^1.4",
         "drupal/sync_uuids": "^1.1",
-        "drupal/token": "^1.17",
+        "drupal/token": "^1.17.0",
         "drupal/twig_tweak": "^3.3",
         "drupal/upgrade_status": "^4.3",
         "drupal/user_register_notify": "^2.0@beta",
+        "drupal/video_embed_field": "^3.0",
         "drupal/video_embed_peertube": "^3.0",
         "drupal/views_fieldsets": "^4.0",
         "drupal/webform": "^6.3@beta",
         "drupal/weight": "^3.4",
-        "drush/drush": "^13",
+        "drush/drush": "~13.0",
         "kenwheeler/slick": "^1.8",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
@@ -103,6 +104,7 @@
             "drupal/core-project-message": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
+            "tbachert/spi": true,
             "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true,
@@ -181,5 +183,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/core-dev": "^11"
     }
 }

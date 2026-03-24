@@ -148,6 +148,7 @@ permissions:
   - 'nodeaccess grant simplenews_issue permissions'
   - 'nodeaccess grant structure permissions'
   - 'nodeaccess grant temoignage permissions'
+  - 'rebuild node access permissions'
   - 'revert all revisions'
   - 'revert any audio media revisions'
   - 'revert any document media revisions'
