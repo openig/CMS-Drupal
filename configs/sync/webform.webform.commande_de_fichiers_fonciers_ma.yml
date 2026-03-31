@@ -1,47 +1,31 @@
-uuid: c518de67-fd5f-41bf-85bf-11d6e91d349d
+uuid: cd981804-2074-4266-be0f-c8c2f7da3079
 langcode: fr
 status: open
-dependencies:
-  enforced:
-    module:
-      - webform
-_core:
-  default_config_hash: _je-MWeeJB6gfm6iECiqjcyNetfMFbn-YIInYwZ1gIk
+dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: null
+uid: 20
 template: false
 archive: false
-id: contact
-title: Contact
-description: 'Basic email contact webform.'
+id: commande_de_fichiers_fonciers_ma
+title: 'Commande de fichiers fonciers MAJIC'
+description: 'Commande de fichiers fonciers MAJIC'
 categories: {  }
-elements: |
-  name:
-    '#title': 'Your Name'
-    '#type': textfield
-    '#required': true
-    '#default_value': '[current-user:display-name]'
-  email:
-    '#title': 'Your Email'
-    '#type': email
-    '#required': true
-    '#default_value': '[current-user:mail]'
-  subject:
-    '#title': Subject
-    '#type': textfield
-    '#required': true
-    '#test': 'Testing contact webform from [site:name]'
-  message:
-    '#title': Message
-    '#type': textarea
-    '#required': true
-    '#test': 'Please ignore this email.'
+elements: |-
+  processed_text:
+    '#type': processed_text
+    '#text': '<p>Toute organisation partenaire <strong>Plateforme OPenIG</strong> a le droit à une commande de fichiers fonciers <abbr title="Mise À Jour des Informations Cadastrales">MAJIC III</abbr> par an.</p><p>Avant de faire votre demande, veuillez prendre connaissance des conditions et des contraintes applicables sur cette donnée : <a href="https://www.openig.org/sites/default/files/cadastre/PROC_OPenIG_fichiers_fonciers_DGFIP.pdf" target="_blank">Documentation</a></p><p>Pour chaque demande, Les deux documents suivants doivent être fournis :</p><ul><li data-list-item-id="e535e779f8a902915cb23dbee962c1710">Un acte d''engagement <abbr title="Direction Générale des Finances Publiques">DGFIP</abbr> rempli. <a href="https://www.openig.org/sites/default/files/cadastre/Acte_engagement_majic.docx" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li><li data-list-item-id="e437b7bac3a108f54f25e392686f830dd">Un récipissé CNIL du <abbr title="Délégué à la Protection des Données">DPO</abbr> de l''organisation. Le DPO peut être désigné en ligne via <a href="https://www.cnil.fr/fr/designation-dpo" target="_blank">ce lien.</a></li></ul><p>&nbsp;</p><p>Ces documents peuvent être téléversés via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''administrateur <strong>Plateforme OPenIG</strong>.</p><p><br>&nbsp;</p><p><strong>Important :</strong> il ne peut y avoir qu''une seule commande, donc une seule livraison par organisme.</p>'
+    '#format': full_html
+  demoadu:
+    '#type': checkbox
+    '#title': demoADU
+  demoadu2:
+    '#type': managed_file
+    '#title': DemoADU2
   actions:
     '#type': webform_actions
-    '#title': 'Submit button(s)'
-    '#submit__label': 'Send message'
+    '#title': "Bouton(s) d'envoi"
 css: ''
 javascript: ''
 settings:
@@ -78,9 +62,9 @@ settings:
   form_autofocus: false
   form_details_toggle: false
   form_reset: false
-  form_access_denied: default
+  form_access_denied: login
   form_access_denied_title: ''
-  form_access_denied_message: ''
+  form_access_denied_message: 'Veuillez vous connecter'
   form_access_denied_attributes: {  }
   form_file_limit: ''
   form_attributes: {  }
@@ -146,10 +130,10 @@ settings:
   draft_loaded_message: ''
   draft_pending_single_message: ''
   draft_pending_multiple_message: ''
-  confirmation_type: url_message
-  confirmation_url: '<front>'
+  confirmation_type: page
+  confirmation_url: ''
   confirmation_title: ''
-  confirmation_message: 'Votre message a été envoyé.'
+  confirmation_message: ''
   confirmation_attributes: {  }
   confirmation_back: true
   confirmation_back_label: ''
@@ -181,8 +165,9 @@ settings:
 access:
   create:
     roles:
-      - anonymous
-      - authenticated
+      - content_editor
+      - administrator
+      - adherent
     users: {  }
     permissions: {  }
   view_any:
@@ -214,92 +199,21 @@ access:
     users: {  }
     permissions: {  }
   administer:
-    roles: {  }
+    roles:
+      - administrator
     users: {  }
     permissions: {  }
   test:
-    roles: {  }
+    roles:
+      - content_editor
+      - administrator
     users: {  }
     permissions: {  }
   configuration:
-    roles: {  }
+    roles:
+      - content_editor
+      - administrator
     users: {  }
     permissions: {  }
-handlers:
-  email_confirmation:
-    id: email
-    handler_id: email_confirmation
-    label: 'Courriel de confirmation'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 1
-    settings:
-      states:
-        - completed
-      to_mail: '[current-user:mail]'
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      from_mail: _default
-      from_options: {  }
-      from_name: _default
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      theme_name: ''
-      langcode: ''
-      parameters: {  }
-      debug: false
-  email_notification:
-    id: email
-    handler_id: email_notification
-    label: 'Notification par courriel'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 2
-    settings:
-      states:
-        - completed
-      to_mail: _default
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: ''
-      cc_options: {  }
-      from_mail: '[webform_submission:values:email:raw]'
-      from_options: {  }
-      from_name: '[webform_submission:values:name:raw]'
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: '[webform_submission:values:subject:raw]'
-      body: '[webform_submission:values:message:value]'
-      excluded_elements: {  }
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: false
-      twig: false
-      theme_name: ''
-      langcode: ''
-      parameters: {  }
-      debug: false
+handlers: {  }
 variants: {  }

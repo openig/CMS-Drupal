@@ -8,6 +8,6 @@ _core:
   default_config_hash: ZNiTMgBURMLUyp3dwxIn7Zz_hREzPRpyF2M-Dm3e1BI
 id: simplenews_subscriber.page
 label: Page
-description: ''
+description: null
 targetEntityType: simplenews_subscriber
 cache: true

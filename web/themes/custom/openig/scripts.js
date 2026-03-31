@@ -27,11 +27,11 @@
         }
 
         $('#block-openig-navigationprincipale .dropdown-toggle').click(function() {
-            var parent = $('#block-openig-navigationprincipale .dropdown-toggle').closest('.nav-item.dropdown');
+            var parent = $(this).parent('.nav-item.dropdown');
             $(parent).toggleClass('showChild');
         })
         $('#block-openig-navigationprincipale--2 .dropdown-toggle').click(function() {
-            var parent = $('#block-openig-navigationprincipale--2 .dropdown-toggle').closest('.nav-item.dropdown');
+            var parent = $(this).parent('.nav-item.dropdown');
             $(parent).toggleClass('showChild');
         })
 
@@ -84,7 +84,6 @@
 
 
         // Vue Agenda
-
         // Slide actif en fonction de la date du jour
         $(".slick--view--l-agenda .slick-slide").each(function(){
             var time = $(this).find('.views-field-field-dates-4 time');
@@ -111,15 +110,14 @@
 
 
             $(".slick--view--l-agenda .slick-slide").each(function(){
-                var nid = $(this).find('.views-field-nid .field-content');
-                if(id == $.trim(nid.text())){
-                    var index = $(this).attr('data-slick-index');
-                    $('.slick__slider').slick('slickGoTo',index, true);
-                    return false;
+              var nid = $(this).find('.views-field-nid .field-content');
+              if(id == nid.text().trim()){
+                var index = $(this).attr('data-slick-index');
+                $('.slick__slider').slick('slickGoTo',index, true);
+                return false;
                 }
             })
         }
-
 
 
         // Fonction pour modifier l'année et afficher le contenu d'un évènement

@@ -6,6 +6,6 @@ dependencies:
     - node
 id: node.modal
 label: Modal
-description: ''
+description: null
 targetEntityType: node
 cache: true

@@ -180,6 +180,8 @@ function openig_preprocess_node(&$variables, $hook){
       if($result){
         $variables['evenements'] = 'oui';
       }
+      $variables['#cache']['contexts'][] = 'user.permissions';
+      $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
       break;
 
       case "service":
@@ -244,6 +246,8 @@ function openig_preprocess_node(&$variables, $hook){
             }
           }
         }*/
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
 
       case "article":
@@ -277,6 +281,8 @@ function openig_preprocess_node(&$variables, $hook){
           }
 
         }
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
 
       case "page":
@@ -324,7 +330,7 @@ function openig_preprocess_node(&$variables, $hook){
           $id = $paragraph->id[0]->value;
           $title = $paragraph->field_title[0]->value;
           $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
-          $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+          $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString);
           $noUppercaseString =  strtolower($noEspaceString);
           $variables['paragraphs'][$id]['id'] = $id;
           $variables['paragraphs'][$id]['title'] = $title;
@@ -337,7 +343,7 @@ function openig_preprocess_node(&$variables, $hook){
               ->view($socialmedial_block);
            $variables['socialmedial_content'] = $socialmedial_content;
         }
-      
+
         $pieddepage_block = Drupal\block\Entity\Block::load('openig_newslettermenufooter');
         if ($pieddepage_block) {
           $pieddepage_content = \Drupal::entityTypeManager()
@@ -353,7 +359,7 @@ function openig_preprocess_node(&$variables, $hook){
                  ->view($phrasedaccroche_block);
              $variables['phrasedaccroche_content'] = $phrasedaccroche_content;
         }
-      
+
         $logo_block = Drupal\block\Entity\Block::load('openig_newsletterlogo');
         if ($logo_block) {
             $logo_content = \Drupal::entityTypeManager()
@@ -361,6 +367,8 @@ function openig_preprocess_node(&$variables, $hook){
                ->view($logo_block);
             $variables['logo_content'] = $logo_content;
         }
+        $variables['#cache']['contexts'][] = 'user.permissions';
+        $variables['#cache']['max-age'] = \Drupal\Core\Cache\Cache::PERMANENT;
         break;
       case "evenement":
           global $base_url;
@@ -417,14 +425,17 @@ function openig_preprocess_block(&$variables){
     }
   }
 
-  if (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposeannuaireannuaire-mobile') ) {
+  // START - Ne semble plus être utilisé
+  /*if (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposeannuaireannuaire-mobile') ) {
     $variables['content']['#id'] = 'views-exposed-form-annuaire-annuaire-mobile';
     $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-annuaire-annuaire-mobile';
-  }
-  elseif (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposel-agendaagenda-mobile')) {
+  }*/
+  /*elseif (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposel-agendaagenda-mobile')) {
     $variables['content']['#id'] = 'views-exposed-form-l-agenda-agenda-mobile';
     $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-l-agenda-agenda-mobile';
-  }
+  }*/
+  // END - Ne semble plus être utilisé
+  
   elseif (($variables['base_plugin_id'] == 'views_exposed_filter_block') and ($variables['attributes']['id'] == 'block-openig-formulaireexposeresultats-de-recherche-internal-mobile')) {
     $variables['content']['#id'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
     $variables['attributes']['data-drupal-selector'] = 'views-exposed-form-resultats-de-recherche-block-filter-search-internal-mobile';
@@ -532,7 +543,7 @@ function openig_preprocess_field(&$variables){
       $title = $variables['element'][0]['#context']['value'];
       $id = $variables['element']['#object']->id[0]->value;
       $noAccentString = iconv('UTF-8', 'ASCII//TRANSLIT', $title);
-      $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString); 
+      $noEspaceString = $outputString = str_replace(" ", "_", $noAccentString);
       $noUppercaseString =  strtolower($noEspaceString);
       $variables['ancre'] = 'paragraph'.$id;
       global $base_url;
@@ -613,11 +624,11 @@ function openig_preprocess_paragraph(&$variables){
   or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_la_une') or ($variables['elements']['#paragraph']->type[0]->target_id == 'agenda')
   or ($variables['elements']['#paragraph']->type[0]->target_id == 'a_savoir') or ($variables['elements']['#paragraph']->type[0]->target_id == 'coup_de_projecteur')) {
     if ($variables['content']['field_picto'][0]) {
-       $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id); 
-       $variables['picto_uri'] = $file_picto->get('uri')[0]->value; 
+       $file_picto =  \Drupal::entityTypeManager()->getStorage('file')->load($variables['content']['field_picto'][0]['#item']->target_id);
+       $variables['picto_uri'] = $file_picto->get('uri')[0]->value;
      /* $variables['picto_uri'] = $variables['content']['field_picto'][0]['#markup'];*/
     }
-    
+
     $variables['content']['field_type_de_contenu']['#prev_even_odd'] = '';
   }
 }

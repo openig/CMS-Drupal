@@ -28,38 +28,26 @@
 #}
 {%
   set classes = [
-    'block',
-    'block-' ~ configuration.provider|clean_class,
-    'block-' ~ plugin_id|clean_class,
-    'view-header'
-  ]
+  'block',
+  'block-' ~ configuration.provider|clean_class,
+  'block-' ~ plugin_id|clean_class,
+  'block-newsletter-noussuivre'
+]
 %}
+<table{{ attributes.addClass(classes) }}>
+  <tbody style="display: block; padding:15px 30px;">
+  <tr style="display: block;">
+    {{ title_prefix }}
+    {% if label %}
+    <td style="display: block;" align="center"><h2{{ title_attributes }}>{{ label }}</h2></td>
+  </tr>
+  <tr style="display: block;">
+    {% endif %}
+    {{ title_suffix }}
+    {% block content %}
+      <td style="display: block;" align="center">{{ content }}</td>
+    {% endblock %}
+  </tr>
+  </tbody>
 
-<div{{ attributes.addClass(classes) }}>
-    <div class="region_huit"></div>
-    <div class="contenuFlex">
-        {{content.field_image}}
-        <div class="contenuTexte container">
-            {% if label %}
-                <div class="title_header">
-                    <div class="picto_titre">
-                        {#{{content.field_picto}}#}
-                        <h2{{ title_attributes }}>{{ label }}</h2>
-                        <span style="background-image:url('{{ url_picto }}')"></span>
-                    </div>
-                </div>
-            {% endif %}
-            {% block content %}
-              {{ content|without('field_image', 'field_picto','field_lien') }}
-              {{ drupal_block('simplenews_subscription_block', {
-                'unique_id':  'cb7e8b33-8304-4b94-ab02-4d08bbaa448d',
-                'newsletters':  ['default'],
-                'label_display': '0',
-                'id': 'openig-simplenewssubscription',
-                'message' : ''
-              }) }}
-            {% endblock %}
-        </div>
-    </div>
-    {{content.field_lien}}
-</div>
+</table>

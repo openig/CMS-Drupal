@@ -55,20 +55,29 @@
       </a>
     </div>
     {{ page_top }}
-    {{ render_block('openig_imageenhautdepage') }}
-    {{ render_block('openig_imageenhautdepagemobile') }}
+
+    {{ drupal_block('block_content:cc9d0053-0d6f-4f30-aa51-bacb9710c2a3', {
+      'id': 'openig-imageenhautdepage'
+    }, wrapper=true) }}
+
+    {{ drupal_block('block_content:4bd052d3-79d0-4cc0-ab26-65dc18594529', {
+      'id': 'openig-imageenhautdepagemobile'
+    }, wrapper=true) }}
+
     {% if root_path == 'les-actualites' %}
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-          {{ render_block('openig_formulaireexposeles_actualitesactualites_mobile') }}
+          <h2>Filtrer la recherche</h2>
+          {{ drupal_block('views_exposed_filter_block:les_actualites-actualites_mobile', wrapper=false) }}
         </div>
       </div>
     {% elseif root_path == 'l-agenda' %}
       <div class="d-xl-none d-block">
         <div class="formulaire_filtre">
           <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-          {{ render_block('openig_formulaireexposel_agendaagenda_mobile') }}
+          <h2>Filtrer la recherche</h2>
+          {{ drupal_block('views_exposed_filter_block:l_agenda-agenda', wrapper=false) }}
         </div>
       </div>
     {% elseif root_path == 'annuaire' %}
@@ -76,7 +85,8 @@
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
             <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-            {{ render_block('openig_formulaireexposeannuaireannuaire_mobile') }}
+            <h2>Filtrer la recherche</h2>
+            {{ drupal_block('views_exposed_filter_block:annuaire-annuaire', wrapper=false) }}
           </div>
         </div>
       {% endif %}
@@ -85,21 +95,31 @@
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
             <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-            {{ render_block('openig_formulaireexposeresultats_de_recherche_internal_mobile') }}
+            <h2>Filtrer la recherche</h2>
+            {{ drupal_block('views_exposed_filter_block:resultats_de_recherche-block_filter_search_internal', wrapper=false) }}
           </div>
         </div>
       {% else %}
         <div class="d-xl-none d-block">
           <div class="formulaire_filtre">
-            <button type="button" class="btn-close-filtre"><i class="fa-solid fa-xmark"></i></button>
-            {{ render_block('openig_searchexternalfilterblock_mobile') }}
+            <h2>Filtrer la recherche</h2>
+            {{ drupal_block('openig_search_external_filter_block', {
+              'id': 'block-openig-searchexternalfilterblock-mobile'
+            }, wrapper=true) }}
           </div>
         </div>
       {% endif %}
     {% endif %}
     {{ page }}
-    {{ render_block('openig_imageenbasdepage') }}
-    {{ render_block('openig_imageenbasdepagemobile') }}
+
+      {{ drupal_block('block_content:555f7a44-f502-42f6-be3c-da8191356402', {
+        'id': 'openig-imageenbasdepage'
+      }, wrapper=true) }}
+
+      {{ drupal_block('block_content:4255c696-6130-4b29-83a6-a1aeb6341d14', {
+        'id': 'openig-imageenbasdepagemobile'
+      }, wrapper=true) }}
+
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token }}">
   </body>

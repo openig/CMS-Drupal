@@ -24,6 +24,8 @@
  *   displayed after the main title tag that appears in the template.
  *
  * @see template_preprocess_block()
+ *
+ * Surcharge du block AddToAny Share Buttons - addtoanysharebuttons-bas-page
  */
 #}
 {%
@@ -33,7 +35,8 @@
     'block-' ~ plugin_id|clean_class,
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
+
+<div{{ attributes.addClass(classes) }} id="block-openig-addtoanysharebuttons-bas-page">
   {{ title_prefix }}
   {% if label %}
     <button id="button_share_bas_page" {{ title_attributes }}>

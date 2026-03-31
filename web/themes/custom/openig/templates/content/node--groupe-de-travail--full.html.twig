@@ -205,8 +205,8 @@
                                 {% endfor %}
                                 </div>
                             </div>
-                        {# {% endif %} #}         
-                    </div>                       
+                        {# {% endif %} #}
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -217,9 +217,13 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                      {{ drupal_block('views_block:contacts_gt-contacts_gt', {
+                        'id': 'openig-views-block-contacts-gt-contacts-gt'
+                      }, wrapper=true) }}
                     {% endif %}
-                    {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', {
+                        'id': 'openig-views-block-agenda-gt-agenda-gt'
+                      }, wrapper=true) }}
                     {{content.field_contenu_sidebar}}
                 </div>
             {% endif %}
@@ -227,9 +231,13 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') %}
                 <div class="col-lg-3 sidebar">
                     {% if content.field_animators[0] %}
-                        {{ render_block('openig_views_block__contacts_gt_contacts_gt') }}
+                      {{ drupal_block('views_block:contacts_gt-contacts_gt', {
+                        'id': 'openig-views-block-contacts-gt-contacts-gt'
+                      }, wrapper=true) }}
                     {% endif %}
-                    {{ render_block('openig_views_block__agenda_gt_agenda_gt') }}
+                      {{ drupal_block('views_block:agenda_gt-agenda_gt', {
+                        'id': 'openig-views-block-agenda-gt-agenda-gt'
+                      }, wrapper=true) }}
                 </div>
             {% endif %}
         {% endif %}
@@ -237,7 +245,7 @@
             {% if (content.field_animators[0]) or (evenements == 'oui') or (content.field_contenu_sidebar[0]) %}
                 {% if ((membre is not defined) and ('adherent' in user.getRoles())) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                     <div class="btnShareRejoindre">
-                        {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                      {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                         <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                     </div>
                 {% endif %}
@@ -245,7 +253,7 @@
                 <div class="col-12">
                     {% if ((membre is not defined) and ('adherent' in user.getRoles())) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles()) %}
                         <div class="btnShareRejoindre">
-                            {{ render_block('openig_addtoanysharebuttons_bas_page') }}
+                            {{ drupal_block('addtoany_block', {label : 'Partager'}) }}
                             <button id="btnRejoindre_bas" class="btn" data-bs-toggle="modal" data-bs-target="#rejoindreGroupe"><i class="fa-regular fa-user"></i>+ Rejoindre le groupe</button>
                         </div>
                     {% endif %}

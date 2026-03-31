@@ -23,13 +23,20 @@
   <div{{ attributes.addClass(classes) }}>
     <div class="first_line">
       {% if not logged_in %}
-        {{render_block('openig_adhesion_mobile')}}
-        {{render_block('openig_openidconnectlogin_mobile')}}
+        {{ drupal_menu('adhesion') }}
+        {{ drupal_block('openid_connect_login') }}
       {% endif %}
-      {{render_block('openig_faq_mobile')}}
+      <div id="block-openig-faq-mobile--2" class="contextual-region block block-system block-system-menu-blockfaq">
+        {{ drupal_menu('faq') }}
+      </div>
     </div>
-    {{render_block('openig_formulaireexposeresultats_de_rechercheblock_1_mobile')}}
-    {{render_block('openig_navigationprincipale')}}
+      {{ drupal_block('views_exposed_filter_block:resultats_de_recherche-block_1', {
+        'id': 'openig-formulairederecherche-mobile',
+        'label_display': '0'
+      }, wrapper=true) }}
+    <nav id="block-openig-navigationprincipale--2" class="contextual-region block block-menu navigation menu--main">
+      {{ drupal_menu('main', 0, 0, true) }}
+    </nav>
     {#{{ content }}#}
   </div>
 {% endif %}
