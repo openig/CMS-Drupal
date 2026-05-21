@@ -2,17 +2,25 @@ uuid: 44304266-a494-4726-b314-f493b2249bdc
 langcode: fr
 status: true
 dependencies:
+  config:
+    - node.type.article
+    - node.type.evenement
+    - node.type.groupe_de_travail
+    - node.type.ressource
+    - node.type.service
+    - node.type.simplenews_issue
+    - node.type.structure
+    - node.type.temoignage
   module:
     - node
 id: alias_contenu
 label: 'Alias contenu'
 type: 'canonical_entities:node'
-pattern: '[node:content-type]/[node:title]'
+pattern: '/[node:content-type]/[node:title]'
 selection_criteria:
   ee7941aa-10f6-46a2-bf17-00afdbaea385:
     id: 'entity_bundle:node'
     negate: false
-    uuid: ee7941aa-10f6-46a2-bf17-00afdbaea385
     context_mapping:
       node: node
     bundles:
