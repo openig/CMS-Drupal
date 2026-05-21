@@ -58,7 +58,7 @@ $databases = array(
 ###            (en particulier échec de création des sous-dossiers du stockage private)
 ###            https://www.drupal.org/project/drupal/issues/2799635
 #$settings['file_temp_path']              = $app_root . '/../temp';
-$settings['file_private_path']           = '/../private';
+$settings['file_private_path']           = '../private';
 $settings['config_sync_directory']       = '../configs/sync';
 $settings['hash_salt'] = file_get_contents($app_root . '/../configs/salt.txt');
 
