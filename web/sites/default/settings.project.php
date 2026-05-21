@@ -53,9 +53,13 @@ $databases = array(
 ###
 ### FILE SYSTEM
 ###
+### ATTENTION: Ne pas utiliser de chemins absolus (même en utilisant la variable $app_root)
+###            qui sont mal supportés quand la directive open_basedir de PHP est activée !
+###            (en particulier échec de création des sous-dossiers du stockage private)
+###            https://www.drupal.org/project/drupal/issues/2799635
 #$settings['file_temp_path']              = $app_root . '/../temp';
-$settings['file_private_path']           = $app_root . '/../private';
-$settings['config_sync_directory']       = $app_root . '/../configs/sync';
+$settings['file_private_path']           = '/../private';
+$settings['config_sync_directory']       = '../configs/sync';
 $settings['hash_salt'] = file_get_contents($app_root . '/../configs/salt.txt');
 
 ###
