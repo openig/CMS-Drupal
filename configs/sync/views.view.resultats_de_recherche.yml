@@ -1757,6 +1757,8 @@ display:
                 soft_limit: 0
                 soft_limit_label_less: 'Show less'
                 soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
               type:
                 plugin_id: bef
                 advanced:
@@ -1776,6 +1778,8 @@ display:
                 soft_limit: 0
                 soft_limit_label_less: 'Show less'
                 soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
       sorts: {  }
       arguments: {  }
       filters:
@@ -2500,6 +2504,8 @@ display:
                 soft_limit: 0
                 soft_limit_label_less: 'Show less'
                 soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
               type:
                 plugin_id: bef
                 advanced:
@@ -2519,6 +2525,8 @@ display:
                 soft_limit: 0
                 soft_limit_label_less: 'Show less'
                 soft_limit_label_more: 'Show more'
+                scrollable: false
+                scrollable_height: 300
       sorts: {  }
       arguments: {  }
       filters:
