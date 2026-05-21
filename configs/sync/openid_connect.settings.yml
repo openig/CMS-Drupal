@@ -12,4 +12,7 @@ userinfo_mappings:
   field_firstname: middle_name
   field_lastname: family_name
   field_phone: phone_number
-role_mappings: {  }
+role_mappings:
+  adherent:
+    - adherent
+autostart_login: false
