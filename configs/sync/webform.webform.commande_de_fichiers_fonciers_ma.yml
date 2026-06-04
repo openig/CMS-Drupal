@@ -23,21 +23,6 @@ elements: |-
   demoadu2:
     '#type': managed_file
     '#title': DemoADU2
-  declaration_cnil:
-    '#type': webform_document_file
-    '#title': 'Déclaration CNIL'
-    '#file_placeholder': "Déclaration CNIL désignant le DPO de l'organisation"
-    '#sanitize': true
-  acte_engagement_dgfip:
-    '#type': managed_file
-    '#title': 'Acte engagement DGFIP'
-    '#file_placeholder': "Acte d'engagement DGFIP"
-    '#sanitize': true
-  acte_engagement_dgfip2:
-    '#type': managed_file
-    '#title': 'Acte engagement DGFIP2'
-    '#file_placeholder': "Acte d'engagement DGFIP2"
-    '#sanitize': true
   actions:
     '#type': webform_actions
     '#title': "Bouton(s) d'envoi"
@@ -180,8 +165,9 @@ settings:
 access:
   create:
     roles:
-      - anonymous
-      - authenticated
+      - content_editor
+      - administrator
+      - adherent
     users: {  }
     permissions: {  }
   view_any:
