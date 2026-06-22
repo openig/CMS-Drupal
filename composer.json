@@ -108,7 +108,14 @@
             "wikimedia/composer-merge-plugin": true
         },
         "sort-packages": true,
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+    	"audit": {
+        "ignore": {
+            "PKSA-93qv-9n9h-6k6p": "Guzzle advisory sans correctif disponible — à retirer dès qu'une version fixée existe",
+            "PKSA-k22t-f949-t9g6": "Guzzle advisory sans correctif disponible — à retirer dès qu'une version fixée existe",
+	    "PKSA-7qs6-zvnz-h66r": "guzzlehttp/psr7 — aucun correctif disponible"
+	}
+    }
     },
     "extra": {
         "merge-plugin": {
