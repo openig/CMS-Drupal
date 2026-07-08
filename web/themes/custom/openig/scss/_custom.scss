@@ -42,6 +42,14 @@ body.toolbar-vertical.toolbar-tray-open #block-openig-imageenhautdepage, body.to
     z-index: -1;
 }
 
+#block-openig-imageenhautdepage img, #block-openig-imageenhautdepagemobile img {
+    width: 100% !important;
+    height: auto !important;
+}
+#block-openig-imageenhautdepage, #block-openig-imageenhautdepagemobile {
+    pointer-events: none !important;
+}
+
 .path-frontpage{
     #block-openig-imageenhautdepage{
         position: fixed;
