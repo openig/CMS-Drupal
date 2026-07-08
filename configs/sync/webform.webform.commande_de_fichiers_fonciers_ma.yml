@@ -15,28 +15,31 @@ categories: {  }
 elements: |-
   processed_text:
     '#type': processed_text
-    '#text': '<p>Toute organisation partenaire <strong>Plateforme OPenIG</strong> a le droit à une commande de fichiers fonciers <abbr title="Mise À Jour des Informations Cadastrales">MAJIC III</abbr> par an.</p><p>Avant de faire votre demande, veuillez prendre connaissance des conditions et des contraintes applicables sur cette donnée : <a href="https://www.openig.org/sites/default/files/cadastre/PROC_OPenIG_fichiers_fonciers_DGFIP.pdf" target="_blank">Documentation</a></p><p>Pour chaque demande, Les deux documents suivants doivent être fournis :</p><ul><li data-list-item-id="e535e779f8a902915cb23dbee962c1710">Un acte d''engagement <abbr title="Direction Générale des Finances Publiques">DGFIP</abbr> rempli. <a href="https://www.openig.org/sites/default/files/cadastre/Acte_engagement_majic.docx" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li><li data-list-item-id="e437b7bac3a108f54f25e392686f830dd">Un récipissé CNIL du <abbr title="Délégué à la Protection des Données">DPO</abbr> de l''organisation. Le DPO peut être désigné en ligne via <a href="https://www.cnil.fr/fr/designation-dpo" target="_blank">ce lien.</a></li></ul><p>&nbsp;</p><p>Ces documents peuvent être téléversés via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''administrateur <strong>Plateforme OPenIG</strong>.</p><p><br>&nbsp;</p><p><strong>Important :</strong> il ne peut y avoir qu''une seule commande, donc une seule livraison par organisme.</p>'
+    '#text': '<p>Sous réserve d’éligibilité, toute structure <strong>adhérente d''OPenIG</strong> a le droit à une commande de fichiers fonciers <abbr title="Mise À Jour des Informations Cadastrales">MAJIC III</abbr> par an.</p><p>Avant de faire votre demande, veuillez prendre connaissance des conditions et des contraintes applicables sur cette donnée : <a href="https://www.openig.org/sites/default/files/cadastre/PROC_OPenIG_fichiers_fonciers_DGFIP.pdf" target="_blank">Documentation</a></p><p>Pour chaque demande, les deux documents suivants doivent être fournis :</p><ul><li data-list-item-id="e535e779f8a902915cb23dbee962c1710">Un récépissé CNIL désignant le délégué à la protection des données (<abbr title="Délégué à la Protection des Données">DPO)</abbr> de l''organisation. Le DPO peut être désigné en ligne via <a href="https://www.cnil.fr/fr/designation-dpo" target="_blank">ce lien.</a></li><li data-list-item-id="ec2c90c10c4d9d3e0d0a9a487ed5d9f52">Un acte d''engagement <abbr title="Direction Générale des Finances Publiques">DGFIP</abbr> rempli. <a href="https://www.openig.org/sites/default/files/cadastre/Acte_engagement_majic.docx" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li></ul><p>Ces documents peuvent être téléversés via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''équipe d''OPenIG.</p><p>Si vous avez besoin de précisions sur la procédure ou sur les conditions d''éligibilité, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:cadastre@openig.org" target="_blank">cadastre@openig.org</a></p><p>Si vous rencontrez des problèmes techniques pour envoyer votre demande, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:webmestre@openig.org" target="_blank">webmestre@openig.org</a></p><p><strong>Important :</strong> il ne peut y avoir qu''une seule commande par an, donc une seule livraison par structure.</p>'
     '#format': full_html
-  demoadu:
-    '#type': checkbox
-    '#title': demoADU
-  demoadu2:
-    '#type': managed_file
-    '#title': DemoADU2
   declaration_cnil:
     '#type': webform_document_file
     '#title': 'Déclaration CNIL'
-    '#file_placeholder': "Déclaration CNIL désignant le DPO de l'organisation"
+    '#description': "Déclaration CNIL désignant le DPO de l'organisation."
+    '#help': |-
+      Déclaration CNIL désignant le DPO de l'organisation.
+      Sélectionnez un fichier sur votre poste.
+    '#description_display': tooltip
+    '#required': true
+    '#file_help': help
+    '#file_extensions': 'txt rtf pdf doc docx odt '
     '#sanitize': true
   acte_engagement_dgfip:
-    '#type': managed_file
+    '#type': webform_document_file
     '#title': 'Acte engagement DGFIP'
-    '#file_placeholder': "Acte d'engagement DGFIP"
-    '#sanitize': true
-  acte_engagement_dgfip2:
-    '#type': managed_file
-    '#title': 'Acte engagement DGFIP2'
-    '#file_placeholder': "Acte d'engagement DGFIP2"
+    '#description': "Acte d'engagement DGFIP"
+    '#help': |-
+      Acte d'engagement DGFIP.
+      Sélectionnez un fichier sur votre poste.
+    '#description_display': tooltip
+    '#required': true
+    '#file_help': help
+    '#file_extensions': 'txt rtf pdf doc docx odt '
     '#sanitize': true
   actions:
     '#type': webform_actions
@@ -180,7 +183,6 @@ settings:
 access:
   create:
     roles:
-      - anonymous
       - authenticated
     users: {  }
     permissions: {  }
@@ -229,5 +231,83 @@ access:
       - administrator
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  courriel:
+    id: email
+    handler_id: courriel
+    label: 'Courriel demandeur'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 0
+    settings:
+      states:
+        - completed
+      to_mail: '[current-user:mail]'
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      from_mail: cadastre@openig.org
+      from_options: {  }
+      from_name: '[OPenIG] Cadastre'
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Commande de fichiers fonciers MAJIC - millésime 2026'
+      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers MAJIC le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
+      excluded_elements:
+        processed_text: processed_text
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      langcode: ''
+      parameters: {  }
+      debug: false
+  courriel_equipe:
+    id: email
+    handler_id: courriel_equipe
+    label: 'Courriel équipe'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: 2
+    settings:
+      states:
+        - completed
+      to_mail: webmestre@openig.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: 'mcros@openig.org,cadastre@openig.org'
+      cc_options: {  }
+      from_mail: webmestre@openig.org
+      from_options: {  }
+      from_name: ''
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Demande commande de fichiers fonciers MAJIC - millésime 2026'
+      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers MAJIC</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
+      excluded_elements:
+        processed_text: processed_text
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      langcode: ''
+      parameters: {  }
+      debug: false
 variants: {  }
