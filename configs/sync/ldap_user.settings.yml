@@ -6,8 +6,8 @@ drupalAcctProvisionTriggers:
   - drupal_on_login
   - drupal_on_update_create
 ldapEntryProvisionTriggers: {  }
-orphanedIncludeDisabledUsers: true
-orphanedDrupalAcctBehavior: user_cancel_block
+orphanedIncludeDisabledUsers: false
+orphanedDrupalAcctBehavior: ldap_user_orphan_email
 orphanedDrupalAcctReportingInbox: ''
 orphanedCheckQty: 100
 orphanedAccountCheckInterval: weekly
