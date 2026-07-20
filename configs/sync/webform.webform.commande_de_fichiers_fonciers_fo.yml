@@ -259,8 +259,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Demande commande de fichiers fonciers MAJIC - millésime 2026'
-      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers MAJIC</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
+      subject: 'Demande commande de fichiers fonciers forestiers - millésime 2026'
+      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers forestiers</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
       excluded_elements:
         processed_text: processed_text
       ignore_access: false
@@ -298,8 +298,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Commande de fichiers fonciers MAJIC - millésime 2026'
-      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers MAJIC le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
+      subject: 'Commande de fichiers fonciers forestiers - millésime 2026'
+      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers forestiers le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
       excluded_elements:
         processed_text: processed_text
       ignore_access: false

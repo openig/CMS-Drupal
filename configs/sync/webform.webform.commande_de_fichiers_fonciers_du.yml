@@ -15,14 +15,14 @@ categories: {  }
 elements: |-
   processed_text:
     '#type': processed_text
-    '#text': '<p>Sous réserve d’éligibilité, toute structure <strong>adhérente d''OPenIG</strong> a le droit à une commande de fichiers fonciers du Cerema DV3F et RFP.</p><p>Pour chaque demande, le document suivant doit être fourni :</p><ul><li data-list-item-id="ec2c90c10c4d9d3e0d0a9a487ed5d9f52">Un acte d''engagement rempli. <a href="https://www.openig.org/ressource/acte-dengagement-ayant-droit-ff-du-cerema" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li></ul><p>Ce document peut être téléversé via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''équipe d''OPenIG.</p><p>Si vous avez besoin de précisions sur la procédure ou sur les conditions d''éligibilité, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:cadastre@openig.org" target="_blank">cadastre@openig.org</a></p><p>Si vous rencontrez des problèmes techniques pour envoyer votre demande, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:webmestre@openig.org" target="_blank">webmestre@openig.org</a></p>'
+    '#text': '<p>Sous réserve d’éligibilité, toute structure <strong>adhérente d''OPenIG</strong> a le droit à une commande de fichiers fonciers du Cerema (DV3F et RFP).</p><p>Pour chaque demande, le document suivant doit être fourni :</p><ul><li data-list-item-id="ec2c90c10c4d9d3e0d0a9a487ed5d9f52">Un acte d''engagement rempli. <a href="https://www.openig.org/ressource/acte-dengagement-ayant-droit-ff-du-cerema" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li></ul><p>Ce document peut être téléversé via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''équipe d''OPenIG.</p><p>Si vous avez besoin de précisions sur la procédure ou sur les conditions d''éligibilité, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:cadastre@openig.org" target="_blank">cadastre@openig.org</a></p><p>Si vous rencontrez des problèmes techniques pour envoyer votre demande, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:webmestre@openig.org" target="_blank">webmestre@openig.org</a></p>'
     '#format': full_html
-  acte_engagement_dgfip:
+  acte_engagement_cerema:
     '#type': webform_document_file
     '#title': 'Acte engagement fichiers du Cerema'
-    '#description': "Acte d'engagement DGFIP"
+    '#description': "Acte d'engagement Cerema"
     '#help': |-
-      Acte d'engagement DGFIP.
+      Acte d'engagement CEREMA.
       Sélectionnez un fichier sur votre poste.
     '#description_display': tooltip
     '#required': true
@@ -247,8 +247,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Demande commande de fichiers fonciers MAJIC - millésime 2026'
-      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers MAJIC</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
+      subject: 'Demande commande de fichiers fonciers DV3F / RFP - millésime 2026'
+      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers DV3F / RFP</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
       excluded_elements:
         processed_text: processed_text
       ignore_access: false
@@ -286,8 +286,8 @@ handlers:
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Commande de fichiers fonciers MAJIC - millésime 2026'
-      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers MAJIC le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
+      subject: 'Commande de fichiers fonciers DV3F / RFP - millésime 2026'
+      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers DV3F / RFP le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
       excluded_elements:
         processed_text: processed_text
       ignore_access: false
