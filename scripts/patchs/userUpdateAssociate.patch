@@ -75,7 +75,7 @@ diff -rub a/ldap_user/src/Processor/GroupUserUpdateProcessor.php b/ldap_user/src
 +
 +    // Associate manually created Drupal accounts with related LDAP Account
 +    if (!$uid && $this->config->get('userUpdateAssociate')) {
-+      $load_by_name = $this->userStorage->loadByProperties(['name' => $username]);
++      $load_by_name = $this->entityTypeManager->getStorage('user')->loadByProperties(['name' => $username]);
 +      $drupalUser = $load_by_name ? reset($load_by_name) : NULL;
 +      if ($drupalUser) {
 +        $this->logger->notice(
