@@ -503,8 +503,13 @@ function openig_preprocess_views_view_fields(&$variables){
 
     // Récupération des contacts
     $variables['contacts'] = [];
-    foreach ($variables['row']->_entity->get('field_contacts') as $key => $value) {
+    // Une ligne de vue sans entité chargeable (nœud corrompu) ne doit pas casser toute la page.
+    $contacts = $variables['row']->_entity ? $variables['row']->_entity->get('field_contacts') : [];
+    foreach ($contacts as $key => $value) {
       $user = \Drupal\user\Entity\User::load($value->target_id);
+      if (!$user) {
+        continue;
+      }
       $variables['contacts'][$value->target_id]['prenom'] = $user->get('field_firstname')->value;
       $variables['contacts'][$value->target_id]['nom'] = $user->get('field_lastname')->value;
       $variables['contacts'][$value->target_id]['mail'] = $user->get('mail')->value;
@@ -515,16 +520,16 @@ function openig_preprocess_views_view_fields(&$variables){
     $term = \Drupal\taxonomy\Entity\Term::load($variables['view']->args[0]);
     if ($term->vid[0]->target_id == 'typologie_de_structure') {
       $variables['vid'] = 'typologie_de_structure';
-      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+      $variables['title_row'] = $variables['row']->_entity?->label();
     }
     elseif ($term->vid[0]->target_id == 'dpt_intervention') {
       $variables['vid'] = 'dpt_intervention';
-      $variables['title_row'] = $variables['row']->_entity->title[0]->value;
+      $variables['title_row'] = $variables['row']->_entity?->label();
     }
     // Check si la ressource est inaccessible
     $node_check = $variables['row']->_object;
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    $check = $variables['row']->_entity->access('view', $user);
+    $check = $variables['row']->_entity?->access('view', $user) ?? FALSE;
     $variables['accessCheck'] = $check;
   }
 }

@@ -113,13 +113,14 @@ function openig_search_preprocess_views_view_fields__block_filter_search_interna
     elseif(!empty($variables['row']->_object->getEntity()->field_file->getValue())){
       // Récupération du fichier
       $file = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_object->getEntity()->field_file->getValue()[0]['target_id']);
-      $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file->uri->getValue()[0]['value']);
+      // Fichier supprimé mais toujours référencé : pas de lien plutôt qu'une erreur 500.
+      $variables['urlCustom'] = $file ? \Drupal::service('file_url_generator')->generate($file->uri->getValue()[0]['value']) : null;
     }
     // Si champ image alors affichage
     elseif(!empty($variables['row']->_object->getEntity()->field_image->getValue())){
       // Récupération de l'image
       $file_img = \Drupal::entityTypeManager()->getStorage('file')->load($variables['row']->_object->getEntity()->field_image->getValue()[0]['target_id']);
-      $variables['urlCustom'] = \Drupal::service('file_url_generator')->generate($file_img->uri->getValue()[0]['value']);
+      $variables['urlCustom'] = $file_img ? \Drupal::service('file_url_generator')->generate($file_img->uri->getValue()[0]['value']) : null;
     }
     else{
       $variables['urlCustom'] = null;
