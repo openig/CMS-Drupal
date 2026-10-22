@@ -2215,3 +2215,11 @@ div.region-navigation-deuxieme-section, div.region-mobile-seconde-section{
 .webform-submission-form{
     background-color: white;
 }
+// Vignettes non recadrées : l'image entière est centrée dans un cadre 306x140
+img.image-style-vignette-vues {
+  width: 100%;
+  aspect-ratio: 306 / 140;
+  object-fit: scale-down;
+  object-position: center;
+  background-color: #fff;
+}
