@@ -5,11 +5,11 @@ dependencies: {  }
 name: vignette_vues
 label: 'Vignette vues (306x140)'
 effects:
-  049e70a1-8e96-43f9-9e3b-88d083e8f105:
-    uuid: 049e70a1-8e96-43f9-9e3b-88d083e8f105
-    id: image_scale_and_crop
+  6e2d8364-b312-4b6e-ada4-e86523d00f4a:
+    uuid: 6e2d8364-b312-4b6e-ada4-e86523d00f4a
+    id: image_scale
     weight: 1
     data:
       width: 306
       height: 140
-      anchor: center-center
+      upscale: false
