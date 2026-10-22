@@ -1,40 +1,28 @@
-uuid: 66cb8e7c-1e8c-4afe-9e51-8b4650222920
+uuid: 0c5e9f68-ae3b-44c0-be1f-9e7729d26051
 langcode: fr
 status: open
 dependencies: {  }
 weight: 0
 open: null
 close: null
-uid: 20
+uid: 625
 template: false
 archive: false
-id: cmd_fichiers_foncier_forestier
-title: 'Commande de fichiers Foncier Forestier'
-description: 'Commande de fichiers fonciers MAJIC'
+id: commande_de_fichiers_fonciers_du
+title: 'Commande de fichiers fonciers du Cerema'
+description: 'Commande de fichiers fonciers du Cerema'
 categories: {  }
 elements: |-
   processed_text:
     '#type': processed_text
-    '#text': '<p>Sous réserve d’éligibilité, toute structure <strong>adhérente d''OPenIG</strong> a le droit à une commande de fichiers Foncier Forestier par an.</p><p>Les fichiers fonciers forestiers sont le produit de la donnée cadastrale non-anonymisée croisée avec les fichiers <strong>EDIGÉO</strong> et la <strong>BDForêt</strong>® de l''IGN. Ils sont destinés aux professionnels du milieu forestier.</p><p>Avant de faire votre demande, veuillez prendre connaissance des conditions et des contraintes applicables sur cette donnée : <a href="https://www.openig.org/sites/default/files/foncier_forestier/PROC_OPenIG_fichiers_foncier_forestier.pdf" target="_blank">Documentation</a></p><p>Pour chaque demande, les deux documents suivants doivent être fournis :</p><ul><li data-list-item-id="e535e779f8a902915cb23dbee962c1710">Un récépissé CNIL désignant le délégué à la protection des données (<abbr title="Délégué à la Protection des Données">DPO)</abbr> de l''organisation. Le DPO peut être désigné en ligne via <a href="https://www.cnil.fr/fr/designation-dpo" target="_blank">ce lien.</a></li><li data-list-item-id="ec2c90c10c4d9d3e0d0a9a487ed5d9f52">Un acte d''engagement <abbr title="Direction Générale des Finances Publiques">DGFIP</abbr> rempli. <a href="https://www.openig.org/sites/default/files/cadastre/Acte_engagement_majic.docx" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li></ul><p>Ces documents peuvent être téléversés via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''équipe d''OPenIG.</p><p>Si vous avez besoin de précisions sur la procédure ou sur les conditions d''éligibilité, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:cadastre@openig.org" target="_blank">cadastre@openig.org</a></p><p>Si vous rencontrez des problèmes techniques pour envoyer votre demande, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:webmestre@openig.org" target="_blank">webmestre@openig.org</a></p><p><strong>Important :</strong> il ne peut y avoir qu''une seule commande par an, donc une seule livraison par structure.</p>'
+    '#text': '<p>Sous réserve d’éligibilité, toute structure <strong>adhérente d''OPenIG</strong> a le droit à une commande de fichiers fonciers du Cerema (DV3F et RFP).</p><p>Pour chaque demande, le document suivant doit être fourni :</p><ul><li data-list-item-id="ec2c90c10c4d9d3e0d0a9a487ed5d9f52">Un acte d''engagement rempli. <a href="https://www.openig.org/ressource/acte-dengagement-ayant-droit-ff-du-cerema" target="_blank">Télécharger l''acte d''engagement à remplir.</a></li></ul><p>Ce document peut être téléversé via le formulaire ci-dessous.</p><p>Un e-mail de confirmation vous sera envoyé et votre demande sera traitée sous 15 jours par l''équipe d''OPenIG.</p><p>Si vous avez besoin de précisions sur la procédure ou sur les conditions d''éligibilité, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:cadastre@openig.org" target="_blank">cadastre@openig.org</a></p><p>Si vous rencontrez des problèmes techniques pour envoyer votre demande, vous pouvez nous contacter à l''adresse suivante : <a href="mailto:webmestre@openig.org" target="_blank">webmestre@openig.org</a></p>'
     '#format': full_html
-  declaration_cnil:
+  acte_engagement_cerema:
     '#type': webform_document_file
-    '#title': 'Déclaration CNIL'
-    '#description': "Déclaration CNIL désignant le DPO de l'organisation."
+    '#title': 'Acte engagement fichiers du Cerema'
+    '#description': "Acte d'engagement Cerema"
     '#help': |-
-      Déclaration CNIL désignant le DPO de l'organisation.
-      Sélectionnez un fichier sur votre poste.
-    '#description_display': tooltip
-    '#required': true
-    '#file_help': help
-    '#file_extensions': 'txt rtf pdf doc docx odt '
-    '#sanitize': true
-  acte_engagement_dgfip:
-    '#type': webform_document_file
-    '#title': 'Acte engagement DGFIP'
-    '#description': "Acte d'engagement DGFIP"
-    '#help': |-
-      Acte d'engagement DGFIP.
+      Acte d'engagement CEREMA.
       Sélectionnez un fichier sur votre poste.
     '#description_display': tooltip
     '#required': true
@@ -80,9 +68,9 @@ settings:
   form_autofocus: false
   form_details_toggle: false
   form_reset: false
-  form_access_denied: login
+  form_access_denied: default
   form_access_denied_title: ''
-  form_access_denied_message: 'Veuillez vous connecter'
+  form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
   form_file_limit_message: ''
@@ -184,7 +172,9 @@ settings:
 access:
   create:
     roles:
-      - authenticated
+      - content_editor
+      - administrator
+      - adherent
     users: {  }
     permissions: {  }
   view_any:
@@ -233,14 +223,53 @@ access:
     users: {  }
     permissions: {  }
 handlers:
-  courriel:
+  courriel_equipe_ffmajic:
     id: email
-    handler_id: courriel
+    handler_id: courriel_equipe_ffmajic
+    label: 'Courriel équipe'
+    notes: ''
+    status: true
+    conditions: {  }
+    weight: -48
+    settings:
+      states:
+        - completed
+      to_mail: webmestre@openig.org
+      to_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      cc_mail: cadastre@openig.org
+      cc_options: {  }
+      from_mail: webmestre@openig.org
+      from_options: {  }
+      from_name: _default
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      subject: 'Demande commande de fichiers fonciers DV3F / RFP - millésime 2026'
+      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers fonciers DV3F / RFP</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
+      excluded_elements:
+        processed_text: processed_text
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      exclude_attachments: false
+      html: true
+      attachments: true
+      twig: false
+      theme_name: ''
+      langcode: ''
+      parameters: {  }
+      debug: false
+  courriel_demandeur_ffmajic:
+    id: email
+    handler_id: courriel_demandeur_ffmajic
     label: 'Courriel demandeur'
     notes: ''
     status: true
     conditions: {  }
-    weight: 0
+    weight: -49
     settings:
       states:
         - completed
@@ -252,13 +281,13 @@ handlers:
       cc_options: {  }
       from_mail: cadastre@openig.org
       from_options: {  }
-      from_name: '[OPenIG] Cadastre'
+      from_name: 'OPenIG - Cadastre'
       reply_to: ''
       return_path: ''
       sender_mail: ''
       sender_name: ''
-      subject: 'Commande de fichiers Foncier Forestier - millésime 2026'
-      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers Foncier Forestier le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
+      subject: 'Commande de fichiers fonciers DV3F / RFP - millésime 2026'
+      body: "<p>Bonjour [current-user:field_firstname] [current-user:field_lastname],</p>\r\n<p></p>\r\n<p>Vous avez effectué une commande des fichiers fonciers DV3F / RFP le [webform_submission:created], celle-ci sera traitée par l'équipe d'OPenIG dans un délai de 15 jours sous réserve que les documents fournis soient conformes et que votre espace SFTP OPenIG soit actif.</p>\r\n<p></p>\r\n<p>Pour rappel vous avez fourni les documents suivants :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Un mail vous informera de la mise à disposition de votre commande sur votre espace SFTP.</p>\r\n<p></p>\r\n<p>Pour toute question vous pouvez nous contacter à l'adresse suivante : cadastre@openig.org</p>\r\n<p></p>\r\n<p>Cordialement,</p>\r\n<p>L'équipe d'OPenIG</p>"
       excluded_elements:
         processed_text: processed_text
       ignore_access: false
@@ -267,45 +296,6 @@ handlers:
       exclude_attachments: false
       html: true
       attachments: false
-      twig: false
-      theme_name: ''
-      langcode: ''
-      parameters: {  }
-      debug: false
-  courriel_equipe:
-    id: email
-    handler_id: courriel_equipe
-    label: 'Courriel équipe'
-    notes: ''
-    status: true
-    conditions: {  }
-    weight: 2
-    settings:
-      states:
-        - completed
-      to_mail: webmestre@openig.org
-      to_options: {  }
-      bcc_mail: ''
-      bcc_options: {  }
-      cc_mail: 'mcros@openig.org,cadastre@openig.org'
-      cc_options: {  }
-      from_mail: webmestre@openig.org
-      from_options: {  }
-      from_name: ''
-      reply_to: ''
-      return_path: ''
-      sender_mail: ''
-      sender_name: ''
-      subject: 'Demande commande de fichiers Foncier Forestier - millésime 2026'
-      body: "<p>Bonjour,</p>\r\n<p></p>\r\n<p>Nouvelle commande des fichiers Foncier Forestier</p> \r\n<p>Envoyée le [webform_submission:created] </p>\r\n<p>Envoyée par :</p>\r\n<p>[current-user:account-name]</p>\r\n<p>[current-user:mail]</p>\r\n<p>[current-user:field_lastname]</p>\r\n<p>[current-user:field_firstname]</p>\r\n<p>[current-user:field_structure]</p>\r\n<p></p>\r\n<p>Documents fournis :</p>\r\n<p>[webform_submission:values]</p>\r\n<p></p>\r\n<p>Statut : A traiter</p>\r\n<p></p>\r\n<p>[webform_submission:source-title:?]</p>"
-      excluded_elements:
-        processed_text: processed_text
-      ignore_access: false
-      exclude_empty: true
-      exclude_empty_checkbox: false
-      exclude_attachments: false
-      html: true
-      attachments: true
       twig: false
       theme_name: ''
       langcode: ''
