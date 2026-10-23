@@ -100,8 +100,38 @@ function openig_ldap_ldap_user_edit_user_alter(UserInterface $account, Entry $en
   // die();
 }
 
+/**
+ * Liste les champs synchronisés depuis LDAP dont la valeur a changé.
+ */
+function _openig_ldap_structure_changed_fields($structure): array {
+    if ($structure->isNew()) {
+        return ['(nouvelle structure)'];
+    }
+    $original = \Drupal::entityTypeManager()->getStorage('node')->loadUnchanged($structure->id());
+    $fields = [
+        'title', 'status', 'field_address', 'field_postcode', 'field_city', 'field_phone',
+        'field_email', 'field_website', 'field_siret', 'body', 'field_typologie_structure',
+        'field_dpt_intervention', 'field_image', 'field_crige_partner',
+    ];
+    $changed = [];
+    foreach ($fields as $field) {
+        // Comparaison sur la seule propriété principale : body est renseigné sans format,
+        // un lien sans titre, etc. Une comparaison complète verrait toujours une différence.
+        $main = $structure->get($field)->getFieldDefinition()->getFieldStorageDefinition()->getMainPropertyName();
+        $new = array_map('strval', array_column($structure->get($field)->filterEmptyItems()->getValue(), $main));
+        $old = array_map('strval', array_column($original->get($field)->filterEmptyItems()->getValue(), $main));
+        if ($new !== $old) {
+            $changed[] = $field;
+        }
+    }
+    return $changed;
+}
+
 function openig_ldap_cron() {
     $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $saved = 0;
+    $unchanged = 0;
+    $changed_fields = [];
 
     $query = \Drupal::service('ldap.query');
     $query->load('all_structures');
@@ -234,10 +264,28 @@ function openig_ldap_cron() {
 	}
 
 
-        $structure->set('moderation_state', 'published');
         $structure->setPublished(); // $structure->set('status', 1);
+
+        // Chaque enregistrement crée une révision complète : n'enregistrer que si LDAP a changé.
+        $diff = _openig_ldap_structure_changed_fields($structure);
+        if (!$diff) {
+            $unchanged++;
+            continue;
+        }
+        foreach ($diff as $field) {
+            $changed_fields[$field] = ($changed_fields[$field] ?? 0) + 1;
+        }
+
+        $structure->set('moderation_state', 'published');
         $structure->save();
+        $saved++;
 
     }
+
+    \Drupal::logger('openig_ldap')->info('Synchro des structures LDAP : @saved enregistrée(s), @unchanged inchangée(s). Champs modifiés : @fields', [
+        '@saved' => $saved,
+        '@unchanged' => $unchanged,
+        '@fields' => $changed_fields ? json_encode($changed_fields, JSON_UNESCAPED_UNICODE) : 'aucun',
+    ]);
 }
 
