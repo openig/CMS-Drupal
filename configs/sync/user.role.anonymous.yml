@@ -41,4 +41,3 @@ permissions:
   - 'use structure transition create_new_draft'
   - 'use text format restricted_html'
   - 'view media'
-  - 'view user email addresses'

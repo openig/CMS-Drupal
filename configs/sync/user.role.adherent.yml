@@ -9,4 +9,6 @@ label: Adhérent
 weight: 4
 is_admin: null
 permissions:
+  - 'access user profiles'
   - 'display eu cookie compliance popup'
+  - 'view user email addresses'
