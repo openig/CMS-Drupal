@@ -98,7 +98,7 @@
 						{% endfor %}
 					</div>
 				{% endif %}
-				{% if contacts|length > 0 %}
+				{% if contacts|length > 0 and (('adherent' in user.getRoles()) or ('administrator' in user.getRoles()) or ('content_editor' in user.getRoles())) %}
 					<div class="contacts">
 						{% for contact in contacts %}
 							<div class="contact">

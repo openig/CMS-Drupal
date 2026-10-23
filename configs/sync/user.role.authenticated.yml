@@ -36,7 +36,6 @@ permissions:
   - 'access site-wide contact form'
   - 'access sitemap'
   - 'access toolbar'
-  - 'access user profiles'
   - 'create structure content'
   - 'delete own files'
   - 'display eu cookie compliance popup'
@@ -57,4 +56,3 @@ permissions:
   - 'view field_social_network'
   - 'view field_structure'
   - 'view media'
-  - 'view user email addresses'
