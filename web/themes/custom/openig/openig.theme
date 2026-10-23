@@ -471,11 +471,11 @@ function openig_preprocess_views_view_fields(&$variables){
     foreach ($result as $key => $value) {
       // Vérification si un membre du CA
       $query = $database->query("SELECT f.field_ca_member_value FROM {user__field_ca_member} f  WHERE f.entity_id = '".$value->entity_id."'");
-      $membresCA[] = $query->fetch()->field_ca_member_value;
+      $membresCA[] = $query->fetchField();
 
       // Vérification si référent
       $query = $database->query("SELECT f.field_referent_value FROM {user__field_referent} f  WHERE f.entity_id = '".$value->entity_id."'");
-      $referents[] = $query->fetch()->field_referent_value;
+      $referents[] = $query->fetchField();
     }
     // Récupération des groupes de travail
     $query = $database->query("SELECT DISTINCT n.nid, n.title FROM {user__field_structure} s LEFT JOIN {node__field_members} m ON m.field_members_target_id = s.entity_id LEFT JOIN {node_field_data} n ON n.nid = m.entity_id WHERE s.field_structure_target_id = '".$variables['row']->nid."'");
