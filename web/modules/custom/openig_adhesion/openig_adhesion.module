@@ -59,6 +59,9 @@ function openig_adhesion_preprocess_openig_adhesion_simulator(&$variables) {
         $js_variables['valeur_fixe'] = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
         $js_variables['options_type_organisme'] = $settings['openig_adhesion_simulator_formula_type_organisme_options'];
 
+        // Montant de la part fixe (cat 2) - organisme privé - entreprise unipersonnelle
+        $js_variables['valeur_fixe_unipersonnelle'] = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'];
+
         $variables['#attached']['drupalSettings']['openig_adhesion']['openigAdhesion'] = $js_variables;
     }
 
