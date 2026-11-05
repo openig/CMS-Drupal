@@ -77,6 +77,9 @@ settings:
       label: 'Un organisme privé'
       amount: '0'
     -
+      label: 'Un organisme privé - entreprise unipersonnelle'
+      amount: '100'
+    -
       label: 'Une association'
       amount: '0'
     -
@@ -85,9 +88,6 @@ settings:
     -
       label: 'Une personne physique [Adhésion de soutien à titre individuel]'
       amount: '0'
-    -
-      label: 'Un organisme privé - entreprise unipersonnelle'
-      amount: '100'
   openig_adhesion_simulator_formula_type_organisme_options:
     -
       label: 'Une commune'
@@ -123,6 +123,9 @@ settings:
       label: 'Un organisme privé'
       amount: '0'
     -
+      label: 'Un organisme privé - entreprise unipersonnelle'
+      amount: '0'
+    -
       label: 'Une association'
       amount: '0'
     -
@@ -130,8 +133,5 @@ settings:
       amount: '0'
     -
       label: 'Une personne physique [Adhésion de soutien à titre individuel]'
-      amount: '0'
-    -
-      label: 'Un organisme privé - entreprise unipersonnelle'
       amount: '0'
 visibility: {  }
