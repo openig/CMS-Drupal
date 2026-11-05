@@ -246,13 +246,20 @@ class SimulatorForm extends FormBase {
                 case '10':
                 case '11':
                 case '12':
+                    $message = $settings['type_5_email_content'];
+                    $message = str_replace('@type', $this->options[$organism_type], $message);
+                    $message = str_replace('@simulation_result', $simulation_result, $message);
+                    $message = str_replace('@part_fixe_unipersonnelle', $part_fixe_unipersonnelle, $message);
+                    $this->sendMail($settings['type_5_email_title'], $message, $email);
+                    break;
+                case '13':
                     $message = $settings['type_2_email_content'];
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@salaries', $salaries, $message);
                     $message = str_replace('@simulation_result', $simulation_result, $message);
                     $this->sendMail($settings['type_2_email_title'], $message, $email);
                     break;
-                case '13':
+                case '14':
                     $message = $settings['type_3_email_content'];
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@budget', $budget, $message);
@@ -261,7 +268,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@percent_budget', $percent_budget, $message);
                     $this->sendMail($settings['type_3_email_title'], $message, $email);
                     break;
-                case '14':
+                case '15':
                     $message = $settings['type_4_email_content'];
                     $message = str_replace('@type', $this->options[$organism_type], $message);
                     $message = str_replace('@population', $population, $message);
@@ -269,13 +276,7 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@part_fixe', $part_fixe, $message);
                     $this->sendMail($settings['type_4_email_title'], $message, $email);
                     break;
-                case '15':
-                    $message = $settings['type_5_email_content'];
-                    $message = str_replace('@type', $this->options[$organism_type], $message);
-                    $message = str_replace('@simulation_result', $simulation_result, $message);
-                    $message = str_replace('@part_fixe_unipersonnelle', $part_fixe_unipersonnelle, $message);
-                    $this->sendMail($settings['type_5_email_title'], $message, $email);
-                    break;
+                   
             }
 
             // Build message
