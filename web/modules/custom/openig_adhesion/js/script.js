@@ -44,8 +44,15 @@
                 }
 
                 // Individuel
-                if (event.target.value > 13 && event.target.value <= 15) {
+                if (event.target.value == 14) {
                     $('#individual.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
+                    $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.valeur_fixe);
+                }
+
+                // Organisme privé - entreprise unipersonnelle
+                if (event.target.value == 15) {
+                  $('#unipersonnelle.adhesion-simulator-form__item').removeClass('adhesion-simulator-form__item--hidden');
+                  $('#simulation_result').val(drupalSettings.openig_adhesion.openigAdhesion.valeur_fixe_unipersonnelle);
                 }
 
             });
