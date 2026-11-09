@@ -32,9 +32,10 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         '9' => ['label' => 'Un autre EPCI', 'amount' => 0],
         '10' => ['label' => 'Un autre organisme public', 'amount' => 0],
         '11' => ['label' => 'Un organisme privé', 'amount' => 0],
-        '12' => ['label' => 'Une association', 'amount' => 0],
-        '13' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
-        '14' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
+        '12' => ['label' => 'Un organisme privé - entreprise unipersonnelle', 'amount' => 100],
+        '13' => ['label' => 'Une association', 'amount' => 0],
+        '14' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
+        '15' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
     ];
 
 
@@ -103,6 +104,17 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
                 '#default_value' => isset($config['type_4_email_content']) ? $config['type_4_email_content'] : '',
                 '#description' => "Variables : @type, @part_fixe",
             ],
+            'type_5_email_title' => [
+                '#type' => 'textfield',
+                '#title' => 'Sujet du mail de confirmation pour un organisme privé - entreprise unipersonnelle :',
+                '#default_value' => isset($config['type_5_email_title']) ? $config['type_5_email_title'] : '',
+            ],
+            'type_5_email_content' => [
+                '#type' => 'textarea',
+                '#title' => 'Contenu du mail de confirmation pour un organisme privé - entreprise unipersonnelle :',
+                '#default_value' => isset($config['type_5_email_content']) ? $config['type_5_email_content'] : '',
+                '#description' => "Variables : @type, @part_fixe_unipersonnelle, @simulation_result",
+            ],
         );
 
         $form['notification'] = array(
@@ -145,6 +157,12 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
               '#title' => 'Plafond de la part variable :',
               '#description' => "Montant du plafond de la part variable catégorie 1 (Etat, collectivités et EPCI à fiscalité propre).",
               '#default_value' => isset($config['openig_adhesion_simulator_formula_population_part_variable']) ? $config['openig_adhesion_simulator_formula_population_part_variable'] : '20 000',
+            ],
+            'openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle' => [
+                '#type' => 'number',
+                '#title' => 'Montant de la part fixe :',
+                '#description' => "Montant de la part fixe catégorie 2 (Entreprise unipersonnelle).",
+                '#default_value' => isset($config['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle']) ? $config['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'] : '100',
             ],
             'openig_adhesion_simulator_formula_organisme_valeur_fixe' => [
               '#type' => 'number',
@@ -264,6 +282,8 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         $this->configuration['type_3_email_content'] = $values['confirmation']['type_3_email_content'];
         $this->configuration['type_4_email_title'] = $values['confirmation']['type_4_email_title'];
         $this->configuration['type_4_email_content'] = $values['confirmation']['type_4_email_content'];
+        $this->configuration['type_5_email_title'] = $values['confirmation']['type_5_email_title'];
+        $this->configuration['type_5_email_content'] = $values['confirmation']['type_5_email_content'];
 
         // Configuration des formules
         $this->configuration['openig_adhesion_simulator_formula_population'] = $values['openig_adhesion_simulator_formula_population'];
@@ -282,6 +302,10 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         $this->configuration['openig_adhesion_simulator_formula_organisme_part_variable'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_part_variable'];
         // Montant de la part fixe (cat 3) - Personnes physiques
         $this->configuration['openig_adhesion_simulator_formula_organisme_valeur_fixe'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+        // Montant de la part fixe (cat 2) - Un organisme privé - entreprise unipersonnelle
+        $this->configuration['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'] = $values['openig_adhesion_simulator_formula_population_valeur_plafond']['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'];
+        
+
         // Selecteur Type d'organisme
         $options = [];
         foreach ($form_state->getValue('openig_adhesion_simulator_formula_type_organisme_options') as $key => $option) {

@@ -27,6 +27,8 @@ settings:
   type_3_email_content: "Bonjour,\r\nVous avez demandé une simulation d'adhésion à OPenIG pour un organisme à vocation SIG. \r\nLa cotisation est proportionnelle à la somme des cotisations perçues par l’organisme l’année précédente, avec un pourcentage de @percent_budget % de ces cotisations. Le plafond est fixé à @part_variable_organisme_SIG €. \r\nL’adhésion dans cette catégorie permet à l’adhérent de faire bénéficier ses propres membres de l’ensemble des services d’OPenIG (grille tarifaire 2025).\r\nPour l'année précédente, le budget de votre organisme est de @budget €.\r\nSelon les barèmes en vigueur, votre organisme devrait s'acquitter d'une cotisation annuelle de @simulation_result  €.\r\nL'équipe d'OPenIG"
   type_4_email_title: "Simulation d'adhésion OPenIG pour les personnes physiques"
   type_4_email_content: "Bonjour,\r\nIl est possible pour des personnes physiques d’adhérer à OPenIG; à ce titre, elles bénéficient d'un niveau de services limité. \r\nCotisation individuelle à partir de @part_fixe € (Grille tarifaire 2025).\r\nDepuis le 1er janvier 2025 l'adhésion de soutien en tant que personne morale a été supprimée, merci de sélectionner une autre catégorie.\r\nL'équipe d'OPenIG"
+  type_5_email_title: "Simulation d'adhésion OPenIG pour un organisme privé - entreprise unipersonnelle"
+  type_5_email_content: "Bonjour,\r\nIl est possible pour un organisme privé - entreprise unipersonnelle d’adhérer à OPenIG; à ce titre, elles bénéficient d'un niveau de services limité.\r\nCotisation individuelle à partir de @part_fixe_unipersonnelle €."
   openig_adhesion_simulator_formula_population: '0.07'
   openig_adhesion_simulator_formula_budget: '0.0525'
   openig_adhesion_simulator_formula_salaries_1: '550'
@@ -39,6 +41,7 @@ settings:
   openig_adhesion_simulator_formula_population_part_variable: '20000'
   openig_adhesion_simulator_formula_organisme_part_variable: '25000'
   openig_adhesion_simulator_formula_organisme_valeur_fixe: '25'
+  openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle: '100'
   select_options:
     -
       label: 'Une commune'
@@ -73,6 +76,9 @@ settings:
     -
       label: 'Un organisme privé'
       amount: '0'
+    -
+      label: 'Un organisme privé - entreprise unipersonnelle'
+      amount: '100'
     -
       label: 'Une association'
       amount: '0'
@@ -115,6 +121,9 @@ settings:
       amount: '0'
     -
       label: 'Un organisme privé'
+      amount: '0'
+    -
+      label: 'Un organisme privé - entreprise unipersonnelle'
       amount: '0'
     -
       label: 'Une association'
