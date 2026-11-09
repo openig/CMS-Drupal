@@ -40,6 +40,8 @@ class SimulatorForm extends FormBase {
         $part_variable_organisme_SIG = $settings['openig_adhesion_simulator_formula_organisme_part_variable'];
         // Montant de la part fixe (cat 3) - Personnes physiques
         $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+        // Montant de la part fixe (cat 2) - Organisme privé - entreprise unipersonnelle
+        $part_fixe_unipersonnelle = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'];
         // Options paramétré du selecteur Type d'organisme
         $i = 1;
         foreach($settings['openig_adhesion_simulator_formula_type_organisme_options'] as $option){
@@ -117,10 +119,21 @@ class SimulatorForm extends FormBase {
         $form['dynamic']['individual'] = [
             '#markup' => '
             <div id="individual" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden"><div class="adhesion-simulator-form__markup">
-                <div class="adhesion-simulator-form__label">L\'adhésion de soutien à titre individuel permet à des personnes physiques d’adhérer à OPenIG avec un niveau de services limité. <br> Cette cotisation ouvre l\'accès aux instances de gouvernance selon les modalités fixées dans les statuts.</div>
+                <div class="adhesion-simulator-form__label">L\'adhésion de soutien à titre individuel permet à des personnes physiques d’adhérer à OPenIG avec un niveau de services limité. <br> Cette cotisation ouvre l\'accès aux instances de  selon les modalités fixées dans les statuts.</div>
                 <div class="adhesion-simulator-form__result">
                     <div class="adhesion-simulator-form__option">Cotisation de <span class="adhesion-simulator-form__value" id="simulator_type_3"> '.$part_fixe.'€</span></div>
                 </div>
+            </div></div>',
+        ];
+
+        // Organisme privé - entreprise unipersonnelle
+        $form['dynamic']['unipersonnelle'] = [
+        '#markup' => '
+        <div id="unipersonnelle" class="adhesion-simulator-form__item adhesion-simulator-form__item--hidden"><div class="adhesion-simulator-form__markup">
+            <div class="adhesion-simulator-form__label">Cotisation forfaitaire pour une entreprise unipersonnelle</div>
+            <div class="adhesion-simulator-form__result">
+                <div class="adhesion-simulator-form__option">Cotisation de <span class="adhesion-simulator-form__value"> '.$part_fixe_unipersonnelle.'€</span></div>
+            </div>
             </div></div>',
         ];
 
@@ -206,6 +219,8 @@ class SimulatorForm extends FormBase {
             $percent_budget = $settings['openig_adhesion_simulator_formula_budget']*100;
             // Montant de la part fixe (cat 3) - Personnes physiques
             $part_fixe = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe'];
+            // Montant de la part fixe (cat 2) - Organisme privé - entreprise unipersonnelle
+            $part_fixe_unipersonnelle = $settings['openig_adhesion_simulator_formula_organisme_valeur_fixe_unipersonnelle'];
 
 
             // Send confirmation email
@@ -253,6 +268,13 @@ class SimulatorForm extends FormBase {
                     $message = str_replace('@simulation_result', $simulation_result, $message);
                     $message = str_replace('@part_fixe', $part_fixe, $message);
                     $this->sendMail($settings['type_4_email_title'], $message, $email);
+                    break;
+                case '15':
+                    $message = $settings['type_5_email_content'];
+                    $message = str_replace('@type', $this->options[$organism_type], $message);
+                    $message = str_replace('@simulation_result', $simulation_result, $message);
+                    $message = str_replace('@part_fixe_unipersonnelle', $part_fixe_unipersonnelle, $message);
+                    $this->sendMail($settings['type_5_email_title'], $message, $email);
                     break;
             }
 
