@@ -32,10 +32,10 @@ class SimulatorBlock extends BlockBase implements BlockPluginInterface {
         '9' => ['label' => 'Un autre EPCI', 'amount' => 0],
         '10' => ['label' => 'Un autre organisme public', 'amount' => 0],
         '11' => ['label' => 'Un organisme privé', 'amount' => 0],
-        '12' => ['label' => 'Une association', 'amount' => 0],
-        '13' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
-        '14' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
-        '15' => ['label' => 'Un organisme privé - entreprise unipersonnelle', 'amount' => 100],
+        '12' => ['label' => 'Un organisme privé - entreprise unipersonnelle', 'amount' => 100],
+        '13' => ['label' => 'Une association', 'amount' => 0],
+        '14' => ['label' => 'Un organisme à vocation SIG', 'amount' => 0],
+        '15' => ['label' => 'Une personne morale [Adhésion de soutien]', 'amount' => 0],
     ];
 
 
