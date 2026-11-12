@@ -6,7 +6,7 @@ id: all_structures
 label: 'All structures'
 server_id: ldap
 base_dn: 'ou=structures,dc=openig,dc=org'
-filter: '(&(objectClass=structureAsso)(structureValidationStatus=TRUE))'
+filter: '(&(objectClass=openigOrganization)(structureValidationStatus=TRUE))'
 attributes: ''
 size_limit: 0
 time_limit: 0
