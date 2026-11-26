@@ -2,7 +2,7 @@ _core:
   default_config_hash: NFnOZU6VCOfURCAR4-O3V7eMHTx2LNqnCmDKRSNjjns
 always_save_userinfo: true
 connect_existing_users: true
-override_registration_settings: false
+override_registration_settings: true
 end_session_enabled: true
 user_login_display: replace
 redirect_login: user
@@ -11,8 +11,8 @@ userinfo_mappings:
   timezone: zoneinfo
   field_firstname: middle_name
   field_lastname: family_name
-  field_phone: phone_number
 role_mappings:
   adherent:
     - adherent
+force_reset_role_mappings: true
 autostart_login: false

@@ -6,7 +6,7 @@ id: structures_with_logo
 label: 'Structures with Logo'
 server_id: ldap
 base_dn: 'ou=structures,dc=openig,dc=org'
-filter: '(&(objectClass=structureAsso)(structureValidationStatus=TRUE)(LogoFile=*))'
+filter: '(&(objectClass=openigOrganization)(structureValidationStatus=TRUE)(LogoFile=*))'
 attributes: ''
 size_limit: 0
 time_limit: 0
