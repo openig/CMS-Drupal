@@ -140,6 +140,9 @@
             },
             "drupal/ldap": {
                 "Option to associate already existing Drupal accounts during the LDAP users updates": "./scripts/patchs/userUpdateAssociate.patch"
+            },
+            "drupal/keycloak": {
+                "Compatibilite openid_connect 3.0.0-alpha10 : submitConfigurationForm() doit retourner void": "./scripts/patchs/keycloak-openid_connect-alpha10-void.patch"
             }
         },
         "installer-paths": {
