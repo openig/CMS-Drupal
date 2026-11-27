@@ -1,0 +1,11 @@
+--- a/src/Plugin/OpenIDConnectClient/Keycloak.php	2026-11-27 06:37:47.691682428 +0000
++++ b/src/Plugin/OpenIDConnectClient/Keycloak.php	2026-11-27 06:37:47.695682420 +0000
+@@ -380,7 +380,7 @@
+   /**
+    * {@inheritdoc}
+    */
+-  public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
++  public function submitConfigurationForm(array &$form, FormStateInterface $form_state): void {
+     parent::submitConfigurationForm($form, $form_state);
+ 
+     // Remove trailing slashes and spaces.
