@@ -11,6 +11,7 @@ userinfo_mappings:
   timezone: zoneinfo
   field_firstname: middle_name
   field_lastname: family_name
+  field_phone: phone_number
 role_mappings:
   adherent:
     - adherent
